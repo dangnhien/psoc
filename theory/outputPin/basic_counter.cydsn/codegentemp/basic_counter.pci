@@ -1,0 +1,12 @@
+# basic_counter
+# 2022-08-20 07:13:56Z
+
+# IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 2
+# IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 3
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_io "led_blue(0)" iocell 1 0
+set_io "Pin_SW2(0)" iocell 1 5
+set_io "gnd(0)" iocell 1 6
+set_io "led_red(0)" iocell 1 1
