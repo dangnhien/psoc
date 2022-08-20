@@ -1,0 +1,746 @@
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cca9gFNb.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.Pin_SW2_Handler,"ax",%progbits
+  20              		.align	2
+  21              		.global	Pin_SW2_Handler
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	Pin_SW2_Handler, %function
+  25              	Pin_SW2_Handler:
+  26              	.LFB32:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** 
+  14:main.c        **** void led_glow(uint8 status_1);
+  15:main.c        **** 
+  16:main.c        **** CY_ISR( Pin_SW2_Handler )
+  17:main.c        **** {
+  28              		.loc 1 17 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  18:main.c        ****     led_blue_Write( ~led_blue_Read() );
+  36              		.loc 1 18 0
+  37 0002 FFF7FEFF 		bl	led_blue_Read
+  38              	.LVL0:
+  39 0006 C043     		mvns	r0, r0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cca9gFNb.s 			page 2
+
+
+  40 0008 C0B2     		uxtb	r0, r0
+  41 000a FFF7FEFF 		bl	led_blue_Write
+  42              	.LVL1:
+  19:main.c        ****     
+  20:main.c        ****     Pin_SW2_ClearInterrupt();
+  43              		.loc 1 20 0
+  44 000e FFF7FEFF 		bl	Pin_SW2_ClearInterrupt
+  45              	.LVL2:
+  21:main.c        **** }
+  46              		.loc 1 21 0
+  47              		@ sp needed
+  48 0012 10BD     		pop	{r4, pc}
+  49              		.cfi_endproc
+  50              	.LFE32:
+  51              		.size	Pin_SW2_Handler, .-Pin_SW2_Handler
+  52              		.section	.text.main,"ax",%progbits
+  53              		.align	2
+  54              		.global	main
+  55              		.code	16
+  56              		.thumb_func
+  57              		.type	main, %function
+  58              	main:
+  59              	.LFB33:
+  22:main.c        **** 
+  23:main.c        **** int main(void)
+  24:main.c        **** {
+  60              		.loc 1 24 0
+  61              		.cfi_startproc
+  62              		@ Volatile: function does not return.
+  63              		@ args = 0, pretend = 0, frame = 0
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+  65 0000 10B5     		push	{r4, lr}
+  66              		.cfi_def_cfa_offset 8
+  67              		.cfi_offset 4, -8
+  68              		.cfi_offset 14, -4
+  25:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  69              		.loc 1 25 0
+  70              		.syntax divided
+  71              	@ 25 "main.c" 1
+  72 0002 62B6     		CPSIE   i
+  73              	@ 0 "" 2
+  26:main.c        **** 
+  27:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  28:main.c        ****     
+  29:main.c        ****     //gnd_Write(0);
+  30:main.c        ****     Pin_SW2_Int_StartEx( Pin_SW2_Handler );
+  74              		.loc 1 30 0
+  75              		.thumb
+  76              		.syntax unified
+  77 0004 0148     		ldr	r0, .L4
+  78 0006 FFF7FEFF 		bl	Pin_SW2_Int_StartEx
+  79              	.LVL3:
+  80              	.L3:
+  81 000a FEE7     		b	.L3
+  82              	.L5:
+  83              		.align	2
+  84              	.L4:
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cca9gFNb.s 			page 3
+
+
+  85 000c 00000000 		.word	Pin_SW2_Handler
+  86              		.cfi_endproc
+  87              	.LFE33:
+  88              		.size	main, .-main
+  89              		.section	.text.led_glow,"ax",%progbits
+  90              		.align	2
+  91              		.global	led_glow
+  92              		.code	16
+  93              		.thumb_func
+  94              		.type	led_glow, %function
+  95              	led_glow:
+  96              	.LFB34:
+  31:main.c        ****     
+  32:main.c        ****     for(;;)
+  33:main.c        ****     {
+  34:main.c        ****         /* Place your application code here. */  
+  35:main.c        ****         
+  36:main.c        ****         /*
+  37:main.c        ****         uint8 result = Pin_SW2_Read();
+  38:main.c        ****         
+  39:main.c        ****         led_glow(result);  
+  40:main.c        ****         */
+  41:main.c        ****     }
+  42:main.c        **** }
+  43:main.c        **** 
+  44:main.c        **** /* press button,led will glow */
+  45:main.c        **** void led_glow(uint8 status_1)
+  46:main.c        **** {
+  97              		.loc 1 46 0
+  98              		.cfi_startproc
+  99              		@ args = 0, pretend = 0, frame = 0
+ 100              		@ frame_needed = 0, uses_anonymous_args = 0
+ 101              	.LVL4:
+ 102 0000 10B5     		push	{r4, lr}
+ 103              		.cfi_def_cfa_offset 8
+ 104              		.cfi_offset 4, -8
+ 105              		.cfi_offset 14, -4
+  47:main.c        ****        status_1 == 0 ?  led_blue_Write(0) : led_blue_Write(1) ;
+ 106              		.loc 1 47 0
+ 107 0002 0028     		cmp	r0, #0
+ 108 0004 02D1     		bne	.L7
+ 109              		.loc 1 47 0 is_stmt 0 discriminator 1
+ 110 0006 FFF7FEFF 		bl	led_blue_Write
+ 111              	.LVL5:
+ 112 000a 02E0     		b	.L6
+ 113              	.LVL6:
+ 114              	.L7:
+ 115              		.loc 1 47 0 discriminator 2
+ 116 000c 0120     		movs	r0, #1
+ 117              	.LVL7:
+ 118 000e FFF7FEFF 		bl	led_blue_Write
+ 119              	.LVL8:
+ 120              	.L6:
+  48:main.c        **** }
+ 121              		.loc 1 48 0 is_stmt 1
+ 122              		@ sp needed
+ 123 0012 10BD     		pop	{r4, pc}
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cca9gFNb.s 			page 4
+
+
+ 124              		.cfi_endproc
+ 125              	.LFE34:
+ 126              		.size	led_glow, .-led_glow
+ 127              		.text
+ 128              	.Letext0:
+ 129              		.file 2 "Generated_Source\\PSoC4/led_blue.h"
+ 130              		.file 3 "Generated_Source\\PSoC4/Pin_SW2.h"
+ 131              		.file 4 "Generated_Source\\PSoC4/Pin_SW2_Int.h"
+ 132              		.file 5 "Generated_Source\\PSoC4/cytypes.h"
+ 133              		.section	.debug_info,"",%progbits
+ 134              	.Ldebug_info0:
+ 135 0000 5E010000 		.4byte	0x15e
+ 136 0004 0400     		.2byte	0x4
+ 137 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 138 000a 04       		.byte	0x4
+ 139 000b 01       		.uleb128 0x1
+ 140 000c 13010000 		.4byte	.LASF20
+ 141 0010 0C       		.byte	0xc
+ 142 0011 3E000000 		.4byte	.LASF21
+ 143 0015 D9000000 		.4byte	.LASF22
+ 144 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 145 001d 00000000 		.4byte	0
+ 146 0021 00000000 		.4byte	.Ldebug_line0
+ 147 0025 02       		.uleb128 0x2
+ 148 0026 01       		.byte	0x1
+ 149 0027 06       		.byte	0x6
+ 150 0028 B4010000 		.4byte	.LASF0
+ 151 002c 02       		.uleb128 0x2
+ 152 002d 01       		.byte	0x1
+ 153 002e 08       		.byte	0x8
+ 154 002f B4000000 		.4byte	.LASF1
+ 155 0033 02       		.uleb128 0x2
+ 156 0034 02       		.byte	0x2
+ 157 0035 05       		.byte	0x5
+ 158 0036 CC010000 		.4byte	.LASF2
+ 159 003a 02       		.uleb128 0x2
+ 160 003b 02       		.byte	0x2
+ 161 003c 07       		.byte	0x7
+ 162 003d A1010000 		.4byte	.LASF3
+ 163 0041 02       		.uleb128 0x2
+ 164 0042 04       		.byte	0x4
+ 165 0043 05       		.byte	0x5
+ 166 0044 D0000000 		.4byte	.LASF4
+ 167 0048 02       		.uleb128 0x2
+ 168 0049 04       		.byte	0x4
+ 169 004a 07       		.byte	0x7
+ 170 004b 50000000 		.4byte	.LASF5
+ 171 004f 02       		.uleb128 0x2
+ 172 0050 08       		.byte	0x8
+ 173 0051 05       		.byte	0x5
+ 174 0052 00000000 		.4byte	.LASF6
+ 175 0056 02       		.uleb128 0x2
+ 176 0057 08       		.byte	0x8
+ 177 0058 07       		.byte	0x7
+ 178 0059 9D000000 		.4byte	.LASF7
+ 179 005d 03       		.uleb128 0x3
+ 180 005e 04       		.byte	0x4
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cca9gFNb.s 			page 5
+
+
+ 181 005f 05       		.byte	0x5
+ 182 0060 696E7400 		.ascii	"int\000"
+ 183 0064 02       		.uleb128 0x2
+ 184 0065 04       		.byte	0x4
+ 185 0066 07       		.byte	0x7
+ 186 0067 31000000 		.4byte	.LASF8
+ 187 006b 04       		.uleb128 0x4
+ 188 006c 4A000000 		.4byte	.LASF23
+ 189 0070 05       		.byte	0x5
+ 190 0071 FB01     		.2byte	0x1fb
+ 191 0073 2C000000 		.4byte	0x2c
+ 192 0077 02       		.uleb128 0x2
+ 193 0078 04       		.byte	0x4
+ 194 0079 04       		.byte	0x4
+ 195 007a 82000000 		.4byte	.LASF9
+ 196 007e 02       		.uleb128 0x2
+ 197 007f 08       		.byte	0x8
+ 198 0080 04       		.byte	0x4
+ 199 0081 0C010000 		.4byte	.LASF10
+ 200 0085 02       		.uleb128 0x2
+ 201 0086 01       		.byte	0x1
+ 202 0087 08       		.byte	0x8
+ 203 0088 98000000 		.4byte	.LASF11
+ 204 008c 02       		.uleb128 0x2
+ 205 008d 04       		.byte	0x4
+ 206 008e 07       		.byte	0x7
+ 207 008f D6010000 		.4byte	.LASF12
+ 208 0093 02       		.uleb128 0x2
+ 209 0094 08       		.byte	0x8
+ 210 0095 04       		.byte	0x4
+ 211 0096 C0010000 		.4byte	.LASF13
+ 212 009a 05       		.uleb128 0x5
+ 213 009b 88000000 		.4byte	.LASF14
+ 214 009f 01       		.byte	0x1
+ 215 00a0 10       		.byte	0x10
+ 216 00a1 00000000 		.4byte	.LFB32
+ 217 00a5 14000000 		.4byte	.LFE32-.LFB32
+ 218 00a9 01       		.uleb128 0x1
+ 219 00aa 9C       		.byte	0x9c
+ 220 00ab CB000000 		.4byte	0xcb
+ 221 00af 06       		.uleb128 0x6
+ 222 00b0 06000000 		.4byte	.LVL0
+ 223 00b4 35010000 		.4byte	0x135
+ 224 00b8 06       		.uleb128 0x6
+ 225 00b9 0E000000 		.4byte	.LVL1
+ 226 00bd 40010000 		.4byte	0x140
+ 227 00c1 06       		.uleb128 0x6
+ 228 00c2 12000000 		.4byte	.LVL2
+ 229 00c6 4B010000 		.4byte	0x14b
+ 230 00ca 00       		.byte	0
+ 231 00cb 07       		.uleb128 0x7
+ 232 00cc 45000000 		.4byte	.LASF24
+ 233 00d0 01       		.byte	0x1
+ 234 00d1 17       		.byte	0x17
+ 235 00d2 5D000000 		.4byte	0x5d
+ 236 00d6 00000000 		.4byte	.LFB33
+ 237 00da 10000000 		.4byte	.LFE33-.LFB33
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cca9gFNb.s 			page 6
+
+
+ 238 00de 01       		.uleb128 0x1
+ 239 00df 9C       		.byte	0x9c
+ 240 00e0 F8000000 		.4byte	0xf8
+ 241 00e4 08       		.uleb128 0x8
+ 242 00e5 0A000000 		.4byte	.LVL3
+ 243 00e9 56010000 		.4byte	0x156
+ 244 00ed 09       		.uleb128 0x9
+ 245 00ee 01       		.uleb128 0x1
+ 246 00ef 50       		.byte	0x50
+ 247 00f0 05       		.uleb128 0x5
+ 248 00f1 03       		.byte	0x3
+ 249 00f2 00000000 		.4byte	Pin_SW2_Handler
+ 250 00f6 00       		.byte	0
+ 251 00f7 00       		.byte	0
+ 252 00f8 05       		.uleb128 0x5
+ 253 00f9 03010000 		.4byte	.LASF15
+ 254 00fd 01       		.byte	0x1
+ 255 00fe 2D       		.byte	0x2d
+ 256 00ff 00000000 		.4byte	.LFB34
+ 257 0103 14000000 		.4byte	.LFE34-.LFB34
+ 258 0107 01       		.uleb128 0x1
+ 259 0108 9C       		.byte	0x9c
+ 260 0109 35010000 		.4byte	0x135
+ 261 010d 0A       		.uleb128 0xa
+ 262 010e 62000000 		.4byte	.LASF25
+ 263 0112 01       		.byte	0x1
+ 264 0113 2D       		.byte	0x2d
+ 265 0114 6B000000 		.4byte	0x6b
+ 266 0118 00000000 		.4byte	.LLST0
+ 267 011c 06       		.uleb128 0x6
+ 268 011d 0A000000 		.4byte	.LVL5
+ 269 0121 40010000 		.4byte	0x140
+ 270 0125 08       		.uleb128 0x8
+ 271 0126 12000000 		.4byte	.LVL8
+ 272 012a 40010000 		.4byte	0x140
+ 273 012e 09       		.uleb128 0x9
+ 274 012f 01       		.uleb128 0x1
+ 275 0130 50       		.byte	0x50
+ 276 0131 01       		.uleb128 0x1
+ 277 0132 31       		.byte	0x31
+ 278 0133 00       		.byte	0
+ 279 0134 00       		.byte	0
+ 280 0135 0B       		.uleb128 0xb
+ 281 0136 C2000000 		.4byte	.LASF16
+ 282 013a C2000000 		.4byte	.LASF16
+ 283 013e 02       		.byte	0x2
+ 284 013f 32       		.byte	0x32
+ 285 0140 0B       		.uleb128 0xb
+ 286 0141 22000000 		.4byte	.LASF17
+ 287 0145 22000000 		.4byte	.LASF17
+ 288 0149 02       		.byte	0x2
+ 289 014a 33       		.byte	0x33
+ 290 014b 0B       		.uleb128 0xb
+ 291 014c 6B000000 		.4byte	.LASF18
+ 292 0150 6B000000 		.4byte	.LASF18
+ 293 0154 03       		.byte	0x3
+ 294 0155 39       		.byte	0x39
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cca9gFNb.s 			page 7
+
+
+ 295 0156 0B       		.uleb128 0xb
+ 296 0157 0E000000 		.4byte	.LASF19
+ 297 015b 0E000000 		.4byte	.LASF19
+ 298 015f 04       		.byte	0x4
+ 299 0160 18       		.byte	0x18
+ 300 0161 00       		.byte	0
+ 301              		.section	.debug_abbrev,"",%progbits
+ 302              	.Ldebug_abbrev0:
+ 303 0000 01       		.uleb128 0x1
+ 304 0001 11       		.uleb128 0x11
+ 305 0002 01       		.byte	0x1
+ 306 0003 25       		.uleb128 0x25
+ 307 0004 0E       		.uleb128 0xe
+ 308 0005 13       		.uleb128 0x13
+ 309 0006 0B       		.uleb128 0xb
+ 310 0007 03       		.uleb128 0x3
+ 311 0008 0E       		.uleb128 0xe
+ 312 0009 1B       		.uleb128 0x1b
+ 313 000a 0E       		.uleb128 0xe
+ 314 000b 55       		.uleb128 0x55
+ 315 000c 17       		.uleb128 0x17
+ 316 000d 11       		.uleb128 0x11
+ 317 000e 01       		.uleb128 0x1
+ 318 000f 10       		.uleb128 0x10
+ 319 0010 17       		.uleb128 0x17
+ 320 0011 00       		.byte	0
+ 321 0012 00       		.byte	0
+ 322 0013 02       		.uleb128 0x2
+ 323 0014 24       		.uleb128 0x24
+ 324 0015 00       		.byte	0
+ 325 0016 0B       		.uleb128 0xb
+ 326 0017 0B       		.uleb128 0xb
+ 327 0018 3E       		.uleb128 0x3e
+ 328 0019 0B       		.uleb128 0xb
+ 329 001a 03       		.uleb128 0x3
+ 330 001b 0E       		.uleb128 0xe
+ 331 001c 00       		.byte	0
+ 332 001d 00       		.byte	0
+ 333 001e 03       		.uleb128 0x3
+ 334 001f 24       		.uleb128 0x24
+ 335 0020 00       		.byte	0
+ 336 0021 0B       		.uleb128 0xb
+ 337 0022 0B       		.uleb128 0xb
+ 338 0023 3E       		.uleb128 0x3e
+ 339 0024 0B       		.uleb128 0xb
+ 340 0025 03       		.uleb128 0x3
+ 341 0026 08       		.uleb128 0x8
+ 342 0027 00       		.byte	0
+ 343 0028 00       		.byte	0
+ 344 0029 04       		.uleb128 0x4
+ 345 002a 16       		.uleb128 0x16
+ 346 002b 00       		.byte	0
+ 347 002c 03       		.uleb128 0x3
+ 348 002d 0E       		.uleb128 0xe
+ 349 002e 3A       		.uleb128 0x3a
+ 350 002f 0B       		.uleb128 0xb
+ 351 0030 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cca9gFNb.s 			page 8
+
+
+ 352 0031 05       		.uleb128 0x5
+ 353 0032 49       		.uleb128 0x49
+ 354 0033 13       		.uleb128 0x13
+ 355 0034 00       		.byte	0
+ 356 0035 00       		.byte	0
+ 357 0036 05       		.uleb128 0x5
+ 358 0037 2E       		.uleb128 0x2e
+ 359 0038 01       		.byte	0x1
+ 360 0039 3F       		.uleb128 0x3f
+ 361 003a 19       		.uleb128 0x19
+ 362 003b 03       		.uleb128 0x3
+ 363 003c 0E       		.uleb128 0xe
+ 364 003d 3A       		.uleb128 0x3a
+ 365 003e 0B       		.uleb128 0xb
+ 366 003f 3B       		.uleb128 0x3b
+ 367 0040 0B       		.uleb128 0xb
+ 368 0041 27       		.uleb128 0x27
+ 369 0042 19       		.uleb128 0x19
+ 370 0043 11       		.uleb128 0x11
+ 371 0044 01       		.uleb128 0x1
+ 372 0045 12       		.uleb128 0x12
+ 373 0046 06       		.uleb128 0x6
+ 374 0047 40       		.uleb128 0x40
+ 375 0048 18       		.uleb128 0x18
+ 376 0049 9742     		.uleb128 0x2117
+ 377 004b 19       		.uleb128 0x19
+ 378 004c 01       		.uleb128 0x1
+ 379 004d 13       		.uleb128 0x13
+ 380 004e 00       		.byte	0
+ 381 004f 00       		.byte	0
+ 382 0050 06       		.uleb128 0x6
+ 383 0051 898201   		.uleb128 0x4109
+ 384 0054 00       		.byte	0
+ 385 0055 11       		.uleb128 0x11
+ 386 0056 01       		.uleb128 0x1
+ 387 0057 31       		.uleb128 0x31
+ 388 0058 13       		.uleb128 0x13
+ 389 0059 00       		.byte	0
+ 390 005a 00       		.byte	0
+ 391 005b 07       		.uleb128 0x7
+ 392 005c 2E       		.uleb128 0x2e
+ 393 005d 01       		.byte	0x1
+ 394 005e 3F       		.uleb128 0x3f
+ 395 005f 19       		.uleb128 0x19
+ 396 0060 03       		.uleb128 0x3
+ 397 0061 0E       		.uleb128 0xe
+ 398 0062 3A       		.uleb128 0x3a
+ 399 0063 0B       		.uleb128 0xb
+ 400 0064 3B       		.uleb128 0x3b
+ 401 0065 0B       		.uleb128 0xb
+ 402 0066 27       		.uleb128 0x27
+ 403 0067 19       		.uleb128 0x19
+ 404 0068 49       		.uleb128 0x49
+ 405 0069 13       		.uleb128 0x13
+ 406 006a 8701     		.uleb128 0x87
+ 407 006c 19       		.uleb128 0x19
+ 408 006d 11       		.uleb128 0x11
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cca9gFNb.s 			page 9
+
+
+ 409 006e 01       		.uleb128 0x1
+ 410 006f 12       		.uleb128 0x12
+ 411 0070 06       		.uleb128 0x6
+ 412 0071 40       		.uleb128 0x40
+ 413 0072 18       		.uleb128 0x18
+ 414 0073 9742     		.uleb128 0x2117
+ 415 0075 19       		.uleb128 0x19
+ 416 0076 01       		.uleb128 0x1
+ 417 0077 13       		.uleb128 0x13
+ 418 0078 00       		.byte	0
+ 419 0079 00       		.byte	0
+ 420 007a 08       		.uleb128 0x8
+ 421 007b 898201   		.uleb128 0x4109
+ 422 007e 01       		.byte	0x1
+ 423 007f 11       		.uleb128 0x11
+ 424 0080 01       		.uleb128 0x1
+ 425 0081 31       		.uleb128 0x31
+ 426 0082 13       		.uleb128 0x13
+ 427 0083 00       		.byte	0
+ 428 0084 00       		.byte	0
+ 429 0085 09       		.uleb128 0x9
+ 430 0086 8A8201   		.uleb128 0x410a
+ 431 0089 00       		.byte	0
+ 432 008a 02       		.uleb128 0x2
+ 433 008b 18       		.uleb128 0x18
+ 434 008c 9142     		.uleb128 0x2111
+ 435 008e 18       		.uleb128 0x18
+ 436 008f 00       		.byte	0
+ 437 0090 00       		.byte	0
+ 438 0091 0A       		.uleb128 0xa
+ 439 0092 05       		.uleb128 0x5
+ 440 0093 00       		.byte	0
+ 441 0094 03       		.uleb128 0x3
+ 442 0095 0E       		.uleb128 0xe
+ 443 0096 3A       		.uleb128 0x3a
+ 444 0097 0B       		.uleb128 0xb
+ 445 0098 3B       		.uleb128 0x3b
+ 446 0099 0B       		.uleb128 0xb
+ 447 009a 49       		.uleb128 0x49
+ 448 009b 13       		.uleb128 0x13
+ 449 009c 02       		.uleb128 0x2
+ 450 009d 17       		.uleb128 0x17
+ 451 009e 00       		.byte	0
+ 452 009f 00       		.byte	0
+ 453 00a0 0B       		.uleb128 0xb
+ 454 00a1 2E       		.uleb128 0x2e
+ 455 00a2 00       		.byte	0
+ 456 00a3 3F       		.uleb128 0x3f
+ 457 00a4 19       		.uleb128 0x19
+ 458 00a5 3C       		.uleb128 0x3c
+ 459 00a6 19       		.uleb128 0x19
+ 460 00a7 6E       		.uleb128 0x6e
+ 461 00a8 0E       		.uleb128 0xe
+ 462 00a9 03       		.uleb128 0x3
+ 463 00aa 0E       		.uleb128 0xe
+ 464 00ab 3A       		.uleb128 0x3a
+ 465 00ac 0B       		.uleb128 0xb
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cca9gFNb.s 			page 10
+
+
+ 466 00ad 3B       		.uleb128 0x3b
+ 467 00ae 0B       		.uleb128 0xb
+ 468 00af 00       		.byte	0
+ 469 00b0 00       		.byte	0
+ 470 00b1 00       		.byte	0
+ 471              		.section	.debug_loc,"",%progbits
+ 472              	.Ldebug_loc0:
+ 473              	.LLST0:
+ 474 0000 00000000 		.4byte	.LVL4
+ 475 0004 09000000 		.4byte	.LVL5-1
+ 476 0008 0100     		.2byte	0x1
+ 477 000a 50       		.byte	0x50
+ 478 000b 09000000 		.4byte	.LVL5-1
+ 479 000f 0C000000 		.4byte	.LVL6
+ 480 0013 0400     		.2byte	0x4
+ 481 0015 F3       		.byte	0xf3
+ 482 0016 01       		.uleb128 0x1
+ 483 0017 50       		.byte	0x50
+ 484 0018 9F       		.byte	0x9f
+ 485 0019 0C000000 		.4byte	.LVL6
+ 486 001d 0E000000 		.4byte	.LVL7
+ 487 0021 0100     		.2byte	0x1
+ 488 0023 50       		.byte	0x50
+ 489 0024 0E000000 		.4byte	.LVL7
+ 490 0028 14000000 		.4byte	.LFE34
+ 491 002c 0400     		.2byte	0x4
+ 492 002e F3       		.byte	0xf3
+ 493 002f 01       		.uleb128 0x1
+ 494 0030 50       		.byte	0x50
+ 495 0031 9F       		.byte	0x9f
+ 496 0032 00000000 		.4byte	0
+ 497 0036 00000000 		.4byte	0
+ 498              		.section	.debug_aranges,"",%progbits
+ 499 0000 2C000000 		.4byte	0x2c
+ 500 0004 0200     		.2byte	0x2
+ 501 0006 00000000 		.4byte	.Ldebug_info0
+ 502 000a 04       		.byte	0x4
+ 503 000b 00       		.byte	0
+ 504 000c 0000     		.2byte	0
+ 505 000e 0000     		.2byte	0
+ 506 0010 00000000 		.4byte	.LFB32
+ 507 0014 14000000 		.4byte	.LFE32-.LFB32
+ 508 0018 00000000 		.4byte	.LFB33
+ 509 001c 10000000 		.4byte	.LFE33-.LFB33
+ 510 0020 00000000 		.4byte	.LFB34
+ 511 0024 14000000 		.4byte	.LFE34-.LFB34
+ 512 0028 00000000 		.4byte	0
+ 513 002c 00000000 		.4byte	0
+ 514              		.section	.debug_ranges,"",%progbits
+ 515              	.Ldebug_ranges0:
+ 516 0000 00000000 		.4byte	.LFB32
+ 517 0004 14000000 		.4byte	.LFE32
+ 518 0008 00000000 		.4byte	.LFB33
+ 519 000c 10000000 		.4byte	.LFE33
+ 520 0010 00000000 		.4byte	.LFB34
+ 521 0014 14000000 		.4byte	.LFE34
+ 522 0018 00000000 		.4byte	0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cca9gFNb.s 			page 11
+
+
+ 523 001c 00000000 		.4byte	0
+ 524              		.section	.debug_line,"",%progbits
+ 525              	.Ldebug_line0:
+ 526 0000 B3000000 		.section	.debug_str,"MS",%progbits,1
+ 526      02006D00 
+ 526      00000201 
+ 526      FB0E0D00 
+ 526      01010101 
+ 527              	.LASF6:
+ 528 0000 6C6F6E67 		.ascii	"long long int\000"
+ 528      206C6F6E 
+ 528      6720696E 
+ 528      7400
+ 529              	.LASF19:
+ 530 000e 50696E5F 		.ascii	"Pin_SW2_Int_StartEx\000"
+ 530      5357325F 
+ 530      496E745F 
+ 530      53746172 
+ 530      74457800 
+ 531              	.LASF17:
+ 532 0022 6C65645F 		.ascii	"led_blue_Write\000"
+ 532      626C7565 
+ 532      5F577269 
+ 532      746500
+ 533              	.LASF8:
+ 534 0031 756E7369 		.ascii	"unsigned int\000"
+ 534      676E6564 
+ 534      20696E74 
+ 534      00
+ 535              	.LASF21:
+ 536 003e 6D61696E 		.ascii	"main.c\000"
+ 536      2E6300
+ 537              	.LASF24:
+ 538 0045 6D61696E 		.ascii	"main\000"
+ 538      00
+ 539              	.LASF23:
+ 540 004a 75696E74 		.ascii	"uint8\000"
+ 540      3800
+ 541              	.LASF5:
+ 542 0050 6C6F6E67 		.ascii	"long unsigned int\000"
+ 542      20756E73 
+ 542      69676E65 
+ 542      6420696E 
+ 542      7400
+ 543              	.LASF25:
+ 544 0062 73746174 		.ascii	"status_1\000"
+ 544      75735F31 
+ 544      00
+ 545              	.LASF18:
+ 546 006b 50696E5F 		.ascii	"Pin_SW2_ClearInterrupt\000"
+ 546      5357325F 
+ 546      436C6561 
+ 546      72496E74 
+ 546      65727275 
+ 547              	.LASF9:
+ 548 0082 666C6F61 		.ascii	"float\000"
+ 548      7400
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cca9gFNb.s 			page 12
+
+
+ 549              	.LASF14:
+ 550 0088 50696E5F 		.ascii	"Pin_SW2_Handler\000"
+ 550      5357325F 
+ 550      48616E64 
+ 550      6C657200 
+ 551              	.LASF11:
+ 552 0098 63686172 		.ascii	"char\000"
+ 552      00
+ 553              	.LASF7:
+ 554 009d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 554      206C6F6E 
+ 554      6720756E 
+ 554      7369676E 
+ 554      65642069 
+ 555              	.LASF1:
+ 556 00b4 756E7369 		.ascii	"unsigned char\000"
+ 556      676E6564 
+ 556      20636861 
+ 556      7200
+ 557              	.LASF16:
+ 558 00c2 6C65645F 		.ascii	"led_blue_Read\000"
+ 558      626C7565 
+ 558      5F526561 
+ 558      6400
+ 559              	.LASF4:
+ 560 00d0 6C6F6E67 		.ascii	"long int\000"
+ 560      20696E74 
+ 560      00
+ 561              	.LASF22:
+ 562 00d9 443A5C70 		.ascii	"D:\\psoc\\theory\\outputPin\\interrupts.cydsn\000"
+ 562      736F635C 
+ 562      7468656F 
+ 562      72795C6F 
+ 562      75747075 
+ 563              	.LASF15:
+ 564 0103 6C65645F 		.ascii	"led_glow\000"
+ 564      676C6F77 
+ 564      00
+ 565              	.LASF10:
+ 566 010c 646F7562 		.ascii	"double\000"
+ 566      6C6500
+ 567              	.LASF20:
+ 568 0113 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 568      43313120 
+ 568      352E342E 
+ 568      31203230 
+ 568      31363036 
+ 569 0146 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 569      20726576 
+ 569      6973696F 
+ 569      6E203233 
+ 569      37373135 
+ 570 0179 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 570      66756E63 
+ 570      74696F6E 
+ 570      2D736563 
+ 570      74696F6E 
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cca9gFNb.s 			page 13
+
+
+ 571              	.LASF3:
+ 572 01a1 73686F72 		.ascii	"short unsigned int\000"
+ 572      7420756E 
+ 572      7369676E 
+ 572      65642069 
+ 572      6E7400
+ 573              	.LASF0:
+ 574 01b4 7369676E 		.ascii	"signed char\000"
+ 574      65642063 
+ 574      68617200 
+ 575              	.LASF13:
+ 576 01c0 6C6F6E67 		.ascii	"long double\000"
+ 576      20646F75 
+ 576      626C6500 
+ 577              	.LASF2:
+ 578 01cc 73686F72 		.ascii	"short int\000"
+ 578      7420696E 
+ 578      7400
+ 579              	.LASF12:
+ 580 01d6 73697A65 		.ascii	"sizetype\000"
+ 580      74797065 
+ 580      00
+ 581              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

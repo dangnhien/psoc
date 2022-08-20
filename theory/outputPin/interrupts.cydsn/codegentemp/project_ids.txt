@@ -1,0 +1,8 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|5c1bc3c0-2974-4dea-9ddf-703224e1c08e
+C:\Users\NGUYEN-DUC-DAT\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|e407edce-1837-4815-b628-67ff28e2b095
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|23e4a11a-dd70-46ec-92fd-9175893c6ede
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|816cd601-391d-44d1-b5c0-5e11fafd7606
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|d22d0863-cdee-4fef-8503-611b3af6fc42
+D:\psoc\theory\outputPin\outputPin.cydsn\outputPin.cyprj|31d8b8d3-c8ea-4a12-9180-a653630bf22d
+D:\psoc\theory\outputPin\input_pin.cydsn\input_pin.cyprj|583918c2-ff15-4892-8f73-34a70f011edc
+D:\psoc\theory\outputPin\interrupts.cydsn\interrupts.cyprj|98310184-1922-4419-9a9d-058ba5056644
