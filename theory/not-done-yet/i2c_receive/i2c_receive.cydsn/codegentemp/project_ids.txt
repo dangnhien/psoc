@@ -1,0 +1,6 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|d015f53b-963d-45c5-9464-95596a3a0de3
+C:\Users\NGUYEN-DUC-DAT\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|940c75a8-5935-4b8f-bf80-0d95ec5053fc
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|aed0013d-e13a-4ecf-876c-bf1841a637cf
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|806a3184-bb04-4531-98c5-ed0ed3fd080f
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|417550e7-03fd-403d-a616-9a9e52de1445
+D:\psoc\theory\i2c_receive\i2c_receive.cydsn\i2c_receive.cyprj|de4ac3d5-21b5-461c-9bf5-b027edccc14d

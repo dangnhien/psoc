@@ -1,0 +1,6 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|0b2ac3b6-c440-4166-bcbc-25b8b82a11db
+C:\Users\NGUYEN-DUC-DAT\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|70568bb1-9a87-483e-87b2-ac8d5f7ed432
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|03aa0349-0575-4c84-bbb5-cea2634e6d33
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|50790c82-0aa3-4f75-9df0-3558e3ce4afb
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|496e8c3f-8826-4743-ad41-5236464d8673
+D:\psoc\theory\lcd_16xN\lcd_16xN.cydsn\lcd_16xN.cyprj|5cb08d1a-85a3-479f-b753-837ca9cdffb6

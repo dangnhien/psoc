@@ -1,0 +1,25 @@
+(DELAYFILE
+ (SDFVERSION "IEEE 1497 4.0")
+ (DATE "2022-08-22T05:52:54Z")
+ (DESIGN "lcd_16xN")
+ (VENDOR "Cypress Semiconductor")
+ (PROGRAM "PSoC Creator")
+ (VERSION " 4.4")
+ (DIVIDER .)
+ (TIMESCALE 1 ns)
+ (CELL
+  (CELLTYPE "lcd_16xN")
+  (INSTANCE *)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT \\lcd\:LCDPort\(0\)_PAD\\ \\lcd\:LCDPort\(0\)\\.pad_in (0.000:0.000:0.000))
+    (INTERCONNECT \\lcd\:LCDPort\(1\)_PAD\\ \\lcd\:LCDPort\(1\)\\.pad_in (0.000:0.000:0.000))
+    (INTERCONNECT \\lcd\:LCDPort\(2\)_PAD\\ \\lcd\:LCDPort\(2\)\\.pad_in (0.000:0.000:0.000))
+    (INTERCONNECT \\lcd\:LCDPort\(3\)_PAD\\ \\lcd\:LCDPort\(3\)\\.pad_in (0.000:0.000:0.000))
+    (INTERCONNECT \\lcd\:LCDPort\(4\)_PAD\\ \\lcd\:LCDPort\(4\)\\.pad_in (0.000:0.000:0.000))
+    (INTERCONNECT \\lcd\:LCDPort\(5\)_PAD\\ \\lcd\:LCDPort\(5\)\\.pad_in (0.000:0.000:0.000))
+    (INTERCONNECT \\lcd\:LCDPort\(6\)_PAD\\ \\lcd\:LCDPort\(6\)\\.pad_in (0.000:0.000:0.000))
+   )
+  )
+ )
+)
