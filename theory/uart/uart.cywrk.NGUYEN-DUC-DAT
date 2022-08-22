@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="uart\uart\libraryApplicationUart\applicationUart.c">
+<ExpandedNodeIds>
+<v>uart</v>
+<v>uart\uart</v>
+<v>uart\uart\TopDesign</v>
+<v>uart\uart\uart.cydwr</v>
+<v>uart\uart\uart.cydwr\Pins</v>
+<v>uart\uart\uart.cydwr\Analog</v>
+<v>uart\uart\uart.cydwr\Clocks</v>
+<v>uart\uart\uart.cydwr\Interrupts</v>
+<v>uart\uart\uart.cydwr\System</v>
+<v>uart\uart\uart.cydwr\Directives</v>
+<v>uart\uart\uart.cydwr\Flash Security</v>
+<v>uart\uart\Header Files</v>
+<v>uart\uart\Header Files\cyapicallbacks.h</v>
+<v>uart\uart\Header Files\main.h</v>
+<v>uart\uart\libraryApplicationUart</v>
+<v>uart\uart\libraryApplicationUart\applicationUart.c</v>
+<v>uart\uart\libraryApplicationUart\applicationUart.h</v>
+<v>uart\uart\Source Files</v>
+<v>uart\uart\Source Files\main.c</v>
+<v>uart\uart\Generated_Source\PSoC4</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>uart</v>
+<v>uart\uart</v>
+<v>uart\uart\TopDesign</v>
+<v>uart\uart\uart.cydwr</v>
+<v>uart\uart\uart.cydwr\Pins</v>
+<v>uart\uart\uart.cydwr\Analog</v>
+<v>uart\uart\uart.cydwr\Clocks</v>
+<v>uart\uart\uart.cydwr\Interrupts</v>
+<v>uart\uart\uart.cydwr\System</v>
+<v>uart\uart\uart.cydwr\Directives</v>
+<v>uart\uart\uart.cydwr\Flash Security</v>
+<v>uart\uart\Header Files</v>
+<v>uart\uart\Header Files\cyapicallbacks.h</v>
+<v>uart\uart\Header Files\main.h</v>
+<v>uart\uart\libraryApplicationUart</v>
+<v>uart\uart\libraryApplicationUart\applicationUart.c</v>
+<v>uart\uart\libraryApplicationUart\applicationUart.h</v>
+<v>uart\uart\Source Files</v>
+<v>uart\uart\Source Files\main.c</v>
+<v>uart\uart\Generated_Source</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>uart</v>
+<v>uart\uart</v>
+<v>uart\uart\TopDesign</v>
+<v>uart\uart\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>uart</v>
+<v>uart\uart</v>
+<v>uart\uart\TopDesign</v>
+<v>uart\uart\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>uart</v>
+<v>uart\uart</v>
+<v>uart\uart\CortexM0</v>
+<v>uart\uart\CortexM0\ARM_GCC_541</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\applicationUart.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_BOOT.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_PM.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_rx.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_rx_PM.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_SCBCLK.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_SPI_UART.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_SPI_UART_INT.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_tx.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_tx_PM.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_UART.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_UART_BOOT.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\uart.elf</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\uart.hex</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\uart.map</v>
+<v>uart\uart\uart.gpdsc</v>
+<v>uart\uart\uart.rpt</v>
+<v>uart\uart\uart_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>uart</v>
+<v>uart\uart</v>
+<v>uart\uart\CortexM0</v>
+<v>uart\uart\CortexM0\ARM_GCC_541</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\applicationUart.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_BOOT.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_PM.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_rx.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_rx_PM.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_SCBCLK.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_SPI_UART.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_SPI_UART_INT.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_tx.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_tx_PM.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="uart">
+<ExpandedNodeIds>
+<v>uart</v>
+<v>uart\uart</v>
+<v>uart\uart\PSoC 4 Architecture TRM</v>
+<v>uart\uart\PSoC 4100 Family Datasheet</v>
+<v>uart\uart\System Reference Guides</v>
+<v>uart\uart\System Reference Guides\cy_boot_v6_0</v>
+<v>uart\uart\System Reference Guides\cy_lfclk_v1_20</v>
+<v>uart\uart\SCB_P4_v4_0.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>uart</v>
+<v>uart\uart</v>
+<v>uart\uart\PSoC 4 Architecture TRM</v>
+<v>uart\uart\PSoC 4100 Family Datasheet</v>
+<v>uart\uart\System Reference Guides</v>
+<v>uart\uart\System Reference Guides\cy_boot_v6_0</v>
+<v>uart\uart\System Reference Guides\cy_lfclk_v1_20</v>
+<v>uart\uart\SCB_P4_v4_0.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\uart.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\uart.cydsn\main.h" />
+<name v=".\uart.cydsn\applicationUart.h" />
+<name v=".\uart.cydsn\applicationUart.c" />
+<name v=".\uart.cydsn\main.c" />
+<name v=".\uart.cydsn\uart.cydwr" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="782, 421" SelectedTabbedMdiWindow="68e27790-b36f-4dc5-8b5e-8469baadc3c3"><DocumentWindow Key="D:\psoc\theory\uart\uart.cydsn\TopDesign\TopDesign.cysch" Guid="ac5d91ee-f16e-4781-b4df-9e77ab07c75c" /><DocumentWindow Key="D:\psoc\theory\uart\uart.cydsn\main.h" Guid="ce0dd933-996b-4736-9556-8b10c0f9368d" /><DocumentWindow Key="D:\psoc\theory\uart\uart.cydsn\applicationUart.h" Guid="febc51a0-3883-4926-bdd4-6261438c586c" /><DocumentWindow Key="D:\psoc\theory\uart\uart.cydsn\applicationUart.c" Guid="68e27790-b36f-4dc5-8b5e-8469baadc3c3" /><DocumentWindow Key="D:\psoc\theory\uart\uart.cydsn\main.c" Guid="2ab7ce54-8ae9-4d67-8869-defbe5076f98" /><DocumentWindow Key="D:\psoc\theory\uart\uart.cydsn\uart.cydwr" Guid="7be62ff2-7e62-453f-8128-724b93749ee9" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="d7f23ced-4a8f-474d-9a7b-db5f2e330e0f" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

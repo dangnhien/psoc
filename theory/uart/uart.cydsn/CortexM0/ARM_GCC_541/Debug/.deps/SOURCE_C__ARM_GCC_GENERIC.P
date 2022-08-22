@@ -1,0 +1,62 @@
+D:/psoc/theory/uart/uart.cydsn/CortexM0/ARM_GCC_541/Debug/applicationUart.o : D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/CyFlash.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/CyLib.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cmsis_armcc.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cmsis_compiler.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cmsis_gcc.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/core_cm0.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cyPm.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cydisabledsheets.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cyfitter.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cypins.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cytypes.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/project.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart_BOOT.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart_PINS.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart_PVT.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart_SCBCLK.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart_SPI_UART.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart_SPI_UART_PVT.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart_rx.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart_rx_aliases.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart_tx.h D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart_tx_aliases.h D:/psoc/theory/uart/uart.cydsn/applicationUart.c D:/psoc/theory/uart/uart.cydsn/applicationUart.h 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/CyLFClk.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cmsis_armcc.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cmsis_compiler.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cmsis_gcc.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/core_cm0.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cydisabledsheets.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cypins.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/project.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart_BOOT.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart_PINS.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart_PVT.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart_SCBCLK.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart_SPI_UART.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart_SPI_UART_PVT.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart_rx.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart_rx_aliases.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart_tx.h : 
+
+D:/psoc/theory/uart/uart.cydsn/Generated_Source/PSoC4/uart_tx_aliases.h : 
+
+D:/psoc/theory/uart/uart.cydsn/applicationUart.c : 
+
+D:/psoc/theory/uart/uart.cydsn/applicationUart.h : 
+

@@ -1,0 +1,25 @@
+(DELAYFILE
+ (SDFVERSION "IEEE 1497 4.0")
+ (DATE "2022-08-22T04:27:07Z")
+ (DESIGN "input_pin")
+ (VENDOR "Cypress Semiconductor")
+ (PROGRAM "PSoC Creator")
+ (VERSION " 4.4")
+ (DIVIDER .)
+ (TIMESCALE 1 ns)
+ (CELL
+  (CELLTYPE "input_pin")
+  (INSTANCE *)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT ClockBlock.hfclk button1\(0\).in_clock (0.000:0.000:0.000))
+    (INTERCONNECT ledRed\(0\)_PAD ledRed\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT button1\(0\)_PAD button1\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT ledBlue\(0\)_PAD ledBlue\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT ledYellow\(0\)_PAD ledYellow\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT ledGreen\(0\)_PAD ledGreen\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT gnd\(0\)_PAD gnd\(0\).pad_in (0.000:0.000:0.000))
+   )
+  )
+ )
+)

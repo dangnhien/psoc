@@ -1,0 +1,6 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|ea20b246-4ca0-466f-ba65-f300e4db88ad
+C:\Users\NGUYEN-DUC-DAT\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|4e01246a-c185-4921-bb47-52814a10d35d
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|49a6bbb1-111d-4001-b741-6ef8faa0a8f9
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|4247db89-8e47-4f36-b547-747f371be562
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|777ba8e8-338d-498b-956d-5c82b0802bab
+D:\psoc\theory\interrupt\interrupt_hardware.cydsn\interrupt_hardware.cyprj|5556bdec-af5b-4561-9fa7-8246c5c37988

@@ -1,0 +1,25 @@
+(DELAYFILE
+ (SDFVERSION "IEEE 1497 4.0")
+ (DATE "2022-08-22T02:36:00Z")
+ (DESIGN "uart")
+ (VENDOR "Cypress Semiconductor")
+ (PROGRAM "PSoC Creator")
+ (VERSION " 4.4")
+ (DIVIDER .)
+ (TIMESCALE 1 ns)
+ (CELL
+  (CELLTYPE "uart")
+  (INSTANCE *)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT ClockBlock.ff_div_3 \\uart\:SCB\\.clock (0.000:0.000:0.000))
+    (INTERCONNECT \\uart\:rx\(0\)\\.fb \\uart\:SCB\\.uart_rx (0.000:0.000:0.000))
+    (INTERCONNECT \\uart\:tx\(0\)\\.pad_out \\uart\:tx\(0\)\\.pad_in (0.000:0.000:0.000))
+    (INTERCONNECT \\uart\:SCB\\.uart_tx \\uart\:tx\(0\)\\.pin_input (0.000:0.000:0.000))
+    (INTERCONNECT \\uart\:tx\(0\)\\.pad_out \\uart\:tx\(0\)_PAD\\ (0.000:0.000:0.000))
+    (INTERCONNECT \\uart\:tx\(0\)_PAD\\ \\uart\:tx\(0\)\\.pad_in (0.000:0.000:0.000))
+    (INTERCONNECT \\uart\:rx\(0\)_PAD\\ \\uart\:rx\(0\)\\.pad_in (0.000:0.000:0.000))
+   )
+  )
+ )
+)

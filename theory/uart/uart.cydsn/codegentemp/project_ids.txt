@@ -1,0 +1,6 @@
+D:\psoc\theory\uart\uart.cydsn\uart.cyprj|be6fe6d8-244c-4764-83b3-b32e78cea59c
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|65322b00-9d77-4286-8d54-17f1bae296f2
+C:\Users\NGUYEN-DUC-DAT\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|4ceedb27-8452-4ec0-a02c-8ba45eb86145
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|9e950c9b-c61c-42bd-8d18-ef0f4a630a84
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|d6773c46-bb90-475c-8f5d-6d92b07c5885
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|19ab4c1a-5d1e-48bc-9027-cf7f3c397a68

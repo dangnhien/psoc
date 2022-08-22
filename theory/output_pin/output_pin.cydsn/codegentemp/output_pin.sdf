@@ -1,0 +1,19 @@
+(DELAYFILE
+ (SDFVERSION "IEEE 1497 4.0")
+ (DATE "2022-08-22T02:58:11Z")
+ (DESIGN "output_pin")
+ (VENDOR "Cypress Semiconductor")
+ (PROGRAM "PSoC Creator")
+ (VERSION " 4.4")
+ (DIVIDER .)
+ (TIMESCALE 1 ns)
+ (CELL
+  (CELLTYPE "output_pin")
+  (INSTANCE *)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT ledRed\(0\)_PAD ledRed\(0\).pad_in (0.000:0.000:0.000))
+   )
+  )
+ )
+)
