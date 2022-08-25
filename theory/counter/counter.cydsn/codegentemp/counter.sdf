@@ -1,0 +1,24 @@
+(DELAYFILE
+ (SDFVERSION "IEEE 1497 4.0")
+ (DATE "2022-08-22T20:50:21Z")
+ (DESIGN "counter")
+ (VENDOR "Cypress Semiconductor")
+ (PROGRAM "PSoC Creator")
+ (VERSION " 4.4")
+ (DIVIDER .)
+ (TIMESCALE 1 ns)
+ (CELL
+  (CELLTYPE "counter")
+  (INSTANCE *)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT ClockBlock.hfclk timer_counter_Int.clock (0.000:0.000:0.000))
+    (INTERCONNECT ClockBlock.ff_div_8 \\timer_counter\:cy_m0s8_tcpwm_1\\.clock (0.000:0.000:0.000))
+    (INTERCONNECT button_single\(0\).fb \\timer_counter\:cy_m0s8_tcpwm_1\\.count (2.885:2.885:2.885))
+    (INTERCONNECT \\timer_counter\:cy_m0s8_tcpwm_1\\.interrupt timer_counter_Int.interrupt (1.000:1.000:1.000))
+    (INTERCONNECT ledRedd\(0\)_PAD ledRedd\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT button_single\(0\)_PAD button_single\(0\).pad_in (0.000:0.000:0.000))
+   )
+  )
+ )
+)

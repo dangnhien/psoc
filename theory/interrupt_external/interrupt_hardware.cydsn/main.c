@@ -31,4 +31,11 @@ int main(void)
     }
 }
 
+/*
+void pressHandler()
+{
+    NVIC_ClearPendingIRQ()
+}
+*/
+
 /* [] END OF FILE */

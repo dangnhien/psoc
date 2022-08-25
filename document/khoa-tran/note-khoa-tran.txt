@@ -1,0 +1,18 @@
+log and ciu
+
+mất kết nối thì connect lại kiểu gì
+
+phương thức bảo mật
+
+phương thức giao tiếp
+
+lớp thô
+
+chuyển thư viện hiện có sang chip khác
+
+
+
+
+
+
+

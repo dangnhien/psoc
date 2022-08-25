@@ -1,0 +1,4 @@
+1- Not printf value float to termial
+	https://www.youtube.com/watch?v=jXTAfFSo9v8
+	
+2-

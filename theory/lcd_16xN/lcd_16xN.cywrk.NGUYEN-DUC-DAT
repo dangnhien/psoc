@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="lcd_16xN\lcd_16xN\Header Files\main.h">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="lcd_16xN\lcd_16xN\lcd_16xN.cydwr">
 <ExpandedNodeIds>
 <v>lcd_16xN</v>
 <v>lcd_16xN\lcd_16xN</v>
@@ -35,7 +35,36 @@
 <v>lcd_16xN\lcd_16xN\Generated_Source\PSoC4</v>
 <v>lcd_16xN\lcd_16xN\Generated_Source\PSoC4\lcd</v>
 </ExpandedNodeIds>
-<VisibleNodeIds />
+<VisibleNodeIds>
+<v>lcd_16xN</v>
+<v>lcd_16xN\lcd_16xN</v>
+<v>lcd_16xN\lcd_16xN\TopDesign</v>
+<v>lcd_16xN\lcd_16xN\lcd_16xN.cydwr</v>
+<v>lcd_16xN\lcd_16xN\lcd_16xN.cydwr\Pins</v>
+<v>lcd_16xN\lcd_16xN\lcd_16xN.cydwr\Analog</v>
+<v>lcd_16xN\lcd_16xN\lcd_16xN.cydwr\Clocks</v>
+<v>lcd_16xN\lcd_16xN\lcd_16xN.cydwr\Interrupts</v>
+<v>lcd_16xN\lcd_16xN\lcd_16xN.cydwr\System</v>
+<v>lcd_16xN\lcd_16xN\lcd_16xN.cydwr\Directives</v>
+<v>lcd_16xN\lcd_16xN\lcd_16xN.cydwr\Flash Security</v>
+<v>lcd_16xN\lcd_16xN\Header Files</v>
+<v>lcd_16xN\lcd_16xN\Header Files\cyapicallbacks.h</v>
+<v>lcd_16xN\lcd_16xN\Header Files\main.h</v>
+<v>lcd_16xN\lcd_16xN\Source Files</v>
+<v>lcd_16xN\lcd_16xN\Source Files\main.c</v>
+<v>lcd_16xN\lcd_16xN\Generated_Source</v>
+<v>lcd_16xN\lcd_16xN\Generated_Source\PSoC4</v>
+<v>lcd_16xN\lcd_16xN\Generated_Source\PSoC4\cy_boot</v>
+<v>lcd_16xN\lcd_16xN\Generated_Source\PSoC4\cy_lfclk</v>
+<v>lcd_16xN\lcd_16xN\Generated_Source\PSoC4\Em_EEPROM_Dynamic</v>
+<v>lcd_16xN\lcd_16xN\Generated_Source\PSoC4\lcd</v>
+<v>lcd_16xN\lcd_16xN\Generated_Source\PSoC4\lcd\lcd.c</v>
+<v>lcd_16xN\lcd_16xN\Generated_Source\PSoC4\lcd\lcd.h</v>
+<v>lcd_16xN\lcd_16xN\Generated_Source\PSoC4\lcd\lcd_PM.c</v>
+<v>lcd_16xN\lcd_16xN\Generated_Source\PSoC4\lcd_LCDPort</v>
+<v>lcd_16xN\lcd_16xN\Generated_Source\PSoC4\cycodeshareexport.ld</v>
+<v>lcd_16xN\lcd_16xN\Generated_Source\PSoC4\cycodeshareimport.ld</v>
+</VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="lcd_16xN\lcd_16xN\TopDesign">
 <ExpandedNodeIds>
@@ -43,7 +72,11 @@
 <v>lcd_16xN\lcd_16xN</v>
 <v>lcd_16xN\lcd_16xN\TopDesign\TopDesign.cysch</v>
 </ExpandedNodeIds>
-<VisibleNodeIds />
+<VisibleNodeIds>
+<v>lcd_16xN</v>
+<v>lcd_16xN\lcd_16xN</v>
+<v>lcd_16xN\lcd_16xN\TopDesign</v>
+</VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
@@ -75,7 +108,35 @@
 <v>lcd_16xN\lcd_16xN\lcd_16xN.rpt</v>
 <v>lcd_16xN\lcd_16xN\lcd_16xN_timing.html</v>
 </ExpandedNodeIds>
-<VisibleNodeIds />
+<VisibleNodeIds>
+<v>lcd_16xN</v>
+<v>lcd_16xN\lcd_16xN</v>
+<v>lcd_16xN\lcd_16xN\CortexM0</v>
+<v>lcd_16xN\lcd_16xN\CortexM0\ARM_GCC_541</v>
+<v>lcd_16xN\lcd_16xN\CortexM0\ARM_GCC_541\Debug</v>
+<v>lcd_16xN\lcd_16xN\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>lcd_16xN\lcd_16xN\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>lcd_16xN\lcd_16xN\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>lcd_16xN\lcd_16xN\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>lcd_16xN\lcd_16xN\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>lcd_16xN\lcd_16xN\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>lcd_16xN\lcd_16xN\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>lcd_16xN\lcd_16xN\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>lcd_16xN\lcd_16xN\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>lcd_16xN\lcd_16xN\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>lcd_16xN\lcd_16xN\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>lcd_16xN\lcd_16xN\CortexM0\ARM_GCC_541\Debug\Listing Files\lcd.lst</v>
+<v>lcd_16xN\lcd_16xN\CortexM0\ARM_GCC_541\Debug\Listing Files\lcd_LCDPort.lst</v>
+<v>lcd_16xN\lcd_16xN\CortexM0\ARM_GCC_541\Debug\Listing Files\lcd_LCDPort_PM.lst</v>
+<v>lcd_16xN\lcd_16xN\CortexM0\ARM_GCC_541\Debug\Listing Files\lcd_PM.lst</v>
+<v>lcd_16xN\lcd_16xN\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>lcd_16xN\lcd_16xN\CortexM0\ARM_GCC_541\Debug\lcd_16xN.elf</v>
+<v>lcd_16xN\lcd_16xN\CortexM0\ARM_GCC_541\Debug\lcd_16xN.hex</v>
+<v>lcd_16xN\lcd_16xN\CortexM0\ARM_GCC_541\Debug\lcd_16xN.map</v>
+<v>lcd_16xN\lcd_16xN\lcd_16xN.gpdsc</v>
+<v>lcd_16xN\lcd_16xN\lcd_16xN.rpt</v>
+<v>lcd_16xN\lcd_16xN\lcd_16xN_timing.html</v>
+</VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
 <TreeKeysV2>
@@ -93,7 +154,16 @@
 <v>lcd_16xN\lcd_16xN\System Reference Guides\cy_lfclk_v1_20</v>
 <v>lcd_16xN\lcd_16xN\CharLCD_v2_20.pdf</v>
 </ExpandedNodeIds>
-<VisibleNodeIds />
+<VisibleNodeIds>
+<v>lcd_16xN</v>
+<v>lcd_16xN\lcd_16xN</v>
+<v>lcd_16xN\lcd_16xN\PSoC 4 Architecture TRM</v>
+<v>lcd_16xN\lcd_16xN\PSoC 4100 Family Datasheet</v>
+<v>lcd_16xN\lcd_16xN\System Reference Guides</v>
+<v>lcd_16xN\lcd_16xN\System Reference Guides\cy_boot_v6_0</v>
+<v>lcd_16xN\lcd_16xN\System Reference Guides\cy_lfclk_v1_20</v>
+<v>lcd_16xN\lcd_16xN\CharLCD_v2_20.pdf</v>
+</VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
 </CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
@@ -104,6 +174,7 @@
 <OpenDocs>
 <name v=".\lcd_16xN.cydsn\main.c" />
 <name v=".\lcd_16xN.cydsn\main.h" />
+<name v=".\lcd_16xN.cydsn\lcd_16xN.cydwr" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -111,7 +182,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="766, 532" SelectedTabbedMdiWindow="1578844b-9692-4527-b661-ba05e912292b"><DocumentWindow Key="D:\psoc\theory\lcd_16xN\lcd_16xN.cydsn\main.c" Guid="ceb09f95-3247-49c8-ae25-23609dc4cd84" /><DocumentWindow Key="D:\psoc\theory\lcd_16xN\lcd_16xN.cydsn\main.h" Guid="1578844b-9692-4527-b661-ba05e912292b" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="990, 381" SelectedTabbedMdiWindow="ceb09f95-3247-49c8-ae25-23609dc4cd84"><DocumentWindow Key="D:\psoc\theory\lcd_16xN\lcd_16xN.cydsn\main.c" Guid="ceb09f95-3247-49c8-ae25-23609dc4cd84" /><DocumentWindow Key="D:\psoc\theory\lcd_16xN\lcd_16xN.cydsn\main.h" Guid="1578844b-9692-4527-b661-ba05e912292b" /><DocumentWindow Key="D:\psoc\theory\lcd_16xN\lcd_16xN.cydsn\lcd_16xN.cydwr" Guid="d380cdf7-8f67-4ff3-a83d-b8d525c99541" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="d7f23ced-4a8f-474d-9a7b-db5f2e330e0f" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

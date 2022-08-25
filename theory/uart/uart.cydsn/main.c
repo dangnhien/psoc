@@ -22,7 +22,8 @@ int main(void)
     for(;;)
     {
         /* Place your application code here. */
-        printNumberIncrement();
+        receive_After_Transmit_Char_Type(); 
+        //  receive_After_Transmit_String();
         CyDelay(1000);
     }
 }
@@ -31,5 +32,12 @@ void configSystem()
 {
        uart_Start();
 }
+
+void uartHandle()
+{
+    printNumberIncrement();
+    CyDelay(1000);
+}
+
 
 /* [] END OF FILE */

@@ -31,7 +31,7 @@ void configSystem()
     
    lcd_Position(0u,0u);
    lcd_PrintString("hello wourld");
-   CyDelay(3000);
+   CyDelay(1000);
    lcd_ClearDisplay();
 }
 

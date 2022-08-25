@@ -11,7 +11,6 @@
 */
 #include "applicationUart.h"
 
-
 void printNumber(int number)
 {
     char strings[30];
@@ -35,6 +34,53 @@ void printNumberIncrement()
     uart_UartPutString(strings); 
 }
 
+void receive_After_Transmit_Char_Type()
+{   
+    static int i=0;
+    char txData[] = "\nPlear enter a character: ";
+    
+    if( i==0 ) 
+        uart_UartPutString( txData );
+    
+    uint32 rxData;     
+       
+    rxData = uart_UartGetChar();    // store received characters in temporary variable     
+   
+   if( rxData )  // make sure data is non-zero
+    {        
+        uart_UartPutString("\nResult: ");
+        uart_UartPutChar( rxData ); // echo characters in terminal window 
+        i=0;
+        return;
+    }
+    
+    i=1;    
+        
+    // Handle received characters
+}
 
+
+/*
+void receive_After_Transmit_String()
+{
+    static int i=0; 
+    int j;    
+    char txData[] = "\nPlear enter a string: ";
+    char txDataString[20];
+    uint32 txDataReceive;
+    
+    if(i==0)
+        uart_UartPutString( txData );
+        
+    txDataReceive = uart_UartGetChar();  
+    
+    if(txDataReceive)
+    {
+        sprintf(txDataString, "%lu", txDataReceive);        
+        uart_UartPutString( uart_UartGetChar()  );   
+    }
+    
+}
+*/
 
 /* [] END OF FILE */

@@ -18,7 +18,11 @@
         #include "project.h"
         
         void printNumber(int number);
+        
         void printNumberIncrement();
+        
+        void receive_After_Transmit_Char_Type();   
+        void receive_After_Transmit_String();
     
     #endif
 

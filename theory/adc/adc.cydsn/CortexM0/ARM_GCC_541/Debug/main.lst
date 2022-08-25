@@ -1,0 +1,1179 @@
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccHyPhlR.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.Init_System,"ax",%progbits
+  20              		.align	2
+  21              		.global	Init_System
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	Init_System, %function
+  25              	Init_System:
+  26              	.LFB34:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "main.h"
+  13:main.c        **** 
+  14:main.c        **** int main(void)
+  15:main.c        **** {
+  16:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  17:main.c        **** 
+  18:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  19:main.c        ****     
+  20:main.c        ****     Init_System();  
+  21:main.c        ****     
+  22:main.c        ****     float result_Read_Adc;
+  23:main.c        ****    
+  24:main.c        **** 
+  25:main.c        ****     for(;;)
+  26:main.c        ****     {
+  27:main.c        ****         /* Place your application code here. */
+  28:main.c        ****         
+  29:main.c        ****         result_Read_Adc = readADC();
+  30:main.c        ****         
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccHyPhlR.s 			page 2
+
+
+  31:main.c        ****         transmitToPC( result_Read_Adc );
+  32:main.c        ****         
+  33:main.c        ****         CyDelay( 1000 );
+  34:main.c        ****     }
+  35:main.c        **** }
+  36:main.c        **** 
+  37:main.c        **** void Init_System()
+  38:main.c        **** {
+  28              		.loc 1 38 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  39:main.c        ****     uartUser_Start();
+  36              		.loc 1 39 0
+  37 0002 FFF7FEFF 		bl	uartUser_Start
+  38              	.LVL0:
+  40:main.c        ****     
+  41:main.c        ****     adcUser_Start();    /* Initialize ADC */  
+  39              		.loc 1 41 0
+  40 0006 FFF7FEFF 		bl	adcUser_Start
+  41              	.LVL1:
+  42:main.c        **** }
+  42              		.loc 1 42 0
+  43              		@ sp needed
+  44 000a 10BD     		pop	{r4, pc}
+  45              		.cfi_endproc
+  46              	.LFE34:
+  47              		.size	Init_System, .-Init_System
+  48              		.global	__aeabi_i2f
+  49              		.section	.text.readADC,"ax",%progbits
+  50              		.align	2
+  51              		.global	readADC
+  52              		.code	16
+  53              		.thumb_func
+  54              		.type	readADC, %function
+  55              	readADC:
+  56              	.LFB35:
+  43:main.c        **** 
+  44:main.c        **** float readADC()
+  45:main.c        **** {
+  57              		.loc 1 45 0
+  58              		.cfi_startproc
+  59              		@ args = 0, pretend = 0, frame = 0
+  60              		@ frame_needed = 0, uses_anonymous_args = 0
+  61 0000 10B5     		push	{r4, lr}
+  62              		.cfi_def_cfa_offset 8
+  63              		.cfi_offset 4, -8
+  64              		.cfi_offset 14, -4
+  65              	.LVL2:
+  46:main.c        ****     float value_Adc_Volt=0;
+  47:main.c        ****     
+  48:main.c        ****     adcUser_StartConvert();    /* Start ADC conversions */
+  66              		.loc 1 48 0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccHyPhlR.s 			page 3
+
+
+  67 0002 FFF7FEFF 		bl	adcUser_StartConvert
+  68              	.LVL3:
+  49:main.c        ****     
+  50:main.c        ****     adcUser_IsEndConversion(  adcUser_WAIT_FOR_RESULT );
+  69              		.loc 1 50 0
+  70 0006 0220     		movs	r0, #2
+  71 0008 FFF7FEFF 		bl	adcUser_IsEndConversion
+  72              	.LVL4:
+  51:main.c        ****     
+  52:main.c        ****     value_Adc_Volt = adcUser_GetResult16(0);
+  73              		.loc 1 52 0
+  74 000c 0020     		movs	r0, #0
+  75 000e FFF7FEFF 		bl	adcUser_GetResult16
+  76              	.LVL5:
+  77 0012 0100     		movs	r1, r0
+  78              	.LVL6:
+  53:main.c        ****     
+  54:main.c        ****     float value_Adc_mVolt = adcUser_CountsTo_mVolts(0, value_Adc_Volt);
+  79              		.loc 1 54 0
+  80 0014 0020     		movs	r0, #0
+  81 0016 FFF7FEFF 		bl	adcUser_CountsTo_mVolts
+  82              	.LVL7:
+  83 001a FFF7FEFF 		bl	__aeabi_i2f
+  84              	.LVL8:
+  55:main.c        ****     //  float32 value_Adc_mVolt = (value_Adc_Volt*5)/4095;
+  56:main.c        ****     
+  57:main.c        ****     //return value_Adc_Volt;
+  58:main.c        ****     return value_Adc_mVolt;
+  59:main.c        **** }
+  85              		.loc 1 59 0
+  86              		@ sp needed
+  87 001e 10BD     		pop	{r4, pc}
+  88              		.cfi_endproc
+  89              	.LFE35:
+  90              		.size	readADC, .-readADC
+  91              		.global	__aeabi_f2d
+  92              		.section	.text.transmitToPC,"ax",%progbits
+  93              		.align	2
+  94              		.global	transmitToPC
+  95              		.code	16
+  96              		.thumb_func
+  97              		.type	transmitToPC, %function
+  98              	transmitToPC:
+  99              	.LFB36:
+  60:main.c        **** 
+  61:main.c        **** void transmitToPC(float adcData)
+  62:main.c        **** {
+ 100              		.loc 1 62 0
+ 101              		.cfi_startproc
+ 102              		@ args = 0, pretend = 0, frame = 16
+ 103              		@ frame_needed = 0, uses_anonymous_args = 0
+ 104              	.LVL9:
+ 105 0000 00B5     		push	{lr}
+ 106              		.cfi_def_cfa_offset 4
+ 107              		.cfi_offset 14, -4
+ 108 0002 85B0     		sub	sp, sp, #20
+ 109              		.cfi_def_cfa_offset 24
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccHyPhlR.s 			page 4
+
+
+  63:main.c        ****     char res[10];
+  64:main.c        ****     
+  65:main.c        ****     sprintf(res,"%0.3f", adcData); 
+ 110              		.loc 1 65 0
+ 111 0004 FFF7FEFF 		bl	__aeabi_f2d
+ 112              	.LVL10:
+ 113 0008 0200     		movs	r2, r0
+ 114 000a 0B00     		movs	r3, r1
+ 115 000c 0549     		ldr	r1, .L4
+ 116 000e 01A8     		add	r0, sp, #4
+ 117 0010 FFF7FEFF 		bl	sprintf
+ 118              	.LVL11:
+  66:main.c        ****     
+  67:main.c        ****     uartUser_UartPutString(res);
+ 119              		.loc 1 67 0
+ 120 0014 01A8     		add	r0, sp, #4
+ 121 0016 FFF7FEFF 		bl	uartUser_UartPutString
+ 122              	.LVL12:
+  68:main.c        ****     
+  69:main.c        ****     uartUser_UartPutCRLF(0x20); /* Printf down line between string ( ~'\n')*/
+ 123              		.loc 1 69 0
+ 124 001a 2020     		movs	r0, #32
+ 125 001c FFF7FEFF 		bl	uartUser_UartPutCRLF
+ 126              	.LVL13:
+  70:main.c        **** }
+ 127              		.loc 1 70 0
+ 128 0020 05B0     		add	sp, sp, #20
+ 129              		@ sp needed
+ 130 0022 00BD     		pop	{pc}
+ 131              	.L5:
+ 132              		.align	2
+ 133              	.L4:
+ 134 0024 00000000 		.word	.LC0
+ 135              		.cfi_endproc
+ 136              	.LFE36:
+ 137              		.size	transmitToPC, .-transmitToPC
+ 138              		.section	.text.main,"ax",%progbits
+ 139              		.align	2
+ 140              		.global	main
+ 141              		.code	16
+ 142              		.thumb_func
+ 143              		.type	main, %function
+ 144              	main:
+ 145              	.LFB33:
+  15:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+ 146              		.loc 1 15 0
+ 147              		.cfi_startproc
+ 148              		@ args = 0, pretend = 0, frame = 0
+ 149              		@ frame_needed = 0, uses_anonymous_args = 0
+ 150 0000 10B5     		push	{r4, lr}
+ 151              		.cfi_def_cfa_offset 8
+ 152              		.cfi_offset 4, -8
+ 153              		.cfi_offset 14, -4
+  16:main.c        **** 
+ 154              		.loc 1 16 0
+ 155              		.syntax divided
+ 156              	@ 16 "main.c" 1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccHyPhlR.s 			page 5
+
+
+ 157 0002 62B6     		CPSIE   i
+ 158              	@ 0 "" 2
+  20:main.c        ****     
+ 159              		.loc 1 20 0
+ 160              		.thumb
+ 161              		.syntax unified
+ 162 0004 FFF7FEFF 		bl	Init_System
+ 163              	.LVL14:
+ 164              	.L7:
+  29:main.c        ****         
+ 165              		.loc 1 29 0 discriminator 1
+ 166 0008 FFF7FEFF 		bl	readADC
+ 167              	.LVL15:
+  31:main.c        ****         
+ 168              		.loc 1 31 0 discriminator 1
+ 169 000c FFF7FEFF 		bl	transmitToPC
+ 170              	.LVL16:
+  33:main.c        ****     }
+ 171              		.loc 1 33 0 discriminator 1
+ 172 0010 FA20     		movs	r0, #250
+ 173 0012 8000     		lsls	r0, r0, #2
+ 174 0014 FFF7FEFF 		bl	CyDelay
+ 175              	.LVL17:
+ 176 0018 F6E7     		b	.L7
+ 177              		.cfi_endproc
+ 178              	.LFE33:
+ 179              		.size	main, .-main
+ 180 001a C046     		.section	.rodata.str1.4,"aMS",%progbits,1
+ 181              		.align	2
+ 182              	.LC0:
+ 183 0000 25302E33 		.ascii	"%0.3f\000"
+ 183      6600
+ 184              		.text
+ 185              	.Letext0:
+ 186              		.file 2 "Generated_Source\\PSoC4/uartUser.h"
+ 187              		.file 3 "Generated_Source\\PSoC4/adcUser.h"
+ 188              		.file 4 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 189              		.file 5 "Generated_Source\\PSoC4/uartUser_SPI_UART.h"
+ 190              		.file 6 "Generated_Source\\PSoC4/CyLib.h"
+ 191              		.section	.debug_info,"",%progbits
+ 192              	.Ldebug_info0:
+ 193 0000 70020000 		.4byte	0x270
+ 194 0004 0400     		.2byte	0x4
+ 195 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 196 000a 04       		.byte	0x4
+ 197 000b 01       		.uleb128 0x1
+ 198 000c 64010000 		.4byte	.LASF29
+ 199 0010 0C       		.byte	0xc
+ 200 0011 1E020000 		.4byte	.LASF30
+ 201 0015 63000000 		.4byte	.LASF31
+ 202 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 203 001d 00000000 		.4byte	0
+ 204 0021 00000000 		.4byte	.Ldebug_line0
+ 205 0025 02       		.uleb128 0x2
+ 206 0026 04       		.byte	0x4
+ 207 0027 04       		.byte	0x4
+ 208 0028 49000000 		.4byte	.LASF0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccHyPhlR.s 			page 6
+
+
+ 209 002c 02       		.uleb128 0x2
+ 210 002d 02       		.byte	0x2
+ 211 002e 05       		.byte	0x5
+ 212 002f 2A020000 		.4byte	.LASF1
+ 213 0033 02       		.uleb128 0x2
+ 214 0034 01       		.byte	0x1
+ 215 0035 06       		.byte	0x6
+ 216 0036 55020000 		.4byte	.LASF2
+ 217 003a 02       		.uleb128 0x2
+ 218 003b 01       		.byte	0x1
+ 219 003c 08       		.byte	0x8
+ 220 003d B2000000 		.4byte	.LASF3
+ 221 0041 02       		.uleb128 0x2
+ 222 0042 02       		.byte	0x2
+ 223 0043 07       		.byte	0x7
+ 224 0044 9F000000 		.4byte	.LASF4
+ 225 0048 02       		.uleb128 0x2
+ 226 0049 04       		.byte	0x4
+ 227 004a 05       		.byte	0x5
+ 228 004b 40020000 		.4byte	.LASF5
+ 229 004f 02       		.uleb128 0x2
+ 230 0050 04       		.byte	0x4
+ 231 0051 07       		.byte	0x7
+ 232 0052 8D000000 		.4byte	.LASF6
+ 233 0056 02       		.uleb128 0x2
+ 234 0057 08       		.byte	0x8
+ 235 0058 05       		.byte	0x5
+ 236 0059 10020000 		.4byte	.LASF7
+ 237 005d 02       		.uleb128 0x2
+ 238 005e 08       		.byte	0x8
+ 239 005f 07       		.byte	0x7
+ 240 0060 35010000 		.4byte	.LASF8
+ 241 0064 03       		.uleb128 0x3
+ 242 0065 04       		.byte	0x4
+ 243 0066 05       		.byte	0x5
+ 244 0067 696E7400 		.ascii	"int\000"
+ 245 006b 02       		.uleb128 0x2
+ 246 006c 04       		.byte	0x4
+ 247 006d 07       		.byte	0x7
+ 248 006e 2D000000 		.4byte	.LASF9
+ 249 0072 02       		.uleb128 0x2
+ 250 0073 08       		.byte	0x8
+ 251 0074 04       		.byte	0x4
+ 252 0075 CE000000 		.4byte	.LASF10
+ 253 0079 02       		.uleb128 0x2
+ 254 007a 01       		.byte	0x1
+ 255 007b 08       		.byte	0x8
+ 256 007c 25020000 		.4byte	.LASF11
+ 257 0080 02       		.uleb128 0x2
+ 258 0081 08       		.byte	0x8
+ 259 0082 04       		.byte	0x4
+ 260 0083 49020000 		.4byte	.LASF12
+ 261 0087 02       		.uleb128 0x2
+ 262 0088 04       		.byte	0x4
+ 263 0089 07       		.byte	0x7
+ 264 008a F2010000 		.4byte	.LASF13
+ 265 008e 04       		.uleb128 0x4
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccHyPhlR.s 			page 7
+
+
+ 266 008f 34020000 		.4byte	.LASF32
+ 267 0093 01       		.byte	0x1
+ 268 0094 25       		.byte	0x25
+ 269 0095 00000000 		.4byte	.LFB34
+ 270 0099 0C000000 		.4byte	.LFE34-.LFB34
+ 271 009d 01       		.uleb128 0x1
+ 272 009e 9C       		.byte	0x9c
+ 273 009f B6000000 		.4byte	0xb6
+ 274 00a3 05       		.uleb128 0x5
+ 275 00a4 06000000 		.4byte	.LVL0
+ 276 00a8 03020000 		.4byte	0x203
+ 277 00ac 05       		.uleb128 0x5
+ 278 00ad 0A000000 		.4byte	.LVL1
+ 279 00b1 0E020000 		.4byte	0x20e
+ 280 00b5 00       		.byte	0
+ 281 00b6 06       		.uleb128 0x6
+ 282 00b7 61020000 		.4byte	.LASF16
+ 283 00bb 01       		.byte	0x1
+ 284 00bc 2C       		.byte	0x2c
+ 285 00bd 25000000 		.4byte	0x25
+ 286 00c1 00000000 		.4byte	.LFB35
+ 287 00c5 20000000 		.4byte	.LFE35-.LFB35
+ 288 00c9 01       		.uleb128 0x1
+ 289 00ca 9C       		.byte	0x9c
+ 290 00cb 2A010000 		.4byte	0x12a
+ 291 00cf 07       		.uleb128 0x7
+ 292 00d0 3A000000 		.4byte	.LASF14
+ 293 00d4 01       		.byte	0x1
+ 294 00d5 2E       		.byte	0x2e
+ 295 00d6 25000000 		.4byte	0x25
+ 296 00da 00000000 		.4byte	.LLST0
+ 297 00de 08       		.uleb128 0x8
+ 298 00df 0D000000 		.4byte	.LASF15
+ 299 00e3 01       		.byte	0x1
+ 300 00e4 36       		.byte	0x36
+ 301 00e5 25000000 		.4byte	0x25
+ 302 00e9 01       		.uleb128 0x1
+ 303 00ea 50       		.byte	0x50
+ 304 00eb 05       		.uleb128 0x5
+ 305 00ec 06000000 		.4byte	.LVL3
+ 306 00f0 19020000 		.4byte	0x219
+ 307 00f4 09       		.uleb128 0x9
+ 308 00f5 0C000000 		.4byte	.LVL4
+ 309 00f9 24020000 		.4byte	0x224
+ 310 00fd 07010000 		.4byte	0x107
+ 311 0101 0A       		.uleb128 0xa
+ 312 0102 01       		.uleb128 0x1
+ 313 0103 50       		.byte	0x50
+ 314 0104 01       		.uleb128 0x1
+ 315 0105 32       		.byte	0x32
+ 316 0106 00       		.byte	0
+ 317 0107 09       		.uleb128 0x9
+ 318 0108 12000000 		.4byte	.LVL5
+ 319 010c 2F020000 		.4byte	0x22f
+ 320 0110 1A010000 		.4byte	0x11a
+ 321 0114 0A       		.uleb128 0xa
+ 322 0115 01       		.uleb128 0x1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccHyPhlR.s 			page 8
+
+
+ 323 0116 50       		.byte	0x50
+ 324 0117 01       		.uleb128 0x1
+ 325 0118 30       		.byte	0x30
+ 326 0119 00       		.byte	0
+ 327 011a 0B       		.uleb128 0xb
+ 328 011b 1A000000 		.4byte	.LVL7
+ 329 011f 3A020000 		.4byte	0x23a
+ 330 0123 0A       		.uleb128 0xa
+ 331 0124 01       		.uleb128 0x1
+ 332 0125 50       		.byte	0x50
+ 333 0126 01       		.uleb128 0x1
+ 334 0127 30       		.byte	0x30
+ 335 0128 00       		.byte	0
+ 336 0129 00       		.byte	0
+ 337 012a 0C       		.uleb128 0xc
+ 338 012b 00000000 		.4byte	.LASF17
+ 339 012f 01       		.byte	0x1
+ 340 0130 3D       		.byte	0x3d
+ 341 0131 00000000 		.4byte	.LFB36
+ 342 0135 28000000 		.4byte	.LFE36-.LFB36
+ 343 0139 01       		.uleb128 0x1
+ 344 013a 9C       		.byte	0x9c
+ 345 013b 9E010000 		.4byte	0x19e
+ 346 013f 0D       		.uleb128 0xd
+ 347 0140 18010000 		.4byte	.LASF33
+ 348 0144 01       		.byte	0x1
+ 349 0145 3D       		.byte	0x3d
+ 350 0146 25000000 		.4byte	0x25
+ 351 014a 29000000 		.4byte	.LLST1
+ 352 014e 0E       		.uleb128 0xe
+ 353 014f 72657300 		.ascii	"res\000"
+ 354 0153 01       		.byte	0x1
+ 355 0154 3F       		.byte	0x3f
+ 356 0155 9E010000 		.4byte	0x19e
+ 357 0159 02       		.uleb128 0x2
+ 358 015a 91       		.byte	0x91
+ 359 015b 6C       		.sleb128 -20
+ 360 015c 09       		.uleb128 0x9
+ 361 015d 14000000 		.4byte	.LVL11
+ 362 0161 45020000 		.4byte	0x245
+ 363 0165 79010000 		.4byte	0x179
+ 364 0169 0A       		.uleb128 0xa
+ 365 016a 01       		.uleb128 0x1
+ 366 016b 50       		.byte	0x50
+ 367 016c 02       		.uleb128 0x2
+ 368 016d 91       		.byte	0x91
+ 369 016e 6C       		.sleb128 -20
+ 370 016f 0A       		.uleb128 0xa
+ 371 0170 01       		.uleb128 0x1
+ 372 0171 51       		.byte	0x51
+ 373 0172 05       		.uleb128 0x5
+ 374 0173 03       		.byte	0x3
+ 375 0174 00000000 		.4byte	.LC0
+ 376 0178 00       		.byte	0
+ 377 0179 09       		.uleb128 0x9
+ 378 017a 1A000000 		.4byte	.LVL12
+ 379 017e 50020000 		.4byte	0x250
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccHyPhlR.s 			page 9
+
+
+ 380 0182 8D010000 		.4byte	0x18d
+ 381 0186 0A       		.uleb128 0xa
+ 382 0187 01       		.uleb128 0x1
+ 383 0188 50       		.byte	0x50
+ 384 0189 02       		.uleb128 0x2
+ 385 018a 91       		.byte	0x91
+ 386 018b 6C       		.sleb128 -20
+ 387 018c 00       		.byte	0
+ 388 018d 0B       		.uleb128 0xb
+ 389 018e 20000000 		.4byte	.LVL13
+ 390 0192 5C020000 		.4byte	0x25c
+ 391 0196 0A       		.uleb128 0xa
+ 392 0197 01       		.uleb128 0x1
+ 393 0198 50       		.byte	0x50
+ 394 0199 02       		.uleb128 0x2
+ 395 019a 08       		.byte	0x8
+ 396 019b 20       		.byte	0x20
+ 397 019c 00       		.byte	0
+ 398 019d 00       		.byte	0
+ 399 019e 0F       		.uleb128 0xf
+ 400 019f 79000000 		.4byte	0x79
+ 401 01a3 AE010000 		.4byte	0x1ae
+ 402 01a7 10       		.uleb128 0x10
+ 403 01a8 87000000 		.4byte	0x87
+ 404 01ac 09       		.byte	0x9
+ 405 01ad 00       		.byte	0
+ 406 01ae 11       		.uleb128 0x11
+ 407 01af D5000000 		.4byte	.LASF34
+ 408 01b3 01       		.byte	0x1
+ 409 01b4 0E       		.byte	0xe
+ 410 01b5 64000000 		.4byte	0x64
+ 411 01b9 00000000 		.4byte	.LFB33
+ 412 01bd 1A000000 		.4byte	.LFE33-.LFB33
+ 413 01c1 01       		.uleb128 0x1
+ 414 01c2 9C       		.byte	0x9c
+ 415 01c3 03020000 		.4byte	0x203
+ 416 01c7 07       		.uleb128 0x7
+ 417 01c8 1D000000 		.4byte	.LASF18
+ 418 01cc 01       		.byte	0x1
+ 419 01cd 16       		.byte	0x16
+ 420 01ce 25000000 		.4byte	0x25
+ 421 01d2 4C000000 		.4byte	.LLST2
+ 422 01d6 05       		.uleb128 0x5
+ 423 01d7 08000000 		.4byte	.LVL14
+ 424 01db 8E000000 		.4byte	0x8e
+ 425 01df 05       		.uleb128 0x5
+ 426 01e0 0C000000 		.4byte	.LVL15
+ 427 01e4 B6000000 		.4byte	0xb6
+ 428 01e8 05       		.uleb128 0x5
+ 429 01e9 10000000 		.4byte	.LVL16
+ 430 01ed 2A010000 		.4byte	0x12a
+ 431 01f1 0B       		.uleb128 0xb
+ 432 01f2 18000000 		.4byte	.LVL17
+ 433 01f6 68020000 		.4byte	0x268
+ 434 01fa 0A       		.uleb128 0xa
+ 435 01fb 01       		.uleb128 0x1
+ 436 01fc 50       		.byte	0x50
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccHyPhlR.s 			page 10
+
+
+ 437 01fd 03       		.uleb128 0x3
+ 438 01fe 0A       		.byte	0xa
+ 439 01ff E803     		.2byte	0x3e8
+ 440 0201 00       		.byte	0
+ 441 0202 00       		.byte	0
+ 442 0203 12       		.uleb128 0x12
+ 443 0204 09010000 		.4byte	.LASF19
+ 444 0208 09010000 		.4byte	.LASF19
+ 445 020c 02       		.byte	0x2
+ 446 020d 72       		.byte	0x72
+ 447 020e 12       		.uleb128 0x12
+ 448 020f C0000000 		.4byte	.LASF20
+ 449 0213 C0000000 		.4byte	.LASF20
+ 450 0217 03       		.byte	0x3
+ 451 0218 99       		.byte	0x99
+ 452 0219 12       		.uleb128 0x12
+ 453 021a 20010000 		.4byte	.LASF21
+ 454 021e 20010000 		.4byte	.LASF21
+ 455 0222 03       		.byte	0x3
+ 456 0223 9D       		.byte	0x9d
+ 457 0224 12       		.uleb128 0x12
+ 458 0225 4C010000 		.4byte	.LASF22
+ 459 0229 4C010000 		.4byte	.LASF22
+ 460 022d 03       		.byte	0x3
+ 461 022e 9F       		.byte	0x9f
+ 462 022f 12       		.uleb128 0x12
+ 463 0230 4F000000 		.4byte	.LASF23
+ 464 0234 4F000000 		.4byte	.LASF23
+ 465 0238 03       		.byte	0x3
+ 466 0239 A0       		.byte	0xa0
+ 467 023a 12       		.uleb128 0x12
+ 468 023b F1000000 		.4byte	.LASF24
+ 469 023f F1000000 		.4byte	.LASF24
+ 470 0243 03       		.byte	0x3
+ 471 0244 AC       		.byte	0xac
+ 472 0245 12       		.uleb128 0x12
+ 473 0246 69020000 		.4byte	.LASF25
+ 474 024a 69020000 		.4byte	.LASF25
+ 475 024e 04       		.byte	0x4
+ 476 024f E7       		.byte	0xe7
+ 477 0250 13       		.uleb128 0x13
+ 478 0251 DA000000 		.4byte	.LASF26
+ 479 0255 DA000000 		.4byte	.LASF26
+ 480 0259 05       		.byte	0x5
+ 481 025a 2A03     		.2byte	0x32a
+ 482 025c 13       		.uleb128 0x13
+ 483 025d FB010000 		.4byte	.LASF27
+ 484 0261 FB010000 		.4byte	.LASF27
+ 485 0265 05       		.byte	0x5
+ 486 0266 2B03     		.2byte	0x32b
+ 487 0268 12       		.uleb128 0x12
+ 488 0269 71020000 		.4byte	.LASF28
+ 489 026d 71020000 		.4byte	.LASF28
+ 490 0271 06       		.byte	0x6
+ 491 0272 EC       		.byte	0xec
+ 492 0273 00       		.byte	0
+ 493              		.section	.debug_abbrev,"",%progbits
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccHyPhlR.s 			page 11
+
+
+ 494              	.Ldebug_abbrev0:
+ 495 0000 01       		.uleb128 0x1
+ 496 0001 11       		.uleb128 0x11
+ 497 0002 01       		.byte	0x1
+ 498 0003 25       		.uleb128 0x25
+ 499 0004 0E       		.uleb128 0xe
+ 500 0005 13       		.uleb128 0x13
+ 501 0006 0B       		.uleb128 0xb
+ 502 0007 03       		.uleb128 0x3
+ 503 0008 0E       		.uleb128 0xe
+ 504 0009 1B       		.uleb128 0x1b
+ 505 000a 0E       		.uleb128 0xe
+ 506 000b 55       		.uleb128 0x55
+ 507 000c 17       		.uleb128 0x17
+ 508 000d 11       		.uleb128 0x11
+ 509 000e 01       		.uleb128 0x1
+ 510 000f 10       		.uleb128 0x10
+ 511 0010 17       		.uleb128 0x17
+ 512 0011 00       		.byte	0
+ 513 0012 00       		.byte	0
+ 514 0013 02       		.uleb128 0x2
+ 515 0014 24       		.uleb128 0x24
+ 516 0015 00       		.byte	0
+ 517 0016 0B       		.uleb128 0xb
+ 518 0017 0B       		.uleb128 0xb
+ 519 0018 3E       		.uleb128 0x3e
+ 520 0019 0B       		.uleb128 0xb
+ 521 001a 03       		.uleb128 0x3
+ 522 001b 0E       		.uleb128 0xe
+ 523 001c 00       		.byte	0
+ 524 001d 00       		.byte	0
+ 525 001e 03       		.uleb128 0x3
+ 526 001f 24       		.uleb128 0x24
+ 527 0020 00       		.byte	0
+ 528 0021 0B       		.uleb128 0xb
+ 529 0022 0B       		.uleb128 0xb
+ 530 0023 3E       		.uleb128 0x3e
+ 531 0024 0B       		.uleb128 0xb
+ 532 0025 03       		.uleb128 0x3
+ 533 0026 08       		.uleb128 0x8
+ 534 0027 00       		.byte	0
+ 535 0028 00       		.byte	0
+ 536 0029 04       		.uleb128 0x4
+ 537 002a 2E       		.uleb128 0x2e
+ 538 002b 01       		.byte	0x1
+ 539 002c 3F       		.uleb128 0x3f
+ 540 002d 19       		.uleb128 0x19
+ 541 002e 03       		.uleb128 0x3
+ 542 002f 0E       		.uleb128 0xe
+ 543 0030 3A       		.uleb128 0x3a
+ 544 0031 0B       		.uleb128 0xb
+ 545 0032 3B       		.uleb128 0x3b
+ 546 0033 0B       		.uleb128 0xb
+ 547 0034 11       		.uleb128 0x11
+ 548 0035 01       		.uleb128 0x1
+ 549 0036 12       		.uleb128 0x12
+ 550 0037 06       		.uleb128 0x6
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccHyPhlR.s 			page 12
+
+
+ 551 0038 40       		.uleb128 0x40
+ 552 0039 18       		.uleb128 0x18
+ 553 003a 9742     		.uleb128 0x2117
+ 554 003c 19       		.uleb128 0x19
+ 555 003d 01       		.uleb128 0x1
+ 556 003e 13       		.uleb128 0x13
+ 557 003f 00       		.byte	0
+ 558 0040 00       		.byte	0
+ 559 0041 05       		.uleb128 0x5
+ 560 0042 898201   		.uleb128 0x4109
+ 561 0045 00       		.byte	0
+ 562 0046 11       		.uleb128 0x11
+ 563 0047 01       		.uleb128 0x1
+ 564 0048 31       		.uleb128 0x31
+ 565 0049 13       		.uleb128 0x13
+ 566 004a 00       		.byte	0
+ 567 004b 00       		.byte	0
+ 568 004c 06       		.uleb128 0x6
+ 569 004d 2E       		.uleb128 0x2e
+ 570 004e 01       		.byte	0x1
+ 571 004f 3F       		.uleb128 0x3f
+ 572 0050 19       		.uleb128 0x19
+ 573 0051 03       		.uleb128 0x3
+ 574 0052 0E       		.uleb128 0xe
+ 575 0053 3A       		.uleb128 0x3a
+ 576 0054 0B       		.uleb128 0xb
+ 577 0055 3B       		.uleb128 0x3b
+ 578 0056 0B       		.uleb128 0xb
+ 579 0057 49       		.uleb128 0x49
+ 580 0058 13       		.uleb128 0x13
+ 581 0059 11       		.uleb128 0x11
+ 582 005a 01       		.uleb128 0x1
+ 583 005b 12       		.uleb128 0x12
+ 584 005c 06       		.uleb128 0x6
+ 585 005d 40       		.uleb128 0x40
+ 586 005e 18       		.uleb128 0x18
+ 587 005f 9642     		.uleb128 0x2116
+ 588 0061 19       		.uleb128 0x19
+ 589 0062 01       		.uleb128 0x1
+ 590 0063 13       		.uleb128 0x13
+ 591 0064 00       		.byte	0
+ 592 0065 00       		.byte	0
+ 593 0066 07       		.uleb128 0x7
+ 594 0067 34       		.uleb128 0x34
+ 595 0068 00       		.byte	0
+ 596 0069 03       		.uleb128 0x3
+ 597 006a 0E       		.uleb128 0xe
+ 598 006b 3A       		.uleb128 0x3a
+ 599 006c 0B       		.uleb128 0xb
+ 600 006d 3B       		.uleb128 0x3b
+ 601 006e 0B       		.uleb128 0xb
+ 602 006f 49       		.uleb128 0x49
+ 603 0070 13       		.uleb128 0x13
+ 604 0071 02       		.uleb128 0x2
+ 605 0072 17       		.uleb128 0x17
+ 606 0073 00       		.byte	0
+ 607 0074 00       		.byte	0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccHyPhlR.s 			page 13
+
+
+ 608 0075 08       		.uleb128 0x8
+ 609 0076 34       		.uleb128 0x34
+ 610 0077 00       		.byte	0
+ 611 0078 03       		.uleb128 0x3
+ 612 0079 0E       		.uleb128 0xe
+ 613 007a 3A       		.uleb128 0x3a
+ 614 007b 0B       		.uleb128 0xb
+ 615 007c 3B       		.uleb128 0x3b
+ 616 007d 0B       		.uleb128 0xb
+ 617 007e 49       		.uleb128 0x49
+ 618 007f 13       		.uleb128 0x13
+ 619 0080 02       		.uleb128 0x2
+ 620 0081 18       		.uleb128 0x18
+ 621 0082 00       		.byte	0
+ 622 0083 00       		.byte	0
+ 623 0084 09       		.uleb128 0x9
+ 624 0085 898201   		.uleb128 0x4109
+ 625 0088 01       		.byte	0x1
+ 626 0089 11       		.uleb128 0x11
+ 627 008a 01       		.uleb128 0x1
+ 628 008b 31       		.uleb128 0x31
+ 629 008c 13       		.uleb128 0x13
+ 630 008d 01       		.uleb128 0x1
+ 631 008e 13       		.uleb128 0x13
+ 632 008f 00       		.byte	0
+ 633 0090 00       		.byte	0
+ 634 0091 0A       		.uleb128 0xa
+ 635 0092 8A8201   		.uleb128 0x410a
+ 636 0095 00       		.byte	0
+ 637 0096 02       		.uleb128 0x2
+ 638 0097 18       		.uleb128 0x18
+ 639 0098 9142     		.uleb128 0x2111
+ 640 009a 18       		.uleb128 0x18
+ 641 009b 00       		.byte	0
+ 642 009c 00       		.byte	0
+ 643 009d 0B       		.uleb128 0xb
+ 644 009e 898201   		.uleb128 0x4109
+ 645 00a1 01       		.byte	0x1
+ 646 00a2 11       		.uleb128 0x11
+ 647 00a3 01       		.uleb128 0x1
+ 648 00a4 31       		.uleb128 0x31
+ 649 00a5 13       		.uleb128 0x13
+ 650 00a6 00       		.byte	0
+ 651 00a7 00       		.byte	0
+ 652 00a8 0C       		.uleb128 0xc
+ 653 00a9 2E       		.uleb128 0x2e
+ 654 00aa 01       		.byte	0x1
+ 655 00ab 3F       		.uleb128 0x3f
+ 656 00ac 19       		.uleb128 0x19
+ 657 00ad 03       		.uleb128 0x3
+ 658 00ae 0E       		.uleb128 0xe
+ 659 00af 3A       		.uleb128 0x3a
+ 660 00b0 0B       		.uleb128 0xb
+ 661 00b1 3B       		.uleb128 0x3b
+ 662 00b2 0B       		.uleb128 0xb
+ 663 00b3 27       		.uleb128 0x27
+ 664 00b4 19       		.uleb128 0x19
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccHyPhlR.s 			page 14
+
+
+ 665 00b5 11       		.uleb128 0x11
+ 666 00b6 01       		.uleb128 0x1
+ 667 00b7 12       		.uleb128 0x12
+ 668 00b8 06       		.uleb128 0x6
+ 669 00b9 40       		.uleb128 0x40
+ 670 00ba 18       		.uleb128 0x18
+ 671 00bb 9642     		.uleb128 0x2116
+ 672 00bd 19       		.uleb128 0x19
+ 673 00be 01       		.uleb128 0x1
+ 674 00bf 13       		.uleb128 0x13
+ 675 00c0 00       		.byte	0
+ 676 00c1 00       		.byte	0
+ 677 00c2 0D       		.uleb128 0xd
+ 678 00c3 05       		.uleb128 0x5
+ 679 00c4 00       		.byte	0
+ 680 00c5 03       		.uleb128 0x3
+ 681 00c6 0E       		.uleb128 0xe
+ 682 00c7 3A       		.uleb128 0x3a
+ 683 00c8 0B       		.uleb128 0xb
+ 684 00c9 3B       		.uleb128 0x3b
+ 685 00ca 0B       		.uleb128 0xb
+ 686 00cb 49       		.uleb128 0x49
+ 687 00cc 13       		.uleb128 0x13
+ 688 00cd 02       		.uleb128 0x2
+ 689 00ce 17       		.uleb128 0x17
+ 690 00cf 00       		.byte	0
+ 691 00d0 00       		.byte	0
+ 692 00d1 0E       		.uleb128 0xe
+ 693 00d2 34       		.uleb128 0x34
+ 694 00d3 00       		.byte	0
+ 695 00d4 03       		.uleb128 0x3
+ 696 00d5 08       		.uleb128 0x8
+ 697 00d6 3A       		.uleb128 0x3a
+ 698 00d7 0B       		.uleb128 0xb
+ 699 00d8 3B       		.uleb128 0x3b
+ 700 00d9 0B       		.uleb128 0xb
+ 701 00da 49       		.uleb128 0x49
+ 702 00db 13       		.uleb128 0x13
+ 703 00dc 02       		.uleb128 0x2
+ 704 00dd 18       		.uleb128 0x18
+ 705 00de 00       		.byte	0
+ 706 00df 00       		.byte	0
+ 707 00e0 0F       		.uleb128 0xf
+ 708 00e1 01       		.uleb128 0x1
+ 709 00e2 01       		.byte	0x1
+ 710 00e3 49       		.uleb128 0x49
+ 711 00e4 13       		.uleb128 0x13
+ 712 00e5 01       		.uleb128 0x1
+ 713 00e6 13       		.uleb128 0x13
+ 714 00e7 00       		.byte	0
+ 715 00e8 00       		.byte	0
+ 716 00e9 10       		.uleb128 0x10
+ 717 00ea 21       		.uleb128 0x21
+ 718 00eb 00       		.byte	0
+ 719 00ec 49       		.uleb128 0x49
+ 720 00ed 13       		.uleb128 0x13
+ 721 00ee 2F       		.uleb128 0x2f
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccHyPhlR.s 			page 15
+
+
+ 722 00ef 0B       		.uleb128 0xb
+ 723 00f0 00       		.byte	0
+ 724 00f1 00       		.byte	0
+ 725 00f2 11       		.uleb128 0x11
+ 726 00f3 2E       		.uleb128 0x2e
+ 727 00f4 01       		.byte	0x1
+ 728 00f5 3F       		.uleb128 0x3f
+ 729 00f6 19       		.uleb128 0x19
+ 730 00f7 03       		.uleb128 0x3
+ 731 00f8 0E       		.uleb128 0xe
+ 732 00f9 3A       		.uleb128 0x3a
+ 733 00fa 0B       		.uleb128 0xb
+ 734 00fb 3B       		.uleb128 0x3b
+ 735 00fc 0B       		.uleb128 0xb
+ 736 00fd 27       		.uleb128 0x27
+ 737 00fe 19       		.uleb128 0x19
+ 738 00ff 49       		.uleb128 0x49
+ 739 0100 13       		.uleb128 0x13
+ 740 0101 8701     		.uleb128 0x87
+ 741 0103 19       		.uleb128 0x19
+ 742 0104 11       		.uleb128 0x11
+ 743 0105 01       		.uleb128 0x1
+ 744 0106 12       		.uleb128 0x12
+ 745 0107 06       		.uleb128 0x6
+ 746 0108 40       		.uleb128 0x40
+ 747 0109 18       		.uleb128 0x18
+ 748 010a 9742     		.uleb128 0x2117
+ 749 010c 19       		.uleb128 0x19
+ 750 010d 01       		.uleb128 0x1
+ 751 010e 13       		.uleb128 0x13
+ 752 010f 00       		.byte	0
+ 753 0110 00       		.byte	0
+ 754 0111 12       		.uleb128 0x12
+ 755 0112 2E       		.uleb128 0x2e
+ 756 0113 00       		.byte	0
+ 757 0114 3F       		.uleb128 0x3f
+ 758 0115 19       		.uleb128 0x19
+ 759 0116 3C       		.uleb128 0x3c
+ 760 0117 19       		.uleb128 0x19
+ 761 0118 6E       		.uleb128 0x6e
+ 762 0119 0E       		.uleb128 0xe
+ 763 011a 03       		.uleb128 0x3
+ 764 011b 0E       		.uleb128 0xe
+ 765 011c 3A       		.uleb128 0x3a
+ 766 011d 0B       		.uleb128 0xb
+ 767 011e 3B       		.uleb128 0x3b
+ 768 011f 0B       		.uleb128 0xb
+ 769 0120 00       		.byte	0
+ 770 0121 00       		.byte	0
+ 771 0122 13       		.uleb128 0x13
+ 772 0123 2E       		.uleb128 0x2e
+ 773 0124 00       		.byte	0
+ 774 0125 3F       		.uleb128 0x3f
+ 775 0126 19       		.uleb128 0x19
+ 776 0127 3C       		.uleb128 0x3c
+ 777 0128 19       		.uleb128 0x19
+ 778 0129 6E       		.uleb128 0x6e
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccHyPhlR.s 			page 16
+
+
+ 779 012a 0E       		.uleb128 0xe
+ 780 012b 03       		.uleb128 0x3
+ 781 012c 0E       		.uleb128 0xe
+ 782 012d 3A       		.uleb128 0x3a
+ 783 012e 0B       		.uleb128 0xb
+ 784 012f 3B       		.uleb128 0x3b
+ 785 0130 05       		.uleb128 0x5
+ 786 0131 00       		.byte	0
+ 787 0132 00       		.byte	0
+ 788 0133 00       		.byte	0
+ 789              		.section	.debug_loc,"",%progbits
+ 790              	.Ldebug_loc0:
+ 791              	.LLST0:
+ 792 0000 02000000 		.4byte	.LVL2
+ 793 0004 14000000 		.4byte	.LVL6
+ 794 0008 0600     		.2byte	0x6
+ 795 000a 9E       		.byte	0x9e
+ 796 000b 04       		.uleb128 0x4
+ 797 000c 00000000 		.4byte	0
+ 798 0010 14000000 		.4byte	.LVL6
+ 799 0014 19000000 		.4byte	.LVL7-1
+ 800 0018 0700     		.2byte	0x7
+ 801 001a 71       		.byte	0x71
+ 802 001b 00       		.sleb128 0
+ 803 001c F7       		.byte	0xf7
+ 804 001d 2C       		.uleb128 0x2c
+ 805 001e F7       		.byte	0xf7
+ 806 001f 25       		.uleb128 0x25
+ 807 0020 9F       		.byte	0x9f
+ 808 0021 00000000 		.4byte	0
+ 809 0025 00000000 		.4byte	0
+ 810              	.LLST1:
+ 811 0029 00000000 		.4byte	.LVL9
+ 812 002d 07000000 		.4byte	.LVL10-1
+ 813 0031 0100     		.2byte	0x1
+ 814 0033 50       		.byte	0x50
+ 815 0034 07000000 		.4byte	.LVL10-1
+ 816 0038 28000000 		.4byte	.LFE36
+ 817 003c 0600     		.2byte	0x6
+ 818 003e F3       		.byte	0xf3
+ 819 003f 03       		.uleb128 0x3
+ 820 0040 F5       		.byte	0xf5
+ 821 0041 00       		.uleb128 0
+ 822 0042 25       		.uleb128 0x25
+ 823 0043 9F       		.byte	0x9f
+ 824 0044 00000000 		.4byte	0
+ 825 0048 00000000 		.4byte	0
+ 826              	.LLST2:
+ 827 004c 0C000000 		.4byte	.LVL15
+ 828 0050 0F000000 		.4byte	.LVL16-1
+ 829 0054 0100     		.2byte	0x1
+ 830 0056 50       		.byte	0x50
+ 831 0057 00000000 		.4byte	0
+ 832 005b 00000000 		.4byte	0
+ 833              		.section	.debug_aranges,"",%progbits
+ 834 0000 34000000 		.4byte	0x34
+ 835 0004 0200     		.2byte	0x2
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccHyPhlR.s 			page 17
+
+
+ 836 0006 00000000 		.4byte	.Ldebug_info0
+ 837 000a 04       		.byte	0x4
+ 838 000b 00       		.byte	0
+ 839 000c 0000     		.2byte	0
+ 840 000e 0000     		.2byte	0
+ 841 0010 00000000 		.4byte	.LFB34
+ 842 0014 0C000000 		.4byte	.LFE34-.LFB34
+ 843 0018 00000000 		.4byte	.LFB35
+ 844 001c 20000000 		.4byte	.LFE35-.LFB35
+ 845 0020 00000000 		.4byte	.LFB36
+ 846 0024 28000000 		.4byte	.LFE36-.LFB36
+ 847 0028 00000000 		.4byte	.LFB33
+ 848 002c 1A000000 		.4byte	.LFE33-.LFB33
+ 849 0030 00000000 		.4byte	0
+ 850 0034 00000000 		.4byte	0
+ 851              		.section	.debug_ranges,"",%progbits
+ 852              	.Ldebug_ranges0:
+ 853 0000 00000000 		.4byte	.LFB34
+ 854 0004 0C000000 		.4byte	.LFE34
+ 855 0008 00000000 		.4byte	.LFB35
+ 856 000c 20000000 		.4byte	.LFE35
+ 857 0010 00000000 		.4byte	.LFB36
+ 858 0014 28000000 		.4byte	.LFE36
+ 859 0018 00000000 		.4byte	.LFB33
+ 860 001c 1A000000 		.4byte	.LFE33
+ 861 0020 00000000 		.4byte	0
+ 862 0024 00000000 		.4byte	0
+ 863              		.section	.debug_line,"",%progbits
+ 864              	.Ldebug_line0:
+ 865 0000 45010000 		.section	.debug_str,"MS",%progbits,1
+ 865      0200E400 
+ 865      00000201 
+ 865      FB0E0D00 
+ 865      01010101 
+ 866              	.LASF17:
+ 867 0000 7472616E 		.ascii	"transmitToPC\000"
+ 867      736D6974 
+ 867      546F5043 
+ 867      00
+ 868              	.LASF15:
+ 869 000d 76616C75 		.ascii	"value_Adc_mVolt\000"
+ 869      655F4164 
+ 869      635F6D56 
+ 869      6F6C7400 
+ 870              	.LASF18:
+ 871 001d 72657375 		.ascii	"result_Read_Adc\000"
+ 871      6C745F52 
+ 871      6561645F 
+ 871      41646300 
+ 872              	.LASF9:
+ 873 002d 756E7369 		.ascii	"unsigned int\000"
+ 873      676E6564 
+ 873      20696E74 
+ 873      00
+ 874              	.LASF14:
+ 875 003a 76616C75 		.ascii	"value_Adc_Volt\000"
+ 875      655F4164 
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccHyPhlR.s 			page 18
+
+
+ 875      635F566F 
+ 875      6C7400
+ 876              	.LASF0:
+ 877 0049 666C6F61 		.ascii	"float\000"
+ 877      7400
+ 878              	.LASF23:
+ 879 004f 61646355 		.ascii	"adcUser_GetResult16\000"
+ 879      7365725F 
+ 879      47657452 
+ 879      6573756C 
+ 879      74313600 
+ 880              	.LASF31:
+ 881 0063 443A5C70 		.ascii	"D:\\psoc\\theory\\not_done_yet\\adc\\adc.cydsn\000"
+ 881      736F635C 
+ 881      7468656F 
+ 881      72795C6E 
+ 881      6F745F64 
+ 882              	.LASF6:
+ 883 008d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 883      20756E73 
+ 883      69676E65 
+ 883      6420696E 
+ 883      7400
+ 884              	.LASF4:
+ 885 009f 73686F72 		.ascii	"short unsigned int\000"
+ 885      7420756E 
+ 885      7369676E 
+ 885      65642069 
+ 885      6E7400
+ 886              	.LASF3:
+ 887 00b2 756E7369 		.ascii	"unsigned char\000"
+ 887      676E6564 
+ 887      20636861 
+ 887      7200
+ 888              	.LASF20:
+ 889 00c0 61646355 		.ascii	"adcUser_Start\000"
+ 889      7365725F 
+ 889      53746172 
+ 889      7400
+ 890              	.LASF10:
+ 891 00ce 646F7562 		.ascii	"double\000"
+ 891      6C6500
+ 892              	.LASF34:
+ 893 00d5 6D61696E 		.ascii	"main\000"
+ 893      00
+ 894              	.LASF26:
+ 895 00da 75617274 		.ascii	"uartUser_UartPutString\000"
+ 895      55736572 
+ 895      5F556172 
+ 895      74507574 
+ 895      53747269 
+ 896              	.LASF24:
+ 897 00f1 61646355 		.ascii	"adcUser_CountsTo_mVolts\000"
+ 897      7365725F 
+ 897      436F756E 
+ 897      7473546F 
+ 897      5F6D566F 
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccHyPhlR.s 			page 19
+
+
+ 898              	.LASF19:
+ 899 0109 75617274 		.ascii	"uartUser_Start\000"
+ 899      55736572 
+ 899      5F537461 
+ 899      727400
+ 900              	.LASF33:
+ 901 0118 61646344 		.ascii	"adcData\000"
+ 901      61746100 
+ 902              	.LASF21:
+ 903 0120 61646355 		.ascii	"adcUser_StartConvert\000"
+ 903      7365725F 
+ 903      53746172 
+ 903      74436F6E 
+ 903      76657274 
+ 904              	.LASF8:
+ 905 0135 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 905      206C6F6E 
+ 905      6720756E 
+ 905      7369676E 
+ 905      65642069 
+ 906              	.LASF22:
+ 907 014c 61646355 		.ascii	"adcUser_IsEndConversion\000"
+ 907      7365725F 
+ 907      4973456E 
+ 907      64436F6E 
+ 907      76657273 
+ 908              	.LASF29:
+ 909 0164 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 909      43313120 
+ 909      352E342E 
+ 909      31203230 
+ 909      31363036 
+ 910 0197 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 910      20726576 
+ 910      6973696F 
+ 910      6E203233 
+ 910      37373135 
+ 911 01ca 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 911      66756E63 
+ 911      74696F6E 
+ 911      2D736563 
+ 911      74696F6E 
+ 912              	.LASF13:
+ 913 01f2 73697A65 		.ascii	"sizetype\000"
+ 913      74797065 
+ 913      00
+ 914              	.LASF27:
+ 915 01fb 75617274 		.ascii	"uartUser_UartPutCRLF\000"
+ 915      55736572 
+ 915      5F556172 
+ 915      74507574 
+ 915      43524C46 
+ 916              	.LASF7:
+ 917 0210 6C6F6E67 		.ascii	"long long int\000"
+ 917      206C6F6E 
+ 917      6720696E 
+ 917      7400
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccHyPhlR.s 			page 20
+
+
+ 918              	.LASF30:
+ 919 021e 6D61696E 		.ascii	"main.c\000"
+ 919      2E6300
+ 920              	.LASF11:
+ 921 0225 63686172 		.ascii	"char\000"
+ 921      00
+ 922              	.LASF1:
+ 923 022a 73686F72 		.ascii	"short int\000"
+ 923      7420696E 
+ 923      7400
+ 924              	.LASF32:
+ 925 0234 496E6974 		.ascii	"Init_System\000"
+ 925      5F537973 
+ 925      74656D00 
+ 926              	.LASF5:
+ 927 0240 6C6F6E67 		.ascii	"long int\000"
+ 927      20696E74 
+ 927      00
+ 928              	.LASF12:
+ 929 0249 6C6F6E67 		.ascii	"long double\000"
+ 929      20646F75 
+ 929      626C6500 
+ 930              	.LASF2:
+ 931 0255 7369676E 		.ascii	"signed char\000"
+ 931      65642063 
+ 931      68617200 
+ 932              	.LASF16:
+ 933 0261 72656164 		.ascii	"readADC\000"
+ 933      41444300 
+ 934              	.LASF25:
+ 935 0269 73707269 		.ascii	"sprintf\000"
+ 935      6E746600 
+ 936              	.LASF28:
+ 937 0271 43794465 		.ascii	"CyDelay\000"
+ 937      6C617900 
+ 938              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

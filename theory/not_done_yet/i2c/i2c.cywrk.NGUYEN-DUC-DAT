@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="i2c\i2c\Header Files\main.h">
+<ExpandedNodeIds>
+<v>i2c</v>
+<v>i2c\i2c</v>
+<v>i2c\i2c\TopDesign</v>
+<v>i2c\i2c\i2c.cydwr</v>
+<v>i2c\i2c\i2c.cydwr\Pins</v>
+<v>i2c\i2c\i2c.cydwr\Analog</v>
+<v>i2c\i2c\i2c.cydwr\Clocks</v>
+<v>i2c\i2c\i2c.cydwr\Interrupts</v>
+<v>i2c\i2c\i2c.cydwr\System</v>
+<v>i2c\i2c\i2c.cydwr\Directives</v>
+<v>i2c\i2c\i2c.cydwr\Flash Security</v>
+<v>i2c\i2c\eeprom</v>
+<v>i2c\i2c\eeprom\eeprom.c</v>
+<v>i2c\i2c\eeprom\eeprom.h</v>
+<v>i2c\i2c\Header Files</v>
+<v>i2c\i2c\Header Files\cyapicallbacks.h</v>
+<v>i2c\i2c\Header Files\main.h</v>
+<v>i2c\i2c\rtc_ds1307</v>
+<v>i2c\i2c\rtc_ds1307\rtc_ds1307.c</v>
+<v>i2c\i2c\rtc_ds1307\rtc_ds1307.h</v>
+<v>i2c\i2c\Source Files</v>
+<v>i2c\i2c\Source Files\main.c</v>
+<v>i2c\i2c\Generated_Source</v>
+<v>i2c\i2c\Generated_Source\PSoC4</v>
+<v>i2c\i2c\Generated_Source\PSoC4\i2c</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>i2c</v>
+<v>i2c\i2c</v>
+<v>i2c\i2c\TopDesign</v>
+<v>i2c\i2c\i2c.cydwr</v>
+<v>i2c\i2c\i2c.cydwr\Pins</v>
+<v>i2c\i2c\i2c.cydwr\Analog</v>
+<v>i2c\i2c\i2c.cydwr\Clocks</v>
+<v>i2c\i2c\i2c.cydwr\Interrupts</v>
+<v>i2c\i2c\i2c.cydwr\System</v>
+<v>i2c\i2c\i2c.cydwr\Directives</v>
+<v>i2c\i2c\i2c.cydwr\Flash Security</v>
+<v>i2c\i2c\eeprom</v>
+<v>i2c\i2c\eeprom\eeprom.c</v>
+<v>i2c\i2c\eeprom\eeprom.h</v>
+<v>i2c\i2c\Header Files</v>
+<v>i2c\i2c\Header Files\cyapicallbacks.h</v>
+<v>i2c\i2c\Header Files\main.h</v>
+<v>i2c\i2c\rtc_ds1307</v>
+<v>i2c\i2c\rtc_ds1307\rtc_ds1307.c</v>
+<v>i2c\i2c\rtc_ds1307\rtc_ds1307.h</v>
+<v>i2c\i2c\Source Files</v>
+<v>i2c\i2c\Source Files\main.c</v>
+<v>i2c\i2c\Generated_Source</v>
+<v>i2c\i2c\Generated_Source\PSoC4</v>
+<v>i2c\i2c\Generated_Source\PSoC4\cy_boot</v>
+<v>i2c\i2c\Generated_Source\PSoC4\cy_lfclk</v>
+<v>i2c\i2c\Generated_Source\PSoC4\Em_EEPROM_Dynamic</v>
+<v>i2c\i2c\Generated_Source\PSoC4\i2c</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>i2c</v>
+<v>i2c\i2c</v>
+<v>i2c\i2c\TopDesign</v>
+<v>i2c\i2c\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>i2c</v>
+<v>i2c\i2c</v>
+<v>i2c\i2c\TopDesign</v>
+<v>i2c\i2c\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>i2c</v>
+<v>i2c\i2c</v>
+<v>i2c\i2c\CortexM0</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\eeprom.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_BOOT.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_I2C.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_I2C_BOOT.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_I2C_INT.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_I2C_MASTER.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_PM.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_SCB_IRQ.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_SCBCLK.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_scl.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_scl_PM.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_sda.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_sda_PM.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\rtc_ds1307.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\uart.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_BOOT.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_PM.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_rx.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_rx_PM.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_SCBCLK.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_SPI_UART.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_SPI_UART_INT.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_tx.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_tx_PM.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_UART.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_UART_BOOT.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\i2c.elf</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\i2c.hex</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\i2c.map</v>
+<v>i2c\i2c\i2c.gpdsc</v>
+<v>i2c\i2c\i2c.rpt</v>
+<v>i2c\i2c\i2c_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>i2c</v>
+<v>i2c\i2c</v>
+<v>i2c\i2c\CortexM0</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\eeprom.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_BOOT.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_I2C.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_I2C_BOOT.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_I2C_INT.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_I2C_MASTER.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_PM.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_SCB_IRQ.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_SCBCLK.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_scl.lst</v>
+<v>i2c\i2c\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_scl_PM.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>i2c</v>
+<v>i2c\i2c</v>
+<v>i2c\i2c\PSoC 4 Architecture TRM</v>
+<v>i2c\i2c\PSoC 4100 Family Datasheet</v>
+<v>i2c\i2c\System Reference Guides</v>
+<v>i2c\i2c\System Reference Guides\cy_boot_v6_0</v>
+<v>i2c\i2c\System Reference Guides\cy_lfclk_v1_20</v>
+<v>i2c\i2c\SCB_P4_v4_0</v>
+<v>i2c\i2c\SCB_P4_v4_0\SCB_P4_v4_0.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>i2c</v>
+<v>i2c\i2c</v>
+<v>i2c\i2c\PSoC 4 Architecture TRM</v>
+<v>i2c\i2c\PSoC 4100 Family Datasheet</v>
+<v>i2c\i2c\System Reference Guides</v>
+<v>i2c\i2c\System Reference Guides\cy_boot_v6_0</v>
+<v>i2c\i2c\System Reference Guides\cy_lfclk_v1_20</v>
+<v>i2c\i2c\SCB_P4_v4_0</v>
+<v>i2c\i2c\SCB_P4_v4_0\SCB_P4_v4_0.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\i2c.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\i2c.cydsn\i2c.cydwr" />
+<name v=".\i2c.cydsn\rtc_ds1307.h" />
+<name v=".\i2c.cydsn\rtc_ds1307.c" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1234, 360" SelectedTabbedMdiWindow="aba9e5ad-ca4c-4ca6-b471-2af6bf115652"><DocumentWindow Key="D:\psoc\theory\i2c\i2c.cydsn\TopDesign\TopDesign.cysch" Guid="2bb08ab1-91df-41e8-b759-345bdda4b83a" /><DocumentWindow Key="D:\psoc\theory\i2c\i2c.cydsn\i2c.cydwr" Guid="71bf336f-4a4f-4704-a1ea-33c20026c42f" /><DocumentWindow Key="D:\psoc\theory\i2c\i2c.cydsn\rtc_ds1307.h" Guid="e11f87a2-b43c-4e65-a4ab-86a63c899fd9" /><DocumentWindow Key="D:\psoc\theory\i2c\i2c.cydsn\rtc_ds1307.c" Guid="aba9e5ad-ca4c-4ca6-b471-2af6bf115652" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>
