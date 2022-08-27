@@ -46,8 +46,10 @@ void location180Degree()
 {
     int value_compare = 2000;
     
-    pwm_WriteCompare(value_compare);
+    (value_compare);
 }
+
+
 
 
 

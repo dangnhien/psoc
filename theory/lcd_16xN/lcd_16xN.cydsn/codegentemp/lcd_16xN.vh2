@@ -2,7 +2,7 @@
 --	Conversion of lcd_16xN.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Mon Aug 22 12:52:50 2022
+--	Thu Aug 25 16:50:51 2022
 --
 
 USE cypress.cypress.all;

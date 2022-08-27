@@ -16,6 +16,7 @@ CY_ISR( timer_counter_Int_Handler )
     ledRedd_Write( ~ledRedd_Read() );
     
     timer_counter_ClearInterrupt( timer_counter_INTR_MASK_TC);
+    
 }
 
 int main(void)

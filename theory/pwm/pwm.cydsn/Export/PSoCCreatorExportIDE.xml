@@ -39,8 +39,6 @@
           <File BuildType="BUILD" Toolchain="">main.c</File>
           <File BuildType="BUILD" Toolchain="">cyapicallbacks.h</File>
           <File BuildType="BUILD" Toolchain="">main.h</File>
-          <File BuildType="BUILD" Toolchain="">servo.h</File>
-          <File BuildType="BUILD" Toolchain="">servo.c</File>
           <File BuildType="BUILD" Toolchain="">ledSingle.h</File>
           <File BuildType="BUILD" Toolchain="">ledSingle.c</File>
         </Files>

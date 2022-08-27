@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr">
+<ExpandedNodeIds>
+<v>ds1307_with_uart</v>
+<v>ds1307_with_uart\ds1307_with_uart</v>
+<v>ds1307_with_uart\ds1307_with_uart\TopDesign</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Pins</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Analog</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Clocks</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Interrupts</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\System</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Directives</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Flash Security</v>
+<v>ds1307_with_uart\ds1307_with_uart\Header Files</v>
+<v>ds1307_with_uart\ds1307_with_uart\Header Files\cyapicallbacks.h</v>
+<v>ds1307_with_uart\ds1307_with_uart\Header Files\ds1307_i2c.h</v>
+<v>ds1307_with_uart\ds1307_with_uart\Header Files\main.h</v>
+<v>ds1307_with_uart\ds1307_with_uart\Header Files\uart_transmitss.h</v>
+<v>ds1307_with_uart\ds1307_with_uart\Source Files</v>
+<v>ds1307_with_uart\ds1307_with_uart\Source Files\ds1307_i2c.c</v>
+<v>ds1307_with_uart\ds1307_with_uart\Source Files\main.c</v>
+<v>ds1307_with_uart\ds1307_with_uart\Source Files\uart_transmitss.c</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>ds1307_with_uart</v>
+<v>ds1307_with_uart\ds1307_with_uart</v>
+<v>ds1307_with_uart\ds1307_with_uart\TopDesign</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Pins</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Analog</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Clocks</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Interrupts</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\System</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Directives</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Flash Security</v>
+<v>ds1307_with_uart\ds1307_with_uart\Header Files</v>
+<v>ds1307_with_uart\ds1307_with_uart\Header Files\cyapicallbacks.h</v>
+<v>ds1307_with_uart\ds1307_with_uart\Header Files\ds1307_i2c.h</v>
+<v>ds1307_with_uart\ds1307_with_uart\Header Files\main.h</v>
+<v>ds1307_with_uart\ds1307_with_uart\Header Files\uart_transmitss.h</v>
+<v>ds1307_with_uart\ds1307_with_uart\Source Files</v>
+<v>ds1307_with_uart\ds1307_with_uart\Source Files\ds1307_i2c.c</v>
+<v>ds1307_with_uart\ds1307_with_uart\Source Files\main.c</v>
+<v>ds1307_with_uart\ds1307_with_uart\Source Files\uart_transmitss.c</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>ds1307_with_uart</v>
+<v>ds1307_with_uart\ds1307_with_uart</v>
+<v>ds1307_with_uart\ds1307_with_uart\TopDesign</v>
+<v>ds1307_with_uart\ds1307_with_uart\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>ds1307_with_uart</v>
+<v>ds1307_with_uart\ds1307_with_uart</v>
+<v>ds1307_with_uart\ds1307_with_uart\TopDesign</v>
+<v>ds1307_with_uart\ds1307_with_uart\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>ds1307_with_uart</v>
+<v>ds1307_with_uart\ds1307_with_uart</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.gpdsc</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.rpt</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>ds1307_with_uart</v>
+<v>ds1307_with_uart\ds1307_with_uart</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.gpdsc</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.rpt</v>
+<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart_timing.html</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>ds1307_with_uart</v>
+<v>ds1307_with_uart\ds1307_with_uart</v>
+<v>ds1307_with_uart\ds1307_with_uart\PSoC 4 Architecture TRM</v>
+<v>ds1307_with_uart\ds1307_with_uart\PSoC 4100 Family Datasheet</v>
+<v>ds1307_with_uart\ds1307_with_uart\System Reference Guides</v>
+<v>ds1307_with_uart\ds1307_with_uart\System Reference Guides\cy_boot_v6_0</v>
+<v>ds1307_with_uart\ds1307_with_uart\System Reference Guides\cy_lfclk_v1_20</v>
+<v>ds1307_with_uart\ds1307_with_uart\cy_pins_v2_20.pdf</v>
+<v>ds1307_with_uart\ds1307_with_uart\SCB_P4_v4_0</v>
+<v>ds1307_with_uart\ds1307_with_uart\SCB_P4_v4_0\SCB_P4_v4_0.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>ds1307_with_uart</v>
+<v>ds1307_with_uart\ds1307_with_uart</v>
+<v>ds1307_with_uart\ds1307_with_uart\PSoC 4 Architecture TRM</v>
+<v>ds1307_with_uart\ds1307_with_uart\PSoC 4100 Family Datasheet</v>
+<v>ds1307_with_uart\ds1307_with_uart\System Reference Guides</v>
+<v>ds1307_with_uart\ds1307_with_uart\System Reference Guides\cy_boot_v6_0</v>
+<v>ds1307_with_uart\ds1307_with_uart\System Reference Guides\cy_lfclk_v1_20</v>
+<v>ds1307_with_uart\ds1307_with_uart\cy_pins_v2_20.pdf</v>
+<v>ds1307_with_uart\ds1307_with_uart\SCB_P4_v4_0</v>
+<v>ds1307_with_uart\ds1307_with_uart\SCB_P4_v4_0\SCB_P4_v4_0.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\ds1307_with_uart.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\ds1307_with_uart.cydsn\ds1307_i2c.h" />
+<name v=".\ds1307_with_uart.cydsn\ds1307_i2c.c" />
+<name v=".\ds1307_with_uart.cydsn\uart_transmitss.h" />
+<name v=".\ds1307_with_uart.cydsn\uart_transmitss.c" />
+<name v=".\ds1307_with_uart.cydsn\main.h" />
+<name v=".\ds1307_with_uart.cydsn\ds1307_with_uart.cydwr" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1029, 344" SelectedTabbedMdiWindow="659485c7-279f-4125-ba40-5c83654b4f19"><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\TopDesign\TopDesign.cysch" Guid="02f2dec9-698e-44d4-a1fc-5d2ce32111e2" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\ds1307_i2c.h" Guid="f7ecf285-cbf6-4bf0-badd-2c919ad9181d" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\ds1307_i2c.c" Guid="1af67fe2-d503-43b9-9a1b-6b4c9eeda6bd" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\uart_transmitss.h" Guid="0cc47f58-9ac0-4bf2-9441-b87c6ba08a4c" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\uart_transmitss.c" Guid="e9d7655d-78c4-456d-9670-eec549e3f1e0" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\main.h" Guid="bbe6278a-842d-4ec7-8538-468ed96d1067" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\ds1307_with_uart.cydwr" Guid="659485c7-279f-4125-ba40-5c83654b4f19" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

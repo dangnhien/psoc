@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2022-08-22T05:52:54Z")
+ (DATE "2022-08-25T09:50:53Z")
  (DESIGN "lcd_16xN")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
+  <block name="row_matrix_5" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="row_matrix_6" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="row_matrix_3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="row_matrix_4" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="col_matrix_7" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="cy_lfclk" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Em_EEPROM_Dynamic" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="row_matrix_7" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="row_matrix_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="col_matrix_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="col_matrix_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="col_matrix_0" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="col_matrix_3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="col_matrix_4" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="row_matrix_0" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="row_matrix_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="col_matrix_5" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="col_matrix_6" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+</blockRegMap>

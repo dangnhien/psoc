@@ -1,6 +1,6 @@
 -- ======================================================================
 -- lcd_16xN.ctl generated from lcd_16xN
--- 08/22/2022 at 12:52
+-- 08/25/2022 at 16:50
 -- This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 -- ======================================================================
 

@@ -27,12 +27,14 @@ int main(void)
 
 void configSystem()
 {
-   lcd_Start();    
+    lcd_Start();    
     
-   lcd_Position(0u,0u);
-   lcd_PrintString("hello wourld");
-   CyDelay(1000);
-   lcd_ClearDisplay();
+    lcd_Position(0u,0u);
+    lcd_PrintString("hello wourld");
+    lcd_Position(1u,0u);
+    lcd_PrintString("hello1 wourld");
+    CyDelay(1000);
+    lcd_ClearDisplay();
 }
 
 void display()

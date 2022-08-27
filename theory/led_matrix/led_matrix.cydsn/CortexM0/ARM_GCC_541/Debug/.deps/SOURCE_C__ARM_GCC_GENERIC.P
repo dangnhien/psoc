@@ -1,0 +1,104 @@
+D:/psoc/theory/led_matrix/led_matrix.cydsn/CortexM0/ARM_GCC_541/Debug/ledMatrix.o : D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/CyFlash.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/CyLib.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cmsis_armcc.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cmsis_compiler.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cmsis_gcc.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_0.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_0_aliases.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_1.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_1_aliases.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_2.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_2_aliases.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_3.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_3_aliases.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_4.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_4_aliases.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_5.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_5_aliases.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_6.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_6_aliases.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_7.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_7_aliases.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/core_cm0.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cyPm.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cydisabledsheets.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cyfitter.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cypins.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cytypes.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/project.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_0.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_0_aliases.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_1.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_1_aliases.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_2.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_2_aliases.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_3.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_3_aliases.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_4.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_4_aliases.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_5.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_5_aliases.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_6.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_6_aliases.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_7.h D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_7_aliases.h D:/psoc/theory/led_matrix/led_matrix.cydsn/ledMatrix.c D:/psoc/theory/led_matrix/led_matrix.cydsn/ledMatrix.h 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/CyLFClk.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cmsis_armcc.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cmsis_compiler.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cmsis_gcc.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_0.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_0_aliases.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_1.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_1_aliases.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_2.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_2_aliases.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_3.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_3_aliases.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_4.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_4_aliases.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_5.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_5_aliases.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_6.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_6_aliases.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_7.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/col_matrix_7_aliases.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/core_cm0.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cydisabledsheets.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cypins.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/project.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_0.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_0_aliases.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_1.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_1_aliases.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_2.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_2_aliases.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_3.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_3_aliases.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_4.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_4_aliases.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_5.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_5_aliases.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_6.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_6_aliases.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_7.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/Generated_Source/PSoC4/row_matrix_7_aliases.h : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/ledMatrix.c : 
+
+D:/psoc/theory/led_matrix/led_matrix.cydsn/ledMatrix.h : 
+

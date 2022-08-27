@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccw50iXU.s 			page 1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccarecAf.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccw50iXU.s 			page 1
   39              	@ 16 "main.c" 1
   40 0002 62B6     		CPSIE   i
   41              	@ 0 "" 2
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccw50iXU.s 			page 2
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccarecAf.s 			page 2
 
 
   42              		.thumb
@@ -81,12 +81,13 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccw50iXU.s 			page 1
   51 000c 2000     		movs	r0, r4
   52 000e FFF7FEFF 		bl	CyDelay
   53              	.LVL1:
-  25:main.c        ****         ledTurnOff();
-  54              		.loc 1 25 0 discriminator 1
+  25:main.c        ****         
+  26:main.c        ****         ledTurnOff();
+  54              		.loc 1 26 0 discriminator 1
   55 0012 FFF7FEFF 		bl	ledTurnOff
   56              	.LVL2:
-  26:main.c        ****         CyDelay(1000);
-  57              		.loc 1 26 0 discriminator 1
+  27:main.c        ****         CyDelay(1000);
+  57              		.loc 1 27 0 discriminator 1
   58 0016 2000     		movs	r0, r4
   59 0018 FFF7FEFF 		bl	CyDelay
   60              	.LVL3:
@@ -117,10 +118,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccw50iXU.s 			page 1
   85 0027 06       		.byte	0x6
   86 0028 62010000 		.4byte	.LASF0
   87 002c 02       		.uleb128 0x2
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccarecAf.s 			page 3
+
+
   88 002d 01       		.byte	0x1
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccw50iXU.s 			page 3
-
-
   89 002e 08       		.byte	0x8
   90 002f 73000000 		.4byte	.LASF1
   91 0033 02       		.uleb128 0x2
@@ -177,10 +178,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccw50iXU.s 			page 1
  142 008a 6E010000 		.4byte	.LASF13
  143 008e 04       		.uleb128 0x4
  144 008f 22000000 		.4byte	.LASF20
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccarecAf.s 			page 4
+
+
  145 0093 01       		.byte	0x1
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccw50iXU.s 			page 4
-
-
  146 0094 0E       		.byte	0xe
  147 0095 5D000000 		.4byte	0x5d
  148 0099 00000000 		.4byte	.LFB32
@@ -237,10 +238,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccw50iXU.s 			page 1
  199 0000 01       		.uleb128 0x1
  200 0001 11       		.uleb128 0x11
  201 0002 01       		.byte	0x1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccarecAf.s 			page 5
+
+
  202 0003 25       		.uleb128 0x25
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccw50iXU.s 			page 5
-
-
  203 0004 0E       		.uleb128 0xe
  204 0005 13       		.uleb128 0x13
  205 0006 0B       		.uleb128 0xb
@@ -297,10 +298,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccw50iXU.s 			page 1
  256 003a 19       		.uleb128 0x19
  257 003b 11       		.uleb128 0x11
  258 003c 01       		.uleb128 0x1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccarecAf.s 			page 6
+
+
  259 003d 12       		.uleb128 0x12
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccw50iXU.s 			page 6
-
-
  260 003e 06       		.uleb128 0x6
  261 003f 40       		.uleb128 0x40
  262 0040 18       		.uleb128 0x18
@@ -357,10 +358,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccw50iXU.s 			page 1
  313 007d 19       		.uleb128 0x19
  314 007e 6E       		.uleb128 0x6e
  315 007f 0E       		.uleb128 0xe
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccarecAf.s 			page 7
+
+
  316 0080 03       		.uleb128 0x3
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccw50iXU.s 			page 7
-
-
  317 0081 0E       		.uleb128 0xe
  318 0082 3A       		.uleb128 0x3a
  319 0083 0B       		.uleb128 0xb
@@ -417,10 +418,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccw50iXU.s 			page 1
  357 002f 6C6F6E67 		.ascii	"long unsigned int\000"
  357      20756E73 
  357      69676E65 
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccarecAf.s 			page 8
+
+
  357      6420696E 
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccw50iXU.s 			page 8
-
-
  357      7400
  358              	.LASF7:
  359 0041 6C6F6E67 		.ascii	"long long unsigned int\000"
@@ -477,10 +478,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccw50iXU.s 			page 1
  379      2D736563 
  379      74696F6E 
  380              	.LASF3:
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccarecAf.s 			page 9
+
+
  381 014f 73686F72 		.ascii	"short unsigned int\000"
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccw50iXU.s 			page 9
-
-
  381      7420756E 
  381      7369676E 
  381      65642069 

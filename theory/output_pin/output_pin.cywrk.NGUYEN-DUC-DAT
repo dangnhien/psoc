@@ -114,28 +114,6 @@
 <VisibleNodeIds>
 <v>output_pin</v>
 <v>output_pin\output_pin</v>
-<v>output_pin\output_pin\CortexM0</v>
-<v>output_pin\output_pin\CortexM0\ARM_GCC_541</v>
-<v>output_pin\output_pin\CortexM0\ARM_GCC_541\Debug</v>
-<v>output_pin\output_pin\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
-<v>output_pin\output_pin\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
-<v>output_pin\output_pin\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
-<v>output_pin\output_pin\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>output_pin\output_pin\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>output_pin\output_pin\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>output_pin\output_pin\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
-<v>output_pin\output_pin\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
-<v>output_pin\output_pin\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
-<v>output_pin\output_pin\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
-<v>output_pin\output_pin\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
-<v>output_pin\output_pin\CortexM0\ARM_GCC_541\Debug\Listing Files\ledRed.lst</v>
-<v>output_pin\output_pin\CortexM0\ARM_GCC_541\Debug\Listing Files\ledRed_PM.lst</v>
-<v>output_pin\output_pin\CortexM0\ARM_GCC_541\Debug\Listing Files\ledSingle.lst</v>
-<v>output_pin\output_pin\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
-<v>output_pin\output_pin\CortexM0\ARM_GCC_541\Debug\output_pin.elf</v>
-<v>output_pin\output_pin\CortexM0\ARM_GCC_541\Debug\output_pin.hex</v>
-<v>output_pin\output_pin\CortexM0\ARM_GCC_541\Debug\output_pin.map</v>
-<v>output_pin\output_pin\output_pin.gpdsc</v>
 <v>output_pin\output_pin\output_pin.rpt</v>
 <v>output_pin\output_pin\output_pin_timing.html</v>
 </VisibleNodeIds>
@@ -187,7 +165,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="828, 375" SelectedTabbedMdiWindow="c2050276-d1a4-4275-9ada-17b60872f489"><DocumentWindow Key="D:\psoc\theory\output_pin\output_pin.cydsn\TopDesign\TopDesign.cysch" Guid="7471f184-c9ae-49c0-992a-dd800f2ee39c" /><DocumentWindow Key="D:\psoc\theory\output_pin\output_pin.cydsn\output_pin.cydwr" Guid="2f56a88d-4f6c-461c-905e-5c8300255a95" /><DocumentWindow Key="D:\psoc\theory\output_pin\output_pin.cydsn\main.c" Guid="c2050276-d1a4-4275-9ada-17b60872f489" /><DocumentWindow Key="D:\psoc\theory\output_pin\output_pin.cydsn\main.h" Guid="bbfaaed7-9baf-4223-9c6c-c552d858a77e" /><DocumentWindow Key="D:\psoc\theory\output_pin\output_pin.cydsn\ledSingle.h" Guid="27bfa1f5-eca9-4087-b78a-c45d2ffdc188" /><DocumentWindow Key="D:\psoc\theory\output_pin\output_pin.cydsn\ledSingle.c" Guid="2283fb0f-acf1-4e8e-a002-7f32605c3b20" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="764, 371" SelectedTabbedMdiWindow="7471f184-c9ae-49c0-992a-dd800f2ee39c"><DocumentWindow Key="D:\psoc\theory\output_pin\output_pin.cydsn\TopDesign\TopDesign.cysch" Guid="7471f184-c9ae-49c0-992a-dd800f2ee39c" /><DocumentWindow Key="D:\psoc\theory\output_pin\output_pin.cydsn\output_pin.cydwr" Guid="2f56a88d-4f6c-461c-905e-5c8300255a95" /><DocumentWindow Key="D:\psoc\theory\output_pin\output_pin.cydsn\main.c" Guid="c2050276-d1a4-4275-9ada-17b60872f489" /><DocumentWindow Key="D:\psoc\theory\output_pin\output_pin.cydsn\main.h" Guid="bbfaaed7-9baf-4223-9c6c-c552d858a77e" /><DocumentWindow Key="D:\psoc\theory\output_pin\output_pin.cydsn\ledSingle.h" Guid="27bfa1f5-eca9-4087-b78a-c45d2ffdc188" /><DocumentWindow Key="D:\psoc\theory\output_pin\output_pin.cydsn\ledSingle.c" Guid="2283fb0f-acf1-4e8e-a002-7f32605c3b20" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="d7f23ced-4a8f-474d-9a7b-db5f2e330e0f" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

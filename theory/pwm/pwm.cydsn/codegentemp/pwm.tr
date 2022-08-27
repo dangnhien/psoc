@@ -24,8 +24,8 @@ Clock: CyIMO                 | N/A  | Target: 24.00 MHz   |
 Clock: CyLFClk               | N/A  | Target: 0.03 MHz    | 
 Clock: CyRouted1             | N/A  | Target: 24.00 MHz   | 
 Clock: CySysClk              | N/A  | Target: 24.00 MHz   | 
-Clock: clock                 | N/A  | Target: 1.00 MHz    | 
-Clock: clock(FFB)            | N/A  | Target: 1.00 MHz    | 
+Clock: clock                 | N/A  | Target: 0.30 MHz    | 
+Clock: clock(FFB)            | N/A  | Target: 0.30 MHz    | 
 
  =====================================================================
                     End of Clock Frequency Summary

@@ -60,13 +60,15 @@ float readADC()
 
 void transmitToPC(float adcData)
 {
-    char res[10];
+    char buffer_value_transmit[10];
     
-    sprintf(res,"%0.3f", adcData); 
+    sprintf(buffer_value_transmit,"%0.3f\n", adcData); 
     
-    uartUser_UartPutString(res);
+    uartUser_UartPutString(buffer_value_transmit);
     
-    uartUser_UartPutCRLF(0x20); /* Printf down line between string ( ~'\n')*/
+    //uartUser_UartPutCRLF(0x20); /* Printf down line between string ( ~'\n')*/
 }
+
+
 
 /* [] END OF FILE */

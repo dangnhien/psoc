@@ -60,8 +60,6 @@
 <v>counter\counter\Generated_Source\PSoC4\timer_counter</v>
 <v>counter\counter\Generated_Source\PSoC4\timer_counter_Int</v>
 <v>counter\counter\Generated_Source\PSoC4\cycodeshareexport.ld</v>
-<v>counter\counter\Generated_Source\PSoC4\cycodeshareimport.ld</v>
-<v>counter\counter\Generated_Source\PSoC4\cycodeshareimport.scat</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -139,8 +137,6 @@
 <v>counter\counter\CortexM0\ARM_GCC_541\Debug\Listing Files\timer_counter_Int.lst</v>
 <v>counter\counter\CortexM0\ARM_GCC_541\Debug\Listing Files\timer_counter_PM.lst</v>
 <v>counter\counter\CortexM0\ARM_GCC_541\Debug\counter.elf</v>
-<v>counter\counter\CortexM0\ARM_GCC_541\Debug\counter.hex</v>
-<v>counter\counter\CortexM0\ARM_GCC_541\Debug\counter.map</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -196,6 +192,9 @@
 <name v=".\counter.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\counter.cydsn\counter.cydwr" />
 <name v=".\counter.cydsn\main.c" />
+<name v=".\counter.cydsn\Generated_Source\PSoC4\cytypes.h" />
+<name v=".\counter.cydsn\Generated_Source\PSoC4\CyLib.c" />
+<name v=".\counter.cydsn\Generated_Source\PSoC4\timer_counter_Int.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -203,7 +202,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1000, 395" SelectedTabbedMdiWindow="d367ad64-18ed-4053-a643-5269ac45f1f2"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="d7f23ced-4a8f-474d-9a7b-db5f2e330e0f" /><DocumentWindow Key="D:\psoc\theory\counter\counter.cydsn\TopDesign\TopDesign.cysch" Guid="a23ddef2-ea30-4516-8000-34ccc0f18ae1" /><DocumentWindow Key="D:\psoc\theory\counter\counter.cydsn\counter.cydwr" Guid="6d0a2dfc-38a0-435c-be7a-acba4c1e4703" /><DocumentWindow Key="D:\psoc\theory\counter\counter.cydsn\main.c" Guid="d367ad64-18ed-4053-a643-5269ac45f1f2" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1000, 532" SelectedTabbedMdiWindow="62d0104f-4b81-43b0-bc2d-d3aa120d60c1"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="d7f23ced-4a8f-474d-9a7b-db5f2e330e0f" /><DocumentWindow Key="D:\psoc\theory\counter\counter.cydsn\TopDesign\TopDesign.cysch" Guid="a23ddef2-ea30-4516-8000-34ccc0f18ae1" /><DocumentWindow Key="D:\psoc\theory\counter\counter.cydsn\counter.cydwr" Guid="6d0a2dfc-38a0-435c-be7a-acba4c1e4703" /><DocumentWindow Key="D:\psoc\theory\counter\counter.cydsn\main.c" Guid="d367ad64-18ed-4053-a643-5269ac45f1f2" /><DocumentWindow Key="D:\psoc\theory\counter\counter.cydsn\Generated_Source\PSoC4\cytypes.h" Guid="af604a66-3eac-4a4f-954b-f0e304a69f4e" /><DocumentWindow Key="D:\psoc\theory\counter\counter.cydsn\Generated_Source\PSoC4\CyLib.c" Guid="62d0104f-4b81-43b0-bc2d-d3aa120d60c1" /><DocumentWindow Key="D:\psoc\theory\counter\counter.cydsn\Generated_Source\PSoC4\timer_counter_Int.c" Guid="9a4c8011-298a-40c9-8360-da7eeeb70622" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

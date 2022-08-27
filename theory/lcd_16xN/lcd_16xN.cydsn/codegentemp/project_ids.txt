@@ -1,6 +1,6 @@
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|0b2ac3b6-c440-4166-bcbc-25b8b82a11db
-C:\Users\NGUYEN-DUC-DAT\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|70568bb1-9a87-483e-87b2-ac8d5f7ed432
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|03aa0349-0575-4c84-bbb5-cea2634e6d33
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|50790c82-0aa3-4f75-9df0-3558e3ce4afb
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|496e8c3f-8826-4743-ad41-5236464d8673
-D:\psoc\theory\lcd_16xN\lcd_16xN.cydsn\lcd_16xN.cyprj|5cb08d1a-85a3-479f-b753-837ca9cdffb6
+D:\psoc\theory\lcd_16xN\lcd_16xN.cydsn\lcd_16xN.cyprj|caaf0377-d1c0-4c55-9251-4d7db9589e8e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|fe4502bd-4e58-4092-80f7-435015dde10d
+C:\Users\NGUYEN-DUC-DAT\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|bde902cb-f787-4aaa-b230-3c9acbd38a5d
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|cba8c435-d958-4336-bf50-ca811ab97bf8
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|7e0daa2d-7a93-4dd8-9ca4-5c7530a1b9ec
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|28c33e57-4df9-42bb-b23b-b72dc1132a4f

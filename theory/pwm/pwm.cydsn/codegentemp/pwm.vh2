@@ -2,7 +2,7 @@
 --	Conversion of pwm.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Mon Aug 22 09:28:41 2022
+--	Fri Aug 26 15:02:16 2022
 --
 
 USE cypress.cypress.all;
@@ -57,7 +57,7 @@ clock:cy_clock_v1_0
 		id=>"787f80de-15a8-41f6-8774-03705681b020",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"1000000000",
+		period=>"3333333333.33333",
 		is_direct=>'0',
 		is_digital=>'0')
 	PORT MAP(clock_out=>Net_3,

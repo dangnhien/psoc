@@ -29,12 +29,13 @@ int main(void)
 
 void buttonHandle()
 {
-    
     ledTurnOn( valuePressButton() );
     
     CyDelay(2000);
     
-    ledTurnOff( valuePressButton() );    
+    ledTurnOff( valuePressButton() );  
+    
+    CyDelay(2000);
 }
 
 /* [] END OF FILE */

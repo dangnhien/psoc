@@ -22,6 +22,7 @@ int main(void)
         /* Place your application code here. */
         ledTurnOn();
         CyDelay(1000);
+        
         ledTurnOff();
         CyDelay(1000);
     }

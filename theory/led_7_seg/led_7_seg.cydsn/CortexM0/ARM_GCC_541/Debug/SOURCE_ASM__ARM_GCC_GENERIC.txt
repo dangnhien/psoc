@@ -1,0 +1,1 @@
+'D:\psoc\theory\led_7_seg\led_7_seg.cydsn\Generated_Source\PSoC4\CyBootAsmGnu.s' -o .o -T SOURCE_ASM__ARM_GCC_GENERIC -I 'D:\psoc\theory\led_7_seg\led_7_seg.cydsn' -I 'D:\psoc\theory\led_7_seg\led_7_seg.cydsn\Generated_Source\PSoC4' -f 'D:\psoc\theory\led_7_seg\led_7_seg.cydsn\CortexM0\ARM_GCC_541\Debug\.deps\SOURCE_ASM__ARM_GCC_GENERIC.d'

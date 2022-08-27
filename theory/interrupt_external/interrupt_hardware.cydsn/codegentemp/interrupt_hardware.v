@@ -1,6 +1,6 @@
 // ======================================================================
 // interrupt_hardware.v generated from TopDesign.cysch
-// 08/22/2022 at 09:00
+// 08/26/2022 at 21:21
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -148,10 +148,9 @@
 module top ;
 
           wire  Net_4;
-    electrical  Net_9;
-    electrical  Net_7;
-          wire  Net_11;
     electrical  Net_8;
+          wire  Net_11;
+    electrical  Net_7;
     electrical  Net_6;
 
     cy_annotation_universal_v1_0 Yellow (
@@ -304,7 +303,7 @@ module top ;
 		  .io({tmpIO_0__button1_net[0:0]}),
 		  .siovref(tmpSIOVREF__button1_net),
 		  .interrupt({Net_11}),
-		  .annotation({Net_9}),
+		  .annotation({Net_8}),
 		  .in_clock({1'b0}),
 		  .in_clock_en({1'b1}),
 		  .in_reset({1'b0}),

@@ -1,5 +1,5 @@
 -- Project:   lcd_16xN
--- Generated: 08/22/2022 12:52:53
+-- Generated: 08/25/2022 16:50:52
 -- PSoC Creator  4.4
 
 ENTITY lcd_16xN IS
@@ -42,19 +42,19 @@ ARCHITECTURE __DEFAULT__ OF lcd_16xN IS
     ATTRIBUTE Location OF ClockGenBlock : LABEL IS "F(CLK_GEN,0)";
     ATTRIBUTE Location OF ClockBlock : LABEL IS "F(Clock,0)";
     ATTRIBUTE lib_model OF \lcd:LCDPort(0)\ : LABEL IS "iocell1";
-    ATTRIBUTE Location OF \lcd:LCDPort(0)\ : LABEL IS "P2[1]";
+    ATTRIBUTE Location OF \lcd:LCDPort(0)\ : LABEL IS "P0[0]";
     ATTRIBUTE lib_model OF \lcd:LCDPort(1)\ : LABEL IS "iocell2";
-    ATTRIBUTE Location OF \lcd:LCDPort(1)\ : LABEL IS "P2[2]";
+    ATTRIBUTE Location OF \lcd:LCDPort(1)\ : LABEL IS "P0[1]";
     ATTRIBUTE lib_model OF \lcd:LCDPort(2)\ : LABEL IS "iocell3";
-    ATTRIBUTE Location OF \lcd:LCDPort(2)\ : LABEL IS "P2[3]";
+    ATTRIBUTE Location OF \lcd:LCDPort(2)\ : LABEL IS "P0[2]";
     ATTRIBUTE lib_model OF \lcd:LCDPort(3)\ : LABEL IS "iocell4";
-    ATTRIBUTE Location OF \lcd:LCDPort(3)\ : LABEL IS "P2[4]";
+    ATTRIBUTE Location OF \lcd:LCDPort(3)\ : LABEL IS "P0[3]";
     ATTRIBUTE lib_model OF \lcd:LCDPort(4)\ : LABEL IS "iocell5";
-    ATTRIBUTE Location OF \lcd:LCDPort(4)\ : LABEL IS "P2[5]";
+    ATTRIBUTE Location OF \lcd:LCDPort(4)\ : LABEL IS "P0[4]";
     ATTRIBUTE lib_model OF \lcd:LCDPort(5)\ : LABEL IS "iocell6";
-    ATTRIBUTE Location OF \lcd:LCDPort(5)\ : LABEL IS "P2[6]";
+    ATTRIBUTE Location OF \lcd:LCDPort(5)\ : LABEL IS "P0[5]";
     ATTRIBUTE lib_model OF \lcd:LCDPort(6)\ : LABEL IS "iocell7";
-    ATTRIBUTE Location OF \lcd:LCDPort(6)\ : LABEL IS "P2[7]";
+    ATTRIBUTE Location OF \lcd:LCDPort(6)\ : LABEL IS "P0[6]";
     COMPONENT iocell
         PORT (
             oe : IN std_ulogic;
