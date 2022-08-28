@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="eeprom_external\eeprom_external\Header Files\button_handle.h">
+<ExpandedNodeIds>
+<v>eeprom_external</v>
+<v>eeprom_external\eeprom_external</v>
+<v>eeprom_external\eeprom_external\TopDesign</v>
+<v>eeprom_external\eeprom_external\eeprom_external.cydwr</v>
+<v>eeprom_external\eeprom_external\eeprom_external.cydwr\Pins</v>
+<v>eeprom_external\eeprom_external\eeprom_external.cydwr\Analog</v>
+<v>eeprom_external\eeprom_external\eeprom_external.cydwr\Clocks</v>
+<v>eeprom_external\eeprom_external\eeprom_external.cydwr\Interrupts</v>
+<v>eeprom_external\eeprom_external\eeprom_external.cydwr\System</v>
+<v>eeprom_external\eeprom_external\eeprom_external.cydwr\Directives</v>
+<v>eeprom_external\eeprom_external\eeprom_external.cydwr\Flash Security</v>
+<v>eeprom_external\eeprom_external\Header Files</v>
+<v>eeprom_external\eeprom_external\Header Files\button_handle.h</v>
+<v>eeprom_external\eeprom_external\Header Files\cyapicallbacks.h</v>
+<v>eeprom_external\eeprom_external\Header Files\eeprom_external.h</v>
+<v>eeprom_external\eeprom_external\Header Files\main.h</v>
+<v>eeprom_external\eeprom_external\Header Files\timer_system.h</v>
+<v>eeprom_external\eeprom_external\Source Files</v>
+<v>eeprom_external\eeprom_external\Source Files\button_handle.c</v>
+<v>eeprom_external\eeprom_external\Source Files\eeprom_external.c</v>
+<v>eeprom_external\eeprom_external\Source Files\main.c</v>
+<v>eeprom_external\eeprom_external\Source Files\timer_system.c</v>
+<v>eeprom_external\eeprom_external\Generated_Source</v>
+<v>eeprom_external\eeprom_external\Generated_Source\PSoC4</v>
+<v>eeprom_external\eeprom_external\Generated_Source\PSoC4\button</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>eeprom_external\eeprom_external\eeprom_external.cydwr\Clocks</v>
+<v>eeprom_external\eeprom_external\eeprom_external.cydwr\Interrupts</v>
+<v>eeprom_external\eeprom_external\eeprom_external.cydwr\System</v>
+<v>eeprom_external\eeprom_external\eeprom_external.cydwr\Directives</v>
+<v>eeprom_external\eeprom_external\eeprom_external.cydwr\Flash Security</v>
+<v>eeprom_external\eeprom_external\Header Files</v>
+<v>eeprom_external\eeprom_external\Header Files\button_handle.h</v>
+<v>eeprom_external\eeprom_external\Header Files\cyapicallbacks.h</v>
+<v>eeprom_external\eeprom_external\Header Files\eeprom_external.h</v>
+<v>eeprom_external\eeprom_external\Header Files\main.h</v>
+<v>eeprom_external\eeprom_external\Header Files\timer_system.h</v>
+<v>eeprom_external\eeprom_external\Source Files</v>
+<v>eeprom_external\eeprom_external\Source Files\button_handle.c</v>
+<v>eeprom_external\eeprom_external\Source Files\eeprom_external.c</v>
+<v>eeprom_external\eeprom_external\Source Files\main.c</v>
+<v>eeprom_external\eeprom_external\Source Files\timer_system.c</v>
+<v>eeprom_external\eeprom_external\Generated_Source</v>
+<v>eeprom_external\eeprom_external\Generated_Source\PSoC4</v>
+<v>eeprom_external\eeprom_external\Generated_Source\PSoC4\button</v>
+<v>eeprom_external\eeprom_external\Generated_Source\PSoC4\button\button.c</v>
+<v>eeprom_external\eeprom_external\Generated_Source\PSoC4\button\button.h</v>
+<v>eeprom_external\eeprom_external\Generated_Source\PSoC4\button\button_aliases.h</v>
+<v>eeprom_external\eeprom_external\Generated_Source\PSoC4\button\button_PM.c</v>
+<v>eeprom_external\eeprom_external\Generated_Source\PSoC4\Clock_1</v>
+<v>eeprom_external\eeprom_external\Generated_Source\PSoC4\cy_boot</v>
+<v>eeprom_external\eeprom_external\Generated_Source\PSoC4\cy_lfclk</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>eeprom_external</v>
+<v>eeprom_external\eeprom_external</v>
+<v>eeprom_external\eeprom_external\TopDesign</v>
+<v>eeprom_external\eeprom_external\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>eeprom_external</v>
+<v>eeprom_external\eeprom_external</v>
+<v>eeprom_external\eeprom_external\TopDesign</v>
+<v>eeprom_external\eeprom_external\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>eeprom_external</v>
+<v>eeprom_external\eeprom_external</v>
+<v>eeprom_external\eeprom_external\CortexM0</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\button.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\button_handle.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\button_PM.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\eeprom_external.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_BOOT.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_I2C.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_I2C_BOOT.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_I2C_INT.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_I2C_MASTER.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_PM.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_SCB_IRQ.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_SCBCLK.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_scl.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_scl_PM.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_sda.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_sda_PM.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\LedYellow_0.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\LedYellow_0_PM.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\LedYellow_1.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\LedYellow_1_PM.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\LedYellow_2.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\LedYellow_2_PM.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\LedYellow_3.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\LedYellow_3_PM.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\LedYellow_4.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\LedYellow_4_PM.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\LedYellow_5.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\LedYellow_5_PM.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\LedYellow_6.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\LedYellow_6_PM.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\LedYellow_7.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\LedYellow_7_PM.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\timer.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\timer_interrupt.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\timer_PM.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\timer_system.lst</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\eeprom_external.elf</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\eeprom_external.hex</v>
+<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\eeprom_external.map</v>
+<v>eeprom_external\eeprom_external\eeprom_external.gpdsc</v>
+<v>eeprom_external\eeprom_external\eeprom_external.rpt</v>
+<v>eeprom_external\eeprom_external\eeprom_external_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>eeprom_external</v>
+<v>eeprom_external\eeprom_external</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>eeprom_external</v>
+<v>eeprom_external\eeprom_external</v>
+<v>eeprom_external\eeprom_external\PSoC 4 Architecture TRM</v>
+<v>eeprom_external\eeprom_external\PSoC 4100 Family Datasheet</v>
+<v>eeprom_external\eeprom_external\System Reference Guides</v>
+<v>eeprom_external\eeprom_external\System Reference Guides\cy_boot_v6_0</v>
+<v>eeprom_external\eeprom_external\System Reference Guides\cy_lfclk_v1_20</v>
+<v>eeprom_external\eeprom_external\cy_clock_v2_20.pdf</v>
+<v>eeprom_external\eeprom_external\cy_isr_v1_70.pdf</v>
+<v>eeprom_external\eeprom_external\cy_pins_v2_20</v>
+<v>eeprom_external\eeprom_external\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>eeprom_external\eeprom_external\SCB_P4_v4_0.pdf</v>
+<v>eeprom_external\eeprom_external\TCPWM_P4_v2_10.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>eeprom_external</v>
+<v>eeprom_external\eeprom_external</v>
+<v>eeprom_external\eeprom_external\PSoC 4 Architecture TRM</v>
+<v>eeprom_external\eeprom_external\PSoC 4100 Family Datasheet</v>
+<v>eeprom_external\eeprom_external\System Reference Guides</v>
+<v>eeprom_external\eeprom_external\System Reference Guides\cy_boot_v6_0</v>
+<v>eeprom_external\eeprom_external\System Reference Guides\cy_lfclk_v1_20</v>
+<v>eeprom_external\eeprom_external\cy_clock_v2_20.pdf</v>
+<v>eeprom_external\eeprom_external\cy_isr_v1_70.pdf</v>
+<v>eeprom_external\eeprom_external\cy_pins_v2_20</v>
+<v>eeprom_external\eeprom_external\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>eeprom_external\eeprom_external\SCB_P4_v4_0.pdf</v>
+<v>eeprom_external\eeprom_external\TCPWM_P4_v2_10.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\eeprom_external.cydsn\main.h" />
+<name v=".\eeprom_external.cydsn\timer_system.h" />
+<name v=".\eeprom_external.cydsn\timer_system.c" />
+<name v=".\eeprom_external.cydsn\Generated_Source\PSoC4\cytypes.h" />
+<name v=".\eeprom_external.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\eeprom_external.cydsn\eeprom_external.cydwr" />
+<name v=".\eeprom_external.cydsn\button_handle.h" />
+<name v=".\eeprom_external.cydsn\button_handle.c" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="979, 532" SelectedTabbedMdiWindow="100ab54d-2588-4b72-a09a-47ae0baea69c"><DocumentWindow Key="D:\psoc\theory\eeprom_external\eeprom_external.cydsn\main.h" Guid="74e4e933-d760-42c9-ba96-48c9d1a221cc" /><DocumentWindow Key="D:\psoc\theory\eeprom_external\eeprom_external.cydsn\timer_system.h" Guid="854d34cb-e817-4d77-899f-691a07353b21" /><DocumentWindow Key="D:\psoc\theory\eeprom_external\eeprom_external.cydsn\timer_system.c" Guid="9be50284-0dea-408a-92cc-656bd2295ae3" /><DocumentWindow Key="D:\psoc\theory\eeprom_external\eeprom_external.cydsn\Generated_Source\PSoC4\cytypes.h" Guid="49945cb2-bada-4f4f-aed0-faf3263c324a" /><DocumentWindow Key="D:\psoc\theory\eeprom_external\eeprom_external.cydsn\TopDesign\TopDesign.cysch" Guid="44084506-b803-4759-8583-a403d7fd7d6d" /><DocumentWindow Key="D:\psoc\theory\eeprom_external\eeprom_external.cydsn\eeprom_external.cydwr" Guid="cf7affc4-3a2a-4396-ba62-d9687a005cfd" /><DocumentWindow Key="D:\psoc\theory\eeprom_external\eeprom_external.cydsn\button_handle.h" Guid="2e32949b-3c84-497b-a185-3860433a3172" /><DocumentWindow Key="D:\psoc\theory\eeprom_external\eeprom_external.cydsn\button_handle.c" Guid="100ab54d-2588-4b72-a09a-47ae0baea69c" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="d7f23ced-4a8f-474d-9a7b-db5f2e330e0f" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

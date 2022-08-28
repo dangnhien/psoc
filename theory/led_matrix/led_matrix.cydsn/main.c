@@ -21,12 +21,10 @@ int main(void)
     for(;;)
     {
         /* Place your application code here. */
+        
         //light_from_0_to_9();
         light_character_k(0);
-        CyDelay(11);
     }
-    
-    
 }
 
 /* [] END OF FILE */

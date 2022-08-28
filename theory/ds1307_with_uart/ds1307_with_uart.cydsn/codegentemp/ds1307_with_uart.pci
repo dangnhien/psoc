@@ -1,0 +1,16 @@
+# ds1307_with_uart
+# 2022-08-27 14:20:25Z
+
+# IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 2
+# IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 3
+dont_use_location 0 1
+dont_use_location 1 0
+dont_use_location 1 1
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_io "\i2c_ds1307:sda(0)\" iocell 4 1
+set_io "\i2c_ds1307:scl(0)\" iocell 4 0
+set_io "\uart_transmit:tx(0)\" iocell 0 5
+set_io "\uart_transmit:rx(0)\" iocell 0 4
+set_io "Pin_Led_Yellow(0)" iocell 1 0

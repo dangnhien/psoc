@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="ds1307_with_uart\ds1307_with_uart\Header Files\main.h">
 <ExpandedNodeIds>
 <v>ds1307_with_uart</v>
 <v>ds1307_with_uart\ds1307_with_uart</v>
@@ -35,17 +35,10 @@
 <v>ds1307_with_uart\ds1307_with_uart\Source Files\ds1307_i2c.c</v>
 <v>ds1307_with_uart\ds1307_with_uart\Source Files\main.c</v>
 <v>ds1307_with_uart\ds1307_with_uart\Source Files\uart_transmitss.c</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>ds1307_with_uart</v>
-<v>ds1307_with_uart\ds1307_with_uart</v>
-<v>ds1307_with_uart\ds1307_with_uart\TopDesign</v>
-<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr</v>
-<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Pins</v>
-<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Analog</v>
-<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Clocks</v>
-<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Interrupts</v>
-<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\System</v>
 <v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Directives</v>
 <v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Flash Security</v>
 <v>ds1307_with_uart\ds1307_with_uart\Header Files</v>
@@ -57,6 +50,24 @@
 <v>ds1307_with_uart\ds1307_with_uart\Source Files\ds1307_i2c.c</v>
 <v>ds1307_with_uart\ds1307_with_uart\Source Files\main.c</v>
 <v>ds1307_with_uart\ds1307_with_uart\Source Files\uart_transmitss.c</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\cy_boot</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\cy_lfclk</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\Em_EEPROM_Dynamic</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\i2c_ds1307</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\i2c_ds1307_SCB_IRQ</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\i2c_ds1307_SCBCLK</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\i2c_ds1307_scl</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\i2c_ds1307_sda</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\Pin_Led_Yellow</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\uart_transmit</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\uart_transmit_rx</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\uart_transmit_SCBCLK</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\uart_transmit_tx</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\cycodeshareexport.ld</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\cycodeshareimport.ld</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\cycodeshareimport.scat</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -77,6 +88,53 @@
 <ExpandedNodeIds>
 <v>ds1307_with_uart</v>
 <v>ds1307_with_uart\ds1307_with_uart</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\ds1307_i2c.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_ds1307.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_ds1307_BOOT.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_ds1307_I2C.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_ds1307_I2C_BOOT.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_ds1307_I2C_INT.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_ds1307_I2C_MASTER.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_ds1307_PM.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_ds1307_SCB_IRQ.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_ds1307_SCBCLK.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_ds1307_scl.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_ds1307_scl_PM.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_ds1307_sda.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_ds1307_sda_PM.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Led_Yellow.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Led_Yellow_PM.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_transmit.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_transmit_BOOT.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_transmit_PM.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_transmit_rx.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_transmit_rx_PM.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_transmit_SCBCLK.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_transmit_SPI_UART.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_transmit_SPI_UART_INT.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_transmit_tx.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_transmit_tx_PM.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_transmit_UART.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_transmit_UART_BOOT.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_transmitss.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\ds1307_with_uart.elf</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\ds1307_with_uart.hex</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\ds1307_with_uart.map</v>
 <v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.gpdsc</v>
 <v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.rpt</v>
 <v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart_timing.html</v>
@@ -84,9 +142,6 @@
 <VisibleNodeIds>
 <v>ds1307_with_uart</v>
 <v>ds1307_with_uart\ds1307_with_uart</v>
-<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.gpdsc</v>
-<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.rpt</v>
-<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart_timing.html</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -127,13 +182,10 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\ds1307_with_uart.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\ds1307_with_uart.cydsn\ds1307_i2c.h" />
-<name v=".\ds1307_with_uart.cydsn\ds1307_i2c.c" />
 <name v=".\ds1307_with_uart.cydsn\uart_transmitss.h" />
 <name v=".\ds1307_with_uart.cydsn\uart_transmitss.c" />
 <name v=".\ds1307_with_uart.cydsn\main.h" />
-<name v=".\ds1307_with_uart.cydsn\ds1307_with_uart.cydwr" />
+<name v=".\ds1307_with_uart.cydsn\main.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -141,7 +193,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1029, 344" SelectedTabbedMdiWindow="659485c7-279f-4125-ba40-5c83654b4f19"><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\TopDesign\TopDesign.cysch" Guid="02f2dec9-698e-44d4-a1fc-5d2ce32111e2" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\ds1307_i2c.h" Guid="f7ecf285-cbf6-4bf0-badd-2c919ad9181d" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\ds1307_i2c.c" Guid="1af67fe2-d503-43b9-9a1b-6b4c9eeda6bd" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\uart_transmitss.h" Guid="0cc47f58-9ac0-4bf2-9441-b87c6ba08a4c" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\uart_transmitss.c" Guid="e9d7655d-78c4-456d-9670-eec549e3f1e0" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\main.h" Guid="bbe6278a-842d-4ec7-8538-468ed96d1067" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\ds1307_with_uart.cydwr" Guid="659485c7-279f-4125-ba40-5c83654b4f19" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1234, 328" SelectedTabbedMdiWindow="bc13dae6-21b3-4038-bb14-4019556f5f47"><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\uart_transmitss.h" Guid="0cc47f58-9ac0-4bf2-9441-b87c6ba08a4c" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\uart_transmitss.c" Guid="e9d7655d-78c4-456d-9670-eec549e3f1e0" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\main.h" Guid="bbe6278a-842d-4ec7-8538-468ed96d1067" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\main.c" Guid="bc13dae6-21b3-4038-bb14-4019556f5f47" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

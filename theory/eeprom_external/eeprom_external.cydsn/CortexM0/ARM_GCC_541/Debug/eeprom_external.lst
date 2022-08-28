@@ -1,0 +1,1877 @@
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"eeprom_external.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.eeprom_read_a_byte,"ax",%progbits
+  20              		.align	2
+  21              		.global	eeprom_read_a_byte
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	eeprom_read_a_byte, %function
+  25              	eeprom_read_a_byte:
+  26              	.LFB32:
+  27              		.file 1 "eeprom_external.c"
+   1:eeprom_external.c **** /* ========================================
+   2:eeprom_external.c ****  *
+   3:eeprom_external.c ****  * Copyright YOUR COMPANY, THE YEAR
+   4:eeprom_external.c ****  * All Rights Reserved
+   5:eeprom_external.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:eeprom_external.c ****  *
+   7:eeprom_external.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:eeprom_external.c ****  * WHICH IS THE PROPERTY OF your company.
+   9:eeprom_external.c ****  *
+  10:eeprom_external.c ****  * ========================================
+  11:eeprom_external.c **** */
+  12:eeprom_external.c **** 
+  13:eeprom_external.c **** #include "eeprom_external.h"
+  14:eeprom_external.c **** 
+  15:eeprom_external.c **** 
+  16:eeprom_external.c **** /*
+  17:eeprom_external.c ****     Random a byte read
+  18:eeprom_external.c **** */
+  19:eeprom_external.c **** uint8 eeprom_read_a_byte(uint8 address_read)
+  20:eeprom_external.c **** {
+  28              		.loc 1 20 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33 0000 10B5     		push	{r4, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 4, -8
+  36              		.cfi_offset 14, -4
+  37 0002 82B0     		sub	sp, sp, #8
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 2
+
+
+  38              		.cfi_def_cfa_offset 16
+  39 0004 0400     		movs	r4, r0
+  40              	.LVL1:
+  41              	.L2:
+  21:eeprom_external.c ****     uint8 data_read;
+  22:eeprom_external.c ****     uint8 result = 0;
+  23:eeprom_external.c ****     
+  24:eeprom_external.c ****     do{
+  25:eeprom_external.c ****         result = i2c_I2CMasterSendStart(EEPROM_ADDRESS, i2c_I2C_WRITE_XFER_MODE, 1);
+  42              		.loc 1 25 0 discriminator 1
+  43 0006 0122     		movs	r2, #1
+  44 0008 0021     		movs	r1, #0
+  45 000a 5020     		movs	r0, #80
+  46 000c FFF7FEFF 		bl	i2c_I2CMasterSendStart
+  47              	.LVL2:
+  48 0010 C0B2     		uxtb	r0, r0
+  49              	.LVL3:
+  26:eeprom_external.c ****     }while(result != i2c_I2C_MSTR_NO_ERROR);
+  50              		.loc 1 26 0 discriminator 1
+  51 0012 0028     		cmp	r0, #0
+  52 0014 F7D1     		bne	.L2
+  27:eeprom_external.c ****     
+  28:eeprom_external.c ****     i2c_I2CMasterWriteByte( (uint32)address_read, 1 );
+  53              		.loc 1 28 0
+  54 0016 0121     		movs	r1, #1
+  55 0018 2000     		movs	r0, r4
+  56              	.LVL4:
+  57 001a FFF7FEFF 		bl	i2c_I2CMasterWriteByte
+  58              	.LVL5:
+  29:eeprom_external.c ****     
+  30:eeprom_external.c ****     i2c_I2CMasterSendRestart(EEPROM_ADDRESS, i2c_I2C_READ_XFER_MODE, 1);
+  59              		.loc 1 30 0
+  60 001e 0122     		movs	r2, #1
+  61 0020 0121     		movs	r1, #1
+  62 0022 5020     		movs	r0, #80
+  63 0024 FFF7FEFF 		bl	i2c_I2CMasterSendRestart
+  64              	.LVL6:
+  31:eeprom_external.c ****     
+  32:eeprom_external.c ****     i2c_I2CMasterReadByte( i2c_I2C_NAK_DATA, &data_read , 1);
+  65              		.loc 1 32 0
+  66 0028 6B46     		mov	r3, sp
+  67 002a DC1D     		adds	r4, r3, #7
+  68 002c 0122     		movs	r2, #1
+  69 002e 2100     		movs	r1, r4
+  70 0030 0120     		movs	r0, #1
+  71 0032 FFF7FEFF 		bl	i2c_I2CMasterReadByte
+  72              	.LVL7:
+  33:eeprom_external.c ****     
+  34:eeprom_external.c ****     i2c_I2CMasterSendStop(5);
+  73              		.loc 1 34 0
+  74 0036 0520     		movs	r0, #5
+  75 0038 FFF7FEFF 		bl	i2c_I2CMasterSendStop
+  76              	.LVL8:
+  35:eeprom_external.c ****     
+  36:eeprom_external.c ****     return data_read;
+  77              		.loc 1 36 0
+  78 003c 2078     		ldrb	r0, [r4]
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 3
+
+
+  37:eeprom_external.c **** }
+  79              		.loc 1 37 0
+  80 003e 02B0     		add	sp, sp, #8
+  81              		@ sp needed
+  82 0040 10BD     		pop	{r4, pc}
+  83              		.cfi_endproc
+  84              	.LFE32:
+  85              		.size	eeprom_read_a_byte, .-eeprom_read_a_byte
+  86 0042 C046     		.section	.text.eeprom_read_page,"ax",%progbits
+  87              		.align	2
+  88              		.global	eeprom_read_page
+  89              		.code	16
+  90              		.thumb_func
+  91              		.type	eeprom_read_page, %function
+  92              	eeprom_read_page:
+  93              	.LFB33:
+  38:eeprom_external.c **** 
+  39:eeprom_external.c **** 
+  40:eeprom_external.c **** /*
+  41:eeprom_external.c ****    Sequential( page) read
+  42:eeprom_external.c **** */
+  43:eeprom_external.c **** void eeprom_read_page(uint8 address, uint8 *data_read, uint8 length)
+  44:eeprom_external.c **** {
+  94              		.loc 1 44 0
+  95              		.cfi_startproc
+  96              		@ args = 0, pretend = 0, frame = 0
+  97              		@ frame_needed = 0, uses_anonymous_args = 0
+  98              	.LVL9:
+  99 0000 70B5     		push	{r4, r5, r6, lr}
+ 100              		.cfi_def_cfa_offset 16
+ 101              		.cfi_offset 4, -16
+ 102              		.cfi_offset 5, -12
+ 103              		.cfi_offset 6, -8
+ 104              		.cfi_offset 14, -4
+ 105 0002 0400     		movs	r4, r0
+ 106 0004 0D00     		movs	r5, r1
+ 107 0006 1600     		movs	r6, r2
+ 108              	.LVL10:
+ 109              	.L4:
+  45:eeprom_external.c ****     uint8 result = 0, i;
+  46:eeprom_external.c ****     
+  47:eeprom_external.c ****     do{
+  48:eeprom_external.c ****         result = i2c_I2CMasterSendStart(EEPROM_ADDRESS, i2c_I2C_WRITE_XFER_MODE, 1);
+ 110              		.loc 1 48 0 discriminator 1
+ 111 0008 0122     		movs	r2, #1
+ 112 000a 0021     		movs	r1, #0
+ 113 000c 5020     		movs	r0, #80
+ 114 000e FFF7FEFF 		bl	i2c_I2CMasterSendStart
+ 115              	.LVL11:
+ 116 0012 C0B2     		uxtb	r0, r0
+ 117              	.LVL12:
+  49:eeprom_external.c ****     }while(result != i2c_I2C_MSTR_NO_ERROR);
+ 118              		.loc 1 49 0 discriminator 1
+ 119 0014 0028     		cmp	r0, #0
+ 120 0016 F7D1     		bne	.L4
+  50:eeprom_external.c ****     
+  51:eeprom_external.c ****      i2c_I2CMasterWriteByte( (uint32)address, 1 );
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 4
+
+
+ 121              		.loc 1 51 0
+ 122 0018 0121     		movs	r1, #1
+ 123 001a 2000     		movs	r0, r4
+ 124              	.LVL13:
+ 125 001c FFF7FEFF 		bl	i2c_I2CMasterWriteByte
+ 126              	.LVL14:
+  52:eeprom_external.c ****     
+  53:eeprom_external.c ****     i2c_I2CMasterSendRestart(EEPROM_ADDRESS, i2c_I2C_READ_XFER_MODE, 1);
+ 127              		.loc 1 53 0
+ 128 0020 0122     		movs	r2, #1
+ 129 0022 0121     		movs	r1, #1
+ 130 0024 5020     		movs	r0, #80
+ 131 0026 FFF7FEFF 		bl	i2c_I2CMasterSendRestart
+ 132              	.LVL15:
+  54:eeprom_external.c ****     
+  55:eeprom_external.c ****     for(i=0; i<length-1; i++)
+ 133              		.loc 1 55 0
+ 134 002a 0024     		movs	r4, #0
+ 135 002c 06E0     		b	.L5
+ 136              	.LVL16:
+ 137              	.L6:
+  56:eeprom_external.c ****     {
+  57:eeprom_external.c ****          i2c_I2CMasterReadByte( i2c_I2C_ACK_DATA, &data_read[i] , 1);
+ 138              		.loc 1 57 0 discriminator 3
+ 139 002e 2919     		adds	r1, r5, r4
+ 140 0030 0122     		movs	r2, #1
+ 141 0032 0020     		movs	r0, #0
+ 142 0034 FFF7FEFF 		bl	i2c_I2CMasterReadByte
+ 143              	.LVL17:
+  55:eeprom_external.c ****     {
+ 144              		.loc 1 55 0 discriminator 3
+ 145 0038 0134     		adds	r4, r4, #1
+ 146              	.LVL18:
+ 147 003a E4B2     		uxtb	r4, r4
+ 148              	.LVL19:
+ 149              	.L5:
+  55:eeprom_external.c ****     {
+ 150              		.loc 1 55 0 is_stmt 0 discriminator 1
+ 151 003c 731E     		subs	r3, r6, #1
+ 152 003e 9C42     		cmp	r4, r3
+ 153 0040 F5DB     		blt	.L6
+  58:eeprom_external.c ****     }
+  59:eeprom_external.c ****     i2c_I2CMasterReadByte( i2c_I2C_NAK_DATA, &data_read[i] , 1);
+ 154              		.loc 1 59 0 is_stmt 1
+ 155 0042 2919     		adds	r1, r5, r4
+ 156 0044 0122     		movs	r2, #1
+ 157 0046 0120     		movs	r0, #1
+ 158 0048 FFF7FEFF 		bl	i2c_I2CMasterReadByte
+ 159              	.LVL20:
+  60:eeprom_external.c ****     
+  61:eeprom_external.c ****     i2c_I2CMasterSendStop(5);
+ 160              		.loc 1 61 0
+ 161 004c 0520     		movs	r0, #5
+ 162 004e FFF7FEFF 		bl	i2c_I2CMasterSendStop
+ 163              	.LVL21:
+  62:eeprom_external.c **** }
+ 164              		.loc 1 62 0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 5
+
+
+ 165              		@ sp needed
+ 166              	.LVL22:
+ 167              	.LVL23:
+ 168 0052 70BD     		pop	{r4, r5, r6, pc}
+ 169              		.cfi_endproc
+ 170              	.LFE33:
+ 171              		.size	eeprom_read_page, .-eeprom_read_page
+ 172              		.section	.text.eeprom_write_a_byte,"ax",%progbits
+ 173              		.align	2
+ 174              		.global	eeprom_write_a_byte
+ 175              		.code	16
+ 176              		.thumb_func
+ 177              		.type	eeprom_write_a_byte, %function
+ 178              	eeprom_write_a_byte:
+ 179              	.LFB34:
+  63:eeprom_external.c **** 
+  64:eeprom_external.c **** void eeprom_write_a_byte(uint8 address, uint8 data_nedd_write)
+  65:eeprom_external.c **** {
+ 180              		.loc 1 65 0
+ 181              		.cfi_startproc
+ 182              		@ args = 0, pretend = 0, frame = 0
+ 183              		@ frame_needed = 0, uses_anonymous_args = 0
+ 184              	.LVL24:
+ 185 0000 70B5     		push	{r4, r5, r6, lr}
+ 186              		.cfi_def_cfa_offset 16
+ 187              		.cfi_offset 4, -16
+ 188              		.cfi_offset 5, -12
+ 189              		.cfi_offset 6, -8
+ 190              		.cfi_offset 14, -4
+ 191 0002 0500     		movs	r5, r0
+ 192 0004 0C00     		movs	r4, r1
+ 193              	.LVL25:
+ 194              	.L8:
+  66:eeprom_external.c ****     uint8 result = 0;
+  67:eeprom_external.c ****     
+  68:eeprom_external.c ****     do{
+  69:eeprom_external.c ****         result = i2c_I2CMasterSendStart(EEPROM_ADDRESS, i2c_I2C_WRITE_XFER_MODE, 1);
+ 195              		.loc 1 69 0 discriminator 1
+ 196 0006 0122     		movs	r2, #1
+ 197 0008 0021     		movs	r1, #0
+ 198 000a 5020     		movs	r0, #80
+ 199 000c FFF7FEFF 		bl	i2c_I2CMasterSendStart
+ 200              	.LVL26:
+ 201 0010 C0B2     		uxtb	r0, r0
+ 202              	.LVL27:
+  70:eeprom_external.c ****     }while(result != i2c_I2C_MSTR_NO_ERROR);
+ 203              		.loc 1 70 0 discriminator 1
+ 204 0012 0028     		cmp	r0, #0
+ 205 0014 F7D1     		bne	.L8
+  71:eeprom_external.c ****     
+  72:eeprom_external.c ****     i2c_I2CMasterWriteByte( (uint32)address, 1 );
+ 206              		.loc 1 72 0
+ 207 0016 0121     		movs	r1, #1
+ 208 0018 2800     		movs	r0, r5
+ 209              	.LVL28:
+ 210 001a FFF7FEFF 		bl	i2c_I2CMasterWriteByte
+ 211              	.LVL29:
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 6
+
+
+  73:eeprom_external.c ****     i2c_I2CMasterWriteByte( (uint32)data_nedd_write, 1 );
+ 212              		.loc 1 73 0
+ 213 001e 0121     		movs	r1, #1
+ 214 0020 2000     		movs	r0, r4
+ 215 0022 FFF7FEFF 		bl	i2c_I2CMasterWriteByte
+ 216              	.LVL30:
+  74:eeprom_external.c ****     
+  75:eeprom_external.c ****     i2c_I2CMasterSendStop(5);
+ 217              		.loc 1 75 0
+ 218 0026 0520     		movs	r0, #5
+ 219 0028 FFF7FEFF 		bl	i2c_I2CMasterSendStop
+ 220              	.LVL31:
+  76:eeprom_external.c **** }
+ 221              		.loc 1 76 0
+ 222              		@ sp needed
+ 223 002c 70BD     		pop	{r4, r5, r6, pc}
+ 224              		.cfi_endproc
+ 225              	.LFE34:
+ 226              		.size	eeprom_write_a_byte, .-eeprom_write_a_byte
+ 227 002e C046     		.section	.text.eeprom_write_page,"ax",%progbits
+ 228              		.align	2
+ 229              		.global	eeprom_write_page
+ 230              		.code	16
+ 231              		.thumb_func
+ 232              		.type	eeprom_write_page, %function
+ 233              	eeprom_write_page:
+ 234              	.LFB35:
+  77:eeprom_external.c **** 
+  78:eeprom_external.c **** void eeprom_write_page(uint8 address, uint32 *data_need_write, uint8 length)
+  79:eeprom_external.c **** {
+ 235              		.loc 1 79 0
+ 236              		.cfi_startproc
+ 237              		@ args = 0, pretend = 0, frame = 0
+ 238              		@ frame_needed = 0, uses_anonymous_args = 0
+ 239              	.LVL32:
+ 240 0000 70B5     		push	{r4, r5, r6, lr}
+ 241              		.cfi_def_cfa_offset 16
+ 242              		.cfi_offset 4, -16
+ 243              		.cfi_offset 5, -12
+ 244              		.cfi_offset 6, -8
+ 245              		.cfi_offset 14, -4
+ 246 0002 0400     		movs	r4, r0
+ 247 0004 0E00     		movs	r6, r1
+ 248 0006 1500     		movs	r5, r2
+ 249              	.LVL33:
+ 250              	.L10:
+  80:eeprom_external.c ****     uint8 result = 0, i;
+  81:eeprom_external.c ****      do{
+  82:eeprom_external.c ****         result = i2c_I2CMasterSendStart(EEPROM_ADDRESS, i2c_I2C_WRITE_XFER_MODE, 1);
+ 251              		.loc 1 82 0 discriminator 1
+ 252 0008 0122     		movs	r2, #1
+ 253 000a 0021     		movs	r1, #0
+ 254 000c 5020     		movs	r0, #80
+ 255 000e FFF7FEFF 		bl	i2c_I2CMasterSendStart
+ 256              	.LVL34:
+ 257 0012 C0B2     		uxtb	r0, r0
+ 258              	.LVL35:
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 7
+
+
+  83:eeprom_external.c ****     }while(result != i2c_I2C_MSTR_NO_ERROR);
+ 259              		.loc 1 83 0 discriminator 1
+ 260 0014 0028     		cmp	r0, #0
+ 261 0016 F7D1     		bne	.L10
+  84:eeprom_external.c ****     
+  85:eeprom_external.c ****     i2c_I2CMasterWriteByte( (uint32)address, 1 );
+ 262              		.loc 1 85 0
+ 263 0018 0121     		movs	r1, #1
+ 264 001a 2000     		movs	r0, r4
+ 265              	.LVL36:
+ 266 001c FFF7FEFF 		bl	i2c_I2CMasterWriteByte
+ 267              	.LVL37:
+  86:eeprom_external.c ****     
+  87:eeprom_external.c ****     for(i=0; i<length; i++)
+ 268              		.loc 1 87 0
+ 269 0020 0024     		movs	r4, #0
+ 270 0022 06E0     		b	.L11
+ 271              	.LVL38:
+ 272              	.L12:
+  88:eeprom_external.c ****          i2c_I2CMasterWriteByte( data_need_write[i], 1 );
+ 273              		.loc 1 88 0 discriminator 3
+ 274 0024 A300     		lsls	r3, r4, #2
+ 275 0026 F058     		ldr	r0, [r6, r3]
+ 276 0028 0121     		movs	r1, #1
+ 277 002a FFF7FEFF 		bl	i2c_I2CMasterWriteByte
+ 278              	.LVL39:
+  87:eeprom_external.c ****          i2c_I2CMasterWriteByte( data_need_write[i], 1 );
+ 279              		.loc 1 87 0 discriminator 3
+ 280 002e 0134     		adds	r4, r4, #1
+ 281              	.LVL40:
+ 282 0030 E4B2     		uxtb	r4, r4
+ 283              	.LVL41:
+ 284              	.L11:
+  87:eeprom_external.c ****          i2c_I2CMasterWriteByte( data_need_write[i], 1 );
+ 285              		.loc 1 87 0 is_stmt 0 discriminator 1
+ 286 0032 AC42     		cmp	r4, r5
+ 287 0034 F6D3     		bcc	.L12
+  89:eeprom_external.c ****         
+  90:eeprom_external.c ****     i2c_I2CMasterSendStop(5);
+ 288              		.loc 1 90 0 is_stmt 1
+ 289 0036 0520     		movs	r0, #5
+ 290 0038 FFF7FEFF 		bl	i2c_I2CMasterSendStop
+ 291              	.LVL42:
+  91:eeprom_external.c **** }
+ 292              		.loc 1 91 0
+ 293              		@ sp needed
+ 294              	.LVL43:
+ 295              	.LVL44:
+ 296 003c 70BD     		pop	{r4, r5, r6, pc}
+ 297              		.cfi_endproc
+ 298              	.LFE35:
+ 299              		.size	eeprom_write_page, .-eeprom_write_page
+ 300 003e C046     		.section	.text.find_address_eeprom,"ax",%progbits
+ 301              		.align	2
+ 302              		.global	find_address_eeprom
+ 303              		.code	16
+ 304              		.thumb_func
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 8
+
+
+ 305              		.type	find_address_eeprom, %function
+ 306              	find_address_eeprom:
+ 307              	.LFB36:
+  92:eeprom_external.c **** 
+  93:eeprom_external.c **** uint8 find_address_eeprom()
+  94:eeprom_external.c **** {
+ 308              		.loc 1 94 0
+ 309              		.cfi_startproc
+ 310              		@ args = 0, pretend = 0, frame = 0
+ 311              		@ frame_needed = 0, uses_anonymous_args = 0
+ 312 0000 10B5     		push	{r4, lr}
+ 313              		.cfi_def_cfa_offset 8
+ 314              		.cfi_offset 4, -8
+ 315              		.cfi_offset 14, -4
+ 316              	.LVL45:
+  95:eeprom_external.c ****     uint8 result = 0;
+  96:eeprom_external.c ****     uint8 address = 0x4F;   //0x50-1
+ 317              		.loc 1 96 0
+ 318 0002 4F24     		movs	r4, #79
+ 319              	.LVL46:
+ 320              	.L14:
+  97:eeprom_external.c ****     do{
+  98:eeprom_external.c ****         address++;
+ 321              		.loc 1 98 0 discriminator 1
+ 322 0004 0134     		adds	r4, r4, #1
+ 323              	.LVL47:
+ 324 0006 E4B2     		uxtb	r4, r4
+ 325              	.LVL48:
+  99:eeprom_external.c ****         result = i2c_I2CMasterSendStart(address, i2c_I2C_WRITE_XFER_MODE, 1);
+ 326              		.loc 1 99 0 discriminator 1
+ 327 0008 0122     		movs	r2, #1
+ 328 000a 0021     		movs	r1, #0
+ 329 000c 2000     		movs	r0, r4
+ 330 000e FFF7FEFF 		bl	i2c_I2CMasterSendStart
+ 331              	.LVL49:
+ 332 0012 C0B2     		uxtb	r0, r0
+ 333              	.LVL50:
+ 100:eeprom_external.c ****     }while(result != i2c_I2C_MSTR_NO_ERROR);
+ 334              		.loc 1 100 0 discriminator 1
+ 335 0014 0028     		cmp	r0, #0
+ 336 0016 F5D1     		bne	.L14
+ 101:eeprom_external.c ****     
+ 102:eeprom_external.c ****     return address;
+ 103:eeprom_external.c **** }
+ 337              		.loc 1 103 0
+ 338 0018 2000     		movs	r0, r4
+ 339              	.LVL51:
+ 340              		@ sp needed
+ 341              	.LVL52:
+ 342 001a 10BD     		pop	{r4, pc}
+ 343              		.cfi_endproc
+ 344              	.LFE36:
+ 345              		.size	find_address_eeprom, .-find_address_eeprom
+ 346              		.text
+ 347              	.Letext0:
+ 348              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 349              		.file 3 "Generated_Source\\PSoC4/i2c_I2C.h"
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 9
+
+
+ 350              		.section	.debug_info,"",%progbits
+ 351              	.Ldebug_info0:
+ 352 0000 64040000 		.4byte	0x464
+ 353 0004 0400     		.2byte	0x4
+ 354 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 355 000a 04       		.byte	0x4
+ 356 000b 01       		.uleb128 0x1
+ 357 000c 69010000 		.4byte	.LASF32
+ 358 0010 0C       		.byte	0xc
+ 359 0011 00000000 		.4byte	.LASF33
+ 360 0015 61000000 		.4byte	.LASF34
+ 361 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 362 001d 00000000 		.4byte	0
+ 363 0021 00000000 		.4byte	.Ldebug_line0
+ 364 0025 02       		.uleb128 0x2
+ 365 0026 01       		.byte	0x1
+ 366 0027 06       		.byte	0x6
+ 367 0028 85020000 		.4byte	.LASF0
+ 368 002c 02       		.uleb128 0x2
+ 369 002d 01       		.byte	0x1
+ 370 002e 08       		.byte	0x8
+ 371 002f 2F000000 		.4byte	.LASF1
+ 372 0033 02       		.uleb128 0x2
+ 373 0034 02       		.byte	0x2
+ 374 0035 05       		.byte	0x5
+ 375 0036 12010000 		.4byte	.LASF2
+ 376 003a 02       		.uleb128 0x2
+ 377 003b 02       		.byte	0x2
+ 378 003c 07       		.byte	0x7
+ 379 003d 91020000 		.4byte	.LASF3
+ 380 0041 02       		.uleb128 0x2
+ 381 0042 04       		.byte	0x4
+ 382 0043 05       		.byte	0x5
+ 383 0044 70020000 		.4byte	.LASF4
+ 384 0048 02       		.uleb128 0x2
+ 385 0049 04       		.byte	0x4
+ 386 004a 07       		.byte	0x7
+ 387 004b 4F000000 		.4byte	.LASF5
+ 388 004f 02       		.uleb128 0x2
+ 389 0050 08       		.byte	0x8
+ 390 0051 05       		.byte	0x5
+ 391 0052 16020000 		.4byte	.LASF6
+ 392 0056 02       		.uleb128 0x2
+ 393 0057 08       		.byte	0x8
+ 394 0058 07       		.byte	0x7
+ 395 0059 4B010000 		.4byte	.LASF7
+ 396 005d 03       		.uleb128 0x3
+ 397 005e 04       		.byte	0x4
+ 398 005f 05       		.byte	0x5
+ 399 0060 696E7400 		.ascii	"int\000"
+ 400 0064 02       		.uleb128 0x2
+ 401 0065 04       		.byte	0x4
+ 402 0066 07       		.byte	0x7
+ 403 0067 36010000 		.4byte	.LASF8
+ 404 006b 04       		.uleb128 0x4
+ 405 006c 96000000 		.4byte	.LASF9
+ 406 0070 02       		.byte	0x2
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 10
+
+
+ 407 0071 FB01     		.2byte	0x1fb
+ 408 0073 2C000000 		.4byte	0x2c
+ 409 0077 04       		.uleb128 0x4
+ 410 0078 2F010000 		.4byte	.LASF10
+ 411 007c 02       		.byte	0x2
+ 412 007d FD01     		.2byte	0x1fd
+ 413 007f 48000000 		.4byte	0x48
+ 414 0083 02       		.uleb128 0x2
+ 415 0084 04       		.byte	0x4
+ 416 0085 04       		.byte	0x4
+ 417 0086 29000000 		.4byte	.LASF11
+ 418 008a 02       		.uleb128 0x2
+ 419 008b 08       		.byte	0x8
+ 420 008c 04       		.byte	0x4
+ 421 008d E7000000 		.4byte	.LASF12
+ 422 0091 02       		.uleb128 0x2
+ 423 0092 01       		.byte	0x1
+ 424 0093 08       		.byte	0x8
+ 425 0094 24020000 		.4byte	.LASF13
+ 426 0098 02       		.uleb128 0x2
+ 427 0099 08       		.byte	0x8
+ 428 009a 04       		.byte	0x4
+ 429 009b 79020000 		.4byte	.LASF14
+ 430 009f 02       		.uleb128 0x2
+ 431 00a0 04       		.byte	0x4
+ 432 00a1 07       		.byte	0x7
+ 433 00a2 F7010000 		.4byte	.LASF15
+ 434 00a6 05       		.uleb128 0x5
+ 435 00a7 1C010000 		.4byte	.LASF35
+ 436 00ab 01       		.byte	0x1
+ 437 00ac 13       		.byte	0x13
+ 438 00ad 6B000000 		.4byte	0x6b
+ 439 00b1 00000000 		.4byte	.LFB32
+ 440 00b5 42000000 		.4byte	.LFE32-.LFB32
+ 441 00b9 01       		.uleb128 0x1
+ 442 00ba 9C       		.byte	0x9c
+ 443 00bb 6E010000 		.4byte	0x16e
+ 444 00bf 06       		.uleb128 0x6
+ 445 00c0 63020000 		.4byte	.LASF18
+ 446 00c4 01       		.byte	0x1
+ 447 00c5 13       		.byte	0x13
+ 448 00c6 6B000000 		.4byte	0x6b
+ 449 00ca 00000000 		.4byte	.LLST0
+ 450 00ce 07       		.uleb128 0x7
+ 451 00cf B3000000 		.4byte	.LASF16
+ 452 00d3 01       		.byte	0x1
+ 453 00d4 15       		.byte	0x15
+ 454 00d5 6B000000 		.4byte	0x6b
+ 455 00d9 02       		.uleb128 0x2
+ 456 00da 91       		.byte	0x91
+ 457 00db 77       		.sleb128 -9
+ 458 00dc 08       		.uleb128 0x8
+ 459 00dd 62010000 		.4byte	.LASF17
+ 460 00e1 01       		.byte	0x1
+ 461 00e2 16       		.byte	0x16
+ 462 00e3 6B000000 		.4byte	0x6b
+ 463 00e7 21000000 		.4byte	.LLST1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 11
+
+
+ 464 00eb 09       		.uleb128 0x9
+ 465 00ec 10000000 		.4byte	.LVL2
+ 466 00f0 2B040000 		.4byte	0x42b
+ 467 00f4 09010000 		.4byte	0x109
+ 468 00f8 0A       		.uleb128 0xa
+ 469 00f9 01       		.uleb128 0x1
+ 470 00fa 50       		.byte	0x50
+ 471 00fb 02       		.uleb128 0x2
+ 472 00fc 08       		.byte	0x8
+ 473 00fd 50       		.byte	0x50
+ 474 00fe 0A       		.uleb128 0xa
+ 475 00ff 01       		.uleb128 0x1
+ 476 0100 51       		.byte	0x51
+ 477 0101 01       		.uleb128 0x1
+ 478 0102 30       		.byte	0x30
+ 479 0103 0A       		.uleb128 0xa
+ 480 0104 01       		.uleb128 0x1
+ 481 0105 52       		.byte	0x52
+ 482 0106 01       		.uleb128 0x1
+ 483 0107 31       		.byte	0x31
+ 484 0108 00       		.byte	0
+ 485 0109 09       		.uleb128 0x9
+ 486 010a 1E000000 		.4byte	.LVL5
+ 487 010e 37040000 		.4byte	0x437
+ 488 0112 22010000 		.4byte	0x122
+ 489 0116 0A       		.uleb128 0xa
+ 490 0117 01       		.uleb128 0x1
+ 491 0118 50       		.byte	0x50
+ 492 0119 02       		.uleb128 0x2
+ 493 011a 74       		.byte	0x74
+ 494 011b 00       		.sleb128 0
+ 495 011c 0A       		.uleb128 0xa
+ 496 011d 01       		.uleb128 0x1
+ 497 011e 51       		.byte	0x51
+ 498 011f 01       		.uleb128 0x1
+ 499 0120 31       		.byte	0x31
+ 500 0121 00       		.byte	0
+ 501 0122 09       		.uleb128 0x9
+ 502 0123 28000000 		.4byte	.LVL6
+ 503 0127 43040000 		.4byte	0x443
+ 504 012b 40010000 		.4byte	0x140
+ 505 012f 0A       		.uleb128 0xa
+ 506 0130 01       		.uleb128 0x1
+ 507 0131 50       		.byte	0x50
+ 508 0132 02       		.uleb128 0x2
+ 509 0133 08       		.byte	0x8
+ 510 0134 50       		.byte	0x50
+ 511 0135 0A       		.uleb128 0xa
+ 512 0136 01       		.uleb128 0x1
+ 513 0137 51       		.byte	0x51
+ 514 0138 01       		.uleb128 0x1
+ 515 0139 31       		.byte	0x31
+ 516 013a 0A       		.uleb128 0xa
+ 517 013b 01       		.uleb128 0x1
+ 518 013c 52       		.byte	0x52
+ 519 013d 01       		.uleb128 0x1
+ 520 013e 31       		.byte	0x31
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 12
+
+
+ 521 013f 00       		.byte	0
+ 522 0140 09       		.uleb128 0x9
+ 523 0141 36000000 		.4byte	.LVL7
+ 524 0145 4F040000 		.4byte	0x44f
+ 525 0149 5E010000 		.4byte	0x15e
+ 526 014d 0A       		.uleb128 0xa
+ 527 014e 01       		.uleb128 0x1
+ 528 014f 50       		.byte	0x50
+ 529 0150 01       		.uleb128 0x1
+ 530 0151 31       		.byte	0x31
+ 531 0152 0A       		.uleb128 0xa
+ 532 0153 01       		.uleb128 0x1
+ 533 0154 51       		.byte	0x51
+ 534 0155 02       		.uleb128 0x2
+ 535 0156 74       		.byte	0x74
+ 536 0157 00       		.sleb128 0
+ 537 0158 0A       		.uleb128 0xa
+ 538 0159 01       		.uleb128 0x1
+ 539 015a 52       		.byte	0x52
+ 540 015b 01       		.uleb128 0x1
+ 541 015c 31       		.byte	0x31
+ 542 015d 00       		.byte	0
+ 543 015e 0B       		.uleb128 0xb
+ 544 015f 3C000000 		.4byte	.LVL8
+ 545 0163 5B040000 		.4byte	0x45b
+ 546 0167 0A       		.uleb128 0xa
+ 547 0168 01       		.uleb128 0x1
+ 548 0169 50       		.byte	0x50
+ 549 016a 01       		.uleb128 0x1
+ 550 016b 35       		.byte	0x35
+ 551 016c 00       		.byte	0
+ 552 016d 00       		.byte	0
+ 553 016e 0C       		.uleb128 0xc
+ 554 016f 52020000 		.4byte	.LASF21
+ 555 0173 01       		.byte	0x1
+ 556 0174 2B       		.byte	0x2b
+ 557 0175 00000000 		.4byte	.LFB33
+ 558 0179 54000000 		.4byte	.LFE33-.LFB33
+ 559 017d 01       		.uleb128 0x1
+ 560 017e 9C       		.byte	0x9c
+ 561 017f 73020000 		.4byte	0x273
+ 562 0183 06       		.uleb128 0x6
+ 563 0184 43010000 		.4byte	.LASF19
+ 564 0188 01       		.byte	0x1
+ 565 0189 2B       		.byte	0x2b
+ 566 018a 6B000000 		.4byte	0x6b
+ 567 018e 34000000 		.4byte	.LLST2
+ 568 0192 06       		.uleb128 0x6
+ 569 0193 B3000000 		.4byte	.LASF16
+ 570 0197 01       		.byte	0x1
+ 571 0198 2B       		.byte	0x2b
+ 572 0199 73020000 		.4byte	0x273
+ 573 019d 55000000 		.4byte	.LLST3
+ 574 01a1 06       		.uleb128 0x6
+ 575 01a2 A4020000 		.4byte	.LASF20
+ 576 01a6 01       		.byte	0x1
+ 577 01a7 2B       		.byte	0x2b
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 13
+
+
+ 578 01a8 6B000000 		.4byte	0x6b
+ 579 01ac 81000000 		.4byte	.LLST4
+ 580 01b0 08       		.uleb128 0x8
+ 581 01b1 62010000 		.4byte	.LASF17
+ 582 01b5 01       		.byte	0x1
+ 583 01b6 2D       		.byte	0x2d
+ 584 01b7 6B000000 		.4byte	0x6b
+ 585 01bb A2000000 		.4byte	.LLST5
+ 586 01bf 0D       		.uleb128 0xd
+ 587 01c0 6900     		.ascii	"i\000"
+ 588 01c2 01       		.byte	0x1
+ 589 01c3 2D       		.byte	0x2d
+ 590 01c4 6B000000 		.4byte	0x6b
+ 591 01c8 B5000000 		.4byte	.LLST6
+ 592 01cc 09       		.uleb128 0x9
+ 593 01cd 12000000 		.4byte	.LVL11
+ 594 01d1 2B040000 		.4byte	0x42b
+ 595 01d5 EA010000 		.4byte	0x1ea
+ 596 01d9 0A       		.uleb128 0xa
+ 597 01da 01       		.uleb128 0x1
+ 598 01db 50       		.byte	0x50
+ 599 01dc 02       		.uleb128 0x2
+ 600 01dd 08       		.byte	0x8
+ 601 01de 50       		.byte	0x50
+ 602 01df 0A       		.uleb128 0xa
+ 603 01e0 01       		.uleb128 0x1
+ 604 01e1 51       		.byte	0x51
+ 605 01e2 01       		.uleb128 0x1
+ 606 01e3 30       		.byte	0x30
+ 607 01e4 0A       		.uleb128 0xa
+ 608 01e5 01       		.uleb128 0x1
+ 609 01e6 52       		.byte	0x52
+ 610 01e7 01       		.uleb128 0x1
+ 611 01e8 31       		.byte	0x31
+ 612 01e9 00       		.byte	0
+ 613 01ea 09       		.uleb128 0x9
+ 614 01eb 20000000 		.4byte	.LVL14
+ 615 01ef 37040000 		.4byte	0x437
+ 616 01f3 03020000 		.4byte	0x203
+ 617 01f7 0A       		.uleb128 0xa
+ 618 01f8 01       		.uleb128 0x1
+ 619 01f9 50       		.byte	0x50
+ 620 01fa 02       		.uleb128 0x2
+ 621 01fb 74       		.byte	0x74
+ 622 01fc 00       		.sleb128 0
+ 623 01fd 0A       		.uleb128 0xa
+ 624 01fe 01       		.uleb128 0x1
+ 625 01ff 51       		.byte	0x51
+ 626 0200 01       		.uleb128 0x1
+ 627 0201 31       		.byte	0x31
+ 628 0202 00       		.byte	0
+ 629 0203 09       		.uleb128 0x9
+ 630 0204 2A000000 		.4byte	.LVL15
+ 631 0208 43040000 		.4byte	0x443
+ 632 020c 21020000 		.4byte	0x221
+ 633 0210 0A       		.uleb128 0xa
+ 634 0211 01       		.uleb128 0x1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 14
+
+
+ 635 0212 50       		.byte	0x50
+ 636 0213 02       		.uleb128 0x2
+ 637 0214 08       		.byte	0x8
+ 638 0215 50       		.byte	0x50
+ 639 0216 0A       		.uleb128 0xa
+ 640 0217 01       		.uleb128 0x1
+ 641 0218 51       		.byte	0x51
+ 642 0219 01       		.uleb128 0x1
+ 643 021a 31       		.byte	0x31
+ 644 021b 0A       		.uleb128 0xa
+ 645 021c 01       		.uleb128 0x1
+ 646 021d 52       		.byte	0x52
+ 647 021e 01       		.uleb128 0x1
+ 648 021f 31       		.byte	0x31
+ 649 0220 00       		.byte	0
+ 650 0221 09       		.uleb128 0x9
+ 651 0222 38000000 		.4byte	.LVL17
+ 652 0226 4F040000 		.4byte	0x44f
+ 653 022a 42020000 		.4byte	0x242
+ 654 022e 0A       		.uleb128 0xa
+ 655 022f 01       		.uleb128 0x1
+ 656 0230 50       		.byte	0x50
+ 657 0231 01       		.uleb128 0x1
+ 658 0232 30       		.byte	0x30
+ 659 0233 0A       		.uleb128 0xa
+ 660 0234 01       		.uleb128 0x1
+ 661 0235 51       		.byte	0x51
+ 662 0236 05       		.uleb128 0x5
+ 663 0237 75       		.byte	0x75
+ 664 0238 00       		.sleb128 0
+ 665 0239 74       		.byte	0x74
+ 666 023a 00       		.sleb128 0
+ 667 023b 22       		.byte	0x22
+ 668 023c 0A       		.uleb128 0xa
+ 669 023d 01       		.uleb128 0x1
+ 670 023e 52       		.byte	0x52
+ 671 023f 01       		.uleb128 0x1
+ 672 0240 31       		.byte	0x31
+ 673 0241 00       		.byte	0
+ 674 0242 09       		.uleb128 0x9
+ 675 0243 4C000000 		.4byte	.LVL20
+ 676 0247 4F040000 		.4byte	0x44f
+ 677 024b 63020000 		.4byte	0x263
+ 678 024f 0A       		.uleb128 0xa
+ 679 0250 01       		.uleb128 0x1
+ 680 0251 50       		.byte	0x50
+ 681 0252 01       		.uleb128 0x1
+ 682 0253 31       		.byte	0x31
+ 683 0254 0A       		.uleb128 0xa
+ 684 0255 01       		.uleb128 0x1
+ 685 0256 51       		.byte	0x51
+ 686 0257 05       		.uleb128 0x5
+ 687 0258 75       		.byte	0x75
+ 688 0259 00       		.sleb128 0
+ 689 025a 74       		.byte	0x74
+ 690 025b 00       		.sleb128 0
+ 691 025c 22       		.byte	0x22
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 15
+
+
+ 692 025d 0A       		.uleb128 0xa
+ 693 025e 01       		.uleb128 0x1
+ 694 025f 52       		.byte	0x52
+ 695 0260 01       		.uleb128 0x1
+ 696 0261 31       		.byte	0x31
+ 697 0262 00       		.byte	0
+ 698 0263 0B       		.uleb128 0xb
+ 699 0264 52000000 		.4byte	.LVL21
+ 700 0268 5B040000 		.4byte	0x45b
+ 701 026c 0A       		.uleb128 0xa
+ 702 026d 01       		.uleb128 0x1
+ 703 026e 50       		.byte	0x50
+ 704 026f 01       		.uleb128 0x1
+ 705 0270 35       		.byte	0x35
+ 706 0271 00       		.byte	0
+ 707 0272 00       		.byte	0
+ 708 0273 0E       		.uleb128 0xe
+ 709 0274 04       		.byte	0x4
+ 710 0275 6B000000 		.4byte	0x6b
+ 711 0279 0C       		.uleb128 0xc
+ 712 027a D3000000 		.4byte	.LASF22
+ 713 027e 01       		.byte	0x1
+ 714 027f 40       		.byte	0x40
+ 715 0280 00000000 		.4byte	.LFB34
+ 716 0284 2E000000 		.4byte	.LFE34-.LFB34
+ 717 0288 01       		.uleb128 0x1
+ 718 0289 9C       		.byte	0x9c
+ 719 028a 1B030000 		.4byte	0x31b
+ 720 028e 06       		.uleb128 0x6
+ 721 028f 43010000 		.4byte	.LASF19
+ 722 0293 01       		.byte	0x1
+ 723 0294 40       		.byte	0x40
+ 724 0295 6B000000 		.4byte	0x6b
+ 725 0299 DF000000 		.4byte	.LLST7
+ 726 029d 06       		.uleb128 0x6
+ 727 029e 29020000 		.4byte	.LASF23
+ 728 02a2 01       		.byte	0x1
+ 729 02a3 40       		.byte	0x40
+ 730 02a4 6B000000 		.4byte	0x6b
+ 731 02a8 00010000 		.4byte	.LLST8
+ 732 02ac 08       		.uleb128 0x8
+ 733 02ad 62010000 		.4byte	.LASF17
+ 734 02b1 01       		.byte	0x1
+ 735 02b2 42       		.byte	0x42
+ 736 02b3 6B000000 		.4byte	0x6b
+ 737 02b7 21010000 		.4byte	.LLST9
+ 738 02bb 09       		.uleb128 0x9
+ 739 02bc 10000000 		.4byte	.LVL26
+ 740 02c0 2B040000 		.4byte	0x42b
+ 741 02c4 D9020000 		.4byte	0x2d9
+ 742 02c8 0A       		.uleb128 0xa
+ 743 02c9 01       		.uleb128 0x1
+ 744 02ca 50       		.byte	0x50
+ 745 02cb 02       		.uleb128 0x2
+ 746 02cc 08       		.byte	0x8
+ 747 02cd 50       		.byte	0x50
+ 748 02ce 0A       		.uleb128 0xa
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 16
+
+
+ 749 02cf 01       		.uleb128 0x1
+ 750 02d0 51       		.byte	0x51
+ 751 02d1 01       		.uleb128 0x1
+ 752 02d2 30       		.byte	0x30
+ 753 02d3 0A       		.uleb128 0xa
+ 754 02d4 01       		.uleb128 0x1
+ 755 02d5 52       		.byte	0x52
+ 756 02d6 01       		.uleb128 0x1
+ 757 02d7 31       		.byte	0x31
+ 758 02d8 00       		.byte	0
+ 759 02d9 09       		.uleb128 0x9
+ 760 02da 1E000000 		.4byte	.LVL29
+ 761 02de 37040000 		.4byte	0x437
+ 762 02e2 F2020000 		.4byte	0x2f2
+ 763 02e6 0A       		.uleb128 0xa
+ 764 02e7 01       		.uleb128 0x1
+ 765 02e8 50       		.byte	0x50
+ 766 02e9 02       		.uleb128 0x2
+ 767 02ea 75       		.byte	0x75
+ 768 02eb 00       		.sleb128 0
+ 769 02ec 0A       		.uleb128 0xa
+ 770 02ed 01       		.uleb128 0x1
+ 771 02ee 51       		.byte	0x51
+ 772 02ef 01       		.uleb128 0x1
+ 773 02f0 31       		.byte	0x31
+ 774 02f1 00       		.byte	0
+ 775 02f2 09       		.uleb128 0x9
+ 776 02f3 26000000 		.4byte	.LVL30
+ 777 02f7 37040000 		.4byte	0x437
+ 778 02fb 0B030000 		.4byte	0x30b
+ 779 02ff 0A       		.uleb128 0xa
+ 780 0300 01       		.uleb128 0x1
+ 781 0301 50       		.byte	0x50
+ 782 0302 02       		.uleb128 0x2
+ 783 0303 74       		.byte	0x74
+ 784 0304 00       		.sleb128 0
+ 785 0305 0A       		.uleb128 0xa
+ 786 0306 01       		.uleb128 0x1
+ 787 0307 51       		.byte	0x51
+ 788 0308 01       		.uleb128 0x1
+ 789 0309 31       		.byte	0x31
+ 790 030a 00       		.byte	0
+ 791 030b 0B       		.uleb128 0xb
+ 792 030c 2C000000 		.4byte	.LVL31
+ 793 0310 5B040000 		.4byte	0x45b
+ 794 0314 0A       		.uleb128 0xa
+ 795 0315 01       		.uleb128 0x1
+ 796 0316 50       		.byte	0x50
+ 797 0317 01       		.uleb128 0x1
+ 798 0318 35       		.byte	0x35
+ 799 0319 00       		.byte	0
+ 800 031a 00       		.byte	0
+ 801 031b 0C       		.uleb128 0xc
+ 802 031c 3D000000 		.4byte	.LASF24
+ 803 0320 01       		.byte	0x1
+ 804 0321 4E       		.byte	0x4e
+ 805 0322 00000000 		.4byte	.LFB35
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 17
+
+
+ 806 0326 3E000000 		.4byte	.LFE35-.LFB35
+ 807 032a 01       		.uleb128 0x1
+ 808 032b 9C       		.byte	0x9c
+ 809 032c D3030000 		.4byte	0x3d3
+ 810 0330 06       		.uleb128 0x6
+ 811 0331 43010000 		.4byte	.LASF19
+ 812 0335 01       		.byte	0x1
+ 813 0336 4E       		.byte	0x4e
+ 814 0337 6B000000 		.4byte	0x6b
+ 815 033b 34010000 		.4byte	.LLST10
+ 816 033f 06       		.uleb128 0x6
+ 817 0340 02010000 		.4byte	.LASF25
+ 818 0344 01       		.byte	0x1
+ 819 0345 4E       		.byte	0x4e
+ 820 0346 D3030000 		.4byte	0x3d3
+ 821 034a 55010000 		.4byte	.LLST11
+ 822 034e 06       		.uleb128 0x6
+ 823 034f A4020000 		.4byte	.LASF20
+ 824 0353 01       		.byte	0x1
+ 825 0354 4E       		.byte	0x4e
+ 826 0355 6B000000 		.4byte	0x6b
+ 827 0359 81010000 		.4byte	.LLST12
+ 828 035d 08       		.uleb128 0x8
+ 829 035e 62010000 		.4byte	.LASF17
+ 830 0362 01       		.byte	0x1
+ 831 0363 50       		.byte	0x50
+ 832 0364 6B000000 		.4byte	0x6b
+ 833 0368 A2010000 		.4byte	.LLST13
+ 834 036c 0D       		.uleb128 0xd
+ 835 036d 6900     		.ascii	"i\000"
+ 836 036f 01       		.byte	0x1
+ 837 0370 50       		.byte	0x50
+ 838 0371 6B000000 		.4byte	0x6b
+ 839 0375 B5010000 		.4byte	.LLST14
+ 840 0379 09       		.uleb128 0x9
+ 841 037a 12000000 		.4byte	.LVL34
+ 842 037e 2B040000 		.4byte	0x42b
+ 843 0382 97030000 		.4byte	0x397
+ 844 0386 0A       		.uleb128 0xa
+ 845 0387 01       		.uleb128 0x1
+ 846 0388 50       		.byte	0x50
+ 847 0389 02       		.uleb128 0x2
+ 848 038a 08       		.byte	0x8
+ 849 038b 50       		.byte	0x50
+ 850 038c 0A       		.uleb128 0xa
+ 851 038d 01       		.uleb128 0x1
+ 852 038e 51       		.byte	0x51
+ 853 038f 01       		.uleb128 0x1
+ 854 0390 30       		.byte	0x30
+ 855 0391 0A       		.uleb128 0xa
+ 856 0392 01       		.uleb128 0x1
+ 857 0393 52       		.byte	0x52
+ 858 0394 01       		.uleb128 0x1
+ 859 0395 31       		.byte	0x31
+ 860 0396 00       		.byte	0
+ 861 0397 09       		.uleb128 0x9
+ 862 0398 20000000 		.4byte	.LVL37
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 18
+
+
+ 863 039c 37040000 		.4byte	0x437
+ 864 03a0 B0030000 		.4byte	0x3b0
+ 865 03a4 0A       		.uleb128 0xa
+ 866 03a5 01       		.uleb128 0x1
+ 867 03a6 50       		.byte	0x50
+ 868 03a7 02       		.uleb128 0x2
+ 869 03a8 74       		.byte	0x74
+ 870 03a9 00       		.sleb128 0
+ 871 03aa 0A       		.uleb128 0xa
+ 872 03ab 01       		.uleb128 0x1
+ 873 03ac 51       		.byte	0x51
+ 874 03ad 01       		.uleb128 0x1
+ 875 03ae 31       		.byte	0x31
+ 876 03af 00       		.byte	0
+ 877 03b0 09       		.uleb128 0x9
+ 878 03b1 2E000000 		.4byte	.LVL39
+ 879 03b5 37040000 		.4byte	0x437
+ 880 03b9 C3030000 		.4byte	0x3c3
+ 881 03bd 0A       		.uleb128 0xa
+ 882 03be 01       		.uleb128 0x1
+ 883 03bf 51       		.byte	0x51
+ 884 03c0 01       		.uleb128 0x1
+ 885 03c1 31       		.byte	0x31
+ 886 03c2 00       		.byte	0
+ 887 03c3 0B       		.uleb128 0xb
+ 888 03c4 3C000000 		.4byte	.LVL42
+ 889 03c8 5B040000 		.4byte	0x45b
+ 890 03cc 0A       		.uleb128 0xa
+ 891 03cd 01       		.uleb128 0x1
+ 892 03ce 50       		.byte	0x50
+ 893 03cf 01       		.uleb128 0x1
+ 894 03d0 35       		.byte	0x35
+ 895 03d1 00       		.byte	0
+ 896 03d2 00       		.byte	0
+ 897 03d3 0E       		.uleb128 0xe
+ 898 03d4 04       		.byte	0x4
+ 899 03d5 77000000 		.4byte	0x77
+ 900 03d9 0F       		.uleb128 0xf
+ 901 03da EE000000 		.4byte	.LASF26
+ 902 03de 01       		.byte	0x1
+ 903 03df 5D       		.byte	0x5d
+ 904 03e0 6B000000 		.4byte	0x6b
+ 905 03e4 00000000 		.4byte	.LFB36
+ 906 03e8 1C000000 		.4byte	.LFE36-.LFB36
+ 907 03ec 01       		.uleb128 0x1
+ 908 03ed 9C       		.byte	0x9c
+ 909 03ee 2B040000 		.4byte	0x42b
+ 910 03f2 08       		.uleb128 0x8
+ 911 03f3 62010000 		.4byte	.LASF17
+ 912 03f7 01       		.byte	0x1
+ 913 03f8 5F       		.byte	0x5f
+ 914 03f9 6B000000 		.4byte	0x6b
+ 915 03fd DF010000 		.4byte	.LLST15
+ 916 0401 08       		.uleb128 0x8
+ 917 0402 43010000 		.4byte	.LASF19
+ 918 0406 01       		.byte	0x1
+ 919 0407 60       		.byte	0x60
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 19
+
+
+ 920 0408 6B000000 		.4byte	0x6b
+ 921 040c FE010000 		.4byte	.LLST16
+ 922 0410 0B       		.uleb128 0xb
+ 923 0411 12000000 		.4byte	.LVL49
+ 924 0415 2B040000 		.4byte	0x42b
+ 925 0419 0A       		.uleb128 0xa
+ 926 041a 01       		.uleb128 0x1
+ 927 041b 50       		.byte	0x50
+ 928 041c 02       		.uleb128 0x2
+ 929 041d 74       		.byte	0x74
+ 930 041e 00       		.sleb128 0
+ 931 041f 0A       		.uleb128 0xa
+ 932 0420 01       		.uleb128 0x1
+ 933 0421 51       		.byte	0x51
+ 934 0422 01       		.uleb128 0x1
+ 935 0423 30       		.byte	0x30
+ 936 0424 0A       		.uleb128 0xa
+ 937 0425 01       		.uleb128 0x1
+ 938 0426 52       		.byte	0x52
+ 939 0427 01       		.uleb128 0x1
+ 940 0428 31       		.byte	0x31
+ 941 0429 00       		.byte	0
+ 942 042a 00       		.byte	0
+ 943 042b 10       		.uleb128 0x10
+ 944 042c 9C000000 		.4byte	.LASF27
+ 945 0430 9C000000 		.4byte	.LASF27
+ 946 0434 03       		.byte	0x3
+ 947 0435 1B01     		.2byte	0x11b
+ 948 0437 10       		.uleb128 0x10
+ 949 0438 12000000 		.4byte	.LASF28
+ 950 043c 12000000 		.4byte	.LASF28
+ 951 0440 03       		.byte	0x3
+ 952 0441 1E01     		.2byte	0x11e
+ 953 0443 10       		.uleb128 0x10
+ 954 0444 39020000 		.4byte	.LASF29
+ 955 0448 39020000 		.4byte	.LASF29
+ 956 044c 03       		.byte	0x3
+ 957 044d 1C01     		.2byte	0x11c
+ 958 044f 10       		.uleb128 0x10
+ 959 0450 BD000000 		.4byte	.LASF30
+ 960 0454 BD000000 		.4byte	.LASF30
+ 961 0458 03       		.byte	0x3
+ 962 0459 1F01     		.2byte	0x11f
+ 963 045b 10       		.uleb128 0x10
+ 964 045c 00020000 		.4byte	.LASF31
+ 965 0460 00020000 		.4byte	.LASF31
+ 966 0464 03       		.byte	0x3
+ 967 0465 1D01     		.2byte	0x11d
+ 968 0467 00       		.byte	0
+ 969              		.section	.debug_abbrev,"",%progbits
+ 970              	.Ldebug_abbrev0:
+ 971 0000 01       		.uleb128 0x1
+ 972 0001 11       		.uleb128 0x11
+ 973 0002 01       		.byte	0x1
+ 974 0003 25       		.uleb128 0x25
+ 975 0004 0E       		.uleb128 0xe
+ 976 0005 13       		.uleb128 0x13
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 20
+
+
+ 977 0006 0B       		.uleb128 0xb
+ 978 0007 03       		.uleb128 0x3
+ 979 0008 0E       		.uleb128 0xe
+ 980 0009 1B       		.uleb128 0x1b
+ 981 000a 0E       		.uleb128 0xe
+ 982 000b 55       		.uleb128 0x55
+ 983 000c 17       		.uleb128 0x17
+ 984 000d 11       		.uleb128 0x11
+ 985 000e 01       		.uleb128 0x1
+ 986 000f 10       		.uleb128 0x10
+ 987 0010 17       		.uleb128 0x17
+ 988 0011 00       		.byte	0
+ 989 0012 00       		.byte	0
+ 990 0013 02       		.uleb128 0x2
+ 991 0014 24       		.uleb128 0x24
+ 992 0015 00       		.byte	0
+ 993 0016 0B       		.uleb128 0xb
+ 994 0017 0B       		.uleb128 0xb
+ 995 0018 3E       		.uleb128 0x3e
+ 996 0019 0B       		.uleb128 0xb
+ 997 001a 03       		.uleb128 0x3
+ 998 001b 0E       		.uleb128 0xe
+ 999 001c 00       		.byte	0
+ 1000 001d 00       		.byte	0
+ 1001 001e 03       		.uleb128 0x3
+ 1002 001f 24       		.uleb128 0x24
+ 1003 0020 00       		.byte	0
+ 1004 0021 0B       		.uleb128 0xb
+ 1005 0022 0B       		.uleb128 0xb
+ 1006 0023 3E       		.uleb128 0x3e
+ 1007 0024 0B       		.uleb128 0xb
+ 1008 0025 03       		.uleb128 0x3
+ 1009 0026 08       		.uleb128 0x8
+ 1010 0027 00       		.byte	0
+ 1011 0028 00       		.byte	0
+ 1012 0029 04       		.uleb128 0x4
+ 1013 002a 16       		.uleb128 0x16
+ 1014 002b 00       		.byte	0
+ 1015 002c 03       		.uleb128 0x3
+ 1016 002d 0E       		.uleb128 0xe
+ 1017 002e 3A       		.uleb128 0x3a
+ 1018 002f 0B       		.uleb128 0xb
+ 1019 0030 3B       		.uleb128 0x3b
+ 1020 0031 05       		.uleb128 0x5
+ 1021 0032 49       		.uleb128 0x49
+ 1022 0033 13       		.uleb128 0x13
+ 1023 0034 00       		.byte	0
+ 1024 0035 00       		.byte	0
+ 1025 0036 05       		.uleb128 0x5
+ 1026 0037 2E       		.uleb128 0x2e
+ 1027 0038 01       		.byte	0x1
+ 1028 0039 3F       		.uleb128 0x3f
+ 1029 003a 19       		.uleb128 0x19
+ 1030 003b 03       		.uleb128 0x3
+ 1031 003c 0E       		.uleb128 0xe
+ 1032 003d 3A       		.uleb128 0x3a
+ 1033 003e 0B       		.uleb128 0xb
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 21
+
+
+ 1034 003f 3B       		.uleb128 0x3b
+ 1035 0040 0B       		.uleb128 0xb
+ 1036 0041 27       		.uleb128 0x27
+ 1037 0042 19       		.uleb128 0x19
+ 1038 0043 49       		.uleb128 0x49
+ 1039 0044 13       		.uleb128 0x13
+ 1040 0045 11       		.uleb128 0x11
+ 1041 0046 01       		.uleb128 0x1
+ 1042 0047 12       		.uleb128 0x12
+ 1043 0048 06       		.uleb128 0x6
+ 1044 0049 40       		.uleb128 0x40
+ 1045 004a 18       		.uleb128 0x18
+ 1046 004b 9742     		.uleb128 0x2117
+ 1047 004d 19       		.uleb128 0x19
+ 1048 004e 01       		.uleb128 0x1
+ 1049 004f 13       		.uleb128 0x13
+ 1050 0050 00       		.byte	0
+ 1051 0051 00       		.byte	0
+ 1052 0052 06       		.uleb128 0x6
+ 1053 0053 05       		.uleb128 0x5
+ 1054 0054 00       		.byte	0
+ 1055 0055 03       		.uleb128 0x3
+ 1056 0056 0E       		.uleb128 0xe
+ 1057 0057 3A       		.uleb128 0x3a
+ 1058 0058 0B       		.uleb128 0xb
+ 1059 0059 3B       		.uleb128 0x3b
+ 1060 005a 0B       		.uleb128 0xb
+ 1061 005b 49       		.uleb128 0x49
+ 1062 005c 13       		.uleb128 0x13
+ 1063 005d 02       		.uleb128 0x2
+ 1064 005e 17       		.uleb128 0x17
+ 1065 005f 00       		.byte	0
+ 1066 0060 00       		.byte	0
+ 1067 0061 07       		.uleb128 0x7
+ 1068 0062 34       		.uleb128 0x34
+ 1069 0063 00       		.byte	0
+ 1070 0064 03       		.uleb128 0x3
+ 1071 0065 0E       		.uleb128 0xe
+ 1072 0066 3A       		.uleb128 0x3a
+ 1073 0067 0B       		.uleb128 0xb
+ 1074 0068 3B       		.uleb128 0x3b
+ 1075 0069 0B       		.uleb128 0xb
+ 1076 006a 49       		.uleb128 0x49
+ 1077 006b 13       		.uleb128 0x13
+ 1078 006c 02       		.uleb128 0x2
+ 1079 006d 18       		.uleb128 0x18
+ 1080 006e 00       		.byte	0
+ 1081 006f 00       		.byte	0
+ 1082 0070 08       		.uleb128 0x8
+ 1083 0071 34       		.uleb128 0x34
+ 1084 0072 00       		.byte	0
+ 1085 0073 03       		.uleb128 0x3
+ 1086 0074 0E       		.uleb128 0xe
+ 1087 0075 3A       		.uleb128 0x3a
+ 1088 0076 0B       		.uleb128 0xb
+ 1089 0077 3B       		.uleb128 0x3b
+ 1090 0078 0B       		.uleb128 0xb
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 22
+
+
+ 1091 0079 49       		.uleb128 0x49
+ 1092 007a 13       		.uleb128 0x13
+ 1093 007b 02       		.uleb128 0x2
+ 1094 007c 17       		.uleb128 0x17
+ 1095 007d 00       		.byte	0
+ 1096 007e 00       		.byte	0
+ 1097 007f 09       		.uleb128 0x9
+ 1098 0080 898201   		.uleb128 0x4109
+ 1099 0083 01       		.byte	0x1
+ 1100 0084 11       		.uleb128 0x11
+ 1101 0085 01       		.uleb128 0x1
+ 1102 0086 31       		.uleb128 0x31
+ 1103 0087 13       		.uleb128 0x13
+ 1104 0088 01       		.uleb128 0x1
+ 1105 0089 13       		.uleb128 0x13
+ 1106 008a 00       		.byte	0
+ 1107 008b 00       		.byte	0
+ 1108 008c 0A       		.uleb128 0xa
+ 1109 008d 8A8201   		.uleb128 0x410a
+ 1110 0090 00       		.byte	0
+ 1111 0091 02       		.uleb128 0x2
+ 1112 0092 18       		.uleb128 0x18
+ 1113 0093 9142     		.uleb128 0x2111
+ 1114 0095 18       		.uleb128 0x18
+ 1115 0096 00       		.byte	0
+ 1116 0097 00       		.byte	0
+ 1117 0098 0B       		.uleb128 0xb
+ 1118 0099 898201   		.uleb128 0x4109
+ 1119 009c 01       		.byte	0x1
+ 1120 009d 11       		.uleb128 0x11
+ 1121 009e 01       		.uleb128 0x1
+ 1122 009f 31       		.uleb128 0x31
+ 1123 00a0 13       		.uleb128 0x13
+ 1124 00a1 00       		.byte	0
+ 1125 00a2 00       		.byte	0
+ 1126 00a3 0C       		.uleb128 0xc
+ 1127 00a4 2E       		.uleb128 0x2e
+ 1128 00a5 01       		.byte	0x1
+ 1129 00a6 3F       		.uleb128 0x3f
+ 1130 00a7 19       		.uleb128 0x19
+ 1131 00a8 03       		.uleb128 0x3
+ 1132 00a9 0E       		.uleb128 0xe
+ 1133 00aa 3A       		.uleb128 0x3a
+ 1134 00ab 0B       		.uleb128 0xb
+ 1135 00ac 3B       		.uleb128 0x3b
+ 1136 00ad 0B       		.uleb128 0xb
+ 1137 00ae 27       		.uleb128 0x27
+ 1138 00af 19       		.uleb128 0x19
+ 1139 00b0 11       		.uleb128 0x11
+ 1140 00b1 01       		.uleb128 0x1
+ 1141 00b2 12       		.uleb128 0x12
+ 1142 00b3 06       		.uleb128 0x6
+ 1143 00b4 40       		.uleb128 0x40
+ 1144 00b5 18       		.uleb128 0x18
+ 1145 00b6 9742     		.uleb128 0x2117
+ 1146 00b8 19       		.uleb128 0x19
+ 1147 00b9 01       		.uleb128 0x1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 23
+
+
+ 1148 00ba 13       		.uleb128 0x13
+ 1149 00bb 00       		.byte	0
+ 1150 00bc 00       		.byte	0
+ 1151 00bd 0D       		.uleb128 0xd
+ 1152 00be 34       		.uleb128 0x34
+ 1153 00bf 00       		.byte	0
+ 1154 00c0 03       		.uleb128 0x3
+ 1155 00c1 08       		.uleb128 0x8
+ 1156 00c2 3A       		.uleb128 0x3a
+ 1157 00c3 0B       		.uleb128 0xb
+ 1158 00c4 3B       		.uleb128 0x3b
+ 1159 00c5 0B       		.uleb128 0xb
+ 1160 00c6 49       		.uleb128 0x49
+ 1161 00c7 13       		.uleb128 0x13
+ 1162 00c8 02       		.uleb128 0x2
+ 1163 00c9 17       		.uleb128 0x17
+ 1164 00ca 00       		.byte	0
+ 1165 00cb 00       		.byte	0
+ 1166 00cc 0E       		.uleb128 0xe
+ 1167 00cd 0F       		.uleb128 0xf
+ 1168 00ce 00       		.byte	0
+ 1169 00cf 0B       		.uleb128 0xb
+ 1170 00d0 0B       		.uleb128 0xb
+ 1171 00d1 49       		.uleb128 0x49
+ 1172 00d2 13       		.uleb128 0x13
+ 1173 00d3 00       		.byte	0
+ 1174 00d4 00       		.byte	0
+ 1175 00d5 0F       		.uleb128 0xf
+ 1176 00d6 2E       		.uleb128 0x2e
+ 1177 00d7 01       		.byte	0x1
+ 1178 00d8 3F       		.uleb128 0x3f
+ 1179 00d9 19       		.uleb128 0x19
+ 1180 00da 03       		.uleb128 0x3
+ 1181 00db 0E       		.uleb128 0xe
+ 1182 00dc 3A       		.uleb128 0x3a
+ 1183 00dd 0B       		.uleb128 0xb
+ 1184 00de 3B       		.uleb128 0x3b
+ 1185 00df 0B       		.uleb128 0xb
+ 1186 00e0 49       		.uleb128 0x49
+ 1187 00e1 13       		.uleb128 0x13
+ 1188 00e2 11       		.uleb128 0x11
+ 1189 00e3 01       		.uleb128 0x1
+ 1190 00e4 12       		.uleb128 0x12
+ 1191 00e5 06       		.uleb128 0x6
+ 1192 00e6 40       		.uleb128 0x40
+ 1193 00e7 18       		.uleb128 0x18
+ 1194 00e8 9742     		.uleb128 0x2117
+ 1195 00ea 19       		.uleb128 0x19
+ 1196 00eb 01       		.uleb128 0x1
+ 1197 00ec 13       		.uleb128 0x13
+ 1198 00ed 00       		.byte	0
+ 1199 00ee 00       		.byte	0
+ 1200 00ef 10       		.uleb128 0x10
+ 1201 00f0 2E       		.uleb128 0x2e
+ 1202 00f1 00       		.byte	0
+ 1203 00f2 3F       		.uleb128 0x3f
+ 1204 00f3 19       		.uleb128 0x19
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 24
+
+
+ 1205 00f4 3C       		.uleb128 0x3c
+ 1206 00f5 19       		.uleb128 0x19
+ 1207 00f6 6E       		.uleb128 0x6e
+ 1208 00f7 0E       		.uleb128 0xe
+ 1209 00f8 03       		.uleb128 0x3
+ 1210 00f9 0E       		.uleb128 0xe
+ 1211 00fa 3A       		.uleb128 0x3a
+ 1212 00fb 0B       		.uleb128 0xb
+ 1213 00fc 3B       		.uleb128 0x3b
+ 1214 00fd 05       		.uleb128 0x5
+ 1215 00fe 00       		.byte	0
+ 1216 00ff 00       		.byte	0
+ 1217 0100 00       		.byte	0
+ 1218              		.section	.debug_loc,"",%progbits
+ 1219              	.Ldebug_loc0:
+ 1220              	.LLST0:
+ 1221 0000 00000000 		.4byte	.LVL0
+ 1222 0004 06000000 		.4byte	.LVL1
+ 1223 0008 0100     		.2byte	0x1
+ 1224 000a 50       		.byte	0x50
+ 1225 000b 06000000 		.4byte	.LVL1
+ 1226 000f 42000000 		.4byte	.LFE32
+ 1227 0013 0400     		.2byte	0x4
+ 1228 0015 F3       		.byte	0xf3
+ 1229 0016 01       		.uleb128 0x1
+ 1230 0017 50       		.byte	0x50
+ 1231 0018 9F       		.byte	0x9f
+ 1232 0019 00000000 		.4byte	0
+ 1233 001d 00000000 		.4byte	0
+ 1234              	.LLST1:
+ 1235 0021 12000000 		.4byte	.LVL3
+ 1236 0025 1A000000 		.4byte	.LVL4
+ 1237 0029 0100     		.2byte	0x1
+ 1238 002b 50       		.byte	0x50
+ 1239 002c 00000000 		.4byte	0
+ 1240 0030 00000000 		.4byte	0
+ 1241              	.LLST2:
+ 1242 0034 00000000 		.4byte	.LVL9
+ 1243 0038 08000000 		.4byte	.LVL10
+ 1244 003c 0100     		.2byte	0x1
+ 1245 003e 50       		.byte	0x50
+ 1246 003f 08000000 		.4byte	.LVL10
+ 1247 0043 54000000 		.4byte	.LFE33
+ 1248 0047 0400     		.2byte	0x4
+ 1249 0049 F3       		.byte	0xf3
+ 1250 004a 01       		.uleb128 0x1
+ 1251 004b 50       		.byte	0x50
+ 1252 004c 9F       		.byte	0x9f
+ 1253 004d 00000000 		.4byte	0
+ 1254 0051 00000000 		.4byte	0
+ 1255              	.LLST3:
+ 1256 0055 00000000 		.4byte	.LVL9
+ 1257 0059 08000000 		.4byte	.LVL10
+ 1258 005d 0100     		.2byte	0x1
+ 1259 005f 51       		.byte	0x51
+ 1260 0060 08000000 		.4byte	.LVL10
+ 1261 0064 52000000 		.4byte	.LVL23
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 25
+
+
+ 1262 0068 0100     		.2byte	0x1
+ 1263 006a 55       		.byte	0x55
+ 1264 006b 52000000 		.4byte	.LVL23
+ 1265 006f 54000000 		.4byte	.LFE33
+ 1266 0073 0400     		.2byte	0x4
+ 1267 0075 F3       		.byte	0xf3
+ 1268 0076 01       		.uleb128 0x1
+ 1269 0077 51       		.byte	0x51
+ 1270 0078 9F       		.byte	0x9f
+ 1271 0079 00000000 		.4byte	0
+ 1272 007d 00000000 		.4byte	0
+ 1273              	.LLST4:
+ 1274 0081 00000000 		.4byte	.LVL9
+ 1275 0085 08000000 		.4byte	.LVL10
+ 1276 0089 0100     		.2byte	0x1
+ 1277 008b 52       		.byte	0x52
+ 1278 008c 08000000 		.4byte	.LVL10
+ 1279 0090 54000000 		.4byte	.LFE33
+ 1280 0094 0400     		.2byte	0x4
+ 1281 0096 F3       		.byte	0xf3
+ 1282 0097 01       		.uleb128 0x1
+ 1283 0098 52       		.byte	0x52
+ 1284 0099 9F       		.byte	0x9f
+ 1285 009a 00000000 		.4byte	0
+ 1286 009e 00000000 		.4byte	0
+ 1287              	.LLST5:
+ 1288 00a2 14000000 		.4byte	.LVL12
+ 1289 00a6 1C000000 		.4byte	.LVL13
+ 1290 00aa 0100     		.2byte	0x1
+ 1291 00ac 50       		.byte	0x50
+ 1292 00ad 00000000 		.4byte	0
+ 1293 00b1 00000000 		.4byte	0
+ 1294              	.LLST6:
+ 1295 00b5 2A000000 		.4byte	.LVL15
+ 1296 00b9 2E000000 		.4byte	.LVL16
+ 1297 00bd 0200     		.2byte	0x2
+ 1298 00bf 30       		.byte	0x30
+ 1299 00c0 9F       		.byte	0x9f
+ 1300 00c1 2E000000 		.4byte	.LVL16
+ 1301 00c5 3A000000 		.4byte	.LVL18
+ 1302 00c9 0100     		.2byte	0x1
+ 1303 00cb 54       		.byte	0x54
+ 1304 00cc 3C000000 		.4byte	.LVL19
+ 1305 00d0 52000000 		.4byte	.LVL22
+ 1306 00d4 0100     		.2byte	0x1
+ 1307 00d6 54       		.byte	0x54
+ 1308 00d7 00000000 		.4byte	0
+ 1309 00db 00000000 		.4byte	0
+ 1310              	.LLST7:
+ 1311 00df 00000000 		.4byte	.LVL24
+ 1312 00e3 06000000 		.4byte	.LVL25
+ 1313 00e7 0100     		.2byte	0x1
+ 1314 00e9 50       		.byte	0x50
+ 1315 00ea 06000000 		.4byte	.LVL25
+ 1316 00ee 2E000000 		.4byte	.LFE34
+ 1317 00f2 0400     		.2byte	0x4
+ 1318 00f4 F3       		.byte	0xf3
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 26
+
+
+ 1319 00f5 01       		.uleb128 0x1
+ 1320 00f6 50       		.byte	0x50
+ 1321 00f7 9F       		.byte	0x9f
+ 1322 00f8 00000000 		.4byte	0
+ 1323 00fc 00000000 		.4byte	0
+ 1324              	.LLST8:
+ 1325 0100 00000000 		.4byte	.LVL24
+ 1326 0104 06000000 		.4byte	.LVL25
+ 1327 0108 0100     		.2byte	0x1
+ 1328 010a 51       		.byte	0x51
+ 1329 010b 06000000 		.4byte	.LVL25
+ 1330 010f 2E000000 		.4byte	.LFE34
+ 1331 0113 0400     		.2byte	0x4
+ 1332 0115 F3       		.byte	0xf3
+ 1333 0116 01       		.uleb128 0x1
+ 1334 0117 51       		.byte	0x51
+ 1335 0118 9F       		.byte	0x9f
+ 1336 0119 00000000 		.4byte	0
+ 1337 011d 00000000 		.4byte	0
+ 1338              	.LLST9:
+ 1339 0121 12000000 		.4byte	.LVL27
+ 1340 0125 1A000000 		.4byte	.LVL28
+ 1341 0129 0100     		.2byte	0x1
+ 1342 012b 50       		.byte	0x50
+ 1343 012c 00000000 		.4byte	0
+ 1344 0130 00000000 		.4byte	0
+ 1345              	.LLST10:
+ 1346 0134 00000000 		.4byte	.LVL32
+ 1347 0138 08000000 		.4byte	.LVL33
+ 1348 013c 0100     		.2byte	0x1
+ 1349 013e 50       		.byte	0x50
+ 1350 013f 08000000 		.4byte	.LVL33
+ 1351 0143 3E000000 		.4byte	.LFE35
+ 1352 0147 0400     		.2byte	0x4
+ 1353 0149 F3       		.byte	0xf3
+ 1354 014a 01       		.uleb128 0x1
+ 1355 014b 50       		.byte	0x50
+ 1356 014c 9F       		.byte	0x9f
+ 1357 014d 00000000 		.4byte	0
+ 1358 0151 00000000 		.4byte	0
+ 1359              	.LLST11:
+ 1360 0155 00000000 		.4byte	.LVL32
+ 1361 0159 08000000 		.4byte	.LVL33
+ 1362 015d 0100     		.2byte	0x1
+ 1363 015f 51       		.byte	0x51
+ 1364 0160 08000000 		.4byte	.LVL33
+ 1365 0164 3C000000 		.4byte	.LVL44
+ 1366 0168 0100     		.2byte	0x1
+ 1367 016a 56       		.byte	0x56
+ 1368 016b 3C000000 		.4byte	.LVL44
+ 1369 016f 3E000000 		.4byte	.LFE35
+ 1370 0173 0400     		.2byte	0x4
+ 1371 0175 F3       		.byte	0xf3
+ 1372 0176 01       		.uleb128 0x1
+ 1373 0177 51       		.byte	0x51
+ 1374 0178 9F       		.byte	0x9f
+ 1375 0179 00000000 		.4byte	0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 27
+
+
+ 1376 017d 00000000 		.4byte	0
+ 1377              	.LLST12:
+ 1378 0181 00000000 		.4byte	.LVL32
+ 1379 0185 08000000 		.4byte	.LVL33
+ 1380 0189 0100     		.2byte	0x1
+ 1381 018b 52       		.byte	0x52
+ 1382 018c 08000000 		.4byte	.LVL33
+ 1383 0190 3E000000 		.4byte	.LFE35
+ 1384 0194 0400     		.2byte	0x4
+ 1385 0196 F3       		.byte	0xf3
+ 1386 0197 01       		.uleb128 0x1
+ 1387 0198 52       		.byte	0x52
+ 1388 0199 9F       		.byte	0x9f
+ 1389 019a 00000000 		.4byte	0
+ 1390 019e 00000000 		.4byte	0
+ 1391              	.LLST13:
+ 1392 01a2 14000000 		.4byte	.LVL35
+ 1393 01a6 1C000000 		.4byte	.LVL36
+ 1394 01aa 0100     		.2byte	0x1
+ 1395 01ac 50       		.byte	0x50
+ 1396 01ad 00000000 		.4byte	0
+ 1397 01b1 00000000 		.4byte	0
+ 1398              	.LLST14:
+ 1399 01b5 20000000 		.4byte	.LVL37
+ 1400 01b9 24000000 		.4byte	.LVL38
+ 1401 01bd 0200     		.2byte	0x2
+ 1402 01bf 30       		.byte	0x30
+ 1403 01c0 9F       		.byte	0x9f
+ 1404 01c1 24000000 		.4byte	.LVL38
+ 1405 01c5 30000000 		.4byte	.LVL40
+ 1406 01c9 0100     		.2byte	0x1
+ 1407 01cb 54       		.byte	0x54
+ 1408 01cc 32000000 		.4byte	.LVL41
+ 1409 01d0 3C000000 		.4byte	.LVL43
+ 1410 01d4 0100     		.2byte	0x1
+ 1411 01d6 54       		.byte	0x54
+ 1412 01d7 00000000 		.4byte	0
+ 1413 01db 00000000 		.4byte	0
+ 1414              	.LLST15:
+ 1415 01df 02000000 		.4byte	.LVL45
+ 1416 01e3 04000000 		.4byte	.LVL46
+ 1417 01e7 0200     		.2byte	0x2
+ 1418 01e9 30       		.byte	0x30
+ 1419 01ea 9F       		.byte	0x9f
+ 1420 01eb 14000000 		.4byte	.LVL50
+ 1421 01ef 1A000000 		.4byte	.LVL51
+ 1422 01f3 0100     		.2byte	0x1
+ 1423 01f5 50       		.byte	0x50
+ 1424 01f6 00000000 		.4byte	0
+ 1425 01fa 00000000 		.4byte	0
+ 1426              	.LLST16:
+ 1427 01fe 02000000 		.4byte	.LVL45
+ 1428 0202 04000000 		.4byte	.LVL46
+ 1429 0206 0300     		.2byte	0x3
+ 1430 0208 08       		.byte	0x8
+ 1431 0209 4F       		.byte	0x4f
+ 1432 020a 9F       		.byte	0x9f
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 28
+
+
+ 1433 020b 04000000 		.4byte	.LVL46
+ 1434 020f 06000000 		.4byte	.LVL47
+ 1435 0213 0100     		.2byte	0x1
+ 1436 0215 54       		.byte	0x54
+ 1437 0216 08000000 		.4byte	.LVL48
+ 1438 021a 1A000000 		.4byte	.LVL52
+ 1439 021e 0100     		.2byte	0x1
+ 1440 0220 54       		.byte	0x54
+ 1441 0221 1A000000 		.4byte	.LVL52
+ 1442 0225 1C000000 		.4byte	.LFE36
+ 1443 0229 0100     		.2byte	0x1
+ 1444 022b 50       		.byte	0x50
+ 1445 022c 00000000 		.4byte	0
+ 1446 0230 00000000 		.4byte	0
+ 1447              		.section	.debug_aranges,"",%progbits
+ 1448 0000 3C000000 		.4byte	0x3c
+ 1449 0004 0200     		.2byte	0x2
+ 1450 0006 00000000 		.4byte	.Ldebug_info0
+ 1451 000a 04       		.byte	0x4
+ 1452 000b 00       		.byte	0
+ 1453 000c 0000     		.2byte	0
+ 1454 000e 0000     		.2byte	0
+ 1455 0010 00000000 		.4byte	.LFB32
+ 1456 0014 42000000 		.4byte	.LFE32-.LFB32
+ 1457 0018 00000000 		.4byte	.LFB33
+ 1458 001c 54000000 		.4byte	.LFE33-.LFB33
+ 1459 0020 00000000 		.4byte	.LFB34
+ 1460 0024 2E000000 		.4byte	.LFE34-.LFB34
+ 1461 0028 00000000 		.4byte	.LFB35
+ 1462 002c 3E000000 		.4byte	.LFE35-.LFB35
+ 1463 0030 00000000 		.4byte	.LFB36
+ 1464 0034 1C000000 		.4byte	.LFE36-.LFB36
+ 1465 0038 00000000 		.4byte	0
+ 1466 003c 00000000 		.4byte	0
+ 1467              		.section	.debug_ranges,"",%progbits
+ 1468              	.Ldebug_ranges0:
+ 1469 0000 00000000 		.4byte	.LFB32
+ 1470 0004 42000000 		.4byte	.LFE32
+ 1471 0008 00000000 		.4byte	.LFB33
+ 1472 000c 54000000 		.4byte	.LFE33
+ 1473 0010 00000000 		.4byte	.LFB34
+ 1474 0014 2E000000 		.4byte	.LFE34
+ 1475 0018 00000000 		.4byte	.LFB35
+ 1476 001c 3E000000 		.4byte	.LFE35
+ 1477 0020 00000000 		.4byte	.LFB36
+ 1478 0024 1C000000 		.4byte	.LFE36
+ 1479 0028 00000000 		.4byte	0
+ 1480 002c 00000000 		.4byte	0
+ 1481              		.section	.debug_line,"",%progbits
+ 1482              	.Ldebug_line0:
+ 1483 0000 1C010000 		.section	.debug_str,"MS",%progbits,1
+ 1483      02005900 
+ 1483      00000201 
+ 1483      FB0E0D00 
+ 1483      01010101 
+ 1484              	.LASF33:
+ 1485 0000 65657072 		.ascii	"eeprom_external.c\000"
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 29
+
+
+ 1485      6F6D5F65 
+ 1485      78746572 
+ 1485      6E616C2E 
+ 1485      6300
+ 1486              	.LASF28:
+ 1487 0012 6932635F 		.ascii	"i2c_I2CMasterWriteByte\000"
+ 1487      4932434D 
+ 1487      61737465 
+ 1487      72577269 
+ 1487      74654279 
+ 1488              	.LASF11:
+ 1489 0029 666C6F61 		.ascii	"float\000"
+ 1489      7400
+ 1490              	.LASF1:
+ 1491 002f 756E7369 		.ascii	"unsigned char\000"
+ 1491      676E6564 
+ 1491      20636861 
+ 1491      7200
+ 1492              	.LASF24:
+ 1493 003d 65657072 		.ascii	"eeprom_write_page\000"
+ 1493      6F6D5F77 
+ 1493      72697465 
+ 1493      5F706167 
+ 1493      6500
+ 1494              	.LASF5:
+ 1495 004f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1495      20756E73 
+ 1495      69676E65 
+ 1495      6420696E 
+ 1495      7400
+ 1496              	.LASF34:
+ 1497 0061 443A5C70 		.ascii	"D:\\psoc\\theory\\eeprom_external\\eeprom_external."
+ 1497      736F635C 
+ 1497      7468656F 
+ 1497      72795C65 
+ 1497      6570726F 
+ 1498 0090 63796473 		.ascii	"cydsn\000"
+ 1498      6E00
+ 1499              	.LASF9:
+ 1500 0096 75696E74 		.ascii	"uint8\000"
+ 1500      3800
+ 1501              	.LASF27:
+ 1502 009c 6932635F 		.ascii	"i2c_I2CMasterSendStart\000"
+ 1502      4932434D 
+ 1502      61737465 
+ 1502      7253656E 
+ 1502      64537461 
+ 1503              	.LASF16:
+ 1504 00b3 64617461 		.ascii	"data_read\000"
+ 1504      5F726561 
+ 1504      6400
+ 1505              	.LASF30:
+ 1506 00bd 6932635F 		.ascii	"i2c_I2CMasterReadByte\000"
+ 1506      4932434D 
+ 1506      61737465 
+ 1506      72526561 
+ 1506      64427974 
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 30
+
+
+ 1507              	.LASF22:
+ 1508 00d3 65657072 		.ascii	"eeprom_write_a_byte\000"
+ 1508      6F6D5F77 
+ 1508      72697465 
+ 1508      5F615F62 
+ 1508      79746500 
+ 1509              	.LASF12:
+ 1510 00e7 646F7562 		.ascii	"double\000"
+ 1510      6C6500
+ 1511              	.LASF26:
+ 1512 00ee 66696E64 		.ascii	"find_address_eeprom\000"
+ 1512      5F616464 
+ 1512      72657373 
+ 1512      5F656570 
+ 1512      726F6D00 
+ 1513              	.LASF25:
+ 1514 0102 64617461 		.ascii	"data_need_write\000"
+ 1514      5F6E6565 
+ 1514      645F7772 
+ 1514      69746500 
+ 1515              	.LASF2:
+ 1516 0112 73686F72 		.ascii	"short int\000"
+ 1516      7420696E 
+ 1516      7400
+ 1517              	.LASF35:
+ 1518 011c 65657072 		.ascii	"eeprom_read_a_byte\000"
+ 1518      6F6D5F72 
+ 1518      6561645F 
+ 1518      615F6279 
+ 1518      746500
+ 1519              	.LASF10:
+ 1520 012f 75696E74 		.ascii	"uint32\000"
+ 1520      333200
+ 1521              	.LASF8:
+ 1522 0136 756E7369 		.ascii	"unsigned int\000"
+ 1522      676E6564 
+ 1522      20696E74 
+ 1522      00
+ 1523              	.LASF19:
+ 1524 0143 61646472 		.ascii	"address\000"
+ 1524      65737300 
+ 1525              	.LASF7:
+ 1526 014b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1526      206C6F6E 
+ 1526      6720756E 
+ 1526      7369676E 
+ 1526      65642069 
+ 1527              	.LASF17:
+ 1528 0162 72657375 		.ascii	"result\000"
+ 1528      6C7400
+ 1529              	.LASF32:
+ 1530 0169 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1530      43313120 
+ 1530      352E342E 
+ 1530      31203230 
+ 1530      31363036 
+ 1531 019c 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 31
+
+
+ 1531      20726576 
+ 1531      6973696F 
+ 1531      6E203233 
+ 1531      37373135 
+ 1532 01cf 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1532      66756E63 
+ 1532      74696F6E 
+ 1532      2D736563 
+ 1532      74696F6E 
+ 1533              	.LASF15:
+ 1534 01f7 73697A65 		.ascii	"sizetype\000"
+ 1534      74797065 
+ 1534      00
+ 1535              	.LASF31:
+ 1536 0200 6932635F 		.ascii	"i2c_I2CMasterSendStop\000"
+ 1536      4932434D 
+ 1536      61737465 
+ 1536      7253656E 
+ 1536      6453746F 
+ 1537              	.LASF6:
+ 1538 0216 6C6F6E67 		.ascii	"long long int\000"
+ 1538      206C6F6E 
+ 1538      6720696E 
+ 1538      7400
+ 1539              	.LASF13:
+ 1540 0224 63686172 		.ascii	"char\000"
+ 1540      00
+ 1541              	.LASF23:
+ 1542 0229 64617461 		.ascii	"data_nedd_write\000"
+ 1542      5F6E6564 
+ 1542      645F7772 
+ 1542      69746500 
+ 1543              	.LASF29:
+ 1544 0239 6932635F 		.ascii	"i2c_I2CMasterSendRestart\000"
+ 1544      4932434D 
+ 1544      61737465 
+ 1544      7253656E 
+ 1544      64526573 
+ 1545              	.LASF21:
+ 1546 0252 65657072 		.ascii	"eeprom_read_page\000"
+ 1546      6F6D5F72 
+ 1546      6561645F 
+ 1546      70616765 
+ 1546      00
+ 1547              	.LASF18:
+ 1548 0263 61646472 		.ascii	"address_read\000"
+ 1548      6573735F 
+ 1548      72656164 
+ 1548      00
+ 1549              	.LASF4:
+ 1550 0270 6C6F6E67 		.ascii	"long int\000"
+ 1550      20696E74 
+ 1550      00
+ 1551              	.LASF14:
+ 1552 0279 6C6F6E67 		.ascii	"long double\000"
+ 1552      20646F75 
+ 1552      626C6500 
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccevTTBW.s 			page 32
+
+
+ 1553              	.LASF0:
+ 1554 0285 7369676E 		.ascii	"signed char\000"
+ 1554      65642063 
+ 1554      68617200 
+ 1555              	.LASF3:
+ 1556 0291 73686F72 		.ascii	"short unsigned int\000"
+ 1556      7420756E 
+ 1556      7369676E 
+ 1556      65642069 
+ 1556      6E7400
+ 1557              	.LASF20:
+ 1558 02a4 6C656E67 		.ascii	"length\000"
+ 1558      746800
+ 1559              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

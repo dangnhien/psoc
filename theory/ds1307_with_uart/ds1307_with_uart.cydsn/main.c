@@ -9,18 +9,38 @@
  *
  * ========================================
 */
-#include "project.h"
+#include "main.h"
 
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
 
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
-
+     data_time time;
+    char txString[50];
+    
+    system_initialization(); 
+    
     for(;;)
     {
-        /* Place your application code here. */
+        Pin_Led_Yellow_Write( ~Pin_Led_Yellow_Read() );     
+        ds1307_read_data(&time); 
+        time_string_concatenation(time, txString);
+        uart_transmit_UartPutString(txString);
+        
+        
+        
     }
 }
+
+void system_initialization()
+{
+    uart_transmit_Start();
+    
+    i2c_ds1307_Start();
+    
+    Pin_Led_Yellow_Write(0);
+}
+
 
 /* [] END OF FILE */

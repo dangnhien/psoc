@@ -1,6 +1,0 @@
-D:\psoc\theory\ds1307_uart\ds1307_i2c.cydsn\ds1307_i2c.cyprj|4f7b2430-b497-42e8-bb80-11dcc7994922
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|af3ecbe0-8b21-49ae-9b6e-8a9cf837d598
-C:\Users\NGUYEN-DUC-DAT\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|2b2e25ac-0820-4bd4-bac5-2b204b846aa2
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|8afa0d4d-1e4e-454c-909b-f553ce255e25
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|d14ce206-d95d-4bc0-83b7-b71604ab8e6f
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|e7255ec2-42c6-4448-a882-27339646b162

@@ -24,16 +24,14 @@ uint8 data[] = {
                 0xff,0xff,0xfc,0xfe,0xfe,0xfe,0x00,0xff,//7
                 0xff,0x89,0x76,0x76,0x76,0x89,0xff,0xff,//8
                 0xff,0xb9,0x76,0x76,0x76,0x81,0xff,0xff,//9
-                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00, // turn on full
-                0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF  // turn off full
+                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,// turn on full
+                0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF // turn off full
                 
                 
 };
-uint8 data1[] = {0xE7,0xE7,0xE7,0xE7,0x00,0x00,0xE7,0xE7 //+
-                };
 
 /*
-    Curent location --> will return hight logic, contra return low logic
+    Current location --> will return hight logic, contra return low logic
 */
 uint8 writeHightOrLow(uint8 dataNeedWrite, uint8 locationWrite)
 {
@@ -64,7 +62,6 @@ uint8 writeHightOrLow(uint8 dataNeedWrite, uint8 locationWrite)
             break;
         case 7:
             ((dataNeedWrite & (1<<7)) == (1<<7) ) ? (result = hight) : (result = low);
-           
     }
     
     return result;
@@ -96,7 +93,6 @@ void write_data(uint8 dataNeedWrite, uint8 rowOrCloumn)
     }
 }
 
-
 void light_character_k(int k)
 {
     int n;
@@ -106,9 +102,9 @@ void light_character_k(int k)
     
     for(n=0;n<8;n++)
     {
-        write_data( data1[k*8 + n], column );
+        write_data( data[k*8 + n], column );
         write_data( control[n], row );
-        CyDelay(1);
+        CyDelay(2);
     }
 }
 
