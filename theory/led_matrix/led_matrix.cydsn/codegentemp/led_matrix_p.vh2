@@ -1,5 +1,5 @@
 -- Project:   led_matrix
--- Generated: 08/26/2022 08:22:13
+-- Generated: 08/29/2022 08:37:53
 -- PSoC Creator  4.4
 
 ENTITY led_matrix IS
@@ -66,13 +66,21 @@ ARCHITECTURE __DEFAULT__ OF led_matrix IS
     ATTRIBUTE lib_model OF col_matrix_5(0) : LABEL IS "iocell6";
     ATTRIBUTE lib_model OF col_matrix_6(0) : LABEL IS "iocell7";
     ATTRIBUTE lib_model OF row_matrix_0(0) : LABEL IS "iocell8";
+    ATTRIBUTE Location OF row_matrix_0(0) : LABEL IS "P1[0]";
     ATTRIBUTE lib_model OF row_matrix_1(0) : LABEL IS "iocell9";
+    ATTRIBUTE Location OF row_matrix_1(0) : LABEL IS "P1[1]";
     ATTRIBUTE lib_model OF row_matrix_2(0) : LABEL IS "iocell10";
+    ATTRIBUTE Location OF row_matrix_2(0) : LABEL IS "P1[2]";
     ATTRIBUTE lib_model OF row_matrix_3(0) : LABEL IS "iocell11";
+    ATTRIBUTE Location OF row_matrix_3(0) : LABEL IS "P1[3]";
     ATTRIBUTE lib_model OF row_matrix_4(0) : LABEL IS "iocell12";
+    ATTRIBUTE Location OF row_matrix_4(0) : LABEL IS "P1[4]";
     ATTRIBUTE lib_model OF row_matrix_5(0) : LABEL IS "iocell13";
+    ATTRIBUTE Location OF row_matrix_5(0) : LABEL IS "P1[5]";
     ATTRIBUTE lib_model OF row_matrix_6(0) : LABEL IS "iocell14";
+    ATTRIBUTE Location OF row_matrix_6(0) : LABEL IS "P1[6]";
     ATTRIBUTE lib_model OF col_matrix_7(0) : LABEL IS "iocell15";
+    ATTRIBUTE Location OF col_matrix_7(0) : LABEL IS "P0[7]";
     ATTRIBUTE lib_model OF row_matrix_7(0) : LABEL IS "iocell16";
     COMPONENT iocell
         PORT (

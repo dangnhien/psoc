@@ -43,7 +43,7 @@ void time_string_concatenation(data_time time, char *strings)
     }
     
     sprintf(strings, "\n%d%c%d%c%d  %s, %d%c%d%c%d",time.hour, ':', time.minute, ':', time.second, \
-        dayInWeek, time.date, '/', time.month, '/', time.year );
+        dayInWeek, time.date, '/', time.month, '/', 2000 + time.year );
     
     return;
 }

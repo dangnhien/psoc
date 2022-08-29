@@ -7282,131 +7282,131 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  404              	.set col_matrix_6__SHIFT, 6
  405              	
  406              	/* col_matrix_7 */
- 407              	.set col_matrix_7__0__DM__MASK, 0x1C0000
- 408              	.set col_matrix_7__0__DM__SHIFT, 18
- 409              	.set col_matrix_7__0__DR, CYREG_PRT1_DR
- 410              	.set col_matrix_7__0__HSIOM, CYREG_HSIOM_PORT_SEL1
- 411              	.set col_matrix_7__0__HSIOM_MASK, 0x0F000000
- 412              	.set col_matrix_7__0__HSIOM_SHIFT, 24
- 413              	.set col_matrix_7__0__INTCFG, CYREG_PRT1_INTCFG
- 414              	.set col_matrix_7__0__INTSTAT, CYREG_PRT1_INTSTAT
- 415              	.set col_matrix_7__0__MASK, 0x40
- 416              	.set col_matrix_7__0__PA__CFG0, CYREG_UDB_PA1_CFG0
- 417              	.set col_matrix_7__0__PA__CFG1, CYREG_UDB_PA1_CFG1
- 418              	.set col_matrix_7__0__PA__CFG10, CYREG_UDB_PA1_CFG10
- 419              	.set col_matrix_7__0__PA__CFG11, CYREG_UDB_PA1_CFG11
- 420              	.set col_matrix_7__0__PA__CFG12, CYREG_UDB_PA1_CFG12
- 421              	.set col_matrix_7__0__PA__CFG13, CYREG_UDB_PA1_CFG13
- 422              	.set col_matrix_7__0__PA__CFG14, CYREG_UDB_PA1_CFG14
- 423              	.set col_matrix_7__0__PA__CFG2, CYREG_UDB_PA1_CFG2
- 424              	.set col_matrix_7__0__PA__CFG3, CYREG_UDB_PA1_CFG3
- 425              	.set col_matrix_7__0__PA__CFG4, CYREG_UDB_PA1_CFG4
- 426              	.set col_matrix_7__0__PA__CFG5, CYREG_UDB_PA1_CFG5
- 427              	.set col_matrix_7__0__PA__CFG6, CYREG_UDB_PA1_CFG6
- 428              	.set col_matrix_7__0__PA__CFG7, CYREG_UDB_PA1_CFG7
- 429              	.set col_matrix_7__0__PA__CFG8, CYREG_UDB_PA1_CFG8
- 430              	.set col_matrix_7__0__PA__CFG9, CYREG_UDB_PA1_CFG9
- 431              	.set col_matrix_7__0__PC, CYREG_PRT1_PC
- 432              	.set col_matrix_7__0__PC2, CYREG_PRT1_PC2
- 433              	.set col_matrix_7__0__PORT, 1
- 434              	.set col_matrix_7__0__PS, CYREG_PRT1_PS
- 435              	.set col_matrix_7__0__SHIFT, 6
- 436              	.set col_matrix_7__DR, CYREG_PRT1_DR
- 437              	.set col_matrix_7__INTCFG, CYREG_PRT1_INTCFG
- 438              	.set col_matrix_7__INTSTAT, CYREG_PRT1_INTSTAT
- 439              	.set col_matrix_7__MASK, 0x40
- 440              	.set col_matrix_7__PA__CFG0, CYREG_UDB_PA1_CFG0
- 441              	.set col_matrix_7__PA__CFG1, CYREG_UDB_PA1_CFG1
- 442              	.set col_matrix_7__PA__CFG10, CYREG_UDB_PA1_CFG10
+ 407              	.set col_matrix_7__0__DM__MASK, 0xE00000
+ 408              	.set col_matrix_7__0__DM__SHIFT, 21
+ 409              	.set col_matrix_7__0__DR, CYREG_PRT0_DR
+ 410              	.set col_matrix_7__0__HSIOM, CYREG_HSIOM_PORT_SEL0
+ 411              	.set col_matrix_7__0__HSIOM_MASK, 0xF0000000
+ 412              	.set col_matrix_7__0__HSIOM_SHIFT, 28
+ 413              	.set col_matrix_7__0__INTCFG, CYREG_PRT0_INTCFG
+ 414              	.set col_matrix_7__0__INTSTAT, CYREG_PRT0_INTSTAT
+ 415              	.set col_matrix_7__0__MASK, 0x80
+ 416              	.set col_matrix_7__0__PA__CFG0, CYREG_UDB_PA0_CFG0
+ 417              	.set col_matrix_7__0__PA__CFG1, CYREG_UDB_PA0_CFG1
+ 418              	.set col_matrix_7__0__PA__CFG10, CYREG_UDB_PA0_CFG10
+ 419              	.set col_matrix_7__0__PA__CFG11, CYREG_UDB_PA0_CFG11
+ 420              	.set col_matrix_7__0__PA__CFG12, CYREG_UDB_PA0_CFG12
+ 421              	.set col_matrix_7__0__PA__CFG13, CYREG_UDB_PA0_CFG13
+ 422              	.set col_matrix_7__0__PA__CFG14, CYREG_UDB_PA0_CFG14
+ 423              	.set col_matrix_7__0__PA__CFG2, CYREG_UDB_PA0_CFG2
+ 424              	.set col_matrix_7__0__PA__CFG3, CYREG_UDB_PA0_CFG3
+ 425              	.set col_matrix_7__0__PA__CFG4, CYREG_UDB_PA0_CFG4
+ 426              	.set col_matrix_7__0__PA__CFG5, CYREG_UDB_PA0_CFG5
+ 427              	.set col_matrix_7__0__PA__CFG6, CYREG_UDB_PA0_CFG6
+ 428              	.set col_matrix_7__0__PA__CFG7, CYREG_UDB_PA0_CFG7
+ 429              	.set col_matrix_7__0__PA__CFG8, CYREG_UDB_PA0_CFG8
+ 430              	.set col_matrix_7__0__PA__CFG9, CYREG_UDB_PA0_CFG9
+ 431              	.set col_matrix_7__0__PC, CYREG_PRT0_PC
+ 432              	.set col_matrix_7__0__PC2, CYREG_PRT0_PC2
+ 433              	.set col_matrix_7__0__PORT, 0
+ 434              	.set col_matrix_7__0__PS, CYREG_PRT0_PS
+ 435              	.set col_matrix_7__0__SHIFT, 7
+ 436              	.set col_matrix_7__DR, CYREG_PRT0_DR
+ 437              	.set col_matrix_7__INTCFG, CYREG_PRT0_INTCFG
+ 438              	.set col_matrix_7__INTSTAT, CYREG_PRT0_INTSTAT
+ 439              	.set col_matrix_7__MASK, 0x80
+ 440              	.set col_matrix_7__PA__CFG0, CYREG_UDB_PA0_CFG0
+ 441              	.set col_matrix_7__PA__CFG1, CYREG_UDB_PA0_CFG1
+ 442              	.set col_matrix_7__PA__CFG10, CYREG_UDB_PA0_CFG10
 ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 123
 
 
- 443              	.set col_matrix_7__PA__CFG11, CYREG_UDB_PA1_CFG11
- 444              	.set col_matrix_7__PA__CFG12, CYREG_UDB_PA1_CFG12
- 445              	.set col_matrix_7__PA__CFG13, CYREG_UDB_PA1_CFG13
- 446              	.set col_matrix_7__PA__CFG14, CYREG_UDB_PA1_CFG14
- 447              	.set col_matrix_7__PA__CFG2, CYREG_UDB_PA1_CFG2
- 448              	.set col_matrix_7__PA__CFG3, CYREG_UDB_PA1_CFG3
- 449              	.set col_matrix_7__PA__CFG4, CYREG_UDB_PA1_CFG4
- 450              	.set col_matrix_7__PA__CFG5, CYREG_UDB_PA1_CFG5
- 451              	.set col_matrix_7__PA__CFG6, CYREG_UDB_PA1_CFG6
- 452              	.set col_matrix_7__PA__CFG7, CYREG_UDB_PA1_CFG7
- 453              	.set col_matrix_7__PA__CFG8, CYREG_UDB_PA1_CFG8
- 454              	.set col_matrix_7__PA__CFG9, CYREG_UDB_PA1_CFG9
- 455              	.set col_matrix_7__PC, CYREG_PRT1_PC
- 456              	.set col_matrix_7__PC2, CYREG_PRT1_PC2
- 457              	.set col_matrix_7__PORT, 1
- 458              	.set col_matrix_7__PS, CYREG_PRT1_PS
- 459              	.set col_matrix_7__SHIFT, 6
+ 443              	.set col_matrix_7__PA__CFG11, CYREG_UDB_PA0_CFG11
+ 444              	.set col_matrix_7__PA__CFG12, CYREG_UDB_PA0_CFG12
+ 445              	.set col_matrix_7__PA__CFG13, CYREG_UDB_PA0_CFG13
+ 446              	.set col_matrix_7__PA__CFG14, CYREG_UDB_PA0_CFG14
+ 447              	.set col_matrix_7__PA__CFG2, CYREG_UDB_PA0_CFG2
+ 448              	.set col_matrix_7__PA__CFG3, CYREG_UDB_PA0_CFG3
+ 449              	.set col_matrix_7__PA__CFG4, CYREG_UDB_PA0_CFG4
+ 450              	.set col_matrix_7__PA__CFG5, CYREG_UDB_PA0_CFG5
+ 451              	.set col_matrix_7__PA__CFG6, CYREG_UDB_PA0_CFG6
+ 452              	.set col_matrix_7__PA__CFG7, CYREG_UDB_PA0_CFG7
+ 453              	.set col_matrix_7__PA__CFG8, CYREG_UDB_PA0_CFG8
+ 454              	.set col_matrix_7__PA__CFG9, CYREG_UDB_PA0_CFG9
+ 455              	.set col_matrix_7__PC, CYREG_PRT0_PC
+ 456              	.set col_matrix_7__PC2, CYREG_PRT0_PC2
+ 457              	.set col_matrix_7__PORT, 0
+ 458              	.set col_matrix_7__PS, CYREG_PRT0_PS
+ 459              	.set col_matrix_7__SHIFT, 7
  460              	
  461              	/* row_matrix_0 */
- 462              	.set row_matrix_0__0__DM__MASK, 0xE00000
- 463              	.set row_matrix_0__0__DM__SHIFT, 21
- 464              	.set row_matrix_0__0__DR, CYREG_PRT0_DR
- 465              	.set row_matrix_0__0__HSIOM, CYREG_HSIOM_PORT_SEL0
- 466              	.set row_matrix_0__0__HSIOM_MASK, 0xF0000000
- 467              	.set row_matrix_0__0__HSIOM_SHIFT, 28
- 468              	.set row_matrix_0__0__INTCFG, CYREG_PRT0_INTCFG
- 469              	.set row_matrix_0__0__INTSTAT, CYREG_PRT0_INTSTAT
- 470              	.set row_matrix_0__0__MASK, 0x80
- 471              	.set row_matrix_0__0__PA__CFG0, CYREG_UDB_PA0_CFG0
- 472              	.set row_matrix_0__0__PA__CFG1, CYREG_UDB_PA0_CFG1
- 473              	.set row_matrix_0__0__PA__CFG10, CYREG_UDB_PA0_CFG10
- 474              	.set row_matrix_0__0__PA__CFG11, CYREG_UDB_PA0_CFG11
- 475              	.set row_matrix_0__0__PA__CFG12, CYREG_UDB_PA0_CFG12
- 476              	.set row_matrix_0__0__PA__CFG13, CYREG_UDB_PA0_CFG13
- 477              	.set row_matrix_0__0__PA__CFG14, CYREG_UDB_PA0_CFG14
- 478              	.set row_matrix_0__0__PA__CFG2, CYREG_UDB_PA0_CFG2
- 479              	.set row_matrix_0__0__PA__CFG3, CYREG_UDB_PA0_CFG3
- 480              	.set row_matrix_0__0__PA__CFG4, CYREG_UDB_PA0_CFG4
- 481              	.set row_matrix_0__0__PA__CFG5, CYREG_UDB_PA0_CFG5
- 482              	.set row_matrix_0__0__PA__CFG6, CYREG_UDB_PA0_CFG6
- 483              	.set row_matrix_0__0__PA__CFG7, CYREG_UDB_PA0_CFG7
- 484              	.set row_matrix_0__0__PA__CFG8, CYREG_UDB_PA0_CFG8
- 485              	.set row_matrix_0__0__PA__CFG9, CYREG_UDB_PA0_CFG9
- 486              	.set row_matrix_0__0__PC, CYREG_PRT0_PC
- 487              	.set row_matrix_0__0__PC2, CYREG_PRT0_PC2
- 488              	.set row_matrix_0__0__PORT, 0
- 489              	.set row_matrix_0__0__PS, CYREG_PRT0_PS
- 490              	.set row_matrix_0__0__SHIFT, 7
- 491              	.set row_matrix_0__DR, CYREG_PRT0_DR
- 492              	.set row_matrix_0__INTCFG, CYREG_PRT0_INTCFG
- 493              	.set row_matrix_0__INTSTAT, CYREG_PRT0_INTSTAT
- 494              	.set row_matrix_0__MASK, 0x80
- 495              	.set row_matrix_0__PA__CFG0, CYREG_UDB_PA0_CFG0
- 496              	.set row_matrix_0__PA__CFG1, CYREG_UDB_PA0_CFG1
- 497              	.set row_matrix_0__PA__CFG10, CYREG_UDB_PA0_CFG10
- 498              	.set row_matrix_0__PA__CFG11, CYREG_UDB_PA0_CFG11
- 499              	.set row_matrix_0__PA__CFG12, CYREG_UDB_PA0_CFG12
+ 462              	.set row_matrix_0__0__DM__MASK, 0x07
+ 463              	.set row_matrix_0__0__DM__SHIFT, 0
+ 464              	.set row_matrix_0__0__DR, CYREG_PRT1_DR
+ 465              	.set row_matrix_0__0__HSIOM, CYREG_HSIOM_PORT_SEL1
+ 466              	.set row_matrix_0__0__HSIOM_MASK, 0x0000000F
+ 467              	.set row_matrix_0__0__HSIOM_SHIFT, 0
+ 468              	.set row_matrix_0__0__INTCFG, CYREG_PRT1_INTCFG
+ 469              	.set row_matrix_0__0__INTSTAT, CYREG_PRT1_INTSTAT
+ 470              	.set row_matrix_0__0__MASK, 0x01
+ 471              	.set row_matrix_0__0__PA__CFG0, CYREG_UDB_PA1_CFG0
+ 472              	.set row_matrix_0__0__PA__CFG1, CYREG_UDB_PA1_CFG1
+ 473              	.set row_matrix_0__0__PA__CFG10, CYREG_UDB_PA1_CFG10
+ 474              	.set row_matrix_0__0__PA__CFG11, CYREG_UDB_PA1_CFG11
+ 475              	.set row_matrix_0__0__PA__CFG12, CYREG_UDB_PA1_CFG12
+ 476              	.set row_matrix_0__0__PA__CFG13, CYREG_UDB_PA1_CFG13
+ 477              	.set row_matrix_0__0__PA__CFG14, CYREG_UDB_PA1_CFG14
+ 478              	.set row_matrix_0__0__PA__CFG2, CYREG_UDB_PA1_CFG2
+ 479              	.set row_matrix_0__0__PA__CFG3, CYREG_UDB_PA1_CFG3
+ 480              	.set row_matrix_0__0__PA__CFG4, CYREG_UDB_PA1_CFG4
+ 481              	.set row_matrix_0__0__PA__CFG5, CYREG_UDB_PA1_CFG5
+ 482              	.set row_matrix_0__0__PA__CFG6, CYREG_UDB_PA1_CFG6
+ 483              	.set row_matrix_0__0__PA__CFG7, CYREG_UDB_PA1_CFG7
+ 484              	.set row_matrix_0__0__PA__CFG8, CYREG_UDB_PA1_CFG8
+ 485              	.set row_matrix_0__0__PA__CFG9, CYREG_UDB_PA1_CFG9
+ 486              	.set row_matrix_0__0__PC, CYREG_PRT1_PC
+ 487              	.set row_matrix_0__0__PC2, CYREG_PRT1_PC2
+ 488              	.set row_matrix_0__0__PORT, 1
+ 489              	.set row_matrix_0__0__PS, CYREG_PRT1_PS
+ 490              	.set row_matrix_0__0__SHIFT, 0
+ 491              	.set row_matrix_0__DR, CYREG_PRT1_DR
+ 492              	.set row_matrix_0__INTCFG, CYREG_PRT1_INTCFG
+ 493              	.set row_matrix_0__INTSTAT, CYREG_PRT1_INTSTAT
+ 494              	.set row_matrix_0__MASK, 0x01
+ 495              	.set row_matrix_0__PA__CFG0, CYREG_UDB_PA1_CFG0
+ 496              	.set row_matrix_0__PA__CFG1, CYREG_UDB_PA1_CFG1
+ 497              	.set row_matrix_0__PA__CFG10, CYREG_UDB_PA1_CFG10
+ 498              	.set row_matrix_0__PA__CFG11, CYREG_UDB_PA1_CFG11
+ 499              	.set row_matrix_0__PA__CFG12, CYREG_UDB_PA1_CFG12
 ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 124
 
 
- 500              	.set row_matrix_0__PA__CFG13, CYREG_UDB_PA0_CFG13
- 501              	.set row_matrix_0__PA__CFG14, CYREG_UDB_PA0_CFG14
- 502              	.set row_matrix_0__PA__CFG2, CYREG_UDB_PA0_CFG2
- 503              	.set row_matrix_0__PA__CFG3, CYREG_UDB_PA0_CFG3
- 504              	.set row_matrix_0__PA__CFG4, CYREG_UDB_PA0_CFG4
- 505              	.set row_matrix_0__PA__CFG5, CYREG_UDB_PA0_CFG5
- 506              	.set row_matrix_0__PA__CFG6, CYREG_UDB_PA0_CFG6
- 507              	.set row_matrix_0__PA__CFG7, CYREG_UDB_PA0_CFG7
- 508              	.set row_matrix_0__PA__CFG8, CYREG_UDB_PA0_CFG8
- 509              	.set row_matrix_0__PA__CFG9, CYREG_UDB_PA0_CFG9
- 510              	.set row_matrix_0__PC, CYREG_PRT0_PC
- 511              	.set row_matrix_0__PC2, CYREG_PRT0_PC2
- 512              	.set row_matrix_0__PORT, 0
- 513              	.set row_matrix_0__PS, CYREG_PRT0_PS
- 514              	.set row_matrix_0__SHIFT, 7
+ 500              	.set row_matrix_0__PA__CFG13, CYREG_UDB_PA1_CFG13
+ 501              	.set row_matrix_0__PA__CFG14, CYREG_UDB_PA1_CFG14
+ 502              	.set row_matrix_0__PA__CFG2, CYREG_UDB_PA1_CFG2
+ 503              	.set row_matrix_0__PA__CFG3, CYREG_UDB_PA1_CFG3
+ 504              	.set row_matrix_0__PA__CFG4, CYREG_UDB_PA1_CFG4
+ 505              	.set row_matrix_0__PA__CFG5, CYREG_UDB_PA1_CFG5
+ 506              	.set row_matrix_0__PA__CFG6, CYREG_UDB_PA1_CFG6
+ 507              	.set row_matrix_0__PA__CFG7, CYREG_UDB_PA1_CFG7
+ 508              	.set row_matrix_0__PA__CFG8, CYREG_UDB_PA1_CFG8
+ 509              	.set row_matrix_0__PA__CFG9, CYREG_UDB_PA1_CFG9
+ 510              	.set row_matrix_0__PC, CYREG_PRT1_PC
+ 511              	.set row_matrix_0__PC2, CYREG_PRT1_PC2
+ 512              	.set row_matrix_0__PORT, 1
+ 513              	.set row_matrix_0__PS, CYREG_PRT1_PS
+ 514              	.set row_matrix_0__SHIFT, 0
  515              	
  516              	/* row_matrix_1 */
- 517              	.set row_matrix_1__0__DM__MASK, 0x07
- 518              	.set row_matrix_1__0__DM__SHIFT, 0
+ 517              	.set row_matrix_1__0__DM__MASK, 0x38
+ 518              	.set row_matrix_1__0__DM__SHIFT, 3
  519              	.set row_matrix_1__0__DR, CYREG_PRT1_DR
  520              	.set row_matrix_1__0__HSIOM, CYREG_HSIOM_PORT_SEL1
- 521              	.set row_matrix_1__0__HSIOM_MASK, 0x0000000F
- 522              	.set row_matrix_1__0__HSIOM_SHIFT, 0
+ 521              	.set row_matrix_1__0__HSIOM_MASK, 0x000000F0
+ 522              	.set row_matrix_1__0__HSIOM_SHIFT, 4
  523              	.set row_matrix_1__0__INTCFG, CYREG_PRT1_INTCFG
  524              	.set row_matrix_1__0__INTSTAT, CYREG_PRT1_INTSTAT
- 525              	.set row_matrix_1__0__MASK, 0x01
+ 525              	.set row_matrix_1__0__MASK, 0x02
  526              	.set row_matrix_1__0__PA__CFG0, CYREG_UDB_PA1_CFG0
  527              	.set row_matrix_1__0__PA__CFG1, CYREG_UDB_PA1_CFG1
  528              	.set row_matrix_1__0__PA__CFG10, CYREG_UDB_PA1_CFG10
@@ -7426,11 +7426,11 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  542              	.set row_matrix_1__0__PC2, CYREG_PRT1_PC2
  543              	.set row_matrix_1__0__PORT, 1
  544              	.set row_matrix_1__0__PS, CYREG_PRT1_PS
- 545              	.set row_matrix_1__0__SHIFT, 0
+ 545              	.set row_matrix_1__0__SHIFT, 1
  546              	.set row_matrix_1__DR, CYREG_PRT1_DR
  547              	.set row_matrix_1__INTCFG, CYREG_PRT1_INTCFG
  548              	.set row_matrix_1__INTSTAT, CYREG_PRT1_INTSTAT
- 549              	.set row_matrix_1__MASK, 0x01
+ 549              	.set row_matrix_1__MASK, 0x02
  550              	.set row_matrix_1__PA__CFG0, CYREG_UDB_PA1_CFG0
  551              	.set row_matrix_1__PA__CFG1, CYREG_UDB_PA1_CFG1
  552              	.set row_matrix_1__PA__CFG10, CYREG_UDB_PA1_CFG10
@@ -7453,18 +7453,18 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  566              	.set row_matrix_1__PC2, CYREG_PRT1_PC2
  567              	.set row_matrix_1__PORT, 1
  568              	.set row_matrix_1__PS, CYREG_PRT1_PS
- 569              	.set row_matrix_1__SHIFT, 0
+ 569              	.set row_matrix_1__SHIFT, 1
  570              	
  571              	/* row_matrix_2 */
- 572              	.set row_matrix_2__0__DM__MASK, 0x38
- 573              	.set row_matrix_2__0__DM__SHIFT, 3
+ 572              	.set row_matrix_2__0__DM__MASK, 0x1C0
+ 573              	.set row_matrix_2__0__DM__SHIFT, 6
  574              	.set row_matrix_2__0__DR, CYREG_PRT1_DR
  575              	.set row_matrix_2__0__HSIOM, CYREG_HSIOM_PORT_SEL1
- 576              	.set row_matrix_2__0__HSIOM_MASK, 0x000000F0
- 577              	.set row_matrix_2__0__HSIOM_SHIFT, 4
+ 576              	.set row_matrix_2__0__HSIOM_MASK, 0x00000F00
+ 577              	.set row_matrix_2__0__HSIOM_SHIFT, 8
  578              	.set row_matrix_2__0__INTCFG, CYREG_PRT1_INTCFG
  579              	.set row_matrix_2__0__INTSTAT, CYREG_PRT1_INTSTAT
- 580              	.set row_matrix_2__0__MASK, 0x02
+ 580              	.set row_matrix_2__0__MASK, 0x04
  581              	.set row_matrix_2__0__PA__CFG0, CYREG_UDB_PA1_CFG0
  582              	.set row_matrix_2__0__PA__CFG1, CYREG_UDB_PA1_CFG1
  583              	.set row_matrix_2__0__PA__CFG10, CYREG_UDB_PA1_CFG10
@@ -7484,11 +7484,11 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  597              	.set row_matrix_2__0__PC2, CYREG_PRT1_PC2
  598              	.set row_matrix_2__0__PORT, 1
  599              	.set row_matrix_2__0__PS, CYREG_PRT1_PS
- 600              	.set row_matrix_2__0__SHIFT, 1
+ 600              	.set row_matrix_2__0__SHIFT, 2
  601              	.set row_matrix_2__DR, CYREG_PRT1_DR
  602              	.set row_matrix_2__INTCFG, CYREG_PRT1_INTCFG
  603              	.set row_matrix_2__INTSTAT, CYREG_PRT1_INTSTAT
- 604              	.set row_matrix_2__MASK, 0x02
+ 604              	.set row_matrix_2__MASK, 0x04
  605              	.set row_matrix_2__PA__CFG0, CYREG_UDB_PA1_CFG0
  606              	.set row_matrix_2__PA__CFG1, CYREG_UDB_PA1_CFG1
  607              	.set row_matrix_2__PA__CFG10, CYREG_UDB_PA1_CFG10
@@ -7511,18 +7511,18 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  621              	.set row_matrix_2__PC2, CYREG_PRT1_PC2
  622              	.set row_matrix_2__PORT, 1
  623              	.set row_matrix_2__PS, CYREG_PRT1_PS
- 624              	.set row_matrix_2__SHIFT, 1
+ 624              	.set row_matrix_2__SHIFT, 2
  625              	
  626              	/* row_matrix_3 */
- 627              	.set row_matrix_3__0__DM__MASK, 0x1C0
- 628              	.set row_matrix_3__0__DM__SHIFT, 6
+ 627              	.set row_matrix_3__0__DM__MASK, 0xE00
+ 628              	.set row_matrix_3__0__DM__SHIFT, 9
  629              	.set row_matrix_3__0__DR, CYREG_PRT1_DR
  630              	.set row_matrix_3__0__HSIOM, CYREG_HSIOM_PORT_SEL1
- 631              	.set row_matrix_3__0__HSIOM_MASK, 0x00000F00
- 632              	.set row_matrix_3__0__HSIOM_SHIFT, 8
+ 631              	.set row_matrix_3__0__HSIOM_MASK, 0x0000F000
+ 632              	.set row_matrix_3__0__HSIOM_SHIFT, 12
  633              	.set row_matrix_3__0__INTCFG, CYREG_PRT1_INTCFG
  634              	.set row_matrix_3__0__INTSTAT, CYREG_PRT1_INTSTAT
- 635              	.set row_matrix_3__0__MASK, 0x04
+ 635              	.set row_matrix_3__0__MASK, 0x08
  636              	.set row_matrix_3__0__PA__CFG0, CYREG_UDB_PA1_CFG0
  637              	.set row_matrix_3__0__PA__CFG1, CYREG_UDB_PA1_CFG1
  638              	.set row_matrix_3__0__PA__CFG10, CYREG_UDB_PA1_CFG10
@@ -7542,11 +7542,11 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  652              	.set row_matrix_3__0__PC2, CYREG_PRT1_PC2
  653              	.set row_matrix_3__0__PORT, 1
  654              	.set row_matrix_3__0__PS, CYREG_PRT1_PS
- 655              	.set row_matrix_3__0__SHIFT, 2
+ 655              	.set row_matrix_3__0__SHIFT, 3
  656              	.set row_matrix_3__DR, CYREG_PRT1_DR
  657              	.set row_matrix_3__INTCFG, CYREG_PRT1_INTCFG
  658              	.set row_matrix_3__INTSTAT, CYREG_PRT1_INTSTAT
- 659              	.set row_matrix_3__MASK, 0x04
+ 659              	.set row_matrix_3__MASK, 0x08
  660              	.set row_matrix_3__PA__CFG0, CYREG_UDB_PA1_CFG0
  661              	.set row_matrix_3__PA__CFG1, CYREG_UDB_PA1_CFG1
  662              	.set row_matrix_3__PA__CFG10, CYREG_UDB_PA1_CFG10
@@ -7569,18 +7569,18 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  676              	.set row_matrix_3__PC2, CYREG_PRT1_PC2
  677              	.set row_matrix_3__PORT, 1
  678              	.set row_matrix_3__PS, CYREG_PRT1_PS
- 679              	.set row_matrix_3__SHIFT, 2
+ 679              	.set row_matrix_3__SHIFT, 3
  680              	
  681              	/* row_matrix_4 */
- 682              	.set row_matrix_4__0__DM__MASK, 0xE00
- 683              	.set row_matrix_4__0__DM__SHIFT, 9
+ 682              	.set row_matrix_4__0__DM__MASK, 0x7000
+ 683              	.set row_matrix_4__0__DM__SHIFT, 12
  684              	.set row_matrix_4__0__DR, CYREG_PRT1_DR
  685              	.set row_matrix_4__0__HSIOM, CYREG_HSIOM_PORT_SEL1
- 686              	.set row_matrix_4__0__HSIOM_MASK, 0x0000F000
- 687              	.set row_matrix_4__0__HSIOM_SHIFT, 12
+ 686              	.set row_matrix_4__0__HSIOM_MASK, 0x000F0000
+ 687              	.set row_matrix_4__0__HSIOM_SHIFT, 16
  688              	.set row_matrix_4__0__INTCFG, CYREG_PRT1_INTCFG
  689              	.set row_matrix_4__0__INTSTAT, CYREG_PRT1_INTSTAT
- 690              	.set row_matrix_4__0__MASK, 0x08
+ 690              	.set row_matrix_4__0__MASK, 0x10
  691              	.set row_matrix_4__0__PA__CFG0, CYREG_UDB_PA1_CFG0
  692              	.set row_matrix_4__0__PA__CFG1, CYREG_UDB_PA1_CFG1
  693              	.set row_matrix_4__0__PA__CFG10, CYREG_UDB_PA1_CFG10
@@ -7600,11 +7600,11 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  707              	.set row_matrix_4__0__PC2, CYREG_PRT1_PC2
  708              	.set row_matrix_4__0__PORT, 1
  709              	.set row_matrix_4__0__PS, CYREG_PRT1_PS
- 710              	.set row_matrix_4__0__SHIFT, 3
+ 710              	.set row_matrix_4__0__SHIFT, 4
  711              	.set row_matrix_4__DR, CYREG_PRT1_DR
  712              	.set row_matrix_4__INTCFG, CYREG_PRT1_INTCFG
  713              	.set row_matrix_4__INTSTAT, CYREG_PRT1_INTSTAT
- 714              	.set row_matrix_4__MASK, 0x08
+ 714              	.set row_matrix_4__MASK, 0x10
  715              	.set row_matrix_4__PA__CFG0, CYREG_UDB_PA1_CFG0
  716              	.set row_matrix_4__PA__CFG1, CYREG_UDB_PA1_CFG1
  717              	.set row_matrix_4__PA__CFG10, CYREG_UDB_PA1_CFG10
@@ -7627,18 +7627,18 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  731              	.set row_matrix_4__PC2, CYREG_PRT1_PC2
  732              	.set row_matrix_4__PORT, 1
  733              	.set row_matrix_4__PS, CYREG_PRT1_PS
- 734              	.set row_matrix_4__SHIFT, 3
+ 734              	.set row_matrix_4__SHIFT, 4
  735              	
  736              	/* row_matrix_5 */
- 737              	.set row_matrix_5__0__DM__MASK, 0x7000
- 738              	.set row_matrix_5__0__DM__SHIFT, 12
+ 737              	.set row_matrix_5__0__DM__MASK, 0x38000
+ 738              	.set row_matrix_5__0__DM__SHIFT, 15
  739              	.set row_matrix_5__0__DR, CYREG_PRT1_DR
  740              	.set row_matrix_5__0__HSIOM, CYREG_HSIOM_PORT_SEL1
- 741              	.set row_matrix_5__0__HSIOM_MASK, 0x000F0000
- 742              	.set row_matrix_5__0__HSIOM_SHIFT, 16
+ 741              	.set row_matrix_5__0__HSIOM_MASK, 0x00F00000
+ 742              	.set row_matrix_5__0__HSIOM_SHIFT, 20
  743              	.set row_matrix_5__0__INTCFG, CYREG_PRT1_INTCFG
  744              	.set row_matrix_5__0__INTSTAT, CYREG_PRT1_INTSTAT
- 745              	.set row_matrix_5__0__MASK, 0x10
+ 745              	.set row_matrix_5__0__MASK, 0x20
  746              	.set row_matrix_5__0__PA__CFG0, CYREG_UDB_PA1_CFG0
  747              	.set row_matrix_5__0__PA__CFG1, CYREG_UDB_PA1_CFG1
  748              	.set row_matrix_5__0__PA__CFG10, CYREG_UDB_PA1_CFG10
@@ -7658,11 +7658,11 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  762              	.set row_matrix_5__0__PC2, CYREG_PRT1_PC2
  763              	.set row_matrix_5__0__PORT, 1
  764              	.set row_matrix_5__0__PS, CYREG_PRT1_PS
- 765              	.set row_matrix_5__0__SHIFT, 4
+ 765              	.set row_matrix_5__0__SHIFT, 5
  766              	.set row_matrix_5__DR, CYREG_PRT1_DR
  767              	.set row_matrix_5__INTCFG, CYREG_PRT1_INTCFG
  768              	.set row_matrix_5__INTSTAT, CYREG_PRT1_INTSTAT
- 769              	.set row_matrix_5__MASK, 0x10
+ 769              	.set row_matrix_5__MASK, 0x20
  770              	.set row_matrix_5__PA__CFG0, CYREG_UDB_PA1_CFG0
  771              	.set row_matrix_5__PA__CFG1, CYREG_UDB_PA1_CFG1
  772              	.set row_matrix_5__PA__CFG10, CYREG_UDB_PA1_CFG10
@@ -7685,18 +7685,18 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  786              	.set row_matrix_5__PC2, CYREG_PRT1_PC2
  787              	.set row_matrix_5__PORT, 1
  788              	.set row_matrix_5__PS, CYREG_PRT1_PS
- 789              	.set row_matrix_5__SHIFT, 4
+ 789              	.set row_matrix_5__SHIFT, 5
  790              	
  791              	/* row_matrix_6 */
- 792              	.set row_matrix_6__0__DM__MASK, 0x38000
- 793              	.set row_matrix_6__0__DM__SHIFT, 15
+ 792              	.set row_matrix_6__0__DM__MASK, 0x1C0000
+ 793              	.set row_matrix_6__0__DM__SHIFT, 18
  794              	.set row_matrix_6__0__DR, CYREG_PRT1_DR
  795              	.set row_matrix_6__0__HSIOM, CYREG_HSIOM_PORT_SEL1
- 796              	.set row_matrix_6__0__HSIOM_MASK, 0x00F00000
- 797              	.set row_matrix_6__0__HSIOM_SHIFT, 20
+ 796              	.set row_matrix_6__0__HSIOM_MASK, 0x0F000000
+ 797              	.set row_matrix_6__0__HSIOM_SHIFT, 24
  798              	.set row_matrix_6__0__INTCFG, CYREG_PRT1_INTCFG
  799              	.set row_matrix_6__0__INTSTAT, CYREG_PRT1_INTSTAT
- 800              	.set row_matrix_6__0__MASK, 0x20
+ 800              	.set row_matrix_6__0__MASK, 0x40
  801              	.set row_matrix_6__0__PA__CFG0, CYREG_UDB_PA1_CFG0
  802              	.set row_matrix_6__0__PA__CFG1, CYREG_UDB_PA1_CFG1
  803              	.set row_matrix_6__0__PA__CFG10, CYREG_UDB_PA1_CFG10
@@ -7716,11 +7716,11 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  817              	.set row_matrix_6__0__PC2, CYREG_PRT1_PC2
  818              	.set row_matrix_6__0__PORT, 1
  819              	.set row_matrix_6__0__PS, CYREG_PRT1_PS
- 820              	.set row_matrix_6__0__SHIFT, 5
+ 820              	.set row_matrix_6__0__SHIFT, 6
  821              	.set row_matrix_6__DR, CYREG_PRT1_DR
  822              	.set row_matrix_6__INTCFG, CYREG_PRT1_INTCFG
  823              	.set row_matrix_6__INTSTAT, CYREG_PRT1_INTSTAT
- 824              	.set row_matrix_6__MASK, 0x20
+ 824              	.set row_matrix_6__MASK, 0x40
  825              	.set row_matrix_6__PA__CFG0, CYREG_UDB_PA1_CFG0
  826              	.set row_matrix_6__PA__CFG1, CYREG_UDB_PA1_CFG1
  827              	.set row_matrix_6__PA__CFG10, CYREG_UDB_PA1_CFG10
@@ -7743,7 +7743,7 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
 
  842              	.set row_matrix_6__PORT, 1
  843              	.set row_matrix_6__PS, CYREG_PRT1_PS
- 844              	.set row_matrix_6__SHIFT, 5
+ 844              	.set row_matrix_6__SHIFT, 6
  845              	
  846              	/* row_matrix_7 */
  847              	.set row_matrix_7__0__DM__MASK, 0xE00000

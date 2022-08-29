@@ -25,10 +25,17 @@ uint8 DEC_to_BCD(uint8 data)
 	return (data/10)<<4 | (data%10);
 }
 
+/*
+    - Dựa vào bảng Timekeeper registers, chúng ta sẽ thấy thanh ghi second có bit 7 CH (dùng để tạm dừng dao động), 
+    chúng ta sẽ không đọc bit này nên sẽ cần biểu thức ( temp[0] & 0x7F ) để loại đi bit 7 này.
+
+    - Thanh ghi hour có bit 6 để chọn chế độ 12/24h, nếu bit 6 = 1, chế độ 12h sẽ được chọn. 
+    Chúng ta sẽ không đọc bit 6 nên cần biểu thức temp[0] & 0x3F để loại bit 6 này.
+*/
 void ds1307_read_data(data_time *time)
 {
     uint8 result, i;    
-    uint8 temp[7] = {'\0'};
+    uint8 temp[8];
     
     do{
         result = i2c_ds1307_I2CMasterSendStart(ADDRESS_SLAVE_DS1307, i2c_ds1307_I2C_WRITE_XFER_MODE, 1);
@@ -46,9 +53,9 @@ void ds1307_read_data(data_time *time)
    i2c_ds1307_I2CMasterSendStop(1); 
     
     // Convert BCD to DEC
-    time->second = BCD_to_DEC(temp[0]);
+    time->second = BCD_to_DEC(temp[0] & 0x7F);
     time->minute = BCD_to_DEC(temp[1]);
-    time->hour = BCD_to_DEC(temp[2]);
+    time->hour = BCD_to_DEC(temp[2] & 0x3F); // 24h mode
     time->day = BCD_to_DEC(temp[3]);
     time->date = BCD_to_DEC(temp[4]);
     time->month = BCD_to_DEC(temp[5]);
@@ -59,7 +66,7 @@ void ds1307_read_data(data_time *time)
 void ds1307_write_data(data_time *time)
 {
     uint8 result, i;
-    uint32 temp[7] = {'\0'};
+    uint32 temp[8];
     
     // Convert DEC to BCD
     temp[0] = DEC_to_BCD(time->second);
@@ -86,13 +93,13 @@ void ds1307_write_data(data_time *time)
 
 void ds1307_time_init(data_time *time)
 {
-    (*time).second = 12;
-    (*time).minute = 12;
-    (*time).hour = 12;
-    (*time).day = 0;
-    (*time).date = 12;
-    (*time).month = 12;
-    (*time).year = 12;
+    time->second = 12;
+    time->minute = 12;
+    time->hour = 12;
+    time->day = 1;
+    time->date = 29;
+    time->month = 8;
+    time->year = 22;
 }
 
 

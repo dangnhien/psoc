@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="adc\adc\Generated_Source\PSoC4\adcUser\adcUser.h">
+<ExpandedNodeIds>
+<v>adc</v>
+<v>adc\adc</v>
+<v>adc\adc\TopDesign</v>
+<v>adc\adc\adc.cydwr</v>
+<v>adc\adc\adc.cydwr\Pins</v>
+<v>adc\adc\adc.cydwr\Analog</v>
+<v>adc\adc\adc.cydwr\Clocks</v>
+<v>adc\adc\adc.cydwr\Interrupts</v>
+<v>adc\adc\adc.cydwr\System</v>
+<v>adc\adc\adc.cydwr\Directives</v>
+<v>adc\adc\adc.cydwr\Flash Security</v>
+<v>adc\adc\Header Files</v>
+<v>adc\adc\Header Files\cyapicallbacks.h</v>
+<v>adc\adc\Header Files\main.h</v>
+<v>adc\adc\Source Files</v>
+<v>adc\adc\Source Files\main.c</v>
+<v>adc\adc\Generated_Source</v>
+<v>adc\adc\Generated_Source\PSoC4</v>
+<v>adc\adc\Generated_Source\PSoC4\adcUser</v>
+<v>adc\adc\Generated_Source\PSoC4\uartUser</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>adc</v>
+<v>adc\adc</v>
+<v>adc\adc\TopDesign</v>
+<v>adc\adc\adc.cydwr</v>
+<v>adc\adc\adc.cydwr\Pins</v>
+<v>adc\adc\adc.cydwr\Analog</v>
+<v>adc\adc\adc.cydwr\Clocks</v>
+<v>adc\adc\adc.cydwr\Interrupts</v>
+<v>adc\adc\adc.cydwr\System</v>
+<v>adc\adc\adc.cydwr\Directives</v>
+<v>adc\adc\adc.cydwr\Flash Security</v>
+<v>adc\adc\Header Files</v>
+<v>adc\adc\Header Files\cyapicallbacks.h</v>
+<v>adc\adc\Header Files\main.h</v>
+<v>adc\adc\Source Files</v>
+<v>adc\adc\Source Files\main.c</v>
+<v>adc\adc\Generated_Source</v>
+<v>adc\adc\Generated_Source\PSoC4</v>
+<v>adc\adc\Generated_Source\PSoC4\adcUser</v>
+<v>adc\adc\Generated_Source\PSoC4\adcUser\adcUser.c</v>
+<v>adc\adc\Generated_Source\PSoC4\adcUser\adcUser.h</v>
+<v>adc\adc\Generated_Source\PSoC4\adcUser\adcUser_INT.c</v>
+<v>adc\adc\Generated_Source\PSoC4\adcUser\adcUser_PM.c</v>
+<v>adc\adc\Generated_Source\PSoC4\adcUser_intClock</v>
+<v>adc\adc\Generated_Source\PSoC4\adcUser_IRQ</v>
+<v>adc\adc\Generated_Source\PSoC4\cy_boot</v>
+<v>adc\adc\Generated_Source\PSoC4\cy_lfclk</v>
+<v>adc\adc\Generated_Source\PSoC4\Em_EEPROM_Dynamic</v>
+<v>adc\adc\Generated_Source\PSoC4\Pin_POT</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>adc</v>
+<v>adc\adc</v>
+<v>adc\adc\TopDesign</v>
+<v>adc\adc\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>adc</v>
+<v>adc\adc</v>
+<v>adc\adc\TopDesign</v>
+<v>adc\adc\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>adc</v>
+<v>adc\adc</v>
+<v>adc\adc\CortexM0</v>
+<v>adc\adc\CortexM0\ARM_GCC_541</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\adcUser.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\adcUser_INT.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\adcUser_intClock.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\adcUser_IRQ.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\adcUser_PM.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_POT.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_POT_PM.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_BOOT.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_PM.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_rx.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_rx_PM.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_SCBCLK.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_SPI_UART.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_SPI_UART_INT.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_tx.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_tx_PM.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_UART.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_UART_BOOT.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\adc.elf</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\adc.hex</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\adc.map</v>
+<v>adc\adc\adc.gpdsc</v>
+<v>adc\adc\adc.rpt</v>
+<v>adc\adc\adc_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>adc</v>
+<v>adc\adc</v>
+<v>adc\adc\CortexM0</v>
+<v>adc\adc\CortexM0\ARM_GCC_541</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\adcUser.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\adcUser_INT.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\adcUser_intClock.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\adcUser_IRQ.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\adcUser_PM.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_POT.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_POT_PM.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_BOOT.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_PM.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_rx.lst</v>
+<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_rx_PM.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>adc</v>
+<v>adc\adc</v>
+<v>adc\adc\PSoC 4 Architecture TRM</v>
+<v>adc\adc\PSoC 4100 Family Datasheet</v>
+<v>adc\adc\System Reference Guides</v>
+<v>adc\adc\System Reference Guides\cy_boot_v6_0</v>
+<v>adc\adc\System Reference Guides\cy_lfclk_v1_20</v>
+<v>adc\adc\ADC_SAR_SEQ_P4_v2_50.pdf</v>
+<v>adc\adc\cy_pins_v2_20.pdf</v>
+<v>adc\adc\SCB_P4_v4_0.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>adc</v>
+<v>adc\adc</v>
+<v>adc\adc\PSoC 4 Architecture TRM</v>
+<v>adc\adc\PSoC 4100 Family Datasheet</v>
+<v>adc\adc\System Reference Guides</v>
+<v>adc\adc\System Reference Guides\cy_boot_v6_0</v>
+<v>adc\adc\System Reference Guides\cy_lfclk_v1_20</v>
+<v>adc\adc\ADC_SAR_SEQ_P4_v2_50.pdf</v>
+<v>adc\adc\cy_pins_v2_20.pdf</v>
+<v>adc\adc\SCB_P4_v4_0.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\adc.cydsn\main.c" />
+<name v=".\adc.cydsn\main.h" />
+<name v=".\adc.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\adc.cydsn\Generated_Source\PSoC4\adcUser.c" />
+<name v=".\adc.cydsn\Generated_Source\PSoC4\adcUser.h" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1234, 532" SelectedTabbedMdiWindow="361f58c1-1d4a-46a2-81fe-7615edc69fcb"><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\main.c" Guid="361f58c1-1d4a-46a2-81fe-7615edc69fcb" /><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\main.h" Guid="a004d7ed-f6bf-42de-96d5-305d7637e6bf" /><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\TopDesign\TopDesign.cysch" Guid="2a488f6f-c72d-40fb-98dd-375346455a05" /><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\Generated_Source\PSoC4\adcUser.c" Guid="c6d718b9-eabd-4f9c-809c-170d59579172" /><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\Generated_Source\PSoC4\adcUser.h" Guid="92b33cfa-079b-4932-a81d-97c6ce2b3578" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

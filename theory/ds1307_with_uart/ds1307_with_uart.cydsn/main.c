@@ -21,15 +21,22 @@ int main(void)
     
     system_initialization(); 
     
+    ds1307_time_init(&time);
+    //ds1307_write_data(&time);
+    time_string_concatenation(time, txString);
+    uart_transmit_UartPutString(txString); 
+    CyDelay(1000);
+    
+    
     for(;;)
     {
-        Pin_Led_Yellow_Write( ~Pin_Led_Yellow_Read() );     
+        Pin_Led_Yellow_Write( ~Pin_Led_Yellow_Read() );   
+        
         ds1307_read_data(&time); 
         time_string_concatenation(time, txString);
-        uart_transmit_UartPutString(txString);
+        uart_transmit_UartPutString(txString);   
         
-        
-        
+        CyDelay(500);
     }
 }
 

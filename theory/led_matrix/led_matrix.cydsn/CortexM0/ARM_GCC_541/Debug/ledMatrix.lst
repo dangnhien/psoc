@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 1
 
 
    1              		.syntax unified
@@ -54,32 +54,41 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 1
   24:ledMatrix.c   ****                 0xff,0xff,0xfc,0xfe,0xfe,0xfe,0x00,0xff,//7
   25:ledMatrix.c   ****                 0xff,0x89,0x76,0x76,0x76,0x89,0xff,0xff,//8
   26:ledMatrix.c   ****                 0xff,0xb9,0x76,0x76,0x76,0x81,0xff,0xff,//9
-  27:ledMatrix.c   ****                 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00, // turn on full
-  28:ledMatrix.c   ****                 0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF  // turn off full
-  29:ledMatrix.c   ****                 
-  30:ledMatrix.c   ****                 
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 2
+  27:ledMatrix.c   ****                 0xe7,0xe7,0xe7,0x00,0x00,0xe7,0xe7,0xe7,//10 ---  +
+  28:ledMatrix.c   ****     
+  29:ledMatrix.c   ****                 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,//11-turn on full
+  30:ledMatrix.c   ****                 0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,//12-turn off full
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 2
 
 
-  31:ledMatrix.c   **** };
-  32:ledMatrix.c   **** uint8 data1[] = {0xE7,0xE7,0xE7,0xE7,0x00,0x00,0xE7,0xE7 //+
-  33:ledMatrix.c   ****                 };
-  34:ledMatrix.c   **** 
-  35:ledMatrix.c   **** /*
-  36:ledMatrix.c   ****     Curent location --> will return hight logic, contra return low logic
-  37:ledMatrix.c   **** */
-  38:ledMatrix.c   **** uint8 writeHightOrLow(uint8 dataNeedWrite, uint8 locationWrite)
-  39:ledMatrix.c   **** {
-  28              		.loc 1 39 0
+  31:ledMatrix.c   ****     
+  32:ledMatrix.c   ****                 0x00,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,//13-
+  33:ledMatrix.c   ****                 0xFF,0x00,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,//14-
+  34:ledMatrix.c   ****                 0xFF,0xFF,0x00,0xFF,0xFF,0xFF,0xFF,0xFF,//15-
+  35:ledMatrix.c   ****                 0xFF,0xFF,0xFF,0x00,0xFF,0xFF,0xFF,0xFF,//16-
+  36:ledMatrix.c   ****                 0xFF,0xFF,0xFF,0xFF,0x00,0xFF,0xFF,0xFF,//17-
+  37:ledMatrix.c   ****                 0xFF,0xFF,0xFF,0xFF,0xFF,0x00,0xFF,0xFF,//18-
+  38:ledMatrix.c   ****                 0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0x00,0xFF,//19
+  39:ledMatrix.c   ****                 0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0x00,//20-
+  40:ledMatrix.c   ****                 0x7f,0x7f,0x7f,0x7f,0x7f,0x7f,0x7f,0x7f //21
+  41:ledMatrix.c   ****     
+  42:ledMatrix.c   **** };
+  43:ledMatrix.c   **** 
+  44:ledMatrix.c   **** /*
+  45:ledMatrix.c   ****     Current location --> will return hight logic, contra return low logic
+  46:ledMatrix.c   **** */
+  47:ledMatrix.c   **** uint8 writeHightOrLow(uint8 dataNeedWrite, uint8 locationWrite)
+  48:ledMatrix.c   **** {
+  28              		.loc 1 48 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
   32              		@ link register save eliminated.
   33              	.LVL0:
-  40:ledMatrix.c   ****     uint8 result = 0;
-  41:ledMatrix.c   ****     
-  42:ledMatrix.c   ****     switch(locationWrite)
-  34              		.loc 1 42 0
+  49:ledMatrix.c   ****     uint8 result = 0;
+  50:ledMatrix.c   ****     
+  51:ledMatrix.c   ****     switch(locationWrite)
+  34              		.loc 1 51 0
   35 0000 0729     		cmp	r1, #7
   36 0002 24D8     		bhi	.L12
   37 0004 8900     		lsls	r1, r1, #2
@@ -100,35 +109,35 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 1
   52 001c 44000000 		.word	.L11
   53              		.section	.text.writeHightOrLow
   54              	.L3:
-  43:ledMatrix.c   ****     {
-  44:ledMatrix.c   ****         case 0:
-  45:ledMatrix.c   ****             ((dataNeedWrite & (1<<0)) == (1<<0) ) ? (result = hight) : (result = low);
-  55              		.loc 1 45 0
+  52:ledMatrix.c   ****     {
+  53:ledMatrix.c   ****         case 0:
+  54:ledMatrix.c   ****             ((dataNeedWrite & (1<<0)) == (1<<0) ) ? (result = hight) : (result = low);
+  55              		.loc 1 54 0
   56 000c C307     		lsls	r3, r0, #31
   57 000e 20D5     		bpl	.L13
   58 0010 0120     		movs	r0, #1
   59              	.LVL2:
   60 0012 2DE0     		b	.L2
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 3
+
+
   61              	.LVL3:
   62              	.L5:
-  46:ledMatrix.c   ****             break;
-  47:ledMatrix.c   ****         case 1:
-  48:ledMatrix.c   ****             ((dataNeedWrite & (1<<1)) == (1<<1)) ? (result = hight) : (result = low);
-  63              		.loc 1 48 0
+  55:ledMatrix.c   ****             break;
+  56:ledMatrix.c   ****         case 1:
+  57:ledMatrix.c   ****             ((dataNeedWrite & (1<<1)) == (1<<1)) ? (result = hight) : (result = low);
+  63              		.loc 1 57 0
   64 0014 8307     		lsls	r3, r0, #30
   65 0016 1ED5     		bpl	.L14
   66 0018 0120     		movs	r0, #1
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 3
-
-
   67              	.LVL4:
   68 001a 29E0     		b	.L2
   69              	.LVL5:
   70              	.L6:
-  49:ledMatrix.c   ****             break;
-  50:ledMatrix.c   ****         case 2:
-  51:ledMatrix.c   ****             ((dataNeedWrite & (1<<2)) == (1<<2)) ? (result = hight) : (result = low);
-  71              		.loc 1 51 0
+  58:ledMatrix.c   ****             break;
+  59:ledMatrix.c   ****         case 2:
+  60:ledMatrix.c   ****             ((dataNeedWrite & (1<<2)) == (1<<2)) ? (result = hight) : (result = low);
+  71              		.loc 1 60 0
   72 001c 4307     		lsls	r3, r0, #29
   73 001e 1CD5     		bpl	.L15
   74 0020 0120     		movs	r0, #1
@@ -136,10 +145,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 1
   76 0022 25E0     		b	.L2
   77              	.LVL7:
   78              	.L7:
-  52:ledMatrix.c   ****             break;
-  53:ledMatrix.c   ****         case 3:
-  54:ledMatrix.c   ****             ((dataNeedWrite & (1<<3)) == (1<<3) ) ? (result = hight) : (result = low);
-  79              		.loc 1 54 0
+  61:ledMatrix.c   ****             break;
+  62:ledMatrix.c   ****         case 3:
+  63:ledMatrix.c   ****             ((dataNeedWrite & (1<<3)) == (1<<3) ) ? (result = hight) : (result = low);
+  79              		.loc 1 63 0
   80 0024 0307     		lsls	r3, r0, #28
   81 0026 1AD5     		bpl	.L16
   82 0028 0120     		movs	r0, #1
@@ -147,10 +156,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 1
   84 002a 21E0     		b	.L2
   85              	.LVL9:
   86              	.L8:
-  55:ledMatrix.c   ****             break;
-  56:ledMatrix.c   ****         case 4:
-  57:ledMatrix.c   ****             ((dataNeedWrite & (1<<4)) == (1<<4) ) ? (result = hight) : (result = low);
-  87              		.loc 1 57 0
+  64:ledMatrix.c   ****             break;
+  65:ledMatrix.c   ****         case 4:
+  66:ledMatrix.c   ****             ((dataNeedWrite & (1<<4)) == (1<<4) ) ? (result = hight) : (result = low);
+  87              		.loc 1 66 0
   88 002c C306     		lsls	r3, r0, #27
   89 002e 18D5     		bpl	.L17
   90 0030 0120     		movs	r0, #1
@@ -158,10 +167,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 1
   92 0032 1DE0     		b	.L2
   93              	.LVL11:
   94              	.L9:
-  58:ledMatrix.c   ****             break;
-  59:ledMatrix.c   ****         case 5:
-  60:ledMatrix.c   ****             ((dataNeedWrite & (1<<5)) == (1<<5) ) ? (result = hight) : (result = low);
-  95              		.loc 1 60 0
+  67:ledMatrix.c   ****             break;
+  68:ledMatrix.c   ****         case 5:
+  69:ledMatrix.c   ****             ((dataNeedWrite & (1<<5)) == (1<<5) ) ? (result = hight) : (result = low);
+  95              		.loc 1 69 0
   96 0034 8306     		lsls	r3, r0, #26
   97 0036 16D5     		bpl	.L18
   98 0038 0120     		movs	r0, #1
@@ -169,24 +178,24 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 1
  100 003a 19E0     		b	.L2
  101              	.LVL13:
  102              	.L10:
-  61:ledMatrix.c   ****             break;
-  62:ledMatrix.c   ****         case 6:
-  63:ledMatrix.c   ****             ((dataNeedWrite & (1<<6)) == (1<<6) ) ? (result = hight) : (result = low);
- 103              		.loc 1 63 0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 4
+
+
+  70:ledMatrix.c   ****             break;
+  71:ledMatrix.c   ****         case 6:
+  72:ledMatrix.c   ****             ((dataNeedWrite & (1<<6)) == (1<<6) ) ? (result = hight) : (result = low);
+ 103              		.loc 1 72 0
  104 003c 4306     		lsls	r3, r0, #25
  105 003e 14D5     		bpl	.L19
  106 0040 0120     		movs	r0, #1
  107              	.LVL14:
  108 0042 15E0     		b	.L2
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 4
-
-
  109              	.LVL15:
  110              	.L11:
-  64:ledMatrix.c   ****             break;
-  65:ledMatrix.c   ****         case 7:
-  66:ledMatrix.c   ****             ((dataNeedWrite & (1<<7)) == (1<<7) ) ? (result = hight) : (result = low);
- 111              		.loc 1 66 0
+  73:ledMatrix.c   ****             break;
+  74:ledMatrix.c   ****         case 7:
+  75:ledMatrix.c   ****             ((dataNeedWrite & (1<<7)) == (1<<7) ) ? (result = hight) : (result = low);
+ 111              		.loc 1 75 0
  112 0044 40B2     		sxtb	r0, r0
  113 0046 0028     		cmp	r0, #0
  114 0048 11DA     		bge	.L20
@@ -195,75 +204,74 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 1
  117 004c 10E0     		b	.L2
  118              	.LVL17:
  119              	.L12:
-  40:ledMatrix.c   ****     
- 120              		.loc 1 40 0
+  49:ledMatrix.c   ****     
+ 120              		.loc 1 49 0
  121 004e 0020     		movs	r0, #0
  122              	.LVL18:
  123 0050 0EE0     		b	.L2
  124              	.LVL19:
  125              	.L13:
-  45:ledMatrix.c   ****             break;
- 126              		.loc 1 45 0
+  54:ledMatrix.c   ****             break;
+ 126              		.loc 1 54 0
  127 0052 0020     		movs	r0, #0
  128              	.LVL20:
  129 0054 0CE0     		b	.L2
  130              	.LVL21:
  131              	.L14:
-  48:ledMatrix.c   ****             break;
- 132              		.loc 1 48 0
+  57:ledMatrix.c   ****             break;
+ 132              		.loc 1 57 0
  133 0056 0020     		movs	r0, #0
  134              	.LVL22:
  135 0058 0AE0     		b	.L2
  136              	.LVL23:
  137              	.L15:
-  51:ledMatrix.c   ****             break;
- 138              		.loc 1 51 0
+  60:ledMatrix.c   ****             break;
+ 138              		.loc 1 60 0
  139 005a 0020     		movs	r0, #0
  140              	.LVL24:
  141 005c 08E0     		b	.L2
  142              	.LVL25:
  143              	.L16:
-  54:ledMatrix.c   ****             break;
- 144              		.loc 1 54 0
+  63:ledMatrix.c   ****             break;
+ 144              		.loc 1 63 0
  145 005e 0020     		movs	r0, #0
  146              	.LVL26:
  147 0060 06E0     		b	.L2
  148              	.LVL27:
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 5
+
+
  149              	.L17:
-  57:ledMatrix.c   ****             break;
- 150              		.loc 1 57 0
+  66:ledMatrix.c   ****             break;
+ 150              		.loc 1 66 0
  151 0062 0020     		movs	r0, #0
  152              	.LVL28:
  153 0064 04E0     		b	.L2
  154              	.LVL29:
  155              	.L18:
-  60:ledMatrix.c   ****             break;
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 5
-
-
- 156              		.loc 1 60 0
+  69:ledMatrix.c   ****             break;
+ 156              		.loc 1 69 0
  157 0066 0020     		movs	r0, #0
  158              	.LVL30:
  159 0068 02E0     		b	.L2
  160              	.LVL31:
  161              	.L19:
-  63:ledMatrix.c   ****             break;
- 162              		.loc 1 63 0
+  72:ledMatrix.c   ****             break;
+ 162              		.loc 1 72 0
  163 006a 0020     		movs	r0, #0
  164              	.LVL32:
  165 006c 00E0     		b	.L2
  166              	.LVL33:
  167              	.L20:
- 168              		.loc 1 66 0
+ 168              		.loc 1 75 0
  169 006e 0020     		movs	r0, #0
  170              	.LVL34:
  171              	.L2:
-  67:ledMatrix.c   ****            
-  68:ledMatrix.c   ****     }
-  69:ledMatrix.c   ****     
-  70:ledMatrix.c   ****     return result;
-  71:ledMatrix.c   **** }
- 172              		.loc 1 71 0
+  76:ledMatrix.c   ****     }
+  77:ledMatrix.c   ****     
+  78:ledMatrix.c   ****     return result;
+  79:ledMatrix.c   **** }
+ 172              		.loc 1 79 0
  173              		@ sp needed
  174 0070 7047     		bx	lr
  175              	.L22:
@@ -281,166 +289,166 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 1
  187              		.type	write_data, %function
  188              	write_data:
  189              	.LFB33:
-  72:ledMatrix.c   **** 
-  73:ledMatrix.c   **** void write_data(uint8 dataNeedWrite, uint8 rowOrCloumn)
-  74:ledMatrix.c   **** {
- 190              		.loc 1 74 0
+  80:ledMatrix.c   **** 
+  81:ledMatrix.c   **** void write_data(uint8 dataNeedWrite, uint8 rowOrCloumn)
+  82:ledMatrix.c   **** {
+ 190              		.loc 1 82 0
  191              		.cfi_startproc
  192              		@ args = 0, pretend = 0, frame = 0
  193              		@ frame_needed = 0, uses_anonymous_args = 0
  194              	.LVL35:
  195 0000 10B5     		push	{r4, lr}
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 6
+
+
  196              		.cfi_def_cfa_offset 8
  197              		.cfi_offset 4, -8
  198              		.cfi_offset 14, -4
  199 0002 0400     		movs	r4, r0
-  75:ledMatrix.c   ****     switch(rowOrCloumn)
- 200              		.loc 1 75 0
+  83:ledMatrix.c   ****     switch(rowOrCloumn)
+ 200              		.loc 1 83 0
  201 0004 0029     		cmp	r1, #0
  202 0006 02D0     		beq	.L25
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 6
-
-
  203 0008 0129     		cmp	r1, #1
  204 000a 30D0     		beq	.L26
  205 000c 5EE0     		b	.L23
  206              	.L25:
-  76:ledMatrix.c   ****     {
-  77:ledMatrix.c   ****         case row:
-  78:ledMatrix.c   ****             row_matrix_0_Write( writeHightOrLow(dataNeedWrite, 0) );
- 207              		.loc 1 78 0
+  84:ledMatrix.c   ****     {
+  85:ledMatrix.c   ****         case row:
+  86:ledMatrix.c   ****             row_matrix_0_Write( writeHightOrLow(dataNeedWrite, 0) );
+ 207              		.loc 1 86 0
  208 000e 0021     		movs	r1, #0
  209              	.LVL36:
  210 0010 FFF7FEFF 		bl	writeHightOrLow
  211              	.LVL37:
  212 0014 FFF7FEFF 		bl	row_matrix_0_Write
  213              	.LVL38:
-  79:ledMatrix.c   ****             row_matrix_1_Write( writeHightOrLow(dataNeedWrite, 1) );
- 214              		.loc 1 79 0
+  87:ledMatrix.c   ****             row_matrix_1_Write( writeHightOrLow(dataNeedWrite, 1) );
+ 214              		.loc 1 87 0
  215 0018 0121     		movs	r1, #1
  216 001a 2000     		movs	r0, r4
  217 001c FFF7FEFF 		bl	writeHightOrLow
  218              	.LVL39:
  219 0020 FFF7FEFF 		bl	row_matrix_1_Write
  220              	.LVL40:
-  80:ledMatrix.c   ****             row_matrix_2_Write( writeHightOrLow(dataNeedWrite, 2) );
- 221              		.loc 1 80 0
+  88:ledMatrix.c   ****             row_matrix_2_Write( writeHightOrLow(dataNeedWrite, 2) );
+ 221              		.loc 1 88 0
  222 0024 0221     		movs	r1, #2
  223 0026 2000     		movs	r0, r4
  224 0028 FFF7FEFF 		bl	writeHightOrLow
  225              	.LVL41:
  226 002c FFF7FEFF 		bl	row_matrix_2_Write
  227              	.LVL42:
-  81:ledMatrix.c   ****             row_matrix_3_Write( writeHightOrLow(dataNeedWrite, 3) );
- 228              		.loc 1 81 0
+  89:ledMatrix.c   ****             row_matrix_3_Write( writeHightOrLow(dataNeedWrite, 3) );
+ 228              		.loc 1 89 0
  229 0030 0321     		movs	r1, #3
  230 0032 2000     		movs	r0, r4
  231 0034 FFF7FEFF 		bl	writeHightOrLow
  232              	.LVL43:
  233 0038 FFF7FEFF 		bl	row_matrix_3_Write
  234              	.LVL44:
-  82:ledMatrix.c   ****             row_matrix_4_Write( writeHightOrLow(dataNeedWrite, 4) );
- 235              		.loc 1 82 0
+  90:ledMatrix.c   ****             row_matrix_4_Write( writeHightOrLow(dataNeedWrite, 4) );
+ 235              		.loc 1 90 0
  236 003c 0421     		movs	r1, #4
  237 003e 2000     		movs	r0, r4
  238 0040 FFF7FEFF 		bl	writeHightOrLow
  239              	.LVL45:
  240 0044 FFF7FEFF 		bl	row_matrix_4_Write
  241              	.LVL46:
-  83:ledMatrix.c   ****             row_matrix_5_Write( writeHightOrLow(dataNeedWrite, 5) );
- 242              		.loc 1 83 0
+  91:ledMatrix.c   ****             row_matrix_5_Write( writeHightOrLow(dataNeedWrite, 5) );
+ 242              		.loc 1 91 0
  243 0048 0521     		movs	r1, #5
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 7
+
+
  244 004a 2000     		movs	r0, r4
  245 004c FFF7FEFF 		bl	writeHightOrLow
  246              	.LVL47:
  247 0050 FFF7FEFF 		bl	row_matrix_5_Write
  248              	.LVL48:
-  84:ledMatrix.c   ****             row_matrix_6_Write( writeHightOrLow(dataNeedWrite, 6) );
- 249              		.loc 1 84 0
+  92:ledMatrix.c   ****             row_matrix_6_Write( writeHightOrLow(dataNeedWrite, 6) );
+ 249              		.loc 1 92 0
  250 0054 0621     		movs	r1, #6
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 7
-
-
  251 0056 2000     		movs	r0, r4
  252 0058 FFF7FEFF 		bl	writeHightOrLow
  253              	.LVL49:
  254 005c FFF7FEFF 		bl	row_matrix_6_Write
  255              	.LVL50:
-  85:ledMatrix.c   ****             row_matrix_7_Write( writeHightOrLow(dataNeedWrite, 7) );
- 256              		.loc 1 85 0
+  93:ledMatrix.c   ****             row_matrix_7_Write( writeHightOrLow(dataNeedWrite, 7) );
+ 256              		.loc 1 93 0
  257 0060 0721     		movs	r1, #7
  258 0062 2000     		movs	r0, r4
  259 0064 FFF7FEFF 		bl	writeHightOrLow
  260              	.LVL51:
  261 0068 FFF7FEFF 		bl	row_matrix_7_Write
  262              	.LVL52:
-  86:ledMatrix.c   ****             break; 
- 263              		.loc 1 86 0
+  94:ledMatrix.c   ****             break; 
+ 263              		.loc 1 94 0
  264 006c 2EE0     		b	.L23
  265              	.LVL53:
  266              	.L26:
-  87:ledMatrix.c   ****         case column:
-  88:ledMatrix.c   ****             col_matrix_0_Write( writeHightOrLow(dataNeedWrite, 0) );
- 267              		.loc 1 88 0
+  95:ledMatrix.c   ****         case column:
+  96:ledMatrix.c   ****             col_matrix_0_Write( writeHightOrLow(dataNeedWrite, 0) );
+ 267              		.loc 1 96 0
  268 006e 0021     		movs	r1, #0
  269              	.LVL54:
  270 0070 FFF7FEFF 		bl	writeHightOrLow
  271              	.LVL55:
  272 0074 FFF7FEFF 		bl	col_matrix_0_Write
  273              	.LVL56:
-  89:ledMatrix.c   ****             col_matrix_1_Write( writeHightOrLow(dataNeedWrite, 1) );
- 274              		.loc 1 89 0
+  97:ledMatrix.c   ****             col_matrix_1_Write( writeHightOrLow(dataNeedWrite, 1) );
+ 274              		.loc 1 97 0
  275 0078 0121     		movs	r1, #1
  276 007a 2000     		movs	r0, r4
  277 007c FFF7FEFF 		bl	writeHightOrLow
  278              	.LVL57:
  279 0080 FFF7FEFF 		bl	col_matrix_1_Write
  280              	.LVL58:
-  90:ledMatrix.c   ****             col_matrix_2_Write( writeHightOrLow(dataNeedWrite, 2) );
- 281              		.loc 1 90 0
+  98:ledMatrix.c   ****             col_matrix_2_Write( writeHightOrLow(dataNeedWrite, 2) );
+ 281              		.loc 1 98 0
  282 0084 0221     		movs	r1, #2
  283 0086 2000     		movs	r0, r4
  284 0088 FFF7FEFF 		bl	writeHightOrLow
  285              	.LVL59:
  286 008c FFF7FEFF 		bl	col_matrix_2_Write
  287              	.LVL60:
-  91:ledMatrix.c   ****             col_matrix_3_Write( writeHightOrLow(dataNeedWrite, 3) );
- 288              		.loc 1 91 0
+  99:ledMatrix.c   ****             col_matrix_3_Write( writeHightOrLow(dataNeedWrite, 3) );
+ 288              		.loc 1 99 0
  289 0090 0321     		movs	r1, #3
  290 0092 2000     		movs	r0, r4
  291 0094 FFF7FEFF 		bl	writeHightOrLow
  292              	.LVL61:
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 8
+
+
  293 0098 FFF7FEFF 		bl	col_matrix_3_Write
  294              	.LVL62:
-  92:ledMatrix.c   ****             col_matrix_4_Write( writeHightOrLow(dataNeedWrite, 4) );
- 295              		.loc 1 92 0
+ 100:ledMatrix.c   ****             col_matrix_4_Write( writeHightOrLow(dataNeedWrite, 4) );
+ 295              		.loc 1 100 0
  296 009c 0421     		movs	r1, #4
  297 009e 2000     		movs	r0, r4
  298 00a0 FFF7FEFF 		bl	writeHightOrLow
  299              	.LVL63:
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 8
-
-
  300 00a4 FFF7FEFF 		bl	col_matrix_4_Write
  301              	.LVL64:
-  93:ledMatrix.c   ****             col_matrix_5_Write( writeHightOrLow(dataNeedWrite, 5) );
- 302              		.loc 1 93 0
+ 101:ledMatrix.c   ****             col_matrix_5_Write( writeHightOrLow(dataNeedWrite, 5) );
+ 302              		.loc 1 101 0
  303 00a8 0521     		movs	r1, #5
  304 00aa 2000     		movs	r0, r4
  305 00ac FFF7FEFF 		bl	writeHightOrLow
  306              	.LVL65:
  307 00b0 FFF7FEFF 		bl	col_matrix_5_Write
  308              	.LVL66:
-  94:ledMatrix.c   ****             col_matrix_6_Write( writeHightOrLow(dataNeedWrite, 6) );
- 309              		.loc 1 94 0
+ 102:ledMatrix.c   ****             col_matrix_6_Write( writeHightOrLow(dataNeedWrite, 6) );
+ 309              		.loc 1 102 0
  310 00b4 0621     		movs	r1, #6
  311 00b6 2000     		movs	r0, r4
  312 00b8 FFF7FEFF 		bl	writeHightOrLow
  313              	.LVL67:
  314 00bc FFF7FEFF 		bl	col_matrix_6_Write
  315              	.LVL68:
-  95:ledMatrix.c   ****             col_matrix_7_Write( writeHightOrLow(dataNeedWrite, 7) );      
- 316              		.loc 1 95 0
+ 103:ledMatrix.c   ****             col_matrix_7_Write( writeHightOrLow(dataNeedWrite, 7) );  
+ 316              		.loc 1 103 0
  317 00c0 0721     		movs	r1, #7
  318 00c2 2000     		movs	r0, r4
  319 00c4 FFF7FEFF 		bl	writeHightOrLow
@@ -448,9 +456,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 1
  321 00c8 FFF7FEFF 		bl	col_matrix_7_Write
  322              	.LVL70:
  323              	.L23:
-  96:ledMatrix.c   ****     }
-  97:ledMatrix.c   **** }
- 324              		.loc 1 97 0
+ 104:ledMatrix.c   ****             break; 
+ 105:ledMatrix.c   ****     }
+ 106:ledMatrix.c   **** }
+ 324              		.loc 1 106 0
  325              		@ sp needed
  326 00cc 10BD     		pop	{r4, pc}
  327              		.cfi_endproc
@@ -464,12 +473,14 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 1
  335              		.type	light_character_k, %function
  336              	light_character_k:
  337              	.LFB34:
-  98:ledMatrix.c   **** 
-  99:ledMatrix.c   **** 
- 100:ledMatrix.c   **** void light_character_k(int k)
- 101:ledMatrix.c   **** {
- 338              		.loc 1 101 0
+ 107:ledMatrix.c   **** 
+ 108:ledMatrix.c   **** void light_character_k(int k)
+ 109:ledMatrix.c   **** {
+ 338              		.loc 1 109 0
  339              		.cfi_startproc
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 9
+
+
  340              		@ args = 0, pretend = 0, frame = 0
  341              		@ frame_needed = 0, uses_anonymous_args = 0
  342              	.LVL71:
@@ -478,2116 +489,2177 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 1
  345              		.cfi_offset 4, -16
  346              		.cfi_offset 5, -12
  347              		.cfi_offset 6, -8
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 9
-
-
  348              		.cfi_offset 14, -4
- 349 0002 0600     		movs	r6, r0
- 102:ledMatrix.c   ****     int n;
- 103:ledMatrix.c   ****     
- 104:ledMatrix.c   ****     write_data(0xFF, column);
- 350              		.loc 1 104 0
+ 349 0002 0500     		movs	r5, r0
+ 110:ledMatrix.c   ****     int n;
+ 111:ledMatrix.c   ****     
+ 112:ledMatrix.c   ****     write_data(0xFF, column);
+ 350              		.loc 1 112 0
  351 0004 0121     		movs	r1, #1
  352 0006 FF20     		movs	r0, #255
  353              	.LVL72:
  354 0008 FFF7FEFF 		bl	write_data
  355              	.LVL73:
- 105:ledMatrix.c   ****     write_data(0x00, row);
- 356              		.loc 1 105 0
+ 113:ledMatrix.c   ****     write_data(0x00, row);
+ 356              		.loc 1 113 0
  357 000c 0021     		movs	r1, #0
  358 000e 0020     		movs	r0, #0
  359 0010 FFF7FEFF 		bl	write_data
  360              	.LVL74:
- 106:ledMatrix.c   ****     
- 107:ledMatrix.c   ****     for(n=0;n<8;n++)
- 361              		.loc 1 107 0
+ 114:ledMatrix.c   ****     
+ 115:ledMatrix.c   ****     for(n=0;n<8;n++)
+ 361              		.loc 1 115 0
  362 0014 0024     		movs	r4, #0
- 363 0016 0FE0     		b	.L28
+ 363 0016 11E0     		b	.L28
  364              	.LVL75:
  365              	.L29:
- 108:ledMatrix.c   ****     {
- 109:ledMatrix.c   ****         write_data( data1[k*8 + n], column );
- 366              		.loc 1 109 0 discriminator 3
- 367 0018 F300     		lsls	r3, r6, #3
+ 116:ledMatrix.c   ****     {
+ 117:ledMatrix.c   ****         write_data( data[k*8 + n], column );
+ 366              		.loc 1 117 0 discriminator 3
+ 367 0018 EB00     		lsls	r3, r5, #3
  368 001a E318     		adds	r3, r4, r3
- 369 001c 084D     		ldr	r5, .L30
- 370 001e E85C     		ldrb	r0, [r5, r3]
+ 369 001c 094A     		ldr	r2, .L30
+ 370 001e D05C     		ldrb	r0, [r2, r3]
  371 0020 0121     		movs	r1, #1
  372 0022 FFF7FEFF 		bl	write_data
  373              	.LVL76:
- 110:ledMatrix.c   ****         write_data( control[n], row );
- 374              		.loc 1 110 0 discriminator 3
- 375 0026 2D19     		adds	r5, r5, r4
- 376 0028 287A     		ldrb	r0, [r5, #8]
- 377 002a 0021     		movs	r1, #0
- 378 002c FFF7FEFF 		bl	write_data
- 379              	.LVL77:
- 111:ledMatrix.c   ****         CyDelay(1);
- 380              		.loc 1 111 0 discriminator 3
- 381 0030 0120     		movs	r0, #1
- 382 0032 FFF7FEFF 		bl	CyDelay
- 383              	.LVL78:
- 107:ledMatrix.c   ****     {
- 384              		.loc 1 107 0 discriminator 3
- 385 0036 0134     		adds	r4, r4, #1
- 386              	.LVL79:
- 387              	.L28:
- 107:ledMatrix.c   ****     {
- 388              		.loc 1 107 0 is_stmt 0 discriminator 1
- 389 0038 072C     		cmp	r4, #7
- 390 003a EDDD     		ble	.L29
- 112:ledMatrix.c   ****     }
- 113:ledMatrix.c   **** }
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 10
-
-
- 391              		.loc 1 113 0 is_stmt 1
- 392              		@ sp needed
- 393              	.LVL80:
- 394              	.LVL81:
- 395 003c 70BD     		pop	{r4, r5, r6, pc}
- 396              	.L31:
- 397 003e C046     		.align	2
- 398              	.L30:
- 399 0040 00000000 		.word	.LANCHOR0
- 400              		.cfi_endproc
- 401              	.LFE34:
- 402              		.size	light_character_k, .-light_character_k
- 403              		.section	.text.light_from_0_to_9,"ax",%progbits
- 404              		.align	2
- 405              		.global	light_from_0_to_9
- 406              		.code	16
- 407              		.thumb_func
- 408              		.type	light_from_0_to_9, %function
- 409              	light_from_0_to_9:
- 410              	.LFB35:
- 114:ledMatrix.c   **** 
- 115:ledMatrix.c   **** void light_from_0_to_9()
- 116:ledMatrix.c   **** {
- 411              		.loc 1 116 0
- 412              		.cfi_startproc
- 413              		@ args = 0, pretend = 0, frame = 0
- 414              		@ frame_needed = 0, uses_anonymous_args = 0
- 415 0000 70B5     		push	{r4, r5, r6, lr}
- 416              		.cfi_def_cfa_offset 16
- 417              		.cfi_offset 4, -16
- 418              		.cfi_offset 5, -12
- 419              		.cfi_offset 6, -8
- 420              		.cfi_offset 14, -4
- 117:ledMatrix.c   ****     int run , loops;
- 118:ledMatrix.c   ****     
- 119:ledMatrix.c   ****     write_data(0xFF, column);
- 421              		.loc 1 119 0
- 422 0002 0121     		movs	r1, #1
- 423 0004 FF20     		movs	r0, #255
- 424 0006 FFF7FEFF 		bl	write_data
- 425              	.LVL82:
- 120:ledMatrix.c   ****     write_data(0x00, row);
- 426              		.loc 1 120 0
- 427 000a 0021     		movs	r1, #0
- 428 000c 0020     		movs	r0, #0
- 429 000e FFF7FEFF 		bl	write_data
- 430              	.LVL83:
- 431              	.L36:
- 121:ledMatrix.c   ****     
- 122:ledMatrix.c   ****     while(1)
- 123:ledMatrix.c   ****     {
- 124:ledMatrix.c   ****         for(run=0; run<10; run++)
- 432              		.loc 1 124 0
- 433 0012 0025     		movs	r5, #0
- 434 0014 12E0     		b	.L33
- 435              	.LVL84:
- 436              	.L34:
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 11
-
-
- 125:ledMatrix.c   ****         {
- 126:ledMatrix.c   ****             for(loops=0; loops<500; loops++)            
- 127:ledMatrix.c   ****                 light_character_k(run);
- 437              		.loc 1 127 0 discriminator 3
- 438 0016 2800     		movs	r0, r5
- 439 0018 FFF7FEFF 		bl	light_character_k
- 440              	.LVL85:
- 126:ledMatrix.c   ****                 light_character_k(run);
- 441              		.loc 1 126 0 discriminator 3
- 442 001c 0134     		adds	r4, r4, #1
- 443              	.LVL86:
- 444 001e 00E0     		b	.L35
- 445              	.LVL87:
- 446              	.L37:
- 447 0020 0024     		movs	r4, #0
- 448              	.L35:
- 449              	.LVL88:
- 126:ledMatrix.c   ****                 light_character_k(run);
- 450              		.loc 1 126 0 is_stmt 0 discriminator 1
- 451 0022 F423     		movs	r3, #244
- 452 0024 FF33     		adds	r3, r3, #255
- 453 0026 9C42     		cmp	r4, r3
- 454 0028 F5DD     		ble	.L34
- 128:ledMatrix.c   ****             
- 129:ledMatrix.c   ****             write_data(0xFF, column);
- 455              		.loc 1 129 0 is_stmt 1 discriminator 2
- 456 002a 0121     		movs	r1, #1
- 457 002c FF20     		movs	r0, #255
- 458 002e FFF7FEFF 		bl	write_data
- 459              	.LVL89:
- 130:ledMatrix.c   ****             write_data(0x00, row);
- 460              		.loc 1 130 0 discriminator 2
- 461 0032 0021     		movs	r1, #0
- 462 0034 0020     		movs	r0, #0
- 463 0036 FFF7FEFF 		bl	write_data
- 464              	.LVL90:
- 124:ledMatrix.c   ****         {
- 465              		.loc 1 124 0 discriminator 2
- 466 003a 0135     		adds	r5, r5, #1
- 467              	.LVL91:
- 468              	.L33:
- 124:ledMatrix.c   ****         {
- 469              		.loc 1 124 0 is_stmt 0 discriminator 1
- 470 003c 092D     		cmp	r5, #9
- 471 003e EFDD     		ble	.L37
- 472 0040 E7E7     		b	.L36
- 473              		.cfi_endproc
- 474              	.LFE35:
- 475              		.size	light_from_0_to_9, .-light_from_0_to_9
- 476              		.global	data1
- 477              		.global	data
- 478              		.global	control
- 479              		.data
- 480              		.align	2
- 481              		.set	.LANCHOR0,. + 0
- 482              		.type	data1, %object
- 483              		.size	data1, 8
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 12
-
-
- 484              	data1:
- 485 0000 E7       		.byte	-25
- 486 0001 E7       		.byte	-25
- 487 0002 E7       		.byte	-25
- 488 0003 E7       		.byte	-25
- 489 0004 00       		.byte	0
- 490 0005 00       		.byte	0
- 491 0006 E7       		.byte	-25
- 492 0007 E7       		.byte	-25
- 493              		.type	control, %object
- 494              		.size	control, 8
- 495              	control:
- 496 0008 01       		.byte	1
- 497 0009 02       		.byte	2
- 498 000a 04       		.byte	4
- 499 000b 08       		.byte	8
- 500 000c 10       		.byte	16
- 501 000d 20       		.byte	32
- 502 000e 40       		.byte	64
- 503 000f 80       		.byte	-128
- 504              		.type	data, %object
- 505              		.size	data, 96
- 506              	data:
- 507 0010 FF       		.byte	-1
- 508 0011 81       		.byte	-127
- 509 0012 7E       		.byte	126
- 510 0013 7E       		.byte	126
- 511 0014 7E       		.byte	126
- 512 0015 7E       		.byte	126
- 513 0016 81       		.byte	-127
- 514 0017 FF       		.byte	-1
- 515 0018 FF       		.byte	-1
- 516 0019 7B       		.byte	123
- 517 001a 7D       		.byte	125
- 518 001b 00       		.byte	0
- 519 001c 00       		.byte	0
- 520 001d 7F       		.byte	127
- 521 001e 7F       		.byte	127
- 522 001f FF       		.byte	-1
- 523 0020 FF       		.byte	-1
- 524 0021 86       		.byte	-122
- 525 0022 B6       		.byte	-74
- 526 0023 B6       		.byte	-74
- 527 0024 B6       		.byte	-74
- 528 0025 B6       		.byte	-74
- 529 0026 B0       		.byte	-80
- 530 0027 FF       		.byte	-1
- 531 0028 FF       		.byte	-1
- 532 0029 66       		.byte	102
- 533 002a 66       		.byte	102
- 534 002b 66       		.byte	102
- 535 002c 66       		.byte	102
- 536 002d 98       		.byte	-104
- 537 002e FF       		.byte	-1
- 538 002f FF       		.byte	-1
- 539 0030 EF       		.byte	-17
- 540 0031 E7       		.byte	-25
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 13
-
-
- 541 0032 EB       		.byte	-21
- 542 0033 6D       		.byte	109
- 543 0034 00       		.byte	0
- 544 0035 6F       		.byte	111
- 545 0036 EF       		.byte	-17
- 546 0037 FF       		.byte	-1
- 547 0038 FF       		.byte	-1
- 548 0039 78       		.byte	120
- 549 003a 7A       		.byte	122
- 550 003b 7A       		.byte	122
- 551 003c BA       		.byte	-70
- 552 003d C6       		.byte	-58
- 553 003e FF       		.byte	-1
- 554 003f FF       		.byte	-1
- 555 0040 FF       		.byte	-1
- 556 0041 81       		.byte	-127
- 557 0042 76       		.byte	118
- 558 0043 76       		.byte	118
- 559 0044 76       		.byte	118
- 560 0045 8D       		.byte	-115
- 561 0046 FF       		.byte	-1
- 562 0047 FF       		.byte	-1
- 563 0048 FF       		.byte	-1
- 564 0049 FF       		.byte	-1
- 565 004a FC       		.byte	-4
- 566 004b FE       		.byte	-2
- 567 004c FE       		.byte	-2
- 568 004d FE       		.byte	-2
- 569 004e 00       		.byte	0
- 570 004f FF       		.byte	-1
- 571 0050 FF       		.byte	-1
- 572 0051 89       		.byte	-119
- 573 0052 76       		.byte	118
- 574 0053 76       		.byte	118
- 575 0054 76       		.byte	118
- 576 0055 89       		.byte	-119
- 577 0056 FF       		.byte	-1
- 578 0057 FF       		.byte	-1
- 579 0058 FF       		.byte	-1
- 580 0059 B9       		.byte	-71
- 581 005a 76       		.byte	118
- 582 005b 76       		.byte	118
- 583 005c 76       		.byte	118
- 584 005d 81       		.byte	-127
- 585 005e FF       		.byte	-1
- 586 005f FF       		.byte	-1
- 587 0060 00       		.byte	0
- 588 0061 00       		.byte	0
- 589 0062 00       		.byte	0
- 590 0063 00       		.byte	0
- 591 0064 00       		.byte	0
- 592 0065 00       		.byte	0
- 593 0066 00       		.byte	0
- 594 0067 00       		.byte	0
- 595 0068 FF       		.byte	-1
- 596 0069 FF       		.byte	-1
- 597 006a FF       		.byte	-1
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 14
-
-
- 598 006b FF       		.byte	-1
- 599 006c FF       		.byte	-1
- 600 006d FF       		.byte	-1
- 601 006e FF       		.byte	-1
- 602 006f FF       		.byte	-1
- 603              		.text
- 604              	.Letext0:
- 605              		.file 2 "ledMatrix.h"
- 606              		.file 3 "Generated_Source\\PSoC4/row_matrix_0.h"
- 607              		.file 4 "Generated_Source\\PSoC4/row_matrix_1.h"
- 608              		.file 5 "Generated_Source\\PSoC4/row_matrix_2.h"
- 609              		.file 6 "Generated_Source\\PSoC4/row_matrix_3.h"
- 610              		.file 7 "Generated_Source\\PSoC4/row_matrix_4.h"
- 611              		.file 8 "Generated_Source\\PSoC4/row_matrix_5.h"
- 612              		.file 9 "Generated_Source\\PSoC4/row_matrix_6.h"
- 613              		.file 10 "Generated_Source\\PSoC4/row_matrix_7.h"
- 614              		.file 11 "Generated_Source\\PSoC4/col_matrix_0.h"
- 615              		.file 12 "Generated_Source\\PSoC4/col_matrix_1.h"
- 616              		.file 13 "Generated_Source\\PSoC4/col_matrix_2.h"
- 617              		.file 14 "Generated_Source\\PSoC4/col_matrix_3.h"
- 618              		.file 15 "Generated_Source\\PSoC4/col_matrix_4.h"
- 619              		.file 16 "Generated_Source\\PSoC4/col_matrix_5.h"
- 620              		.file 17 "Generated_Source\\PSoC4/col_matrix_6.h"
- 621              		.file 18 "Generated_Source\\PSoC4/col_matrix_7.h"
- 622              		.file 19 "Generated_Source\\PSoC4/CyLib.h"
- 623              		.file 20 "Generated_Source\\PSoC4/cytypes.h"
- 624              		.section	.debug_info,"",%progbits
- 625              	.Ldebug_info0:
- 626 0000 AA050000 		.4byte	0x5aa
- 627 0004 0400     		.2byte	0x4
- 628 0006 00000000 		.4byte	.Ldebug_abbrev0
- 629 000a 04       		.byte	0x4
- 630 000b 01       		.uleb128 0x1
- 631 000c 0D020000 		.4byte	.LASF46
- 632 0010 0C       		.byte	0xc
- 633 0011 00000000 		.4byte	.LASF47
- 634 0015 0C000000 		.4byte	.LASF48
- 635 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 636 001d 00000000 		.4byte	0
- 637 0021 00000000 		.4byte	.Ldebug_line0
- 638 0025 02       		.uleb128 0x2
- 639 0026 01       		.byte	0x1
- 640 0027 06       		.byte	0x6
- 641 0028 0E030000 		.4byte	.LASF0
- 642 002c 02       		.uleb128 0x2
- 643 002d 01       		.byte	0x1
- 644 002e 08       		.byte	0x8
- 645 002f EE000000 		.4byte	.LASF1
- 646 0033 02       		.uleb128 0x2
- 647 0034 02       		.byte	0x2
- 648 0035 05       		.byte	0x5
- 649 0036 C3020000 		.4byte	.LASF2
- 650 003a 02       		.uleb128 0x2
- 651 003b 02       		.byte	0x2
- 652 003c 07       		.byte	0x7
- 653 003d 82000000 		.4byte	.LASF3
- 654 0041 02       		.uleb128 0x2
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 15
-
-
- 655 0042 04       		.byte	0x4
- 656 0043 05       		.byte	0x5
- 657 0044 F2020000 		.4byte	.LASF4
- 658 0048 02       		.uleb128 0x2
- 659 0049 04       		.byte	0x4
- 660 004a 07       		.byte	0x7
- 661 004b 1D010000 		.4byte	.LASF5
- 662 004f 02       		.uleb128 0x2
- 663 0050 08       		.byte	0x8
- 664 0051 05       		.byte	0x5
- 665 0052 B0020000 		.4byte	.LASF6
- 666 0056 02       		.uleb128 0x2
- 667 0057 08       		.byte	0x8
- 668 0058 07       		.byte	0x7
- 669 0059 D6010000 		.4byte	.LASF7
- 670 005d 03       		.uleb128 0x3
- 671 005e 04       		.byte	0x4
- 672 005f 05       		.byte	0x5
- 673 0060 696E7400 		.ascii	"int\000"
- 674 0064 02       		.uleb128 0x2
- 675 0065 04       		.byte	0x4
- 676 0066 07       		.byte	0x7
- 677 0067 C9010000 		.4byte	.LASF8
- 678 006b 04       		.uleb128 0x4
- 679 006c 2F010000 		.4byte	.LASF49
- 680 0070 14       		.byte	0x14
- 681 0071 FB01     		.2byte	0x1fb
- 682 0073 2C000000 		.4byte	0x2c
- 683 0077 02       		.uleb128 0x2
- 684 0078 04       		.byte	0x4
- 685 0079 04       		.byte	0x4
- 686 007a CF000000 		.4byte	.LASF9
- 687 007e 02       		.uleb128 0x2
- 688 007f 08       		.byte	0x8
- 689 0080 04       		.byte	0x4
- 690 0081 77010000 		.4byte	.LASF10
- 691 0085 02       		.uleb128 0x2
- 692 0086 01       		.byte	0x1
- 693 0087 08       		.byte	0x8
- 694 0088 BE020000 		.4byte	.LASF11
- 695 008c 02       		.uleb128 0x2
- 696 008d 04       		.byte	0x4
- 697 008e 07       		.byte	0x7
- 698 008f A7020000 		.4byte	.LASF12
- 699 0093 02       		.uleb128 0x2
- 700 0094 08       		.byte	0x8
- 701 0095 04       		.byte	0x4
- 702 0096 9B020000 		.4byte	.LASF13
- 703 009a 05       		.uleb128 0x5
- 704 009b FC000000 		.4byte	.LASF15
- 705 009f 01       		.byte	0x1
- 706 00a0 2C000000 		.4byte	0x2c
- 707 00a4 02       		.byte	0x2
- 708 00a5 11       		.byte	0x11
- 709 00a6 B7000000 		.4byte	0xb7
- 710 00aa 06       		.uleb128 0x6
- 711 00ab 726F7700 		.ascii	"row\000"
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 16
-
-
- 712 00af 00       		.byte	0
- 713 00b0 07       		.uleb128 0x7
- 714 00b1 C8000000 		.4byte	.LASF14
- 715 00b5 01       		.byte	0x1
- 716 00b6 00       		.byte	0
- 717 00b7 05       		.uleb128 0x5
- 718 00b8 1A030000 		.4byte	.LASF16
- 719 00bc 01       		.byte	0x1
- 720 00bd 2C000000 		.4byte	0x2c
- 721 00c1 02       		.byte	0x2
- 722 00c2 17       		.byte	0x17
- 723 00c3 D4000000 		.4byte	0xd4
- 724 00c7 06       		.uleb128 0x6
- 725 00c8 6C6F7700 		.ascii	"low\000"
- 726 00cc 00       		.byte	0
- 727 00cd 07       		.uleb128 0x7
- 728 00ce 43000000 		.4byte	.LASF17
- 729 00d2 01       		.byte	0x1
- 730 00d3 00       		.byte	0
- 731 00d4 08       		.uleb128 0x8
- 732 00d5 38030000 		.4byte	.LASF50
- 733 00d9 01       		.byte	0x1
- 734 00da 26       		.byte	0x26
- 735 00db 6B000000 		.4byte	0x6b
- 736 00df 00000000 		.4byte	.LFB32
- 737 00e3 78000000 		.4byte	.LFE32-.LFB32
- 738 00e7 01       		.uleb128 0x1
- 739 00e8 9C       		.byte	0x9c
- 740 00e9 1B010000 		.4byte	0x11b
- 741 00ed 09       		.uleb128 0x9
- 742 00ee 3D010000 		.4byte	.LASF18
- 743 00f2 01       		.byte	0x1
- 744 00f3 26       		.byte	0x26
- 745 00f4 6B000000 		.4byte	0x6b
- 746 00f8 00000000 		.4byte	.LLST0
- 747 00fc 09       		.uleb128 0x9
- 748 00fd 69010000 		.4byte	.LASF19
- 749 0101 01       		.byte	0x1
- 750 0102 26       		.byte	0x26
- 751 0103 6B000000 		.4byte	0x6b
- 752 0107 B1010000 		.4byte	.LLST1
- 753 010b 0A       		.uleb128 0xa
- 754 010c 00020000 		.4byte	.LASF23
- 755 0110 01       		.byte	0x1
- 756 0111 28       		.byte	0x28
- 757 0112 6B000000 		.4byte	0x6b
- 758 0116 EB010000 		.4byte	.LLST2
- 759 011a 00       		.byte	0
- 760 011b 0B       		.uleb128 0xb
- 761 011c 4B010000 		.4byte	.LASF21
- 762 0120 01       		.byte	0x1
- 763 0121 49       		.byte	0x49
- 764 0122 00000000 		.4byte	.LFB33
- 765 0126 CE000000 		.4byte	.LFE33-.LFB33
- 766 012a 01       		.uleb128 0x1
- 767 012b 9C       		.byte	0x9c
- 768 012c 63030000 		.4byte	0x363
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 17
-
-
- 769 0130 09       		.uleb128 0x9
- 770 0131 3D010000 		.4byte	.LASF18
- 771 0135 01       		.byte	0x1
- 772 0136 49       		.byte	0x49
- 773 0137 6B000000 		.4byte	0x6b
- 774 013b 0A020000 		.4byte	.LLST3
- 775 013f 09       		.uleb128 0x9
- 776 0140 37000000 		.4byte	.LASF20
- 777 0144 01       		.byte	0x1
- 778 0145 49       		.byte	0x49
- 779 0146 6B000000 		.4byte	0x6b
- 780 014a 44020000 		.4byte	.LLST4
- 781 014e 0C       		.uleb128 0xc
- 782 014f 14000000 		.4byte	.LVL37
- 783 0153 D4000000 		.4byte	0xd4
- 784 0157 61010000 		.4byte	0x161
- 785 015b 0D       		.uleb128 0xd
- 786 015c 01       		.uleb128 0x1
- 787 015d 51       		.byte	0x51
- 788 015e 01       		.uleb128 0x1
- 789 015f 30       		.byte	0x30
- 790 0160 00       		.byte	0
- 791 0161 0E       		.uleb128 0xe
- 792 0162 18000000 		.4byte	.LVL38
- 793 0166 F2040000 		.4byte	0x4f2
- 794 016a 0C       		.uleb128 0xc
- 795 016b 20000000 		.4byte	.LVL39
- 796 016f D4000000 		.4byte	0xd4
- 797 0173 83010000 		.4byte	0x183
- 798 0177 0D       		.uleb128 0xd
- 799 0178 01       		.uleb128 0x1
- 800 0179 50       		.byte	0x50
- 801 017a 02       		.uleb128 0x2
- 802 017b 74       		.byte	0x74
- 803 017c 00       		.sleb128 0
- 804 017d 0D       		.uleb128 0xd
- 805 017e 01       		.uleb128 0x1
- 806 017f 51       		.byte	0x51
- 807 0180 01       		.uleb128 0x1
- 808 0181 31       		.byte	0x31
- 809 0182 00       		.byte	0
- 810 0183 0E       		.uleb128 0xe
- 811 0184 24000000 		.4byte	.LVL40
- 812 0188 FD040000 		.4byte	0x4fd
- 813 018c 0C       		.uleb128 0xc
- 814 018d 2C000000 		.4byte	.LVL41
- 815 0191 D4000000 		.4byte	0xd4
- 816 0195 A5010000 		.4byte	0x1a5
- 817 0199 0D       		.uleb128 0xd
- 818 019a 01       		.uleb128 0x1
- 819 019b 50       		.byte	0x50
- 820 019c 02       		.uleb128 0x2
- 821 019d 74       		.byte	0x74
- 822 019e 00       		.sleb128 0
- 823 019f 0D       		.uleb128 0xd
- 824 01a0 01       		.uleb128 0x1
- 825 01a1 51       		.byte	0x51
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 18
-
-
- 826 01a2 01       		.uleb128 0x1
- 827 01a3 32       		.byte	0x32
- 828 01a4 00       		.byte	0
- 829 01a5 0E       		.uleb128 0xe
- 830 01a6 30000000 		.4byte	.LVL42
- 831 01aa 08050000 		.4byte	0x508
- 832 01ae 0C       		.uleb128 0xc
- 833 01af 38000000 		.4byte	.LVL43
- 834 01b3 D4000000 		.4byte	0xd4
- 835 01b7 C7010000 		.4byte	0x1c7
- 836 01bb 0D       		.uleb128 0xd
- 837 01bc 01       		.uleb128 0x1
- 838 01bd 50       		.byte	0x50
- 839 01be 02       		.uleb128 0x2
- 840 01bf 74       		.byte	0x74
- 841 01c0 00       		.sleb128 0
- 842 01c1 0D       		.uleb128 0xd
- 843 01c2 01       		.uleb128 0x1
- 844 01c3 51       		.byte	0x51
- 845 01c4 01       		.uleb128 0x1
- 846 01c5 33       		.byte	0x33
- 847 01c6 00       		.byte	0
- 848 01c7 0E       		.uleb128 0xe
- 849 01c8 3C000000 		.4byte	.LVL44
- 850 01cc 13050000 		.4byte	0x513
- 851 01d0 0C       		.uleb128 0xc
- 852 01d1 44000000 		.4byte	.LVL45
- 853 01d5 D4000000 		.4byte	0xd4
- 854 01d9 E9010000 		.4byte	0x1e9
- 855 01dd 0D       		.uleb128 0xd
- 856 01de 01       		.uleb128 0x1
- 857 01df 50       		.byte	0x50
- 858 01e0 02       		.uleb128 0x2
- 859 01e1 74       		.byte	0x74
- 860 01e2 00       		.sleb128 0
- 861 01e3 0D       		.uleb128 0xd
- 862 01e4 01       		.uleb128 0x1
- 863 01e5 51       		.byte	0x51
- 864 01e6 01       		.uleb128 0x1
- 865 01e7 34       		.byte	0x34
- 866 01e8 00       		.byte	0
- 867 01e9 0E       		.uleb128 0xe
- 868 01ea 48000000 		.4byte	.LVL46
- 869 01ee 1E050000 		.4byte	0x51e
- 870 01f2 0C       		.uleb128 0xc
- 871 01f3 50000000 		.4byte	.LVL47
- 872 01f7 D4000000 		.4byte	0xd4
- 873 01fb 0B020000 		.4byte	0x20b
- 874 01ff 0D       		.uleb128 0xd
- 875 0200 01       		.uleb128 0x1
- 876 0201 50       		.byte	0x50
- 877 0202 02       		.uleb128 0x2
- 878 0203 74       		.byte	0x74
- 879 0204 00       		.sleb128 0
- 880 0205 0D       		.uleb128 0xd
- 881 0206 01       		.uleb128 0x1
- 882 0207 51       		.byte	0x51
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 19
-
-
- 883 0208 01       		.uleb128 0x1
- 884 0209 35       		.byte	0x35
- 885 020a 00       		.byte	0
- 886 020b 0E       		.uleb128 0xe
- 887 020c 54000000 		.4byte	.LVL48
- 888 0210 29050000 		.4byte	0x529
- 889 0214 0C       		.uleb128 0xc
- 890 0215 5C000000 		.4byte	.LVL49
- 891 0219 D4000000 		.4byte	0xd4
- 892 021d 2D020000 		.4byte	0x22d
- 893 0221 0D       		.uleb128 0xd
- 894 0222 01       		.uleb128 0x1
- 895 0223 50       		.byte	0x50
- 896 0224 02       		.uleb128 0x2
- 897 0225 74       		.byte	0x74
- 898 0226 00       		.sleb128 0
- 899 0227 0D       		.uleb128 0xd
- 900 0228 01       		.uleb128 0x1
- 901 0229 51       		.byte	0x51
- 902 022a 01       		.uleb128 0x1
- 903 022b 36       		.byte	0x36
- 904 022c 00       		.byte	0
- 905 022d 0E       		.uleb128 0xe
- 906 022e 60000000 		.4byte	.LVL50
- 907 0232 34050000 		.4byte	0x534
- 908 0236 0C       		.uleb128 0xc
- 909 0237 68000000 		.4byte	.LVL51
- 910 023b D4000000 		.4byte	0xd4
- 911 023f 4F020000 		.4byte	0x24f
- 912 0243 0D       		.uleb128 0xd
- 913 0244 01       		.uleb128 0x1
- 914 0245 50       		.byte	0x50
- 915 0246 02       		.uleb128 0x2
- 916 0247 74       		.byte	0x74
- 917 0248 00       		.sleb128 0
- 918 0249 0D       		.uleb128 0xd
- 919 024a 01       		.uleb128 0x1
- 920 024b 51       		.byte	0x51
- 921 024c 01       		.uleb128 0x1
- 922 024d 37       		.byte	0x37
- 923 024e 00       		.byte	0
- 924 024f 0E       		.uleb128 0xe
- 925 0250 6C000000 		.4byte	.LVL52
- 926 0254 3F050000 		.4byte	0x53f
- 927 0258 0C       		.uleb128 0xc
- 928 0259 74000000 		.4byte	.LVL55
- 929 025d D4000000 		.4byte	0xd4
- 930 0261 6B020000 		.4byte	0x26b
- 931 0265 0D       		.uleb128 0xd
- 932 0266 01       		.uleb128 0x1
- 933 0267 51       		.byte	0x51
- 934 0268 01       		.uleb128 0x1
- 935 0269 30       		.byte	0x30
- 936 026a 00       		.byte	0
- 937 026b 0E       		.uleb128 0xe
- 938 026c 78000000 		.4byte	.LVL56
- 939 0270 4A050000 		.4byte	0x54a
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 20
-
-
- 940 0274 0C       		.uleb128 0xc
- 941 0275 80000000 		.4byte	.LVL57
- 942 0279 D4000000 		.4byte	0xd4
- 943 027d 8D020000 		.4byte	0x28d
- 944 0281 0D       		.uleb128 0xd
- 945 0282 01       		.uleb128 0x1
- 946 0283 50       		.byte	0x50
- 947 0284 02       		.uleb128 0x2
- 948 0285 74       		.byte	0x74
- 949 0286 00       		.sleb128 0
- 950 0287 0D       		.uleb128 0xd
- 951 0288 01       		.uleb128 0x1
- 952 0289 51       		.byte	0x51
- 953 028a 01       		.uleb128 0x1
- 954 028b 31       		.byte	0x31
- 955 028c 00       		.byte	0
- 956 028d 0E       		.uleb128 0xe
- 957 028e 84000000 		.4byte	.LVL58
- 958 0292 55050000 		.4byte	0x555
- 959 0296 0C       		.uleb128 0xc
- 960 0297 8C000000 		.4byte	.LVL59
- 961 029b D4000000 		.4byte	0xd4
- 962 029f AF020000 		.4byte	0x2af
- 963 02a3 0D       		.uleb128 0xd
- 964 02a4 01       		.uleb128 0x1
- 965 02a5 50       		.byte	0x50
- 966 02a6 02       		.uleb128 0x2
- 967 02a7 74       		.byte	0x74
- 968 02a8 00       		.sleb128 0
- 969 02a9 0D       		.uleb128 0xd
- 970 02aa 01       		.uleb128 0x1
- 971 02ab 51       		.byte	0x51
- 972 02ac 01       		.uleb128 0x1
- 973 02ad 32       		.byte	0x32
- 974 02ae 00       		.byte	0
- 975 02af 0E       		.uleb128 0xe
- 976 02b0 90000000 		.4byte	.LVL60
- 977 02b4 60050000 		.4byte	0x560
- 978 02b8 0C       		.uleb128 0xc
- 979 02b9 98000000 		.4byte	.LVL61
- 980 02bd D4000000 		.4byte	0xd4
- 981 02c1 D1020000 		.4byte	0x2d1
- 982 02c5 0D       		.uleb128 0xd
- 983 02c6 01       		.uleb128 0x1
- 984 02c7 50       		.byte	0x50
- 985 02c8 02       		.uleb128 0x2
- 986 02c9 74       		.byte	0x74
- 987 02ca 00       		.sleb128 0
- 988 02cb 0D       		.uleb128 0xd
- 989 02cc 01       		.uleb128 0x1
- 990 02cd 51       		.byte	0x51
- 991 02ce 01       		.uleb128 0x1
- 992 02cf 33       		.byte	0x33
- 993 02d0 00       		.byte	0
- 994 02d1 0E       		.uleb128 0xe
- 995 02d2 9C000000 		.4byte	.LVL62
- 996 02d6 6B050000 		.4byte	0x56b
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 21
-
-
- 997 02da 0C       		.uleb128 0xc
- 998 02db A4000000 		.4byte	.LVL63
- 999 02df D4000000 		.4byte	0xd4
- 1000 02e3 F3020000 		.4byte	0x2f3
- 1001 02e7 0D       		.uleb128 0xd
- 1002 02e8 01       		.uleb128 0x1
- 1003 02e9 50       		.byte	0x50
- 1004 02ea 02       		.uleb128 0x2
- 1005 02eb 74       		.byte	0x74
- 1006 02ec 00       		.sleb128 0
- 1007 02ed 0D       		.uleb128 0xd
- 1008 02ee 01       		.uleb128 0x1
- 1009 02ef 51       		.byte	0x51
- 1010 02f0 01       		.uleb128 0x1
- 1011 02f1 34       		.byte	0x34
- 1012 02f2 00       		.byte	0
- 1013 02f3 0E       		.uleb128 0xe
- 1014 02f4 A8000000 		.4byte	.LVL64
- 1015 02f8 76050000 		.4byte	0x576
- 1016 02fc 0C       		.uleb128 0xc
- 1017 02fd B0000000 		.4byte	.LVL65
- 1018 0301 D4000000 		.4byte	0xd4
- 1019 0305 15030000 		.4byte	0x315
- 1020 0309 0D       		.uleb128 0xd
- 1021 030a 01       		.uleb128 0x1
- 1022 030b 50       		.byte	0x50
- 1023 030c 02       		.uleb128 0x2
- 1024 030d 74       		.byte	0x74
- 1025 030e 00       		.sleb128 0
- 1026 030f 0D       		.uleb128 0xd
- 1027 0310 01       		.uleb128 0x1
- 1028 0311 51       		.byte	0x51
- 1029 0312 01       		.uleb128 0x1
- 1030 0313 35       		.byte	0x35
- 1031 0314 00       		.byte	0
- 1032 0315 0E       		.uleb128 0xe
- 1033 0316 B4000000 		.4byte	.LVL66
- 1034 031a 81050000 		.4byte	0x581
- 1035 031e 0C       		.uleb128 0xc
- 1036 031f BC000000 		.4byte	.LVL67
- 1037 0323 D4000000 		.4byte	0xd4
- 1038 0327 37030000 		.4byte	0x337
- 1039 032b 0D       		.uleb128 0xd
- 1040 032c 01       		.uleb128 0x1
- 1041 032d 50       		.byte	0x50
- 1042 032e 02       		.uleb128 0x2
- 1043 032f 74       		.byte	0x74
- 1044 0330 00       		.sleb128 0
- 1045 0331 0D       		.uleb128 0xd
- 1046 0332 01       		.uleb128 0x1
- 1047 0333 51       		.byte	0x51
- 1048 0334 01       		.uleb128 0x1
- 1049 0335 36       		.byte	0x36
- 1050 0336 00       		.byte	0
- 1051 0337 0E       		.uleb128 0xe
- 1052 0338 C0000000 		.4byte	.LVL68
- 1053 033c 8C050000 		.4byte	0x58c
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 22
-
-
- 1054 0340 0C       		.uleb128 0xc
- 1055 0341 C8000000 		.4byte	.LVL69
- 1056 0345 D4000000 		.4byte	0xd4
- 1057 0349 59030000 		.4byte	0x359
- 1058 034d 0D       		.uleb128 0xd
- 1059 034e 01       		.uleb128 0x1
- 1060 034f 50       		.byte	0x50
- 1061 0350 02       		.uleb128 0x2
- 1062 0351 74       		.byte	0x74
- 1063 0352 00       		.sleb128 0
- 1064 0353 0D       		.uleb128 0xd
- 1065 0354 01       		.uleb128 0x1
- 1066 0355 51       		.byte	0x51
- 1067 0356 01       		.uleb128 0x1
- 1068 0357 37       		.byte	0x37
- 1069 0358 00       		.byte	0
- 1070 0359 0E       		.uleb128 0xe
- 1071 035a CC000000 		.4byte	.LVL70
- 1072 035e 97050000 		.4byte	0x597
- 1073 0362 00       		.byte	0
- 1074 0363 0B       		.uleb128 0xb
- 1075 0364 91010000 		.4byte	.LASF22
- 1076 0368 01       		.byte	0x1
- 1077 0369 64       		.byte	0x64
- 1078 036a 00000000 		.4byte	.LFB34
- 1079 036e 44000000 		.4byte	.LFE34-.LFB34
- 1080 0372 01       		.uleb128 0x1
- 1081 0373 9C       		.byte	0x9c
- 1082 0374 F9030000 		.4byte	0x3f9
- 1083 0378 0F       		.uleb128 0xf
- 1084 0379 6B00     		.ascii	"k\000"
- 1085 037b 01       		.byte	0x1
- 1086 037c 64       		.byte	0x64
- 1087 037d 5D000000 		.4byte	0x5d
- 1088 0381 7E020000 		.4byte	.LLST5
- 1089 0385 10       		.uleb128 0x10
- 1090 0386 6E00     		.ascii	"n\000"
- 1091 0388 01       		.byte	0x1
- 1092 0389 66       		.byte	0x66
- 1093 038a 5D000000 		.4byte	0x5d
- 1094 038e AA020000 		.4byte	.LLST6
- 1095 0392 0C       		.uleb128 0xc
- 1096 0393 0C000000 		.4byte	.LVL73
- 1097 0397 1B010000 		.4byte	0x11b
- 1098 039b AB030000 		.4byte	0x3ab
- 1099 039f 0D       		.uleb128 0xd
- 1100 03a0 01       		.uleb128 0x1
- 1101 03a1 50       		.byte	0x50
- 1102 03a2 02       		.uleb128 0x2
- 1103 03a3 09       		.byte	0x9
- 1104 03a4 FF       		.byte	0xff
- 1105 03a5 0D       		.uleb128 0xd
- 1106 03a6 01       		.uleb128 0x1
- 1107 03a7 51       		.byte	0x51
- 1108 03a8 01       		.uleb128 0x1
- 1109 03a9 31       		.byte	0x31
- 1110 03aa 00       		.byte	0
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 23
-
-
- 1111 03ab 0C       		.uleb128 0xc
- 1112 03ac 14000000 		.4byte	.LVL74
- 1113 03b0 1B010000 		.4byte	0x11b
- 1114 03b4 C3030000 		.4byte	0x3c3
- 1115 03b8 0D       		.uleb128 0xd
- 1116 03b9 01       		.uleb128 0x1
- 1117 03ba 50       		.byte	0x50
- 1118 03bb 01       		.uleb128 0x1
- 1119 03bc 30       		.byte	0x30
- 1120 03bd 0D       		.uleb128 0xd
- 1121 03be 01       		.uleb128 0x1
- 1122 03bf 51       		.byte	0x51
- 1123 03c0 01       		.uleb128 0x1
- 1124 03c1 30       		.byte	0x30
- 1125 03c2 00       		.byte	0
- 1126 03c3 0C       		.uleb128 0xc
- 1127 03c4 26000000 		.4byte	.LVL76
- 1128 03c8 1B010000 		.4byte	0x11b
- 1129 03cc D6030000 		.4byte	0x3d6
- 1130 03d0 0D       		.uleb128 0xd
- 1131 03d1 01       		.uleb128 0x1
- 1132 03d2 51       		.byte	0x51
- 1133 03d3 01       		.uleb128 0x1
- 1134 03d4 31       		.byte	0x31
- 1135 03d5 00       		.byte	0
- 1136 03d6 0C       		.uleb128 0xc
- 1137 03d7 30000000 		.4byte	.LVL77
- 1138 03db 1B010000 		.4byte	0x11b
- 1139 03df E9030000 		.4byte	0x3e9
- 1140 03e3 0D       		.uleb128 0xd
- 1141 03e4 01       		.uleb128 0x1
- 1142 03e5 51       		.byte	0x51
- 1143 03e6 01       		.uleb128 0x1
- 1144 03e7 30       		.byte	0x30
- 1145 03e8 00       		.byte	0
- 1146 03e9 11       		.uleb128 0x11
- 1147 03ea 36000000 		.4byte	.LVL78
- 1148 03ee A2050000 		.4byte	0x5a2
- 1149 03f2 0D       		.uleb128 0xd
- 1150 03f3 01       		.uleb128 0x1
- 1151 03f4 50       		.byte	0x50
- 1152 03f5 01       		.uleb128 0x1
- 1153 03f6 31       		.byte	0x31
- 1154 03f7 00       		.byte	0
- 1155 03f8 00       		.byte	0
- 1156 03f9 12       		.uleb128 0x12
- 1157 03fa CD020000 		.4byte	.LASF24
- 1158 03fe 01       		.byte	0x1
- 1159 03ff 73       		.byte	0x73
- 1160 0400 00000000 		.4byte	.LFB35
- 1161 0404 42000000 		.4byte	.LFE35-.LFB35
- 1162 0408 01       		.uleb128 0x1
- 1163 0409 9C       		.byte	0x9c
- 1164 040a 9F040000 		.4byte	0x49f
- 1165 040e 10       		.uleb128 0x10
- 1166 040f 72756E00 		.ascii	"run\000"
- 1167 0413 01       		.byte	0x1
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 24
-
-
- 1168 0414 75       		.byte	0x75
- 1169 0415 5D000000 		.4byte	0x5d
- 1170 0419 C9020000 		.4byte	.LLST7
- 1171 041d 0A       		.uleb128 0xa
- 1172 041e D5000000 		.4byte	.LASF25
- 1173 0422 01       		.byte	0x1
- 1174 0423 75       		.byte	0x75
- 1175 0424 5D000000 		.4byte	0x5d
- 1176 0428 E8020000 		.4byte	.LLST8
- 1177 042c 0C       		.uleb128 0xc
- 1178 042d 0A000000 		.4byte	.LVL82
- 1179 0431 1B010000 		.4byte	0x11b
- 1180 0435 45040000 		.4byte	0x445
- 1181 0439 0D       		.uleb128 0xd
- 1182 043a 01       		.uleb128 0x1
- 1183 043b 50       		.byte	0x50
- 1184 043c 02       		.uleb128 0x2
- 1185 043d 09       		.byte	0x9
- 1186 043e FF       		.byte	0xff
- 1187 043f 0D       		.uleb128 0xd
- 1188 0440 01       		.uleb128 0x1
- 1189 0441 51       		.byte	0x51
- 1190 0442 01       		.uleb128 0x1
- 1191 0443 31       		.byte	0x31
- 1192 0444 00       		.byte	0
- 1193 0445 0C       		.uleb128 0xc
- 1194 0446 12000000 		.4byte	.LVL83
- 1195 044a 1B010000 		.4byte	0x11b
- 1196 044e 5D040000 		.4byte	0x45d
- 1197 0452 0D       		.uleb128 0xd
- 1198 0453 01       		.uleb128 0x1
- 1199 0454 50       		.byte	0x50
- 1200 0455 01       		.uleb128 0x1
- 1201 0456 30       		.byte	0x30
- 1202 0457 0D       		.uleb128 0xd
- 1203 0458 01       		.uleb128 0x1
- 1204 0459 51       		.byte	0x51
- 1205 045a 01       		.uleb128 0x1
- 1206 045b 30       		.byte	0x30
- 1207 045c 00       		.byte	0
- 1208 045d 0C       		.uleb128 0xc
- 1209 045e 1C000000 		.4byte	.LVL85
- 1210 0462 63030000 		.4byte	0x363
- 1211 0466 71040000 		.4byte	0x471
- 1212 046a 0D       		.uleb128 0xd
- 1213 046b 01       		.uleb128 0x1
- 1214 046c 50       		.byte	0x50
- 1215 046d 02       		.uleb128 0x2
- 1216 046e 75       		.byte	0x75
- 1217 046f 00       		.sleb128 0
- 1218 0470 00       		.byte	0
- 1219 0471 0C       		.uleb128 0xc
- 1220 0472 32000000 		.4byte	.LVL89
- 1221 0476 1B010000 		.4byte	0x11b
- 1222 047a 8A040000 		.4byte	0x48a
- 1223 047e 0D       		.uleb128 0xd
- 1224 047f 01       		.uleb128 0x1
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 25
-
-
- 1225 0480 50       		.byte	0x50
- 1226 0481 02       		.uleb128 0x2
- 1227 0482 09       		.byte	0x9
- 1228 0483 FF       		.byte	0xff
- 1229 0484 0D       		.uleb128 0xd
- 1230 0485 01       		.uleb128 0x1
- 1231 0486 51       		.byte	0x51
- 1232 0487 01       		.uleb128 0x1
- 1233 0488 31       		.byte	0x31
- 1234 0489 00       		.byte	0
- 1235 048a 11       		.uleb128 0x11
- 1236 048b 3A000000 		.4byte	.LVL90
- 1237 048f 1B010000 		.4byte	0x11b
- 1238 0493 0D       		.uleb128 0xd
- 1239 0494 01       		.uleb128 0x1
- 1240 0495 50       		.byte	0x50
- 1241 0496 01       		.uleb128 0x1
- 1242 0497 30       		.byte	0x30
- 1243 0498 0D       		.uleb128 0xd
- 1244 0499 01       		.uleb128 0x1
- 1245 049a 51       		.byte	0x51
- 1246 049b 01       		.uleb128 0x1
- 1247 049c 30       		.byte	0x30
- 1248 049d 00       		.byte	0
- 1249 049e 00       		.byte	0
- 1250 049f 13       		.uleb128 0x13
- 1251 04a0 6B000000 		.4byte	0x6b
- 1252 04a4 AF040000 		.4byte	0x4af
- 1253 04a8 14       		.uleb128 0x14
- 1254 04a9 8C000000 		.4byte	0x8c
- 1255 04ad 07       		.byte	0x7
- 1256 04ae 00       		.byte	0
- 1257 04af 15       		.uleb128 0x15
- 1258 04b0 35010000 		.4byte	.LASF26
- 1259 04b4 01       		.byte	0x1
- 1260 04b5 0E       		.byte	0xe
- 1261 04b6 9F040000 		.4byte	0x49f
- 1262 04ba 05       		.uleb128 0x5
- 1263 04bb 03       		.byte	0x3
- 1264 04bc 00000000 		.4byte	control
- 1265 04c0 13       		.uleb128 0x13
- 1266 04c1 6B000000 		.4byte	0x6b
- 1267 04c5 D0040000 		.4byte	0x4d0
- 1268 04c9 14       		.uleb128 0x14
- 1269 04ca 8C000000 		.4byte	0x8c
- 1270 04ce 5F       		.byte	0x5f
- 1271 04cf 00       		.byte	0
- 1272 04d0 15       		.uleb128 0x15
- 1273 04d1 95000000 		.4byte	.LASF27
- 1274 04d5 01       		.byte	0x1
- 1275 04d6 10       		.byte	0x10
- 1276 04d7 C0040000 		.4byte	0x4c0
- 1277 04db 05       		.uleb128 0x5
- 1278 04dc 03       		.byte	0x3
- 1279 04dd 00000000 		.4byte	data
- 1280 04e1 15       		.uleb128 0x15
- 1281 04e2 07020000 		.4byte	.LASF28
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 26
-
-
- 1282 04e6 01       		.byte	0x1
- 1283 04e7 20       		.byte	0x20
- 1284 04e8 9F040000 		.4byte	0x49f
- 1285 04ec 05       		.uleb128 0x5
- 1286 04ed 03       		.byte	0x3
- 1287 04ee 00000000 		.4byte	data1
- 1288 04f2 16       		.uleb128 0x16
- 1289 04f3 FB020000 		.4byte	.LASF29
- 1290 04f7 FB020000 		.4byte	.LASF29
- 1291 04fb 03       		.byte	0x3
- 1292 04fc 33       		.byte	0x33
- 1293 04fd 16       		.uleb128 0x16
- 1294 04fe 48030000 		.4byte	.LASF30
- 1295 0502 48030000 		.4byte	.LASF30
- 1296 0506 04       		.byte	0x4
- 1297 0507 33       		.byte	0x33
- 1298 0508 16       		.uleb128 0x16
- 1299 0509 5C000000 		.4byte	.LASF31
- 1300 050d 5C000000 		.4byte	.LASF31
- 1301 0511 05       		.byte	0x5
- 1302 0512 33       		.byte	0x33
- 1303 0513 16       		.uleb128 0x16
- 1304 0514 9A000000 		.4byte	.LASF32
- 1305 0518 9A000000 		.4byte	.LASF32
- 1306 051c 06       		.byte	0x6
- 1307 051d 33       		.byte	0x33
- 1308 051e 16       		.uleb128 0x16
- 1309 051f DB000000 		.4byte	.LASF33
- 1310 0523 DB000000 		.4byte	.LASF33
- 1311 0527 07       		.byte	0x7
- 1312 0528 33       		.byte	0x33
- 1313 0529 16       		.uleb128 0x16
- 1314 052a DF020000 		.4byte	.LASF34
- 1315 052e DF020000 		.4byte	.LASF34
- 1316 0532 08       		.byte	0x8
- 1317 0533 33       		.byte	0x33
- 1318 0534 16       		.uleb128 0x16
- 1319 0535 7E010000 		.4byte	.LASF35
- 1320 0539 7E010000 		.4byte	.LASF35
- 1321 053d 09       		.byte	0x9
- 1322 053e 33       		.byte	0x33
- 1323 053f 16       		.uleb128 0x16
- 1324 0540 B6010000 		.4byte	.LASF36
- 1325 0544 B6010000 		.4byte	.LASF36
- 1326 0548 0A       		.byte	0xa
- 1327 0549 33       		.byte	0x33
- 1328 054a 16       		.uleb128 0x16
- 1329 054b 25030000 		.4byte	.LASF37
- 1330 054f 25030000 		.4byte	.LASF37
- 1331 0553 0B       		.byte	0xb
- 1332 0554 33       		.byte	0x33
- 1333 0555 16       		.uleb128 0x16
- 1334 0556 49000000 		.4byte	.LASF38
- 1335 055a 49000000 		.4byte	.LASF38
- 1336 055e 0C       		.byte	0xc
- 1337 055f 33       		.byte	0x33
- 1338 0560 16       		.uleb128 0x16
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 27
-
-
- 1339 0561 6F000000 		.4byte	.LASF39
- 1340 0565 6F000000 		.4byte	.LASF39
- 1341 0569 0D       		.byte	0xd
- 1342 056a 33       		.byte	0x33
- 1343 056b 16       		.uleb128 0x16
- 1344 056c B5000000 		.4byte	.LASF40
- 1345 0570 B5000000 		.4byte	.LASF40
- 1346 0574 0E       		.byte	0xe
- 1347 0575 33       		.byte	0x33
- 1348 0576 16       		.uleb128 0x16
- 1349 0577 0A010000 		.4byte	.LASF41
- 1350 057b 0A010000 		.4byte	.LASF41
- 1351 057f 0F       		.byte	0xf
- 1352 0580 33       		.byte	0x33
- 1353 0581 16       		.uleb128 0x16
- 1354 0582 56010000 		.4byte	.LASF42
- 1355 0586 56010000 		.4byte	.LASF42
- 1356 058a 10       		.byte	0x10
- 1357 058b 33       		.byte	0x33
- 1358 058c 16       		.uleb128 0x16
- 1359 058d A3010000 		.4byte	.LASF43
- 1360 0591 A3010000 		.4byte	.LASF43
- 1361 0595 11       		.byte	0x11
- 1362 0596 33       		.byte	0x33
- 1363 0597 16       		.uleb128 0x16
- 1364 0598 ED010000 		.4byte	.LASF44
- 1365 059c ED010000 		.4byte	.LASF44
- 1366 05a0 12       		.byte	0x12
- 1367 05a1 33       		.byte	0x33
- 1368 05a2 16       		.uleb128 0x16
- 1369 05a3 AD000000 		.4byte	.LASF45
- 1370 05a7 AD000000 		.4byte	.LASF45
- 1371 05ab 13       		.byte	0x13
- 1372 05ac EC       		.byte	0xec
- 1373 05ad 00       		.byte	0
- 1374              		.section	.debug_abbrev,"",%progbits
- 1375              	.Ldebug_abbrev0:
- 1376 0000 01       		.uleb128 0x1
- 1377 0001 11       		.uleb128 0x11
- 1378 0002 01       		.byte	0x1
- 1379 0003 25       		.uleb128 0x25
- 1380 0004 0E       		.uleb128 0xe
- 1381 0005 13       		.uleb128 0x13
- 1382 0006 0B       		.uleb128 0xb
- 1383 0007 03       		.uleb128 0x3
- 1384 0008 0E       		.uleb128 0xe
- 1385 0009 1B       		.uleb128 0x1b
- 1386 000a 0E       		.uleb128 0xe
- 1387 000b 55       		.uleb128 0x55
- 1388 000c 17       		.uleb128 0x17
- 1389 000d 11       		.uleb128 0x11
- 1390 000e 01       		.uleb128 0x1
- 1391 000f 10       		.uleb128 0x10
- 1392 0010 17       		.uleb128 0x17
- 1393 0011 00       		.byte	0
- 1394 0012 00       		.byte	0
- 1395 0013 02       		.uleb128 0x2
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 28
-
-
- 1396 0014 24       		.uleb128 0x24
- 1397 0015 00       		.byte	0
- 1398 0016 0B       		.uleb128 0xb
- 1399 0017 0B       		.uleb128 0xb
- 1400 0018 3E       		.uleb128 0x3e
- 1401 0019 0B       		.uleb128 0xb
- 1402 001a 03       		.uleb128 0x3
- 1403 001b 0E       		.uleb128 0xe
- 1404 001c 00       		.byte	0
- 1405 001d 00       		.byte	0
- 1406 001e 03       		.uleb128 0x3
- 1407 001f 24       		.uleb128 0x24
- 1408 0020 00       		.byte	0
- 1409 0021 0B       		.uleb128 0xb
- 1410 0022 0B       		.uleb128 0xb
- 1411 0023 3E       		.uleb128 0x3e
- 1412 0024 0B       		.uleb128 0xb
- 1413 0025 03       		.uleb128 0x3
- 1414 0026 08       		.uleb128 0x8
- 1415 0027 00       		.byte	0
- 1416 0028 00       		.byte	0
- 1417 0029 04       		.uleb128 0x4
- 1418 002a 16       		.uleb128 0x16
- 1419 002b 00       		.byte	0
- 1420 002c 03       		.uleb128 0x3
- 1421 002d 0E       		.uleb128 0xe
- 1422 002e 3A       		.uleb128 0x3a
- 1423 002f 0B       		.uleb128 0xb
- 1424 0030 3B       		.uleb128 0x3b
- 1425 0031 05       		.uleb128 0x5
- 1426 0032 49       		.uleb128 0x49
- 1427 0033 13       		.uleb128 0x13
- 1428 0034 00       		.byte	0
- 1429 0035 00       		.byte	0
- 1430 0036 05       		.uleb128 0x5
- 1431 0037 04       		.uleb128 0x4
- 1432 0038 01       		.byte	0x1
- 1433 0039 03       		.uleb128 0x3
- 1434 003a 0E       		.uleb128 0xe
- 1435 003b 0B       		.uleb128 0xb
- 1436 003c 0B       		.uleb128 0xb
- 1437 003d 49       		.uleb128 0x49
- 1438 003e 13       		.uleb128 0x13
- 1439 003f 3A       		.uleb128 0x3a
- 1440 0040 0B       		.uleb128 0xb
- 1441 0041 3B       		.uleb128 0x3b
- 1442 0042 0B       		.uleb128 0xb
- 1443 0043 01       		.uleb128 0x1
- 1444 0044 13       		.uleb128 0x13
- 1445 0045 00       		.byte	0
- 1446 0046 00       		.byte	0
- 1447 0047 06       		.uleb128 0x6
- 1448 0048 28       		.uleb128 0x28
- 1449 0049 00       		.byte	0
- 1450 004a 03       		.uleb128 0x3
- 1451 004b 08       		.uleb128 0x8
- 1452 004c 1C       		.uleb128 0x1c
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 29
-
-
- 1453 004d 0B       		.uleb128 0xb
- 1454 004e 00       		.byte	0
- 1455 004f 00       		.byte	0
- 1456 0050 07       		.uleb128 0x7
- 1457 0051 28       		.uleb128 0x28
- 1458 0052 00       		.byte	0
- 1459 0053 03       		.uleb128 0x3
- 1460 0054 0E       		.uleb128 0xe
- 1461 0055 1C       		.uleb128 0x1c
- 1462 0056 0B       		.uleb128 0xb
- 1463 0057 00       		.byte	0
- 1464 0058 00       		.byte	0
- 1465 0059 08       		.uleb128 0x8
- 1466 005a 2E       		.uleb128 0x2e
- 1467 005b 01       		.byte	0x1
- 1468 005c 3F       		.uleb128 0x3f
- 1469 005d 19       		.uleb128 0x19
- 1470 005e 03       		.uleb128 0x3
- 1471 005f 0E       		.uleb128 0xe
- 1472 0060 3A       		.uleb128 0x3a
- 1473 0061 0B       		.uleb128 0xb
- 1474 0062 3B       		.uleb128 0x3b
- 1475 0063 0B       		.uleb128 0xb
- 1476 0064 27       		.uleb128 0x27
- 1477 0065 19       		.uleb128 0x19
- 1478 0066 49       		.uleb128 0x49
- 1479 0067 13       		.uleb128 0x13
- 1480 0068 11       		.uleb128 0x11
- 1481 0069 01       		.uleb128 0x1
- 1482 006a 12       		.uleb128 0x12
- 1483 006b 06       		.uleb128 0x6
- 1484 006c 40       		.uleb128 0x40
- 1485 006d 18       		.uleb128 0x18
- 1486 006e 9742     		.uleb128 0x2117
- 1487 0070 19       		.uleb128 0x19
- 1488 0071 01       		.uleb128 0x1
- 1489 0072 13       		.uleb128 0x13
- 1490 0073 00       		.byte	0
- 1491 0074 00       		.byte	0
- 1492 0075 09       		.uleb128 0x9
- 1493 0076 05       		.uleb128 0x5
- 1494 0077 00       		.byte	0
- 1495 0078 03       		.uleb128 0x3
- 1496 0079 0E       		.uleb128 0xe
- 1497 007a 3A       		.uleb128 0x3a
- 1498 007b 0B       		.uleb128 0xb
- 1499 007c 3B       		.uleb128 0x3b
- 1500 007d 0B       		.uleb128 0xb
- 1501 007e 49       		.uleb128 0x49
- 1502 007f 13       		.uleb128 0x13
- 1503 0080 02       		.uleb128 0x2
- 1504 0081 17       		.uleb128 0x17
- 1505 0082 00       		.byte	0
- 1506 0083 00       		.byte	0
- 1507 0084 0A       		.uleb128 0xa
- 1508 0085 34       		.uleb128 0x34
- 1509 0086 00       		.byte	0
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 30
-
-
- 1510 0087 03       		.uleb128 0x3
- 1511 0088 0E       		.uleb128 0xe
- 1512 0089 3A       		.uleb128 0x3a
- 1513 008a 0B       		.uleb128 0xb
- 1514 008b 3B       		.uleb128 0x3b
- 1515 008c 0B       		.uleb128 0xb
- 1516 008d 49       		.uleb128 0x49
- 1517 008e 13       		.uleb128 0x13
- 1518 008f 02       		.uleb128 0x2
- 1519 0090 17       		.uleb128 0x17
- 1520 0091 00       		.byte	0
- 1521 0092 00       		.byte	0
- 1522 0093 0B       		.uleb128 0xb
- 1523 0094 2E       		.uleb128 0x2e
- 1524 0095 01       		.byte	0x1
- 1525 0096 3F       		.uleb128 0x3f
- 1526 0097 19       		.uleb128 0x19
- 1527 0098 03       		.uleb128 0x3
- 1528 0099 0E       		.uleb128 0xe
- 1529 009a 3A       		.uleb128 0x3a
- 1530 009b 0B       		.uleb128 0xb
- 1531 009c 3B       		.uleb128 0x3b
- 1532 009d 0B       		.uleb128 0xb
- 1533 009e 27       		.uleb128 0x27
- 1534 009f 19       		.uleb128 0x19
- 1535 00a0 11       		.uleb128 0x11
- 1536 00a1 01       		.uleb128 0x1
- 1537 00a2 12       		.uleb128 0x12
- 1538 00a3 06       		.uleb128 0x6
- 1539 00a4 40       		.uleb128 0x40
- 1540 00a5 18       		.uleb128 0x18
- 1541 00a6 9742     		.uleb128 0x2117
- 1542 00a8 19       		.uleb128 0x19
- 1543 00a9 01       		.uleb128 0x1
- 1544 00aa 13       		.uleb128 0x13
- 1545 00ab 00       		.byte	0
- 1546 00ac 00       		.byte	0
- 1547 00ad 0C       		.uleb128 0xc
- 1548 00ae 898201   		.uleb128 0x4109
- 1549 00b1 01       		.byte	0x1
- 1550 00b2 11       		.uleb128 0x11
- 1551 00b3 01       		.uleb128 0x1
- 1552 00b4 31       		.uleb128 0x31
- 1553 00b5 13       		.uleb128 0x13
- 1554 00b6 01       		.uleb128 0x1
- 1555 00b7 13       		.uleb128 0x13
- 1556 00b8 00       		.byte	0
- 1557 00b9 00       		.byte	0
- 1558 00ba 0D       		.uleb128 0xd
- 1559 00bb 8A8201   		.uleb128 0x410a
- 1560 00be 00       		.byte	0
- 1561 00bf 02       		.uleb128 0x2
- 1562 00c0 18       		.uleb128 0x18
- 1563 00c1 9142     		.uleb128 0x2111
- 1564 00c3 18       		.uleb128 0x18
- 1565 00c4 00       		.byte	0
- 1566 00c5 00       		.byte	0
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 31
-
-
- 1567 00c6 0E       		.uleb128 0xe
- 1568 00c7 898201   		.uleb128 0x4109
- 1569 00ca 00       		.byte	0
- 1570 00cb 11       		.uleb128 0x11
- 1571 00cc 01       		.uleb128 0x1
- 1572 00cd 31       		.uleb128 0x31
- 1573 00ce 13       		.uleb128 0x13
- 1574 00cf 00       		.byte	0
- 1575 00d0 00       		.byte	0
- 1576 00d1 0F       		.uleb128 0xf
- 1577 00d2 05       		.uleb128 0x5
- 1578 00d3 00       		.byte	0
- 1579 00d4 03       		.uleb128 0x3
- 1580 00d5 08       		.uleb128 0x8
- 1581 00d6 3A       		.uleb128 0x3a
- 1582 00d7 0B       		.uleb128 0xb
- 1583 00d8 3B       		.uleb128 0x3b
- 1584 00d9 0B       		.uleb128 0xb
- 1585 00da 49       		.uleb128 0x49
- 1586 00db 13       		.uleb128 0x13
- 1587 00dc 02       		.uleb128 0x2
- 1588 00dd 17       		.uleb128 0x17
- 1589 00de 00       		.byte	0
- 1590 00df 00       		.byte	0
- 1591 00e0 10       		.uleb128 0x10
- 1592 00e1 34       		.uleb128 0x34
- 1593 00e2 00       		.byte	0
- 1594 00e3 03       		.uleb128 0x3
- 1595 00e4 08       		.uleb128 0x8
- 1596 00e5 3A       		.uleb128 0x3a
- 1597 00e6 0B       		.uleb128 0xb
- 1598 00e7 3B       		.uleb128 0x3b
- 1599 00e8 0B       		.uleb128 0xb
- 1600 00e9 49       		.uleb128 0x49
- 1601 00ea 13       		.uleb128 0x13
- 1602 00eb 02       		.uleb128 0x2
- 1603 00ec 17       		.uleb128 0x17
- 1604 00ed 00       		.byte	0
- 1605 00ee 00       		.byte	0
- 1606 00ef 11       		.uleb128 0x11
- 1607 00f0 898201   		.uleb128 0x4109
- 1608 00f3 01       		.byte	0x1
- 1609 00f4 11       		.uleb128 0x11
- 1610 00f5 01       		.uleb128 0x1
- 1611 00f6 31       		.uleb128 0x31
- 1612 00f7 13       		.uleb128 0x13
- 1613 00f8 00       		.byte	0
- 1614 00f9 00       		.byte	0
- 1615 00fa 12       		.uleb128 0x12
- 1616 00fb 2E       		.uleb128 0x2e
- 1617 00fc 01       		.byte	0x1
- 1618 00fd 3F       		.uleb128 0x3f
- 1619 00fe 19       		.uleb128 0x19
- 1620 00ff 03       		.uleb128 0x3
- 1621 0100 0E       		.uleb128 0xe
- 1622 0101 3A       		.uleb128 0x3a
- 1623 0102 0B       		.uleb128 0xb
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 32
-
-
- 1624 0103 3B       		.uleb128 0x3b
- 1625 0104 0B       		.uleb128 0xb
- 1626 0105 8701     		.uleb128 0x87
- 1627 0107 19       		.uleb128 0x19
- 1628 0108 11       		.uleb128 0x11
- 1629 0109 01       		.uleb128 0x1
- 1630 010a 12       		.uleb128 0x12
- 1631 010b 06       		.uleb128 0x6
- 1632 010c 40       		.uleb128 0x40
- 1633 010d 18       		.uleb128 0x18
- 1634 010e 9742     		.uleb128 0x2117
- 1635 0110 19       		.uleb128 0x19
- 1636 0111 01       		.uleb128 0x1
- 1637 0112 13       		.uleb128 0x13
- 1638 0113 00       		.byte	0
- 1639 0114 00       		.byte	0
- 1640 0115 13       		.uleb128 0x13
- 1641 0116 01       		.uleb128 0x1
- 1642 0117 01       		.byte	0x1
- 1643 0118 49       		.uleb128 0x49
- 1644 0119 13       		.uleb128 0x13
- 1645 011a 01       		.uleb128 0x1
- 1646 011b 13       		.uleb128 0x13
- 1647 011c 00       		.byte	0
- 1648 011d 00       		.byte	0
- 1649 011e 14       		.uleb128 0x14
- 1650 011f 21       		.uleb128 0x21
- 1651 0120 00       		.byte	0
- 1652 0121 49       		.uleb128 0x49
- 1653 0122 13       		.uleb128 0x13
- 1654 0123 2F       		.uleb128 0x2f
- 1655 0124 0B       		.uleb128 0xb
- 1656 0125 00       		.byte	0
- 1657 0126 00       		.byte	0
- 1658 0127 15       		.uleb128 0x15
- 1659 0128 34       		.uleb128 0x34
- 1660 0129 00       		.byte	0
- 1661 012a 03       		.uleb128 0x3
- 1662 012b 0E       		.uleb128 0xe
- 1663 012c 3A       		.uleb128 0x3a
- 1664 012d 0B       		.uleb128 0xb
- 1665 012e 3B       		.uleb128 0x3b
- 1666 012f 0B       		.uleb128 0xb
- 1667 0130 49       		.uleb128 0x49
- 1668 0131 13       		.uleb128 0x13
- 1669 0132 3F       		.uleb128 0x3f
- 1670 0133 19       		.uleb128 0x19
- 1671 0134 02       		.uleb128 0x2
- 1672 0135 18       		.uleb128 0x18
- 1673 0136 00       		.byte	0
- 1674 0137 00       		.byte	0
- 1675 0138 16       		.uleb128 0x16
- 1676 0139 2E       		.uleb128 0x2e
- 1677 013a 00       		.byte	0
- 1678 013b 3F       		.uleb128 0x3f
- 1679 013c 19       		.uleb128 0x19
- 1680 013d 3C       		.uleb128 0x3c
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 33
-
-
- 1681 013e 19       		.uleb128 0x19
- 1682 013f 6E       		.uleb128 0x6e
- 1683 0140 0E       		.uleb128 0xe
- 1684 0141 03       		.uleb128 0x3
- 1685 0142 0E       		.uleb128 0xe
- 1686 0143 3A       		.uleb128 0x3a
- 1687 0144 0B       		.uleb128 0xb
- 1688 0145 3B       		.uleb128 0x3b
- 1689 0146 0B       		.uleb128 0xb
- 1690 0147 00       		.byte	0
- 1691 0148 00       		.byte	0
- 1692 0149 00       		.byte	0
- 1693              		.section	.debug_loc,"",%progbits
- 1694              	.Ldebug_loc0:
- 1695              	.LLST0:
- 1696 0000 00000000 		.4byte	.LVL0
- 1697 0004 12000000 		.4byte	.LVL2
- 1698 0008 0100     		.2byte	0x1
- 1699 000a 50       		.byte	0x50
- 1700 000b 12000000 		.4byte	.LVL2
- 1701 000f 14000000 		.4byte	.LVL3
- 1702 0013 0400     		.2byte	0x4
- 1703 0015 F3       		.byte	0xf3
- 1704 0016 01       		.uleb128 0x1
- 1705 0017 50       		.byte	0x50
- 1706 0018 9F       		.byte	0x9f
- 1707 0019 14000000 		.4byte	.LVL3
- 1708 001d 1A000000 		.4byte	.LVL4
- 1709 0021 0100     		.2byte	0x1
- 1710 0023 50       		.byte	0x50
- 1711 0024 1A000000 		.4byte	.LVL4
- 1712 0028 1C000000 		.4byte	.LVL5
- 1713 002c 0400     		.2byte	0x4
- 1714 002e F3       		.byte	0xf3
- 1715 002f 01       		.uleb128 0x1
- 1716 0030 50       		.byte	0x50
- 1717 0031 9F       		.byte	0x9f
- 1718 0032 1C000000 		.4byte	.LVL5
- 1719 0036 22000000 		.4byte	.LVL6
- 1720 003a 0100     		.2byte	0x1
- 1721 003c 50       		.byte	0x50
- 1722 003d 22000000 		.4byte	.LVL6
- 1723 0041 24000000 		.4byte	.LVL7
- 1724 0045 0400     		.2byte	0x4
- 1725 0047 F3       		.byte	0xf3
- 1726 0048 01       		.uleb128 0x1
- 1727 0049 50       		.byte	0x50
- 1728 004a 9F       		.byte	0x9f
- 1729 004b 24000000 		.4byte	.LVL7
- 1730 004f 2A000000 		.4byte	.LVL8
- 1731 0053 0100     		.2byte	0x1
- 1732 0055 50       		.byte	0x50
- 1733 0056 2A000000 		.4byte	.LVL8
- 1734 005a 2C000000 		.4byte	.LVL9
- 1735 005e 0400     		.2byte	0x4
- 1736 0060 F3       		.byte	0xf3
- 1737 0061 01       		.uleb128 0x1
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 34
-
-
- 1738 0062 50       		.byte	0x50
- 1739 0063 9F       		.byte	0x9f
- 1740 0064 2C000000 		.4byte	.LVL9
- 1741 0068 32000000 		.4byte	.LVL10
- 1742 006c 0100     		.2byte	0x1
- 1743 006e 50       		.byte	0x50
- 1744 006f 32000000 		.4byte	.LVL10
- 1745 0073 34000000 		.4byte	.LVL11
- 1746 0077 0400     		.2byte	0x4
- 1747 0079 F3       		.byte	0xf3
- 1748 007a 01       		.uleb128 0x1
- 1749 007b 50       		.byte	0x50
- 1750 007c 9F       		.byte	0x9f
- 1751 007d 34000000 		.4byte	.LVL11
- 1752 0081 3A000000 		.4byte	.LVL12
- 1753 0085 0100     		.2byte	0x1
- 1754 0087 50       		.byte	0x50
- 1755 0088 3A000000 		.4byte	.LVL12
- 1756 008c 3C000000 		.4byte	.LVL13
- 1757 0090 0400     		.2byte	0x4
- 1758 0092 F3       		.byte	0xf3
- 1759 0093 01       		.uleb128 0x1
- 1760 0094 50       		.byte	0x50
- 1761 0095 9F       		.byte	0x9f
- 1762 0096 3C000000 		.4byte	.LVL13
- 1763 009a 42000000 		.4byte	.LVL14
- 1764 009e 0100     		.2byte	0x1
- 1765 00a0 50       		.byte	0x50
- 1766 00a1 42000000 		.4byte	.LVL14
- 1767 00a5 44000000 		.4byte	.LVL15
- 1768 00a9 0400     		.2byte	0x4
- 1769 00ab F3       		.byte	0xf3
- 1770 00ac 01       		.uleb128 0x1
- 1771 00ad 50       		.byte	0x50
- 1772 00ae 9F       		.byte	0x9f
- 1773 00af 44000000 		.4byte	.LVL15
- 1774 00b3 4C000000 		.4byte	.LVL16
- 1775 00b7 0100     		.2byte	0x1
- 1776 00b9 50       		.byte	0x50
- 1777 00ba 4C000000 		.4byte	.LVL16
- 1778 00be 4E000000 		.4byte	.LVL17
- 1779 00c2 0400     		.2byte	0x4
- 1780 00c4 F3       		.byte	0xf3
- 1781 00c5 01       		.uleb128 0x1
- 1782 00c6 50       		.byte	0x50
- 1783 00c7 9F       		.byte	0x9f
- 1784 00c8 4E000000 		.4byte	.LVL17
- 1785 00cc 50000000 		.4byte	.LVL18
- 1786 00d0 0100     		.2byte	0x1
- 1787 00d2 50       		.byte	0x50
- 1788 00d3 50000000 		.4byte	.LVL18
- 1789 00d7 52000000 		.4byte	.LVL19
- 1790 00db 0400     		.2byte	0x4
- 1791 00dd F3       		.byte	0xf3
- 1792 00de 01       		.uleb128 0x1
- 1793 00df 50       		.byte	0x50
- 1794 00e0 9F       		.byte	0x9f
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 35
-
-
- 1795 00e1 52000000 		.4byte	.LVL19
- 1796 00e5 54000000 		.4byte	.LVL20
- 1797 00e9 0100     		.2byte	0x1
- 1798 00eb 50       		.byte	0x50
- 1799 00ec 54000000 		.4byte	.LVL20
- 1800 00f0 56000000 		.4byte	.LVL21
- 1801 00f4 0400     		.2byte	0x4
- 1802 00f6 F3       		.byte	0xf3
- 1803 00f7 01       		.uleb128 0x1
- 1804 00f8 50       		.byte	0x50
- 1805 00f9 9F       		.byte	0x9f
- 1806 00fa 56000000 		.4byte	.LVL21
- 1807 00fe 58000000 		.4byte	.LVL22
- 1808 0102 0100     		.2byte	0x1
- 1809 0104 50       		.byte	0x50
- 1810 0105 58000000 		.4byte	.LVL22
- 1811 0109 5A000000 		.4byte	.LVL23
- 1812 010d 0400     		.2byte	0x4
- 1813 010f F3       		.byte	0xf3
- 1814 0110 01       		.uleb128 0x1
- 1815 0111 50       		.byte	0x50
- 1816 0112 9F       		.byte	0x9f
- 1817 0113 5A000000 		.4byte	.LVL23
- 1818 0117 5C000000 		.4byte	.LVL24
- 1819 011b 0100     		.2byte	0x1
- 1820 011d 50       		.byte	0x50
- 1821 011e 5C000000 		.4byte	.LVL24
- 1822 0122 5E000000 		.4byte	.LVL25
- 1823 0126 0400     		.2byte	0x4
- 1824 0128 F3       		.byte	0xf3
- 1825 0129 01       		.uleb128 0x1
- 1826 012a 50       		.byte	0x50
- 1827 012b 9F       		.byte	0x9f
- 1828 012c 5E000000 		.4byte	.LVL25
- 1829 0130 60000000 		.4byte	.LVL26
- 1830 0134 0100     		.2byte	0x1
- 1831 0136 50       		.byte	0x50
- 1832 0137 60000000 		.4byte	.LVL26
- 1833 013b 62000000 		.4byte	.LVL27
- 1834 013f 0400     		.2byte	0x4
- 1835 0141 F3       		.byte	0xf3
- 1836 0142 01       		.uleb128 0x1
- 1837 0143 50       		.byte	0x50
- 1838 0144 9F       		.byte	0x9f
- 1839 0145 62000000 		.4byte	.LVL27
- 1840 0149 64000000 		.4byte	.LVL28
- 1841 014d 0100     		.2byte	0x1
- 1842 014f 50       		.byte	0x50
- 1843 0150 64000000 		.4byte	.LVL28
- 1844 0154 66000000 		.4byte	.LVL29
- 1845 0158 0400     		.2byte	0x4
- 1846 015a F3       		.byte	0xf3
- 1847 015b 01       		.uleb128 0x1
- 1848 015c 50       		.byte	0x50
- 1849 015d 9F       		.byte	0x9f
- 1850 015e 66000000 		.4byte	.LVL29
- 1851 0162 68000000 		.4byte	.LVL30
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 36
-
-
- 1852 0166 0100     		.2byte	0x1
- 1853 0168 50       		.byte	0x50
- 1854 0169 68000000 		.4byte	.LVL30
- 1855 016d 6A000000 		.4byte	.LVL31
- 1856 0171 0400     		.2byte	0x4
- 1857 0173 F3       		.byte	0xf3
- 1858 0174 01       		.uleb128 0x1
- 1859 0175 50       		.byte	0x50
- 1860 0176 9F       		.byte	0x9f
- 1861 0177 6A000000 		.4byte	.LVL31
- 1862 017b 6C000000 		.4byte	.LVL32
- 1863 017f 0100     		.2byte	0x1
- 1864 0181 50       		.byte	0x50
- 1865 0182 6C000000 		.4byte	.LVL32
- 1866 0186 6E000000 		.4byte	.LVL33
- 1867 018a 0400     		.2byte	0x4
- 1868 018c F3       		.byte	0xf3
- 1869 018d 01       		.uleb128 0x1
- 1870 018e 50       		.byte	0x50
- 1871 018f 9F       		.byte	0x9f
- 1872 0190 6E000000 		.4byte	.LVL33
- 1873 0194 70000000 		.4byte	.LVL34
- 1874 0198 0100     		.2byte	0x1
- 1875 019a 50       		.byte	0x50
- 1876 019b 70000000 		.4byte	.LVL34
- 1877 019f 78000000 		.4byte	.LFE32
- 1878 01a3 0400     		.2byte	0x4
- 1879 01a5 F3       		.byte	0xf3
- 1880 01a6 01       		.uleb128 0x1
- 1881 01a7 50       		.byte	0x50
- 1882 01a8 9F       		.byte	0x9f
- 1883 01a9 00000000 		.4byte	0
- 1884 01ad 00000000 		.4byte	0
- 1885              	.LLST1:
- 1886 01b1 00000000 		.4byte	.LVL0
- 1887 01b5 06000000 		.4byte	.LVL1
- 1888 01b9 0100     		.2byte	0x1
- 1889 01bb 51       		.byte	0x51
- 1890 01bc 06000000 		.4byte	.LVL1
- 1891 01c0 4E000000 		.4byte	.LVL17
- 1892 01c4 0400     		.2byte	0x4
- 1893 01c6 F3       		.byte	0xf3
- 1894 01c7 01       		.uleb128 0x1
- 1895 01c8 51       		.byte	0x51
- 1896 01c9 9F       		.byte	0x9f
- 1897 01ca 4E000000 		.4byte	.LVL17
- 1898 01ce 52000000 		.4byte	.LVL19
- 1899 01d2 0100     		.2byte	0x1
- 1900 01d4 51       		.byte	0x51
- 1901 01d5 52000000 		.4byte	.LVL19
- 1902 01d9 78000000 		.4byte	.LFE32
- 1903 01dd 0400     		.2byte	0x4
- 1904 01df F3       		.byte	0xf3
- 1905 01e0 01       		.uleb128 0x1
- 1906 01e1 51       		.byte	0x51
- 1907 01e2 9F       		.byte	0x9f
- 1908 01e3 00000000 		.4byte	0
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 37
-
-
- 1909 01e7 00000000 		.4byte	0
- 1910              	.LLST2:
- 1911 01eb 00000000 		.4byte	.LVL0
- 1912 01ef 70000000 		.4byte	.LVL34
- 1913 01f3 0200     		.2byte	0x2
- 1914 01f5 30       		.byte	0x30
- 1915 01f6 9F       		.byte	0x9f
- 1916 01f7 70000000 		.4byte	.LVL34
- 1917 01fb 78000000 		.4byte	.LFE32
- 1918 01ff 0100     		.2byte	0x1
- 1919 0201 50       		.byte	0x50
- 1920 0202 00000000 		.4byte	0
- 1921 0206 00000000 		.4byte	0
- 1922              	.LLST3:
- 1923 020a 00000000 		.4byte	.LVL35
- 1924 020e 13000000 		.4byte	.LVL37-1
- 1925 0212 0100     		.2byte	0x1
- 1926 0214 50       		.byte	0x50
- 1927 0215 13000000 		.4byte	.LVL37-1
- 1928 0219 6E000000 		.4byte	.LVL53
- 1929 021d 0400     		.2byte	0x4
- 1930 021f F3       		.byte	0xf3
- 1931 0220 01       		.uleb128 0x1
- 1932 0221 50       		.byte	0x50
- 1933 0222 9F       		.byte	0x9f
- 1934 0223 6E000000 		.4byte	.LVL53
- 1935 0227 73000000 		.4byte	.LVL55-1
- 1936 022b 0100     		.2byte	0x1
- 1937 022d 50       		.byte	0x50
- 1938 022e 73000000 		.4byte	.LVL55-1
- 1939 0232 CE000000 		.4byte	.LFE33
- 1940 0236 0400     		.2byte	0x4
- 1941 0238 F3       		.byte	0xf3
- 1942 0239 01       		.uleb128 0x1
- 1943 023a 50       		.byte	0x50
- 1944 023b 9F       		.byte	0x9f
- 1945 023c 00000000 		.4byte	0
- 1946 0240 00000000 		.4byte	0
- 1947              	.LLST4:
- 1948 0244 00000000 		.4byte	.LVL35
- 1949 0248 10000000 		.4byte	.LVL36
- 1950 024c 0100     		.2byte	0x1
- 1951 024e 51       		.byte	0x51
- 1952 024f 10000000 		.4byte	.LVL36
- 1953 0253 6E000000 		.4byte	.LVL53
- 1954 0257 0400     		.2byte	0x4
- 1955 0259 F3       		.byte	0xf3
- 1956 025a 01       		.uleb128 0x1
- 1957 025b 51       		.byte	0x51
- 1958 025c 9F       		.byte	0x9f
- 1959 025d 6E000000 		.4byte	.LVL53
- 1960 0261 70000000 		.4byte	.LVL54
- 1961 0265 0100     		.2byte	0x1
- 1962 0267 51       		.byte	0x51
- 1963 0268 70000000 		.4byte	.LVL54
- 1964 026c CE000000 		.4byte	.LFE33
- 1965 0270 0400     		.2byte	0x4
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 38
-
-
- 1966 0272 F3       		.byte	0xf3
- 1967 0273 01       		.uleb128 0x1
- 1968 0274 51       		.byte	0x51
- 1969 0275 9F       		.byte	0x9f
- 1970 0276 00000000 		.4byte	0
- 1971 027a 00000000 		.4byte	0
- 1972              	.LLST5:
- 1973 027e 00000000 		.4byte	.LVL71
- 1974 0282 08000000 		.4byte	.LVL72
- 1975 0286 0100     		.2byte	0x1
- 1976 0288 50       		.byte	0x50
- 1977 0289 08000000 		.4byte	.LVL72
- 1978 028d 3C000000 		.4byte	.LVL81
- 1979 0291 0100     		.2byte	0x1
- 1980 0293 56       		.byte	0x56
- 1981 0294 3C000000 		.4byte	.LVL81
- 1982 0298 44000000 		.4byte	.LFE34
- 1983 029c 0400     		.2byte	0x4
- 1984 029e F3       		.byte	0xf3
- 1985 029f 01       		.uleb128 0x1
- 1986 02a0 50       		.byte	0x50
- 1987 02a1 9F       		.byte	0x9f
- 1988 02a2 00000000 		.4byte	0
- 1989 02a6 00000000 		.4byte	0
- 1990              	.LLST6:
- 1991 02aa 14000000 		.4byte	.LVL74
- 1992 02ae 18000000 		.4byte	.LVL75
- 1993 02b2 0200     		.2byte	0x2
- 1994 02b4 30       		.byte	0x30
- 1995 02b5 9F       		.byte	0x9f
- 1996 02b6 18000000 		.4byte	.LVL75
- 1997 02ba 3C000000 		.4byte	.LVL80
- 1998 02be 0100     		.2byte	0x1
- 1999 02c0 54       		.byte	0x54
- 2000 02c1 00000000 		.4byte	0
- 2001 02c5 00000000 		.4byte	0
- 2002              	.LLST7:
- 2003 02c9 12000000 		.4byte	.LVL83
- 2004 02cd 16000000 		.4byte	.LVL84
- 2005 02d1 0200     		.2byte	0x2
- 2006 02d3 30       		.byte	0x30
- 2007 02d4 9F       		.byte	0x9f
- 2008 02d5 16000000 		.4byte	.LVL84
- 2009 02d9 42000000 		.4byte	.LFE35
- 2010 02dd 0100     		.2byte	0x1
- 2011 02df 55       		.byte	0x55
- 2012 02e0 00000000 		.4byte	0
- 2013 02e4 00000000 		.4byte	0
- 2014              	.LLST8:
- 2015 02e8 16000000 		.4byte	.LVL84
- 2016 02ec 20000000 		.4byte	.LVL87
- 2017 02f0 0100     		.2byte	0x1
- 2018 02f2 54       		.byte	0x54
- 2019 02f3 22000000 		.4byte	.LVL88
- 2020 02f7 3C000000 		.4byte	.LVL91
- 2021 02fb 0100     		.2byte	0x1
- 2022 02fd 54       		.byte	0x54
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 39
-
-
- 2023 02fe 00000000 		.4byte	0
- 2024 0302 00000000 		.4byte	0
- 2025              		.section	.debug_aranges,"",%progbits
- 2026 0000 34000000 		.4byte	0x34
- 2027 0004 0200     		.2byte	0x2
- 2028 0006 00000000 		.4byte	.Ldebug_info0
- 2029 000a 04       		.byte	0x4
- 2030 000b 00       		.byte	0
- 2031 000c 0000     		.2byte	0
- 2032 000e 0000     		.2byte	0
- 2033 0010 00000000 		.4byte	.LFB32
- 2034 0014 78000000 		.4byte	.LFE32-.LFB32
- 2035 0018 00000000 		.4byte	.LFB33
- 2036 001c CE000000 		.4byte	.LFE33-.LFB33
- 2037 0020 00000000 		.4byte	.LFB34
- 2038 0024 44000000 		.4byte	.LFE34-.LFB34
- 2039 0028 00000000 		.4byte	.LFB35
- 2040 002c 42000000 		.4byte	.LFE35-.LFB35
- 2041 0030 00000000 		.4byte	0
- 2042 0034 00000000 		.4byte	0
- 2043              		.section	.debug_ranges,"",%progbits
- 2044              	.Ldebug_ranges0:
- 2045 0000 00000000 		.4byte	.LFB32
- 2046 0004 78000000 		.4byte	.LFE32
- 2047 0008 00000000 		.4byte	.LFB33
- 2048 000c CE000000 		.4byte	.LFE33
- 2049 0010 00000000 		.4byte	.LFB34
- 2050 0014 44000000 		.4byte	.LFE34
- 2051 0018 00000000 		.4byte	.LFB35
- 2052 001c 42000000 		.4byte	.LFE35
- 2053 0020 00000000 		.4byte	0
- 2054 0024 00000000 		.4byte	0
- 2055              		.section	.debug_line,"",%progbits
- 2056              	.Ldebug_line0:
- 2057 0000 37020000 		.section	.debug_str,"MS",%progbits,1
- 2057      02008001 
- 2057      00000201 
- 2057      FB0E0D00 
- 2057      01010101 
- 2058              	.LASF47:
- 2059 0000 6C65644D 		.ascii	"ledMatrix.c\000"
- 2059      61747269 
- 2059      782E6300 
- 2060              	.LASF48:
- 2061 000c 443A5C70 		.ascii	"D:\\psoc\\theory\\led_matrix\\led_matrix.cydsn\000"
- 2061      736F635C 
- 2061      7468656F 
- 2061      72795C6C 
- 2061      65645F6D 
- 2062              	.LASF20:
- 2063 0037 726F774F 		.ascii	"rowOrCloumn\000"
- 2063      72436C6F 
- 2063      756D6E00 
- 2064              	.LASF17:
- 2065 0043 68696768 		.ascii	"hight\000"
- 2065      7400
- 2066              	.LASF38:
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 40
-
-
- 2067 0049 636F6C5F 		.ascii	"col_matrix_1_Write\000"
- 2067      6D617472 
- 2067      69785F31 
- 2067      5F577269 
- 2067      746500
- 2068              	.LASF31:
- 2069 005c 726F775F 		.ascii	"row_matrix_2_Write\000"
- 2069      6D617472 
- 2069      69785F32 
- 2069      5F577269 
- 2069      746500
- 2070              	.LASF39:
- 2071 006f 636F6C5F 		.ascii	"col_matrix_2_Write\000"
- 2071      6D617472 
- 2071      69785F32 
- 2071      5F577269 
- 2071      746500
- 2072              	.LASF3:
- 2073 0082 73686F72 		.ascii	"short unsigned int\000"
- 2073      7420756E 
- 2073      7369676E 
- 2073      65642069 
- 2073      6E7400
- 2074              	.LASF27:
- 2075 0095 64617461 		.ascii	"data\000"
- 2075      00
- 2076              	.LASF32:
- 2077 009a 726F775F 		.ascii	"row_matrix_3_Write\000"
- 2077      6D617472 
- 2077      69785F33 
- 2077      5F577269 
- 2077      746500
- 2078              	.LASF45:
- 2079 00ad 43794465 		.ascii	"CyDelay\000"
- 2079      6C617900 
- 2080              	.LASF40:
- 2081 00b5 636F6C5F 		.ascii	"col_matrix_3_Write\000"
- 2081      6D617472 
- 2081      69785F33 
- 2081      5F577269 
- 2081      746500
- 2082              	.LASF14:
- 2083 00c8 636F6C75 		.ascii	"column\000"
- 2083      6D6E00
- 2084              	.LASF9:
- 2085 00cf 666C6F61 		.ascii	"float\000"
- 2085      7400
- 2086              	.LASF25:
- 2087 00d5 6C6F6F70 		.ascii	"loops\000"
- 2087      7300
- 2088              	.LASF33:
- 2089 00db 726F775F 		.ascii	"row_matrix_4_Write\000"
- 2089      6D617472 
- 2089      69785F34 
- 2089      5F577269 
- 2089      746500
- 2090              	.LASF1:
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 41
-
-
- 2091 00ee 756E7369 		.ascii	"unsigned char\000"
- 2091      676E6564 
- 2091      20636861 
- 2091      7200
- 2092              	.LASF15:
- 2093 00fc 726F775F 		.ascii	"row_or_column\000"
- 2093      6F725F63 
- 2093      6F6C756D 
- 2093      6E00
- 2094              	.LASF41:
- 2095 010a 636F6C5F 		.ascii	"col_matrix_4_Write\000"
- 2095      6D617472 
- 2095      69785F34 
- 2095      5F577269 
- 2095      746500
- 2096              	.LASF5:
- 2097 011d 6C6F6E67 		.ascii	"long unsigned int\000"
- 2097      20756E73 
- 2097      69676E65 
- 2097      6420696E 
- 2097      7400
- 2098              	.LASF49:
- 2099 012f 75696E74 		.ascii	"uint8\000"
- 2099      3800
- 2100              	.LASF26:
- 2101 0135 636F6E74 		.ascii	"control\000"
- 2101      726F6C00 
- 2102              	.LASF18:
- 2103 013d 64617461 		.ascii	"dataNeedWrite\000"
- 2103      4E656564 
- 2103      57726974 
- 2103      6500
- 2104              	.LASF21:
- 2105 014b 77726974 		.ascii	"write_data\000"
- 2105      655F6461 
- 2105      746100
- 2106              	.LASF42:
- 2107 0156 636F6C5F 		.ascii	"col_matrix_5_Write\000"
- 2107      6D617472 
- 2107      69785F35 
- 2107      5F577269 
- 2107      746500
- 2108              	.LASF19:
- 2109 0169 6C6F6361 		.ascii	"locationWrite\000"
- 2109      74696F6E 
- 2109      57726974 
- 2109      6500
- 2110              	.LASF10:
- 2111 0177 646F7562 		.ascii	"double\000"
- 2111      6C6500
- 2112              	.LASF35:
- 2113 017e 726F775F 		.ascii	"row_matrix_6_Write\000"
- 2113      6D617472 
- 2113      69785F36 
- 2113      5F577269 
- 2113      746500
- 2114              	.LASF22:
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 42
-
-
- 2115 0191 6C696768 		.ascii	"light_character_k\000"
- 2115      745F6368 
- 2115      61726163 
- 2115      7465725F 
- 2115      6B00
- 2116              	.LASF43:
- 2117 01a3 636F6C5F 		.ascii	"col_matrix_6_Write\000"
- 2117      6D617472 
- 2117      69785F36 
- 2117      5F577269 
- 2117      746500
- 2118              	.LASF36:
- 2119 01b6 726F775F 		.ascii	"row_matrix_7_Write\000"
- 2119      6D617472 
- 2119      69785F37 
- 2119      5F577269 
- 2119      746500
- 2120              	.LASF8:
- 2121 01c9 756E7369 		.ascii	"unsigned int\000"
- 2121      676E6564 
- 2121      20696E74 
- 2121      00
- 2122              	.LASF7:
- 2123 01d6 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2123      206C6F6E 
- 2123      6720756E 
- 2123      7369676E 
- 2123      65642069 
- 2124              	.LASF44:
- 2125 01ed 636F6C5F 		.ascii	"col_matrix_7_Write\000"
- 2125      6D617472 
- 2125      69785F37 
- 2125      5F577269 
- 2125      746500
- 2126              	.LASF23:
- 2127 0200 72657375 		.ascii	"result\000"
- 2127      6C7400
- 2128              	.LASF28:
- 2129 0207 64617461 		.ascii	"data1\000"
- 2129      3100
- 2130              	.LASF46:
- 2131 020d 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 2131      43313120 
- 2131      352E342E 
- 2131      31203230 
- 2131      31363036 
- 2132 0240 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
- 2132      20726576 
- 2132      6973696F 
- 2132      6E203233 
- 2132      37373135 
- 2133 0273 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 2133      66756E63 
- 2133      74696F6E 
- 2133      2D736563 
- 2133      74696F6E 
- 2134              	.LASF13:
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 43
-
-
- 2135 029b 6C6F6E67 		.ascii	"long double\000"
- 2135      20646F75 
- 2135      626C6500 
- 2136              	.LASF12:
- 2137 02a7 73697A65 		.ascii	"sizetype\000"
- 2137      74797065 
- 2137      00
- 2138              	.LASF6:
- 2139 02b0 6C6F6E67 		.ascii	"long long int\000"
- 2139      206C6F6E 
- 2139      6720696E 
- 2139      7400
- 2140              	.LASF11:
- 2141 02be 63686172 		.ascii	"char\000"
- 2141      00
- 2142              	.LASF2:
- 2143 02c3 73686F72 		.ascii	"short int\000"
- 2143      7420696E 
- 2143      7400
- 2144              	.LASF24:
- 2145 02cd 6C696768 		.ascii	"light_from_0_to_9\000"
- 2145      745F6672 
- 2145      6F6D5F30 
- 2145      5F746F5F 
- 2145      3900
- 2146              	.LASF34:
- 2147 02df 726F775F 		.ascii	"row_matrix_5_Write\000"
- 2147      6D617472 
- 2147      69785F35 
- 2147      5F577269 
- 2147      746500
- 2148              	.LASF4:
- 2149 02f2 6C6F6E67 		.ascii	"long int\000"
- 2149      20696E74 
- 2149      00
- 2150              	.LASF29:
- 2151 02fb 726F775F 		.ascii	"row_matrix_0_Write\000"
- 2151      6D617472 
- 2151      69785F30 
- 2151      5F577269 
- 2151      746500
- 2152              	.LASF0:
- 2153 030e 7369676E 		.ascii	"signed char\000"
- 2153      65642063 
- 2153      68617200 
- 2154              	.LASF16:
- 2155 031a 53746174 		.ascii	"Status_pin\000"
- 2155      75735F70 
- 2155      696E00
- 2156              	.LASF37:
- 2157 0325 636F6C5F 		.ascii	"col_matrix_0_Write\000"
- 2157      6D617472 
- 2157      69785F30 
- 2157      5F577269 
- 2157      746500
- 2158              	.LASF50:
- 2159 0338 77726974 		.ascii	"writeHightOrLow\000"
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccMRIXqe.s 			page 44
-
-
- 2159      65486967 
- 2159      68744F72 
- 2159      4C6F7700 
- 2160              	.LASF30:
- 2161 0348 726F775F 		.ascii	"row_matrix_1_Write\000"
- 2161      6D617472 
- 2161      69785F31 
- 2161      5F577269 
- 2161      746500
- 2162              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 118:ledMatrix.c   ****         write_data( control[n], row );
+ 374              		.loc 1 118 0 discriminator 3
+ 375 0026 084B     		ldr	r3, .L30+4
+ 376 0028 1B19     		adds	r3, r3, r4
+ 377 002a 3022     		movs	r2, #48
+ 378 002c 985C     		ldrb	r0, [r3, r2]
+ 379 002e 0021     		movs	r1, #0
+ 380 0030 FFF7FEFF 		bl	write_data
+ 381              	.LVL77:
+ 119:ledMatrix.c   ****         CyDelay(2);
+ 382              		.loc 1 119 0 discriminator 3
+ 383 0034 0220     		movs	r0, #2
+ 384 0036 FFF7FEFF 		bl	CyDelay
+ 385              	.LVL78:
+ 115:ledMatrix.c   ****     {
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 10
+
+
+ 386              		.loc 1 115 0 discriminator 3
+ 387 003a 0134     		adds	r4, r4, #1
+ 388              	.LVL79:
+ 389              	.L28:
+ 115:ledMatrix.c   ****     {
+ 390              		.loc 1 115 0 is_stmt 0 discriminator 1
+ 391 003c 072C     		cmp	r4, #7
+ 392 003e EBDD     		ble	.L29
+ 120:ledMatrix.c   ****     }
+ 121:ledMatrix.c   **** }
+ 393              		.loc 1 121 0 is_stmt 1
+ 394              		@ sp needed
+ 395              	.LVL80:
+ 396              	.LVL81:
+ 397 0040 70BD     		pop	{r4, r5, r6, pc}
+ 398              	.L31:
+ 399 0042 C046     		.align	2
+ 400              	.L30:
+ 401 0044 00000000 		.word	.LANCHOR0
+ 402 0048 80000000 		.word	.LANCHOR1
+ 403              		.cfi_endproc
+ 404              	.LFE34:
+ 405              		.size	light_character_k, .-light_character_k
+ 406              		.section	.text.light_from_0_to_9,"ax",%progbits
+ 407              		.align	2
+ 408              		.global	light_from_0_to_9
+ 409              		.code	16
+ 410              		.thumb_func
+ 411              		.type	light_from_0_to_9, %function
+ 412              	light_from_0_to_9:
+ 413              	.LFB35:
+ 122:ledMatrix.c   **** 
+ 123:ledMatrix.c   **** void light_from_0_to_9()
+ 124:ledMatrix.c   **** {
+ 414              		.loc 1 124 0
+ 415              		.cfi_startproc
+ 416              		@ args = 0, pretend = 0, frame = 0
+ 417              		@ frame_needed = 0, uses_anonymous_args = 0
+ 418 0000 70B5     		push	{r4, r5, r6, lr}
+ 419              		.cfi_def_cfa_offset 16
+ 420              		.cfi_offset 4, -16
+ 421              		.cfi_offset 5, -12
+ 422              		.cfi_offset 6, -8
+ 423              		.cfi_offset 14, -4
+ 125:ledMatrix.c   ****     int run , loops;
+ 126:ledMatrix.c   ****     
+ 127:ledMatrix.c   ****     write_data(0xFF, column);
+ 424              		.loc 1 127 0
+ 425 0002 0121     		movs	r1, #1
+ 426 0004 FF20     		movs	r0, #255
+ 427 0006 FFF7FEFF 		bl	write_data
+ 428              	.LVL82:
+ 128:ledMatrix.c   ****     write_data(0x00, row);
+ 429              		.loc 1 128 0
+ 430 000a 0021     		movs	r1, #0
+ 431 000c 0020     		movs	r0, #0
+ 432 000e FFF7FEFF 		bl	write_data
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 11
+
+
+ 433              	.LVL83:
+ 434              	.L36:
+ 129:ledMatrix.c   ****     
+ 130:ledMatrix.c   ****     while(1)
+ 131:ledMatrix.c   ****     {
+ 132:ledMatrix.c   ****         for(run=0; run<10; run++)
+ 435              		.loc 1 132 0
+ 436 0012 0025     		movs	r5, #0
+ 437 0014 12E0     		b	.L33
+ 438              	.LVL84:
+ 439              	.L34:
+ 133:ledMatrix.c   ****         {
+ 134:ledMatrix.c   ****             for(loops=0; loops<500; loops++)            
+ 135:ledMatrix.c   ****                 light_character_k(run);
+ 440              		.loc 1 135 0 discriminator 3
+ 441 0016 2800     		movs	r0, r5
+ 442 0018 FFF7FEFF 		bl	light_character_k
+ 443              	.LVL85:
+ 134:ledMatrix.c   ****                 light_character_k(run);
+ 444              		.loc 1 134 0 discriminator 3
+ 445 001c 0134     		adds	r4, r4, #1
+ 446              	.LVL86:
+ 447 001e 00E0     		b	.L35
+ 448              	.LVL87:
+ 449              	.L37:
+ 450 0020 0024     		movs	r4, #0
+ 451              	.L35:
+ 452              	.LVL88:
+ 134:ledMatrix.c   ****                 light_character_k(run);
+ 453              		.loc 1 134 0 is_stmt 0 discriminator 1
+ 454 0022 F423     		movs	r3, #244
+ 455 0024 FF33     		adds	r3, r3, #255
+ 456 0026 9C42     		cmp	r4, r3
+ 457 0028 F5DD     		ble	.L34
+ 136:ledMatrix.c   ****             
+ 137:ledMatrix.c   ****             write_data(0xFF, column);
+ 458              		.loc 1 137 0 is_stmt 1 discriminator 2
+ 459 002a 0121     		movs	r1, #1
+ 460 002c FF20     		movs	r0, #255
+ 461 002e FFF7FEFF 		bl	write_data
+ 462              	.LVL89:
+ 138:ledMatrix.c   ****             write_data(0x00, row);
+ 463              		.loc 1 138 0 discriminator 2
+ 464 0032 0021     		movs	r1, #0
+ 465 0034 0020     		movs	r0, #0
+ 466 0036 FFF7FEFF 		bl	write_data
+ 467              	.LVL90:
+ 132:ledMatrix.c   ****         {
+ 468              		.loc 1 132 0 discriminator 2
+ 469 003a 0135     		adds	r5, r5, #1
+ 470              	.LVL91:
+ 471              	.L33:
+ 132:ledMatrix.c   ****         {
+ 472              		.loc 1 132 0 is_stmt 0 discriminator 1
+ 473 003c 092D     		cmp	r5, #9
+ 474 003e EFDD     		ble	.L37
+ 475 0040 E7E7     		b	.L36
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 12
+
+
+ 476              		.cfi_endproc
+ 477              	.LFE35:
+ 478              		.size	light_from_0_to_9, .-light_from_0_to_9
+ 479              		.global	data
+ 480              		.global	control
+ 481 0042 C046     		.data
+ 482              		.align	2
+ 483              		.set	.LANCHOR0,. + 0
+ 484              		.set	.LANCHOR1,. + 128
+ 485              		.type	data, %object
+ 486              		.size	data, 176
+ 487              	data:
+ 488 0000 FF       		.byte	-1
+ 489 0001 81       		.byte	-127
+ 490 0002 7E       		.byte	126
+ 491 0003 7E       		.byte	126
+ 492 0004 7E       		.byte	126
+ 493 0005 7E       		.byte	126
+ 494 0006 81       		.byte	-127
+ 495 0007 FF       		.byte	-1
+ 496 0008 FF       		.byte	-1
+ 497 0009 7B       		.byte	123
+ 498 000a 7D       		.byte	125
+ 499 000b 00       		.byte	0
+ 500 000c 00       		.byte	0
+ 501 000d 7F       		.byte	127
+ 502 000e 7F       		.byte	127
+ 503 000f FF       		.byte	-1
+ 504 0010 FF       		.byte	-1
+ 505 0011 86       		.byte	-122
+ 506 0012 B6       		.byte	-74
+ 507 0013 B6       		.byte	-74
+ 508 0014 B6       		.byte	-74
+ 509 0015 B6       		.byte	-74
+ 510 0016 B0       		.byte	-80
+ 511 0017 FF       		.byte	-1
+ 512 0018 FF       		.byte	-1
+ 513 0019 66       		.byte	102
+ 514 001a 66       		.byte	102
+ 515 001b 66       		.byte	102
+ 516 001c 66       		.byte	102
+ 517 001d 98       		.byte	-104
+ 518 001e FF       		.byte	-1
+ 519 001f FF       		.byte	-1
+ 520 0020 EF       		.byte	-17
+ 521 0021 E7       		.byte	-25
+ 522 0022 EB       		.byte	-21
+ 523 0023 6D       		.byte	109
+ 524 0024 00       		.byte	0
+ 525 0025 6F       		.byte	111
+ 526 0026 EF       		.byte	-17
+ 527 0027 FF       		.byte	-1
+ 528 0028 FF       		.byte	-1
+ 529 0029 78       		.byte	120
+ 530 002a 7A       		.byte	122
+ 531 002b 7A       		.byte	122
+ 532 002c BA       		.byte	-70
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 13
+
+
+ 533 002d C6       		.byte	-58
+ 534 002e FF       		.byte	-1
+ 535 002f FF       		.byte	-1
+ 536 0030 FF       		.byte	-1
+ 537 0031 81       		.byte	-127
+ 538 0032 76       		.byte	118
+ 539 0033 76       		.byte	118
+ 540 0034 76       		.byte	118
+ 541 0035 8D       		.byte	-115
+ 542 0036 FF       		.byte	-1
+ 543 0037 FF       		.byte	-1
+ 544 0038 FF       		.byte	-1
+ 545 0039 FF       		.byte	-1
+ 546 003a FC       		.byte	-4
+ 547 003b FE       		.byte	-2
+ 548 003c FE       		.byte	-2
+ 549 003d FE       		.byte	-2
+ 550 003e 00       		.byte	0
+ 551 003f FF       		.byte	-1
+ 552 0040 FF       		.byte	-1
+ 553 0041 89       		.byte	-119
+ 554 0042 76       		.byte	118
+ 555 0043 76       		.byte	118
+ 556 0044 76       		.byte	118
+ 557 0045 89       		.byte	-119
+ 558 0046 FF       		.byte	-1
+ 559 0047 FF       		.byte	-1
+ 560 0048 FF       		.byte	-1
+ 561 0049 B9       		.byte	-71
+ 562 004a 76       		.byte	118
+ 563 004b 76       		.byte	118
+ 564 004c 76       		.byte	118
+ 565 004d 81       		.byte	-127
+ 566 004e FF       		.byte	-1
+ 567 004f FF       		.byte	-1
+ 568 0050 E7       		.byte	-25
+ 569 0051 E7       		.byte	-25
+ 570 0052 E7       		.byte	-25
+ 571 0053 00       		.byte	0
+ 572 0054 00       		.byte	0
+ 573 0055 E7       		.byte	-25
+ 574 0056 E7       		.byte	-25
+ 575 0057 E7       		.byte	-25
+ 576 0058 00       		.byte	0
+ 577 0059 00       		.byte	0
+ 578 005a 00       		.byte	0
+ 579 005b 00       		.byte	0
+ 580 005c 00       		.byte	0
+ 581 005d 00       		.byte	0
+ 582 005e 00       		.byte	0
+ 583 005f 00       		.byte	0
+ 584 0060 FF       		.byte	-1
+ 585 0061 FF       		.byte	-1
+ 586 0062 FF       		.byte	-1
+ 587 0063 FF       		.byte	-1
+ 588 0064 FF       		.byte	-1
+ 589 0065 FF       		.byte	-1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 14
+
+
+ 590 0066 FF       		.byte	-1
+ 591 0067 FF       		.byte	-1
+ 592 0068 00       		.byte	0
+ 593 0069 FF       		.byte	-1
+ 594 006a FF       		.byte	-1
+ 595 006b FF       		.byte	-1
+ 596 006c FF       		.byte	-1
+ 597 006d FF       		.byte	-1
+ 598 006e FF       		.byte	-1
+ 599 006f FF       		.byte	-1
+ 600 0070 FF       		.byte	-1
+ 601 0071 00       		.byte	0
+ 602 0072 FF       		.byte	-1
+ 603 0073 FF       		.byte	-1
+ 604 0074 FF       		.byte	-1
+ 605 0075 FF       		.byte	-1
+ 606 0076 FF       		.byte	-1
+ 607 0077 FF       		.byte	-1
+ 608 0078 FF       		.byte	-1
+ 609 0079 FF       		.byte	-1
+ 610 007a 00       		.byte	0
+ 611 007b FF       		.byte	-1
+ 612 007c FF       		.byte	-1
+ 613 007d FF       		.byte	-1
+ 614 007e FF       		.byte	-1
+ 615 007f FF       		.byte	-1
+ 616 0080 FF       		.byte	-1
+ 617 0081 FF       		.byte	-1
+ 618 0082 FF       		.byte	-1
+ 619 0083 00       		.byte	0
+ 620 0084 FF       		.byte	-1
+ 621 0085 FF       		.byte	-1
+ 622 0086 FF       		.byte	-1
+ 623 0087 FF       		.byte	-1
+ 624 0088 FF       		.byte	-1
+ 625 0089 FF       		.byte	-1
+ 626 008a FF       		.byte	-1
+ 627 008b FF       		.byte	-1
+ 628 008c 00       		.byte	0
+ 629 008d FF       		.byte	-1
+ 630 008e FF       		.byte	-1
+ 631 008f FF       		.byte	-1
+ 632 0090 FF       		.byte	-1
+ 633 0091 FF       		.byte	-1
+ 634 0092 FF       		.byte	-1
+ 635 0093 FF       		.byte	-1
+ 636 0094 FF       		.byte	-1
+ 637 0095 00       		.byte	0
+ 638 0096 FF       		.byte	-1
+ 639 0097 FF       		.byte	-1
+ 640 0098 FF       		.byte	-1
+ 641 0099 FF       		.byte	-1
+ 642 009a FF       		.byte	-1
+ 643 009b FF       		.byte	-1
+ 644 009c FF       		.byte	-1
+ 645 009d FF       		.byte	-1
+ 646 009e 00       		.byte	0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 15
+
+
+ 647 009f FF       		.byte	-1
+ 648 00a0 FF       		.byte	-1
+ 649 00a1 FF       		.byte	-1
+ 650 00a2 FF       		.byte	-1
+ 651 00a3 FF       		.byte	-1
+ 652 00a4 FF       		.byte	-1
+ 653 00a5 FF       		.byte	-1
+ 654 00a6 FF       		.byte	-1
+ 655 00a7 00       		.byte	0
+ 656 00a8 7F       		.byte	127
+ 657 00a9 7F       		.byte	127
+ 658 00aa 7F       		.byte	127
+ 659 00ab 7F       		.byte	127
+ 660 00ac 7F       		.byte	127
+ 661 00ad 7F       		.byte	127
+ 662 00ae 7F       		.byte	127
+ 663 00af 7F       		.byte	127
+ 664              		.type	control, %object
+ 665              		.size	control, 8
+ 666              	control:
+ 667 00b0 01       		.byte	1
+ 668 00b1 02       		.byte	2
+ 669 00b2 04       		.byte	4
+ 670 00b3 08       		.byte	8
+ 671 00b4 10       		.byte	16
+ 672 00b5 20       		.byte	32
+ 673 00b6 40       		.byte	64
+ 674 00b7 80       		.byte	-128
+ 675              		.text
+ 676              	.Letext0:
+ 677              		.file 2 "ledMatrix.h"
+ 678              		.file 3 "Generated_Source\\PSoC4/row_matrix_0.h"
+ 679              		.file 4 "Generated_Source\\PSoC4/row_matrix_1.h"
+ 680              		.file 5 "Generated_Source\\PSoC4/row_matrix_2.h"
+ 681              		.file 6 "Generated_Source\\PSoC4/row_matrix_3.h"
+ 682              		.file 7 "Generated_Source\\PSoC4/row_matrix_4.h"
+ 683              		.file 8 "Generated_Source\\PSoC4/row_matrix_5.h"
+ 684              		.file 9 "Generated_Source\\PSoC4/row_matrix_6.h"
+ 685              		.file 10 "Generated_Source\\PSoC4/row_matrix_7.h"
+ 686              		.file 11 "Generated_Source\\PSoC4/col_matrix_0.h"
+ 687              		.file 12 "Generated_Source\\PSoC4/col_matrix_1.h"
+ 688              		.file 13 "Generated_Source\\PSoC4/col_matrix_2.h"
+ 689              		.file 14 "Generated_Source\\PSoC4/col_matrix_3.h"
+ 690              		.file 15 "Generated_Source\\PSoC4/col_matrix_4.h"
+ 691              		.file 16 "Generated_Source\\PSoC4/col_matrix_5.h"
+ 692              		.file 17 "Generated_Source\\PSoC4/col_matrix_6.h"
+ 693              		.file 18 "Generated_Source\\PSoC4/col_matrix_7.h"
+ 694              		.file 19 "Generated_Source\\PSoC4/CyLib.h"
+ 695              		.file 20 "Generated_Source\\PSoC4/cytypes.h"
+ 696              		.section	.debug_info,"",%progbits
+ 697              	.Ldebug_info0:
+ 698 0000 99050000 		.4byte	0x599
+ 699 0004 0400     		.2byte	0x4
+ 700 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 701 000a 04       		.byte	0x4
+ 702 000b 01       		.uleb128 0x1
+ 703 000c 07020000 		.4byte	.LASF45
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 16
+
+
+ 704 0010 0C       		.byte	0xc
+ 705 0011 00000000 		.4byte	.LASF46
+ 706 0015 0C000000 		.4byte	.LASF47
+ 707 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 708 001d 00000000 		.4byte	0
+ 709 0021 00000000 		.4byte	.Ldebug_line0
+ 710 0025 02       		.uleb128 0x2
+ 711 0026 01       		.byte	0x1
+ 712 0027 06       		.byte	0x6
+ 713 0028 08030000 		.4byte	.LASF0
+ 714 002c 02       		.uleb128 0x2
+ 715 002d 01       		.byte	0x1
+ 716 002e 08       		.byte	0x8
+ 717 002f EE000000 		.4byte	.LASF1
+ 718 0033 02       		.uleb128 0x2
+ 719 0034 02       		.byte	0x2
+ 720 0035 05       		.byte	0x5
+ 721 0036 BD020000 		.4byte	.LASF2
+ 722 003a 02       		.uleb128 0x2
+ 723 003b 02       		.byte	0x2
+ 724 003c 07       		.byte	0x7
+ 725 003d 82000000 		.4byte	.LASF3
+ 726 0041 02       		.uleb128 0x2
+ 727 0042 04       		.byte	0x4
+ 728 0043 05       		.byte	0x5
+ 729 0044 EC020000 		.4byte	.LASF4
+ 730 0048 02       		.uleb128 0x2
+ 731 0049 04       		.byte	0x4
+ 732 004a 07       		.byte	0x7
+ 733 004b 1D010000 		.4byte	.LASF5
+ 734 004f 02       		.uleb128 0x2
+ 735 0050 08       		.byte	0x8
+ 736 0051 05       		.byte	0x5
+ 737 0052 AA020000 		.4byte	.LASF6
+ 738 0056 02       		.uleb128 0x2
+ 739 0057 08       		.byte	0x8
+ 740 0058 07       		.byte	0x7
+ 741 0059 D6010000 		.4byte	.LASF7
+ 742 005d 03       		.uleb128 0x3
+ 743 005e 04       		.byte	0x4
+ 744 005f 05       		.byte	0x5
+ 745 0060 696E7400 		.ascii	"int\000"
+ 746 0064 02       		.uleb128 0x2
+ 747 0065 04       		.byte	0x4
+ 748 0066 07       		.byte	0x7
+ 749 0067 C9010000 		.4byte	.LASF8
+ 750 006b 04       		.uleb128 0x4
+ 751 006c 2F010000 		.4byte	.LASF48
+ 752 0070 14       		.byte	0x14
+ 753 0071 FB01     		.2byte	0x1fb
+ 754 0073 2C000000 		.4byte	0x2c
+ 755 0077 02       		.uleb128 0x2
+ 756 0078 04       		.byte	0x4
+ 757 0079 04       		.byte	0x4
+ 758 007a CF000000 		.4byte	.LASF9
+ 759 007e 02       		.uleb128 0x2
+ 760 007f 08       		.byte	0x8
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 17
+
+
+ 761 0080 04       		.byte	0x4
+ 762 0081 77010000 		.4byte	.LASF10
+ 763 0085 02       		.uleb128 0x2
+ 764 0086 01       		.byte	0x1
+ 765 0087 08       		.byte	0x8
+ 766 0088 B8020000 		.4byte	.LASF11
+ 767 008c 02       		.uleb128 0x2
+ 768 008d 04       		.byte	0x4
+ 769 008e 07       		.byte	0x7
+ 770 008f A1020000 		.4byte	.LASF12
+ 771 0093 02       		.uleb128 0x2
+ 772 0094 08       		.byte	0x8
+ 773 0095 04       		.byte	0x4
+ 774 0096 95020000 		.4byte	.LASF13
+ 775 009a 05       		.uleb128 0x5
+ 776 009b FC000000 		.4byte	.LASF15
+ 777 009f 01       		.byte	0x1
+ 778 00a0 2C000000 		.4byte	0x2c
+ 779 00a4 02       		.byte	0x2
+ 780 00a5 11       		.byte	0x11
+ 781 00a6 B7000000 		.4byte	0xb7
+ 782 00aa 06       		.uleb128 0x6
+ 783 00ab 726F7700 		.ascii	"row\000"
+ 784 00af 00       		.byte	0
+ 785 00b0 07       		.uleb128 0x7
+ 786 00b1 C8000000 		.4byte	.LASF14
+ 787 00b5 01       		.byte	0x1
+ 788 00b6 00       		.byte	0
+ 789 00b7 05       		.uleb128 0x5
+ 790 00b8 14030000 		.4byte	.LASF16
+ 791 00bc 01       		.byte	0x1
+ 792 00bd 2C000000 		.4byte	0x2c
+ 793 00c1 02       		.byte	0x2
+ 794 00c2 17       		.byte	0x17
+ 795 00c3 D4000000 		.4byte	0xd4
+ 796 00c7 06       		.uleb128 0x6
+ 797 00c8 6C6F7700 		.ascii	"low\000"
+ 798 00cc 00       		.byte	0
+ 799 00cd 07       		.uleb128 0x7
+ 800 00ce 43000000 		.4byte	.LASF17
+ 801 00d2 01       		.byte	0x1
+ 802 00d3 00       		.byte	0
+ 803 00d4 08       		.uleb128 0x8
+ 804 00d5 32030000 		.4byte	.LASF49
+ 805 00d9 01       		.byte	0x1
+ 806 00da 2F       		.byte	0x2f
+ 807 00db 6B000000 		.4byte	0x6b
+ 808 00df 00000000 		.4byte	.LFB32
+ 809 00e3 78000000 		.4byte	.LFE32-.LFB32
+ 810 00e7 01       		.uleb128 0x1
+ 811 00e8 9C       		.byte	0x9c
+ 812 00e9 1B010000 		.4byte	0x11b
+ 813 00ed 09       		.uleb128 0x9
+ 814 00ee 3D010000 		.4byte	.LASF18
+ 815 00f2 01       		.byte	0x1
+ 816 00f3 2F       		.byte	0x2f
+ 817 00f4 6B000000 		.4byte	0x6b
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 18
+
+
+ 818 00f8 00000000 		.4byte	.LLST0
+ 819 00fc 09       		.uleb128 0x9
+ 820 00fd 69010000 		.4byte	.LASF19
+ 821 0101 01       		.byte	0x1
+ 822 0102 2F       		.byte	0x2f
+ 823 0103 6B000000 		.4byte	0x6b
+ 824 0107 B1010000 		.4byte	.LLST1
+ 825 010b 0A       		.uleb128 0xa
+ 826 010c 00020000 		.4byte	.LASF23
+ 827 0110 01       		.byte	0x1
+ 828 0111 31       		.byte	0x31
+ 829 0112 6B000000 		.4byte	0x6b
+ 830 0116 EB010000 		.4byte	.LLST2
+ 831 011a 00       		.byte	0
+ 832 011b 0B       		.uleb128 0xb
+ 833 011c 4B010000 		.4byte	.LASF21
+ 834 0120 01       		.byte	0x1
+ 835 0121 51       		.byte	0x51
+ 836 0122 00000000 		.4byte	.LFB33
+ 837 0126 CE000000 		.4byte	.LFE33-.LFB33
+ 838 012a 01       		.uleb128 0x1
+ 839 012b 9C       		.byte	0x9c
+ 840 012c 63030000 		.4byte	0x363
+ 841 0130 09       		.uleb128 0x9
+ 842 0131 3D010000 		.4byte	.LASF18
+ 843 0135 01       		.byte	0x1
+ 844 0136 51       		.byte	0x51
+ 845 0137 6B000000 		.4byte	0x6b
+ 846 013b 0A020000 		.4byte	.LLST3
+ 847 013f 09       		.uleb128 0x9
+ 848 0140 37000000 		.4byte	.LASF20
+ 849 0144 01       		.byte	0x1
+ 850 0145 51       		.byte	0x51
+ 851 0146 6B000000 		.4byte	0x6b
+ 852 014a 44020000 		.4byte	.LLST4
+ 853 014e 0C       		.uleb128 0xc
+ 854 014f 14000000 		.4byte	.LVL37
+ 855 0153 D4000000 		.4byte	0xd4
+ 856 0157 61010000 		.4byte	0x161
+ 857 015b 0D       		.uleb128 0xd
+ 858 015c 01       		.uleb128 0x1
+ 859 015d 51       		.byte	0x51
+ 860 015e 01       		.uleb128 0x1
+ 861 015f 30       		.byte	0x30
+ 862 0160 00       		.byte	0
+ 863 0161 0E       		.uleb128 0xe
+ 864 0162 18000000 		.4byte	.LVL38
+ 865 0166 E1040000 		.4byte	0x4e1
+ 866 016a 0C       		.uleb128 0xc
+ 867 016b 20000000 		.4byte	.LVL39
+ 868 016f D4000000 		.4byte	0xd4
+ 869 0173 83010000 		.4byte	0x183
+ 870 0177 0D       		.uleb128 0xd
+ 871 0178 01       		.uleb128 0x1
+ 872 0179 50       		.byte	0x50
+ 873 017a 02       		.uleb128 0x2
+ 874 017b 74       		.byte	0x74
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 19
+
+
+ 875 017c 00       		.sleb128 0
+ 876 017d 0D       		.uleb128 0xd
+ 877 017e 01       		.uleb128 0x1
+ 878 017f 51       		.byte	0x51
+ 879 0180 01       		.uleb128 0x1
+ 880 0181 31       		.byte	0x31
+ 881 0182 00       		.byte	0
+ 882 0183 0E       		.uleb128 0xe
+ 883 0184 24000000 		.4byte	.LVL40
+ 884 0188 EC040000 		.4byte	0x4ec
+ 885 018c 0C       		.uleb128 0xc
+ 886 018d 2C000000 		.4byte	.LVL41
+ 887 0191 D4000000 		.4byte	0xd4
+ 888 0195 A5010000 		.4byte	0x1a5
+ 889 0199 0D       		.uleb128 0xd
+ 890 019a 01       		.uleb128 0x1
+ 891 019b 50       		.byte	0x50
+ 892 019c 02       		.uleb128 0x2
+ 893 019d 74       		.byte	0x74
+ 894 019e 00       		.sleb128 0
+ 895 019f 0D       		.uleb128 0xd
+ 896 01a0 01       		.uleb128 0x1
+ 897 01a1 51       		.byte	0x51
+ 898 01a2 01       		.uleb128 0x1
+ 899 01a3 32       		.byte	0x32
+ 900 01a4 00       		.byte	0
+ 901 01a5 0E       		.uleb128 0xe
+ 902 01a6 30000000 		.4byte	.LVL42
+ 903 01aa F7040000 		.4byte	0x4f7
+ 904 01ae 0C       		.uleb128 0xc
+ 905 01af 38000000 		.4byte	.LVL43
+ 906 01b3 D4000000 		.4byte	0xd4
+ 907 01b7 C7010000 		.4byte	0x1c7
+ 908 01bb 0D       		.uleb128 0xd
+ 909 01bc 01       		.uleb128 0x1
+ 910 01bd 50       		.byte	0x50
+ 911 01be 02       		.uleb128 0x2
+ 912 01bf 74       		.byte	0x74
+ 913 01c0 00       		.sleb128 0
+ 914 01c1 0D       		.uleb128 0xd
+ 915 01c2 01       		.uleb128 0x1
+ 916 01c3 51       		.byte	0x51
+ 917 01c4 01       		.uleb128 0x1
+ 918 01c5 33       		.byte	0x33
+ 919 01c6 00       		.byte	0
+ 920 01c7 0E       		.uleb128 0xe
+ 921 01c8 3C000000 		.4byte	.LVL44
+ 922 01cc 02050000 		.4byte	0x502
+ 923 01d0 0C       		.uleb128 0xc
+ 924 01d1 44000000 		.4byte	.LVL45
+ 925 01d5 D4000000 		.4byte	0xd4
+ 926 01d9 E9010000 		.4byte	0x1e9
+ 927 01dd 0D       		.uleb128 0xd
+ 928 01de 01       		.uleb128 0x1
+ 929 01df 50       		.byte	0x50
+ 930 01e0 02       		.uleb128 0x2
+ 931 01e1 74       		.byte	0x74
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 20
+
+
+ 932 01e2 00       		.sleb128 0
+ 933 01e3 0D       		.uleb128 0xd
+ 934 01e4 01       		.uleb128 0x1
+ 935 01e5 51       		.byte	0x51
+ 936 01e6 01       		.uleb128 0x1
+ 937 01e7 34       		.byte	0x34
+ 938 01e8 00       		.byte	0
+ 939 01e9 0E       		.uleb128 0xe
+ 940 01ea 48000000 		.4byte	.LVL46
+ 941 01ee 0D050000 		.4byte	0x50d
+ 942 01f2 0C       		.uleb128 0xc
+ 943 01f3 50000000 		.4byte	.LVL47
+ 944 01f7 D4000000 		.4byte	0xd4
+ 945 01fb 0B020000 		.4byte	0x20b
+ 946 01ff 0D       		.uleb128 0xd
+ 947 0200 01       		.uleb128 0x1
+ 948 0201 50       		.byte	0x50
+ 949 0202 02       		.uleb128 0x2
+ 950 0203 74       		.byte	0x74
+ 951 0204 00       		.sleb128 0
+ 952 0205 0D       		.uleb128 0xd
+ 953 0206 01       		.uleb128 0x1
+ 954 0207 51       		.byte	0x51
+ 955 0208 01       		.uleb128 0x1
+ 956 0209 35       		.byte	0x35
+ 957 020a 00       		.byte	0
+ 958 020b 0E       		.uleb128 0xe
+ 959 020c 54000000 		.4byte	.LVL48
+ 960 0210 18050000 		.4byte	0x518
+ 961 0214 0C       		.uleb128 0xc
+ 962 0215 5C000000 		.4byte	.LVL49
+ 963 0219 D4000000 		.4byte	0xd4
+ 964 021d 2D020000 		.4byte	0x22d
+ 965 0221 0D       		.uleb128 0xd
+ 966 0222 01       		.uleb128 0x1
+ 967 0223 50       		.byte	0x50
+ 968 0224 02       		.uleb128 0x2
+ 969 0225 74       		.byte	0x74
+ 970 0226 00       		.sleb128 0
+ 971 0227 0D       		.uleb128 0xd
+ 972 0228 01       		.uleb128 0x1
+ 973 0229 51       		.byte	0x51
+ 974 022a 01       		.uleb128 0x1
+ 975 022b 36       		.byte	0x36
+ 976 022c 00       		.byte	0
+ 977 022d 0E       		.uleb128 0xe
+ 978 022e 60000000 		.4byte	.LVL50
+ 979 0232 23050000 		.4byte	0x523
+ 980 0236 0C       		.uleb128 0xc
+ 981 0237 68000000 		.4byte	.LVL51
+ 982 023b D4000000 		.4byte	0xd4
+ 983 023f 4F020000 		.4byte	0x24f
+ 984 0243 0D       		.uleb128 0xd
+ 985 0244 01       		.uleb128 0x1
+ 986 0245 50       		.byte	0x50
+ 987 0246 02       		.uleb128 0x2
+ 988 0247 74       		.byte	0x74
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 21
+
+
+ 989 0248 00       		.sleb128 0
+ 990 0249 0D       		.uleb128 0xd
+ 991 024a 01       		.uleb128 0x1
+ 992 024b 51       		.byte	0x51
+ 993 024c 01       		.uleb128 0x1
+ 994 024d 37       		.byte	0x37
+ 995 024e 00       		.byte	0
+ 996 024f 0E       		.uleb128 0xe
+ 997 0250 6C000000 		.4byte	.LVL52
+ 998 0254 2E050000 		.4byte	0x52e
+ 999 0258 0C       		.uleb128 0xc
+ 1000 0259 74000000 		.4byte	.LVL55
+ 1001 025d D4000000 		.4byte	0xd4
+ 1002 0261 6B020000 		.4byte	0x26b
+ 1003 0265 0D       		.uleb128 0xd
+ 1004 0266 01       		.uleb128 0x1
+ 1005 0267 51       		.byte	0x51
+ 1006 0268 01       		.uleb128 0x1
+ 1007 0269 30       		.byte	0x30
+ 1008 026a 00       		.byte	0
+ 1009 026b 0E       		.uleb128 0xe
+ 1010 026c 78000000 		.4byte	.LVL56
+ 1011 0270 39050000 		.4byte	0x539
+ 1012 0274 0C       		.uleb128 0xc
+ 1013 0275 80000000 		.4byte	.LVL57
+ 1014 0279 D4000000 		.4byte	0xd4
+ 1015 027d 8D020000 		.4byte	0x28d
+ 1016 0281 0D       		.uleb128 0xd
+ 1017 0282 01       		.uleb128 0x1
+ 1018 0283 50       		.byte	0x50
+ 1019 0284 02       		.uleb128 0x2
+ 1020 0285 74       		.byte	0x74
+ 1021 0286 00       		.sleb128 0
+ 1022 0287 0D       		.uleb128 0xd
+ 1023 0288 01       		.uleb128 0x1
+ 1024 0289 51       		.byte	0x51
+ 1025 028a 01       		.uleb128 0x1
+ 1026 028b 31       		.byte	0x31
+ 1027 028c 00       		.byte	0
+ 1028 028d 0E       		.uleb128 0xe
+ 1029 028e 84000000 		.4byte	.LVL58
+ 1030 0292 44050000 		.4byte	0x544
+ 1031 0296 0C       		.uleb128 0xc
+ 1032 0297 8C000000 		.4byte	.LVL59
+ 1033 029b D4000000 		.4byte	0xd4
+ 1034 029f AF020000 		.4byte	0x2af
+ 1035 02a3 0D       		.uleb128 0xd
+ 1036 02a4 01       		.uleb128 0x1
+ 1037 02a5 50       		.byte	0x50
+ 1038 02a6 02       		.uleb128 0x2
+ 1039 02a7 74       		.byte	0x74
+ 1040 02a8 00       		.sleb128 0
+ 1041 02a9 0D       		.uleb128 0xd
+ 1042 02aa 01       		.uleb128 0x1
+ 1043 02ab 51       		.byte	0x51
+ 1044 02ac 01       		.uleb128 0x1
+ 1045 02ad 32       		.byte	0x32
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 22
+
+
+ 1046 02ae 00       		.byte	0
+ 1047 02af 0E       		.uleb128 0xe
+ 1048 02b0 90000000 		.4byte	.LVL60
+ 1049 02b4 4F050000 		.4byte	0x54f
+ 1050 02b8 0C       		.uleb128 0xc
+ 1051 02b9 98000000 		.4byte	.LVL61
+ 1052 02bd D4000000 		.4byte	0xd4
+ 1053 02c1 D1020000 		.4byte	0x2d1
+ 1054 02c5 0D       		.uleb128 0xd
+ 1055 02c6 01       		.uleb128 0x1
+ 1056 02c7 50       		.byte	0x50
+ 1057 02c8 02       		.uleb128 0x2
+ 1058 02c9 74       		.byte	0x74
+ 1059 02ca 00       		.sleb128 0
+ 1060 02cb 0D       		.uleb128 0xd
+ 1061 02cc 01       		.uleb128 0x1
+ 1062 02cd 51       		.byte	0x51
+ 1063 02ce 01       		.uleb128 0x1
+ 1064 02cf 33       		.byte	0x33
+ 1065 02d0 00       		.byte	0
+ 1066 02d1 0E       		.uleb128 0xe
+ 1067 02d2 9C000000 		.4byte	.LVL62
+ 1068 02d6 5A050000 		.4byte	0x55a
+ 1069 02da 0C       		.uleb128 0xc
+ 1070 02db A4000000 		.4byte	.LVL63
+ 1071 02df D4000000 		.4byte	0xd4
+ 1072 02e3 F3020000 		.4byte	0x2f3
+ 1073 02e7 0D       		.uleb128 0xd
+ 1074 02e8 01       		.uleb128 0x1
+ 1075 02e9 50       		.byte	0x50
+ 1076 02ea 02       		.uleb128 0x2
+ 1077 02eb 74       		.byte	0x74
+ 1078 02ec 00       		.sleb128 0
+ 1079 02ed 0D       		.uleb128 0xd
+ 1080 02ee 01       		.uleb128 0x1
+ 1081 02ef 51       		.byte	0x51
+ 1082 02f0 01       		.uleb128 0x1
+ 1083 02f1 34       		.byte	0x34
+ 1084 02f2 00       		.byte	0
+ 1085 02f3 0E       		.uleb128 0xe
+ 1086 02f4 A8000000 		.4byte	.LVL64
+ 1087 02f8 65050000 		.4byte	0x565
+ 1088 02fc 0C       		.uleb128 0xc
+ 1089 02fd B0000000 		.4byte	.LVL65
+ 1090 0301 D4000000 		.4byte	0xd4
+ 1091 0305 15030000 		.4byte	0x315
+ 1092 0309 0D       		.uleb128 0xd
+ 1093 030a 01       		.uleb128 0x1
+ 1094 030b 50       		.byte	0x50
+ 1095 030c 02       		.uleb128 0x2
+ 1096 030d 74       		.byte	0x74
+ 1097 030e 00       		.sleb128 0
+ 1098 030f 0D       		.uleb128 0xd
+ 1099 0310 01       		.uleb128 0x1
+ 1100 0311 51       		.byte	0x51
+ 1101 0312 01       		.uleb128 0x1
+ 1102 0313 35       		.byte	0x35
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 23
+
+
+ 1103 0314 00       		.byte	0
+ 1104 0315 0E       		.uleb128 0xe
+ 1105 0316 B4000000 		.4byte	.LVL66
+ 1106 031a 70050000 		.4byte	0x570
+ 1107 031e 0C       		.uleb128 0xc
+ 1108 031f BC000000 		.4byte	.LVL67
+ 1109 0323 D4000000 		.4byte	0xd4
+ 1110 0327 37030000 		.4byte	0x337
+ 1111 032b 0D       		.uleb128 0xd
+ 1112 032c 01       		.uleb128 0x1
+ 1113 032d 50       		.byte	0x50
+ 1114 032e 02       		.uleb128 0x2
+ 1115 032f 74       		.byte	0x74
+ 1116 0330 00       		.sleb128 0
+ 1117 0331 0D       		.uleb128 0xd
+ 1118 0332 01       		.uleb128 0x1
+ 1119 0333 51       		.byte	0x51
+ 1120 0334 01       		.uleb128 0x1
+ 1121 0335 36       		.byte	0x36
+ 1122 0336 00       		.byte	0
+ 1123 0337 0E       		.uleb128 0xe
+ 1124 0338 C0000000 		.4byte	.LVL68
+ 1125 033c 7B050000 		.4byte	0x57b
+ 1126 0340 0C       		.uleb128 0xc
+ 1127 0341 C8000000 		.4byte	.LVL69
+ 1128 0345 D4000000 		.4byte	0xd4
+ 1129 0349 59030000 		.4byte	0x359
+ 1130 034d 0D       		.uleb128 0xd
+ 1131 034e 01       		.uleb128 0x1
+ 1132 034f 50       		.byte	0x50
+ 1133 0350 02       		.uleb128 0x2
+ 1134 0351 74       		.byte	0x74
+ 1135 0352 00       		.sleb128 0
+ 1136 0353 0D       		.uleb128 0xd
+ 1137 0354 01       		.uleb128 0x1
+ 1138 0355 51       		.byte	0x51
+ 1139 0356 01       		.uleb128 0x1
+ 1140 0357 37       		.byte	0x37
+ 1141 0358 00       		.byte	0
+ 1142 0359 0E       		.uleb128 0xe
+ 1143 035a CC000000 		.4byte	.LVL70
+ 1144 035e 86050000 		.4byte	0x586
+ 1145 0362 00       		.byte	0
+ 1146 0363 0B       		.uleb128 0xb
+ 1147 0364 91010000 		.4byte	.LASF22
+ 1148 0368 01       		.byte	0x1
+ 1149 0369 6C       		.byte	0x6c
+ 1150 036a 00000000 		.4byte	.LFB34
+ 1151 036e 4C000000 		.4byte	.LFE34-.LFB34
+ 1152 0372 01       		.uleb128 0x1
+ 1153 0373 9C       		.byte	0x9c
+ 1154 0374 F9030000 		.4byte	0x3f9
+ 1155 0378 0F       		.uleb128 0xf
+ 1156 0379 6B00     		.ascii	"k\000"
+ 1157 037b 01       		.byte	0x1
+ 1158 037c 6C       		.byte	0x6c
+ 1159 037d 5D000000 		.4byte	0x5d
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 24
+
+
+ 1160 0381 7E020000 		.4byte	.LLST5
+ 1161 0385 10       		.uleb128 0x10
+ 1162 0386 6E00     		.ascii	"n\000"
+ 1163 0388 01       		.byte	0x1
+ 1164 0389 6E       		.byte	0x6e
+ 1165 038a 5D000000 		.4byte	0x5d
+ 1166 038e AA020000 		.4byte	.LLST6
+ 1167 0392 0C       		.uleb128 0xc
+ 1168 0393 0C000000 		.4byte	.LVL73
+ 1169 0397 1B010000 		.4byte	0x11b
+ 1170 039b AB030000 		.4byte	0x3ab
+ 1171 039f 0D       		.uleb128 0xd
+ 1172 03a0 01       		.uleb128 0x1
+ 1173 03a1 50       		.byte	0x50
+ 1174 03a2 02       		.uleb128 0x2
+ 1175 03a3 09       		.byte	0x9
+ 1176 03a4 FF       		.byte	0xff
+ 1177 03a5 0D       		.uleb128 0xd
+ 1178 03a6 01       		.uleb128 0x1
+ 1179 03a7 51       		.byte	0x51
+ 1180 03a8 01       		.uleb128 0x1
+ 1181 03a9 31       		.byte	0x31
+ 1182 03aa 00       		.byte	0
+ 1183 03ab 0C       		.uleb128 0xc
+ 1184 03ac 14000000 		.4byte	.LVL74
+ 1185 03b0 1B010000 		.4byte	0x11b
+ 1186 03b4 C3030000 		.4byte	0x3c3
+ 1187 03b8 0D       		.uleb128 0xd
+ 1188 03b9 01       		.uleb128 0x1
+ 1189 03ba 50       		.byte	0x50
+ 1190 03bb 01       		.uleb128 0x1
+ 1191 03bc 30       		.byte	0x30
+ 1192 03bd 0D       		.uleb128 0xd
+ 1193 03be 01       		.uleb128 0x1
+ 1194 03bf 51       		.byte	0x51
+ 1195 03c0 01       		.uleb128 0x1
+ 1196 03c1 30       		.byte	0x30
+ 1197 03c2 00       		.byte	0
+ 1198 03c3 0C       		.uleb128 0xc
+ 1199 03c4 26000000 		.4byte	.LVL76
+ 1200 03c8 1B010000 		.4byte	0x11b
+ 1201 03cc D6030000 		.4byte	0x3d6
+ 1202 03d0 0D       		.uleb128 0xd
+ 1203 03d1 01       		.uleb128 0x1
+ 1204 03d2 51       		.byte	0x51
+ 1205 03d3 01       		.uleb128 0x1
+ 1206 03d4 31       		.byte	0x31
+ 1207 03d5 00       		.byte	0
+ 1208 03d6 0C       		.uleb128 0xc
+ 1209 03d7 34000000 		.4byte	.LVL77
+ 1210 03db 1B010000 		.4byte	0x11b
+ 1211 03df E9030000 		.4byte	0x3e9
+ 1212 03e3 0D       		.uleb128 0xd
+ 1213 03e4 01       		.uleb128 0x1
+ 1214 03e5 51       		.byte	0x51
+ 1215 03e6 01       		.uleb128 0x1
+ 1216 03e7 30       		.byte	0x30
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 25
+
+
+ 1217 03e8 00       		.byte	0
+ 1218 03e9 11       		.uleb128 0x11
+ 1219 03ea 3A000000 		.4byte	.LVL78
+ 1220 03ee 91050000 		.4byte	0x591
+ 1221 03f2 0D       		.uleb128 0xd
+ 1222 03f3 01       		.uleb128 0x1
+ 1223 03f4 50       		.byte	0x50
+ 1224 03f5 01       		.uleb128 0x1
+ 1225 03f6 32       		.byte	0x32
+ 1226 03f7 00       		.byte	0
+ 1227 03f8 00       		.byte	0
+ 1228 03f9 12       		.uleb128 0x12
+ 1229 03fa C7020000 		.4byte	.LASF24
+ 1230 03fe 01       		.byte	0x1
+ 1231 03ff 7B       		.byte	0x7b
+ 1232 0400 00000000 		.4byte	.LFB35
+ 1233 0404 42000000 		.4byte	.LFE35-.LFB35
+ 1234 0408 01       		.uleb128 0x1
+ 1235 0409 9C       		.byte	0x9c
+ 1236 040a 9F040000 		.4byte	0x49f
+ 1237 040e 10       		.uleb128 0x10
+ 1238 040f 72756E00 		.ascii	"run\000"
+ 1239 0413 01       		.byte	0x1
+ 1240 0414 7D       		.byte	0x7d
+ 1241 0415 5D000000 		.4byte	0x5d
+ 1242 0419 C9020000 		.4byte	.LLST7
+ 1243 041d 0A       		.uleb128 0xa
+ 1244 041e D5000000 		.4byte	.LASF25
+ 1245 0422 01       		.byte	0x1
+ 1246 0423 7D       		.byte	0x7d
+ 1247 0424 5D000000 		.4byte	0x5d
+ 1248 0428 E8020000 		.4byte	.LLST8
+ 1249 042c 0C       		.uleb128 0xc
+ 1250 042d 0A000000 		.4byte	.LVL82
+ 1251 0431 1B010000 		.4byte	0x11b
+ 1252 0435 45040000 		.4byte	0x445
+ 1253 0439 0D       		.uleb128 0xd
+ 1254 043a 01       		.uleb128 0x1
+ 1255 043b 50       		.byte	0x50
+ 1256 043c 02       		.uleb128 0x2
+ 1257 043d 09       		.byte	0x9
+ 1258 043e FF       		.byte	0xff
+ 1259 043f 0D       		.uleb128 0xd
+ 1260 0440 01       		.uleb128 0x1
+ 1261 0441 51       		.byte	0x51
+ 1262 0442 01       		.uleb128 0x1
+ 1263 0443 31       		.byte	0x31
+ 1264 0444 00       		.byte	0
+ 1265 0445 0C       		.uleb128 0xc
+ 1266 0446 12000000 		.4byte	.LVL83
+ 1267 044a 1B010000 		.4byte	0x11b
+ 1268 044e 5D040000 		.4byte	0x45d
+ 1269 0452 0D       		.uleb128 0xd
+ 1270 0453 01       		.uleb128 0x1
+ 1271 0454 50       		.byte	0x50
+ 1272 0455 01       		.uleb128 0x1
+ 1273 0456 30       		.byte	0x30
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 26
+
+
+ 1274 0457 0D       		.uleb128 0xd
+ 1275 0458 01       		.uleb128 0x1
+ 1276 0459 51       		.byte	0x51
+ 1277 045a 01       		.uleb128 0x1
+ 1278 045b 30       		.byte	0x30
+ 1279 045c 00       		.byte	0
+ 1280 045d 0C       		.uleb128 0xc
+ 1281 045e 1C000000 		.4byte	.LVL85
+ 1282 0462 63030000 		.4byte	0x363
+ 1283 0466 71040000 		.4byte	0x471
+ 1284 046a 0D       		.uleb128 0xd
+ 1285 046b 01       		.uleb128 0x1
+ 1286 046c 50       		.byte	0x50
+ 1287 046d 02       		.uleb128 0x2
+ 1288 046e 75       		.byte	0x75
+ 1289 046f 00       		.sleb128 0
+ 1290 0470 00       		.byte	0
+ 1291 0471 0C       		.uleb128 0xc
+ 1292 0472 32000000 		.4byte	.LVL89
+ 1293 0476 1B010000 		.4byte	0x11b
+ 1294 047a 8A040000 		.4byte	0x48a
+ 1295 047e 0D       		.uleb128 0xd
+ 1296 047f 01       		.uleb128 0x1
+ 1297 0480 50       		.byte	0x50
+ 1298 0481 02       		.uleb128 0x2
+ 1299 0482 09       		.byte	0x9
+ 1300 0483 FF       		.byte	0xff
+ 1301 0484 0D       		.uleb128 0xd
+ 1302 0485 01       		.uleb128 0x1
+ 1303 0486 51       		.byte	0x51
+ 1304 0487 01       		.uleb128 0x1
+ 1305 0488 31       		.byte	0x31
+ 1306 0489 00       		.byte	0
+ 1307 048a 11       		.uleb128 0x11
+ 1308 048b 3A000000 		.4byte	.LVL90
+ 1309 048f 1B010000 		.4byte	0x11b
+ 1310 0493 0D       		.uleb128 0xd
+ 1311 0494 01       		.uleb128 0x1
+ 1312 0495 50       		.byte	0x50
+ 1313 0496 01       		.uleb128 0x1
+ 1314 0497 30       		.byte	0x30
+ 1315 0498 0D       		.uleb128 0xd
+ 1316 0499 01       		.uleb128 0x1
+ 1317 049a 51       		.byte	0x51
+ 1318 049b 01       		.uleb128 0x1
+ 1319 049c 30       		.byte	0x30
+ 1320 049d 00       		.byte	0
+ 1321 049e 00       		.byte	0
+ 1322 049f 13       		.uleb128 0x13
+ 1323 04a0 6B000000 		.4byte	0x6b
+ 1324 04a4 AF040000 		.4byte	0x4af
+ 1325 04a8 14       		.uleb128 0x14
+ 1326 04a9 8C000000 		.4byte	0x8c
+ 1327 04ad 07       		.byte	0x7
+ 1328 04ae 00       		.byte	0
+ 1329 04af 15       		.uleb128 0x15
+ 1330 04b0 35010000 		.4byte	.LASF26
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 27
+
+
+ 1331 04b4 01       		.byte	0x1
+ 1332 04b5 0E       		.byte	0xe
+ 1333 04b6 9F040000 		.4byte	0x49f
+ 1334 04ba 05       		.uleb128 0x5
+ 1335 04bb 03       		.byte	0x3
+ 1336 04bc 00000000 		.4byte	control
+ 1337 04c0 13       		.uleb128 0x13
+ 1338 04c1 6B000000 		.4byte	0x6b
+ 1339 04c5 D0040000 		.4byte	0x4d0
+ 1340 04c9 14       		.uleb128 0x14
+ 1341 04ca 8C000000 		.4byte	0x8c
+ 1342 04ce AF       		.byte	0xaf
+ 1343 04cf 00       		.byte	0
+ 1344 04d0 15       		.uleb128 0x15
+ 1345 04d1 95000000 		.4byte	.LASF27
+ 1346 04d5 01       		.byte	0x1
+ 1347 04d6 10       		.byte	0x10
+ 1348 04d7 C0040000 		.4byte	0x4c0
+ 1349 04db 05       		.uleb128 0x5
+ 1350 04dc 03       		.byte	0x3
+ 1351 04dd 00000000 		.4byte	data
+ 1352 04e1 16       		.uleb128 0x16
+ 1353 04e2 F5020000 		.4byte	.LASF28
+ 1354 04e6 F5020000 		.4byte	.LASF28
+ 1355 04ea 03       		.byte	0x3
+ 1356 04eb 33       		.byte	0x33
+ 1357 04ec 16       		.uleb128 0x16
+ 1358 04ed 42030000 		.4byte	.LASF29
+ 1359 04f1 42030000 		.4byte	.LASF29
+ 1360 04f5 04       		.byte	0x4
+ 1361 04f6 33       		.byte	0x33
+ 1362 04f7 16       		.uleb128 0x16
+ 1363 04f8 5C000000 		.4byte	.LASF30
+ 1364 04fc 5C000000 		.4byte	.LASF30
+ 1365 0500 05       		.byte	0x5
+ 1366 0501 33       		.byte	0x33
+ 1367 0502 16       		.uleb128 0x16
+ 1368 0503 9A000000 		.4byte	.LASF31
+ 1369 0507 9A000000 		.4byte	.LASF31
+ 1370 050b 06       		.byte	0x6
+ 1371 050c 33       		.byte	0x33
+ 1372 050d 16       		.uleb128 0x16
+ 1373 050e DB000000 		.4byte	.LASF32
+ 1374 0512 DB000000 		.4byte	.LASF32
+ 1375 0516 07       		.byte	0x7
+ 1376 0517 33       		.byte	0x33
+ 1377 0518 16       		.uleb128 0x16
+ 1378 0519 D9020000 		.4byte	.LASF33
+ 1379 051d D9020000 		.4byte	.LASF33
+ 1380 0521 08       		.byte	0x8
+ 1381 0522 33       		.byte	0x33
+ 1382 0523 16       		.uleb128 0x16
+ 1383 0524 7E010000 		.4byte	.LASF34
+ 1384 0528 7E010000 		.4byte	.LASF34
+ 1385 052c 09       		.byte	0x9
+ 1386 052d 33       		.byte	0x33
+ 1387 052e 16       		.uleb128 0x16
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 28
+
+
+ 1388 052f B6010000 		.4byte	.LASF35
+ 1389 0533 B6010000 		.4byte	.LASF35
+ 1390 0537 0A       		.byte	0xa
+ 1391 0538 33       		.byte	0x33
+ 1392 0539 16       		.uleb128 0x16
+ 1393 053a 1F030000 		.4byte	.LASF36
+ 1394 053e 1F030000 		.4byte	.LASF36
+ 1395 0542 0B       		.byte	0xb
+ 1396 0543 33       		.byte	0x33
+ 1397 0544 16       		.uleb128 0x16
+ 1398 0545 49000000 		.4byte	.LASF37
+ 1399 0549 49000000 		.4byte	.LASF37
+ 1400 054d 0C       		.byte	0xc
+ 1401 054e 33       		.byte	0x33
+ 1402 054f 16       		.uleb128 0x16
+ 1403 0550 6F000000 		.4byte	.LASF38
+ 1404 0554 6F000000 		.4byte	.LASF38
+ 1405 0558 0D       		.byte	0xd
+ 1406 0559 33       		.byte	0x33
+ 1407 055a 16       		.uleb128 0x16
+ 1408 055b B5000000 		.4byte	.LASF39
+ 1409 055f B5000000 		.4byte	.LASF39
+ 1410 0563 0E       		.byte	0xe
+ 1411 0564 33       		.byte	0x33
+ 1412 0565 16       		.uleb128 0x16
+ 1413 0566 0A010000 		.4byte	.LASF40
+ 1414 056a 0A010000 		.4byte	.LASF40
+ 1415 056e 0F       		.byte	0xf
+ 1416 056f 33       		.byte	0x33
+ 1417 0570 16       		.uleb128 0x16
+ 1418 0571 56010000 		.4byte	.LASF41
+ 1419 0575 56010000 		.4byte	.LASF41
+ 1420 0579 10       		.byte	0x10
+ 1421 057a 33       		.byte	0x33
+ 1422 057b 16       		.uleb128 0x16
+ 1423 057c A3010000 		.4byte	.LASF42
+ 1424 0580 A3010000 		.4byte	.LASF42
+ 1425 0584 11       		.byte	0x11
+ 1426 0585 33       		.byte	0x33
+ 1427 0586 16       		.uleb128 0x16
+ 1428 0587 ED010000 		.4byte	.LASF43
+ 1429 058b ED010000 		.4byte	.LASF43
+ 1430 058f 12       		.byte	0x12
+ 1431 0590 33       		.byte	0x33
+ 1432 0591 16       		.uleb128 0x16
+ 1433 0592 AD000000 		.4byte	.LASF44
+ 1434 0596 AD000000 		.4byte	.LASF44
+ 1435 059a 13       		.byte	0x13
+ 1436 059b EC       		.byte	0xec
+ 1437 059c 00       		.byte	0
+ 1438              		.section	.debug_abbrev,"",%progbits
+ 1439              	.Ldebug_abbrev0:
+ 1440 0000 01       		.uleb128 0x1
+ 1441 0001 11       		.uleb128 0x11
+ 1442 0002 01       		.byte	0x1
+ 1443 0003 25       		.uleb128 0x25
+ 1444 0004 0E       		.uleb128 0xe
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 29
+
+
+ 1445 0005 13       		.uleb128 0x13
+ 1446 0006 0B       		.uleb128 0xb
+ 1447 0007 03       		.uleb128 0x3
+ 1448 0008 0E       		.uleb128 0xe
+ 1449 0009 1B       		.uleb128 0x1b
+ 1450 000a 0E       		.uleb128 0xe
+ 1451 000b 55       		.uleb128 0x55
+ 1452 000c 17       		.uleb128 0x17
+ 1453 000d 11       		.uleb128 0x11
+ 1454 000e 01       		.uleb128 0x1
+ 1455 000f 10       		.uleb128 0x10
+ 1456 0010 17       		.uleb128 0x17
+ 1457 0011 00       		.byte	0
+ 1458 0012 00       		.byte	0
+ 1459 0013 02       		.uleb128 0x2
+ 1460 0014 24       		.uleb128 0x24
+ 1461 0015 00       		.byte	0
+ 1462 0016 0B       		.uleb128 0xb
+ 1463 0017 0B       		.uleb128 0xb
+ 1464 0018 3E       		.uleb128 0x3e
+ 1465 0019 0B       		.uleb128 0xb
+ 1466 001a 03       		.uleb128 0x3
+ 1467 001b 0E       		.uleb128 0xe
+ 1468 001c 00       		.byte	0
+ 1469 001d 00       		.byte	0
+ 1470 001e 03       		.uleb128 0x3
+ 1471 001f 24       		.uleb128 0x24
+ 1472 0020 00       		.byte	0
+ 1473 0021 0B       		.uleb128 0xb
+ 1474 0022 0B       		.uleb128 0xb
+ 1475 0023 3E       		.uleb128 0x3e
+ 1476 0024 0B       		.uleb128 0xb
+ 1477 0025 03       		.uleb128 0x3
+ 1478 0026 08       		.uleb128 0x8
+ 1479 0027 00       		.byte	0
+ 1480 0028 00       		.byte	0
+ 1481 0029 04       		.uleb128 0x4
+ 1482 002a 16       		.uleb128 0x16
+ 1483 002b 00       		.byte	0
+ 1484 002c 03       		.uleb128 0x3
+ 1485 002d 0E       		.uleb128 0xe
+ 1486 002e 3A       		.uleb128 0x3a
+ 1487 002f 0B       		.uleb128 0xb
+ 1488 0030 3B       		.uleb128 0x3b
+ 1489 0031 05       		.uleb128 0x5
+ 1490 0032 49       		.uleb128 0x49
+ 1491 0033 13       		.uleb128 0x13
+ 1492 0034 00       		.byte	0
+ 1493 0035 00       		.byte	0
+ 1494 0036 05       		.uleb128 0x5
+ 1495 0037 04       		.uleb128 0x4
+ 1496 0038 01       		.byte	0x1
+ 1497 0039 03       		.uleb128 0x3
+ 1498 003a 0E       		.uleb128 0xe
+ 1499 003b 0B       		.uleb128 0xb
+ 1500 003c 0B       		.uleb128 0xb
+ 1501 003d 49       		.uleb128 0x49
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 30
+
+
+ 1502 003e 13       		.uleb128 0x13
+ 1503 003f 3A       		.uleb128 0x3a
+ 1504 0040 0B       		.uleb128 0xb
+ 1505 0041 3B       		.uleb128 0x3b
+ 1506 0042 0B       		.uleb128 0xb
+ 1507 0043 01       		.uleb128 0x1
+ 1508 0044 13       		.uleb128 0x13
+ 1509 0045 00       		.byte	0
+ 1510 0046 00       		.byte	0
+ 1511 0047 06       		.uleb128 0x6
+ 1512 0048 28       		.uleb128 0x28
+ 1513 0049 00       		.byte	0
+ 1514 004a 03       		.uleb128 0x3
+ 1515 004b 08       		.uleb128 0x8
+ 1516 004c 1C       		.uleb128 0x1c
+ 1517 004d 0B       		.uleb128 0xb
+ 1518 004e 00       		.byte	0
+ 1519 004f 00       		.byte	0
+ 1520 0050 07       		.uleb128 0x7
+ 1521 0051 28       		.uleb128 0x28
+ 1522 0052 00       		.byte	0
+ 1523 0053 03       		.uleb128 0x3
+ 1524 0054 0E       		.uleb128 0xe
+ 1525 0055 1C       		.uleb128 0x1c
+ 1526 0056 0B       		.uleb128 0xb
+ 1527 0057 00       		.byte	0
+ 1528 0058 00       		.byte	0
+ 1529 0059 08       		.uleb128 0x8
+ 1530 005a 2E       		.uleb128 0x2e
+ 1531 005b 01       		.byte	0x1
+ 1532 005c 3F       		.uleb128 0x3f
+ 1533 005d 19       		.uleb128 0x19
+ 1534 005e 03       		.uleb128 0x3
+ 1535 005f 0E       		.uleb128 0xe
+ 1536 0060 3A       		.uleb128 0x3a
+ 1537 0061 0B       		.uleb128 0xb
+ 1538 0062 3B       		.uleb128 0x3b
+ 1539 0063 0B       		.uleb128 0xb
+ 1540 0064 27       		.uleb128 0x27
+ 1541 0065 19       		.uleb128 0x19
+ 1542 0066 49       		.uleb128 0x49
+ 1543 0067 13       		.uleb128 0x13
+ 1544 0068 11       		.uleb128 0x11
+ 1545 0069 01       		.uleb128 0x1
+ 1546 006a 12       		.uleb128 0x12
+ 1547 006b 06       		.uleb128 0x6
+ 1548 006c 40       		.uleb128 0x40
+ 1549 006d 18       		.uleb128 0x18
+ 1550 006e 9742     		.uleb128 0x2117
+ 1551 0070 19       		.uleb128 0x19
+ 1552 0071 01       		.uleb128 0x1
+ 1553 0072 13       		.uleb128 0x13
+ 1554 0073 00       		.byte	0
+ 1555 0074 00       		.byte	0
+ 1556 0075 09       		.uleb128 0x9
+ 1557 0076 05       		.uleb128 0x5
+ 1558 0077 00       		.byte	0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 31
+
+
+ 1559 0078 03       		.uleb128 0x3
+ 1560 0079 0E       		.uleb128 0xe
+ 1561 007a 3A       		.uleb128 0x3a
+ 1562 007b 0B       		.uleb128 0xb
+ 1563 007c 3B       		.uleb128 0x3b
+ 1564 007d 0B       		.uleb128 0xb
+ 1565 007e 49       		.uleb128 0x49
+ 1566 007f 13       		.uleb128 0x13
+ 1567 0080 02       		.uleb128 0x2
+ 1568 0081 17       		.uleb128 0x17
+ 1569 0082 00       		.byte	0
+ 1570 0083 00       		.byte	0
+ 1571 0084 0A       		.uleb128 0xa
+ 1572 0085 34       		.uleb128 0x34
+ 1573 0086 00       		.byte	0
+ 1574 0087 03       		.uleb128 0x3
+ 1575 0088 0E       		.uleb128 0xe
+ 1576 0089 3A       		.uleb128 0x3a
+ 1577 008a 0B       		.uleb128 0xb
+ 1578 008b 3B       		.uleb128 0x3b
+ 1579 008c 0B       		.uleb128 0xb
+ 1580 008d 49       		.uleb128 0x49
+ 1581 008e 13       		.uleb128 0x13
+ 1582 008f 02       		.uleb128 0x2
+ 1583 0090 17       		.uleb128 0x17
+ 1584 0091 00       		.byte	0
+ 1585 0092 00       		.byte	0
+ 1586 0093 0B       		.uleb128 0xb
+ 1587 0094 2E       		.uleb128 0x2e
+ 1588 0095 01       		.byte	0x1
+ 1589 0096 3F       		.uleb128 0x3f
+ 1590 0097 19       		.uleb128 0x19
+ 1591 0098 03       		.uleb128 0x3
+ 1592 0099 0E       		.uleb128 0xe
+ 1593 009a 3A       		.uleb128 0x3a
+ 1594 009b 0B       		.uleb128 0xb
+ 1595 009c 3B       		.uleb128 0x3b
+ 1596 009d 0B       		.uleb128 0xb
+ 1597 009e 27       		.uleb128 0x27
+ 1598 009f 19       		.uleb128 0x19
+ 1599 00a0 11       		.uleb128 0x11
+ 1600 00a1 01       		.uleb128 0x1
+ 1601 00a2 12       		.uleb128 0x12
+ 1602 00a3 06       		.uleb128 0x6
+ 1603 00a4 40       		.uleb128 0x40
+ 1604 00a5 18       		.uleb128 0x18
+ 1605 00a6 9742     		.uleb128 0x2117
+ 1606 00a8 19       		.uleb128 0x19
+ 1607 00a9 01       		.uleb128 0x1
+ 1608 00aa 13       		.uleb128 0x13
+ 1609 00ab 00       		.byte	0
+ 1610 00ac 00       		.byte	0
+ 1611 00ad 0C       		.uleb128 0xc
+ 1612 00ae 898201   		.uleb128 0x4109
+ 1613 00b1 01       		.byte	0x1
+ 1614 00b2 11       		.uleb128 0x11
+ 1615 00b3 01       		.uleb128 0x1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 32
+
+
+ 1616 00b4 31       		.uleb128 0x31
+ 1617 00b5 13       		.uleb128 0x13
+ 1618 00b6 01       		.uleb128 0x1
+ 1619 00b7 13       		.uleb128 0x13
+ 1620 00b8 00       		.byte	0
+ 1621 00b9 00       		.byte	0
+ 1622 00ba 0D       		.uleb128 0xd
+ 1623 00bb 8A8201   		.uleb128 0x410a
+ 1624 00be 00       		.byte	0
+ 1625 00bf 02       		.uleb128 0x2
+ 1626 00c0 18       		.uleb128 0x18
+ 1627 00c1 9142     		.uleb128 0x2111
+ 1628 00c3 18       		.uleb128 0x18
+ 1629 00c4 00       		.byte	0
+ 1630 00c5 00       		.byte	0
+ 1631 00c6 0E       		.uleb128 0xe
+ 1632 00c7 898201   		.uleb128 0x4109
+ 1633 00ca 00       		.byte	0
+ 1634 00cb 11       		.uleb128 0x11
+ 1635 00cc 01       		.uleb128 0x1
+ 1636 00cd 31       		.uleb128 0x31
+ 1637 00ce 13       		.uleb128 0x13
+ 1638 00cf 00       		.byte	0
+ 1639 00d0 00       		.byte	0
+ 1640 00d1 0F       		.uleb128 0xf
+ 1641 00d2 05       		.uleb128 0x5
+ 1642 00d3 00       		.byte	0
+ 1643 00d4 03       		.uleb128 0x3
+ 1644 00d5 08       		.uleb128 0x8
+ 1645 00d6 3A       		.uleb128 0x3a
+ 1646 00d7 0B       		.uleb128 0xb
+ 1647 00d8 3B       		.uleb128 0x3b
+ 1648 00d9 0B       		.uleb128 0xb
+ 1649 00da 49       		.uleb128 0x49
+ 1650 00db 13       		.uleb128 0x13
+ 1651 00dc 02       		.uleb128 0x2
+ 1652 00dd 17       		.uleb128 0x17
+ 1653 00de 00       		.byte	0
+ 1654 00df 00       		.byte	0
+ 1655 00e0 10       		.uleb128 0x10
+ 1656 00e1 34       		.uleb128 0x34
+ 1657 00e2 00       		.byte	0
+ 1658 00e3 03       		.uleb128 0x3
+ 1659 00e4 08       		.uleb128 0x8
+ 1660 00e5 3A       		.uleb128 0x3a
+ 1661 00e6 0B       		.uleb128 0xb
+ 1662 00e7 3B       		.uleb128 0x3b
+ 1663 00e8 0B       		.uleb128 0xb
+ 1664 00e9 49       		.uleb128 0x49
+ 1665 00ea 13       		.uleb128 0x13
+ 1666 00eb 02       		.uleb128 0x2
+ 1667 00ec 17       		.uleb128 0x17
+ 1668 00ed 00       		.byte	0
+ 1669 00ee 00       		.byte	0
+ 1670 00ef 11       		.uleb128 0x11
+ 1671 00f0 898201   		.uleb128 0x4109
+ 1672 00f3 01       		.byte	0x1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 33
+
+
+ 1673 00f4 11       		.uleb128 0x11
+ 1674 00f5 01       		.uleb128 0x1
+ 1675 00f6 31       		.uleb128 0x31
+ 1676 00f7 13       		.uleb128 0x13
+ 1677 00f8 00       		.byte	0
+ 1678 00f9 00       		.byte	0
+ 1679 00fa 12       		.uleb128 0x12
+ 1680 00fb 2E       		.uleb128 0x2e
+ 1681 00fc 01       		.byte	0x1
+ 1682 00fd 3F       		.uleb128 0x3f
+ 1683 00fe 19       		.uleb128 0x19
+ 1684 00ff 03       		.uleb128 0x3
+ 1685 0100 0E       		.uleb128 0xe
+ 1686 0101 3A       		.uleb128 0x3a
+ 1687 0102 0B       		.uleb128 0xb
+ 1688 0103 3B       		.uleb128 0x3b
+ 1689 0104 0B       		.uleb128 0xb
+ 1690 0105 8701     		.uleb128 0x87
+ 1691 0107 19       		.uleb128 0x19
+ 1692 0108 11       		.uleb128 0x11
+ 1693 0109 01       		.uleb128 0x1
+ 1694 010a 12       		.uleb128 0x12
+ 1695 010b 06       		.uleb128 0x6
+ 1696 010c 40       		.uleb128 0x40
+ 1697 010d 18       		.uleb128 0x18
+ 1698 010e 9742     		.uleb128 0x2117
+ 1699 0110 19       		.uleb128 0x19
+ 1700 0111 01       		.uleb128 0x1
+ 1701 0112 13       		.uleb128 0x13
+ 1702 0113 00       		.byte	0
+ 1703 0114 00       		.byte	0
+ 1704 0115 13       		.uleb128 0x13
+ 1705 0116 01       		.uleb128 0x1
+ 1706 0117 01       		.byte	0x1
+ 1707 0118 49       		.uleb128 0x49
+ 1708 0119 13       		.uleb128 0x13
+ 1709 011a 01       		.uleb128 0x1
+ 1710 011b 13       		.uleb128 0x13
+ 1711 011c 00       		.byte	0
+ 1712 011d 00       		.byte	0
+ 1713 011e 14       		.uleb128 0x14
+ 1714 011f 21       		.uleb128 0x21
+ 1715 0120 00       		.byte	0
+ 1716 0121 49       		.uleb128 0x49
+ 1717 0122 13       		.uleb128 0x13
+ 1718 0123 2F       		.uleb128 0x2f
+ 1719 0124 0B       		.uleb128 0xb
+ 1720 0125 00       		.byte	0
+ 1721 0126 00       		.byte	0
+ 1722 0127 15       		.uleb128 0x15
+ 1723 0128 34       		.uleb128 0x34
+ 1724 0129 00       		.byte	0
+ 1725 012a 03       		.uleb128 0x3
+ 1726 012b 0E       		.uleb128 0xe
+ 1727 012c 3A       		.uleb128 0x3a
+ 1728 012d 0B       		.uleb128 0xb
+ 1729 012e 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 34
+
+
+ 1730 012f 0B       		.uleb128 0xb
+ 1731 0130 49       		.uleb128 0x49
+ 1732 0131 13       		.uleb128 0x13
+ 1733 0132 3F       		.uleb128 0x3f
+ 1734 0133 19       		.uleb128 0x19
+ 1735 0134 02       		.uleb128 0x2
+ 1736 0135 18       		.uleb128 0x18
+ 1737 0136 00       		.byte	0
+ 1738 0137 00       		.byte	0
+ 1739 0138 16       		.uleb128 0x16
+ 1740 0139 2E       		.uleb128 0x2e
+ 1741 013a 00       		.byte	0
+ 1742 013b 3F       		.uleb128 0x3f
+ 1743 013c 19       		.uleb128 0x19
+ 1744 013d 3C       		.uleb128 0x3c
+ 1745 013e 19       		.uleb128 0x19
+ 1746 013f 6E       		.uleb128 0x6e
+ 1747 0140 0E       		.uleb128 0xe
+ 1748 0141 03       		.uleb128 0x3
+ 1749 0142 0E       		.uleb128 0xe
+ 1750 0143 3A       		.uleb128 0x3a
+ 1751 0144 0B       		.uleb128 0xb
+ 1752 0145 3B       		.uleb128 0x3b
+ 1753 0146 0B       		.uleb128 0xb
+ 1754 0147 00       		.byte	0
+ 1755 0148 00       		.byte	0
+ 1756 0149 00       		.byte	0
+ 1757              		.section	.debug_loc,"",%progbits
+ 1758              	.Ldebug_loc0:
+ 1759              	.LLST0:
+ 1760 0000 00000000 		.4byte	.LVL0
+ 1761 0004 12000000 		.4byte	.LVL2
+ 1762 0008 0100     		.2byte	0x1
+ 1763 000a 50       		.byte	0x50
+ 1764 000b 12000000 		.4byte	.LVL2
+ 1765 000f 14000000 		.4byte	.LVL3
+ 1766 0013 0400     		.2byte	0x4
+ 1767 0015 F3       		.byte	0xf3
+ 1768 0016 01       		.uleb128 0x1
+ 1769 0017 50       		.byte	0x50
+ 1770 0018 9F       		.byte	0x9f
+ 1771 0019 14000000 		.4byte	.LVL3
+ 1772 001d 1A000000 		.4byte	.LVL4
+ 1773 0021 0100     		.2byte	0x1
+ 1774 0023 50       		.byte	0x50
+ 1775 0024 1A000000 		.4byte	.LVL4
+ 1776 0028 1C000000 		.4byte	.LVL5
+ 1777 002c 0400     		.2byte	0x4
+ 1778 002e F3       		.byte	0xf3
+ 1779 002f 01       		.uleb128 0x1
+ 1780 0030 50       		.byte	0x50
+ 1781 0031 9F       		.byte	0x9f
+ 1782 0032 1C000000 		.4byte	.LVL5
+ 1783 0036 22000000 		.4byte	.LVL6
+ 1784 003a 0100     		.2byte	0x1
+ 1785 003c 50       		.byte	0x50
+ 1786 003d 22000000 		.4byte	.LVL6
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 35
+
+
+ 1787 0041 24000000 		.4byte	.LVL7
+ 1788 0045 0400     		.2byte	0x4
+ 1789 0047 F3       		.byte	0xf3
+ 1790 0048 01       		.uleb128 0x1
+ 1791 0049 50       		.byte	0x50
+ 1792 004a 9F       		.byte	0x9f
+ 1793 004b 24000000 		.4byte	.LVL7
+ 1794 004f 2A000000 		.4byte	.LVL8
+ 1795 0053 0100     		.2byte	0x1
+ 1796 0055 50       		.byte	0x50
+ 1797 0056 2A000000 		.4byte	.LVL8
+ 1798 005a 2C000000 		.4byte	.LVL9
+ 1799 005e 0400     		.2byte	0x4
+ 1800 0060 F3       		.byte	0xf3
+ 1801 0061 01       		.uleb128 0x1
+ 1802 0062 50       		.byte	0x50
+ 1803 0063 9F       		.byte	0x9f
+ 1804 0064 2C000000 		.4byte	.LVL9
+ 1805 0068 32000000 		.4byte	.LVL10
+ 1806 006c 0100     		.2byte	0x1
+ 1807 006e 50       		.byte	0x50
+ 1808 006f 32000000 		.4byte	.LVL10
+ 1809 0073 34000000 		.4byte	.LVL11
+ 1810 0077 0400     		.2byte	0x4
+ 1811 0079 F3       		.byte	0xf3
+ 1812 007a 01       		.uleb128 0x1
+ 1813 007b 50       		.byte	0x50
+ 1814 007c 9F       		.byte	0x9f
+ 1815 007d 34000000 		.4byte	.LVL11
+ 1816 0081 3A000000 		.4byte	.LVL12
+ 1817 0085 0100     		.2byte	0x1
+ 1818 0087 50       		.byte	0x50
+ 1819 0088 3A000000 		.4byte	.LVL12
+ 1820 008c 3C000000 		.4byte	.LVL13
+ 1821 0090 0400     		.2byte	0x4
+ 1822 0092 F3       		.byte	0xf3
+ 1823 0093 01       		.uleb128 0x1
+ 1824 0094 50       		.byte	0x50
+ 1825 0095 9F       		.byte	0x9f
+ 1826 0096 3C000000 		.4byte	.LVL13
+ 1827 009a 42000000 		.4byte	.LVL14
+ 1828 009e 0100     		.2byte	0x1
+ 1829 00a0 50       		.byte	0x50
+ 1830 00a1 42000000 		.4byte	.LVL14
+ 1831 00a5 44000000 		.4byte	.LVL15
+ 1832 00a9 0400     		.2byte	0x4
+ 1833 00ab F3       		.byte	0xf3
+ 1834 00ac 01       		.uleb128 0x1
+ 1835 00ad 50       		.byte	0x50
+ 1836 00ae 9F       		.byte	0x9f
+ 1837 00af 44000000 		.4byte	.LVL15
+ 1838 00b3 4C000000 		.4byte	.LVL16
+ 1839 00b7 0100     		.2byte	0x1
+ 1840 00b9 50       		.byte	0x50
+ 1841 00ba 4C000000 		.4byte	.LVL16
+ 1842 00be 4E000000 		.4byte	.LVL17
+ 1843 00c2 0400     		.2byte	0x4
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 36
+
+
+ 1844 00c4 F3       		.byte	0xf3
+ 1845 00c5 01       		.uleb128 0x1
+ 1846 00c6 50       		.byte	0x50
+ 1847 00c7 9F       		.byte	0x9f
+ 1848 00c8 4E000000 		.4byte	.LVL17
+ 1849 00cc 50000000 		.4byte	.LVL18
+ 1850 00d0 0100     		.2byte	0x1
+ 1851 00d2 50       		.byte	0x50
+ 1852 00d3 50000000 		.4byte	.LVL18
+ 1853 00d7 52000000 		.4byte	.LVL19
+ 1854 00db 0400     		.2byte	0x4
+ 1855 00dd F3       		.byte	0xf3
+ 1856 00de 01       		.uleb128 0x1
+ 1857 00df 50       		.byte	0x50
+ 1858 00e0 9F       		.byte	0x9f
+ 1859 00e1 52000000 		.4byte	.LVL19
+ 1860 00e5 54000000 		.4byte	.LVL20
+ 1861 00e9 0100     		.2byte	0x1
+ 1862 00eb 50       		.byte	0x50
+ 1863 00ec 54000000 		.4byte	.LVL20
+ 1864 00f0 56000000 		.4byte	.LVL21
+ 1865 00f4 0400     		.2byte	0x4
+ 1866 00f6 F3       		.byte	0xf3
+ 1867 00f7 01       		.uleb128 0x1
+ 1868 00f8 50       		.byte	0x50
+ 1869 00f9 9F       		.byte	0x9f
+ 1870 00fa 56000000 		.4byte	.LVL21
+ 1871 00fe 58000000 		.4byte	.LVL22
+ 1872 0102 0100     		.2byte	0x1
+ 1873 0104 50       		.byte	0x50
+ 1874 0105 58000000 		.4byte	.LVL22
+ 1875 0109 5A000000 		.4byte	.LVL23
+ 1876 010d 0400     		.2byte	0x4
+ 1877 010f F3       		.byte	0xf3
+ 1878 0110 01       		.uleb128 0x1
+ 1879 0111 50       		.byte	0x50
+ 1880 0112 9F       		.byte	0x9f
+ 1881 0113 5A000000 		.4byte	.LVL23
+ 1882 0117 5C000000 		.4byte	.LVL24
+ 1883 011b 0100     		.2byte	0x1
+ 1884 011d 50       		.byte	0x50
+ 1885 011e 5C000000 		.4byte	.LVL24
+ 1886 0122 5E000000 		.4byte	.LVL25
+ 1887 0126 0400     		.2byte	0x4
+ 1888 0128 F3       		.byte	0xf3
+ 1889 0129 01       		.uleb128 0x1
+ 1890 012a 50       		.byte	0x50
+ 1891 012b 9F       		.byte	0x9f
+ 1892 012c 5E000000 		.4byte	.LVL25
+ 1893 0130 60000000 		.4byte	.LVL26
+ 1894 0134 0100     		.2byte	0x1
+ 1895 0136 50       		.byte	0x50
+ 1896 0137 60000000 		.4byte	.LVL26
+ 1897 013b 62000000 		.4byte	.LVL27
+ 1898 013f 0400     		.2byte	0x4
+ 1899 0141 F3       		.byte	0xf3
+ 1900 0142 01       		.uleb128 0x1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 37
+
+
+ 1901 0143 50       		.byte	0x50
+ 1902 0144 9F       		.byte	0x9f
+ 1903 0145 62000000 		.4byte	.LVL27
+ 1904 0149 64000000 		.4byte	.LVL28
+ 1905 014d 0100     		.2byte	0x1
+ 1906 014f 50       		.byte	0x50
+ 1907 0150 64000000 		.4byte	.LVL28
+ 1908 0154 66000000 		.4byte	.LVL29
+ 1909 0158 0400     		.2byte	0x4
+ 1910 015a F3       		.byte	0xf3
+ 1911 015b 01       		.uleb128 0x1
+ 1912 015c 50       		.byte	0x50
+ 1913 015d 9F       		.byte	0x9f
+ 1914 015e 66000000 		.4byte	.LVL29
+ 1915 0162 68000000 		.4byte	.LVL30
+ 1916 0166 0100     		.2byte	0x1
+ 1917 0168 50       		.byte	0x50
+ 1918 0169 68000000 		.4byte	.LVL30
+ 1919 016d 6A000000 		.4byte	.LVL31
+ 1920 0171 0400     		.2byte	0x4
+ 1921 0173 F3       		.byte	0xf3
+ 1922 0174 01       		.uleb128 0x1
+ 1923 0175 50       		.byte	0x50
+ 1924 0176 9F       		.byte	0x9f
+ 1925 0177 6A000000 		.4byte	.LVL31
+ 1926 017b 6C000000 		.4byte	.LVL32
+ 1927 017f 0100     		.2byte	0x1
+ 1928 0181 50       		.byte	0x50
+ 1929 0182 6C000000 		.4byte	.LVL32
+ 1930 0186 6E000000 		.4byte	.LVL33
+ 1931 018a 0400     		.2byte	0x4
+ 1932 018c F3       		.byte	0xf3
+ 1933 018d 01       		.uleb128 0x1
+ 1934 018e 50       		.byte	0x50
+ 1935 018f 9F       		.byte	0x9f
+ 1936 0190 6E000000 		.4byte	.LVL33
+ 1937 0194 70000000 		.4byte	.LVL34
+ 1938 0198 0100     		.2byte	0x1
+ 1939 019a 50       		.byte	0x50
+ 1940 019b 70000000 		.4byte	.LVL34
+ 1941 019f 78000000 		.4byte	.LFE32
+ 1942 01a3 0400     		.2byte	0x4
+ 1943 01a5 F3       		.byte	0xf3
+ 1944 01a6 01       		.uleb128 0x1
+ 1945 01a7 50       		.byte	0x50
+ 1946 01a8 9F       		.byte	0x9f
+ 1947 01a9 00000000 		.4byte	0
+ 1948 01ad 00000000 		.4byte	0
+ 1949              	.LLST1:
+ 1950 01b1 00000000 		.4byte	.LVL0
+ 1951 01b5 06000000 		.4byte	.LVL1
+ 1952 01b9 0100     		.2byte	0x1
+ 1953 01bb 51       		.byte	0x51
+ 1954 01bc 06000000 		.4byte	.LVL1
+ 1955 01c0 4E000000 		.4byte	.LVL17
+ 1956 01c4 0400     		.2byte	0x4
+ 1957 01c6 F3       		.byte	0xf3
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 38
+
+
+ 1958 01c7 01       		.uleb128 0x1
+ 1959 01c8 51       		.byte	0x51
+ 1960 01c9 9F       		.byte	0x9f
+ 1961 01ca 4E000000 		.4byte	.LVL17
+ 1962 01ce 52000000 		.4byte	.LVL19
+ 1963 01d2 0100     		.2byte	0x1
+ 1964 01d4 51       		.byte	0x51
+ 1965 01d5 52000000 		.4byte	.LVL19
+ 1966 01d9 78000000 		.4byte	.LFE32
+ 1967 01dd 0400     		.2byte	0x4
+ 1968 01df F3       		.byte	0xf3
+ 1969 01e0 01       		.uleb128 0x1
+ 1970 01e1 51       		.byte	0x51
+ 1971 01e2 9F       		.byte	0x9f
+ 1972 01e3 00000000 		.4byte	0
+ 1973 01e7 00000000 		.4byte	0
+ 1974              	.LLST2:
+ 1975 01eb 00000000 		.4byte	.LVL0
+ 1976 01ef 70000000 		.4byte	.LVL34
+ 1977 01f3 0200     		.2byte	0x2
+ 1978 01f5 30       		.byte	0x30
+ 1979 01f6 9F       		.byte	0x9f
+ 1980 01f7 70000000 		.4byte	.LVL34
+ 1981 01fb 78000000 		.4byte	.LFE32
+ 1982 01ff 0100     		.2byte	0x1
+ 1983 0201 50       		.byte	0x50
+ 1984 0202 00000000 		.4byte	0
+ 1985 0206 00000000 		.4byte	0
+ 1986              	.LLST3:
+ 1987 020a 00000000 		.4byte	.LVL35
+ 1988 020e 13000000 		.4byte	.LVL37-1
+ 1989 0212 0100     		.2byte	0x1
+ 1990 0214 50       		.byte	0x50
+ 1991 0215 13000000 		.4byte	.LVL37-1
+ 1992 0219 6E000000 		.4byte	.LVL53
+ 1993 021d 0400     		.2byte	0x4
+ 1994 021f F3       		.byte	0xf3
+ 1995 0220 01       		.uleb128 0x1
+ 1996 0221 50       		.byte	0x50
+ 1997 0222 9F       		.byte	0x9f
+ 1998 0223 6E000000 		.4byte	.LVL53
+ 1999 0227 73000000 		.4byte	.LVL55-1
+ 2000 022b 0100     		.2byte	0x1
+ 2001 022d 50       		.byte	0x50
+ 2002 022e 73000000 		.4byte	.LVL55-1
+ 2003 0232 CE000000 		.4byte	.LFE33
+ 2004 0236 0400     		.2byte	0x4
+ 2005 0238 F3       		.byte	0xf3
+ 2006 0239 01       		.uleb128 0x1
+ 2007 023a 50       		.byte	0x50
+ 2008 023b 9F       		.byte	0x9f
+ 2009 023c 00000000 		.4byte	0
+ 2010 0240 00000000 		.4byte	0
+ 2011              	.LLST4:
+ 2012 0244 00000000 		.4byte	.LVL35
+ 2013 0248 10000000 		.4byte	.LVL36
+ 2014 024c 0100     		.2byte	0x1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 39
+
+
+ 2015 024e 51       		.byte	0x51
+ 2016 024f 10000000 		.4byte	.LVL36
+ 2017 0253 6E000000 		.4byte	.LVL53
+ 2018 0257 0400     		.2byte	0x4
+ 2019 0259 F3       		.byte	0xf3
+ 2020 025a 01       		.uleb128 0x1
+ 2021 025b 51       		.byte	0x51
+ 2022 025c 9F       		.byte	0x9f
+ 2023 025d 6E000000 		.4byte	.LVL53
+ 2024 0261 70000000 		.4byte	.LVL54
+ 2025 0265 0100     		.2byte	0x1
+ 2026 0267 51       		.byte	0x51
+ 2027 0268 70000000 		.4byte	.LVL54
+ 2028 026c CE000000 		.4byte	.LFE33
+ 2029 0270 0400     		.2byte	0x4
+ 2030 0272 F3       		.byte	0xf3
+ 2031 0273 01       		.uleb128 0x1
+ 2032 0274 51       		.byte	0x51
+ 2033 0275 9F       		.byte	0x9f
+ 2034 0276 00000000 		.4byte	0
+ 2035 027a 00000000 		.4byte	0
+ 2036              	.LLST5:
+ 2037 027e 00000000 		.4byte	.LVL71
+ 2038 0282 08000000 		.4byte	.LVL72
+ 2039 0286 0100     		.2byte	0x1
+ 2040 0288 50       		.byte	0x50
+ 2041 0289 08000000 		.4byte	.LVL72
+ 2042 028d 40000000 		.4byte	.LVL81
+ 2043 0291 0100     		.2byte	0x1
+ 2044 0293 55       		.byte	0x55
+ 2045 0294 40000000 		.4byte	.LVL81
+ 2046 0298 4C000000 		.4byte	.LFE34
+ 2047 029c 0400     		.2byte	0x4
+ 2048 029e F3       		.byte	0xf3
+ 2049 029f 01       		.uleb128 0x1
+ 2050 02a0 50       		.byte	0x50
+ 2051 02a1 9F       		.byte	0x9f
+ 2052 02a2 00000000 		.4byte	0
+ 2053 02a6 00000000 		.4byte	0
+ 2054              	.LLST6:
+ 2055 02aa 14000000 		.4byte	.LVL74
+ 2056 02ae 18000000 		.4byte	.LVL75
+ 2057 02b2 0200     		.2byte	0x2
+ 2058 02b4 30       		.byte	0x30
+ 2059 02b5 9F       		.byte	0x9f
+ 2060 02b6 18000000 		.4byte	.LVL75
+ 2061 02ba 40000000 		.4byte	.LVL80
+ 2062 02be 0100     		.2byte	0x1
+ 2063 02c0 54       		.byte	0x54
+ 2064 02c1 00000000 		.4byte	0
+ 2065 02c5 00000000 		.4byte	0
+ 2066              	.LLST7:
+ 2067 02c9 12000000 		.4byte	.LVL83
+ 2068 02cd 16000000 		.4byte	.LVL84
+ 2069 02d1 0200     		.2byte	0x2
+ 2070 02d3 30       		.byte	0x30
+ 2071 02d4 9F       		.byte	0x9f
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 40
+
+
+ 2072 02d5 16000000 		.4byte	.LVL84
+ 2073 02d9 42000000 		.4byte	.LFE35
+ 2074 02dd 0100     		.2byte	0x1
+ 2075 02df 55       		.byte	0x55
+ 2076 02e0 00000000 		.4byte	0
+ 2077 02e4 00000000 		.4byte	0
+ 2078              	.LLST8:
+ 2079 02e8 16000000 		.4byte	.LVL84
+ 2080 02ec 20000000 		.4byte	.LVL87
+ 2081 02f0 0100     		.2byte	0x1
+ 2082 02f2 54       		.byte	0x54
+ 2083 02f3 22000000 		.4byte	.LVL88
+ 2084 02f7 3C000000 		.4byte	.LVL91
+ 2085 02fb 0100     		.2byte	0x1
+ 2086 02fd 54       		.byte	0x54
+ 2087 02fe 00000000 		.4byte	0
+ 2088 0302 00000000 		.4byte	0
+ 2089              		.section	.debug_aranges,"",%progbits
+ 2090 0000 34000000 		.4byte	0x34
+ 2091 0004 0200     		.2byte	0x2
+ 2092 0006 00000000 		.4byte	.Ldebug_info0
+ 2093 000a 04       		.byte	0x4
+ 2094 000b 00       		.byte	0
+ 2095 000c 0000     		.2byte	0
+ 2096 000e 0000     		.2byte	0
+ 2097 0010 00000000 		.4byte	.LFB32
+ 2098 0014 78000000 		.4byte	.LFE32-.LFB32
+ 2099 0018 00000000 		.4byte	.LFB33
+ 2100 001c CE000000 		.4byte	.LFE33-.LFB33
+ 2101 0020 00000000 		.4byte	.LFB34
+ 2102 0024 4C000000 		.4byte	.LFE34-.LFB34
+ 2103 0028 00000000 		.4byte	.LFB35
+ 2104 002c 42000000 		.4byte	.LFE35-.LFB35
+ 2105 0030 00000000 		.4byte	0
+ 2106 0034 00000000 		.4byte	0
+ 2107              		.section	.debug_ranges,"",%progbits
+ 2108              	.Ldebug_ranges0:
+ 2109 0000 00000000 		.4byte	.LFB32
+ 2110 0004 78000000 		.4byte	.LFE32
+ 2111 0008 00000000 		.4byte	.LFB33
+ 2112 000c CE000000 		.4byte	.LFE33
+ 2113 0010 00000000 		.4byte	.LFB34
+ 2114 0014 4C000000 		.4byte	.LFE34
+ 2115 0018 00000000 		.4byte	.LFB35
+ 2116 001c 42000000 		.4byte	.LFE35
+ 2117 0020 00000000 		.4byte	0
+ 2118 0024 00000000 		.4byte	0
+ 2119              		.section	.debug_line,"",%progbits
+ 2120              	.Ldebug_line0:
+ 2121 0000 37020000 		.section	.debug_str,"MS",%progbits,1
+ 2121      02008001 
+ 2121      00000201 
+ 2121      FB0E0D00 
+ 2121      01010101 
+ 2122              	.LASF46:
+ 2123 0000 6C65644D 		.ascii	"ledMatrix.c\000"
+ 2123      61747269 
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 41
+
+
+ 2123      782E6300 
+ 2124              	.LASF47:
+ 2125 000c 443A5C70 		.ascii	"D:\\psoc\\theory\\led_matrix\\led_matrix.cydsn\000"
+ 2125      736F635C 
+ 2125      7468656F 
+ 2125      72795C6C 
+ 2125      65645F6D 
+ 2126              	.LASF20:
+ 2127 0037 726F774F 		.ascii	"rowOrCloumn\000"
+ 2127      72436C6F 
+ 2127      756D6E00 
+ 2128              	.LASF17:
+ 2129 0043 68696768 		.ascii	"hight\000"
+ 2129      7400
+ 2130              	.LASF37:
+ 2131 0049 636F6C5F 		.ascii	"col_matrix_1_Write\000"
+ 2131      6D617472 
+ 2131      69785F31 
+ 2131      5F577269 
+ 2131      746500
+ 2132              	.LASF30:
+ 2133 005c 726F775F 		.ascii	"row_matrix_2_Write\000"
+ 2133      6D617472 
+ 2133      69785F32 
+ 2133      5F577269 
+ 2133      746500
+ 2134              	.LASF38:
+ 2135 006f 636F6C5F 		.ascii	"col_matrix_2_Write\000"
+ 2135      6D617472 
+ 2135      69785F32 
+ 2135      5F577269 
+ 2135      746500
+ 2136              	.LASF3:
+ 2137 0082 73686F72 		.ascii	"short unsigned int\000"
+ 2137      7420756E 
+ 2137      7369676E 
+ 2137      65642069 
+ 2137      6E7400
+ 2138              	.LASF27:
+ 2139 0095 64617461 		.ascii	"data\000"
+ 2139      00
+ 2140              	.LASF31:
+ 2141 009a 726F775F 		.ascii	"row_matrix_3_Write\000"
+ 2141      6D617472 
+ 2141      69785F33 
+ 2141      5F577269 
+ 2141      746500
+ 2142              	.LASF44:
+ 2143 00ad 43794465 		.ascii	"CyDelay\000"
+ 2143      6C617900 
+ 2144              	.LASF39:
+ 2145 00b5 636F6C5F 		.ascii	"col_matrix_3_Write\000"
+ 2145      6D617472 
+ 2145      69785F33 
+ 2145      5F577269 
+ 2145      746500
+ 2146              	.LASF14:
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 42
+
+
+ 2147 00c8 636F6C75 		.ascii	"column\000"
+ 2147      6D6E00
+ 2148              	.LASF9:
+ 2149 00cf 666C6F61 		.ascii	"float\000"
+ 2149      7400
+ 2150              	.LASF25:
+ 2151 00d5 6C6F6F70 		.ascii	"loops\000"
+ 2151      7300
+ 2152              	.LASF32:
+ 2153 00db 726F775F 		.ascii	"row_matrix_4_Write\000"
+ 2153      6D617472 
+ 2153      69785F34 
+ 2153      5F577269 
+ 2153      746500
+ 2154              	.LASF1:
+ 2155 00ee 756E7369 		.ascii	"unsigned char\000"
+ 2155      676E6564 
+ 2155      20636861 
+ 2155      7200
+ 2156              	.LASF15:
+ 2157 00fc 726F775F 		.ascii	"row_or_column\000"
+ 2157      6F725F63 
+ 2157      6F6C756D 
+ 2157      6E00
+ 2158              	.LASF40:
+ 2159 010a 636F6C5F 		.ascii	"col_matrix_4_Write\000"
+ 2159      6D617472 
+ 2159      69785F34 
+ 2159      5F577269 
+ 2159      746500
+ 2160              	.LASF5:
+ 2161 011d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2161      20756E73 
+ 2161      69676E65 
+ 2161      6420696E 
+ 2161      7400
+ 2162              	.LASF48:
+ 2163 012f 75696E74 		.ascii	"uint8\000"
+ 2163      3800
+ 2164              	.LASF26:
+ 2165 0135 636F6E74 		.ascii	"control\000"
+ 2165      726F6C00 
+ 2166              	.LASF18:
+ 2167 013d 64617461 		.ascii	"dataNeedWrite\000"
+ 2167      4E656564 
+ 2167      57726974 
+ 2167      6500
+ 2168              	.LASF21:
+ 2169 014b 77726974 		.ascii	"write_data\000"
+ 2169      655F6461 
+ 2169      746100
+ 2170              	.LASF41:
+ 2171 0156 636F6C5F 		.ascii	"col_matrix_5_Write\000"
+ 2171      6D617472 
+ 2171      69785F35 
+ 2171      5F577269 
+ 2171      746500
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 43
+
+
+ 2172              	.LASF19:
+ 2173 0169 6C6F6361 		.ascii	"locationWrite\000"
+ 2173      74696F6E 
+ 2173      57726974 
+ 2173      6500
+ 2174              	.LASF10:
+ 2175 0177 646F7562 		.ascii	"double\000"
+ 2175      6C6500
+ 2176              	.LASF34:
+ 2177 017e 726F775F 		.ascii	"row_matrix_6_Write\000"
+ 2177      6D617472 
+ 2177      69785F36 
+ 2177      5F577269 
+ 2177      746500
+ 2178              	.LASF22:
+ 2179 0191 6C696768 		.ascii	"light_character_k\000"
+ 2179      745F6368 
+ 2179      61726163 
+ 2179      7465725F 
+ 2179      6B00
+ 2180              	.LASF42:
+ 2181 01a3 636F6C5F 		.ascii	"col_matrix_6_Write\000"
+ 2181      6D617472 
+ 2181      69785F36 
+ 2181      5F577269 
+ 2181      746500
+ 2182              	.LASF35:
+ 2183 01b6 726F775F 		.ascii	"row_matrix_7_Write\000"
+ 2183      6D617472 
+ 2183      69785F37 
+ 2183      5F577269 
+ 2183      746500
+ 2184              	.LASF8:
+ 2185 01c9 756E7369 		.ascii	"unsigned int\000"
+ 2185      676E6564 
+ 2185      20696E74 
+ 2185      00
+ 2186              	.LASF7:
+ 2187 01d6 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2187      206C6F6E 
+ 2187      6720756E 
+ 2187      7369676E 
+ 2187      65642069 
+ 2188              	.LASF43:
+ 2189 01ed 636F6C5F 		.ascii	"col_matrix_7_Write\000"
+ 2189      6D617472 
+ 2189      69785F37 
+ 2189      5F577269 
+ 2189      746500
+ 2190              	.LASF23:
+ 2191 0200 72657375 		.ascii	"result\000"
+ 2191      6C7400
+ 2192              	.LASF45:
+ 2193 0207 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2193      43313120 
+ 2193      352E342E 
+ 2193      31203230 
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 44
+
+
+ 2193      31363036 
+ 2194 023a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 2194      20726576 
+ 2194      6973696F 
+ 2194      6E203233 
+ 2194      37373135 
+ 2195 026d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2195      66756E63 
+ 2195      74696F6E 
+ 2195      2D736563 
+ 2195      74696F6E 
+ 2196              	.LASF13:
+ 2197 0295 6C6F6E67 		.ascii	"long double\000"
+ 2197      20646F75 
+ 2197      626C6500 
+ 2198              	.LASF12:
+ 2199 02a1 73697A65 		.ascii	"sizetype\000"
+ 2199      74797065 
+ 2199      00
+ 2200              	.LASF6:
+ 2201 02aa 6C6F6E67 		.ascii	"long long int\000"
+ 2201      206C6F6E 
+ 2201      6720696E 
+ 2201      7400
+ 2202              	.LASF11:
+ 2203 02b8 63686172 		.ascii	"char\000"
+ 2203      00
+ 2204              	.LASF2:
+ 2205 02bd 73686F72 		.ascii	"short int\000"
+ 2205      7420696E 
+ 2205      7400
+ 2206              	.LASF24:
+ 2207 02c7 6C696768 		.ascii	"light_from_0_to_9\000"
+ 2207      745F6672 
+ 2207      6F6D5F30 
+ 2207      5F746F5F 
+ 2207      3900
+ 2208              	.LASF33:
+ 2209 02d9 726F775F 		.ascii	"row_matrix_5_Write\000"
+ 2209      6D617472 
+ 2209      69785F35 
+ 2209      5F577269 
+ 2209      746500
+ 2210              	.LASF4:
+ 2211 02ec 6C6F6E67 		.ascii	"long int\000"
+ 2211      20696E74 
+ 2211      00
+ 2212              	.LASF28:
+ 2213 02f5 726F775F 		.ascii	"row_matrix_0_Write\000"
+ 2213      6D617472 
+ 2213      69785F30 
+ 2213      5F577269 
+ 2213      746500
+ 2214              	.LASF0:
+ 2215 0308 7369676E 		.ascii	"signed char\000"
+ 2215      65642063 
+ 2215      68617200 
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvDO72M.s 			page 45
+
+
+ 2216              	.LASF16:
+ 2217 0314 53746174 		.ascii	"Status_pin\000"
+ 2217      75735F70 
+ 2217      696E00
+ 2218              	.LASF36:
+ 2219 031f 636F6C5F 		.ascii	"col_matrix_0_Write\000"
+ 2219      6D617472 
+ 2219      69785F30 
+ 2219      5F577269 
+ 2219      746500
+ 2220              	.LASF49:
+ 2221 0332 77726974 		.ascii	"writeHightOrLow\000"
+ 2221      65486967 
+ 2221      68744F72 
+ 2221      4C6F7700 
+ 2222              	.LASF29:
+ 2223 0342 726F775F 		.ascii	"row_matrix_1_Write\000"
+ 2223      6D617472 
+ 2223      69785F31 
+ 2223      5F577269 
+ 2223      746500
+ 2224              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

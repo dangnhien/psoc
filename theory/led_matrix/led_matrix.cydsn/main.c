@@ -17,13 +17,13 @@ int main(void)
     CyGlobalIntEnable; /* Enable global interrupts. */
 
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
-
+    
     for(;;)
     {
         /* Place your application code here. */
         
         //light_from_0_to_9();
-        light_character_k(0);
+        light_character_k(11);
     }
 }
 
