@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="uart\uart\Generated_Source\PSoC4\uart\uart.h">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="uart\uart\uart.cydwr">
 <ExpandedNodeIds>
 <v>uart</v>
 <v>uart\uart</v>
@@ -67,6 +67,8 @@
 <v>uart\uart\Generated_Source\PSoC4\uart\uart.c</v>
 <v>uart\uart\Generated_Source\PSoC4\uart\uart.h</v>
 <v>uart\uart\Generated_Source\PSoC4\uart\uart_BOOT.c</v>
+<v>uart\uart\Generated_Source\PSoC4\uart\uart_BOOT.h</v>
+<v>uart\uart\Generated_Source\PSoC4\uart\uart_PINS.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -151,6 +153,8 @@
 <v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_SPI_UART_INT.lst</v>
 <v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_tx.lst</v>
 <v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_tx_PM.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_UART.lst</v>
+<v>uart\uart\CortexM0\ARM_GCC_541\Debug\Listing Files\uart_UART_BOOT.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -191,9 +195,8 @@
 <name v=".\uart.cydsn\applicationUart.h" />
 <name v=".\uart.cydsn\main.c" />
 <name v=".\uart.cydsn\main.h" />
-<name v=".\uart.cydsn\Generated_Source\PSoC4\uart.h" />
-<name v=".\uart.cydsn\Generated_Source\PSoC4\uart_UART.c" />
-<name v=".\uart.cydsn\Generated_Source\PSoC4\cytypes.h" />
+<name v=".\uart.cydsn\uart.cydwr" />
+<name v=".\uart.cydsn\TopDesign\TopDesign.cysch" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -201,7 +204,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="990, 332" SelectedTabbedMdiWindow="408f3d64-c972-408c-a581-a40f6f00917f"><DocumentWindow Key="D:\psoc\theory\uart\uart.cydsn\applicationUart.c" Guid="b40487cf-a602-46b4-8c96-7f4f8c10949e" /><DocumentWindow Key="D:\psoc\theory\uart\uart.cydsn\applicationUart.h" Guid="b09abae6-ee58-473c-a821-ca523234549e" /><DocumentWindow Key="D:\psoc\theory\uart\uart.cydsn\main.c" Guid="408f3d64-c972-408c-a581-a40f6f00917f" /><DocumentWindow Key="D:\psoc\theory\uart\uart.cydsn\main.h" Guid="37a7c4a2-73c4-4794-b77e-f4d0d7b9ea74" /><DocumentWindow Key="D:\psoc\theory\uart\uart.cydsn\Generated_Source\PSoC4\uart.h" Guid="52f18239-eaed-4a18-9c7f-825f5893a45a" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="d7f23ced-4a8f-474d-9a7b-db5f2e330e0f" /><DocumentWindow Key="D:\psoc\theory\uart\uart.cydsn\Generated_Source\PSoC4\uart_UART.c" Guid="4761c771-9334-4190-82a9-02fbbabea4df" /><DocumentWindow Key="D:\psoc\theory\uart\uart.cydsn\Generated_Source\PSoC4\cytypes.h" Guid="e5361aef-7d6c-4f77-ab5f-fa145f9de537" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="592, 549" SelectedTabbedMdiWindow="408f3d64-c972-408c-a581-a40f6f00917f"><DocumentWindow Key="D:\psoc\theory\uart\uart.cydsn\applicationUart.c" Guid="b40487cf-a602-46b4-8c96-7f4f8c10949e" /><DocumentWindow Key="D:\psoc\theory\uart\uart.cydsn\applicationUart.h" Guid="b09abae6-ee58-473c-a821-ca523234549e" /><DocumentWindow Key="D:\psoc\theory\uart\uart.cydsn\main.c" Guid="408f3d64-c972-408c-a581-a40f6f00917f" /><DocumentWindow Key="D:\psoc\theory\uart\uart.cydsn\main.h" Guid="37a7c4a2-73c4-4794-b77e-f4d0d7b9ea74" /><DocumentWindow Key="D:\psoc\theory\uart\uart.cydsn\uart.cydwr" Guid="31763919-6e5a-4993-b105-b9211cfa39b6" /><DocumentWindow Key="D:\psoc\theory\uart\uart.cydsn\TopDesign\TopDesign.cysch" Guid="3fc04974-c9ce-4bf5-9090-9917132cbce9" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

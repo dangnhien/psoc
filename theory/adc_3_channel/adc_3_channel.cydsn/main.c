@@ -15,13 +15,11 @@ int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
 
-    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     
     init_system();
     
     for(;;)
     {
-        /* Place your application code here. */        
         test_transmit_data();
         
         transmit_data_to_computer(read_adc(0), 0);

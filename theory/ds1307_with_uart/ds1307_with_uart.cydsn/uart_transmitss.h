@@ -9,16 +9,16 @@
  *
  * ========================================
 */
-    #ifndef UART_TRANSMITSS_H
-    #define UART_TRANSMITSS_H
-        
-        #include <stdio.h>
-        #include "project.h"
-        #include "ds1307_i2c.h"  
-        
-        void time_string_concatenation(data_time time, char *strings);
-        void test_uart_transmit();
+#ifndef UART_TRANSMITSS_H
+#define UART_TRANSMITSS_H
     
-    #endif
+    #include <stdio.h>
+    #include "project.h"
+    #include "ds1307_i2c.h"  
+    
+    void time_string_concatenation(data_time time, char *strings);
+    void test_uart_transmit();
+
+#endif
 
 /* [] END OF FILE */

@@ -10,45 +10,45 @@
  * ========================================
 */
 
-    #include "ledSingle.h"
+#include "ledSingle.h"
 
-    void ledTurnOff(int digit)
+void ledTurnOff(int digit)
+{
+    switch(digit)
     {
-        switch(digit)
-        {
-            case 1:
-                ledBlue_Write(1);
-                break;
-            case 2:
-                ledGreen_Write(1);
-                break;
-            case 3:
-                ledRed_Write(1);
-                break;
-            case 4:
-                ledYellow_Write(1);
-                break;
-        }
+        case 1:
+            ledBlue_Write(1);
+            break;
+        case 2:
+            ledGreen_Write(1);
+            break;
+        case 3:
+            ledRed_Write(1);
+            break;
+        case 4:
+            ledYellow_Write(1);
+            break;
     }
+}
 
 
-    void ledTurnOn(int digit)
+void ledTurnOn(int digit)
+{
+    switch(digit)
     {
-        switch(digit)
-        {
-            case 1:
-                ledBlue_Write(0);
-                break;
-            case 2:
-                ledGreen_Write(0);
-                break;
-            case 3:
-                ledRed_Write(0);
-                break;
-            case 4:
-                ledYellow_Write(0);
-                break;
-        }
+        case 1:
+            ledBlue_Write(0);
+            break;
+        case 2:
+            ledGreen_Write(0);
+            break;
+        case 3:
+            ledRed_Write(0);
+            break;
+        case 4:
+            ledYellow_Write(0);
+            break;
     }
+}
 
 /* [] END OF FILE */

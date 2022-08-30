@@ -10,19 +10,17 @@
  * ========================================
 */
 
-    #ifndef MAIN_H
-    #define MAIN_H
-        
-        
-        
-        #include "project.h"
-        #include "applicationUart.h"
-        
-        void uartHandle();
-        
-        void configSystem();
-        void uartHandle();
+#ifndef MAIN_H
+#define MAIN_H
     
-    #endif
+    #include "project.h"
+    #include "applicationUart.h"
+    
+    void uartHandle();
+    
+    void configSystem();
+    void uartHandle();
+
+#endif
 
 /* [] END OF FILE */

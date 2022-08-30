@@ -10,15 +10,15 @@
  * ========================================
 */
 
-    #ifndef MAIN_H
-    #define MAIN_H
-        
-        #include "project.h"
-        
-        void configSystem();
-        void display();
-        
-        
-    #endif
+#ifndef MAIN_H
+#define MAIN_H
+    
+    #include "project.h"
+    
+    void configSystem();
+    void display();
+    
+    
+#endif
 
 /* [] END OF FILE */

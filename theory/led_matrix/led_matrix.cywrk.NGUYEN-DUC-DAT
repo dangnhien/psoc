@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="led_matrix\led_matrix\led_matrix.cydwr">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="led_matrix\led_matrix\TopDesign">
 <ExpandedNodeIds>
 <v>led_matrix</v>
 <v>led_matrix\led_matrix</v>
@@ -65,7 +65,6 @@
 <v>led_matrix\led_matrix\Generated_Source\PSoC4\col_matrix_5</v>
 <v>led_matrix\led_matrix\Generated_Source\PSoC4\col_matrix_6</v>
 <v>led_matrix\led_matrix\Generated_Source\PSoC4\col_matrix_7</v>
-<v>led_matrix\led_matrix\Generated_Source\PSoC4\cy_boot</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -170,7 +169,6 @@
 <v>led_matrix\led_matrix\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
 <v>led_matrix\led_matrix\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
 <v>led_matrix\led_matrix\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
-<v>led_matrix\led_matrix\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -212,7 +210,7 @@
 <name v=".\led_matrix.cydsn\main.h" />
 <name v=".\led_matrix.cydsn\main.c" />
 <name v=".\led_matrix.cydsn\ledMatrix.c" />
-<name v=".\led_matrix.cydsn\led_matrix.cydwr" />
+<name v=".\led_matrix.cydsn\ledMatrix.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -220,7 +218,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1234, 532" SelectedTabbedMdiWindow="fcca402d-13c3-4c04-b70b-f0599dc16886"><DocumentWindow Key="D:\psoc\theory\led_matrix\led_matrix.cydsn\main.h" Guid="fcca402d-13c3-4c04-b70b-f0599dc16886" /><DocumentWindow Key="D:\psoc\theory\led_matrix\led_matrix.cydsn\main.c" Guid="d4e3a2e5-4c0a-4d08-971c-b8d7a4b06d65" /><DocumentWindow Key="D:\psoc\theory\led_matrix\led_matrix.cydsn\ledMatrix.c" Guid="22c4e033-d68b-42c2-875d-a1c05229a20a" /><DocumentWindow Key="D:\psoc\theory\led_matrix\led_matrix.cydsn\led_matrix.cydwr" Guid="9a40a2b0-17a9-40dc-a9a8-200a4cd75383" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="994, 558" SelectedTabbedMdiWindow="d4e3a2e5-4c0a-4d08-971c-b8d7a4b06d65"><DocumentWindow Key="D:\psoc\theory\led_matrix\led_matrix.cydsn\main.h" Guid="fcca402d-13c3-4c04-b70b-f0599dc16886" /><DocumentWindow Key="D:\psoc\theory\led_matrix\led_matrix.cydsn\main.c" Guid="d4e3a2e5-4c0a-4d08-971c-b8d7a4b06d65" /><DocumentWindow Key="D:\psoc\theory\led_matrix\led_matrix.cydsn\ledMatrix.c" Guid="22c4e033-d68b-42c2-875d-a1c05229a20a" /><DocumentWindow Key="D:\psoc\theory\led_matrix\led_matrix.cydsn\ledMatrix.h" Guid="7f0dfb83-544e-426a-bc3b-63a248791905" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

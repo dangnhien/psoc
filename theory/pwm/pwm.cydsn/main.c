@@ -18,8 +18,6 @@ int main(void)
     configSystem();
     
    
-    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
-
     for(;;)
     {
         

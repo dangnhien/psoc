@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="adc\adc\Generated_Source\PSoC4\adcUser\adcUser.h">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="adc\adc\Header Files\main.h">
 <ExpandedNodeIds>
 <v>adc</v>
 <v>adc\adc</v>
@@ -37,12 +37,6 @@
 <v>adc\adc\Generated_Source\PSoC4\uartUser</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>adc</v>
-<v>adc\adc</v>
-<v>adc\adc\TopDesign</v>
-<v>adc\adc\adc.cydwr</v>
-<v>adc\adc\adc.cydwr\Pins</v>
-<v>adc\adc\adc.cydwr\Analog</v>
 <v>adc\adc\adc.cydwr\Clocks</v>
 <v>adc\adc\adc.cydwr\Interrupts</v>
 <v>adc\adc\adc.cydwr\System</v>
@@ -66,6 +60,11 @@
 <v>adc\adc\Generated_Source\PSoC4\cy_lfclk</v>
 <v>adc\adc\Generated_Source\PSoC4\Em_EEPROM_Dynamic</v>
 <v>adc\adc\Generated_Source\PSoC4\Pin_POT</v>
+<v>adc\adc\Generated_Source\PSoC4\uartUser</v>
+<v>adc\adc\Generated_Source\PSoC4\uartUser\uartUser.c</v>
+<v>adc\adc\Generated_Source\PSoC4\uartUser\uartUser.h</v>
+<v>adc\adc\Generated_Source\PSoC4\uartUser\uartUser_BOOT.c</v>
+<v>adc\adc\Generated_Source\PSoC4\uartUser\uartUser_BOOT.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -156,7 +155,6 @@
 <v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_BOOT.lst</v>
 <v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_PM.lst</v>
 <v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_rx.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_rx_PM.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -200,8 +198,7 @@
 <name v=".\adc.cydsn\main.c" />
 <name v=".\adc.cydsn\main.h" />
 <name v=".\adc.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\adc.cydsn\Generated_Source\PSoC4\adcUser.c" />
-<name v=".\adc.cydsn\Generated_Source\PSoC4\adcUser.h" />
+<name v=".\adc.cydsn\adc.cydwr" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -209,7 +206,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1234, 532" SelectedTabbedMdiWindow="361f58c1-1d4a-46a2-81fe-7615edc69fcb"><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\main.c" Guid="361f58c1-1d4a-46a2-81fe-7615edc69fcb" /><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\main.h" Guid="a004d7ed-f6bf-42de-96d5-305d7637e6bf" /><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\TopDesign\TopDesign.cysch" Guid="2a488f6f-c72d-40fb-98dd-375346455a05" /><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\Generated_Source\PSoC4\adcUser.c" Guid="c6d718b9-eabd-4f9c-809c-170d59579172" /><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\Generated_Source\PSoC4\adcUser.h" Guid="92b33cfa-079b-4932-a81d-97c6ce2b3578" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="994, 558" SelectedTabbedMdiWindow="361f58c1-1d4a-46a2-81fe-7615edc69fcb"><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\main.c" Guid="361f58c1-1d4a-46a2-81fe-7615edc69fcb" /><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\main.h" Guid="a004d7ed-f6bf-42de-96d5-305d7637e6bf" /><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\TopDesign\TopDesign.cysch" Guid="2a488f6f-c72d-40fb-98dd-375346455a05" /><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\adc.cydwr" Guid="05ace909-d078-4d08-ae55-5c40894c3b6f" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

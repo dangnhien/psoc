@@ -15,13 +15,11 @@ int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
 
-    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
 
     configSystem();
         
     for(;;)
     {
-        /* Place your application code here. */
         receive_After_Transmit_Char_Type(); 
         //  receive_After_Transmit_String();
         CyDelay(1000);

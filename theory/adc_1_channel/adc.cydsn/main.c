@@ -15,7 +15,6 @@ int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
 
-    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     
     Init_System();  
     
@@ -23,7 +22,6 @@ int main(void)
 
     for(;;)
     {
-        /* Place your application code here. */
         //result_Read_Adc = readADC();
         result_Read_Adc = readLM35();
         
