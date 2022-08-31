@@ -1,0 +1,6 @@
+D:\psoc\theory\eeprom_external\eeprom_external.cydsn\eeprom_external.cyprj|13d4eea5-c8f8-433c-8f1b-bd320a835b0b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|7fe59b5d-1f34-4870-8c2d-c16d1a3291e0
+C:\Users\NGUYEN-DUC-DAT\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|8ead6c9c-e621-435a-8aba-345180a90596
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|5f13144f-e176-4b04-aeac-9926abfa9aad
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|d06f7d13-cd74-4d42-8547-8252da484efa
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|8cea29b5-4931-4429-b23d-6fdd65a0fe51

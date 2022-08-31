@@ -1,0 +1,2629 @@
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"ledYellow.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.four_led_short_off,"ax",%progbits
+  20              		.align	2
+  21              		.global	four_led_short_off
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	four_led_short_off, %function
+  25              	four_led_short_off:
+  26              	.LFB33:
+  27              		.file 1 "ledYellow.c"
+   1:ledYellow.c   **** /* ========================================
+   2:ledYellow.c   ****  *
+   3:ledYellow.c   ****  * Copyright YOUR COMPANY, THE YEAR
+   4:ledYellow.c   ****  * All Rights Reserved
+   5:ledYellow.c   ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:ledYellow.c   ****  *
+   7:ledYellow.c   ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:ledYellow.c   ****  * WHICH IS THE PROPERTY OF your company.
+   9:ledYellow.c   ****  *
+  10:ledYellow.c   ****  * ========================================
+  11:ledYellow.c   **** */
+  12:ledYellow.c   ****  #include <stdio.h>
+  13:ledYellow.c   ****  #include "project.h"
+  14:ledYellow.c   **** 
+  15:ledYellow.c   **** extern volatile unsigned long counter1_s;
+  16:ledYellow.c   **** volatile unsigned long time_current = 0;
+  17:ledYellow.c   **** 
+  18:ledYellow.c   **** enum Status_Led
+  19:ledYellow.c   **** {
+  20:ledYellow.c   ****     turn_on = 0,
+  21:ledYellow.c   ****     turn_off
+  22:ledYellow.c   **** };
+  23:ledYellow.c   **** 
+  24:ledYellow.c   **** void four_led_short_off() //0000 L3 L2 L1 L0 
+  25:ledYellow.c   **** {
+  28              		.loc 1 25 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 2
+
+
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  26:ledYellow.c   ****     LedYellow_0_Write(turn_off);
+  36              		.loc 1 26 0
+  37 0002 0120     		movs	r0, #1
+  38 0004 FFF7FEFF 		bl	LedYellow_0_Write
+  39              	.LVL0:
+  27:ledYellow.c   ****     LedYellow_1_Write(turn_off);
+  40              		.loc 1 27 0
+  41 0008 0120     		movs	r0, #1
+  42 000a FFF7FEFF 		bl	LedYellow_1_Write
+  43              	.LVL1:
+  28:ledYellow.c   ****     LedYellow_2_Write(turn_off);
+  44              		.loc 1 28 0
+  45 000e 0120     		movs	r0, #1
+  46 0010 FFF7FEFF 		bl	LedYellow_2_Write
+  47              	.LVL2:
+  29:ledYellow.c   ****     LedYellow_3_Write(turn_off);
+  48              		.loc 1 29 0
+  49 0014 0120     		movs	r0, #1
+  50 0016 FFF7FEFF 		bl	LedYellow_3_Write
+  51              	.LVL3:
+  30:ledYellow.c   **** }
+  52              		.loc 1 30 0
+  53              		@ sp needed
+  54 001a 10BD     		pop	{r4, pc}
+  55              		.cfi_endproc
+  56              	.LFE33:
+  57              		.size	four_led_short_off, .-four_led_short_off
+  58              		.section	.text.four_led_tall_off,"ax",%progbits
+  59              		.align	2
+  60              		.global	four_led_tall_off
+  61              		.code	16
+  62              		.thumb_func
+  63              		.type	four_led_tall_off, %function
+  64              	four_led_tall_off:
+  65              	.LFB34:
+  31:ledYellow.c   **** 
+  32:ledYellow.c   **** void four_led_tall_off() // L7 L6 L5 L4 0000
+  33:ledYellow.c   **** {
+  66              		.loc 1 33 0
+  67              		.cfi_startproc
+  68              		@ args = 0, pretend = 0, frame = 0
+  69              		@ frame_needed = 0, uses_anonymous_args = 0
+  70 0000 10B5     		push	{r4, lr}
+  71              		.cfi_def_cfa_offset 8
+  72              		.cfi_offset 4, -8
+  73              		.cfi_offset 14, -4
+  34:ledYellow.c   ****     LedYellow_4_Write(turn_off);
+  74              		.loc 1 34 0
+  75 0002 0120     		movs	r0, #1
+  76 0004 FFF7FEFF 		bl	LedYellow_4_Write
+  77              	.LVL4:
+  35:ledYellow.c   ****     LedYellow_5_Write(turn_off);
+  78              		.loc 1 35 0
+  79 0008 0120     		movs	r0, #1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 3
+
+
+  80 000a FFF7FEFF 		bl	LedYellow_5_Write
+  81              	.LVL5:
+  36:ledYellow.c   ****     LedYellow_6_Write(turn_off);
+  82              		.loc 1 36 0
+  83 000e 0120     		movs	r0, #1
+  84 0010 FFF7FEFF 		bl	LedYellow_6_Write
+  85              	.LVL6:
+  37:ledYellow.c   ****     LedYellow_7_Write(turn_off);
+  86              		.loc 1 37 0
+  87 0014 0120     		movs	r0, #1
+  88 0016 FFF7FEFF 		bl	LedYellow_7_Write
+  89              	.LVL7:
+  38:ledYellow.c   **** }
+  90              		.loc 1 38 0
+  91              		@ sp needed
+  92 001a 10BD     		pop	{r4, pc}
+  93              		.cfi_endproc
+  94              	.LFE34:
+  95              		.size	four_led_tall_off, .-four_led_tall_off
+  96              		.section	.text.turn_off_all_led,"ax",%progbits
+  97              		.align	2
+  98              		.global	turn_off_all_led
+  99              		.code	16
+ 100              		.thumb_func
+ 101              		.type	turn_off_all_led, %function
+ 102              	turn_off_all_led:
+ 103              	.LFB35:
+  39:ledYellow.c   **** 
+  40:ledYellow.c   **** void turn_off_all_led()
+  41:ledYellow.c   **** {
+ 104              		.loc 1 41 0
+ 105              		.cfi_startproc
+ 106              		@ args = 0, pretend = 0, frame = 0
+ 107              		@ frame_needed = 0, uses_anonymous_args = 0
+ 108 0000 10B5     		push	{r4, lr}
+ 109              		.cfi_def_cfa_offset 8
+ 110              		.cfi_offset 4, -8
+ 111              		.cfi_offset 14, -4
+  42:ledYellow.c   ****     LedYellow_0_Write(turn_off);
+ 112              		.loc 1 42 0
+ 113 0002 0120     		movs	r0, #1
+ 114 0004 FFF7FEFF 		bl	LedYellow_0_Write
+ 115              	.LVL8:
+  43:ledYellow.c   ****     LedYellow_1_Write(turn_off);
+ 116              		.loc 1 43 0
+ 117 0008 0120     		movs	r0, #1
+ 118 000a FFF7FEFF 		bl	LedYellow_1_Write
+ 119              	.LVL9:
+  44:ledYellow.c   ****     LedYellow_2_Write(turn_off);
+ 120              		.loc 1 44 0
+ 121 000e 0120     		movs	r0, #1
+ 122 0010 FFF7FEFF 		bl	LedYellow_2_Write
+ 123              	.LVL10:
+  45:ledYellow.c   ****     LedYellow_3_Write(turn_off);
+ 124              		.loc 1 45 0
+ 125 0014 0120     		movs	r0, #1
+ 126 0016 FFF7FEFF 		bl	LedYellow_3_Write
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 4
+
+
+ 127              	.LVL11:
+  46:ledYellow.c   ****     
+  47:ledYellow.c   ****     LedYellow_4_Write(turn_off);
+ 128              		.loc 1 47 0
+ 129 001a 0120     		movs	r0, #1
+ 130 001c FFF7FEFF 		bl	LedYellow_4_Write
+ 131              	.LVL12:
+  48:ledYellow.c   ****     LedYellow_5_Write(turn_off);
+ 132              		.loc 1 48 0
+ 133 0020 0120     		movs	r0, #1
+ 134 0022 FFF7FEFF 		bl	LedYellow_5_Write
+ 135              	.LVL13:
+  49:ledYellow.c   ****     LedYellow_6_Write(turn_off);
+ 136              		.loc 1 49 0
+ 137 0026 0120     		movs	r0, #1
+ 138 0028 FFF7FEFF 		bl	LedYellow_6_Write
+ 139              	.LVL14:
+  50:ledYellow.c   ****     LedYellow_7_Write(turn_off);
+ 140              		.loc 1 50 0
+ 141 002c 0120     		movs	r0, #1
+ 142 002e FFF7FEFF 		bl	LedYellow_7_Write
+ 143              	.LVL15:
+  51:ledYellow.c   **** }
+ 144              		.loc 1 51 0
+ 145              		@ sp needed
+ 146 0032 10BD     		pop	{r4, pc}
+ 147              		.cfi_endproc
+ 148              	.LFE35:
+ 149              		.size	turn_off_all_led, .-turn_off_all_led
+ 150              		.section	.text.turn_on_all_led,"ax",%progbits
+ 151              		.align	2
+ 152              		.global	turn_on_all_led
+ 153              		.code	16
+ 154              		.thumb_func
+ 155              		.type	turn_on_all_led, %function
+ 156              	turn_on_all_led:
+ 157              	.LFB36:
+  52:ledYellow.c   **** 
+  53:ledYellow.c   **** void turn_on_all_led()
+  54:ledYellow.c   **** {
+ 158              		.loc 1 54 0
+ 159              		.cfi_startproc
+ 160              		@ args = 0, pretend = 0, frame = 0
+ 161              		@ frame_needed = 0, uses_anonymous_args = 0
+ 162 0000 10B5     		push	{r4, lr}
+ 163              		.cfi_def_cfa_offset 8
+ 164              		.cfi_offset 4, -8
+ 165              		.cfi_offset 14, -4
+  55:ledYellow.c   ****     LedYellow_0_Write(turn_on);
+ 166              		.loc 1 55 0
+ 167 0002 0020     		movs	r0, #0
+ 168 0004 FFF7FEFF 		bl	LedYellow_0_Write
+ 169              	.LVL16:
+  56:ledYellow.c   ****     LedYellow_1_Write(turn_on);
+ 170              		.loc 1 56 0
+ 171 0008 0020     		movs	r0, #0
+ 172 000a FFF7FEFF 		bl	LedYellow_1_Write
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 5
+
+
+ 173              	.LVL17:
+  57:ledYellow.c   ****     LedYellow_2_Write(turn_on);
+ 174              		.loc 1 57 0
+ 175 000e 0020     		movs	r0, #0
+ 176 0010 FFF7FEFF 		bl	LedYellow_2_Write
+ 177              	.LVL18:
+  58:ledYellow.c   ****     LedYellow_3_Write(turn_on);
+ 178              		.loc 1 58 0
+ 179 0014 0020     		movs	r0, #0
+ 180 0016 FFF7FEFF 		bl	LedYellow_3_Write
+ 181              	.LVL19:
+  59:ledYellow.c   ****     LedYellow_4_Write(turn_on);
+ 182              		.loc 1 59 0
+ 183 001a 0020     		movs	r0, #0
+ 184 001c FFF7FEFF 		bl	LedYellow_4_Write
+ 185              	.LVL20:
+  60:ledYellow.c   ****     LedYellow_5_Write(turn_on);
+ 186              		.loc 1 60 0
+ 187 0020 0020     		movs	r0, #0
+ 188 0022 FFF7FEFF 		bl	LedYellow_5_Write
+ 189              	.LVL21:
+  61:ledYellow.c   ****     LedYellow_6_Write(turn_on);
+ 190              		.loc 1 61 0
+ 191 0026 0020     		movs	r0, #0
+ 192 0028 FFF7FEFF 		bl	LedYellow_6_Write
+ 193              	.LVL22:
+  62:ledYellow.c   ****     LedYellow_7_Write(turn_on);    
+ 194              		.loc 1 62 0
+ 195 002c 0020     		movs	r0, #0
+ 196 002e FFF7FEFF 		bl	LedYellow_7_Write
+ 197              	.LVL23:
+  63:ledYellow.c   **** }
+ 198              		.loc 1 63 0
+ 199              		@ sp needed
+ 200 0032 10BD     		pop	{r4, pc}
+ 201              		.cfi_endproc
+ 202              	.LFE36:
+ 203              		.size	turn_on_all_led, .-turn_on_all_led
+ 204              		.section	.text.location_led_light,"ax",%progbits
+ 205              		.align	2
+ 206              		.global	location_led_light
+ 207              		.code	16
+ 208              		.thumb_func
+ 209              		.type	location_led_light, %function
+ 210              	location_led_light:
+ 211              	.LFB37:
+  64:ledYellow.c   **** 
+  65:ledYellow.c   **** void location_led_light(int location)
+  66:ledYellow.c   **** {
+ 212              		.loc 1 66 0
+ 213              		.cfi_startproc
+ 214              		@ args = 0, pretend = 0, frame = 0
+ 215              		@ frame_needed = 0, uses_anonymous_args = 0
+ 216              	.LVL24:
+ 217 0000 10B5     		push	{r4, lr}
+ 218              		.cfi_def_cfa_offset 8
+ 219              		.cfi_offset 4, -8
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 6
+
+
+ 220              		.cfi_offset 14, -4
+  67:ledYellow.c   ****     switch(location)
+ 221              		.loc 1 67 0
+ 222 0002 0728     		cmp	r0, #7
+ 223 0004 7AD8     		bhi	.L5
+ 224 0006 8000     		lsls	r0, r0, #2
+ 225              	.LVL25:
+ 226 0008 3D4B     		ldr	r3, .L16
+ 227 000a 1B58     		ldr	r3, [r3, r0]
+ 228 000c 9F46     		mov	pc, r3
+ 229              		.section	.rodata
+ 230              		.align	2
+ 231              	.L8:
+ 232 0000 0E000000 		.word	.L7
+ 233 0004 2C000000 		.word	.L9
+ 234 0008 4A000000 		.word	.L10
+ 235 000c 68000000 		.word	.L11
+ 236 0010 86000000 		.word	.L12
+ 237 0014 A4000000 		.word	.L13
+ 238 0018 C2000000 		.word	.L14
+ 239 001c E0000000 		.word	.L15
+ 240              		.section	.text.location_led_light
+ 241              	.L7:
+  68:ledYellow.c   ****     {
+  69:ledYellow.c   ****         case 0:
+  70:ledYellow.c   ****             LedYellow_0_Write(turn_on);
+ 242              		.loc 1 70 0
+ 243 000e 0020     		movs	r0, #0
+ 244 0010 FFF7FEFF 		bl	LedYellow_0_Write
+ 245              	.LVL26:
+  71:ledYellow.c   ****             LedYellow_1_Write(turn_off);
+ 246              		.loc 1 71 0
+ 247 0014 0120     		movs	r0, #1
+ 248 0016 FFF7FEFF 		bl	LedYellow_1_Write
+ 249              	.LVL27:
+  72:ledYellow.c   ****             LedYellow_2_Write(turn_off);
+ 250              		.loc 1 72 0
+ 251 001a 0120     		movs	r0, #1
+ 252 001c FFF7FEFF 		bl	LedYellow_2_Write
+ 253              	.LVL28:
+  73:ledYellow.c   ****             LedYellow_3_Write(turn_off);
+ 254              		.loc 1 73 0
+ 255 0020 0120     		movs	r0, #1
+ 256 0022 FFF7FEFF 		bl	LedYellow_3_Write
+ 257              	.LVL29:
+  74:ledYellow.c   ****             four_led_tall_off();
+ 258              		.loc 1 74 0
+ 259 0026 FFF7FEFF 		bl	four_led_tall_off
+ 260              	.LVL30:
+  75:ledYellow.c   ****             break;
+ 261              		.loc 1 75 0
+ 262 002a 67E0     		b	.L5
+ 263              	.L9:
+  76:ledYellow.c   ****         case 1:
+  77:ledYellow.c   ****             LedYellow_0_Write(turn_off);
+ 264              		.loc 1 77 0
+ 265 002c 0120     		movs	r0, #1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 7
+
+
+ 266 002e FFF7FEFF 		bl	LedYellow_0_Write
+ 267              	.LVL31:
+  78:ledYellow.c   ****             LedYellow_1_Write(turn_on);
+ 268              		.loc 1 78 0
+ 269 0032 0020     		movs	r0, #0
+ 270 0034 FFF7FEFF 		bl	LedYellow_1_Write
+ 271              	.LVL32:
+  79:ledYellow.c   ****             LedYellow_2_Write(turn_off);
+ 272              		.loc 1 79 0
+ 273 0038 0120     		movs	r0, #1
+ 274 003a FFF7FEFF 		bl	LedYellow_2_Write
+ 275              	.LVL33:
+  80:ledYellow.c   ****             LedYellow_3_Write(turn_off);
+ 276              		.loc 1 80 0
+ 277 003e 0120     		movs	r0, #1
+ 278 0040 FFF7FEFF 		bl	LedYellow_3_Write
+ 279              	.LVL34:
+  81:ledYellow.c   ****             four_led_tall_off();
+ 280              		.loc 1 81 0
+ 281 0044 FFF7FEFF 		bl	four_led_tall_off
+ 282              	.LVL35:
+  82:ledYellow.c   ****             break;
+ 283              		.loc 1 82 0
+ 284 0048 58E0     		b	.L5
+ 285              	.L10:
+  83:ledYellow.c   ****         case 2:
+  84:ledYellow.c   ****             LedYellow_0_Write(turn_off);
+ 286              		.loc 1 84 0
+ 287 004a 0120     		movs	r0, #1
+ 288 004c FFF7FEFF 		bl	LedYellow_0_Write
+ 289              	.LVL36:
+  85:ledYellow.c   ****             LedYellow_1_Write(turn_off);
+ 290              		.loc 1 85 0
+ 291 0050 0120     		movs	r0, #1
+ 292 0052 FFF7FEFF 		bl	LedYellow_1_Write
+ 293              	.LVL37:
+  86:ledYellow.c   ****             LedYellow_2_Write(turn_on);
+ 294              		.loc 1 86 0
+ 295 0056 0020     		movs	r0, #0
+ 296 0058 FFF7FEFF 		bl	LedYellow_2_Write
+ 297              	.LVL38:
+  87:ledYellow.c   ****             LedYellow_3_Write(turn_off);
+ 298              		.loc 1 87 0
+ 299 005c 0120     		movs	r0, #1
+ 300 005e FFF7FEFF 		bl	LedYellow_3_Write
+ 301              	.LVL39:
+  88:ledYellow.c   ****             four_led_tall_off();
+ 302              		.loc 1 88 0
+ 303 0062 FFF7FEFF 		bl	four_led_tall_off
+ 304              	.LVL40:
+  89:ledYellow.c   ****             break;
+ 305              		.loc 1 89 0
+ 306 0066 49E0     		b	.L5
+ 307              	.L11:
+  90:ledYellow.c   ****         case 3:
+  91:ledYellow.c   ****             LedYellow_0_Write(turn_off);
+ 308              		.loc 1 91 0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 8
+
+
+ 309 0068 0120     		movs	r0, #1
+ 310 006a FFF7FEFF 		bl	LedYellow_0_Write
+ 311              	.LVL41:
+  92:ledYellow.c   ****             LedYellow_1_Write(turn_off);
+ 312              		.loc 1 92 0
+ 313 006e 0120     		movs	r0, #1
+ 314 0070 FFF7FEFF 		bl	LedYellow_1_Write
+ 315              	.LVL42:
+  93:ledYellow.c   ****             LedYellow_2_Write(turn_off);
+ 316              		.loc 1 93 0
+ 317 0074 0120     		movs	r0, #1
+ 318 0076 FFF7FEFF 		bl	LedYellow_2_Write
+ 319              	.LVL43:
+  94:ledYellow.c   ****             LedYellow_3_Write(turn_on);
+ 320              		.loc 1 94 0
+ 321 007a 0020     		movs	r0, #0
+ 322 007c FFF7FEFF 		bl	LedYellow_3_Write
+ 323              	.LVL44:
+  95:ledYellow.c   ****             four_led_tall_off();
+ 324              		.loc 1 95 0
+ 325 0080 FFF7FEFF 		bl	four_led_tall_off
+ 326              	.LVL45:
+  96:ledYellow.c   ****             break;
+ 327              		.loc 1 96 0
+ 328 0084 3AE0     		b	.L5
+ 329              	.L12:
+  97:ledYellow.c   ****         case 4:
+  98:ledYellow.c   ****             four_led_short_off();
+ 330              		.loc 1 98 0
+ 331 0086 FFF7FEFF 		bl	four_led_short_off
+ 332              	.LVL46:
+  99:ledYellow.c   ****             LedYellow_4_Write(turn_on);
+ 333              		.loc 1 99 0
+ 334 008a 0020     		movs	r0, #0
+ 335 008c FFF7FEFF 		bl	LedYellow_4_Write
+ 336              	.LVL47:
+ 100:ledYellow.c   ****             LedYellow_5_Write(turn_off);
+ 337              		.loc 1 100 0
+ 338 0090 0120     		movs	r0, #1
+ 339 0092 FFF7FEFF 		bl	LedYellow_5_Write
+ 340              	.LVL48:
+ 101:ledYellow.c   ****             LedYellow_6_Write(turn_off);
+ 341              		.loc 1 101 0
+ 342 0096 0120     		movs	r0, #1
+ 343 0098 FFF7FEFF 		bl	LedYellow_6_Write
+ 344              	.LVL49:
+ 102:ledYellow.c   ****             LedYellow_7_Write(turn_off);
+ 345              		.loc 1 102 0
+ 346 009c 0120     		movs	r0, #1
+ 347 009e FFF7FEFF 		bl	LedYellow_7_Write
+ 348              	.LVL50:
+ 103:ledYellow.c   ****             break;
+ 349              		.loc 1 103 0
+ 350 00a2 2BE0     		b	.L5
+ 351              	.L13:
+ 104:ledYellow.c   ****         case 5:
+ 105:ledYellow.c   ****             four_led_short_off();
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 9
+
+
+ 352              		.loc 1 105 0
+ 353 00a4 FFF7FEFF 		bl	four_led_short_off
+ 354              	.LVL51:
+ 106:ledYellow.c   ****             LedYellow_4_Write(turn_off);
+ 355              		.loc 1 106 0
+ 356 00a8 0120     		movs	r0, #1
+ 357 00aa FFF7FEFF 		bl	LedYellow_4_Write
+ 358              	.LVL52:
+ 107:ledYellow.c   ****             LedYellow_5_Write(turn_on);
+ 359              		.loc 1 107 0
+ 360 00ae 0020     		movs	r0, #0
+ 361 00b0 FFF7FEFF 		bl	LedYellow_5_Write
+ 362              	.LVL53:
+ 108:ledYellow.c   ****             LedYellow_6_Write(turn_off);
+ 363              		.loc 1 108 0
+ 364 00b4 0120     		movs	r0, #1
+ 365 00b6 FFF7FEFF 		bl	LedYellow_6_Write
+ 366              	.LVL54:
+ 109:ledYellow.c   ****             LedYellow_7_Write(turn_off);
+ 367              		.loc 1 109 0
+ 368 00ba 0120     		movs	r0, #1
+ 369 00bc FFF7FEFF 		bl	LedYellow_7_Write
+ 370              	.LVL55:
+ 110:ledYellow.c   ****             break;
+ 371              		.loc 1 110 0
+ 372 00c0 1CE0     		b	.L5
+ 373              	.L14:
+ 111:ledYellow.c   ****         case 6:
+ 112:ledYellow.c   ****             four_led_short_off();
+ 374              		.loc 1 112 0
+ 375 00c2 FFF7FEFF 		bl	four_led_short_off
+ 376              	.LVL56:
+ 113:ledYellow.c   ****             LedYellow_4_Write(turn_off);
+ 377              		.loc 1 113 0
+ 378 00c6 0120     		movs	r0, #1
+ 379 00c8 FFF7FEFF 		bl	LedYellow_4_Write
+ 380              	.LVL57:
+ 114:ledYellow.c   ****             LedYellow_5_Write(turn_off);
+ 381              		.loc 1 114 0
+ 382 00cc 0120     		movs	r0, #1
+ 383 00ce FFF7FEFF 		bl	LedYellow_5_Write
+ 384              	.LVL58:
+ 115:ledYellow.c   ****             LedYellow_6_Write(turn_on);
+ 385              		.loc 1 115 0
+ 386 00d2 0020     		movs	r0, #0
+ 387 00d4 FFF7FEFF 		bl	LedYellow_6_Write
+ 388              	.LVL59:
+ 116:ledYellow.c   ****             LedYellow_7_Write(turn_off);
+ 389              		.loc 1 116 0
+ 390 00d8 0120     		movs	r0, #1
+ 391 00da FFF7FEFF 		bl	LedYellow_7_Write
+ 392              	.LVL60:
+ 117:ledYellow.c   ****             break;
+ 393              		.loc 1 117 0
+ 394 00de 0DE0     		b	.L5
+ 395              	.L15:
+ 118:ledYellow.c   ****         case 7:
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 10
+
+
+ 119:ledYellow.c   ****             four_led_short_off();
+ 396              		.loc 1 119 0
+ 397 00e0 FFF7FEFF 		bl	four_led_short_off
+ 398              	.LVL61:
+ 120:ledYellow.c   ****             LedYellow_4_Write(turn_off);
+ 399              		.loc 1 120 0
+ 400 00e4 0120     		movs	r0, #1
+ 401 00e6 FFF7FEFF 		bl	LedYellow_4_Write
+ 402              	.LVL62:
+ 121:ledYellow.c   ****             LedYellow_5_Write(turn_off);
+ 403              		.loc 1 121 0
+ 404 00ea 0120     		movs	r0, #1
+ 405 00ec FFF7FEFF 		bl	LedYellow_5_Write
+ 406              	.LVL63:
+ 122:ledYellow.c   ****             LedYellow_6_Write(turn_off);
+ 407              		.loc 1 122 0
+ 408 00f0 0120     		movs	r0, #1
+ 409 00f2 FFF7FEFF 		bl	LedYellow_6_Write
+ 410              	.LVL64:
+ 123:ledYellow.c   ****             LedYellow_7_Write(turn_on);
+ 411              		.loc 1 123 0
+ 412 00f6 0020     		movs	r0, #0
+ 413 00f8 FFF7FEFF 		bl	LedYellow_7_Write
+ 414              	.LVL65:
+ 415              	.L5:
+ 124:ledYellow.c   ****     }
+ 125:ledYellow.c   **** }
+ 416              		.loc 1 125 0
+ 417              		@ sp needed
+ 418 00fc 10BD     		pop	{r4, pc}
+ 419              	.L17:
+ 420 00fe C046     		.align	2
+ 421              	.L16:
+ 422 0100 00000000 		.word	.L8
+ 423              		.cfi_endproc
+ 424              	.LFE37:
+ 425              		.size	location_led_light, .-location_led_light
+ 426              		.section	.text.shift_left,"ax",%progbits
+ 427              		.align	2
+ 428              		.global	shift_left
+ 429              		.code	16
+ 430              		.thumb_func
+ 431              		.type	shift_left, %function
+ 432              	shift_left:
+ 433              	.LFB38:
+ 126:ledYellow.c   **** 
+ 127:ledYellow.c   **** void shift_left(int location_light)
+ 128:ledYellow.c   **** {
+ 434              		.loc 1 128 0
+ 435              		.cfi_startproc
+ 436              		@ args = 0, pretend = 0, frame = 0
+ 437              		@ frame_needed = 0, uses_anonymous_args = 0
+ 438              	.LVL66:
+ 439 0000 10B5     		push	{r4, lr}
+ 440              		.cfi_def_cfa_offset 8
+ 441              		.cfi_offset 4, -8
+ 442              		.cfi_offset 14, -4
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 11
+
+
+ 129:ledYellow.c   ****     switch(location_light)
+ 443              		.loc 1 129 0
+ 444 0002 0728     		cmp	r0, #7
+ 445 0004 22D8     		bhi	.L18
+ 446 0006 8000     		lsls	r0, r0, #2
+ 447              	.LVL67:
+ 448 0008 114B     		ldr	r3, .L29
+ 449 000a 1B58     		ldr	r3, [r3, r0]
+ 450 000c 9F46     		mov	pc, r3
+ 451              		.section	.rodata
+ 452              		.align	2
+ 453              	.L21:
+ 454 0020 0E000000 		.word	.L20
+ 455 0024 16000000 		.word	.L22
+ 456 0028 1E000000 		.word	.L23
+ 457 002c 26000000 		.word	.L24
+ 458 0030 2E000000 		.word	.L25
+ 459 0034 36000000 		.word	.L26
+ 460 0038 3E000000 		.word	.L27
+ 461 003c 46000000 		.word	.L28
+ 462              		.section	.text.shift_left
+ 463              	.L20:
+ 130:ledYellow.c   ****     {
+ 131:ledYellow.c   ****         case 0:
+ 132:ledYellow.c   ****             location_led_light(0);
+ 464              		.loc 1 132 0
+ 465 000e 0020     		movs	r0, #0
+ 466 0010 FFF7FEFF 		bl	location_led_light
+ 467              	.LVL68:
+ 133:ledYellow.c   ****             break;
+ 468              		.loc 1 133 0
+ 469 0014 1AE0     		b	.L18
+ 470              	.L22:
+ 134:ledYellow.c   ****         case 1:
+ 135:ledYellow.c   ****             location_led_light(1);
+ 471              		.loc 1 135 0
+ 472 0016 0120     		movs	r0, #1
+ 473 0018 FFF7FEFF 		bl	location_led_light
+ 474              	.LVL69:
+ 136:ledYellow.c   ****             break;
+ 475              		.loc 1 136 0
+ 476 001c 16E0     		b	.L18
+ 477              	.L23:
+ 137:ledYellow.c   ****         case 2:
+ 138:ledYellow.c   ****             location_led_light(2);
+ 478              		.loc 1 138 0
+ 479 001e 0220     		movs	r0, #2
+ 480 0020 FFF7FEFF 		bl	location_led_light
+ 481              	.LVL70:
+ 139:ledYellow.c   ****             break;
+ 482              		.loc 1 139 0
+ 483 0024 12E0     		b	.L18
+ 484              	.L24:
+ 140:ledYellow.c   ****         case 3:
+ 141:ledYellow.c   ****             location_led_light(3);
+ 485              		.loc 1 141 0
+ 486 0026 0320     		movs	r0, #3
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 12
+
+
+ 487 0028 FFF7FEFF 		bl	location_led_light
+ 488              	.LVL71:
+ 142:ledYellow.c   ****             break;
+ 489              		.loc 1 142 0
+ 490 002c 0EE0     		b	.L18
+ 491              	.L25:
+ 143:ledYellow.c   ****         case 4:
+ 144:ledYellow.c   ****             location_led_light(4);
+ 492              		.loc 1 144 0
+ 493 002e 0420     		movs	r0, #4
+ 494 0030 FFF7FEFF 		bl	location_led_light
+ 495              	.LVL72:
+ 145:ledYellow.c   ****             break;
+ 496              		.loc 1 145 0
+ 497 0034 0AE0     		b	.L18
+ 498              	.L26:
+ 146:ledYellow.c   ****         case 5:
+ 147:ledYellow.c   ****             location_led_light(5);
+ 499              		.loc 1 147 0
+ 500 0036 0520     		movs	r0, #5
+ 501 0038 FFF7FEFF 		bl	location_led_light
+ 502              	.LVL73:
+ 148:ledYellow.c   ****             break;
+ 503              		.loc 1 148 0
+ 504 003c 06E0     		b	.L18
+ 505              	.L27:
+ 149:ledYellow.c   ****         case 6:
+ 150:ledYellow.c   ****             location_led_light(6);
+ 506              		.loc 1 150 0
+ 507 003e 0620     		movs	r0, #6
+ 508 0040 FFF7FEFF 		bl	location_led_light
+ 509              	.LVL74:
+ 151:ledYellow.c   ****             break;
+ 510              		.loc 1 151 0
+ 511 0044 02E0     		b	.L18
+ 512              	.L28:
+ 152:ledYellow.c   ****         case 7:
+ 153:ledYellow.c   ****             location_led_light(7);
+ 513              		.loc 1 153 0
+ 514 0046 0720     		movs	r0, #7
+ 515 0048 FFF7FEFF 		bl	location_led_light
+ 516              	.LVL75:
+ 517              	.L18:
+ 154:ledYellow.c   ****     }
+ 155:ledYellow.c   **** }
+ 518              		.loc 1 155 0
+ 519              		@ sp needed
+ 520 004c 10BD     		pop	{r4, pc}
+ 521              	.L30:
+ 522 004e C046     		.align	2
+ 523              	.L29:
+ 524 0050 20000000 		.word	.L21
+ 525              		.cfi_endproc
+ 526              	.LFE38:
+ 527              		.size	shift_left, .-shift_left
+ 528              		.section	.text.shift_right,"ax",%progbits
+ 529              		.align	2
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 13
+
+
+ 530              		.global	shift_right
+ 531              		.code	16
+ 532              		.thumb_func
+ 533              		.type	shift_right, %function
+ 534              	shift_right:
+ 535              	.LFB39:
+ 156:ledYellow.c   **** 
+ 157:ledYellow.c   **** void shift_right(int location_light)
+ 158:ledYellow.c   **** {
+ 536              		.loc 1 158 0
+ 537              		.cfi_startproc
+ 538              		@ args = 0, pretend = 0, frame = 0
+ 539              		@ frame_needed = 0, uses_anonymous_args = 0
+ 540              	.LVL76:
+ 541 0000 10B5     		push	{r4, lr}
+ 542              		.cfi_def_cfa_offset 8
+ 543              		.cfi_offset 4, -8
+ 544              		.cfi_offset 14, -4
+ 159:ledYellow.c   ****     switch( 7 - location_light )
+ 545              		.loc 1 159 0
+ 546 0002 0723     		movs	r3, #7
+ 547 0004 181A     		subs	r0, r3, r0
+ 548              	.LVL77:
+ 549 0006 0728     		cmp	r0, #7
+ 550 0008 22D8     		bhi	.L31
+ 551 000a 8000     		lsls	r0, r0, #2
+ 552 000c 114B     		ldr	r3, .L42
+ 553 000e 1B58     		ldr	r3, [r3, r0]
+ 554 0010 9F46     		mov	pc, r3
+ 555              		.section	.rodata
+ 556              		.align	2
+ 557              	.L34:
+ 558 0040 12000000 		.word	.L33
+ 559 0044 1A000000 		.word	.L35
+ 560 0048 22000000 		.word	.L36
+ 561 004c 2A000000 		.word	.L37
+ 562 0050 32000000 		.word	.L38
+ 563 0054 3A000000 		.word	.L39
+ 564 0058 42000000 		.word	.L40
+ 565 005c 4A000000 		.word	.L41
+ 566              		.section	.text.shift_right
+ 567              	.L33:
+ 160:ledYellow.c   ****     {
+ 161:ledYellow.c   ****         case 0:
+ 162:ledYellow.c   ****             location_led_light(0);
+ 568              		.loc 1 162 0
+ 569 0012 0020     		movs	r0, #0
+ 570 0014 FFF7FEFF 		bl	location_led_light
+ 571              	.LVL78:
+ 163:ledYellow.c   ****             break;
+ 572              		.loc 1 163 0
+ 573 0018 1AE0     		b	.L31
+ 574              	.L35:
+ 164:ledYellow.c   ****         case 1:
+ 165:ledYellow.c   ****             location_led_light(1);
+ 575              		.loc 1 165 0
+ 576 001a 0120     		movs	r0, #1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 14
+
+
+ 577 001c FFF7FEFF 		bl	location_led_light
+ 578              	.LVL79:
+ 166:ledYellow.c   ****             break;
+ 579              		.loc 1 166 0
+ 580 0020 16E0     		b	.L31
+ 581              	.L36:
+ 167:ledYellow.c   ****         case 2:
+ 168:ledYellow.c   ****             location_led_light(2);
+ 582              		.loc 1 168 0
+ 583 0022 0220     		movs	r0, #2
+ 584 0024 FFF7FEFF 		bl	location_led_light
+ 585              	.LVL80:
+ 169:ledYellow.c   ****             break;
+ 586              		.loc 1 169 0
+ 587 0028 12E0     		b	.L31
+ 588              	.L37:
+ 170:ledYellow.c   ****         case 3:
+ 171:ledYellow.c   ****             location_led_light(3);
+ 589              		.loc 1 171 0
+ 590 002a 0320     		movs	r0, #3
+ 591 002c FFF7FEFF 		bl	location_led_light
+ 592              	.LVL81:
+ 172:ledYellow.c   ****             break;
+ 593              		.loc 1 172 0
+ 594 0030 0EE0     		b	.L31
+ 595              	.L38:
+ 173:ledYellow.c   ****         case 4:
+ 174:ledYellow.c   ****             location_led_light(4);
+ 596              		.loc 1 174 0
+ 597 0032 0420     		movs	r0, #4
+ 598 0034 FFF7FEFF 		bl	location_led_light
+ 599              	.LVL82:
+ 175:ledYellow.c   ****             break;
+ 600              		.loc 1 175 0
+ 601 0038 0AE0     		b	.L31
+ 602              	.L39:
+ 176:ledYellow.c   ****         case 5:
+ 177:ledYellow.c   ****             location_led_light(5);
+ 603              		.loc 1 177 0
+ 604 003a 0520     		movs	r0, #5
+ 605 003c FFF7FEFF 		bl	location_led_light
+ 606              	.LVL83:
+ 178:ledYellow.c   ****             break;
+ 607              		.loc 1 178 0
+ 608 0040 06E0     		b	.L31
+ 609              	.L40:
+ 179:ledYellow.c   ****         case 6:
+ 180:ledYellow.c   ****             location_led_light(6);
+ 610              		.loc 1 180 0
+ 611 0042 0620     		movs	r0, #6
+ 612 0044 FFF7FEFF 		bl	location_led_light
+ 613              	.LVL84:
+ 181:ledYellow.c   ****             break;
+ 614              		.loc 1 181 0
+ 615 0048 02E0     		b	.L31
+ 616              	.L41:
+ 182:ledYellow.c   ****         case 7:
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 15
+
+
+ 183:ledYellow.c   ****             location_led_light(7);
+ 617              		.loc 1 183 0
+ 618 004a 0720     		movs	r0, #7
+ 619 004c FFF7FEFF 		bl	location_led_light
+ 620              	.LVL85:
+ 621              	.L31:
+ 184:ledYellow.c   ****     }
+ 185:ledYellow.c   **** }
+ 622              		.loc 1 185 0
+ 623              		@ sp needed
+ 624 0050 10BD     		pop	{r4, pc}
+ 625              	.L43:
+ 626 0052 C046     		.align	2
+ 627              	.L42:
+ 628 0054 40000000 		.word	.L34
+ 629              		.cfi_endproc
+ 630              	.LFE39:
+ 631              		.size	shift_right, .-shift_right
+ 632              		.section	.text.flicker_8_led,"ax",%progbits
+ 633              		.align	2
+ 634              		.global	flicker_8_led
+ 635              		.code	16
+ 636              		.thumb_func
+ 637              		.type	flicker_8_led, %function
+ 638              	flicker_8_led:
+ 639              	.LFB40:
+ 186:ledYellow.c   **** 
+ 187:ledYellow.c   **** void flicker_8_led(unsigned long delay_s)
+ 188:ledYellow.c   **** {
+ 640              		.loc 1 188 0
+ 641              		.cfi_startproc
+ 642              		@ args = 0, pretend = 0, frame = 0
+ 643              		@ frame_needed = 0, uses_anonymous_args = 0
+ 644              	.LVL86:
+ 645 0000 10B5     		push	{r4, lr}
+ 646              		.cfi_def_cfa_offset 8
+ 647              		.cfi_offset 4, -8
+ 648              		.cfi_offset 14, -4
+ 189:ledYellow.c   ****     static int flag_led = 0;
+ 190:ledYellow.c   ****     
+ 191:ledYellow.c   ****     if(counter1_s - time_current >= delay_s)
+ 649              		.loc 1 191 0
+ 650 0002 0C4B     		ldr	r3, .L48
+ 651 0004 1B68     		ldr	r3, [r3]
+ 652 0006 0C4A     		ldr	r2, .L48+4
+ 653 0008 1268     		ldr	r2, [r2]
+ 654 000a 9B1A     		subs	r3, r3, r2
+ 655 000c 8342     		cmp	r3, r0
+ 656 000e 06D3     		bcc	.L45
+ 192:ledYellow.c   ****     {
+ 193:ledYellow.c   ****         flag_led = ~flag_led;
+ 657              		.loc 1 193 0
+ 658 0010 094B     		ldr	r3, .L48+4
+ 659 0012 5A68     		ldr	r2, [r3, #4]
+ 660 0014 D243     		mvns	r2, r2
+ 661 0016 5A60     		str	r2, [r3, #4]
+ 194:ledYellow.c   ****         time_current = counter1_s;
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 16
+
+
+ 662              		.loc 1 194 0
+ 663 0018 064A     		ldr	r2, .L48
+ 664 001a 1268     		ldr	r2, [r2]
+ 665 001c 1A60     		str	r2, [r3]
+ 666              	.L45:
+ 195:ledYellow.c   ****     }
+ 196:ledYellow.c   ****     
+ 197:ledYellow.c   ****     if(flag_led == 0)    
+ 667              		.loc 1 197 0
+ 668 001e 064B     		ldr	r3, .L48+4
+ 669 0020 5B68     		ldr	r3, [r3, #4]
+ 670 0022 002B     		cmp	r3, #0
+ 671 0024 02D1     		bne	.L46
+ 198:ledYellow.c   ****         turn_off_all_led();
+ 672              		.loc 1 198 0
+ 673 0026 FFF7FEFF 		bl	turn_off_all_led
+ 674              	.LVL87:
+ 675 002a 01E0     		b	.L44
+ 676              	.LVL88:
+ 677              	.L46:
+ 199:ledYellow.c   ****     else
+ 200:ledYellow.c   ****         turn_on_all_led();    
+ 678              		.loc 1 200 0
+ 679 002c FFF7FEFF 		bl	turn_on_all_led
+ 680              	.LVL89:
+ 681              	.L44:
+ 201:ledYellow.c   **** }
+ 682              		.loc 1 201 0
+ 683              		@ sp needed
+ 684 0030 10BD     		pop	{r4, pc}
+ 685              	.L49:
+ 686 0032 C046     		.align	2
+ 687              	.L48:
+ 688 0034 00000000 		.word	counter1_s
+ 689 0038 00000000 		.word	.LANCHOR0
+ 690              		.cfi_endproc
+ 691              	.LFE40:
+ 692              		.size	flicker_8_led, .-flicker_8_led
+ 693              		.global	time_current
+ 694              		.bss
+ 695              		.align	2
+ 696              		.set	.LANCHOR0,. + 0
+ 697              		.type	time_current, %object
+ 698              		.size	time_current, 4
+ 699              	time_current:
+ 700 0000 00000000 		.space	4
+ 701              		.type	flag_led.6566, %object
+ 702              		.size	flag_led.6566, 4
+ 703              	flag_led.6566:
+ 704 0004 00000000 		.space	4
+ 705              		.text
+ 706              	.Letext0:
+ 707              		.file 2 "Generated_Source\\PSoC4/LedYellow_0.h"
+ 708              		.file 3 "Generated_Source\\PSoC4/LedYellow_1.h"
+ 709              		.file 4 "Generated_Source\\PSoC4/LedYellow_2.h"
+ 710              		.file 5 "Generated_Source\\PSoC4/LedYellow_3.h"
+ 711              		.file 6 "Generated_Source\\PSoC4/LedYellow_4.h"
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 17
+
+
+ 712              		.file 7 "Generated_Source\\PSoC4/LedYellow_5.h"
+ 713              		.file 8 "Generated_Source\\PSoC4/LedYellow_6.h"
+ 714              		.file 9 "Generated_Source\\PSoC4/LedYellow_7.h"
+ 715              		.section	.debug_info,"",%progbits
+ 716              	.Ldebug_info0:
+ 717 0000 B4070000 		.4byte	0x7b4
+ 718 0004 0400     		.2byte	0x4
+ 719 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 720 000a 04       		.byte	0x4
+ 721 000b 01       		.uleb128 0x1
+ 722 000c 74010000 		.4byte	.LASF37
+ 723 0010 0C       		.byte	0xc
+ 724 0011 20000000 		.4byte	.LASF38
+ 725 0015 91000000 		.4byte	.LASF39
+ 726 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 727 001d 00000000 		.4byte	0
+ 728 0021 00000000 		.4byte	.Ldebug_line0
+ 729 0025 02       		.uleb128 0x2
+ 730 0026 01       		.byte	0x1
+ 731 0027 06       		.byte	0x6
+ 732 0028 68010000 		.4byte	.LASF0
+ 733 002c 02       		.uleb128 0x2
+ 734 002d 01       		.byte	0x1
+ 735 002e 08       		.byte	0x8
+ 736 002f 72000000 		.4byte	.LASF1
+ 737 0033 02       		.uleb128 0x2
+ 738 0034 02       		.byte	0x2
+ 739 0035 05       		.byte	0x5
+ 740 0036 60020000 		.4byte	.LASF2
+ 741 003a 02       		.uleb128 0x2
+ 742 003b 02       		.byte	0x2
+ 743 003c 07       		.byte	0x7
+ 744 003d 2C000000 		.4byte	.LASF3
+ 745 0041 02       		.uleb128 0x2
+ 746 0042 04       		.byte	0x4
+ 747 0043 05       		.byte	0x5
+ 748 0044 9E020000 		.4byte	.LASF4
+ 749 0048 02       		.uleb128 0x2
+ 750 0049 04       		.byte	0x4
+ 751 004a 07       		.byte	0x7
+ 752 004b 05010000 		.4byte	.LASF5
+ 753 004f 02       		.uleb128 0x2
+ 754 0050 08       		.byte	0x8
+ 755 0051 05       		.byte	0x5
+ 756 0052 00000000 		.4byte	.LASF6
+ 757 0056 02       		.uleb128 0x2
+ 758 0057 08       		.byte	0x8
+ 759 0058 07       		.byte	0x7
+ 760 0059 36010000 		.4byte	.LASF7
+ 761 005d 03       		.uleb128 0x3
+ 762 005e 04       		.byte	0x4
+ 763 005f 05       		.byte	0x5
+ 764 0060 696E7400 		.ascii	"int\000"
+ 765 0064 02       		.uleb128 0x2
+ 766 0065 04       		.byte	0x4
+ 767 0066 07       		.byte	0x7
+ 768 0067 17010000 		.4byte	.LASF8
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 18
+
+
+ 769 006b 02       		.uleb128 0x2
+ 770 006c 08       		.byte	0x8
+ 771 006d 04       		.byte	0x4
+ 772 006e AC020000 		.4byte	.LASF9
+ 773 0072 02       		.uleb128 0x2
+ 774 0073 04       		.byte	0x4
+ 775 0074 07       		.byte	0x7
+ 776 0075 02020000 		.4byte	.LASF10
+ 777 0079 02       		.uleb128 0x2
+ 778 007a 01       		.byte	0x1
+ 779 007b 08       		.byte	0x8
+ 780 007c A7020000 		.4byte	.LASF11
+ 781 0080 02       		.uleb128 0x2
+ 782 0081 04       		.byte	0x4
+ 783 0082 04       		.byte	0x4
+ 784 0083 61000000 		.4byte	.LASF12
+ 785 0087 02       		.uleb128 0x2
+ 786 0088 08       		.byte	0x8
+ 787 0089 04       		.byte	0x4
+ 788 008a 3F000000 		.4byte	.LASF13
+ 789 008e 04       		.uleb128 0x4
+ 790 008f 67000000 		.4byte	.LASF40
+ 791 0093 01       		.byte	0x1
+ 792 0094 2C000000 		.4byte	0x2c
+ 793 0098 01       		.byte	0x1
+ 794 0099 12       		.byte	0x12
+ 795 009a AB000000 		.4byte	0xab
+ 796 009e 05       		.uleb128 0x5
+ 797 009f 96020000 		.4byte	.LASF14
+ 798 00a3 00       		.byte	0
+ 799 00a4 05       		.uleb128 0x5
+ 800 00a5 0E000000 		.4byte	.LASF15
+ 801 00a9 01       		.byte	0x1
+ 802 00aa 00       		.byte	0
+ 803 00ab 06       		.uleb128 0x6
+ 804 00ac 0B020000 		.4byte	.LASF16
+ 805 00b0 01       		.byte	0x1
+ 806 00b1 18       		.byte	0x18
+ 807 00b2 00000000 		.4byte	.LFB33
+ 808 00b6 1C000000 		.4byte	.LFE33-.LFB33
+ 809 00ba 01       		.uleb128 0x1
+ 810 00bb 9C       		.byte	0x9c
+ 811 00bc 09010000 		.4byte	0x109
+ 812 00c0 07       		.uleb128 0x7
+ 813 00c1 08000000 		.4byte	.LVL0
+ 814 00c5 5F070000 		.4byte	0x75f
+ 815 00c9 D3000000 		.4byte	0xd3
+ 816 00cd 08       		.uleb128 0x8
+ 817 00ce 01       		.uleb128 0x1
+ 818 00cf 50       		.byte	0x50
+ 819 00d0 01       		.uleb128 0x1
+ 820 00d1 31       		.byte	0x31
+ 821 00d2 00       		.byte	0
+ 822 00d3 07       		.uleb128 0x7
+ 823 00d4 0E000000 		.4byte	.LVL1
+ 824 00d8 6A070000 		.4byte	0x76a
+ 825 00dc E6000000 		.4byte	0xe6
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 19
+
+
+ 826 00e0 08       		.uleb128 0x8
+ 827 00e1 01       		.uleb128 0x1
+ 828 00e2 50       		.byte	0x50
+ 829 00e3 01       		.uleb128 0x1
+ 830 00e4 31       		.byte	0x31
+ 831 00e5 00       		.byte	0
+ 832 00e6 07       		.uleb128 0x7
+ 833 00e7 14000000 		.4byte	.LVL2
+ 834 00eb 75070000 		.4byte	0x775
+ 835 00ef F9000000 		.4byte	0xf9
+ 836 00f3 08       		.uleb128 0x8
+ 837 00f4 01       		.uleb128 0x1
+ 838 00f5 50       		.byte	0x50
+ 839 00f6 01       		.uleb128 0x1
+ 840 00f7 31       		.byte	0x31
+ 841 00f8 00       		.byte	0
+ 842 00f9 09       		.uleb128 0x9
+ 843 00fa 1A000000 		.4byte	.LVL3
+ 844 00fe 80070000 		.4byte	0x780
+ 845 0102 08       		.uleb128 0x8
+ 846 0103 01       		.uleb128 0x1
+ 847 0104 50       		.byte	0x50
+ 848 0105 01       		.uleb128 0x1
+ 849 0106 31       		.byte	0x31
+ 850 0107 00       		.byte	0
+ 851 0108 00       		.byte	0
+ 852 0109 06       		.uleb128 0x6
+ 853 010a 4F000000 		.4byte	.LASF17
+ 854 010e 01       		.byte	0x1
+ 855 010f 20       		.byte	0x20
+ 856 0110 00000000 		.4byte	.LFB34
+ 857 0114 1C000000 		.4byte	.LFE34-.LFB34
+ 858 0118 01       		.uleb128 0x1
+ 859 0119 9C       		.byte	0x9c
+ 860 011a 67010000 		.4byte	0x167
+ 861 011e 07       		.uleb128 0x7
+ 862 011f 08000000 		.4byte	.LVL4
+ 863 0123 8B070000 		.4byte	0x78b
+ 864 0127 31010000 		.4byte	0x131
+ 865 012b 08       		.uleb128 0x8
+ 866 012c 01       		.uleb128 0x1
+ 867 012d 50       		.byte	0x50
+ 868 012e 01       		.uleb128 0x1
+ 869 012f 31       		.byte	0x31
+ 870 0130 00       		.byte	0
+ 871 0131 07       		.uleb128 0x7
+ 872 0132 0E000000 		.4byte	.LVL5
+ 873 0136 96070000 		.4byte	0x796
+ 874 013a 44010000 		.4byte	0x144
+ 875 013e 08       		.uleb128 0x8
+ 876 013f 01       		.uleb128 0x1
+ 877 0140 50       		.byte	0x50
+ 878 0141 01       		.uleb128 0x1
+ 879 0142 31       		.byte	0x31
+ 880 0143 00       		.byte	0
+ 881 0144 07       		.uleb128 0x7
+ 882 0145 14000000 		.4byte	.LVL6
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 20
+
+
+ 883 0149 A1070000 		.4byte	0x7a1
+ 884 014d 57010000 		.4byte	0x157
+ 885 0151 08       		.uleb128 0x8
+ 886 0152 01       		.uleb128 0x1
+ 887 0153 50       		.byte	0x50
+ 888 0154 01       		.uleb128 0x1
+ 889 0155 31       		.byte	0x31
+ 890 0156 00       		.byte	0
+ 891 0157 09       		.uleb128 0x9
+ 892 0158 1A000000 		.4byte	.LVL7
+ 893 015c AC070000 		.4byte	0x7ac
+ 894 0160 08       		.uleb128 0x8
+ 895 0161 01       		.uleb128 0x1
+ 896 0162 50       		.byte	0x50
+ 897 0163 01       		.uleb128 0x1
+ 898 0164 31       		.byte	0x31
+ 899 0165 00       		.byte	0
+ 900 0166 00       		.byte	0
+ 901 0167 06       		.uleb128 0x6
+ 902 0168 80000000 		.4byte	.LASF18
+ 903 016c 01       		.byte	0x1
+ 904 016d 28       		.byte	0x28
+ 905 016e 00000000 		.4byte	.LFB35
+ 906 0172 34000000 		.4byte	.LFE35-.LFB35
+ 907 0176 01       		.uleb128 0x1
+ 908 0177 9C       		.byte	0x9c
+ 909 0178 11020000 		.4byte	0x211
+ 910 017c 07       		.uleb128 0x7
+ 911 017d 08000000 		.4byte	.LVL8
+ 912 0181 5F070000 		.4byte	0x75f
+ 913 0185 8F010000 		.4byte	0x18f
+ 914 0189 08       		.uleb128 0x8
+ 915 018a 01       		.uleb128 0x1
+ 916 018b 50       		.byte	0x50
+ 917 018c 01       		.uleb128 0x1
+ 918 018d 31       		.byte	0x31
+ 919 018e 00       		.byte	0
+ 920 018f 07       		.uleb128 0x7
+ 921 0190 0E000000 		.4byte	.LVL9
+ 922 0194 6A070000 		.4byte	0x76a
+ 923 0198 A2010000 		.4byte	0x1a2
+ 924 019c 08       		.uleb128 0x8
+ 925 019d 01       		.uleb128 0x1
+ 926 019e 50       		.byte	0x50
+ 927 019f 01       		.uleb128 0x1
+ 928 01a0 31       		.byte	0x31
+ 929 01a1 00       		.byte	0
+ 930 01a2 07       		.uleb128 0x7
+ 931 01a3 14000000 		.4byte	.LVL10
+ 932 01a7 75070000 		.4byte	0x775
+ 933 01ab B5010000 		.4byte	0x1b5
+ 934 01af 08       		.uleb128 0x8
+ 935 01b0 01       		.uleb128 0x1
+ 936 01b1 50       		.byte	0x50
+ 937 01b2 01       		.uleb128 0x1
+ 938 01b3 31       		.byte	0x31
+ 939 01b4 00       		.byte	0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 21
+
+
+ 940 01b5 07       		.uleb128 0x7
+ 941 01b6 1A000000 		.4byte	.LVL11
+ 942 01ba 80070000 		.4byte	0x780
+ 943 01be C8010000 		.4byte	0x1c8
+ 944 01c2 08       		.uleb128 0x8
+ 945 01c3 01       		.uleb128 0x1
+ 946 01c4 50       		.byte	0x50
+ 947 01c5 01       		.uleb128 0x1
+ 948 01c6 31       		.byte	0x31
+ 949 01c7 00       		.byte	0
+ 950 01c8 07       		.uleb128 0x7
+ 951 01c9 20000000 		.4byte	.LVL12
+ 952 01cd 8B070000 		.4byte	0x78b
+ 953 01d1 DB010000 		.4byte	0x1db
+ 954 01d5 08       		.uleb128 0x8
+ 955 01d6 01       		.uleb128 0x1
+ 956 01d7 50       		.byte	0x50
+ 957 01d8 01       		.uleb128 0x1
+ 958 01d9 31       		.byte	0x31
+ 959 01da 00       		.byte	0
+ 960 01db 07       		.uleb128 0x7
+ 961 01dc 26000000 		.4byte	.LVL13
+ 962 01e0 96070000 		.4byte	0x796
+ 963 01e4 EE010000 		.4byte	0x1ee
+ 964 01e8 08       		.uleb128 0x8
+ 965 01e9 01       		.uleb128 0x1
+ 966 01ea 50       		.byte	0x50
+ 967 01eb 01       		.uleb128 0x1
+ 968 01ec 31       		.byte	0x31
+ 969 01ed 00       		.byte	0
+ 970 01ee 07       		.uleb128 0x7
+ 971 01ef 2C000000 		.4byte	.LVL14
+ 972 01f3 A1070000 		.4byte	0x7a1
+ 973 01f7 01020000 		.4byte	0x201
+ 974 01fb 08       		.uleb128 0x8
+ 975 01fc 01       		.uleb128 0x1
+ 976 01fd 50       		.byte	0x50
+ 977 01fe 01       		.uleb128 0x1
+ 978 01ff 31       		.byte	0x31
+ 979 0200 00       		.byte	0
+ 980 0201 09       		.uleb128 0x9
+ 981 0202 32000000 		.4byte	.LVL15
+ 982 0206 AC070000 		.4byte	0x7ac
+ 983 020a 08       		.uleb128 0x8
+ 984 020b 01       		.uleb128 0x1
+ 985 020c 50       		.byte	0x50
+ 986 020d 01       		.uleb128 0x1
+ 987 020e 31       		.byte	0x31
+ 988 020f 00       		.byte	0
+ 989 0210 00       		.byte	0
+ 990 0211 06       		.uleb128 0x6
+ 991 0212 D1000000 		.4byte	.LASF19
+ 992 0216 01       		.byte	0x1
+ 993 0217 35       		.byte	0x35
+ 994 0218 00000000 		.4byte	.LFB36
+ 995 021c 34000000 		.4byte	.LFE36-.LFB36
+ 996 0220 01       		.uleb128 0x1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 22
+
+
+ 997 0221 9C       		.byte	0x9c
+ 998 0222 BB020000 		.4byte	0x2bb
+ 999 0226 07       		.uleb128 0x7
+ 1000 0227 08000000 		.4byte	.LVL16
+ 1001 022b 5F070000 		.4byte	0x75f
+ 1002 022f 39020000 		.4byte	0x239
+ 1003 0233 08       		.uleb128 0x8
+ 1004 0234 01       		.uleb128 0x1
+ 1005 0235 50       		.byte	0x50
+ 1006 0236 01       		.uleb128 0x1
+ 1007 0237 30       		.byte	0x30
+ 1008 0238 00       		.byte	0
+ 1009 0239 07       		.uleb128 0x7
+ 1010 023a 0E000000 		.4byte	.LVL17
+ 1011 023e 6A070000 		.4byte	0x76a
+ 1012 0242 4C020000 		.4byte	0x24c
+ 1013 0246 08       		.uleb128 0x8
+ 1014 0247 01       		.uleb128 0x1
+ 1015 0248 50       		.byte	0x50
+ 1016 0249 01       		.uleb128 0x1
+ 1017 024a 30       		.byte	0x30
+ 1018 024b 00       		.byte	0
+ 1019 024c 07       		.uleb128 0x7
+ 1020 024d 14000000 		.4byte	.LVL18
+ 1021 0251 75070000 		.4byte	0x775
+ 1022 0255 5F020000 		.4byte	0x25f
+ 1023 0259 08       		.uleb128 0x8
+ 1024 025a 01       		.uleb128 0x1
+ 1025 025b 50       		.byte	0x50
+ 1026 025c 01       		.uleb128 0x1
+ 1027 025d 30       		.byte	0x30
+ 1028 025e 00       		.byte	0
+ 1029 025f 07       		.uleb128 0x7
+ 1030 0260 1A000000 		.4byte	.LVL19
+ 1031 0264 80070000 		.4byte	0x780
+ 1032 0268 72020000 		.4byte	0x272
+ 1033 026c 08       		.uleb128 0x8
+ 1034 026d 01       		.uleb128 0x1
+ 1035 026e 50       		.byte	0x50
+ 1036 026f 01       		.uleb128 0x1
+ 1037 0270 30       		.byte	0x30
+ 1038 0271 00       		.byte	0
+ 1039 0272 07       		.uleb128 0x7
+ 1040 0273 20000000 		.4byte	.LVL20
+ 1041 0277 8B070000 		.4byte	0x78b
+ 1042 027b 85020000 		.4byte	0x285
+ 1043 027f 08       		.uleb128 0x8
+ 1044 0280 01       		.uleb128 0x1
+ 1045 0281 50       		.byte	0x50
+ 1046 0282 01       		.uleb128 0x1
+ 1047 0283 30       		.byte	0x30
+ 1048 0284 00       		.byte	0
+ 1049 0285 07       		.uleb128 0x7
+ 1050 0286 26000000 		.4byte	.LVL21
+ 1051 028a 96070000 		.4byte	0x796
+ 1052 028e 98020000 		.4byte	0x298
+ 1053 0292 08       		.uleb128 0x8
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 23
+
+
+ 1054 0293 01       		.uleb128 0x1
+ 1055 0294 50       		.byte	0x50
+ 1056 0295 01       		.uleb128 0x1
+ 1057 0296 30       		.byte	0x30
+ 1058 0297 00       		.byte	0
+ 1059 0298 07       		.uleb128 0x7
+ 1060 0299 2C000000 		.4byte	.LVL22
+ 1061 029d A1070000 		.4byte	0x7a1
+ 1062 02a1 AB020000 		.4byte	0x2ab
+ 1063 02a5 08       		.uleb128 0x8
+ 1064 02a6 01       		.uleb128 0x1
+ 1065 02a7 50       		.byte	0x50
+ 1066 02a8 01       		.uleb128 0x1
+ 1067 02a9 30       		.byte	0x30
+ 1068 02aa 00       		.byte	0
+ 1069 02ab 09       		.uleb128 0x9
+ 1070 02ac 32000000 		.4byte	.LVL23
+ 1071 02b0 AC070000 		.4byte	0x7ac
+ 1072 02b4 08       		.uleb128 0x8
+ 1073 02b5 01       		.uleb128 0x1
+ 1074 02b6 50       		.byte	0x50
+ 1075 02b7 01       		.uleb128 0x1
+ 1076 02b8 30       		.byte	0x30
+ 1077 02b9 00       		.byte	0
+ 1078 02ba 00       		.byte	0
+ 1079 02bb 0A       		.uleb128 0xa
+ 1080 02bc 4D020000 		.4byte	.LASF20
+ 1081 02c0 01       		.byte	0x1
+ 1082 02c1 41       		.byte	0x41
+ 1083 02c2 00000000 		.4byte	.LFB37
+ 1084 02c6 04010000 		.4byte	.LFE37-.LFB37
+ 1085 02ca 01       		.uleb128 0x1
+ 1086 02cb 9C       		.byte	0x9c
+ 1087 02cc 84050000 		.4byte	0x584
+ 1088 02d0 0B       		.uleb128 0xb
+ 1089 02d1 17000000 		.4byte	.LASF22
+ 1090 02d5 01       		.byte	0x1
+ 1091 02d6 41       		.byte	0x41
+ 1092 02d7 5D000000 		.4byte	0x5d
+ 1093 02db 00000000 		.4byte	.LLST0
+ 1094 02df 07       		.uleb128 0x7
+ 1095 02e0 14000000 		.4byte	.LVL26
+ 1096 02e4 5F070000 		.4byte	0x75f
+ 1097 02e8 F2020000 		.4byte	0x2f2
+ 1098 02ec 08       		.uleb128 0x8
+ 1099 02ed 01       		.uleb128 0x1
+ 1100 02ee 50       		.byte	0x50
+ 1101 02ef 01       		.uleb128 0x1
+ 1102 02f0 30       		.byte	0x30
+ 1103 02f1 00       		.byte	0
+ 1104 02f2 07       		.uleb128 0x7
+ 1105 02f3 1A000000 		.4byte	.LVL27
+ 1106 02f7 6A070000 		.4byte	0x76a
+ 1107 02fb 05030000 		.4byte	0x305
+ 1108 02ff 08       		.uleb128 0x8
+ 1109 0300 01       		.uleb128 0x1
+ 1110 0301 50       		.byte	0x50
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 24
+
+
+ 1111 0302 01       		.uleb128 0x1
+ 1112 0303 31       		.byte	0x31
+ 1113 0304 00       		.byte	0
+ 1114 0305 07       		.uleb128 0x7
+ 1115 0306 20000000 		.4byte	.LVL28
+ 1116 030a 75070000 		.4byte	0x775
+ 1117 030e 18030000 		.4byte	0x318
+ 1118 0312 08       		.uleb128 0x8
+ 1119 0313 01       		.uleb128 0x1
+ 1120 0314 50       		.byte	0x50
+ 1121 0315 01       		.uleb128 0x1
+ 1122 0316 31       		.byte	0x31
+ 1123 0317 00       		.byte	0
+ 1124 0318 07       		.uleb128 0x7
+ 1125 0319 26000000 		.4byte	.LVL29
+ 1126 031d 80070000 		.4byte	0x780
+ 1127 0321 2B030000 		.4byte	0x32b
+ 1128 0325 08       		.uleb128 0x8
+ 1129 0326 01       		.uleb128 0x1
+ 1130 0327 50       		.byte	0x50
+ 1131 0328 01       		.uleb128 0x1
+ 1132 0329 31       		.byte	0x31
+ 1133 032a 00       		.byte	0
+ 1134 032b 0C       		.uleb128 0xc
+ 1135 032c 2A000000 		.4byte	.LVL30
+ 1136 0330 09010000 		.4byte	0x109
+ 1137 0334 07       		.uleb128 0x7
+ 1138 0335 32000000 		.4byte	.LVL31
+ 1139 0339 5F070000 		.4byte	0x75f
+ 1140 033d 47030000 		.4byte	0x347
+ 1141 0341 08       		.uleb128 0x8
+ 1142 0342 01       		.uleb128 0x1
+ 1143 0343 50       		.byte	0x50
+ 1144 0344 01       		.uleb128 0x1
+ 1145 0345 31       		.byte	0x31
+ 1146 0346 00       		.byte	0
+ 1147 0347 07       		.uleb128 0x7
+ 1148 0348 38000000 		.4byte	.LVL32
+ 1149 034c 6A070000 		.4byte	0x76a
+ 1150 0350 5A030000 		.4byte	0x35a
+ 1151 0354 08       		.uleb128 0x8
+ 1152 0355 01       		.uleb128 0x1
+ 1153 0356 50       		.byte	0x50
+ 1154 0357 01       		.uleb128 0x1
+ 1155 0358 30       		.byte	0x30
+ 1156 0359 00       		.byte	0
+ 1157 035a 07       		.uleb128 0x7
+ 1158 035b 3E000000 		.4byte	.LVL33
+ 1159 035f 75070000 		.4byte	0x775
+ 1160 0363 6D030000 		.4byte	0x36d
+ 1161 0367 08       		.uleb128 0x8
+ 1162 0368 01       		.uleb128 0x1
+ 1163 0369 50       		.byte	0x50
+ 1164 036a 01       		.uleb128 0x1
+ 1165 036b 31       		.byte	0x31
+ 1166 036c 00       		.byte	0
+ 1167 036d 07       		.uleb128 0x7
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 25
+
+
+ 1168 036e 44000000 		.4byte	.LVL34
+ 1169 0372 80070000 		.4byte	0x780
+ 1170 0376 80030000 		.4byte	0x380
+ 1171 037a 08       		.uleb128 0x8
+ 1172 037b 01       		.uleb128 0x1
+ 1173 037c 50       		.byte	0x50
+ 1174 037d 01       		.uleb128 0x1
+ 1175 037e 31       		.byte	0x31
+ 1176 037f 00       		.byte	0
+ 1177 0380 0C       		.uleb128 0xc
+ 1178 0381 48000000 		.4byte	.LVL35
+ 1179 0385 09010000 		.4byte	0x109
+ 1180 0389 07       		.uleb128 0x7
+ 1181 038a 50000000 		.4byte	.LVL36
+ 1182 038e 5F070000 		.4byte	0x75f
+ 1183 0392 9C030000 		.4byte	0x39c
+ 1184 0396 08       		.uleb128 0x8
+ 1185 0397 01       		.uleb128 0x1
+ 1186 0398 50       		.byte	0x50
+ 1187 0399 01       		.uleb128 0x1
+ 1188 039a 31       		.byte	0x31
+ 1189 039b 00       		.byte	0
+ 1190 039c 07       		.uleb128 0x7
+ 1191 039d 56000000 		.4byte	.LVL37
+ 1192 03a1 6A070000 		.4byte	0x76a
+ 1193 03a5 AF030000 		.4byte	0x3af
+ 1194 03a9 08       		.uleb128 0x8
+ 1195 03aa 01       		.uleb128 0x1
+ 1196 03ab 50       		.byte	0x50
+ 1197 03ac 01       		.uleb128 0x1
+ 1198 03ad 31       		.byte	0x31
+ 1199 03ae 00       		.byte	0
+ 1200 03af 07       		.uleb128 0x7
+ 1201 03b0 5C000000 		.4byte	.LVL38
+ 1202 03b4 75070000 		.4byte	0x775
+ 1203 03b8 C2030000 		.4byte	0x3c2
+ 1204 03bc 08       		.uleb128 0x8
+ 1205 03bd 01       		.uleb128 0x1
+ 1206 03be 50       		.byte	0x50
+ 1207 03bf 01       		.uleb128 0x1
+ 1208 03c0 30       		.byte	0x30
+ 1209 03c1 00       		.byte	0
+ 1210 03c2 07       		.uleb128 0x7
+ 1211 03c3 62000000 		.4byte	.LVL39
+ 1212 03c7 80070000 		.4byte	0x780
+ 1213 03cb D5030000 		.4byte	0x3d5
+ 1214 03cf 08       		.uleb128 0x8
+ 1215 03d0 01       		.uleb128 0x1
+ 1216 03d1 50       		.byte	0x50
+ 1217 03d2 01       		.uleb128 0x1
+ 1218 03d3 31       		.byte	0x31
+ 1219 03d4 00       		.byte	0
+ 1220 03d5 0C       		.uleb128 0xc
+ 1221 03d6 66000000 		.4byte	.LVL40
+ 1222 03da 09010000 		.4byte	0x109
+ 1223 03de 07       		.uleb128 0x7
+ 1224 03df 6E000000 		.4byte	.LVL41
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 26
+
+
+ 1225 03e3 5F070000 		.4byte	0x75f
+ 1226 03e7 F1030000 		.4byte	0x3f1
+ 1227 03eb 08       		.uleb128 0x8
+ 1228 03ec 01       		.uleb128 0x1
+ 1229 03ed 50       		.byte	0x50
+ 1230 03ee 01       		.uleb128 0x1
+ 1231 03ef 31       		.byte	0x31
+ 1232 03f0 00       		.byte	0
+ 1233 03f1 07       		.uleb128 0x7
+ 1234 03f2 74000000 		.4byte	.LVL42
+ 1235 03f6 6A070000 		.4byte	0x76a
+ 1236 03fa 04040000 		.4byte	0x404
+ 1237 03fe 08       		.uleb128 0x8
+ 1238 03ff 01       		.uleb128 0x1
+ 1239 0400 50       		.byte	0x50
+ 1240 0401 01       		.uleb128 0x1
+ 1241 0402 31       		.byte	0x31
+ 1242 0403 00       		.byte	0
+ 1243 0404 07       		.uleb128 0x7
+ 1244 0405 7A000000 		.4byte	.LVL43
+ 1245 0409 75070000 		.4byte	0x775
+ 1246 040d 17040000 		.4byte	0x417
+ 1247 0411 08       		.uleb128 0x8
+ 1248 0412 01       		.uleb128 0x1
+ 1249 0413 50       		.byte	0x50
+ 1250 0414 01       		.uleb128 0x1
+ 1251 0415 31       		.byte	0x31
+ 1252 0416 00       		.byte	0
+ 1253 0417 07       		.uleb128 0x7
+ 1254 0418 80000000 		.4byte	.LVL44
+ 1255 041c 80070000 		.4byte	0x780
+ 1256 0420 2A040000 		.4byte	0x42a
+ 1257 0424 08       		.uleb128 0x8
+ 1258 0425 01       		.uleb128 0x1
+ 1259 0426 50       		.byte	0x50
+ 1260 0427 01       		.uleb128 0x1
+ 1261 0428 30       		.byte	0x30
+ 1262 0429 00       		.byte	0
+ 1263 042a 0C       		.uleb128 0xc
+ 1264 042b 84000000 		.4byte	.LVL45
+ 1265 042f 09010000 		.4byte	0x109
+ 1266 0433 0C       		.uleb128 0xc
+ 1267 0434 8A000000 		.4byte	.LVL46
+ 1268 0438 AB000000 		.4byte	0xab
+ 1269 043c 07       		.uleb128 0x7
+ 1270 043d 90000000 		.4byte	.LVL47
+ 1271 0441 8B070000 		.4byte	0x78b
+ 1272 0445 4F040000 		.4byte	0x44f
+ 1273 0449 08       		.uleb128 0x8
+ 1274 044a 01       		.uleb128 0x1
+ 1275 044b 50       		.byte	0x50
+ 1276 044c 01       		.uleb128 0x1
+ 1277 044d 30       		.byte	0x30
+ 1278 044e 00       		.byte	0
+ 1279 044f 07       		.uleb128 0x7
+ 1280 0450 96000000 		.4byte	.LVL48
+ 1281 0454 96070000 		.4byte	0x796
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 27
+
+
+ 1282 0458 62040000 		.4byte	0x462
+ 1283 045c 08       		.uleb128 0x8
+ 1284 045d 01       		.uleb128 0x1
+ 1285 045e 50       		.byte	0x50
+ 1286 045f 01       		.uleb128 0x1
+ 1287 0460 31       		.byte	0x31
+ 1288 0461 00       		.byte	0
+ 1289 0462 07       		.uleb128 0x7
+ 1290 0463 9C000000 		.4byte	.LVL49
+ 1291 0467 A1070000 		.4byte	0x7a1
+ 1292 046b 75040000 		.4byte	0x475
+ 1293 046f 08       		.uleb128 0x8
+ 1294 0470 01       		.uleb128 0x1
+ 1295 0471 50       		.byte	0x50
+ 1296 0472 01       		.uleb128 0x1
+ 1297 0473 31       		.byte	0x31
+ 1298 0474 00       		.byte	0
+ 1299 0475 07       		.uleb128 0x7
+ 1300 0476 A2000000 		.4byte	.LVL50
+ 1301 047a AC070000 		.4byte	0x7ac
+ 1302 047e 88040000 		.4byte	0x488
+ 1303 0482 08       		.uleb128 0x8
+ 1304 0483 01       		.uleb128 0x1
+ 1305 0484 50       		.byte	0x50
+ 1306 0485 01       		.uleb128 0x1
+ 1307 0486 31       		.byte	0x31
+ 1308 0487 00       		.byte	0
+ 1309 0488 0C       		.uleb128 0xc
+ 1310 0489 A8000000 		.4byte	.LVL51
+ 1311 048d AB000000 		.4byte	0xab
+ 1312 0491 07       		.uleb128 0x7
+ 1313 0492 AE000000 		.4byte	.LVL52
+ 1314 0496 8B070000 		.4byte	0x78b
+ 1315 049a A4040000 		.4byte	0x4a4
+ 1316 049e 08       		.uleb128 0x8
+ 1317 049f 01       		.uleb128 0x1
+ 1318 04a0 50       		.byte	0x50
+ 1319 04a1 01       		.uleb128 0x1
+ 1320 04a2 31       		.byte	0x31
+ 1321 04a3 00       		.byte	0
+ 1322 04a4 07       		.uleb128 0x7
+ 1323 04a5 B4000000 		.4byte	.LVL53
+ 1324 04a9 96070000 		.4byte	0x796
+ 1325 04ad B7040000 		.4byte	0x4b7
+ 1326 04b1 08       		.uleb128 0x8
+ 1327 04b2 01       		.uleb128 0x1
+ 1328 04b3 50       		.byte	0x50
+ 1329 04b4 01       		.uleb128 0x1
+ 1330 04b5 30       		.byte	0x30
+ 1331 04b6 00       		.byte	0
+ 1332 04b7 07       		.uleb128 0x7
+ 1333 04b8 BA000000 		.4byte	.LVL54
+ 1334 04bc A1070000 		.4byte	0x7a1
+ 1335 04c0 CA040000 		.4byte	0x4ca
+ 1336 04c4 08       		.uleb128 0x8
+ 1337 04c5 01       		.uleb128 0x1
+ 1338 04c6 50       		.byte	0x50
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 28
+
+
+ 1339 04c7 01       		.uleb128 0x1
+ 1340 04c8 31       		.byte	0x31
+ 1341 04c9 00       		.byte	0
+ 1342 04ca 07       		.uleb128 0x7
+ 1343 04cb C0000000 		.4byte	.LVL55
+ 1344 04cf AC070000 		.4byte	0x7ac
+ 1345 04d3 DD040000 		.4byte	0x4dd
+ 1346 04d7 08       		.uleb128 0x8
+ 1347 04d8 01       		.uleb128 0x1
+ 1348 04d9 50       		.byte	0x50
+ 1349 04da 01       		.uleb128 0x1
+ 1350 04db 31       		.byte	0x31
+ 1351 04dc 00       		.byte	0
+ 1352 04dd 0C       		.uleb128 0xc
+ 1353 04de C6000000 		.4byte	.LVL56
+ 1354 04e2 AB000000 		.4byte	0xab
+ 1355 04e6 07       		.uleb128 0x7
+ 1356 04e7 CC000000 		.4byte	.LVL57
+ 1357 04eb 8B070000 		.4byte	0x78b
+ 1358 04ef F9040000 		.4byte	0x4f9
+ 1359 04f3 08       		.uleb128 0x8
+ 1360 04f4 01       		.uleb128 0x1
+ 1361 04f5 50       		.byte	0x50
+ 1362 04f6 01       		.uleb128 0x1
+ 1363 04f7 31       		.byte	0x31
+ 1364 04f8 00       		.byte	0
+ 1365 04f9 07       		.uleb128 0x7
+ 1366 04fa D2000000 		.4byte	.LVL58
+ 1367 04fe 96070000 		.4byte	0x796
+ 1368 0502 0C050000 		.4byte	0x50c
+ 1369 0506 08       		.uleb128 0x8
+ 1370 0507 01       		.uleb128 0x1
+ 1371 0508 50       		.byte	0x50
+ 1372 0509 01       		.uleb128 0x1
+ 1373 050a 31       		.byte	0x31
+ 1374 050b 00       		.byte	0
+ 1375 050c 07       		.uleb128 0x7
+ 1376 050d D8000000 		.4byte	.LVL59
+ 1377 0511 A1070000 		.4byte	0x7a1
+ 1378 0515 1F050000 		.4byte	0x51f
+ 1379 0519 08       		.uleb128 0x8
+ 1380 051a 01       		.uleb128 0x1
+ 1381 051b 50       		.byte	0x50
+ 1382 051c 01       		.uleb128 0x1
+ 1383 051d 30       		.byte	0x30
+ 1384 051e 00       		.byte	0
+ 1385 051f 07       		.uleb128 0x7
+ 1386 0520 DE000000 		.4byte	.LVL60
+ 1387 0524 AC070000 		.4byte	0x7ac
+ 1388 0528 32050000 		.4byte	0x532
+ 1389 052c 08       		.uleb128 0x8
+ 1390 052d 01       		.uleb128 0x1
+ 1391 052e 50       		.byte	0x50
+ 1392 052f 01       		.uleb128 0x1
+ 1393 0530 31       		.byte	0x31
+ 1394 0531 00       		.byte	0
+ 1395 0532 0C       		.uleb128 0xc
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 29
+
+
+ 1396 0533 E4000000 		.4byte	.LVL61
+ 1397 0537 AB000000 		.4byte	0xab
+ 1398 053b 07       		.uleb128 0x7
+ 1399 053c EA000000 		.4byte	.LVL62
+ 1400 0540 8B070000 		.4byte	0x78b
+ 1401 0544 4E050000 		.4byte	0x54e
+ 1402 0548 08       		.uleb128 0x8
+ 1403 0549 01       		.uleb128 0x1
+ 1404 054a 50       		.byte	0x50
+ 1405 054b 01       		.uleb128 0x1
+ 1406 054c 31       		.byte	0x31
+ 1407 054d 00       		.byte	0
+ 1408 054e 07       		.uleb128 0x7
+ 1409 054f F0000000 		.4byte	.LVL63
+ 1410 0553 96070000 		.4byte	0x796
+ 1411 0557 61050000 		.4byte	0x561
+ 1412 055b 08       		.uleb128 0x8
+ 1413 055c 01       		.uleb128 0x1
+ 1414 055d 50       		.byte	0x50
+ 1415 055e 01       		.uleb128 0x1
+ 1416 055f 31       		.byte	0x31
+ 1417 0560 00       		.byte	0
+ 1418 0561 07       		.uleb128 0x7
+ 1419 0562 F6000000 		.4byte	.LVL64
+ 1420 0566 A1070000 		.4byte	0x7a1
+ 1421 056a 74050000 		.4byte	0x574
+ 1422 056e 08       		.uleb128 0x8
+ 1423 056f 01       		.uleb128 0x1
+ 1424 0570 50       		.byte	0x50
+ 1425 0571 01       		.uleb128 0x1
+ 1426 0572 31       		.byte	0x31
+ 1427 0573 00       		.byte	0
+ 1428 0574 09       		.uleb128 0x9
+ 1429 0575 FC000000 		.4byte	.LVL65
+ 1430 0579 AC070000 		.4byte	0x7ac
+ 1431 057d 08       		.uleb128 0x8
+ 1432 057e 01       		.uleb128 0x1
+ 1433 057f 50       		.byte	0x50
+ 1434 0580 01       		.uleb128 0x1
+ 1435 0581 30       		.byte	0x30
+ 1436 0582 00       		.byte	0
+ 1437 0583 00       		.byte	0
+ 1438 0584 0A       		.uleb128 0xa
+ 1439 0585 C6000000 		.4byte	.LASF21
+ 1440 0589 01       		.byte	0x1
+ 1441 058a 7F       		.byte	0x7f
+ 1442 058b 00000000 		.4byte	.LFB38
+ 1443 058f 54000000 		.4byte	.LFE38-.LFB38
+ 1444 0593 01       		.uleb128 0x1
+ 1445 0594 9C       		.byte	0x9c
+ 1446 0595 3D060000 		.4byte	0x63d
+ 1447 0599 0B       		.uleb128 0xb
+ 1448 059a 4D010000 		.4byte	.LASF23
+ 1449 059e 01       		.byte	0x1
+ 1450 059f 7F       		.byte	0x7f
+ 1451 05a0 5D000000 		.4byte	0x5d
+ 1452 05a4 21000000 		.4byte	.LLST1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 30
+
+
+ 1453 05a8 07       		.uleb128 0x7
+ 1454 05a9 14000000 		.4byte	.LVL68
+ 1455 05ad BB020000 		.4byte	0x2bb
+ 1456 05b1 BB050000 		.4byte	0x5bb
+ 1457 05b5 08       		.uleb128 0x8
+ 1458 05b6 01       		.uleb128 0x1
+ 1459 05b7 50       		.byte	0x50
+ 1460 05b8 01       		.uleb128 0x1
+ 1461 05b9 30       		.byte	0x30
+ 1462 05ba 00       		.byte	0
+ 1463 05bb 07       		.uleb128 0x7
+ 1464 05bc 1C000000 		.4byte	.LVL69
+ 1465 05c0 BB020000 		.4byte	0x2bb
+ 1466 05c4 CE050000 		.4byte	0x5ce
+ 1467 05c8 08       		.uleb128 0x8
+ 1468 05c9 01       		.uleb128 0x1
+ 1469 05ca 50       		.byte	0x50
+ 1470 05cb 01       		.uleb128 0x1
+ 1471 05cc 31       		.byte	0x31
+ 1472 05cd 00       		.byte	0
+ 1473 05ce 07       		.uleb128 0x7
+ 1474 05cf 24000000 		.4byte	.LVL70
+ 1475 05d3 BB020000 		.4byte	0x2bb
+ 1476 05d7 E1050000 		.4byte	0x5e1
+ 1477 05db 08       		.uleb128 0x8
+ 1478 05dc 01       		.uleb128 0x1
+ 1479 05dd 50       		.byte	0x50
+ 1480 05de 01       		.uleb128 0x1
+ 1481 05df 32       		.byte	0x32
+ 1482 05e0 00       		.byte	0
+ 1483 05e1 07       		.uleb128 0x7
+ 1484 05e2 2C000000 		.4byte	.LVL71
+ 1485 05e6 BB020000 		.4byte	0x2bb
+ 1486 05ea F4050000 		.4byte	0x5f4
+ 1487 05ee 08       		.uleb128 0x8
+ 1488 05ef 01       		.uleb128 0x1
+ 1489 05f0 50       		.byte	0x50
+ 1490 05f1 01       		.uleb128 0x1
+ 1491 05f2 33       		.byte	0x33
+ 1492 05f3 00       		.byte	0
+ 1493 05f4 07       		.uleb128 0x7
+ 1494 05f5 34000000 		.4byte	.LVL72
+ 1495 05f9 BB020000 		.4byte	0x2bb
+ 1496 05fd 07060000 		.4byte	0x607
+ 1497 0601 08       		.uleb128 0x8
+ 1498 0602 01       		.uleb128 0x1
+ 1499 0603 50       		.byte	0x50
+ 1500 0604 01       		.uleb128 0x1
+ 1501 0605 34       		.byte	0x34
+ 1502 0606 00       		.byte	0
+ 1503 0607 07       		.uleb128 0x7
+ 1504 0608 3C000000 		.4byte	.LVL73
+ 1505 060c BB020000 		.4byte	0x2bb
+ 1506 0610 1A060000 		.4byte	0x61a
+ 1507 0614 08       		.uleb128 0x8
+ 1508 0615 01       		.uleb128 0x1
+ 1509 0616 50       		.byte	0x50
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 31
+
+
+ 1510 0617 01       		.uleb128 0x1
+ 1511 0618 35       		.byte	0x35
+ 1512 0619 00       		.byte	0
+ 1513 061a 07       		.uleb128 0x7
+ 1514 061b 44000000 		.4byte	.LVL74
+ 1515 061f BB020000 		.4byte	0x2bb
+ 1516 0623 2D060000 		.4byte	0x62d
+ 1517 0627 08       		.uleb128 0x8
+ 1518 0628 01       		.uleb128 0x1
+ 1519 0629 50       		.byte	0x50
+ 1520 062a 01       		.uleb128 0x1
+ 1521 062b 36       		.byte	0x36
+ 1522 062c 00       		.byte	0
+ 1523 062d 09       		.uleb128 0x9
+ 1524 062e 4C000000 		.4byte	.LVL75
+ 1525 0632 BB020000 		.4byte	0x2bb
+ 1526 0636 08       		.uleb128 0x8
+ 1527 0637 01       		.uleb128 0x1
+ 1528 0638 50       		.byte	0x50
+ 1529 0639 01       		.uleb128 0x1
+ 1530 063a 37       		.byte	0x37
+ 1531 063b 00       		.byte	0
+ 1532 063c 00       		.byte	0
+ 1533 063d 0A       		.uleb128 0xa
+ 1534 063e 5C010000 		.4byte	.LASF24
+ 1535 0642 01       		.byte	0x1
+ 1536 0643 9D       		.byte	0x9d
+ 1537 0644 00000000 		.4byte	.LFB39
+ 1538 0648 58000000 		.4byte	.LFE39-.LFB39
+ 1539 064c 01       		.uleb128 0x1
+ 1540 064d 9C       		.byte	0x9c
+ 1541 064e F6060000 		.4byte	0x6f6
+ 1542 0652 0B       		.uleb128 0xb
+ 1543 0653 4D010000 		.4byte	.LASF23
+ 1544 0657 01       		.byte	0x1
+ 1545 0658 9D       		.byte	0x9d
+ 1546 0659 5D000000 		.4byte	0x5d
+ 1547 065d 42000000 		.4byte	.LLST2
+ 1548 0661 07       		.uleb128 0x7
+ 1549 0662 18000000 		.4byte	.LVL78
+ 1550 0666 BB020000 		.4byte	0x2bb
+ 1551 066a 74060000 		.4byte	0x674
+ 1552 066e 08       		.uleb128 0x8
+ 1553 066f 01       		.uleb128 0x1
+ 1554 0670 50       		.byte	0x50
+ 1555 0671 01       		.uleb128 0x1
+ 1556 0672 30       		.byte	0x30
+ 1557 0673 00       		.byte	0
+ 1558 0674 07       		.uleb128 0x7
+ 1559 0675 20000000 		.4byte	.LVL79
+ 1560 0679 BB020000 		.4byte	0x2bb
+ 1561 067d 87060000 		.4byte	0x687
+ 1562 0681 08       		.uleb128 0x8
+ 1563 0682 01       		.uleb128 0x1
+ 1564 0683 50       		.byte	0x50
+ 1565 0684 01       		.uleb128 0x1
+ 1566 0685 31       		.byte	0x31
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 32
+
+
+ 1567 0686 00       		.byte	0
+ 1568 0687 07       		.uleb128 0x7
+ 1569 0688 28000000 		.4byte	.LVL80
+ 1570 068c BB020000 		.4byte	0x2bb
+ 1571 0690 9A060000 		.4byte	0x69a
+ 1572 0694 08       		.uleb128 0x8
+ 1573 0695 01       		.uleb128 0x1
+ 1574 0696 50       		.byte	0x50
+ 1575 0697 01       		.uleb128 0x1
+ 1576 0698 32       		.byte	0x32
+ 1577 0699 00       		.byte	0
+ 1578 069a 07       		.uleb128 0x7
+ 1579 069b 30000000 		.4byte	.LVL81
+ 1580 069f BB020000 		.4byte	0x2bb
+ 1581 06a3 AD060000 		.4byte	0x6ad
+ 1582 06a7 08       		.uleb128 0x8
+ 1583 06a8 01       		.uleb128 0x1
+ 1584 06a9 50       		.byte	0x50
+ 1585 06aa 01       		.uleb128 0x1
+ 1586 06ab 33       		.byte	0x33
+ 1587 06ac 00       		.byte	0
+ 1588 06ad 07       		.uleb128 0x7
+ 1589 06ae 38000000 		.4byte	.LVL82
+ 1590 06b2 BB020000 		.4byte	0x2bb
+ 1591 06b6 C0060000 		.4byte	0x6c0
+ 1592 06ba 08       		.uleb128 0x8
+ 1593 06bb 01       		.uleb128 0x1
+ 1594 06bc 50       		.byte	0x50
+ 1595 06bd 01       		.uleb128 0x1
+ 1596 06be 34       		.byte	0x34
+ 1597 06bf 00       		.byte	0
+ 1598 06c0 07       		.uleb128 0x7
+ 1599 06c1 40000000 		.4byte	.LVL83
+ 1600 06c5 BB020000 		.4byte	0x2bb
+ 1601 06c9 D3060000 		.4byte	0x6d3
+ 1602 06cd 08       		.uleb128 0x8
+ 1603 06ce 01       		.uleb128 0x1
+ 1604 06cf 50       		.byte	0x50
+ 1605 06d0 01       		.uleb128 0x1
+ 1606 06d1 35       		.byte	0x35
+ 1607 06d2 00       		.byte	0
+ 1608 06d3 07       		.uleb128 0x7
+ 1609 06d4 48000000 		.4byte	.LVL84
+ 1610 06d8 BB020000 		.4byte	0x2bb
+ 1611 06dc E6060000 		.4byte	0x6e6
+ 1612 06e0 08       		.uleb128 0x8
+ 1613 06e1 01       		.uleb128 0x1
+ 1614 06e2 50       		.byte	0x50
+ 1615 06e3 01       		.uleb128 0x1
+ 1616 06e4 36       		.byte	0x36
+ 1617 06e5 00       		.byte	0
+ 1618 06e6 09       		.uleb128 0x9
+ 1619 06e7 50000000 		.4byte	.LVL85
+ 1620 06eb BB020000 		.4byte	0x2bb
+ 1621 06ef 08       		.uleb128 0x8
+ 1622 06f0 01       		.uleb128 0x1
+ 1623 06f1 50       		.byte	0x50
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 33
+
+
+ 1624 06f2 01       		.uleb128 0x1
+ 1625 06f3 37       		.byte	0x37
+ 1626 06f4 00       		.byte	0
+ 1627 06f5 00       		.byte	0
+ 1628 06f6 0A       		.uleb128 0xa
+ 1629 06f7 B8020000 		.4byte	.LASF25
+ 1630 06fb 01       		.byte	0x1
+ 1631 06fc BB       		.byte	0xbb
+ 1632 06fd 00000000 		.4byte	.LFB40
+ 1633 0701 3C000000 		.4byte	.LFE40-.LFB40
+ 1634 0705 01       		.uleb128 0x1
+ 1635 0706 9C       		.byte	0x9c
+ 1636 0707 3E070000 		.4byte	0x73e
+ 1637 070b 0B       		.uleb128 0xb
+ 1638 070c 6A020000 		.4byte	.LASF26
+ 1639 0710 01       		.byte	0x1
+ 1640 0711 BB       		.byte	0xbb
+ 1641 0712 48000000 		.4byte	0x48
+ 1642 0716 63000000 		.4byte	.LLST3
+ 1643 071a 0D       		.uleb128 0xd
+ 1644 071b 46000000 		.4byte	.LASF41
+ 1645 071f 01       		.byte	0x1
+ 1646 0720 BD       		.byte	0xbd
+ 1647 0721 5D000000 		.4byte	0x5d
+ 1648 0725 05       		.uleb128 0x5
+ 1649 0726 03       		.byte	0x3
+ 1650 0727 04000000 		.4byte	flag_led.6566
+ 1651 072b 0C       		.uleb128 0xc
+ 1652 072c 2A000000 		.4byte	.LVL87
+ 1653 0730 67010000 		.4byte	0x167
+ 1654 0734 0C       		.uleb128 0xc
+ 1655 0735 30000000 		.4byte	.LVL89
+ 1656 0739 11020000 		.4byte	0x211
+ 1657 073d 00       		.byte	0
+ 1658 073e 0E       		.uleb128 0xe
+ 1659 073f 42020000 		.4byte	.LASF27
+ 1660 0743 01       		.byte	0x1
+ 1661 0744 0F       		.byte	0xf
+ 1662 0745 49070000 		.4byte	0x749
+ 1663 0749 0F       		.uleb128 0xf
+ 1664 074a 48000000 		.4byte	0x48
+ 1665 074e 10       		.uleb128 0x10
+ 1666 074f D8020000 		.4byte	.LASF28
+ 1667 0753 01       		.byte	0x1
+ 1668 0754 10       		.byte	0x10
+ 1669 0755 49070000 		.4byte	0x749
+ 1670 0759 05       		.uleb128 0x5
+ 1671 075a 03       		.byte	0x3
+ 1672 075b 00000000 		.4byte	time_current
+ 1673 075f 11       		.uleb128 0x11
+ 1674 0760 84020000 		.4byte	.LASF29
+ 1675 0764 84020000 		.4byte	.LASF29
+ 1676 0768 02       		.byte	0x2
+ 1677 0769 33       		.byte	0x33
+ 1678 076a 11       		.uleb128 0x11
+ 1679 076b 24010000 		.4byte	.LASF30
+ 1680 076f 24010000 		.4byte	.LASF30
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 34
+
+
+ 1681 0773 03       		.byte	0x3
+ 1682 0774 33       		.byte	0x33
+ 1683 0775 11       		.uleb128 0x11
+ 1684 0776 E1000000 		.4byte	.LASF31
+ 1685 077a E1000000 		.4byte	.LASF31
+ 1686 077e 04       		.byte	0x4
+ 1687 077f 33       		.byte	0x33
+ 1688 0780 11       		.uleb128 0x11
+ 1689 0781 F3000000 		.4byte	.LASF32
+ 1690 0785 F3000000 		.4byte	.LASF32
+ 1691 0789 05       		.byte	0x5
+ 1692 078a 33       		.byte	0x33
+ 1693 078b 11       		.uleb128 0x11
+ 1694 078c 1E020000 		.4byte	.LASF33
+ 1695 0790 1E020000 		.4byte	.LASF33
+ 1696 0794 06       		.byte	0x6
+ 1697 0795 33       		.byte	0x33
+ 1698 0796 11       		.uleb128 0x11
+ 1699 0797 30020000 		.4byte	.LASF34
+ 1700 079b 30020000 		.4byte	.LASF34
+ 1701 079f 07       		.byte	0x7
+ 1702 07a0 33       		.byte	0x33
+ 1703 07a1 11       		.uleb128 0x11
+ 1704 07a2 72020000 		.4byte	.LASF35
+ 1705 07a6 72020000 		.4byte	.LASF35
+ 1706 07aa 08       		.byte	0x8
+ 1707 07ab 33       		.byte	0x33
+ 1708 07ac 11       		.uleb128 0x11
+ 1709 07ad C6020000 		.4byte	.LASF36
+ 1710 07b1 C6020000 		.4byte	.LASF36
+ 1711 07b5 09       		.byte	0x9
+ 1712 07b6 33       		.byte	0x33
+ 1713 07b7 00       		.byte	0
+ 1714              		.section	.debug_abbrev,"",%progbits
+ 1715              	.Ldebug_abbrev0:
+ 1716 0000 01       		.uleb128 0x1
+ 1717 0001 11       		.uleb128 0x11
+ 1718 0002 01       		.byte	0x1
+ 1719 0003 25       		.uleb128 0x25
+ 1720 0004 0E       		.uleb128 0xe
+ 1721 0005 13       		.uleb128 0x13
+ 1722 0006 0B       		.uleb128 0xb
+ 1723 0007 03       		.uleb128 0x3
+ 1724 0008 0E       		.uleb128 0xe
+ 1725 0009 1B       		.uleb128 0x1b
+ 1726 000a 0E       		.uleb128 0xe
+ 1727 000b 55       		.uleb128 0x55
+ 1728 000c 17       		.uleb128 0x17
+ 1729 000d 11       		.uleb128 0x11
+ 1730 000e 01       		.uleb128 0x1
+ 1731 000f 10       		.uleb128 0x10
+ 1732 0010 17       		.uleb128 0x17
+ 1733 0011 00       		.byte	0
+ 1734 0012 00       		.byte	0
+ 1735 0013 02       		.uleb128 0x2
+ 1736 0014 24       		.uleb128 0x24
+ 1737 0015 00       		.byte	0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 35
+
+
+ 1738 0016 0B       		.uleb128 0xb
+ 1739 0017 0B       		.uleb128 0xb
+ 1740 0018 3E       		.uleb128 0x3e
+ 1741 0019 0B       		.uleb128 0xb
+ 1742 001a 03       		.uleb128 0x3
+ 1743 001b 0E       		.uleb128 0xe
+ 1744 001c 00       		.byte	0
+ 1745 001d 00       		.byte	0
+ 1746 001e 03       		.uleb128 0x3
+ 1747 001f 24       		.uleb128 0x24
+ 1748 0020 00       		.byte	0
+ 1749 0021 0B       		.uleb128 0xb
+ 1750 0022 0B       		.uleb128 0xb
+ 1751 0023 3E       		.uleb128 0x3e
+ 1752 0024 0B       		.uleb128 0xb
+ 1753 0025 03       		.uleb128 0x3
+ 1754 0026 08       		.uleb128 0x8
+ 1755 0027 00       		.byte	0
+ 1756 0028 00       		.byte	0
+ 1757 0029 04       		.uleb128 0x4
+ 1758 002a 04       		.uleb128 0x4
+ 1759 002b 01       		.byte	0x1
+ 1760 002c 03       		.uleb128 0x3
+ 1761 002d 0E       		.uleb128 0xe
+ 1762 002e 0B       		.uleb128 0xb
+ 1763 002f 0B       		.uleb128 0xb
+ 1764 0030 49       		.uleb128 0x49
+ 1765 0031 13       		.uleb128 0x13
+ 1766 0032 3A       		.uleb128 0x3a
+ 1767 0033 0B       		.uleb128 0xb
+ 1768 0034 3B       		.uleb128 0x3b
+ 1769 0035 0B       		.uleb128 0xb
+ 1770 0036 01       		.uleb128 0x1
+ 1771 0037 13       		.uleb128 0x13
+ 1772 0038 00       		.byte	0
+ 1773 0039 00       		.byte	0
+ 1774 003a 05       		.uleb128 0x5
+ 1775 003b 28       		.uleb128 0x28
+ 1776 003c 00       		.byte	0
+ 1777 003d 03       		.uleb128 0x3
+ 1778 003e 0E       		.uleb128 0xe
+ 1779 003f 1C       		.uleb128 0x1c
+ 1780 0040 0B       		.uleb128 0xb
+ 1781 0041 00       		.byte	0
+ 1782 0042 00       		.byte	0
+ 1783 0043 06       		.uleb128 0x6
+ 1784 0044 2E       		.uleb128 0x2e
+ 1785 0045 01       		.byte	0x1
+ 1786 0046 3F       		.uleb128 0x3f
+ 1787 0047 19       		.uleb128 0x19
+ 1788 0048 03       		.uleb128 0x3
+ 1789 0049 0E       		.uleb128 0xe
+ 1790 004a 3A       		.uleb128 0x3a
+ 1791 004b 0B       		.uleb128 0xb
+ 1792 004c 3B       		.uleb128 0x3b
+ 1793 004d 0B       		.uleb128 0xb
+ 1794 004e 11       		.uleb128 0x11
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 36
+
+
+ 1795 004f 01       		.uleb128 0x1
+ 1796 0050 12       		.uleb128 0x12
+ 1797 0051 06       		.uleb128 0x6
+ 1798 0052 40       		.uleb128 0x40
+ 1799 0053 18       		.uleb128 0x18
+ 1800 0054 9742     		.uleb128 0x2117
+ 1801 0056 19       		.uleb128 0x19
+ 1802 0057 01       		.uleb128 0x1
+ 1803 0058 13       		.uleb128 0x13
+ 1804 0059 00       		.byte	0
+ 1805 005a 00       		.byte	0
+ 1806 005b 07       		.uleb128 0x7
+ 1807 005c 898201   		.uleb128 0x4109
+ 1808 005f 01       		.byte	0x1
+ 1809 0060 11       		.uleb128 0x11
+ 1810 0061 01       		.uleb128 0x1
+ 1811 0062 31       		.uleb128 0x31
+ 1812 0063 13       		.uleb128 0x13
+ 1813 0064 01       		.uleb128 0x1
+ 1814 0065 13       		.uleb128 0x13
+ 1815 0066 00       		.byte	0
+ 1816 0067 00       		.byte	0
+ 1817 0068 08       		.uleb128 0x8
+ 1818 0069 8A8201   		.uleb128 0x410a
+ 1819 006c 00       		.byte	0
+ 1820 006d 02       		.uleb128 0x2
+ 1821 006e 18       		.uleb128 0x18
+ 1822 006f 9142     		.uleb128 0x2111
+ 1823 0071 18       		.uleb128 0x18
+ 1824 0072 00       		.byte	0
+ 1825 0073 00       		.byte	0
+ 1826 0074 09       		.uleb128 0x9
+ 1827 0075 898201   		.uleb128 0x4109
+ 1828 0078 01       		.byte	0x1
+ 1829 0079 11       		.uleb128 0x11
+ 1830 007a 01       		.uleb128 0x1
+ 1831 007b 31       		.uleb128 0x31
+ 1832 007c 13       		.uleb128 0x13
+ 1833 007d 00       		.byte	0
+ 1834 007e 00       		.byte	0
+ 1835 007f 0A       		.uleb128 0xa
+ 1836 0080 2E       		.uleb128 0x2e
+ 1837 0081 01       		.byte	0x1
+ 1838 0082 3F       		.uleb128 0x3f
+ 1839 0083 19       		.uleb128 0x19
+ 1840 0084 03       		.uleb128 0x3
+ 1841 0085 0E       		.uleb128 0xe
+ 1842 0086 3A       		.uleb128 0x3a
+ 1843 0087 0B       		.uleb128 0xb
+ 1844 0088 3B       		.uleb128 0x3b
+ 1845 0089 0B       		.uleb128 0xb
+ 1846 008a 27       		.uleb128 0x27
+ 1847 008b 19       		.uleb128 0x19
+ 1848 008c 11       		.uleb128 0x11
+ 1849 008d 01       		.uleb128 0x1
+ 1850 008e 12       		.uleb128 0x12
+ 1851 008f 06       		.uleb128 0x6
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 37
+
+
+ 1852 0090 40       		.uleb128 0x40
+ 1853 0091 18       		.uleb128 0x18
+ 1854 0092 9742     		.uleb128 0x2117
+ 1855 0094 19       		.uleb128 0x19
+ 1856 0095 01       		.uleb128 0x1
+ 1857 0096 13       		.uleb128 0x13
+ 1858 0097 00       		.byte	0
+ 1859 0098 00       		.byte	0
+ 1860 0099 0B       		.uleb128 0xb
+ 1861 009a 05       		.uleb128 0x5
+ 1862 009b 00       		.byte	0
+ 1863 009c 03       		.uleb128 0x3
+ 1864 009d 0E       		.uleb128 0xe
+ 1865 009e 3A       		.uleb128 0x3a
+ 1866 009f 0B       		.uleb128 0xb
+ 1867 00a0 3B       		.uleb128 0x3b
+ 1868 00a1 0B       		.uleb128 0xb
+ 1869 00a2 49       		.uleb128 0x49
+ 1870 00a3 13       		.uleb128 0x13
+ 1871 00a4 02       		.uleb128 0x2
+ 1872 00a5 17       		.uleb128 0x17
+ 1873 00a6 00       		.byte	0
+ 1874 00a7 00       		.byte	0
+ 1875 00a8 0C       		.uleb128 0xc
+ 1876 00a9 898201   		.uleb128 0x4109
+ 1877 00ac 00       		.byte	0
+ 1878 00ad 11       		.uleb128 0x11
+ 1879 00ae 01       		.uleb128 0x1
+ 1880 00af 31       		.uleb128 0x31
+ 1881 00b0 13       		.uleb128 0x13
+ 1882 00b1 00       		.byte	0
+ 1883 00b2 00       		.byte	0
+ 1884 00b3 0D       		.uleb128 0xd
+ 1885 00b4 34       		.uleb128 0x34
+ 1886 00b5 00       		.byte	0
+ 1887 00b6 03       		.uleb128 0x3
+ 1888 00b7 0E       		.uleb128 0xe
+ 1889 00b8 3A       		.uleb128 0x3a
+ 1890 00b9 0B       		.uleb128 0xb
+ 1891 00ba 3B       		.uleb128 0x3b
+ 1892 00bb 0B       		.uleb128 0xb
+ 1893 00bc 49       		.uleb128 0x49
+ 1894 00bd 13       		.uleb128 0x13
+ 1895 00be 02       		.uleb128 0x2
+ 1896 00bf 18       		.uleb128 0x18
+ 1897 00c0 00       		.byte	0
+ 1898 00c1 00       		.byte	0
+ 1899 00c2 0E       		.uleb128 0xe
+ 1900 00c3 34       		.uleb128 0x34
+ 1901 00c4 00       		.byte	0
+ 1902 00c5 03       		.uleb128 0x3
+ 1903 00c6 0E       		.uleb128 0xe
+ 1904 00c7 3A       		.uleb128 0x3a
+ 1905 00c8 0B       		.uleb128 0xb
+ 1906 00c9 3B       		.uleb128 0x3b
+ 1907 00ca 0B       		.uleb128 0xb
+ 1908 00cb 49       		.uleb128 0x49
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 38
+
+
+ 1909 00cc 13       		.uleb128 0x13
+ 1910 00cd 3F       		.uleb128 0x3f
+ 1911 00ce 19       		.uleb128 0x19
+ 1912 00cf 3C       		.uleb128 0x3c
+ 1913 00d0 19       		.uleb128 0x19
+ 1914 00d1 00       		.byte	0
+ 1915 00d2 00       		.byte	0
+ 1916 00d3 0F       		.uleb128 0xf
+ 1917 00d4 35       		.uleb128 0x35
+ 1918 00d5 00       		.byte	0
+ 1919 00d6 49       		.uleb128 0x49
+ 1920 00d7 13       		.uleb128 0x13
+ 1921 00d8 00       		.byte	0
+ 1922 00d9 00       		.byte	0
+ 1923 00da 10       		.uleb128 0x10
+ 1924 00db 34       		.uleb128 0x34
+ 1925 00dc 00       		.byte	0
+ 1926 00dd 03       		.uleb128 0x3
+ 1927 00de 0E       		.uleb128 0xe
+ 1928 00df 3A       		.uleb128 0x3a
+ 1929 00e0 0B       		.uleb128 0xb
+ 1930 00e1 3B       		.uleb128 0x3b
+ 1931 00e2 0B       		.uleb128 0xb
+ 1932 00e3 49       		.uleb128 0x49
+ 1933 00e4 13       		.uleb128 0x13
+ 1934 00e5 3F       		.uleb128 0x3f
+ 1935 00e6 19       		.uleb128 0x19
+ 1936 00e7 02       		.uleb128 0x2
+ 1937 00e8 18       		.uleb128 0x18
+ 1938 00e9 00       		.byte	0
+ 1939 00ea 00       		.byte	0
+ 1940 00eb 11       		.uleb128 0x11
+ 1941 00ec 2E       		.uleb128 0x2e
+ 1942 00ed 00       		.byte	0
+ 1943 00ee 3F       		.uleb128 0x3f
+ 1944 00ef 19       		.uleb128 0x19
+ 1945 00f0 3C       		.uleb128 0x3c
+ 1946 00f1 19       		.uleb128 0x19
+ 1947 00f2 6E       		.uleb128 0x6e
+ 1948 00f3 0E       		.uleb128 0xe
+ 1949 00f4 03       		.uleb128 0x3
+ 1950 00f5 0E       		.uleb128 0xe
+ 1951 00f6 3A       		.uleb128 0x3a
+ 1952 00f7 0B       		.uleb128 0xb
+ 1953 00f8 3B       		.uleb128 0x3b
+ 1954 00f9 0B       		.uleb128 0xb
+ 1955 00fa 00       		.byte	0
+ 1956 00fb 00       		.byte	0
+ 1957 00fc 00       		.byte	0
+ 1958              		.section	.debug_loc,"",%progbits
+ 1959              	.Ldebug_loc0:
+ 1960              	.LLST0:
+ 1961 0000 00000000 		.4byte	.LVL24
+ 1962 0004 08000000 		.4byte	.LVL25
+ 1963 0008 0100     		.2byte	0x1
+ 1964 000a 50       		.byte	0x50
+ 1965 000b 08000000 		.4byte	.LVL25
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 39
+
+
+ 1966 000f 04010000 		.4byte	.LFE37
+ 1967 0013 0400     		.2byte	0x4
+ 1968 0015 F3       		.byte	0xf3
+ 1969 0016 01       		.uleb128 0x1
+ 1970 0017 50       		.byte	0x50
+ 1971 0018 9F       		.byte	0x9f
+ 1972 0019 00000000 		.4byte	0
+ 1973 001d 00000000 		.4byte	0
+ 1974              	.LLST1:
+ 1975 0021 00000000 		.4byte	.LVL66
+ 1976 0025 08000000 		.4byte	.LVL67
+ 1977 0029 0100     		.2byte	0x1
+ 1978 002b 50       		.byte	0x50
+ 1979 002c 08000000 		.4byte	.LVL67
+ 1980 0030 54000000 		.4byte	.LFE38
+ 1981 0034 0400     		.2byte	0x4
+ 1982 0036 F3       		.byte	0xf3
+ 1983 0037 01       		.uleb128 0x1
+ 1984 0038 50       		.byte	0x50
+ 1985 0039 9F       		.byte	0x9f
+ 1986 003a 00000000 		.4byte	0
+ 1987 003e 00000000 		.4byte	0
+ 1988              	.LLST2:
+ 1989 0042 00000000 		.4byte	.LVL76
+ 1990 0046 06000000 		.4byte	.LVL77
+ 1991 004a 0100     		.2byte	0x1
+ 1992 004c 50       		.byte	0x50
+ 1993 004d 06000000 		.4byte	.LVL77
+ 1994 0051 58000000 		.4byte	.LFE39
+ 1995 0055 0400     		.2byte	0x4
+ 1996 0057 F3       		.byte	0xf3
+ 1997 0058 01       		.uleb128 0x1
+ 1998 0059 50       		.byte	0x50
+ 1999 005a 9F       		.byte	0x9f
+ 2000 005b 00000000 		.4byte	0
+ 2001 005f 00000000 		.4byte	0
+ 2002              	.LLST3:
+ 2003 0063 00000000 		.4byte	.LVL86
+ 2004 0067 29000000 		.4byte	.LVL87-1
+ 2005 006b 0100     		.2byte	0x1
+ 2006 006d 50       		.byte	0x50
+ 2007 006e 29000000 		.4byte	.LVL87-1
+ 2008 0072 2C000000 		.4byte	.LVL88
+ 2009 0076 0400     		.2byte	0x4
+ 2010 0078 F3       		.byte	0xf3
+ 2011 0079 01       		.uleb128 0x1
+ 2012 007a 50       		.byte	0x50
+ 2013 007b 9F       		.byte	0x9f
+ 2014 007c 2C000000 		.4byte	.LVL88
+ 2015 0080 2F000000 		.4byte	.LVL89-1
+ 2016 0084 0100     		.2byte	0x1
+ 2017 0086 50       		.byte	0x50
+ 2018 0087 2F000000 		.4byte	.LVL89-1
+ 2019 008b 3C000000 		.4byte	.LFE40
+ 2020 008f 0400     		.2byte	0x4
+ 2021 0091 F3       		.byte	0xf3
+ 2022 0092 01       		.uleb128 0x1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 40
+
+
+ 2023 0093 50       		.byte	0x50
+ 2024 0094 9F       		.byte	0x9f
+ 2025 0095 00000000 		.4byte	0
+ 2026 0099 00000000 		.4byte	0
+ 2027              		.section	.debug_aranges,"",%progbits
+ 2028 0000 54000000 		.4byte	0x54
+ 2029 0004 0200     		.2byte	0x2
+ 2030 0006 00000000 		.4byte	.Ldebug_info0
+ 2031 000a 04       		.byte	0x4
+ 2032 000b 00       		.byte	0
+ 2033 000c 0000     		.2byte	0
+ 2034 000e 0000     		.2byte	0
+ 2035 0010 00000000 		.4byte	.LFB33
+ 2036 0014 1C000000 		.4byte	.LFE33-.LFB33
+ 2037 0018 00000000 		.4byte	.LFB34
+ 2038 001c 1C000000 		.4byte	.LFE34-.LFB34
+ 2039 0020 00000000 		.4byte	.LFB35
+ 2040 0024 34000000 		.4byte	.LFE35-.LFB35
+ 2041 0028 00000000 		.4byte	.LFB36
+ 2042 002c 34000000 		.4byte	.LFE36-.LFB36
+ 2043 0030 00000000 		.4byte	.LFB37
+ 2044 0034 04010000 		.4byte	.LFE37-.LFB37
+ 2045 0038 00000000 		.4byte	.LFB38
+ 2046 003c 54000000 		.4byte	.LFE38-.LFB38
+ 2047 0040 00000000 		.4byte	.LFB39
+ 2048 0044 58000000 		.4byte	.LFE39-.LFB39
+ 2049 0048 00000000 		.4byte	.LFB40
+ 2050 004c 3C000000 		.4byte	.LFE40-.LFB40
+ 2051 0050 00000000 		.4byte	0
+ 2052 0054 00000000 		.4byte	0
+ 2053              		.section	.debug_ranges,"",%progbits
+ 2054              	.Ldebug_ranges0:
+ 2055 0000 00000000 		.4byte	.LFB33
+ 2056 0004 1C000000 		.4byte	.LFE33
+ 2057 0008 00000000 		.4byte	.LFB34
+ 2058 000c 1C000000 		.4byte	.LFE34
+ 2059 0010 00000000 		.4byte	.LFB35
+ 2060 0014 34000000 		.4byte	.LFE35
+ 2061 0018 00000000 		.4byte	.LFB36
+ 2062 001c 34000000 		.4byte	.LFE36
+ 2063 0020 00000000 		.4byte	.LFB37
+ 2064 0024 04010000 		.4byte	.LFE37
+ 2065 0028 00000000 		.4byte	.LFB38
+ 2066 002c 54000000 		.4byte	.LFE38
+ 2067 0030 00000000 		.4byte	.LFB39
+ 2068 0034 58000000 		.4byte	.LFE39
+ 2069 0038 00000000 		.4byte	.LFB40
+ 2070 003c 3C000000 		.4byte	.LFE40
+ 2071 0040 00000000 		.4byte	0
+ 2072 0044 00000000 		.4byte	0
+ 2073              		.section	.debug_line,"",%progbits
+ 2074              	.Ldebug_line0:
+ 2075 0000 B9010000 		.section	.debug_str,"MS",%progbits,1
+ 2075      0200C100 
+ 2075      00000201 
+ 2075      FB0E0D00 
+ 2075      01010101 
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 41
+
+
+ 2076              	.LASF6:
+ 2077 0000 6C6F6E67 		.ascii	"long long int\000"
+ 2077      206C6F6E 
+ 2077      6720696E 
+ 2077      7400
+ 2078              	.LASF15:
+ 2079 000e 7475726E 		.ascii	"turn_off\000"
+ 2079      5F6F6666 
+ 2079      00
+ 2080              	.LASF22:
+ 2081 0017 6C6F6361 		.ascii	"location\000"
+ 2081      74696F6E 
+ 2081      00
+ 2082              	.LASF38:
+ 2083 0020 6C656459 		.ascii	"ledYellow.c\000"
+ 2083      656C6C6F 
+ 2083      772E6300 
+ 2084              	.LASF3:
+ 2085 002c 73686F72 		.ascii	"short unsigned int\000"
+ 2085      7420756E 
+ 2085      7369676E 
+ 2085      65642069 
+ 2085      6E7400
+ 2086              	.LASF13:
+ 2087 003f 646F7562 		.ascii	"double\000"
+ 2087      6C6500
+ 2088              	.LASF41:
+ 2089 0046 666C6167 		.ascii	"flag_led\000"
+ 2089      5F6C6564 
+ 2089      00
+ 2090              	.LASF17:
+ 2091 004f 666F7572 		.ascii	"four_led_tall_off\000"
+ 2091      5F6C6564 
+ 2091      5F74616C 
+ 2091      6C5F6F66 
+ 2091      6600
+ 2092              	.LASF12:
+ 2093 0061 666C6F61 		.ascii	"float\000"
+ 2093      7400
+ 2094              	.LASF40:
+ 2095 0067 53746174 		.ascii	"Status_Led\000"
+ 2095      75735F4C 
+ 2095      656400
+ 2096              	.LASF1:
+ 2097 0072 756E7369 		.ascii	"unsigned char\000"
+ 2097      676E6564 
+ 2097      20636861 
+ 2097      7200
+ 2098              	.LASF18:
+ 2099 0080 7475726E 		.ascii	"turn_off_all_led\000"
+ 2099      5F6F6666 
+ 2099      5F616C6C 
+ 2099      5F6C6564 
+ 2099      00
+ 2100              	.LASF39:
+ 2101 0091 443A5C70 		.ascii	"D:\\psoc\\theory\\eeprom_external\\eeprom_external."
+ 2101      736F635C 
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 42
+
+
+ 2101      7468656F 
+ 2101      72795C65 
+ 2101      6570726F 
+ 2102 00c0 63796473 		.ascii	"cydsn\000"
+ 2102      6E00
+ 2103              	.LASF21:
+ 2104 00c6 73686966 		.ascii	"shift_left\000"
+ 2104      745F6C65 
+ 2104      667400
+ 2105              	.LASF19:
+ 2106 00d1 7475726E 		.ascii	"turn_on_all_led\000"
+ 2106      5F6F6E5F 
+ 2106      616C6C5F 
+ 2106      6C656400 
+ 2107              	.LASF31:
+ 2108 00e1 4C656459 		.ascii	"LedYellow_2_Write\000"
+ 2108      656C6C6F 
+ 2108      775F325F 
+ 2108      57726974 
+ 2108      6500
+ 2109              	.LASF32:
+ 2110 00f3 4C656459 		.ascii	"LedYellow_3_Write\000"
+ 2110      656C6C6F 
+ 2110      775F335F 
+ 2110      57726974 
+ 2110      6500
+ 2111              	.LASF5:
+ 2112 0105 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2112      20756E73 
+ 2112      69676E65 
+ 2112      6420696E 
+ 2112      7400
+ 2113              	.LASF8:
+ 2114 0117 756E7369 		.ascii	"unsigned int\000"
+ 2114      676E6564 
+ 2114      20696E74 
+ 2114      00
+ 2115              	.LASF30:
+ 2116 0124 4C656459 		.ascii	"LedYellow_1_Write\000"
+ 2116      656C6C6F 
+ 2116      775F315F 
+ 2116      57726974 
+ 2116      6500
+ 2117              	.LASF7:
+ 2118 0136 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2118      206C6F6E 
+ 2118      6720756E 
+ 2118      7369676E 
+ 2118      65642069 
+ 2119              	.LASF23:
+ 2120 014d 6C6F6361 		.ascii	"location_light\000"
+ 2120      74696F6E 
+ 2120      5F6C6967 
+ 2120      687400
+ 2121              	.LASF24:
+ 2122 015c 73686966 		.ascii	"shift_right\000"
+ 2122      745F7269 
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 43
+
+
+ 2122      67687400 
+ 2123              	.LASF0:
+ 2124 0168 7369676E 		.ascii	"signed char\000"
+ 2124      65642063 
+ 2124      68617200 
+ 2125              	.LASF37:
+ 2126 0174 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2126      43313120 
+ 2126      352E342E 
+ 2126      31203230 
+ 2126      31363036 
+ 2127 01a7 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 2127      20726576 
+ 2127      6973696F 
+ 2127      6E203233 
+ 2127      37373135 
+ 2128 01da 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2128      66756E63 
+ 2128      74696F6E 
+ 2128      2D736563 
+ 2128      74696F6E 
+ 2129              	.LASF10:
+ 2130 0202 73697A65 		.ascii	"sizetype\000"
+ 2130      74797065 
+ 2130      00
+ 2131              	.LASF16:
+ 2132 020b 666F7572 		.ascii	"four_led_short_off\000"
+ 2132      5F6C6564 
+ 2132      5F73686F 
+ 2132      72745F6F 
+ 2132      666600
+ 2133              	.LASF33:
+ 2134 021e 4C656459 		.ascii	"LedYellow_4_Write\000"
+ 2134      656C6C6F 
+ 2134      775F345F 
+ 2134      57726974 
+ 2134      6500
+ 2135              	.LASF34:
+ 2136 0230 4C656459 		.ascii	"LedYellow_5_Write\000"
+ 2136      656C6C6F 
+ 2136      775F355F 
+ 2136      57726974 
+ 2136      6500
+ 2137              	.LASF27:
+ 2138 0242 636F756E 		.ascii	"counter1_s\000"
+ 2138      74657231 
+ 2138      5F7300
+ 2139              	.LASF20:
+ 2140 024d 6C6F6361 		.ascii	"location_led_light\000"
+ 2140      74696F6E 
+ 2140      5F6C6564 
+ 2140      5F6C6967 
+ 2140      687400
+ 2141              	.LASF2:
+ 2142 0260 73686F72 		.ascii	"short int\000"
+ 2142      7420696E 
+ 2142      7400
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctTV6c3.s 			page 44
+
+
+ 2143              	.LASF26:
+ 2144 026a 64656C61 		.ascii	"delay_s\000"
+ 2144      795F7300 
+ 2145              	.LASF35:
+ 2146 0272 4C656459 		.ascii	"LedYellow_6_Write\000"
+ 2146      656C6C6F 
+ 2146      775F365F 
+ 2146      57726974 
+ 2146      6500
+ 2147              	.LASF29:
+ 2148 0284 4C656459 		.ascii	"LedYellow_0_Write\000"
+ 2148      656C6C6F 
+ 2148      775F305F 
+ 2148      57726974 
+ 2148      6500
+ 2149              	.LASF14:
+ 2150 0296 7475726E 		.ascii	"turn_on\000"
+ 2150      5F6F6E00 
+ 2151              	.LASF4:
+ 2152 029e 6C6F6E67 		.ascii	"long int\000"
+ 2152      20696E74 
+ 2152      00
+ 2153              	.LASF11:
+ 2154 02a7 63686172 		.ascii	"char\000"
+ 2154      00
+ 2155              	.LASF9:
+ 2156 02ac 6C6F6E67 		.ascii	"long double\000"
+ 2156      20646F75 
+ 2156      626C6500 
+ 2157              	.LASF25:
+ 2158 02b8 666C6963 		.ascii	"flicker_8_led\000"
+ 2158      6B65725F 
+ 2158      385F6C65 
+ 2158      6400
+ 2159              	.LASF36:
+ 2160 02c6 4C656459 		.ascii	"LedYellow_7_Write\000"
+ 2160      656C6C6F 
+ 2160      775F375F 
+ 2160      57726974 
+ 2160      6500
+ 2161              	.LASF28:
+ 2162 02d8 74696D65 		.ascii	"time_current\000"
+ 2162      5F637572 
+ 2162      72656E74 
+ 2162      00
+ 2163              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -192,7 +192,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="994, 558" SelectedTabbedMdiWindow="1ce5c3ea-1273-4c1c-ada7-f45c34583f64"><DocumentWindow Key="D:\psoc\theory\timer_interrupt\timer_have_see_by_machine_wire.cydsn\TopDesign\TopDesign.cysch" Guid="3129a0e0-649c-48ea-8ad5-94ad3bdd5ea0" /><DocumentWindow Key="D:\psoc\theory\timer_interrupt\timer_have_see_by_machine_wire.cydsn\timer_have_see_by_machine_wire.cydwr" Guid="a2f021ef-952f-4a7b-97de-b62a9aafe9b6" /><DocumentWindow Key="D:\psoc\theory\timer_interrupt\timer_have_see_by_machine_wire.cydsn\main.c" Guid="1ce5c3ea-1273-4c1c-ada7-f45c34583f64" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="994, 558" SelectedTabbedMdiWindow="3129a0e0-649c-48ea-8ad5-94ad3bdd5ea0"><DocumentWindow Key="D:\psoc\theory\timer_interrupt\timer_have_see_by_machine_wire.cydsn\TopDesign\TopDesign.cysch" Guid="3129a0e0-649c-48ea-8ad5-94ad3bdd5ea0" /><DocumentWindow Key="D:\psoc\theory\timer_interrupt\timer_have_see_by_machine_wire.cydsn\timer_have_see_by_machine_wire.cydwr" Guid="a2f021ef-952f-4a7b-97de-b62a9aafe9b6" /><DocumentWindow Key="D:\psoc\theory\timer_interrupt\timer_have_see_by_machine_wire.cydsn\main.c" Guid="1ce5c3ea-1273-4c1c-ada7-f45c34583f64" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
