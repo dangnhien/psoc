@@ -1,0 +1,883 @@
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvQVRNm.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"Timer_Delay.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.interrupt_timer,"ax",%progbits
+  20              		.align	2
+  21              		.global	interrupt_timer
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	interrupt_timer, %function
+  25              	interrupt_timer:
+  26              	.LFB32:
+  27              		.file 1 "Timer_Delay.c"
+   1:Timer_Delay.c **** /* ========================================
+   2:Timer_Delay.c ****  *
+   3:Timer_Delay.c ****  * Copyright YOUR COMPANY, THE YEAR
+   4:Timer_Delay.c ****  * All Rights Reserved
+   5:Timer_Delay.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:Timer_Delay.c ****  *
+   7:Timer_Delay.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:Timer_Delay.c ****  * WHICH IS THE PROPERTY OF your company.
+   9:Timer_Delay.c ****  *
+  10:Timer_Delay.c ****  * ========================================
+  11:Timer_Delay.c **** */
+  12:Timer_Delay.c **** #include "Timer_Delay.h"
+  13:Timer_Delay.c **** 
+  14:Timer_Delay.c **** #include "project.h"
+  15:Timer_Delay.c **** 
+  16:Timer_Delay.c **** volatile int timer_flag = 0;
+  17:Timer_Delay.c **** 
+  18:Timer_Delay.c **** CY_ISR(interrupt_timer)
+  19:Timer_Delay.c **** {
+  28              		.loc 1 19 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  20:Timer_Delay.c ****     timer_flag = 1;
+  36              		.loc 1 20 0
+  37 0002 0122     		movs	r2, #1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvQVRNm.s 			page 2
+
+
+  38 0004 034B     		ldr	r3, .L2
+  39 0006 1A60     		str	r2, [r3]
+  21:Timer_Delay.c ****     timer_ClearInterrupt(timer_INTR_MASK_TC);
+  40              		.loc 1 21 0
+  41 0008 0120     		movs	r0, #1
+  42 000a FFF7FEFF 		bl	timer_ClearInterrupt
+  43              	.LVL0:
+  22:Timer_Delay.c ****     timer_int_ClearPending();
+  44              		.loc 1 22 0
+  45 000e FFF7FEFF 		bl	timer_int_ClearPending
+  46              	.LVL1:
+  23:Timer_Delay.c **** }
+  47              		.loc 1 23 0
+  48              		@ sp needed
+  49 0012 10BD     		pop	{r4, pc}
+  50              	.L3:
+  51              		.align	2
+  52              	.L2:
+  53 0014 00000000 		.word	.LANCHOR0
+  54              		.cfi_endproc
+  55              	.LFE32:
+  56              		.size	interrupt_timer, .-interrupt_timer
+  57              		.section	.text.start_timer_int,"ax",%progbits
+  58              		.align	2
+  59              		.global	start_timer_int
+  60              		.code	16
+  61              		.thumb_func
+  62              		.type	start_timer_int, %function
+  63              	start_timer_int:
+  64              	.LFB33:
+  24:Timer_Delay.c **** 
+  25:Timer_Delay.c **** void start_timer_int()
+  26:Timer_Delay.c **** {
+  65              		.loc 1 26 0
+  66              		.cfi_startproc
+  67              		@ args = 0, pretend = 0, frame = 0
+  68              		@ frame_needed = 0, uses_anonymous_args = 0
+  69 0000 10B5     		push	{r4, lr}
+  70              		.cfi_def_cfa_offset 8
+  71              		.cfi_offset 4, -8
+  72              		.cfi_offset 14, -4
+  27:Timer_Delay.c ****     timer_int_StartEx(interrupt_timer);
+  73              		.loc 1 27 0
+  74 0002 0248     		ldr	r0, .L5
+  75 0004 FFF7FEFF 		bl	timer_int_StartEx
+  76              	.LVL2:
+  28:Timer_Delay.c **** }
+  77              		.loc 1 28 0
+  78              		@ sp needed
+  79 0008 10BD     		pop	{r4, pc}
+  80              	.L6:
+  81 000a C046     		.align	2
+  82              	.L5:
+  83 000c 00000000 		.word	interrupt_timer
+  84              		.cfi_endproc
+  85              	.LFE33:
+  86              		.size	start_timer_int, .-start_timer_int
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvQVRNm.s 			page 3
+
+
+  87              		.section	.text.ms_delay,"ax",%progbits
+  88              		.align	2
+  89              		.global	ms_delay
+  90              		.code	16
+  91              		.thumb_func
+  92              		.type	ms_delay, %function
+  93              	ms_delay:
+  94              	.LFB34:
+  29:Timer_Delay.c **** 
+  30:Timer_Delay.c **** void ms_delay(unsigned long ms)
+  31:Timer_Delay.c **** {
+  95              		.loc 1 31 0
+  96              		.cfi_startproc
+  97              		@ args = 0, pretend = 0, frame = 0
+  98              		@ frame_needed = 0, uses_anonymous_args = 0
+  99              	.LVL3:
+ 100 0000 10B5     		push	{r4, lr}
+ 101              		.cfi_def_cfa_offset 8
+ 102              		.cfi_offset 4, -8
+ 103              		.cfi_offset 14, -4
+  32:Timer_Delay.c ****     uint32 period = TIMER_CLOCK/1000*ms;
+ 104              		.loc 1 32 0
+ 105 0002 084B     		ldr	r3, .L9
+ 106 0004 5843     		muls	r0, r3
+ 107              	.LVL4:
+  33:Timer_Delay.c ****     timer_WritePeriod(period);
+ 108              		.loc 1 33 0
+ 109 0006 FFF7FEFF 		bl	timer_WritePeriod
+ 110              	.LVL5:
+  34:Timer_Delay.c ****     timer_Enable();// start the timeout counter
+ 111              		.loc 1 34 0
+ 112 000a FFF7FEFF 		bl	timer_Enable
+ 113              	.LVL6:
+ 114              	.L8:
+  35:Timer_Delay.c ****     while(!timer_flag);
+ 115              		.loc 1 35 0 discriminator 1
+ 116 000e 064B     		ldr	r3, .L9+4
+ 117 0010 1B68     		ldr	r3, [r3]
+ 118 0012 002B     		cmp	r3, #0
+ 119 0014 FBD0     		beq	.L8
+  36:Timer_Delay.c ****     timer_Stop();
+ 120              		.loc 1 36 0
+ 121 0016 FFF7FEFF 		bl	timer_Stop
+ 122              	.LVL7:
+  37:Timer_Delay.c ****     timer_flag = 0;
+ 123              		.loc 1 37 0
+ 124 001a 0022     		movs	r2, #0
+ 125 001c 024B     		ldr	r3, .L9+4
+ 126 001e 1A60     		str	r2, [r3]
+  38:Timer_Delay.c **** }
+ 127              		.loc 1 38 0
+ 128              		@ sp needed
+ 129 0020 10BD     		pop	{r4, pc}
+ 130              	.L10:
+ 131 0022 C046     		.align	2
+ 132              	.L9:
+ 133 0024 10270000 		.word	10000
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvQVRNm.s 			page 4
+
+
+ 134 0028 00000000 		.word	.LANCHOR0
+ 135              		.cfi_endproc
+ 136              	.LFE34:
+ 137              		.size	ms_delay, .-ms_delay
+ 138              		.global	timer_flag
+ 139              		.bss
+ 140              		.align	2
+ 141              		.set	.LANCHOR0,. + 0
+ 142              		.type	timer_flag, %object
+ 143              		.size	timer_flag, 4
+ 144              	timer_flag:
+ 145 0000 00000000 		.space	4
+ 146              		.text
+ 147              	.Letext0:
+ 148              		.file 2 "Generated_Source\\PSoC4/timer.h"
+ 149              		.file 3 "Generated_Source\\PSoC4/timer_int.h"
+ 150              		.file 4 "Generated_Source\\PSoC4/cytypes.h"
+ 151              		.section	.debug_info,"",%progbits
+ 152              	.Ldebug_info0:
+ 153 0000 AC010000 		.4byte	0x1ac
+ 154 0004 0400     		.2byte	0x4
+ 155 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 156 000a 04       		.byte	0x4
+ 157 000b 01       		.uleb128 0x1
+ 158 000c 27010000 		.4byte	.LASF22
+ 159 0010 0C       		.byte	0xc
+ 160 0011 8B000000 		.4byte	.LASF23
+ 161 0015 EF000000 		.4byte	.LASF24
+ 162 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 163 001d 00000000 		.4byte	0
+ 164 0021 00000000 		.4byte	.Ldebug_line0
+ 165 0025 02       		.uleb128 0x2
+ 166 0026 01       		.byte	0x1
+ 167 0027 06       		.byte	0x6
+ 168 0028 12020000 		.4byte	.LASF0
+ 169 002c 02       		.uleb128 0x2
+ 170 002d 01       		.byte	0x1
+ 171 002e 08       		.byte	0x8
+ 172 002f 2F000000 		.4byte	.LASF1
+ 173 0033 02       		.uleb128 0x2
+ 174 0034 02       		.byte	0x2
+ 175 0035 05       		.byte	0x5
+ 176 0036 D1010000 		.4byte	.LASF2
+ 177 003a 02       		.uleb128 0x2
+ 178 003b 02       		.byte	0x2
+ 179 003c 07       		.byte	0x7
+ 180 003d 5F000000 		.4byte	.LASF3
+ 181 0041 02       		.uleb128 0x2
+ 182 0042 04       		.byte	0x4
+ 183 0043 05       		.byte	0x5
+ 184 0044 FD010000 		.4byte	.LASF4
+ 185 0048 02       		.uleb128 0x2
+ 186 0049 04       		.byte	0x4
+ 187 004a 07       		.byte	0x7
+ 188 004b 4D000000 		.4byte	.LASF5
+ 189 004f 02       		.uleb128 0x2
+ 190 0050 08       		.byte	0x8
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvQVRNm.s 			page 5
+
+
+ 191 0051 05       		.byte	0x5
+ 192 0052 BE010000 		.4byte	.LASF6
+ 193 0056 02       		.uleb128 0x2
+ 194 0057 08       		.byte	0x8
+ 195 0058 07       		.byte	0x7
+ 196 0059 D8000000 		.4byte	.LASF7
+ 197 005d 03       		.uleb128 0x3
+ 198 005e 04       		.byte	0x4
+ 199 005f 05       		.byte	0x5
+ 200 0060 696E7400 		.ascii	"int\000"
+ 201 0064 02       		.uleb128 0x2
+ 202 0065 04       		.byte	0x4
+ 203 0066 07       		.byte	0x7
+ 204 0067 CB000000 		.4byte	.LASF8
+ 205 006b 04       		.uleb128 0x4
+ 206 006c BB000000 		.4byte	.LASF25
+ 207 0070 04       		.byte	0x4
+ 208 0071 FD01     		.2byte	0x1fd
+ 209 0073 48000000 		.4byte	0x48
+ 210 0077 02       		.uleb128 0x2
+ 211 0078 04       		.byte	0x4
+ 212 0079 04       		.byte	0x4
+ 213 007a 29000000 		.4byte	.LASF9
+ 214 007e 02       		.uleb128 0x2
+ 215 007f 08       		.byte	0x8
+ 216 0080 04       		.byte	0x4
+ 217 0081 84000000 		.4byte	.LASF10
+ 218 0085 02       		.uleb128 0x2
+ 219 0086 01       		.byte	0x1
+ 220 0087 08       		.byte	0x8
+ 221 0088 CC010000 		.4byte	.LASF11
+ 222 008c 02       		.uleb128 0x2
+ 223 008d 08       		.byte	0x8
+ 224 008e 04       		.byte	0x4
+ 225 008f 06020000 		.4byte	.LASF12
+ 226 0093 02       		.uleb128 0x2
+ 227 0094 04       		.byte	0x4
+ 228 0095 07       		.byte	0x7
+ 229 0096 B5010000 		.4byte	.LASF13
+ 230 009a 05       		.uleb128 0x5
+ 231 009b 3D000000 		.4byte	.LASF14
+ 232 009f 01       		.byte	0x1
+ 233 00a0 12       		.byte	0x12
+ 234 00a1 00000000 		.4byte	.LFB32
+ 235 00a5 18000000 		.4byte	.LFE32-.LFB32
+ 236 00a9 01       		.uleb128 0x1
+ 237 00aa 9C       		.byte	0x9c
+ 238 00ab CC000000 		.4byte	0xcc
+ 239 00af 06       		.uleb128 0x6
+ 240 00b0 0E000000 		.4byte	.LVL0
+ 241 00b4 69010000 		.4byte	0x169
+ 242 00b8 C2000000 		.4byte	0xc2
+ 243 00bc 07       		.uleb128 0x7
+ 244 00bd 01       		.uleb128 0x1
+ 245 00be 50       		.byte	0x50
+ 246 00bf 01       		.uleb128 0x1
+ 247 00c0 31       		.byte	0x31
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvQVRNm.s 			page 6
+
+
+ 248 00c1 00       		.byte	0
+ 249 00c2 08       		.uleb128 0x8
+ 250 00c3 12000000 		.4byte	.LVL1
+ 251 00c7 75010000 		.4byte	0x175
+ 252 00cb 00       		.byte	0
+ 253 00cc 09       		.uleb128 0x9
+ 254 00cd AB000000 		.4byte	.LASF26
+ 255 00d1 01       		.byte	0x1
+ 256 00d2 19       		.byte	0x19
+ 257 00d3 00000000 		.4byte	.LFB33
+ 258 00d7 10000000 		.4byte	.LFE33-.LFB33
+ 259 00db 01       		.uleb128 0x1
+ 260 00dc 9C       		.byte	0x9c
+ 261 00dd F5000000 		.4byte	0xf5
+ 262 00e1 0A       		.uleb128 0xa
+ 263 00e2 08000000 		.4byte	.LVL2
+ 264 00e6 80010000 		.4byte	0x180
+ 265 00ea 07       		.uleb128 0x7
+ 266 00eb 01       		.uleb128 0x1
+ 267 00ec 50       		.byte	0x50
+ 268 00ed 05       		.uleb128 0x5
+ 269 00ee 03       		.byte	0x3
+ 270 00ef 00000000 		.4byte	interrupt_timer
+ 271 00f3 00       		.byte	0
+ 272 00f4 00       		.byte	0
+ 273 00f5 05       		.uleb128 0x5
+ 274 00f6 C2000000 		.4byte	.LASF15
+ 275 00fa 01       		.byte	0x1
+ 276 00fb 1E       		.byte	0x1e
+ 277 00fc 00000000 		.4byte	.LFB34
+ 278 0100 2C000000 		.4byte	.LFE34-.LFB34
+ 279 0104 01       		.uleb128 0x1
+ 280 0105 9C       		.byte	0x9c
+ 281 0106 53010000 		.4byte	0x153
+ 282 010a 0B       		.uleb128 0xb
+ 283 010b 6D7300   		.ascii	"ms\000"
+ 284 010e 01       		.byte	0x1
+ 285 010f 1E       		.byte	0x1e
+ 286 0110 48000000 		.4byte	0x48
+ 287 0114 00000000 		.4byte	.LLST0
+ 288 0118 0C       		.uleb128 0xc
+ 289 0119 22000000 		.4byte	.LASF27
+ 290 011d 01       		.byte	0x1
+ 291 011e 20       		.byte	0x20
+ 292 011f 6B000000 		.4byte	0x6b
+ 293 0123 21000000 		.4byte	.LLST1
+ 294 0127 06       		.uleb128 0x6
+ 295 0128 0A000000 		.4byte	.LVL5
+ 296 012c 8B010000 		.4byte	0x18b
+ 297 0130 40010000 		.4byte	0x140
+ 298 0134 07       		.uleb128 0x7
+ 299 0135 01       		.uleb128 0x1
+ 300 0136 50       		.byte	0x50
+ 301 0137 07       		.uleb128 0x7
+ 302 0138 F3       		.byte	0xf3
+ 303 0139 01       		.uleb128 0x1
+ 304 013a 50       		.byte	0x50
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvQVRNm.s 			page 7
+
+
+ 305 013b 0A       		.byte	0xa
+ 306 013c 1027     		.2byte	0x2710
+ 307 013e 1E       		.byte	0x1e
+ 308 013f 00       		.byte	0
+ 309 0140 08       		.uleb128 0x8
+ 310 0141 0E000000 		.4byte	.LVL6
+ 311 0145 97010000 		.4byte	0x197
+ 312 0149 08       		.uleb128 0x8
+ 313 014a 1A000000 		.4byte	.LVL7
+ 314 014e A3010000 		.4byte	0x1a3
+ 315 0152 00       		.byte	0
+ 316 0153 0D       		.uleb128 0xd
+ 317 0154 1C010000 		.4byte	.LASF28
+ 318 0158 01       		.byte	0x1
+ 319 0159 10       		.byte	0x10
+ 320 015a 64010000 		.4byte	0x164
+ 321 015e 05       		.uleb128 0x5
+ 322 015f 03       		.byte	0x3
+ 323 0160 00000000 		.4byte	timer_flag
+ 324 0164 0E       		.uleb128 0xe
+ 325 0165 5D000000 		.4byte	0x5d
+ 326 0169 0F       		.uleb128 0xf
+ 327 016a 0D000000 		.4byte	.LASF16
+ 328 016e 0D000000 		.4byte	.LASF16
+ 329 0172 02       		.byte	0x2
+ 330 0173 4701     		.2byte	0x147
+ 331 0175 10       		.uleb128 0x10
+ 332 0176 E6010000 		.4byte	.LASF17
+ 333 017a E6010000 		.4byte	.LASF17
+ 334 017e 03       		.byte	0x3
+ 335 017f 28       		.byte	0x28
+ 336 0180 10       		.uleb128 0x10
+ 337 0181 72000000 		.4byte	.LASF18
+ 338 0185 72000000 		.4byte	.LASF18
+ 339 0189 03       		.byte	0x3
+ 340 018a 18       		.byte	0x18
+ 341 018b 0F       		.uleb128 0xf
+ 342 018c 99000000 		.4byte	.LASF19
+ 343 0190 99000000 		.4byte	.LASF19
+ 344 0194 02       		.byte	0x2
+ 345 0195 5001     		.2byte	0x150
+ 346 0197 0F       		.uleb128 0xf
+ 347 0198 00000000 		.4byte	.LASF20
+ 348 019c 00000000 		.4byte	.LASF20
+ 349 01a0 02       		.byte	0x2
+ 350 01a1 3101     		.2byte	0x131
+ 351 01a3 0F       		.uleb128 0xf
+ 352 01a4 DB010000 		.4byte	.LASF21
+ 353 01a8 DB010000 		.4byte	.LASF21
+ 354 01ac 02       		.byte	0x2
+ 355 01ad 3301     		.2byte	0x133
+ 356 01af 00       		.byte	0
+ 357              		.section	.debug_abbrev,"",%progbits
+ 358              	.Ldebug_abbrev0:
+ 359 0000 01       		.uleb128 0x1
+ 360 0001 11       		.uleb128 0x11
+ 361 0002 01       		.byte	0x1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvQVRNm.s 			page 8
+
+
+ 362 0003 25       		.uleb128 0x25
+ 363 0004 0E       		.uleb128 0xe
+ 364 0005 13       		.uleb128 0x13
+ 365 0006 0B       		.uleb128 0xb
+ 366 0007 03       		.uleb128 0x3
+ 367 0008 0E       		.uleb128 0xe
+ 368 0009 1B       		.uleb128 0x1b
+ 369 000a 0E       		.uleb128 0xe
+ 370 000b 55       		.uleb128 0x55
+ 371 000c 17       		.uleb128 0x17
+ 372 000d 11       		.uleb128 0x11
+ 373 000e 01       		.uleb128 0x1
+ 374 000f 10       		.uleb128 0x10
+ 375 0010 17       		.uleb128 0x17
+ 376 0011 00       		.byte	0
+ 377 0012 00       		.byte	0
+ 378 0013 02       		.uleb128 0x2
+ 379 0014 24       		.uleb128 0x24
+ 380 0015 00       		.byte	0
+ 381 0016 0B       		.uleb128 0xb
+ 382 0017 0B       		.uleb128 0xb
+ 383 0018 3E       		.uleb128 0x3e
+ 384 0019 0B       		.uleb128 0xb
+ 385 001a 03       		.uleb128 0x3
+ 386 001b 0E       		.uleb128 0xe
+ 387 001c 00       		.byte	0
+ 388 001d 00       		.byte	0
+ 389 001e 03       		.uleb128 0x3
+ 390 001f 24       		.uleb128 0x24
+ 391 0020 00       		.byte	0
+ 392 0021 0B       		.uleb128 0xb
+ 393 0022 0B       		.uleb128 0xb
+ 394 0023 3E       		.uleb128 0x3e
+ 395 0024 0B       		.uleb128 0xb
+ 396 0025 03       		.uleb128 0x3
+ 397 0026 08       		.uleb128 0x8
+ 398 0027 00       		.byte	0
+ 399 0028 00       		.byte	0
+ 400 0029 04       		.uleb128 0x4
+ 401 002a 16       		.uleb128 0x16
+ 402 002b 00       		.byte	0
+ 403 002c 03       		.uleb128 0x3
+ 404 002d 0E       		.uleb128 0xe
+ 405 002e 3A       		.uleb128 0x3a
+ 406 002f 0B       		.uleb128 0xb
+ 407 0030 3B       		.uleb128 0x3b
+ 408 0031 05       		.uleb128 0x5
+ 409 0032 49       		.uleb128 0x49
+ 410 0033 13       		.uleb128 0x13
+ 411 0034 00       		.byte	0
+ 412 0035 00       		.byte	0
+ 413 0036 05       		.uleb128 0x5
+ 414 0037 2E       		.uleb128 0x2e
+ 415 0038 01       		.byte	0x1
+ 416 0039 3F       		.uleb128 0x3f
+ 417 003a 19       		.uleb128 0x19
+ 418 003b 03       		.uleb128 0x3
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvQVRNm.s 			page 9
+
+
+ 419 003c 0E       		.uleb128 0xe
+ 420 003d 3A       		.uleb128 0x3a
+ 421 003e 0B       		.uleb128 0xb
+ 422 003f 3B       		.uleb128 0x3b
+ 423 0040 0B       		.uleb128 0xb
+ 424 0041 27       		.uleb128 0x27
+ 425 0042 19       		.uleb128 0x19
+ 426 0043 11       		.uleb128 0x11
+ 427 0044 01       		.uleb128 0x1
+ 428 0045 12       		.uleb128 0x12
+ 429 0046 06       		.uleb128 0x6
+ 430 0047 40       		.uleb128 0x40
+ 431 0048 18       		.uleb128 0x18
+ 432 0049 9742     		.uleb128 0x2117
+ 433 004b 19       		.uleb128 0x19
+ 434 004c 01       		.uleb128 0x1
+ 435 004d 13       		.uleb128 0x13
+ 436 004e 00       		.byte	0
+ 437 004f 00       		.byte	0
+ 438 0050 06       		.uleb128 0x6
+ 439 0051 898201   		.uleb128 0x4109
+ 440 0054 01       		.byte	0x1
+ 441 0055 11       		.uleb128 0x11
+ 442 0056 01       		.uleb128 0x1
+ 443 0057 31       		.uleb128 0x31
+ 444 0058 13       		.uleb128 0x13
+ 445 0059 01       		.uleb128 0x1
+ 446 005a 13       		.uleb128 0x13
+ 447 005b 00       		.byte	0
+ 448 005c 00       		.byte	0
+ 449 005d 07       		.uleb128 0x7
+ 450 005e 8A8201   		.uleb128 0x410a
+ 451 0061 00       		.byte	0
+ 452 0062 02       		.uleb128 0x2
+ 453 0063 18       		.uleb128 0x18
+ 454 0064 9142     		.uleb128 0x2111
+ 455 0066 18       		.uleb128 0x18
+ 456 0067 00       		.byte	0
+ 457 0068 00       		.byte	0
+ 458 0069 08       		.uleb128 0x8
+ 459 006a 898201   		.uleb128 0x4109
+ 460 006d 00       		.byte	0
+ 461 006e 11       		.uleb128 0x11
+ 462 006f 01       		.uleb128 0x1
+ 463 0070 31       		.uleb128 0x31
+ 464 0071 13       		.uleb128 0x13
+ 465 0072 00       		.byte	0
+ 466 0073 00       		.byte	0
+ 467 0074 09       		.uleb128 0x9
+ 468 0075 2E       		.uleb128 0x2e
+ 469 0076 01       		.byte	0x1
+ 470 0077 3F       		.uleb128 0x3f
+ 471 0078 19       		.uleb128 0x19
+ 472 0079 03       		.uleb128 0x3
+ 473 007a 0E       		.uleb128 0xe
+ 474 007b 3A       		.uleb128 0x3a
+ 475 007c 0B       		.uleb128 0xb
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvQVRNm.s 			page 10
+
+
+ 476 007d 3B       		.uleb128 0x3b
+ 477 007e 0B       		.uleb128 0xb
+ 478 007f 11       		.uleb128 0x11
+ 479 0080 01       		.uleb128 0x1
+ 480 0081 12       		.uleb128 0x12
+ 481 0082 06       		.uleb128 0x6
+ 482 0083 40       		.uleb128 0x40
+ 483 0084 18       		.uleb128 0x18
+ 484 0085 9742     		.uleb128 0x2117
+ 485 0087 19       		.uleb128 0x19
+ 486 0088 01       		.uleb128 0x1
+ 487 0089 13       		.uleb128 0x13
+ 488 008a 00       		.byte	0
+ 489 008b 00       		.byte	0
+ 490 008c 0A       		.uleb128 0xa
+ 491 008d 898201   		.uleb128 0x4109
+ 492 0090 01       		.byte	0x1
+ 493 0091 11       		.uleb128 0x11
+ 494 0092 01       		.uleb128 0x1
+ 495 0093 31       		.uleb128 0x31
+ 496 0094 13       		.uleb128 0x13
+ 497 0095 00       		.byte	0
+ 498 0096 00       		.byte	0
+ 499 0097 0B       		.uleb128 0xb
+ 500 0098 05       		.uleb128 0x5
+ 501 0099 00       		.byte	0
+ 502 009a 03       		.uleb128 0x3
+ 503 009b 08       		.uleb128 0x8
+ 504 009c 3A       		.uleb128 0x3a
+ 505 009d 0B       		.uleb128 0xb
+ 506 009e 3B       		.uleb128 0x3b
+ 507 009f 0B       		.uleb128 0xb
+ 508 00a0 49       		.uleb128 0x49
+ 509 00a1 13       		.uleb128 0x13
+ 510 00a2 02       		.uleb128 0x2
+ 511 00a3 17       		.uleb128 0x17
+ 512 00a4 00       		.byte	0
+ 513 00a5 00       		.byte	0
+ 514 00a6 0C       		.uleb128 0xc
+ 515 00a7 34       		.uleb128 0x34
+ 516 00a8 00       		.byte	0
+ 517 00a9 03       		.uleb128 0x3
+ 518 00aa 0E       		.uleb128 0xe
+ 519 00ab 3A       		.uleb128 0x3a
+ 520 00ac 0B       		.uleb128 0xb
+ 521 00ad 3B       		.uleb128 0x3b
+ 522 00ae 0B       		.uleb128 0xb
+ 523 00af 49       		.uleb128 0x49
+ 524 00b0 13       		.uleb128 0x13
+ 525 00b1 02       		.uleb128 0x2
+ 526 00b2 17       		.uleb128 0x17
+ 527 00b3 00       		.byte	0
+ 528 00b4 00       		.byte	0
+ 529 00b5 0D       		.uleb128 0xd
+ 530 00b6 34       		.uleb128 0x34
+ 531 00b7 00       		.byte	0
+ 532 00b8 03       		.uleb128 0x3
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvQVRNm.s 			page 11
+
+
+ 533 00b9 0E       		.uleb128 0xe
+ 534 00ba 3A       		.uleb128 0x3a
+ 535 00bb 0B       		.uleb128 0xb
+ 536 00bc 3B       		.uleb128 0x3b
+ 537 00bd 0B       		.uleb128 0xb
+ 538 00be 49       		.uleb128 0x49
+ 539 00bf 13       		.uleb128 0x13
+ 540 00c0 3F       		.uleb128 0x3f
+ 541 00c1 19       		.uleb128 0x19
+ 542 00c2 02       		.uleb128 0x2
+ 543 00c3 18       		.uleb128 0x18
+ 544 00c4 00       		.byte	0
+ 545 00c5 00       		.byte	0
+ 546 00c6 0E       		.uleb128 0xe
+ 547 00c7 35       		.uleb128 0x35
+ 548 00c8 00       		.byte	0
+ 549 00c9 49       		.uleb128 0x49
+ 550 00ca 13       		.uleb128 0x13
+ 551 00cb 00       		.byte	0
+ 552 00cc 00       		.byte	0
+ 553 00cd 0F       		.uleb128 0xf
+ 554 00ce 2E       		.uleb128 0x2e
+ 555 00cf 00       		.byte	0
+ 556 00d0 3F       		.uleb128 0x3f
+ 557 00d1 19       		.uleb128 0x19
+ 558 00d2 3C       		.uleb128 0x3c
+ 559 00d3 19       		.uleb128 0x19
+ 560 00d4 6E       		.uleb128 0x6e
+ 561 00d5 0E       		.uleb128 0xe
+ 562 00d6 03       		.uleb128 0x3
+ 563 00d7 0E       		.uleb128 0xe
+ 564 00d8 3A       		.uleb128 0x3a
+ 565 00d9 0B       		.uleb128 0xb
+ 566 00da 3B       		.uleb128 0x3b
+ 567 00db 05       		.uleb128 0x5
+ 568 00dc 00       		.byte	0
+ 569 00dd 00       		.byte	0
+ 570 00de 10       		.uleb128 0x10
+ 571 00df 2E       		.uleb128 0x2e
+ 572 00e0 00       		.byte	0
+ 573 00e1 3F       		.uleb128 0x3f
+ 574 00e2 19       		.uleb128 0x19
+ 575 00e3 3C       		.uleb128 0x3c
+ 576 00e4 19       		.uleb128 0x19
+ 577 00e5 6E       		.uleb128 0x6e
+ 578 00e6 0E       		.uleb128 0xe
+ 579 00e7 03       		.uleb128 0x3
+ 580 00e8 0E       		.uleb128 0xe
+ 581 00e9 3A       		.uleb128 0x3a
+ 582 00ea 0B       		.uleb128 0xb
+ 583 00eb 3B       		.uleb128 0x3b
+ 584 00ec 0B       		.uleb128 0xb
+ 585 00ed 00       		.byte	0
+ 586 00ee 00       		.byte	0
+ 587 00ef 00       		.byte	0
+ 588              		.section	.debug_loc,"",%progbits
+ 589              	.Ldebug_loc0:
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvQVRNm.s 			page 12
+
+
+ 590              	.LLST0:
+ 591 0000 00000000 		.4byte	.LVL3
+ 592 0004 06000000 		.4byte	.LVL4
+ 593 0008 0100     		.2byte	0x1
+ 594 000a 50       		.byte	0x50
+ 595 000b 06000000 		.4byte	.LVL4
+ 596 000f 2C000000 		.4byte	.LFE34
+ 597 0013 0400     		.2byte	0x4
+ 598 0015 F3       		.byte	0xf3
+ 599 0016 01       		.uleb128 0x1
+ 600 0017 50       		.byte	0x50
+ 601 0018 9F       		.byte	0x9f
+ 602 0019 00000000 		.4byte	0
+ 603 001d 00000000 		.4byte	0
+ 604              	.LLST1:
+ 605 0021 06000000 		.4byte	.LVL4
+ 606 0025 09000000 		.4byte	.LVL5-1
+ 607 0029 0100     		.2byte	0x1
+ 608 002b 50       		.byte	0x50
+ 609 002c 09000000 		.4byte	.LVL5-1
+ 610 0030 2C000000 		.4byte	.LFE34
+ 611 0034 0800     		.2byte	0x8
+ 612 0036 F3       		.byte	0xf3
+ 613 0037 01       		.uleb128 0x1
+ 614 0038 50       		.byte	0x50
+ 615 0039 0A       		.byte	0xa
+ 616 003a 1027     		.2byte	0x2710
+ 617 003c 1E       		.byte	0x1e
+ 618 003d 9F       		.byte	0x9f
+ 619 003e 00000000 		.4byte	0
+ 620 0042 00000000 		.4byte	0
+ 621              		.section	.debug_aranges,"",%progbits
+ 622 0000 2C000000 		.4byte	0x2c
+ 623 0004 0200     		.2byte	0x2
+ 624 0006 00000000 		.4byte	.Ldebug_info0
+ 625 000a 04       		.byte	0x4
+ 626 000b 00       		.byte	0
+ 627 000c 0000     		.2byte	0
+ 628 000e 0000     		.2byte	0
+ 629 0010 00000000 		.4byte	.LFB32
+ 630 0014 18000000 		.4byte	.LFE32-.LFB32
+ 631 0018 00000000 		.4byte	.LFB33
+ 632 001c 10000000 		.4byte	.LFE33-.LFB33
+ 633 0020 00000000 		.4byte	.LFB34
+ 634 0024 2C000000 		.4byte	.LFE34-.LFB34
+ 635 0028 00000000 		.4byte	0
+ 636 002c 00000000 		.4byte	0
+ 637              		.section	.debug_ranges,"",%progbits
+ 638              	.Ldebug_ranges0:
+ 639 0000 00000000 		.4byte	.LFB32
+ 640 0004 18000000 		.4byte	.LFE32
+ 641 0008 00000000 		.4byte	.LFB33
+ 642 000c 10000000 		.4byte	.LFE33
+ 643 0010 00000000 		.4byte	.LFB34
+ 644 0014 2C000000 		.4byte	.LFE34
+ 645 0018 00000000 		.4byte	0
+ 646 001c 00000000 		.4byte	0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvQVRNm.s 			page 13
+
+
+ 647              		.section	.debug_line,"",%progbits
+ 648              	.Ldebug_line0:
+ 649 0000 A6000000 		.section	.debug_str,"MS",%progbits,1
+ 649      02006200 
+ 649      00000201 
+ 649      FB0E0D00 
+ 649      01010101 
+ 650              	.LASF20:
+ 651 0000 74696D65 		.ascii	"timer_Enable\000"
+ 651      725F456E 
+ 651      61626C65 
+ 651      00
+ 652              	.LASF16:
+ 653 000d 74696D65 		.ascii	"timer_ClearInterrupt\000"
+ 653      725F436C 
+ 653      65617249 
+ 653      6E746572 
+ 653      72757074 
+ 654              	.LASF27:
+ 655 0022 70657269 		.ascii	"period\000"
+ 655      6F6400
+ 656              	.LASF9:
+ 657 0029 666C6F61 		.ascii	"float\000"
+ 657      7400
+ 658              	.LASF1:
+ 659 002f 756E7369 		.ascii	"unsigned char\000"
+ 659      676E6564 
+ 659      20636861 
+ 659      7200
+ 660              	.LASF14:
+ 661 003d 696E7465 		.ascii	"interrupt_timer\000"
+ 661      72727570 
+ 661      745F7469 
+ 661      6D657200 
+ 662              	.LASF5:
+ 663 004d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 663      20756E73 
+ 663      69676E65 
+ 663      6420696E 
+ 663      7400
+ 664              	.LASF3:
+ 665 005f 73686F72 		.ascii	"short unsigned int\000"
+ 665      7420756E 
+ 665      7369676E 
+ 665      65642069 
+ 665      6E7400
+ 666              	.LASF18:
+ 667 0072 74696D65 		.ascii	"timer_int_StartEx\000"
+ 667      725F696E 
+ 667      745F5374 
+ 667      61727445 
+ 667      7800
+ 668              	.LASF10:
+ 669 0084 646F7562 		.ascii	"double\000"
+ 669      6C6500
+ 670              	.LASF23:
+ 671 008b 54696D65 		.ascii	"Timer_Delay.c\000"
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvQVRNm.s 			page 14
+
+
+ 671      725F4465 
+ 671      6C61792E 
+ 671      6300
+ 672              	.LASF19:
+ 673 0099 74696D65 		.ascii	"timer_WritePeriod\000"
+ 673      725F5772 
+ 673      69746550 
+ 673      6572696F 
+ 673      6400
+ 674              	.LASF26:
+ 675 00ab 73746172 		.ascii	"start_timer_int\000"
+ 675      745F7469 
+ 675      6D65725F 
+ 675      696E7400 
+ 676              	.LASF25:
+ 677 00bb 75696E74 		.ascii	"uint32\000"
+ 677      333200
+ 678              	.LASF15:
+ 679 00c2 6D735F64 		.ascii	"ms_delay\000"
+ 679      656C6179 
+ 679      00
+ 680              	.LASF8:
+ 681 00cb 756E7369 		.ascii	"unsigned int\000"
+ 681      676E6564 
+ 681      20696E74 
+ 681      00
+ 682              	.LASF7:
+ 683 00d8 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 683      206C6F6E 
+ 683      6720756E 
+ 683      7369676E 
+ 683      65642069 
+ 684              	.LASF24:
+ 685 00ef 443A5C70 		.ascii	"D:\\psoc\\theory\\timer_delay\\timer_delay.cydsn\000"
+ 685      736F635C 
+ 685      7468656F 
+ 685      72795C74 
+ 685      696D6572 
+ 686              	.LASF28:
+ 687 011c 74696D65 		.ascii	"timer_flag\000"
+ 687      725F666C 
+ 687      616700
+ 688              	.LASF22:
+ 689 0127 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 689      43313120 
+ 689      352E342E 
+ 689      31203230 
+ 689      31363036 
+ 690 015a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 690      20726576 
+ 690      6973696F 
+ 690      6E203233 
+ 690      37373135 
+ 691 018d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 691      66756E63 
+ 691      74696F6E 
+ 691      2D736563 
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccvQVRNm.s 			page 15
+
+
+ 691      74696F6E 
+ 692              	.LASF13:
+ 693 01b5 73697A65 		.ascii	"sizetype\000"
+ 693      74797065 
+ 693      00
+ 694              	.LASF6:
+ 695 01be 6C6F6E67 		.ascii	"long long int\000"
+ 695      206C6F6E 
+ 695      6720696E 
+ 695      7400
+ 696              	.LASF11:
+ 697 01cc 63686172 		.ascii	"char\000"
+ 697      00
+ 698              	.LASF2:
+ 699 01d1 73686F72 		.ascii	"short int\000"
+ 699      7420696E 
+ 699      7400
+ 700              	.LASF21:
+ 701 01db 74696D65 		.ascii	"timer_Stop\000"
+ 701      725F5374 
+ 701      6F7000
+ 702              	.LASF17:
+ 703 01e6 74696D65 		.ascii	"timer_int_ClearPending\000"
+ 703      725F696E 
+ 703      745F436C 
+ 703      65617250 
+ 703      656E6469 
+ 704              	.LASF4:
+ 705 01fd 6C6F6E67 		.ascii	"long int\000"
+ 705      20696E74 
+ 705      00
+ 706              	.LASF12:
+ 707 0206 6C6F6E67 		.ascii	"long double\000"
+ 707      20646F75 
+ 707      626C6500 
+ 708              	.LASF0:
+ 709 0212 7369676E 		.ascii	"signed char\000"
+ 709      65642063 
+ 709      68617200 
+ 710              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
