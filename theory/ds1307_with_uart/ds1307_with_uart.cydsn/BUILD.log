@@ -1,4 +1,4 @@
---------------- Build Started: 09/06/2022 10:17:45 Project: ds1307_with_uart, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Build Started: 09/06/2022 15:27:59 Project: ds1307_with_uart, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 The code generation step is up to date.
 arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/ds1307_i2c.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c ds1307_i2c.c -o .\CortexM0\ARM_GCC_541\Debug\ds1307_i2c.o
 arm-none-eabi-ar.exe -rs .\CortexM0\ARM_GCC_541\Debug\ds1307_with_uart.a .\CortexM0\ARM_GCC_541\Debug\i2c_ds1307.o .\CortexM0\ARM_GCC_541\Debug\i2c_ds1307_I2C_INT.o .\CortexM0\ARM_GCC_541\Debug\i2c_ds1307_I2C.o .\CortexM0\ARM_GCC_541\Debug\i2c_ds1307_I2C_BOOT.o .\CortexM0\ARM_GCC_541\Debug\i2c_ds1307_I2C_MASTER.o .\CortexM0\ARM_GCC_541\Debug\i2c_ds1307_PM.o .\CortexM0\ARM_GCC_541\Debug\i2c_ds1307_BOOT.o .\CortexM0\ARM_GCC_541\Debug\uart_transmit.o .\CortexM0\ARM_GCC_541\Debug\uart_transmit_SPI_UART.o .\CortexM0\ARM_GCC_541\Debug\uart_transmit_SPI_UART_INT.o .\CortexM0\ARM_GCC_541\Debug\uart_transmit_PM.o .\CortexM0\ARM_GCC_541\Debug\uart_transmit_UART.o .\CortexM0\ARM_GCC_541\Debug\uart_transmit_BOOT.o .\CortexM0\ARM_GCC_541\Debug\uart_transmit_UART_BOOT.o .\CortexM0\ARM_GCC_541\Debug\Pin_Led_Yellow.o .\CortexM0\ARM_GCC_541\Debug\Pin_Led_Yellow_PM.o .\CortexM0\ARM_GCC_541\Debug\i2c_ds1307_SCBCLK.o .\CortexM0\ARM_GCC_541\Debug\i2c_ds1307_sda.o .\CortexM0\ARM_GCC_541\Debug\i2c_ds1307_sda_PM.o .\CortexM0\ARM_GCC_541\Debug\i2c_ds1307_scl.o .\CortexM0\ARM_GCC_541\Debug\i2c_ds1307_scl_PM.o .\CortexM0\ARM_GCC_541\Debug\i2c_ds1307_SCB_IRQ.o .\CortexM0\ARM_GCC_541\Debug\uart_transmit_SCBCLK.o .\CortexM0\ARM_GCC_541\Debug\uart_transmit_tx.o .\CortexM0\ARM_GCC_541\Debug\uart_transmit_tx_PM.o .\CortexM0\ARM_GCC_541\Debug\uart_transmit_rx.o .\CortexM0\ARM_GCC_541\Debug\uart_transmit_rx_PM.o .\CortexM0\ARM_GCC_541\Debug\CyFlash.o .\CortexM0\ARM_GCC_541\Debug\CyLib.o .\CortexM0\ARM_GCC_541\Debug\cyPm.o .\CortexM0\ARM_GCC_541\Debug\cyutils.o .\CortexM0\ARM_GCC_541\Debug\CyLFClk.o .\CortexM0\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM0\ARM_GCC_541\Debug\CyBootAsmGnu.o
@@ -9,6 +9,6 @@ No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
 cyelftool.exe -S D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\CortexM0\ARM_GCC_541\Debug\ds1307_with_uart.elf
-Flash used: 7958 of 32768 bytes (24.3%).
+Flash used: 7886 of 32768 bytes (24.1%).
 SRAM used: 1608 of 4096 bytes (39.3%). Stack: 1024 bytes. Heap: 128 bytes.
---------------- Build Succeeded: 09/06/2022 10:17:45 ---------------
+--------------- Build Succeeded: 09/06/2022 15:28:00 ---------------

@@ -18,15 +18,17 @@
 
 int main(void)
 {
-    CyGlobalIntEnable; /* Enable global interrupts. */
-
     data_time time;
     char txString[50];
     
+    CyGlobalIntEnable; /* Enable global interrupts. */
+
     system_initialization(); 
     
-    uart_transmit_UartPutString("Write data to DS1307.\n");
-    CyDelay(1000);
+    /*
+        uart_transmit_UartPutString("Write data to DS1307.\n");
+        CyDelay(1000);
+    */
     
     ds1307_time_init(&time);
     ds1307_write_data(&time);
@@ -34,9 +36,10 @@ int main(void)
     uart_transmit_UartPutString(txString); 
     CyDelay(1000);
     
-    uart_transmit_UartPutString("\nRead data to DS1307.\n");
-    CyDelay(1000);
-    
+    /*
+        uart_transmit_UartPutString("\nRead data to DS1307.\n");
+        CyDelay(1000);
+    */
     
     for(;;)
     {
@@ -45,8 +48,7 @@ int main(void)
         ds1307_read_data(&time); 
         time_string_concatenation(time, txString);
         uart_transmit_UartPutString(txString);   
-        
-        CyDelay(500);
+        CyDelay(1000);
     }
 }
 

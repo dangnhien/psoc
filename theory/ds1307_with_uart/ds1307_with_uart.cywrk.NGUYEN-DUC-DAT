@@ -39,17 +39,6 @@
 <v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>ds1307_with_uart</v>
-<v>ds1307_with_uart\ds1307_with_uart</v>
-<v>ds1307_with_uart\ds1307_with_uart\TopDesign</v>
-<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr</v>
-<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Pins</v>
-<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Analog</v>
-<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Clocks</v>
-<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Interrupts</v>
-<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\System</v>
-<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Directives</v>
-<v>ds1307_with_uart\ds1307_with_uart\ds1307_with_uart.cydwr\Flash Security</v>
 <v>ds1307_with_uart\ds1307_with_uart\Header Files</v>
 <v>ds1307_with_uart\ds1307_with_uart\Header Files\cyapicallbacks.h</v>
 <v>ds1307_with_uart\ds1307_with_uart\Header Files\ds1307_i2c.h</v>
@@ -67,6 +56,19 @@
 <v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\i2c_ds1307</v>
 <v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\i2c_ds1307_SCB_IRQ</v>
 <v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\i2c_ds1307_SCBCLK</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\i2c_ds1307_scl</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\i2c_ds1307_sda</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\Pin_Led_Yellow</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\uart_transmit</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\uart_transmit_rx</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\uart_transmit_SCBCLK</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\uart_transmit_tx</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\cycodeshareexport.ld</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\cycodeshareimport.ld</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\cycodeshareimport.scat</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\cydevice_trm.h</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\cydevicegnu_trm.inc</v>
+<v>ds1307_with_uart\ds1307_with_uart\Generated_Source\PSoC4\cydeviceiar_trm.inc</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -167,6 +169,8 @@
 <v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_ds1307_SCBCLK.lst</v>
 <v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_ds1307_scl.lst</v>
 <v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_ds1307_scl_PM.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_ds1307_sda.lst</v>
+<v>ds1307_with_uart\ds1307_with_uart\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_ds1307_sda_PM.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -213,8 +217,6 @@
 <name v=".\ds1307_with_uart.cydsn\main.c" />
 <name v=".\ds1307_with_uart.cydsn\ds1307_i2c.c" />
 <name v=".\ds1307_with_uart.cydsn\ds1307_i2c.h" />
-<name v=".\ds1307_with_uart.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\ds1307_with_uart.cydsn\ds1307_with_uart.cydwr" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -222,7 +224,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1002, 558" SelectedTabbedMdiWindow="74267fa5-09b1-4e85-9120-e0fcee974d1f"><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\uart_transmitss.h" Guid="0cc47f58-9ac0-4bf2-9441-b87c6ba08a4c" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\uart_transmitss.c" Guid="e9d7655d-78c4-456d-9670-eec549e3f1e0" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\main.h" Guid="bbe6278a-842d-4ec7-8538-468ed96d1067" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\main.c" Guid="bc13dae6-21b3-4038-bb14-4019556f5f47" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\ds1307_i2c.c" Guid="74267fa5-09b1-4e85-9120-e0fcee974d1f" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\ds1307_i2c.h" Guid="8006fea3-f72f-43a1-b443-8ca3bb7c28c3" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\TopDesign\TopDesign.cysch" Guid="612ca92f-8f35-4763-a66c-fba40f666973" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\ds1307_with_uart.cydwr" Guid="63d43733-a7c7-433c-a27c-45a9e4046950" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1234, 558" SelectedTabbedMdiWindow="bbe6278a-842d-4ec7-8538-468ed96d1067"><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\uart_transmitss.h" Guid="0cc47f58-9ac0-4bf2-9441-b87c6ba08a4c" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\uart_transmitss.c" Guid="e9d7655d-78c4-456d-9670-eec549e3f1e0" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\main.h" Guid="bbe6278a-842d-4ec7-8538-468ed96d1067" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\main.c" Guid="bc13dae6-21b3-4038-bb14-4019556f5f47" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\ds1307_i2c.c" Guid="74267fa5-09b1-4e85-9120-e0fcee974d1f" /><DocumentWindow Key="D:\psoc\theory\ds1307_with_uart\ds1307_with_uart.cydsn\ds1307_i2c.h" Guid="8006fea3-f72f-43a1-b443-8ca3bb7c28c3" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

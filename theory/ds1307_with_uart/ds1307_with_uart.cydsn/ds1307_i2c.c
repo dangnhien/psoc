@@ -14,17 +14,14 @@
 
 #define ADDRESS_SLAVE_DS1307 0x68
 
-uint8 BCD_to_DEC(uint8 data);
-uint8 DEC_to_BCD(uint8 data);
-
 uint8 BCD_to_DEC(uint8 data)
 {
-	return ( (data>>4)*10 + (data&0x0f) );
+	return ( (data >> 4)*10 + (data & 0x0f) );
 }
 
 uint8 DEC_to_BCD(uint8 data)
 {
-	return ( (data/10)<<4 | (data%10) );
+	return ( (data / 10)<<4 | (data % 10) );
 }
 
 /*
@@ -40,19 +37,22 @@ void ds1307_read_data(data_time *time)
     uint8 temp[8];
     
     do{
-        result = i2c_ds1307_I2CMasterSendStart(ADDRESS_SLAVE_DS1307, i2c_ds1307_I2C_WRITE_XFER_MODE, 1);
+        result = i2c_ds1307_I2CMasterSendStart(ADDRESS_SLAVE_DS1307, i2c_ds1307_I2C_WRITE_XFER_MODE, 5);
     }while(result != i2c_ds1307_I2C_MSTR_NO_ERROR);
     
-    i2c_ds1307_I2CMasterWriteByte(0x00, 1);
+    i2c_ds1307_I2CMasterWriteByte(0x00, 5);
     
-    i2c_ds1307_I2CMasterSendRestart(ADDRESS_SLAVE_DS1307, i2c_ds1307_I2C_READ_XFER_MODE, 1);
+    i2c_ds1307_I2CMasterSendRestart(ADDRESS_SLAVE_DS1307, i2c_ds1307_I2C_READ_XFER_MODE, 5);
     
-    for(i=0; i<6; i++)
-        i2c_ds1307_I2CMasterReadByte( i2c_ds1307_I2C_ACK_DATA, &temp[i] , 1);
+    for(i=0; i<7; i++)
+    {   
+        if(i !=6 )
+            i2c_ds1307_I2CMasterReadByte( i2c_ds1307_I2C_ACK_DATA, &temp[i] , 5);
+        else
+            i2c_ds1307_I2CMasterReadByte( i2c_ds1307_I2C_NAK_DATA, &temp[i] , 5);
+    }
         
-    i2c_ds1307_I2CMasterReadByte( i2c_ds1307_I2C_NAK_DATA, &temp[i] , 1);
-    
-   i2c_ds1307_I2CMasterSendStop(1); 
+   i2c_ds1307_I2CMasterSendStop(5); 
     
     // Convert BCD to DEC
     time->second = BCD_to_DEC(temp[0] & 0x7F);
@@ -75,18 +75,18 @@ void ds1307_write_data(data_time *time)
     temp[2] = DEC_to_BCD(time->hour);
     temp[3] = DEC_to_BCD(time->day);
     temp[4] = DEC_to_BCD(time->date);
-    temp[5] = DEC_to_BCD(time->minute);
+    temp[5] = DEC_to_BCD(time->month);
     temp[6] = DEC_to_BCD(time->year);   
     
     do{
-        result = i2c_ds1307_I2CMasterSendStart(ADDRESS_SLAVE_DS1307, i2c_ds1307_I2C_WRITE_XFER_MODE, 1);
+        result = i2c_ds1307_I2CMasterSendStart(ADDRESS_SLAVE_DS1307, i2c_ds1307_I2C_WRITE_XFER_MODE, 5);
     }while(result != i2c_ds1307_I2C_MSTR_NO_ERROR);
     
-   i2c_ds1307_I2CMasterWriteByte((uint32)0x00, 1);
+   i2c_ds1307_I2CMasterWriteByte(0x00, 5);
     
     for(i=0; i<7; i++)
     {
-        i2c_ds1307_I2CMasterWriteByte(temp[i], 1);
+        i2c_ds1307_I2CMasterWriteByte(temp[i], 5);
     }
     
     i2c_ds1307_I2CMasterSendStop(5);
@@ -94,13 +94,13 @@ void ds1307_write_data(data_time *time)
 
 void ds1307_time_init(data_time *time)
 {
-    time->second = 00;
-    time->minute = 6;
-    time->hour = 10;
-    time->day = 3;
-    time->date = 6;
-    time->month = 6;
-    time->year = 22;
+    time->second = 15;
+    time->minute = 15;
+    time->hour = 24;
+    time->day = 1;
+    time->date = 15;
+    time->month =13;
+    time->year = 47;
 }
 
 /* [] END OF FILE */

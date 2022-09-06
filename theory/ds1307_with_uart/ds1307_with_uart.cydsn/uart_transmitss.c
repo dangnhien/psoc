@@ -45,7 +45,7 @@ void time_string_concatenation(data_time time, char *strings)
              strcpy(dayInWeek, "Error!");  
     }
     
-    sprintf(strings, "\n%d%c%d%c%d  %s, %d%c%d%c%d",time.hour, ':', time.minute, ':', time.second, \
+    sprintf(strings, "\n%d%c%d%c%d %s,%d%c%d%c%d",time.hour, ':', time.minute, ':', time.second, \
         dayInWeek, time.date, '/', time.month, '/', 2000 + time.year );
     
     return;
