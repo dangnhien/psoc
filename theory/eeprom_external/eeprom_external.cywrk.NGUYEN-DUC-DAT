@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="eeprom_external\eeprom_external\Header Files\eeprom_external.h">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="eeprom_external\eeprom_external\eeprom_external.cydwr">
 <ExpandedNodeIds>
 <v>eeprom_external</v>
 <v>eeprom_external\eeprom_external</v>
@@ -157,32 +157,6 @@
 <VisibleNodeIds>
 <v>eeprom_external</v>
 <v>eeprom_external\eeprom_external</v>
-<v>eeprom_external\eeprom_external\CortexM0</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\eeprom_external.lst</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c.lst</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_BOOT.lst</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_I2C.lst</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_I2C_BOOT.lst</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_I2C_INT.lst</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_I2C_MASTER.lst</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_PM.lst</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_SCB_IRQ.lst</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_SCBCLK.lst</v>
-<v>eeprom_external\eeprom_external\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_scl.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -235,6 +209,7 @@
 <name v=".\eeprom_external.cydsn\timer_system.c" />
 <name v=".\eeprom_external.cydsn\timer_system.h" />
 <name v=".\eeprom_external.cydsn\main.h" />
+<name v=".\eeprom_external.cydsn\eeprom_external.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -242,7 +217,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1006, 558" SelectedTabbedMdiWindow="10700d5d-8ed2-4934-90e8-e900bcb98e44"><DocumentWindow Key="D:\psoc\theory\eeprom_external\eeprom_external.cydsn\main.c" Guid="10700d5d-8ed2-4934-90e8-e900bcb98e44" /><DocumentWindow Key="D:\psoc\theory\eeprom_external\eeprom_external.cydsn\timer_system.c" Guid="30a3f431-124d-4367-9af4-1cad2e33b55e" /><DocumentWindow Key="D:\psoc\theory\eeprom_external\eeprom_external.cydsn\timer_system.h" Guid="3dc95835-974e-4c28-9ebb-ac67a512fbba" /><DocumentWindow Key="D:\psoc\theory\eeprom_external\eeprom_external.cydsn\main.h" Guid="a02d4220-7398-45bf-9bd5-1187b7ec02e0" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1234, 558" SelectedTabbedMdiWindow="10700d5d-8ed2-4934-90e8-e900bcb98e44"><DocumentWindow Key="D:\psoc\theory\eeprom_external\eeprom_external.cydsn\main.c" Guid="10700d5d-8ed2-4934-90e8-e900bcb98e44" /><DocumentWindow Key="D:\psoc\theory\eeprom_external\eeprom_external.cydsn\timer_system.c" Guid="30a3f431-124d-4367-9af4-1cad2e33b55e" /><DocumentWindow Key="D:\psoc\theory\eeprom_external\eeprom_external.cydsn\timer_system.h" Guid="3dc95835-974e-4c28-9ebb-ac67a512fbba" /><DocumentWindow Key="D:\psoc\theory\eeprom_external\eeprom_external.cydsn\main.h" Guid="a02d4220-7398-45bf-9bd5-1187b7ec02e0" /><DocumentWindow Key="D:\psoc\theory\eeprom_external\eeprom_external.cydsn\eeprom_external.h" Guid="f0fe5894-339f-4235-848f-7a67ae385b70" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

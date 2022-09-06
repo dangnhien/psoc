@@ -17,8 +17,14 @@
 */
 #ifndef MAIN_H
 #define MAIN_H
-
+    
     void system_init();
+    
+    void write_and_read_a_byte_24c08();
+    void write_and_read_page_24c08();
+    
+    void write_and_read_a_byte_24c256();
+    void write_and_read_page_24c256();
     
 #endif
 /* [] END OF FILE */
