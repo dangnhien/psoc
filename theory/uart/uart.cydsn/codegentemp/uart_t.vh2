@@ -1,5 +1,5 @@
 -- Project:   D:\psoc\theory\uart\uart.cydsn\uart.cyprj
--- Generated: 08/22/2022 09:36:00
+-- Generated: 09/06/2022 10:33:14
 -- PSoC Creator  4.4
 
 ENTITY uart IS

@@ -1,5 +1,5 @@
 -- Project:   D:\psoc\theory\timer_interrupt\timer_have_see_by_machine_wire.cydsn\timer_have_see_by_machine_wire.cyprj
--- Generated: 08/26/2022 21:27:38
+-- Generated: 09/06/2022 11:00:15
 -- PSoC Creator  4.4
 
 ENTITY timer_have_see_by_machine_wire IS

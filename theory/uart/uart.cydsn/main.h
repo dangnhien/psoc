@@ -9,14 +9,14 @@
  *
  * ========================================
 */
+/*
+    Dang Nhien
+    Start 25/8/2022
+    Update 5/9/2022
+*/
 
 #ifndef MAIN_H
 #define MAIN_H
-    
-    #include "project.h"
-    #include "applicationUart.h"
-    
-    void uartHandle();
     
     void configSystem();
     void uartHandle();

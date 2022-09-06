@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 1
 
 
    1              		.syntax unified
@@ -39,36 +39,38 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
    9:ds1307_i2c.c  ****  *
   10:ds1307_i2c.c  ****  * ========================================
   11:ds1307_i2c.c  **** */
-  12:ds1307_i2c.c  **** #include "ds1307_i2c.h"
-  13:ds1307_i2c.c  **** 
+  12:ds1307_i2c.c  **** #include "project.h"
+  13:ds1307_i2c.c  **** #include "ds1307_i2c.h"
   14:ds1307_i2c.c  **** 
-  15:ds1307_i2c.c  **** uint8 BCD_to_DEC(uint8 data);
-  16:ds1307_i2c.c  **** uint8 DEC_to_BCD(uint8 data);
-  17:ds1307_i2c.c  **** 
-  18:ds1307_i2c.c  **** uint8 BCD_to_DEC(uint8 data)
-  19:ds1307_i2c.c  **** {
-  28              		.loc 1 19 0
+  15:ds1307_i2c.c  **** #define ADDRESS_SLAVE_DS1307 0x68
+  16:ds1307_i2c.c  **** 
+  17:ds1307_i2c.c  **** uint8 BCD_to_DEC(uint8 data);
+  18:ds1307_i2c.c  **** uint8 DEC_to_BCD(uint8 data);
+  19:ds1307_i2c.c  **** 
+  20:ds1307_i2c.c  **** uint8 BCD_to_DEC(uint8 data)
+  21:ds1307_i2c.c  **** {
+  28              		.loc 1 21 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
   32              		@ link register save eliminated.
   33              	.LVL0:
-  20:ds1307_i2c.c  **** 	return (data>>4)*10 + (data&0x0f);
-  34              		.loc 1 20 0
+  22:ds1307_i2c.c  **** 	return ( (data>>4)*10 + (data&0x0f) );
+  34              		.loc 1 22 0
   35 0000 0209     		lsrs	r2, r0, #4
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 2
+
+
   36 0002 9300     		lsls	r3, r2, #2
   37 0004 D318     		adds	r3, r2, r3
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 2
-
-
   38 0006 5A00     		lsls	r2, r3, #1
   39 0008 0F23     		movs	r3, #15
   40 000a 1840     		ands	r0, r3
   41              	.LVL1:
   42 000c 1018     		adds	r0, r2, r0
   43 000e C0B2     		uxtb	r0, r0
-  21:ds1307_i2c.c  **** }
-  44              		.loc 1 21 0
+  23:ds1307_i2c.c  **** }
+  44              		.loc 1 23 0
   45              		@ sp needed
   46 0010 7047     		bx	lr
   47              		.cfi_endproc
@@ -84,10 +86,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
   57              		.type	DEC_to_BCD, %function
   58              	DEC_to_BCD:
   59              	.LFB33:
-  22:ds1307_i2c.c  **** 
-  23:ds1307_i2c.c  **** uint8 DEC_to_BCD(uint8 data)
-  24:ds1307_i2c.c  **** {
-  60              		.loc 1 24 0
+  24:ds1307_i2c.c  **** 
+  25:ds1307_i2c.c  **** uint8 DEC_to_BCD(uint8 data)
+  26:ds1307_i2c.c  **** {
+  60              		.loc 1 26 0
   61              		.cfi_startproc
   62              		@ args = 0, pretend = 0, frame = 0
   63              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -99,8 +101,8 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
   69              		.cfi_offset 6, -8
   70              		.cfi_offset 14, -4
   71 0002 0500     		movs	r5, r0
-  25:ds1307_i2c.c  **** 	return (data/10)<<4 | (data%10);
-  72              		.loc 1 25 0
+  27:ds1307_i2c.c  **** 	return ( (data/10)<<4 | (data%10) );
+  72              		.loc 1 27 0
   73 0004 0A21     		movs	r1, #10
   74 0006 FFF7FEFF 		bl	__aeabi_uidiv
   75              	.LVL3:
@@ -112,15 +114,15 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
   81              	.LVL4:
   82 0016 0C43     		orrs	r4, r1
   83 0018 E0B2     		uxtb	r0, r4
-  26:ds1307_i2c.c  **** }
-  84              		.loc 1 26 0
+  28:ds1307_i2c.c  **** }
+  84              		.loc 1 28 0
   85              		@ sp needed
   86 001a 70BD     		pop	{r4, r5, r6, pc}
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 3
+
+
   87              		.cfi_endproc
   88              	.LFE33:
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 3
-
-
   89              		.size	DEC_to_BCD, .-DEC_to_BCD
   90              		.section	.text.ds1307_read_data,"ax",%progbits
   91              		.align	2
@@ -130,17 +132,17 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
   95              		.type	ds1307_read_data, %function
   96              	ds1307_read_data:
   97              	.LFB34:
-  27:ds1307_i2c.c  **** 
-  28:ds1307_i2c.c  **** /*
-  29:ds1307_i2c.c  ****     - Dựa vào bảng Timekeeper registers, chúng ta sẽ thấy thanh ghi second có bit 7 CH (
-  30:ds1307_i2c.c  ****     chúng ta sẽ không đọc bit này nên sẽ cần biểu thức ( temp[0] & 0x7F ) để lo
-  31:ds1307_i2c.c  **** 
-  32:ds1307_i2c.c  ****     - Thanh ghi hour có bit 6 để chọn chế độ 12/24h, nếu bit 6 = 1, chế độ 12h s�
-  33:ds1307_i2c.c  ****     Chúng ta sẽ không đọc bit 6 nên cần biểu thức temp[0] & 0x3F để loại bit 6 n
-  34:ds1307_i2c.c  **** */
-  35:ds1307_i2c.c  **** void ds1307_read_data(data_time *time)
-  36:ds1307_i2c.c  **** {
-  98              		.loc 1 36 0
+  29:ds1307_i2c.c  **** 
+  30:ds1307_i2c.c  **** /*
+  31:ds1307_i2c.c  ****     - Dựa vào bảng Timekeeper registers, chúng ta sẽ thấy thanh ghi second có bit 7 CH (
+  32:ds1307_i2c.c  ****     chúng ta sẽ không đọc bit này nên sẽ cần biểu thức ( temp[0] & 0x7F ) để lo
+  33:ds1307_i2c.c  **** 
+  34:ds1307_i2c.c  ****     - Thanh ghi hour có bit 6 để chọn chế độ 12/24h, nếu bit 6 = 1, chế độ 12h s�
+  35:ds1307_i2c.c  ****     Chúng ta sẽ không đọc bit 6 nên cần biểu thức temp[0] & 0x3F để loại bit 6 n
+  36:ds1307_i2c.c  **** */
+  37:ds1307_i2c.c  **** void ds1307_read_data(data_time *time)
+  38:ds1307_i2c.c  **** {
+  98              		.loc 1 38 0
   99              		.cfi_startproc
  100              		@ args = 0, pretend = 0, frame = 8
  101              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -155,12 +157,12 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  110 0004 0500     		movs	r5, r0
  111              	.LVL6:
  112              	.L4:
-  37:ds1307_i2c.c  ****     uint8 result, i;    
-  38:ds1307_i2c.c  ****     uint8 temp[8];
-  39:ds1307_i2c.c  ****     
-  40:ds1307_i2c.c  ****     do{
-  41:ds1307_i2c.c  ****         result = i2c_ds1307_I2CMasterSendStart(ADDRESS_SLAVE_DS1307, i2c_ds1307_I2C_WRITE_XFER_MODE
- 113              		.loc 1 41 0 discriminator 1
+  39:ds1307_i2c.c  ****     uint8 result, i;    
+  40:ds1307_i2c.c  ****     uint8 temp[8];
+  41:ds1307_i2c.c  ****     
+  42:ds1307_i2c.c  ****     do{
+  43:ds1307_i2c.c  ****         result = i2c_ds1307_I2CMasterSendStart(ADDRESS_SLAVE_DS1307, i2c_ds1307_I2C_WRITE_XFER_MODE
+ 113              		.loc 1 43 0 discriminator 1
  114 0006 0122     		movs	r2, #1
  115 0008 0021     		movs	r1, #0
  116 000a 6820     		movs	r0, #104
@@ -168,91 +170,91 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  118              	.LVL7:
  119 0010 C0B2     		uxtb	r0, r0
  120              	.LVL8:
-  42:ds1307_i2c.c  ****     }while(result != i2c_ds1307_I2C_MSTR_NO_ERROR);
- 121              		.loc 1 42 0 discriminator 1
+  44:ds1307_i2c.c  ****     }while(result != i2c_ds1307_I2C_MSTR_NO_ERROR);
+ 121              		.loc 1 44 0 discriminator 1
  122 0012 0028     		cmp	r0, #0
  123 0014 F7D1     		bne	.L4
-  43:ds1307_i2c.c  ****     
-  44:ds1307_i2c.c  ****     i2c_ds1307_I2CMasterWriteByte(0x00, 1);
- 124              		.loc 1 44 0
+  45:ds1307_i2c.c  ****     
+  46:ds1307_i2c.c  ****     i2c_ds1307_I2CMasterWriteByte(0x00, 1);
+ 124              		.loc 1 46 0
  125 0016 0121     		movs	r1, #1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 4
+
+
  126 0018 FFF7FEFF 		bl	i2c_ds1307_I2CMasterWriteByte
  127              	.LVL9:
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 4
-
-
-  45:ds1307_i2c.c  ****     
-  46:ds1307_i2c.c  ****     i2c_ds1307_I2CMasterSendRestart(ADDRESS_SLAVE_DS1307, i2c_ds1307_I2C_READ_XFER_MODE, 1);
- 128              		.loc 1 46 0
+  47:ds1307_i2c.c  ****     
+  48:ds1307_i2c.c  ****     i2c_ds1307_I2CMasterSendRestart(ADDRESS_SLAVE_DS1307, i2c_ds1307_I2C_READ_XFER_MODE, 1);
+ 128              		.loc 1 48 0
  129 001c 0122     		movs	r2, #1
  130 001e 0121     		movs	r1, #1
  131 0020 6820     		movs	r0, #104
  132 0022 FFF7FEFF 		bl	i2c_ds1307_I2CMasterSendRestart
  133              	.LVL10:
-  47:ds1307_i2c.c  ****     
-  48:ds1307_i2c.c  ****     for(i=0; i<6; i++)
- 134              		.loc 1 48 0
+  49:ds1307_i2c.c  ****     
+  50:ds1307_i2c.c  ****     for(i=0; i<6; i++)
+ 134              		.loc 1 50 0
  135 0026 0024     		movs	r4, #0
  136 0028 07E0     		b	.L5
  137              	.LVL11:
  138              	.L6:
-  49:ds1307_i2c.c  ****         i2c_ds1307_I2CMasterReadByte( i2c_ds1307_I2C_ACK_DATA, &temp[i] , 1);
- 139              		.loc 1 49 0 discriminator 3
+  51:ds1307_i2c.c  ****         i2c_ds1307_I2CMasterReadByte( i2c_ds1307_I2C_ACK_DATA, &temp[i] , 1);
+ 139              		.loc 1 51 0 discriminator 3
  140 002a 2100     		movs	r1, r4
  141 002c 6944     		add	r1, r1, sp
  142 002e 0122     		movs	r2, #1
  143 0030 0020     		movs	r0, #0
  144 0032 FFF7FEFF 		bl	i2c_ds1307_I2CMasterReadByte
  145              	.LVL12:
-  48:ds1307_i2c.c  ****         i2c_ds1307_I2CMasterReadByte( i2c_ds1307_I2C_ACK_DATA, &temp[i] , 1);
- 146              		.loc 1 48 0 discriminator 3
+  50:ds1307_i2c.c  ****         i2c_ds1307_I2CMasterReadByte( i2c_ds1307_I2C_ACK_DATA, &temp[i] , 1);
+ 146              		.loc 1 50 0 discriminator 3
  147 0036 0134     		adds	r4, r4, #1
  148              	.LVL13:
  149 0038 E4B2     		uxtb	r4, r4
  150              	.LVL14:
  151              	.L5:
-  48:ds1307_i2c.c  ****         i2c_ds1307_I2CMasterReadByte( i2c_ds1307_I2C_ACK_DATA, &temp[i] , 1);
- 152              		.loc 1 48 0 is_stmt 0 discriminator 1
+  50:ds1307_i2c.c  ****         i2c_ds1307_I2CMasterReadByte( i2c_ds1307_I2C_ACK_DATA, &temp[i] , 1);
+ 152              		.loc 1 50 0 is_stmt 0 discriminator 1
  153 003a 052C     		cmp	r4, #5
  154 003c F5D9     		bls	.L6
-  50:ds1307_i2c.c  ****         
-  51:ds1307_i2c.c  ****     i2c_ds1307_I2CMasterReadByte( i2c_ds1307_I2C_NAK_DATA, &temp[i] , 1);
- 155              		.loc 1 51 0 is_stmt 1
+  52:ds1307_i2c.c  ****         
+  53:ds1307_i2c.c  ****     i2c_ds1307_I2CMasterReadByte( i2c_ds1307_I2C_NAK_DATA, &temp[i] , 1);
+ 155              		.loc 1 53 0 is_stmt 1
  156 003e 2100     		movs	r1, r4
  157 0040 6944     		add	r1, r1, sp
  158 0042 0122     		movs	r2, #1
  159 0044 0120     		movs	r0, #1
  160 0046 FFF7FEFF 		bl	i2c_ds1307_I2CMasterReadByte
  161              	.LVL15:
-  52:ds1307_i2c.c  ****     
-  53:ds1307_i2c.c  ****    i2c_ds1307_I2CMasterSendStop(1); 
- 162              		.loc 1 53 0
+  54:ds1307_i2c.c  ****     
+  55:ds1307_i2c.c  ****    i2c_ds1307_I2CMasterSendStop(1); 
+ 162              		.loc 1 55 0
  163 004a 0120     		movs	r0, #1
  164 004c FFF7FEFF 		bl	i2c_ds1307_I2CMasterSendStop
  165              	.LVL16:
-  54:ds1307_i2c.c  ****     
-  55:ds1307_i2c.c  ****     // Convert BCD to DEC
-  56:ds1307_i2c.c  ****     time->second = BCD_to_DEC(temp[0] & 0x7F);
- 166              		.loc 1 56 0
+  56:ds1307_i2c.c  ****     
+  57:ds1307_i2c.c  ****     // Convert BCD to DEC
+  58:ds1307_i2c.c  ****     time->second = BCD_to_DEC(temp[0] & 0x7F);
+ 166              		.loc 1 58 0
  167 0050 6B46     		mov	r3, sp
  168 0052 1B78     		ldrb	r3, [r3]
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 5
+
+
  169 0054 7F20     		movs	r0, #127
  170 0056 1840     		ands	r0, r3
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 5
-
-
  171 0058 FFF7FEFF 		bl	BCD_to_DEC
  172              	.LVL17:
  173 005c 2870     		strb	r0, [r5]
-  57:ds1307_i2c.c  ****     time->minute = BCD_to_DEC(temp[1]);
- 174              		.loc 1 57 0
+  59:ds1307_i2c.c  ****     time->minute = BCD_to_DEC(temp[1]);
+ 174              		.loc 1 59 0
  175 005e 6B46     		mov	r3, sp
  176 0060 5878     		ldrb	r0, [r3, #1]
  177 0062 FFF7FEFF 		bl	BCD_to_DEC
  178              	.LVL18:
  179 0066 6870     		strb	r0, [r5, #1]
-  58:ds1307_i2c.c  ****     time->hour = BCD_to_DEC(temp[2] & 0x3F); // 24h mode
- 180              		.loc 1 58 0
+  60:ds1307_i2c.c  ****     time->hour = BCD_to_DEC(temp[2] & 0x3F); // 24h mode
+ 180              		.loc 1 60 0
  181 0068 6B46     		mov	r3, sp
  182 006a 9B78     		ldrb	r3, [r3, #2]
  183 006c 3F20     		movs	r0, #63
@@ -260,47 +262,47 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  185 0070 FFF7FEFF 		bl	BCD_to_DEC
  186              	.LVL19:
  187 0074 A870     		strb	r0, [r5, #2]
-  59:ds1307_i2c.c  ****     time->day = BCD_to_DEC(temp[3]);
- 188              		.loc 1 59 0
+  61:ds1307_i2c.c  ****     time->day = BCD_to_DEC(temp[3]);
+ 188              		.loc 1 61 0
  189 0076 6B46     		mov	r3, sp
  190 0078 D878     		ldrb	r0, [r3, #3]
  191 007a FFF7FEFF 		bl	BCD_to_DEC
  192              	.LVL20:
  193 007e E870     		strb	r0, [r5, #3]
-  60:ds1307_i2c.c  ****     time->date = BCD_to_DEC(temp[4]);
- 194              		.loc 1 60 0
+  62:ds1307_i2c.c  ****     time->date = BCD_to_DEC(temp[4]);
+ 194              		.loc 1 62 0
  195 0080 6B46     		mov	r3, sp
  196 0082 1879     		ldrb	r0, [r3, #4]
  197 0084 FFF7FEFF 		bl	BCD_to_DEC
  198              	.LVL21:
  199 0088 2871     		strb	r0, [r5, #4]
-  61:ds1307_i2c.c  ****     time->month = BCD_to_DEC(temp[5]);
- 200              		.loc 1 61 0
+  63:ds1307_i2c.c  ****     time->month = BCD_to_DEC(temp[5]);
+ 200              		.loc 1 63 0
  201 008a 6B46     		mov	r3, sp
  202 008c 5879     		ldrb	r0, [r3, #5]
  203 008e FFF7FEFF 		bl	BCD_to_DEC
  204              	.LVL22:
  205 0092 6871     		strb	r0, [r5, #5]
-  62:ds1307_i2c.c  ****     time->year = BCD_to_DEC(temp[6]);     
- 206              		.loc 1 62 0
+  64:ds1307_i2c.c  ****     time->year = BCD_to_DEC(temp[6]);     
+ 206              		.loc 1 64 0
  207 0094 6B46     		mov	r3, sp
  208 0096 9879     		ldrb	r0, [r3, #6]
  209 0098 FFF7FEFF 		bl	BCD_to_DEC
  210              	.LVL23:
  211 009c A871     		strb	r0, [r5, #6]
-  63:ds1307_i2c.c  **** }
- 212              		.loc 1 63 0
+  65:ds1307_i2c.c  **** }
+ 212              		.loc 1 65 0
  213 009e 03B0     		add	sp, sp, #12
  214              		@ sp needed
  215              	.LVL24:
  216              	.LVL25:
  217 00a0 30BD     		pop	{r4, r5, pc}
  218              		.cfi_endproc
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 6
+
+
  219              	.LFE34:
  220              		.size	ds1307_read_data, .-ds1307_read_data
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 6
-
-
  221 00a2 C046     		.section	.text.ds1307_write_data,"ax",%progbits
  222              		.align	2
  223              		.global	ds1307_write_data
@@ -309,11 +311,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  226              		.type	ds1307_write_data, %function
  227              	ds1307_write_data:
  228              	.LFB35:
-  64:ds1307_i2c.c  **** 
-  65:ds1307_i2c.c  **** 
-  66:ds1307_i2c.c  **** void ds1307_write_data(data_time *time)
-  67:ds1307_i2c.c  **** {
- 229              		.loc 1 67 0
+  66:ds1307_i2c.c  **** 
+  67:ds1307_i2c.c  **** void ds1307_write_data(data_time *time)
+  68:ds1307_i2c.c  **** {
+ 229              		.loc 1 68 0
  230              		.cfi_startproc
  231              		@ args = 0, pretend = 0, frame = 32
  232              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -326,59 +327,59 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  239 0002 89B0     		sub	sp, sp, #36
  240              		.cfi_def_cfa_offset 48
  241 0004 0400     		movs	r4, r0
-  68:ds1307_i2c.c  ****     uint8 result, i;
-  69:ds1307_i2c.c  ****     uint32 temp[8];
-  70:ds1307_i2c.c  ****     
-  71:ds1307_i2c.c  ****     // Convert DEC to BCD
-  72:ds1307_i2c.c  ****     temp[0] = DEC_to_BCD(time->second);
- 242              		.loc 1 72 0
+  69:ds1307_i2c.c  ****     uint8 result, i;
+  70:ds1307_i2c.c  ****     uint32 temp[8];
+  71:ds1307_i2c.c  ****     
+  72:ds1307_i2c.c  ****     // Convert DEC to BCD
+  73:ds1307_i2c.c  ****     temp[0] = DEC_to_BCD(time->second);
+ 242              		.loc 1 73 0
  243 0006 0078     		ldrb	r0, [r0]
  244              	.LVL27:
  245 0008 FFF7FEFF 		bl	DEC_to_BCD
  246              	.LVL28:
  247 000c 0090     		str	r0, [sp]
-  73:ds1307_i2c.c  ****     temp[1] = DEC_to_BCD(time->minute);
- 248              		.loc 1 73 0
+  74:ds1307_i2c.c  ****     temp[1] = DEC_to_BCD(time->minute);
+ 248              		.loc 1 74 0
  249 000e 6078     		ldrb	r0, [r4, #1]
  250 0010 FFF7FEFF 		bl	DEC_to_BCD
  251              	.LVL29:
  252 0014 0500     		movs	r5, r0
  253 0016 0190     		str	r0, [sp, #4]
-  74:ds1307_i2c.c  ****     temp[2] = DEC_to_BCD(time->hour);
- 254              		.loc 1 74 0
+  75:ds1307_i2c.c  ****     temp[2] = DEC_to_BCD(time->hour);
+ 254              		.loc 1 75 0
  255 0018 A078     		ldrb	r0, [r4, #2]
  256 001a FFF7FEFF 		bl	DEC_to_BCD
  257              	.LVL30:
  258 001e 0290     		str	r0, [sp, #8]
-  75:ds1307_i2c.c  ****     temp[3] = DEC_to_BCD(time->day);
- 259              		.loc 1 75 0
+  76:ds1307_i2c.c  ****     temp[3] = DEC_to_BCD(time->day);
+ 259              		.loc 1 76 0
  260 0020 E078     		ldrb	r0, [r4, #3]
  261 0022 FFF7FEFF 		bl	DEC_to_BCD
  262              	.LVL31:
  263 0026 0390     		str	r0, [sp, #12]
-  76:ds1307_i2c.c  ****     temp[4] = DEC_to_BCD(time->date);
- 264              		.loc 1 76 0
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 7
+  77:ds1307_i2c.c  ****     temp[4] = DEC_to_BCD(time->date);
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 7
 
 
+ 264              		.loc 1 77 0
  265 0028 2079     		ldrb	r0, [r4, #4]
  266 002a FFF7FEFF 		bl	DEC_to_BCD
  267              	.LVL32:
  268 002e 0490     		str	r0, [sp, #16]
-  77:ds1307_i2c.c  ****     temp[5] = DEC_to_BCD(time->minute);
- 269              		.loc 1 77 0
+  78:ds1307_i2c.c  ****     temp[5] = DEC_to_BCD(time->minute);
+ 269              		.loc 1 78 0
  270 0030 0595     		str	r5, [sp, #20]
-  78:ds1307_i2c.c  ****     temp[6] = DEC_to_BCD(time->year);   
- 271              		.loc 1 78 0
+  79:ds1307_i2c.c  ****     temp[6] = DEC_to_BCD(time->year);   
+ 271              		.loc 1 79 0
  272 0032 A079     		ldrb	r0, [r4, #6]
  273 0034 FFF7FEFF 		bl	DEC_to_BCD
  274              	.LVL33:
  275 0038 0690     		str	r0, [sp, #24]
  276              	.L8:
-  79:ds1307_i2c.c  ****     
-  80:ds1307_i2c.c  ****     do{
-  81:ds1307_i2c.c  ****         result = i2c_ds1307_I2CMasterSendStart(ADDRESS_SLAVE_DS1307, i2c_ds1307_I2C_WRITE_XFER_MODE
- 277              		.loc 1 81 0 discriminator 1
+  80:ds1307_i2c.c  ****     
+  81:ds1307_i2c.c  ****     do{
+  82:ds1307_i2c.c  ****         result = i2c_ds1307_I2CMasterSendStart(ADDRESS_SLAVE_DS1307, i2c_ds1307_I2C_WRITE_XFER_MODE
+ 277              		.loc 1 82 0 discriminator 1
  278 003a 0122     		movs	r2, #1
  279 003c 0021     		movs	r1, #0
  280 003e 6820     		movs	r0, #104
@@ -386,56 +387,56 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  282              	.LVL34:
  283 0044 C0B2     		uxtb	r0, r0
  284              	.LVL35:
-  82:ds1307_i2c.c  ****     }while(result != i2c_ds1307_I2C_MSTR_NO_ERROR);
- 285              		.loc 1 82 0 discriminator 1
+  83:ds1307_i2c.c  ****     }while(result != i2c_ds1307_I2C_MSTR_NO_ERROR);
+ 285              		.loc 1 83 0 discriminator 1
  286 0046 0028     		cmp	r0, #0
  287 0048 F7D1     		bne	.L8
-  83:ds1307_i2c.c  ****     
-  84:ds1307_i2c.c  ****    i2c_ds1307_I2CMasterWriteByte((uint32)0x00, 1);
- 288              		.loc 1 84 0
+  84:ds1307_i2c.c  ****     
+  85:ds1307_i2c.c  ****    i2c_ds1307_I2CMasterWriteByte((uint32)0x00, 1);
+ 288              		.loc 1 85 0
  289 004a 0121     		movs	r1, #1
  290 004c FFF7FEFF 		bl	i2c_ds1307_I2CMasterWriteByte
  291              	.LVL36:
-  85:ds1307_i2c.c  ****     
-  86:ds1307_i2c.c  ****     for(i=0; i<=6; i++)
- 292              		.loc 1 86 0
+  86:ds1307_i2c.c  ****     
+  87:ds1307_i2c.c  ****     for(i=0; i<7; i++)
+ 292              		.loc 1 87 0
  293 0050 0024     		movs	r4, #0
  294              	.LVL37:
  295 0052 07E0     		b	.L9
  296              	.LVL38:
  297              	.L10:
-  87:ds1307_i2c.c  ****     {
-  88:ds1307_i2c.c  ****         i2c_ds1307_I2CMasterWriteByte(temp[i], 1);
- 298              		.loc 1 88 0 discriminator 3
+  88:ds1307_i2c.c  ****     {
+  89:ds1307_i2c.c  ****         i2c_ds1307_I2CMasterWriteByte(temp[i], 1);
+ 298              		.loc 1 89 0 discriminator 3
  299 0054 A300     		lsls	r3, r4, #2
  300 0056 6A46     		mov	r2, sp
  301 0058 9858     		ldr	r0, [r3, r2]
  302 005a 0121     		movs	r1, #1
  303 005c FFF7FEFF 		bl	i2c_ds1307_I2CMasterWriteByte
  304              	.LVL39:
-  86:ds1307_i2c.c  ****     {
- 305              		.loc 1 86 0 discriminator 3
+  87:ds1307_i2c.c  ****     {
+ 305              		.loc 1 87 0 discriminator 3
  306 0060 0134     		adds	r4, r4, #1
  307              	.LVL40:
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 8
+
+
  308 0062 E4B2     		uxtb	r4, r4
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 8
-
-
  309              	.LVL41:
  310              	.L9:
-  86:ds1307_i2c.c  ****     {
- 311              		.loc 1 86 0 is_stmt 0 discriminator 1
+  87:ds1307_i2c.c  ****     {
+ 311              		.loc 1 87 0 is_stmt 0 discriminator 1
  312 0064 062C     		cmp	r4, #6
  313 0066 F5D9     		bls	.L10
-  89:ds1307_i2c.c  ****     }
-  90:ds1307_i2c.c  ****     
-  91:ds1307_i2c.c  ****     i2c_ds1307_I2CMasterSendStop(5);
- 314              		.loc 1 91 0 is_stmt 1
+  90:ds1307_i2c.c  ****     }
+  91:ds1307_i2c.c  ****     
+  92:ds1307_i2c.c  ****     i2c_ds1307_I2CMasterSendStop(5);
+ 314              		.loc 1 92 0 is_stmt 1
  315 0068 0520     		movs	r0, #5
  316 006a FFF7FEFF 		bl	i2c_ds1307_I2CMasterSendStop
  317              	.LVL42:
-  92:ds1307_i2c.c  **** }
- 318              		.loc 1 92 0
+  93:ds1307_i2c.c  **** }
+ 318              		.loc 1 93 0
  319 006e 09B0     		add	sp, sp, #36
  320              		@ sp needed
  321              	.LVL43:
@@ -451,46 +452,46 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  331              		.type	ds1307_time_init, %function
  332              	ds1307_time_init:
  333              	.LFB36:
-  93:ds1307_i2c.c  **** 
-  94:ds1307_i2c.c  **** void ds1307_time_init(data_time *time)
-  95:ds1307_i2c.c  **** {
- 334              		.loc 1 95 0
+  94:ds1307_i2c.c  **** 
+  95:ds1307_i2c.c  **** void ds1307_time_init(data_time *time)
+  96:ds1307_i2c.c  **** {
+ 334              		.loc 1 96 0
  335              		.cfi_startproc
  336              		@ args = 0, pretend = 0, frame = 0
  337              		@ frame_needed = 0, uses_anonymous_args = 0
  338              		@ link register save eliminated.
  339              	.LVL44:
-  96:ds1307_i2c.c  ****     time->second = 12;
- 340              		.loc 1 96 0
- 341 0000 0C23     		movs	r3, #12
+  97:ds1307_i2c.c  ****     time->second = 00;
+ 340              		.loc 1 97 0
+ 341 0000 0023     		movs	r3, #0
  342 0002 0370     		strb	r3, [r0]
-  97:ds1307_i2c.c  ****     time->minute = 12;
- 343              		.loc 1 97 0
- 344 0004 4370     		strb	r3, [r0, #1]
-  98:ds1307_i2c.c  ****     time->hour = 12;
- 345              		.loc 1 98 0
- 346 0006 8370     		strb	r3, [r0, #2]
-  99:ds1307_i2c.c  ****     time->day = 1;
- 347              		.loc 1 99 0
- 348 0008 0B3B     		subs	r3, r3, #11
- 349 000a C370     		strb	r3, [r0, #3]
- 100:ds1307_i2c.c  ****     time->date = 29;
- 350              		.loc 1 100 0
- 351 000c 1C33     		adds	r3, r3, #28
- 352 000e 0371     		strb	r3, [r0, #4]
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 9
+  98:ds1307_i2c.c  ****     time->minute = 6;
+ 343              		.loc 1 98 0
+ 344 0004 0633     		adds	r3, r3, #6
+ 345 0006 4370     		strb	r3, [r0, #1]
+  99:ds1307_i2c.c  ****     time->hour = 10;
+ 346              		.loc 1 99 0
+ 347 0008 0A22     		movs	r2, #10
+ 348 000a 8270     		strb	r2, [r0, #2]
+ 100:ds1307_i2c.c  ****     time->day = 3;
+ 349              		.loc 1 100 0
+ 350 000c 073A     		subs	r2, r2, #7
+ 351 000e C270     		strb	r2, [r0, #3]
+ 101:ds1307_i2c.c  ****     time->date = 6;
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 9
 
 
- 101:ds1307_i2c.c  ****     time->month = 8;
- 353              		.loc 1 101 0
- 354 0010 153B     		subs	r3, r3, #21
+ 352              		.loc 1 101 0
+ 353 0010 0371     		strb	r3, [r0, #4]
+ 102:ds1307_i2c.c  ****     time->month = 6;
+ 354              		.loc 1 102 0
  355 0012 4371     		strb	r3, [r0, #5]
- 102:ds1307_i2c.c  ****     time->year = 22;
- 356              		.loc 1 102 0
- 357 0014 0E33     		adds	r3, r3, #14
+ 103:ds1307_i2c.c  ****     time->year = 22;
+ 356              		.loc 1 103 0
+ 357 0014 1033     		adds	r3, r3, #16
  358 0016 8371     		strb	r3, [r0, #6]
- 103:ds1307_i2c.c  **** }
- 359              		.loc 1 103 0
+ 104:ds1307_i2c.c  **** }
+ 359              		.loc 1 104 0
  360              		@ sp needed
  361 0018 7047     		bx	lr
  362              		.cfi_endproc
@@ -537,10 +538,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  403 0044 36000000 		.4byte	.LASF4
  404 0048 02       		.uleb128 0x2
  405 0049 04       		.byte	0x4
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 10
+
+
  406 004a 07       		.byte	0x7
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 10
-
-
  407 004b A1000000 		.4byte	.LASF5
  408 004f 02       		.uleb128 0x2
  409 0050 08       		.byte	0x8
@@ -597,10 +598,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  460 00b2 06       		.uleb128 0x6
  461 00b3 CB000000 		.4byte	.LASF16
  462 00b7 03       		.byte	0x3
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 11
+
+
  463 00b8 14       		.byte	0x14
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 11
-
-
  464 00b9 6B000000 		.4byte	0x6b
  465 00bd 00       		.byte	0
  466 00be 06       		.uleb128 0x6
@@ -648,7 +649,7 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  508 0112 09       		.uleb128 0x9
  509 0113 45000000 		.4byte	.LASF23
  510 0117 01       		.byte	0x1
- 511 0118 12       		.byte	0x12
+ 511 0118 14       		.byte	0x14
  512 0119 6B000000 		.4byte	0x6b
  513 011d 00000000 		.4byte	.LFB32
  514 0121 12000000 		.4byte	.LFE32-.LFB32
@@ -657,18 +658,18 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  517 0127 3B010000 		.4byte	0x13b
  518 012b 0A       		.uleb128 0xa
  519 012c 6C000000 		.4byte	.LASF25
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 12
+
+
  520 0130 01       		.byte	0x1
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 12
-
-
- 521 0131 12       		.byte	0x12
+ 521 0131 14       		.byte	0x14
  522 0132 6B000000 		.4byte	0x6b
  523 0136 00000000 		.4byte	.LLST0
  524 013a 00       		.byte	0
  525 013b 0B       		.uleb128 0xb
  526 013c 2B000000 		.4byte	.LASF24
  527 0140 01       		.byte	0x1
- 528 0141 17       		.byte	0x17
+ 528 0141 19       		.byte	0x19
  529 0142 6B000000 		.4byte	0x6b
  530 0146 00000000 		.4byte	.LFB33
  531 014a 1C000000 		.4byte	.LFE33-.LFB33
@@ -678,14 +679,14 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  535 0154 0A       		.uleb128 0xa
  536 0155 6C000000 		.4byte	.LASF25
  537 0159 01       		.byte	0x1
- 538 015a 17       		.byte	0x17
+ 538 015a 19       		.byte	0x19
  539 015b 6B000000 		.4byte	0x6b
  540 015f 21000000 		.4byte	.LLST1
  541 0163 00       		.byte	0
  542 0164 0C       		.uleb128 0xc
  543 0165 6D020000 		.4byte	.LASF29
  544 0169 01       		.byte	0x1
- 545 016a 23       		.byte	0x23
+ 545 016a 25       		.byte	0x25
  546 016b 00000000 		.4byte	.LFB34
  547 016f A2000000 		.4byte	.LFE34-.LFB34
  548 0173 01       		.uleb128 0x1
@@ -694,33 +695,33 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  551 0179 0A       		.uleb128 0xa
  552 017a 59010000 		.4byte	.LASF26
  553 017e 01       		.byte	0x1
- 554 017f 23       		.byte	0x23
+ 554 017f 25       		.byte	0x25
  555 0180 9A020000 		.4byte	0x29a
  556 0184 42000000 		.4byte	.LLST2
  557 0188 0D       		.uleb128 0xd
  558 0189 4D010000 		.4byte	.LASF27
  559 018d 01       		.byte	0x1
- 560 018e 25       		.byte	0x25
+ 560 018e 27       		.byte	0x27
  561 018f 6B000000 		.4byte	0x6b
  562 0193 6E000000 		.4byte	.LLST3
  563 0197 0E       		.uleb128 0xe
  564 0198 6900     		.ascii	"i\000"
  565 019a 01       		.byte	0x1
- 566 019b 25       		.byte	0x25
+ 566 019b 27       		.byte	0x27
  567 019c 6B000000 		.4byte	0x6b
  568 01a0 81000000 		.4byte	.LLST4
  569 01a4 0F       		.uleb128 0xf
  570 01a5 B3000000 		.4byte	.LASF28
  571 01a9 01       		.byte	0x1
- 572 01aa 26       		.byte	0x26
+ 572 01aa 28       		.byte	0x28
  573 01ab A0020000 		.4byte	0x2a0
  574 01af 02       		.uleb128 0x2
  575 01b0 91       		.byte	0x91
  576 01b1 68       		.sleb128 -24
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 13
+
+
  577 01b2 10       		.uleb128 0x10
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 13
-
-
  578 01b3 10000000 		.4byte	.LVL7
  579 01b7 C7030000 		.4byte	0x3c7
  580 01bb D0010000 		.4byte	0x1d0
@@ -777,10 +778,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  631 0206 EB030000 		.4byte	0x3eb
  632 020a 24020000 		.4byte	0x224
  633 020e 11       		.uleb128 0x11
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 14
+
+
  634 020f 01       		.uleb128 0x1
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 14
-
-
  635 0210 50       		.byte	0x50
  636 0211 01       		.uleb128 0x1
  637 0212 30       		.byte	0x30
@@ -837,10 +838,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  688 0257 01       		.uleb128 0x1
  689 0258 31       		.byte	0x31
  690 0259 00       		.byte	0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 15
+
+
  691 025a 12       		.uleb128 0x12
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 15
-
-
  692 025b 5C000000 		.4byte	.LVL17
  693 025f 12010000 		.4byte	0x112
  694 0263 12       		.uleb128 0x12
@@ -875,7 +876,7 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  723 02b0 0C       		.uleb128 0xc
  724 02b1 8F000000 		.4byte	.LASF30
  725 02b5 01       		.byte	0x1
- 726 02b6 42       		.byte	0x42
+ 726 02b6 43       		.byte	0x43
  727 02b7 00000000 		.4byte	.LFB35
  728 02bb 72000000 		.4byte	.LFE35-.LFB35
  729 02bf 01       		.uleb128 0x1
@@ -884,28 +885,28 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  732 02c5 0A       		.uleb128 0xa
  733 02c6 59010000 		.4byte	.LASF26
  734 02ca 01       		.byte	0x1
- 735 02cb 42       		.byte	0x42
+ 735 02cb 43       		.byte	0x43
  736 02cc 9A020000 		.4byte	0x29a
  737 02d0 AB000000 		.4byte	.LLST5
  738 02d4 0D       		.uleb128 0xd
  739 02d5 4D010000 		.4byte	.LASF27
  740 02d9 01       		.byte	0x1
- 741 02da 44       		.byte	0x44
+ 741 02da 45       		.byte	0x45
  742 02db 6B000000 		.4byte	0x6b
  743 02df D7000000 		.4byte	.LLST6
  744 02e3 0E       		.uleb128 0xe
  745 02e4 6900     		.ascii	"i\000"
  746 02e6 01       		.byte	0x1
- 747 02e7 44       		.byte	0x44
+ 747 02e7 45       		.byte	0x45
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 16
+
+
  748 02e8 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 16
-
-
  749 02ec EA000000 		.4byte	.LLST7
  750 02f0 0F       		.uleb128 0xf
  751 02f1 B3000000 		.4byte	.LASF28
  752 02f5 01       		.byte	0x1
- 753 02f6 45       		.byte	0x45
+ 753 02f6 46       		.byte	0x46
  754 02f7 94030000 		.4byte	0x394
  755 02fb 02       		.uleb128 0x2
  756 02fc 91       		.byte	0x91
@@ -957,10 +958,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  802 0360 01       		.uleb128 0x1
  803 0361 51       		.byte	0x51
  804 0362 01       		.uleb128 0x1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 17
+
+
  805 0363 31       		.byte	0x31
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 17
-
-
  806 0364 00       		.byte	0
  807 0365 10       		.uleb128 0x10
  808 0366 60000000 		.4byte	.LVL39
@@ -1004,7 +1005,7 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  846 03a4 0C       		.uleb128 0xc
  847 03a5 50000000 		.4byte	.LASF31
  848 03a9 01       		.byte	0x1
- 849 03aa 5E       		.byte	0x5e
+ 849 03aa 5F       		.byte	0x5f
  850 03ab 00000000 		.4byte	.LFB36
  851 03af 1A000000 		.4byte	.LFE36-.LFB36
  852 03b3 01       		.uleb128 0x1
@@ -1013,14 +1014,14 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  855 03b9 17       		.uleb128 0x17
  856 03ba 59010000 		.4byte	.LASF26
  857 03be 01       		.byte	0x1
- 858 03bf 5E       		.byte	0x5e
+ 858 03bf 5F       		.byte	0x5f
  859 03c0 9A020000 		.4byte	0x29a
  860 03c4 01       		.uleb128 0x1
  861 03c5 50       		.byte	0x50
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 18
+
+
  862 03c6 00       		.byte	0
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 18
-
-
  863 03c7 18       		.uleb128 0x18
  864 03c8 EC010000 		.4byte	.LASF32
  865 03cc EC010000 		.4byte	.LASF32
@@ -1077,10 +1078,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  916 0019 0B       		.uleb128 0xb
  917 001a 03       		.uleb128 0x3
  918 001b 0E       		.uleb128 0xe
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 19
+
+
  919 001c 00       		.byte	0
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 19
-
-
  920 001d 00       		.byte	0
  921 001e 03       		.uleb128 0x3
  922 001f 24       		.uleb128 0x24
@@ -1137,10 +1138,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  973 0052 00       		.byte	0
  974 0053 00       		.byte	0
  975 0054 07       		.uleb128 0x7
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 20
+
+
  976 0055 0D       		.uleb128 0xd
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 20
-
-
  977 0056 00       		.byte	0
  978 0057 03       		.uleb128 0x3
  979 0058 08       		.uleb128 0x8
@@ -1197,10 +1198,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  1030 008c 0A       		.uleb128 0xa
  1031 008d 05       		.uleb128 0x5
  1032 008e 00       		.byte	0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 21
+
+
  1033 008f 03       		.uleb128 0x3
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 21
-
-
  1034 0090 0E       		.uleb128 0xe
  1035 0091 3A       		.uleb128 0x3a
  1036 0092 0B       		.uleb128 0xb
@@ -1257,10 +1258,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  1087 00c6 12       		.uleb128 0x12
  1088 00c7 06       		.uleb128 0x6
  1089 00c8 40       		.uleb128 0x40
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 22
+
+
  1090 00c9 18       		.uleb128 0x18
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 22
-
-
  1091 00ca 9742     		.uleb128 0x2117
  1092 00cc 19       		.uleb128 0x19
  1093 00cd 01       		.uleb128 0x1
@@ -1317,10 +1318,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  1144 0102 01       		.byte	0x1
  1145 0103 11       		.uleb128 0x11
  1146 0104 01       		.uleb128 0x1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 23
+
+
  1147 0105 31       		.uleb128 0x31
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 23
-
-
  1148 0106 13       		.uleb128 0x13
  1149 0107 01       		.uleb128 0x1
  1150 0108 13       		.uleb128 0x13
@@ -1377,10 +1378,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  1201 0142 11       		.uleb128 0x11
  1202 0143 01       		.uleb128 0x1
  1203 0144 31       		.uleb128 0x31
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 24
+
+
  1204 0145 13       		.uleb128 0x13
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 24
-
-
  1205 0146 00       		.byte	0
  1206 0147 00       		.byte	0
  1207 0148 17       		.uleb128 0x17
@@ -1437,10 +1438,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  1258 0025 09000000 		.4byte	.LVL3-1
  1259 0029 0100     		.2byte	0x1
  1260 002b 50       		.byte	0x50
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 25
+
+
  1261 002c 09000000 		.4byte	.LVL3-1
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 25
-
-
  1262 0030 1C000000 		.4byte	.LFE33
  1263 0034 0400     		.2byte	0x4
  1264 0036 F3       		.byte	0xf3
@@ -1497,10 +1498,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  1315 00b5 50       		.byte	0x50
  1316 00b6 08000000 		.4byte	.LVL27
  1317 00ba 52000000 		.4byte	.LVL37
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 26
+
+
  1318 00be 0100     		.2byte	0x1
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 26
-
-
  1319 00c0 54       		.byte	0x54
  1320 00c1 52000000 		.4byte	.LVL37
  1321 00c5 72000000 		.4byte	.LFE35
@@ -1557,10 +1558,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  1372              		.section	.debug_ranges,"",%progbits
  1373              	.Ldebug_ranges0:
  1374 0000 00000000 		.4byte	.LFB32
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 27
+
+
  1375 0004 12000000 		.4byte	.LFE32
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 27
-
-
  1376 0008 00000000 		.4byte	.LFB33
  1377 000c 1C000000 		.4byte	.LFE33
  1378 0010 00000000 		.4byte	.LFB34
@@ -1617,10 +1618,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  1406      00
  1407              	.LASF11:
  1408 0066 666C6F61 		.ascii	"float\000"
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 28
+
+
  1408      7400
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 28
-
-
  1409              	.LASF25:
  1410 006c 64617461 		.ascii	"data\000"
  1410      00
@@ -1677,10 +1678,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  1432      746500
  1433              	.LASF10:
  1434 0115 75696E74 		.ascii	"uint32\000"
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 29
+
+
  1434      333200
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 29
-
-
  1435              	.LASF8:
  1436 011c 756E7369 		.ascii	"unsigned int\000"
  1436      676E6564 
@@ -1737,10 +1738,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 1
  1456      206C6F6E 
  1456      6720696E 
  1456      7400
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccb6ab9q.s 			page 30
+
+
  1457              	.LASF13:
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccg7GNTP.s 			page 30
-
-
  1458 0221 63686172 		.ascii	"char\000"
  1458      00
  1459              	.LASF2:

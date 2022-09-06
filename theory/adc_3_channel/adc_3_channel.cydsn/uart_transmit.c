@@ -9,6 +9,8 @@
  *
  * ========================================
 */
+#include "project.h"
+#include <stdio.h>
 #include "uart_transmit.h"
 
 void test_transmit_data()
@@ -16,7 +18,6 @@ void test_transmit_data()
     char data_test[] = "\nTransmit OK\n";
     uart_UartPutString(data_test);
 }
-
 
 void transmit_data_to_computer(float data_need_convert,int location)
 {
@@ -39,7 +40,5 @@ void transmit_data_to_computer(float data_need_convert,int location)
     
     uart_UartPutString(string_result);
 }
-
-
 
 /* [] END OF FILE */

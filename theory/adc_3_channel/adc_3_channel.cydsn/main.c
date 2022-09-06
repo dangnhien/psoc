@@ -9,13 +9,16 @@
  *
  * ========================================
 */
+#include "project.h"
+#include <stdio.h>
 #include "main.h"
+#include "measureResister.h"
+#include "uart_transmit.h"
 
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
 
-    
     init_system();
     
     for(;;)

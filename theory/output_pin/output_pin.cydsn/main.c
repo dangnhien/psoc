@@ -9,21 +9,26 @@
  *
  * ========================================
 */
+#include "project.h"
 #include "main.h"
+#include "ledSingle.h"
 
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
 
-
     for(;;)
     {
         ledTurnOn();
         CyDelay(1000);
-        
         ledTurnOff();
         CyDelay(1000);
     }
+}
+
+void initSystem()
+{
+    
 }
 
 /* [] END OF FILE */

@@ -9,22 +9,14 @@
  *
  * ========================================
 */
-    #ifndef LED7_SEG_H
-    #define LED7_SEG_H
-        
-        #include <stdio.h>
-        #include "project.h"        
-        
-        enum Status_pin
-        {
-            low = 0,
-            hight
-        };
-
-        void scanLed();
-        void check_Led_Live_Or_Die(uint8 location, uint8 data);
-        
+#ifndef LED7_SEG_H
+#define LED7_SEG_H
     
-    #endif
+    #include <cytypes.h>
+    
+    void scanLed(unsigned int);
+    void checkLedLiveOrDie(uint8 location, uint8 data);
+        
+#endif
 
 /* [] END OF FILE */

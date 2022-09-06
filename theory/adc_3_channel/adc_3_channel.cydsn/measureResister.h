@@ -11,10 +11,7 @@
 */
 #ifndef MEASURERESISTER_H
 #define MEASURERESISTER_H
-    
-    #include <stdio.h>
-    #include "project.h"
-    
+     
     float read_adc(int channel);
 
 #endif

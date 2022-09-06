@@ -9,7 +9,8 @@
  *
  * ========================================
 */
-
+#include "project.h"
+#include <stdio.h>
 #include "measureResister.h"
 
 float read_adc(int channel)

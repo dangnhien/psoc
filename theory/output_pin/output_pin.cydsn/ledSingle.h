@@ -9,16 +9,13 @@
  *
  * ========================================
 */
-
-    #ifndef LEDSINGLE_H
-    #define LEDSINGLE_H
-        
-        #include "project.h"
-        
-        void ledBlink();
-        void ledTurnOn();
-        void ledTurnOff();                
+#ifndef LEDSINGLE_H
+#define LEDSINGLE_H
     
-    #endif
+    void ledBlink();
+    void ledTurnOn();
+    void ledTurnOff();                
+
+#endif
 
 /* [] END OF FILE */

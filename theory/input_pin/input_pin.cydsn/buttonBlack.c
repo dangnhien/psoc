@@ -9,19 +9,24 @@
  *
  * ========================================
 */
+#include "project.h"
 #include "buttonBlack.h"
 
-//value return: [1,4];
-int valuePressButton()
+enum Status_Button
 {
-    static int status = 0;
+    BTN_PRESSED,
+    BTN_RELEASE
+};
 
-    static int remember = 0;
-    
-    if(button1_Read() == 0)
+//value return: [1,4];
+int valuePressedButton()
+{
+    static int status=0, remember=0;
+
+    if(button1_Read() == BTN_PRESSED)
         remember = 1;
     
-    if(button1_Read() == 1 && remember == 1)
+    if(button1_Read() == BTN_RELEASE && remember == 1)
     {
         remember = 0;
         

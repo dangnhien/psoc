@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="adc_3_channel\adc_3_channel\TopDesign">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="adc_3_channel\adc_3_channel\adc_3_channel.cydwr">
 <ExpandedNodeIds>
 <v>adc_3_channel</v>
 <v>adc_3_channel\adc_3_channel</v>
@@ -67,8 +67,6 @@
 <v>adc_3_channel\adc_3_channel\Generated_Source\PSoC4\cy_boot</v>
 <v>adc_3_channel\adc_3_channel\Generated_Source\PSoC4\cy_lfclk</v>
 <v>adc_3_channel\adc_3_channel\Generated_Source\PSoC4\Em_EEPROM_Dynamic</v>
-<v>adc_3_channel\adc_3_channel\Generated_Source\PSoC4\pin_input1</v>
-<v>adc_3_channel\adc_3_channel\Generated_Source\PSoC4\pin_input2</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -169,8 +167,6 @@
 <v>adc_3_channel\adc_3_channel\CortexM0\ARM_GCC_541\Debug\Listing Files\pin_input2.lst</v>
 <v>adc_3_channel\adc_3_channel\CortexM0\ARM_GCC_541\Debug\Listing Files\pin_input2_PM.lst</v>
 <v>adc_3_channel\adc_3_channel\CortexM0\ARM_GCC_541\Debug\Listing Files\pin_input3.lst</v>
-<v>adc_3_channel\adc_3_channel\CortexM0\ARM_GCC_541\Debug\Listing Files\pin_input3_PM.lst</v>
-<v>adc_3_channel\adc_3_channel\CortexM0\ARM_GCC_541\Debug\Listing Files\pin_input4.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -217,8 +213,10 @@
 <name v=".\adc_3_channel.cydsn\main.h" />
 <name v=".\adc_3_channel.cydsn\uart_transmit.h" />
 <name v=".\adc_3_channel.cydsn\uart_transmit.c" />
-<name v=".\adc_3_channel.cydsn\measureResister.c" />
 <name v=".\adc_3_channel.cydsn\measureResister.h" />
+<name v=".\adc_3_channel.cydsn\measureResister.c" />
+<name v=".\adc_3_channel.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\adc_3_channel.cydsn\adc_3_channel.cydwr" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -226,7 +224,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1234, 558" SelectedTabbedMdiWindow="8f096f8b-d2dc-4c85-a881-080cb825f36c"><DocumentWindow Key="D:\psoc\theory\adc_3_channel\adc_3_channel.cydsn\main.c" Guid="8f096f8b-d2dc-4c85-a881-080cb825f36c" /><DocumentWindow Key="D:\psoc\theory\adc_3_channel\adc_3_channel.cydsn\main.h" Guid="6f8f11a7-29c4-49b5-a4c3-999754f599e7" /><DocumentWindow Key="D:\psoc\theory\adc_3_channel\adc_3_channel.cydsn\uart_transmit.h" Guid="998ca74b-4386-430d-8460-f47e98fd1445" /><DocumentWindow Key="D:\psoc\theory\adc_3_channel\adc_3_channel.cydsn\uart_transmit.c" Guid="f65adee9-9cc8-4ce6-abe8-fd8ddf28d49e" /><DocumentWindow Key="D:\psoc\theory\adc_3_channel\adc_3_channel.cydsn\measureResister.c" Guid="8cec3e6f-fe2a-4b20-998b-71eb8df718c1" /><DocumentWindow Key="D:\psoc\theory\adc_3_channel\adc_3_channel.cydsn\measureResister.h" Guid="02402d2f-9e30-462f-8090-71c05995ee67" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1002, 558" SelectedTabbedMdiWindow="972dd97e-6557-4f5d-9705-b9e675b298c4"><DocumentWindow Key="D:\psoc\theory\adc_3_channel\adc_3_channel.cydsn\main.c" Guid="8f096f8b-d2dc-4c85-a881-080cb825f36c" /><DocumentWindow Key="D:\psoc\theory\adc_3_channel\adc_3_channel.cydsn\main.h" Guid="6f8f11a7-29c4-49b5-a4c3-999754f599e7" /><DocumentWindow Key="D:\psoc\theory\adc_3_channel\adc_3_channel.cydsn\uart_transmit.h" Guid="998ca74b-4386-430d-8460-f47e98fd1445" /><DocumentWindow Key="D:\psoc\theory\adc_3_channel\adc_3_channel.cydsn\uart_transmit.c" Guid="f65adee9-9cc8-4ce6-abe8-fd8ddf28d49e" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="d7f23ced-4a8f-474d-9a7b-db5f2e330e0f" /><DocumentWindow Key="D:\psoc\theory\adc_3_channel\adc_3_channel.cydsn\measureResister.h" Guid="008500a0-15f4-4527-bf9d-2ae585769e56" /><DocumentWindow Key="D:\psoc\theory\adc_3_channel\adc_3_channel.cydsn\measureResister.c" Guid="972dd97e-6557-4f5d-9705-b9e675b298c4" /><DocumentWindow Key="D:\psoc\theory\adc_3_channel\adc_3_channel.cydsn\TopDesign\TopDesign.cysch" Guid="7e072b88-6605-44f5-a98e-16de36b2d5a5" /><DocumentWindow Key="D:\psoc\theory\adc_3_channel\adc_3_channel.cydsn\adc_3_channel.cydwr" Guid="712d1917-59bf-45d8-afdd-72591a2780b1" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1N34Le.s 			page 1
 
 
    1              		.syntax unified
@@ -39,89 +39,88 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 1
    9:main.c        ****  *
   10:main.c        ****  * ========================================
   11:main.c        **** */
-  12:main.c        **** #include "main.h"
-  13:main.c        **** 
-  14:main.c        **** int main(void)
-  15:main.c        **** {
-  16:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
-  17:main.c        **** 
-  18:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** #include "main.h"
+  14:main.c        **** 
+  15:main.c        **** int main(void)
+  16:main.c        **** {
+  17:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  18:main.c        **** 
   19:main.c        ****     configSystem();
   20:main.c        **** 
   21:main.c        ****     for(;;)
   22:main.c        ****     {
-  23:main.c        ****         /* Place your application code here. */
-  24:main.c        ****         display();
-  25:main.c        ****     }
-  26:main.c        **** }
-  27:main.c        **** 
-  28:main.c        **** void configSystem()
-  29:main.c        **** {
-  28              		.loc 1 29 0
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 2
-
-
+  23:main.c        ****         display();
+  24:main.c        ****     }
+  25:main.c        **** }
+  26:main.c        **** 
+  27:main.c        **** void configSystem()
+  28:main.c        **** {
+  28              		.loc 1 28 0
   29              		.cfi_startproc
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1N34Le.s 			page 2
+
+
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
   32 0000 10B5     		push	{r4, lr}
   33              		.cfi_def_cfa_offset 8
   34              		.cfi_offset 4, -8
   35              		.cfi_offset 14, -4
-  30:main.c        ****     lcd_Start();    
-  36              		.loc 1 30 0
+  29:main.c        ****     lcd_Start();    
+  36              		.loc 1 29 0
   37 0002 FFF7FEFF 		bl	lcd_Start
   38              	.LVL0:
-  31:main.c        ****     
-  32:main.c        ****     lcd_Position(0u,0u);
-  39              		.loc 1 32 0
+  30:main.c        ****     
+  31:main.c        ****     lcd_Position(0u,0u);
+  39              		.loc 1 31 0
   40 0006 0021     		movs	r1, #0
   41 0008 0020     		movs	r0, #0
   42 000a FFF7FEFF 		bl	lcd_Position
   43              	.LVL1:
-  33:main.c        ****     lcd_PrintString("hello wourld");
-  44              		.loc 1 33 0
-  45 000e 0948     		ldr	r0, .L2
+  32:main.c        ****     lcd_PrintString("Hello world.");
+  44              		.loc 1 32 0
+  45 000e 0848     		ldr	r0, .L2
   46 0010 FFF7FEFF 		bl	lcd_PrintString
   47              	.LVL2:
-  34:main.c        ****     lcd_Position(1u,0u);
-  48              		.loc 1 34 0
+  33:main.c        ****     lcd_Position(1u,0u);
+  48              		.loc 1 33 0
   49 0014 0021     		movs	r1, #0
   50 0016 0120     		movs	r0, #1
   51 0018 FFF7FEFF 		bl	lcd_Position
   52              	.LVL3:
-  35:main.c        ****     lcd_PrintString("hello1 wourld");
-  53              		.loc 1 35 0
-  54 001c 0648     		ldr	r0, .L2+4
+  34:main.c        ****     lcd_PrintString("I am Dat.");
+  53              		.loc 1 34 0
+  54 001c 0548     		ldr	r0, .L2+4
   55 001e FFF7FEFF 		bl	lcd_PrintString
   56              	.LVL4:
-  36:main.c        ****     CyDelay(1000);
-  57              		.loc 1 36 0
-  58 0022 FA20     		movs	r0, #250
-  59 0024 8000     		lsls	r0, r0, #2
-  60 0026 FFF7FEFF 		bl	CyDelay
-  61              	.LVL5:
-  37:main.c        ****     lcd_ClearDisplay();
-  62              		.loc 1 37 0
-  63 002a 0120     		movs	r0, #1
-  64 002c FFF7FEFF 		bl	lcd_WriteControl
-  65              	.LVL6:
-  38:main.c        **** }
-  66              		.loc 1 38 0
-  67              		@ sp needed
-  68 0030 10BD     		pop	{r4, pc}
-  69              	.L3:
-  70 0032 C046     		.align	2
-  71              	.L2:
-  72 0034 00000000 		.word	.LC0
-  73 0038 10000000 		.word	.LC2
+  35:main.c        ****     CyDelay(10000);
+  57              		.loc 1 35 0
+  58 0022 0548     		ldr	r0, .L2+8
+  59 0024 FFF7FEFF 		bl	CyDelay
+  60              	.LVL5:
+  36:main.c        ****     lcd_ClearDisplay();
+  61              		.loc 1 36 0
+  62 0028 0120     		movs	r0, #1
+  63 002a FFF7FEFF 		bl	lcd_WriteControl
+  64              	.LVL6:
+  37:main.c        **** }
+  65              		.loc 1 37 0
+  66              		@ sp needed
+  67 002e 10BD     		pop	{r4, pc}
+  68              	.L3:
+  69              		.align	2
+  70              	.L2:
+  71 0030 00000000 		.word	.LC0
+  72 0034 10000000 		.word	.LC2
+  73 0038 10270000 		.word	10000
   74              		.cfi_endproc
   75              	.LFE33:
   76              		.size	configSystem, .-configSystem
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 3
-
-
   77              		.section	.text.display,"ax",%progbits
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1N34Le.s 			page 3
+
+
   78              		.align	2
   79              		.global	display
   80              		.code	16
@@ -129,10 +128,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 1
   82              		.type	display, %function
   83              	display:
   84              	.LFB34:
-  39:main.c        **** 
-  40:main.c        **** void display()
-  41:main.c        **** {
-  85              		.loc 1 41 0
+  38:main.c        **** 
+  39:main.c        **** void display()
+  40:main.c        **** {
+  85              		.loc 1 40 0
   86              		.cfi_startproc
   87              		@ args = 0, pretend = 0, frame = 0
   88              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -140,25 +139,25 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 1
   90              		.cfi_def_cfa_offset 8
   91              		.cfi_offset 4, -8
   92              		.cfi_offset 14, -4
-  42:main.c        ****     lcd_Position(0u,0u);
-  93              		.loc 1 42 0
+  41:main.c        ****     lcd_Position(0u,0u);
+  93              		.loc 1 41 0
   94 0002 0021     		movs	r1, #0
   95 0004 0020     		movs	r0, #0
   96 0006 FFF7FEFF 		bl	lcd_Position
   97              	.LVL7:
-  43:main.c        ****     lcd_PrintString("lcd 16x2");
-  98              		.loc 1 43 0
+  42:main.c        ****     lcd_PrintString("lcd 16x2");
+  98              		.loc 1 42 0
   99 000a 0248     		ldr	r0, .L5
  100 000c FFF7FEFF 		bl	lcd_PrintString
  101              	.LVL8:
-  44:main.c        **** }
- 102              		.loc 1 44 0
+  43:main.c        **** }
+ 102              		.loc 1 43 0
  103              		@ sp needed
  104 0010 10BD     		pop	{r4, pc}
  105              	.L6:
  106 0012 C046     		.align	2
  107              	.L5:
- 108 0014 20000000 		.word	.LC4
+ 108 0014 1C000000 		.word	.LC4
  109              		.cfi_endproc
  110              	.LFE34:
  111              		.size	display, .-display
@@ -170,23 +169,23 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 1
  117              		.type	main, %function
  118              	main:
  119              	.LFB32:
-  15:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
- 120              		.loc 1 15 0
+  16:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+ 120              		.loc 1 16 0
  121              		.cfi_startproc
  122              		@ Volatile: function does not return.
  123              		@ args = 0, pretend = 0, frame = 0
  124              		@ frame_needed = 0, uses_anonymous_args = 0
  125 0000 10B5     		push	{r4, lr}
  126              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 4
-
-
  127              		.cfi_offset 4, -8
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1N34Le.s 			page 4
+
+
  128              		.cfi_offset 14, -4
-  16:main.c        **** 
- 129              		.loc 1 16 0
+  17:main.c        **** 
+ 129              		.loc 1 17 0
  130              		.syntax divided
- 131              	@ 16 "main.c" 1
+ 131              	@ 17 "main.c" 1
  132 0002 62B6     		CPSIE   i
  133              	@ 0 "" 2
   19:main.c        **** 
@@ -196,8 +195,8 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 1
  137 0004 FFF7FEFF 		bl	configSystem
  138              	.LVL9:
  139              	.L8:
-  24:main.c        ****     }
- 140              		.loc 1 24 0 discriminator 1
+  23:main.c        ****     }
+ 140              		.loc 1 23 0 discriminator 1
  141 0008 FFF7FEFF 		bl	display
  142              	.LVL10:
  143 000c FCE7     		b	.L8
@@ -207,19 +206,18 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 1
  147 000e C046     		.section	.rodata.str1.4,"aMS",%progbits,1
  148              		.align	2
  149              	.LC0:
- 150 0000 68656C6C 		.ascii	"hello wourld\000"
+ 150 0000 48656C6C 		.ascii	"Hello world.\000"
  150      6F20776F 
- 150      75726C64 
+ 150      726C642E 
  150      00
  151 000d 000000   		.space	3
  152              	.LC2:
- 153 0010 68656C6C 		.ascii	"hello1 wourld\000"
- 153      6F312077 
- 153      6F75726C 
- 153      6400
- 154 001e 0000     		.space	2
+ 153 0010 4920616D 		.ascii	"I am Dat.\000"
+ 153      20446174 
+ 153      2E00
+ 154 001a 0000     		.space	2
  155              	.LC4:
- 156 0020 6C636420 		.ascii	"lcd 16x2\000"
+ 156 001c 6C636420 		.ascii	"lcd 16x2\000"
  156      31367832 
  156      00
  157              		.text
@@ -238,11 +236,11 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 1
  170 0011 25000000 		.4byte	.LASF22
  171 0015 80010000 		.4byte	.LASF23
  172 0019 00000000 		.4byte	.Ldebug_ranges0+0
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 5
-
-
  173 001d 00000000 		.4byte	0
  174 0021 00000000 		.4byte	.Ldebug_line0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1N34Le.s 			page 5
+
+
  175 0025 02       		.uleb128 0x2
  176 0026 01       		.byte	0x1
  177 0027 06       		.byte	0x6
@@ -298,18 +296,18 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 1
  227 0080 02       		.uleb128 0x2
  228 0081 04       		.byte	0x4
  229 0082 07       		.byte	0x7
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 6
-
-
  230 0083 B8010000 		.4byte	.LASF12
  231 0087 02       		.uleb128 0x2
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1N34Le.s 			page 6
+
+
  232 0088 08       		.byte	0x8
  233 0089 04       		.byte	0x4
  234 008a 6A010000 		.4byte	.LASF13
  235 008e 04       		.uleb128 0x4
  236 008f 85000000 		.4byte	.LASF14
  237 0093 01       		.byte	0x1
- 238 0094 1C       		.byte	0x1c
+ 238 0094 1B       		.byte	0x1b
  239 0095 00000000 		.4byte	.LFB33
  240 0099 3C000000 		.4byte	.LFE33-.LFB33
  241 009d 01       		.uleb128 0x1
@@ -358,11 +356,11 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 1
  284 00ef 51       		.byte	0x51
  285 00f0 01       		.uleb128 0x1
  286 00f1 30       		.byte	0x30
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 7
-
-
  287 00f2 00       		.byte	0
  288 00f3 06       		.uleb128 0x6
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1N34Le.s 			page 7
+
+
  289 00f4 22000000 		.4byte	.LVL4
  290 00f8 B2010000 		.4byte	0x1b2
  291 00fc 0A010000 		.4byte	0x10a
@@ -374,7 +372,7 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 1
  297 0105 10000000 		.4byte	.LC2
  298 0109 00       		.byte	0
  299 010a 06       		.uleb128 0x6
- 300 010b 2A000000 		.4byte	.LVL5
+ 300 010b 28000000 		.4byte	.LVL5
  301 010f BD010000 		.4byte	0x1bd
  302 0113 1F010000 		.4byte	0x11f
  303 0117 07       		.uleb128 0x7
@@ -382,10 +380,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 1
  305 0119 50       		.byte	0x50
  306 011a 03       		.uleb128 0x3
  307 011b 0A       		.byte	0xa
- 308 011c E803     		.2byte	0x3e8
+ 308 011c 1027     		.2byte	0x2710
  309 011e 00       		.byte	0
  310 011f 08       		.uleb128 0x8
- 311 0120 30000000 		.4byte	.LVL6
+ 311 0120 2E000000 		.4byte	.LVL6
  312 0124 C8010000 		.4byte	0x1c8
  313 0128 07       		.uleb128 0x7
  314 0129 01       		.uleb128 0x1
@@ -397,7 +395,7 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 1
  320 012f 04       		.uleb128 0x4
  321 0130 A5000000 		.4byte	.LASF15
  322 0134 01       		.byte	0x1
- 323 0135 28       		.byte	0x28
+ 323 0135 27       		.byte	0x27
  324 0136 00000000 		.4byte	.LFB34
  325 013a 18000000 		.4byte	.LFE34-.LFB34
  326 013e 01       		.uleb128 0x1
@@ -418,24 +416,24 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 1
  341 0159 01       		.uleb128 0x1
  342 015a 30       		.byte	0x30
  343 015b 00       		.byte	0
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 8
-
-
  344 015c 08       		.uleb128 0x8
  345 015d 10000000 		.4byte	.LVL8
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1N34Le.s 			page 8
+
+
  346 0161 B2010000 		.4byte	0x1b2
  347 0165 07       		.uleb128 0x7
  348 0166 01       		.uleb128 0x1
  349 0167 50       		.byte	0x50
  350 0168 05       		.uleb128 0x5
  351 0169 03       		.byte	0x3
- 352 016a 20000000 		.4byte	.LC4
+ 352 016a 1C000000 		.4byte	.LC4
  353 016e 00       		.byte	0
  354 016f 00       		.byte	0
  355 0170 09       		.uleb128 0x9
  356 0171 2C000000 		.4byte	.LASF24
  357 0175 01       		.byte	0x1
- 358 0176 0E       		.byte	0xe
+ 358 0176 0F       		.byte	0xf
  359 0177 5D000000 		.4byte	0x5d
  360 017b 00000000 		.4byte	.LFB32
  361 017f 0E000000 		.4byte	.LFE32-.LFB32
@@ -478,11 +476,11 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 1
  398              		.section	.debug_abbrev,"",%progbits
  399              	.Ldebug_abbrev0:
  400 0000 01       		.uleb128 0x1
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 9
-
-
  401 0001 11       		.uleb128 0x11
  402 0002 01       		.byte	0x1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1N34Le.s 			page 9
+
+
  403 0003 25       		.uleb128 0x25
  404 0004 0E       		.uleb128 0xe
  405 0005 13       		.uleb128 0x13
@@ -538,11 +536,11 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 1
  455 0037 06       		.uleb128 0x6
  456 0038 40       		.uleb128 0x40
  457 0039 18       		.uleb128 0x18
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 10
-
-
  458 003a 9742     		.uleb128 0x2117
  459 003c 19       		.uleb128 0x19
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1N34Le.s 			page 10
+
+
  460 003d 01       		.uleb128 0x1
  461 003e 13       		.uleb128 0x13
  462 003f 00       		.byte	0
@@ -598,11 +596,11 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 1
  512 007a 0B       		.uleb128 0xb
  513 007b 27       		.uleb128 0x27
  514 007c 19       		.uleb128 0x19
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 11
-
-
  515 007d 49       		.uleb128 0x49
  516 007e 13       		.uleb128 0x13
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1N34Le.s 			page 11
+
+
  517 007f 8701     		.uleb128 0x87
  518 0081 19       		.uleb128 0x19
  519 0082 11       		.uleb128 0x11
@@ -658,11 +656,11 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 1
  569 0008 00000000 		.4byte	.LFB34
  570 000c 18000000 		.4byte	.LFE34
  571 0010 00000000 		.4byte	.LFB32
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 12
-
-
  572 0014 0E000000 		.4byte	.LFE32
  573 0018 00000000 		.4byte	0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1N34Le.s 			page 12
+
+
  574 001c 00000000 		.4byte	0
  575              		.section	.debug_line,"",%progbits
  576              	.Ldebug_line0:
@@ -718,11 +716,11 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 1
  599 0075 6C63645F 		.ascii	"lcd_PrintString\000"
  599      5072696E 
  599      74537472 
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 13
-
-
  599      696E6700 
  600              	.LASF14:
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1N34Le.s 			page 13
+
+
  601 0085 636F6E66 		.ascii	"configSystem\000"
  601      69675379 
  601      7374656D 
@@ -778,11 +776,11 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 1
  622              	.LASF2:
  623 0176 73686F72 		.ascii	"short int\000"
  623      7420696E 
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1giIsu.s 			page 14
-
-
  623      7400
  624              	.LASF23:
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc1N34Le.s 			page 14
+
+
  625 0180 443A5C70 		.ascii	"D:\\psoc\\theory\\lcd_16xN\\lcd_16xN.cydsn\000"
  625      736F635C 
  625      7468656F 

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctpeg0a.s 			page 1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccF4AeN7.s 			page 1
 
 
    1              		.syntax unified
@@ -39,12 +39,15 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctpeg0a.s 			page 1
    9:main.c        ****  *
   10:main.c        ****  * ========================================
   11:main.c        **** */
-  12:main.c        **** #include "main.h"
-  13:main.c        **** 
-  14:main.c        **** 
-  15:main.c        **** int main(void)
-  16:main.c        **** {
-  28              		.loc 1 16 0
+  12:main.c        **** #include "project.h"
+  13:main.c        **** #include <stdio.h>
+  14:main.c        **** #include "main.h"
+  15:main.c        **** 
+  16:main.c        **** #include "Led7_Seg.h"
+  17:main.c        **** 
+  18:main.c        **** int main(void)
+  19:main.c        **** {
+  28              		.loc 1 19 0
   29              		.cfi_startproc
   30              		@ Volatile: function does not return.
   31              		@ args = 0, pretend = 0, frame = 0
@@ -53,25 +56,23 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctpeg0a.s 			page 1
   34              		.cfi_def_cfa_offset 8
   35              		.cfi_offset 4, -8
   36              		.cfi_offset 14, -4
-  17:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
-  37              		.loc 1 17 0
+  20:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  37              		.loc 1 20 0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccF4AeN7.s 			page 2
+
+
   38              		.syntax divided
-  39              	@ 17 "main.c" 1
+  39              	@ 20 "main.c" 1
   40 0002 62B6     		CPSIE   i
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctpeg0a.s 			page 2
-
-
   41              	@ 0 "" 2
   42              		.thumb
   43              		.syntax unified
   44              	.L2:
-  18:main.c        **** 
-  19:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
-  20:main.c        **** 
-  21:main.c        ****     for(;;)
-  22:main.c        ****     {
-  23:main.c        ****         scanLed(7896);
-  45              		.loc 1 23 0 discriminator 1
+  21:main.c        **** 
+  22:main.c        ****     for(;;)
+  23:main.c        ****     {
+  24:main.c        ****         scanLed(9135);
+  45              		.loc 1 24 0 discriminator 1
   46 0004 0148     		ldr	r0, .L3
   47 0006 FFF7FEFF 		bl	scanLed
   48              	.LVL0:
@@ -79,7 +80,7 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctpeg0a.s 			page 1
   50              	.L4:
   51              		.align	2
   52              	.L3:
-  53 000c D81E0000 		.word	7896
+  53 000c AF230000 		.word	9135
   54              		.cfi_endproc
   55              	.LFE33:
   56              		.size	main, .-main
@@ -93,21 +94,21 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctpeg0a.s 			page 1
   64 0006 00000000 		.4byte	.Ldebug_abbrev0
   65 000a 04       		.byte	0x4
   66 000b 01       		.uleb128 0x1
-  67 000c 0E000000 		.4byte	.LASF14
+  67 000c B5000000 		.4byte	.LASF14
   68 0010 0C       		.byte	0xc
-  69 0011 D2000000 		.4byte	.LASF15
-  70 0015 A9000000 		.4byte	.LASF16
+  69 0011 57000000 		.4byte	.LASF15
+  70 0015 2E000000 		.4byte	.LASF16
   71 0019 00000000 		.4byte	.Ldebug_ranges0+0
   72 001d 00000000 		.4byte	0
   73 0021 00000000 		.4byte	.Ldebug_line0
   74 0025 02       		.uleb128 0x2
   75 0026 01       		.byte	0x1
   76 0027 06       		.byte	0x6
-  77 0028 45010000 		.4byte	.LASF0
+  77 0028 4B010000 		.4byte	.LASF0
   78 002c 02       		.uleb128 0x2
   79 002d 01       		.byte	0x1
   80 002e 08       		.byte	0x8
-  81 002f 07010000 		.4byte	.LASF1
+  81 002f 92000000 		.4byte	.LASF1
   82 0033 02       		.uleb128 0x2
   83 0034 02       		.byte	0x2
   84 0035 05       		.byte	0x5
@@ -115,18 +116,18 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctpeg0a.s 			page 1
   86 003a 02       		.uleb128 0x2
   87 003b 02       		.byte	0x2
   88 003c 07       		.byte	0x7
-  89 003d 32010000 		.4byte	.LASF3
+  89 003d 0E000000 		.4byte	.LASF3
   90 0041 02       		.uleb128 0x2
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccF4AeN7.s 			page 3
+
+
   91 0042 04       		.byte	0x4
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctpeg0a.s 			page 3
-
-
   92 0043 05       		.byte	0x5
-  93 0044 1A010000 		.4byte	.LASF4
+  93 0044 A5000000 		.4byte	.LASF4
   94 0048 02       		.uleb128 0x2
   95 0049 04       		.byte	0x4
   96 004a 07       		.byte	0x7
-  97 004b DE000000 		.4byte	.LASF5
+  97 004b 63000000 		.4byte	.LASF5
   98 004f 02       		.uleb128 0x2
   99 0050 08       		.byte	0x8
  100 0051 05       		.byte	0x5
@@ -134,7 +135,7 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctpeg0a.s 			page 1
  102 0056 02       		.uleb128 0x2
  103 0057 08       		.byte	0x8
  104 0058 07       		.byte	0x7
- 105 0059 F0000000 		.4byte	.LASF7
+ 105 0059 75000000 		.4byte	.LASF7
  106 005d 03       		.uleb128 0x3
  107 005e 04       		.byte	0x4
  108 005f 05       		.byte	0x5
@@ -142,31 +143,31 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctpeg0a.s 			page 1
  110 0064 02       		.uleb128 0x2
  111 0065 04       		.byte	0x4
  112 0066 07       		.byte	0x7
- 113 0067 9C000000 		.4byte	.LASF8
+ 113 0067 21000000 		.4byte	.LASF8
  114 006b 02       		.uleb128 0x2
- 115 006c 08       		.byte	0x8
+ 115 006c 04       		.byte	0x4
  116 006d 04       		.byte	0x4
- 117 006e 51010000 		.4byte	.LASF9
+ 117 006e 8C000000 		.4byte	.LASF9
  118 0072 02       		.uleb128 0x2
- 119 0073 04       		.byte	0x4
- 120 0074 07       		.byte	0x7
- 121 0075 6D010000 		.4byte	.LASF10
+ 119 0073 08       		.byte	0x8
+ 120 0074 04       		.byte	0x4
+ 121 0075 AE000000 		.4byte	.LASF10
  122 0079 02       		.uleb128 0x2
  123 007a 01       		.byte	0x1
  124 007b 08       		.byte	0x8
- 125 007c 15010000 		.4byte	.LASF11
+ 125 007c A0000000 		.4byte	.LASF11
  126 0080 02       		.uleb128 0x2
  127 0081 04       		.byte	0x4
- 128 0082 04       		.byte	0x4
- 129 0083 5D010000 		.4byte	.LASF12
+ 128 0082 07       		.byte	0x7
+ 129 0083 6D010000 		.4byte	.LASF12
  130 0087 02       		.uleb128 0x2
  131 0088 08       		.byte	0x8
  132 0089 04       		.byte	0x4
- 133 008a 23010000 		.4byte	.LASF13
+ 133 008a 57010000 		.4byte	.LASF13
  134 008e 04       		.uleb128 0x4
- 135 008f D9000000 		.4byte	.LASF17
+ 135 008f 5E000000 		.4byte	.LASF17
  136 0093 01       		.byte	0x1
- 137 0094 0F       		.byte	0xf
+ 137 0094 12       		.byte	0x12
  138 0095 5D000000 		.4byte	0x5d
  139 0099 00000000 		.4byte	.LFB33
  140 009d 10000000 		.4byte	.LFE33-.LFB33
@@ -177,21 +178,21 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctpeg0a.s 			page 1
  145 00a8 0A000000 		.4byte	.LVL0
  146 00ac B9000000 		.4byte	0xb9
  147 00b0 06       		.uleb128 0x6
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccF4AeN7.s 			page 4
+
+
  148 00b1 01       		.uleb128 0x1
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctpeg0a.s 			page 4
-
-
  149 00b2 50       		.byte	0x50
  150 00b3 03       		.uleb128 0x3
  151 00b4 0A       		.byte	0xa
- 152 00b5 D81E     		.2byte	0x1ed8
+ 152 00b5 AF23     		.2byte	0x23af
  153 00b7 00       		.byte	0
  154 00b8 00       		.byte	0
  155 00b9 07       		.uleb128 0x7
- 156 00ba 2A010000 		.4byte	.LASF18
- 157 00be 2A010000 		.4byte	.LASF18
+ 156 00ba 43010000 		.4byte	.LASF18
+ 157 00be 43010000 		.4byte	.LASF18
  158 00c2 02       		.byte	0x2
- 159 00c3 18       		.byte	0x18
+ 159 00c3 11       		.byte	0x11
  160 00c4 00       		.byte	0
  161              		.section	.debug_abbrev,"",%progbits
  162              	.Ldebug_abbrev0:
@@ -237,10 +238,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctpeg0a.s 			page 1
  202 0027 00       		.byte	0
  203 0028 00       		.byte	0
  204 0029 04       		.uleb128 0x4
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccF4AeN7.s 			page 5
+
+
  205 002a 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctpeg0a.s 			page 5
-
-
  206 002b 01       		.byte	0x1
  207 002c 3F       		.uleb128 0x3f
  208 002d 19       		.uleb128 0x19
@@ -297,10 +298,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctpeg0a.s 			page 1
  259 0067 0E       		.uleb128 0xe
  260 0068 03       		.uleb128 0x3
  261 0069 0E       		.uleb128 0xe
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccF4AeN7.s 			page 6
+
+
  262 006a 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctpeg0a.s 			page 6
-
-
  263 006b 0B       		.uleb128 0xb
  264 006c 3B       		.uleb128 0x3b
  265 006d 0B       		.uleb128 0xb
@@ -337,97 +338,97 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctpeg0a.s 			page 1
  291      206C6F6E 
  291      6720696E 
  291      7400
- 292              	.LASF14:
- 293 000e 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 293      43313120 
- 293      352E342E 
- 293      31203230 
- 293      31363036 
- 294 0041 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
- 294      20726576 
- 294      6973696F 
- 294      6E203233 
- 294      37373135 
- 295 0074 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 295      66756E63 
- 295      74696F6E 
- 295      2D736563 
- 295      74696F6E 
- 296              	.LASF8:
- 297 009c 756E7369 		.ascii	"unsigned int\000"
- 297      676E6564 
- 297      20696E74 
- 297      00
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctpeg0a.s 			page 7
+ 292              	.LASF3:
+ 293 000e 73686F72 		.ascii	"short unsigned int\000"
+ 293      7420756E 
+ 293      7369676E 
+ 293      65642069 
+ 293      6E7400
+ 294              	.LASF8:
+ 295 0021 756E7369 		.ascii	"unsigned int\000"
+ 295      676E6564 
+ 295      20696E74 
+ 295      00
+ 296              	.LASF16:
+ 297 002e 443A5C70 		.ascii	"D:\\psoc\\theory\\led_7_seg\\led_7_seg.cydsn\000"
+ 297      736F635C 
+ 297      7468656F 
+ 297      72795C6C 
+ 297      65645F37 
+ 298              	.LASF15:
+ 299 0057 6D61696E 		.ascii	"main.c\000"
+ 299      2E6300
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccF4AeN7.s 			page 7
 
 
- 298              	.LASF16:
- 299 00a9 443A5C70 		.ascii	"D:\\psoc\\theory\\led_7_seg\\led_7_seg.cydsn\000"
- 299      736F635C 
- 299      7468656F 
- 299      72795C6C 
- 299      65645F37 
- 300              	.LASF15:
- 301 00d2 6D61696E 		.ascii	"main.c\000"
- 301      2E6300
- 302              	.LASF17:
- 303 00d9 6D61696E 		.ascii	"main\000"
- 303      00
- 304              	.LASF5:
- 305 00de 6C6F6E67 		.ascii	"long unsigned int\000"
- 305      20756E73 
- 305      69676E65 
- 305      6420696E 
- 305      7400
- 306              	.LASF7:
- 307 00f0 6C6F6E67 		.ascii	"long long unsigned int\000"
- 307      206C6F6E 
- 307      6720756E 
- 307      7369676E 
- 307      65642069 
+ 300              	.LASF17:
+ 301 005e 6D61696E 		.ascii	"main\000"
+ 301      00
+ 302              	.LASF5:
+ 303 0063 6C6F6E67 		.ascii	"long unsigned int\000"
+ 303      20756E73 
+ 303      69676E65 
+ 303      6420696E 
+ 303      7400
+ 304              	.LASF7:
+ 305 0075 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 305      206C6F6E 
+ 305      6720756E 
+ 305      7369676E 
+ 305      65642069 
+ 306              	.LASF9:
+ 307 008c 666C6F61 		.ascii	"float\000"
+ 307      7400
  308              	.LASF1:
- 309 0107 756E7369 		.ascii	"unsigned char\000"
+ 309 0092 756E7369 		.ascii	"unsigned char\000"
  309      676E6564 
  309      20636861 
  309      7200
  310              	.LASF11:
- 311 0115 63686172 		.ascii	"char\000"
+ 311 00a0 63686172 		.ascii	"char\000"
  311      00
  312              	.LASF4:
- 313 011a 6C6F6E67 		.ascii	"long int\000"
+ 313 00a5 6C6F6E67 		.ascii	"long int\000"
  313      20696E74 
  313      00
- 314              	.LASF13:
- 315 0123 646F7562 		.ascii	"double\000"
+ 314              	.LASF10:
+ 315 00ae 646F7562 		.ascii	"double\000"
  315      6C6500
- 316              	.LASF18:
- 317 012a 7363616E 		.ascii	"scanLed\000"
- 317      4C656400 
- 318              	.LASF3:
- 319 0132 73686F72 		.ascii	"short unsigned int\000"
- 319      7420756E 
- 319      7369676E 
- 319      65642069 
- 319      6E7400
- 320              	.LASF0:
- 321 0145 7369676E 		.ascii	"signed char\000"
- 321      65642063 
- 321      68617200 
- 322              	.LASF9:
- 323 0151 6C6F6E67 		.ascii	"long double\000"
- 323      20646F75 
- 323      626C6500 
- 324              	.LASF12:
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cctpeg0a.s 			page 8
+ 316              	.LASF14:
+ 317 00b5 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 317      43313120 
+ 317      352E342E 
+ 317      31203230 
+ 317      31363036 
+ 318 00e8 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 318      20726576 
+ 318      6973696F 
+ 318      6E203233 
+ 318      37373135 
+ 319 011b 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 319      66756E63 
+ 319      74696F6E 
+ 319      2D736563 
+ 319      74696F6E 
+ 320              	.LASF18:
+ 321 0143 7363616E 		.ascii	"scanLed\000"
+ 321      4C656400 
+ 322              	.LASF0:
+ 323 014b 7369676E 		.ascii	"signed char\000"
+ 323      65642063 
+ 323      68617200 
+ 324              	.LASF13:
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccF4AeN7.s 			page 8
 
 
- 325 015d 666C6F61 		.ascii	"float\000"
- 325      7400
+ 325 0157 6C6F6E67 		.ascii	"long double\000"
+ 325      20646F75 
+ 325      626C6500 
  326              	.LASF2:
  327 0163 73686F72 		.ascii	"short int\000"
  327      7420696E 
  327      7400
- 328              	.LASF10:
+ 328              	.LASF12:
  329 016d 73697A65 		.ascii	"sizetype\000"
  329      74797065 
  329      00

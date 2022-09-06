@@ -9,26 +9,26 @@
  *
  * ========================================
 */
+#include "project.h"
 #include "main.h"
+#include "applicationUart.h"
 
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
-
 
     configSystem();
         
     for(;;)
     {
         receive_After_Transmit_Char_Type(); 
-        //  receive_After_Transmit_String();
         CyDelay(1000);
     }
 }
 
 void configSystem()
 {
-       uart_Start();
+    uart_Start();
 }
 
 void uartHandle()

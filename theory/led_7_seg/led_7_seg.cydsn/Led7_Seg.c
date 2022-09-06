@@ -11,17 +11,18 @@
 */
 
 /* [] END OF FILE */
+#include "project.h"        
+#include <stdio.h>
+
+enum Status_pin
+{
+    low = 0,
+    hight
+};
 
 #include "Led7_Seg.h"
 
-uint8 writeHightOrLow(uint8 dataNeedWrite, uint8 locationWrite);
-void write_data(uint8 dataNeedWrite);
-void control_Led_Light(int location);
-void turnOffAllLed();
-
-
 unsigned char code_Led7_Seg[] = {0xfc,0x60,0xda,0xf2,0x66,0xb6,0xbe,0xe0,0xfe,0xf6};
-
 
 uint8 writeHightOrLow(uint8 dataNeedWrite, uint8 locationWrite)
 {
@@ -140,7 +141,7 @@ void scanLed(unsigned int number)
     turnOffAllLed();
 }
 
-void check_Led_Live_Or_Die(uint8 location, uint8 data)
+void checkLedLiveOrDie(uint8 location, uint8 data)
 {
     control_Led_Light(location); 
     

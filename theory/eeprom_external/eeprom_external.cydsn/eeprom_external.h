@@ -11,10 +11,11 @@
 */
 #ifndef EEPROM_EXTERNAL
 #define EEPROM_EXTERNAL
+    #include <cytypes.h>
     
-    uint8 find_address_eeprom();
+    //uint8 find_address_eeprom();
     
-    uint8 eeprom_read_a_byte( unsigned long  address_read);
+    uint8 eeprom_read_a_byte( uint32  address_read);
     void eeprom_read_page(uint8 address, uint8 *data_read, uint8 length);
     
     

@@ -9,6 +9,8 @@
  *
  * ========================================
 */
+#include <stdio.h>
+#include "project.h"
 #include "main.h"
 
 int main(void)
@@ -64,7 +66,7 @@ void transmitToPC(float adcData)
 {
     char buffer_value_transmit[20];
     
-    sprintf(buffer_value_transmit,"%f\n", adcData); 
+    sprintf(buffer_value_transmit,"%f *C\n", adcData); 
     
     uartUser_UartPutString(buffer_value_transmit);
 }

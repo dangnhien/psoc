@@ -61,7 +61,7 @@ Discarded input sections
  .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\main.o
  .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\Led7_Seg.o
  .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\Led7_Seg.o
- .text.check_Led_Live_Or_Die
+ .text.checkLedLiveOrDie
                 0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\Led7_Seg.o
  .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
  .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
@@ -893,28 +893,28 @@ END GROUP
  .debug_abbrev  0x000011b3       0xc8 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_8.o)
  .debug_abbrev  0x0000127b       0x14 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(CyBootAsmGnu.o)
 
-.debug_line     0x00000000     0x18db
+.debug_line     0x00000000     0x18cd
  *(.debug_line)
  .debug_line    0x00000000       0x4a .\CortexM0\ARM_GCC_541\Debug\main.o
- .debug_line    0x0000004a      0x1c0 .\CortexM0\ARM_GCC_541\Debug\Led7_Seg.o
- .debug_line    0x0000020a      0x12e .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_line    0x00000338      0x141 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
- .debug_line    0x00000479      0x235 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_line    0x000006ae       0xbc .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_1.o)
- .debug_line    0x0000076a       0xbd .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_2.o)
- .debug_line    0x00000827       0xbd .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_3.o)
- .debug_line    0x000008e4       0xbd .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_4.o)
- .debug_line    0x000009a1       0xbd .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_5.o)
- .debug_line    0x00000a5e       0xbd .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_6.o)
- .debug_line    0x00000b1b       0xbd .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_7.o)
- .debug_line    0x00000bd8       0xc5 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Control_Led7_1.o)
- .debug_line    0x00000c9d       0xc6 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Control_Led7_2.o)
- .debug_line    0x00000d63       0xc6 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Control_Led7_3.o)
- .debug_line    0x00000e29       0xc6 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Control_Led7_4.o)
- .debug_line    0x00000eef      0x460 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(CyLib.o)
- .debug_line    0x0000134f      0x466 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(CyLFClk.o)
- .debug_line    0x000017b5       0xbd .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_8.o)
- .debug_line    0x00001872       0x69 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(CyBootAsmGnu.o)
+ .debug_line    0x0000004a      0x1b2 .\CortexM0\ARM_GCC_541\Debug\Led7_Seg.o
+ .debug_line    0x000001fc      0x12e .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_line    0x0000032a      0x141 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_line    0x0000046b      0x235 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_line    0x000006a0       0xbc .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_1.o)
+ .debug_line    0x0000075c       0xbd .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_2.o)
+ .debug_line    0x00000819       0xbd .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_3.o)
+ .debug_line    0x000008d6       0xbd .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_4.o)
+ .debug_line    0x00000993       0xbd .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_5.o)
+ .debug_line    0x00000a50       0xbd .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_6.o)
+ .debug_line    0x00000b0d       0xbd .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_7.o)
+ .debug_line    0x00000bca       0xc5 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Control_Led7_1.o)
+ .debug_line    0x00000c8f       0xc6 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Control_Led7_2.o)
+ .debug_line    0x00000d55       0xc6 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Control_Led7_3.o)
+ .debug_line    0x00000e1b       0xc6 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Control_Led7_4.o)
+ .debug_line    0x00000ee1      0x460 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(CyLib.o)
+ .debug_line    0x00001341      0x466 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(CyLFClk.o)
+ .debug_line    0x000017a7       0xbd .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_8.o)
+ .debug_line    0x00001864       0x69 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(CyBootAsmGnu.o)
 
 .debug_frame    0x00000000      0xf8c
  *(.debug_frame)
@@ -942,45 +942,45 @@ END GROUP
  .debug_frame   0x00000f40       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
  .debug_frame   0x00000f6c       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x15cc
+.debug_str      0x00000000     0x15c8
  *(.debug_str)
  .debug_str     0x00000000      0x136 .\CortexM0\ARM_GCC_541\Debug\main.o
                                 0x176 (size before relaxing)
- .debug_str     0x00000136      0x186 .\CortexM0\ARM_GCC_541\Debug\Led7_Seg.o
-                                0x2f5 (size before relaxing)
- .debug_str     0x000002bc       0xbc .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_str     0x00000136      0x182 .\CortexM0\ARM_GCC_541\Debug\Led7_Seg.o
+                                0x2f1 (size before relaxing)
+ .debug_str     0x000002b8       0xbc .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
                                 0x231 (size before relaxing)
- .debug_str     0x00000378       0x63 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_str     0x00000374       0x63 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
                                 0x1af (size before relaxing)
- .debug_str     0x000003db      0x140 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_str     0x000003d7      0x140 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
                                 0x2e8 (size before relaxing)
- .debug_str     0x0000051b       0xaa .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_1.o)
+ .debug_str     0x00000517       0xaa .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_1.o)
                                 0x21d (size before relaxing)
- .debug_str     0x000005c5       0x7b .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_2.o)
+ .debug_str     0x000005c1       0x7b .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_2.o)
                                 0x21d (size before relaxing)
- .debug_str     0x00000640       0x7b .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_3.o)
+ .debug_str     0x0000063c       0x7b .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_3.o)
                                 0x21d (size before relaxing)
- .debug_str     0x000006bb       0x7b .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_4.o)
+ .debug_str     0x000006b7       0x7b .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_4.o)
                                 0x21d (size before relaxing)
- .debug_str     0x00000736       0x7b .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_5.o)
+ .debug_str     0x00000732       0x7b .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_5.o)
                                 0x21d (size before relaxing)
- .debug_str     0x000007b1       0x7b .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_6.o)
+ .debug_str     0x000007ad       0x7b .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_6.o)
                                 0x21d (size before relaxing)
- .debug_str     0x0000082c       0x7b .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_7.o)
+ .debug_str     0x00000828       0x7b .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_7.o)
                                 0x21d (size before relaxing)
- .debug_str     0x000008a7       0xb1 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Control_Led7_1.o)
+ .debug_str     0x000008a3       0xb1 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Control_Led7_1.o)
                                 0x25c (size before relaxing)
- .debug_str     0x00000958       0xb1 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Control_Led7_2.o)
+ .debug_str     0x00000954       0xb1 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Control_Led7_2.o)
                                 0x25c (size before relaxing)
- .debug_str     0x00000a09       0xb1 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Control_Led7_3.o)
+ .debug_str     0x00000a05       0xb1 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Control_Led7_3.o)
                                 0x25c (size before relaxing)
- .debug_str     0x00000aba       0xb1 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Control_Led7_4.o)
+ .debug_str     0x00000ab6       0xb1 .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Control_Led7_4.o)
                                 0x25c (size before relaxing)
- .debug_str     0x00000b6b      0x4bb .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(CyLib.o)
+ .debug_str     0x00000b67      0x4bb .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(CyLib.o)
                                 0x69d (size before relaxing)
- .debug_str     0x00001026      0x52b .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(CyLFClk.o)
+ .debug_str     0x00001022      0x52b .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(CyLFClk.o)
                                 0x724 (size before relaxing)
- .debug_str     0x00001551       0x7b .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_8.o)
+ .debug_str     0x0000154d       0x7b .\CortexM0\ARM_GCC_541\Debug\led_7_seg.a(Led_8.o)
                                 0x21d (size before relaxing)
 
 .debug_loc      0x00000000     0x1bed

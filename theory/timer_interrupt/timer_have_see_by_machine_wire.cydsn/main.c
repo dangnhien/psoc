@@ -13,7 +13,6 @@
 
 void dem_counter();
 
-
 CY_ISR(handle_interrupt)
 {
     Pin_Led_Write( ~ Pin_Led_Read());
@@ -22,21 +21,17 @@ CY_ISR(handle_interrupt)
     timer_int_ClearPending();   // clear interrupt timer
 }
 
-
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
 
-    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     
     timer1_Start();
     timer_int_StartEx(handle_interrupt);
 
     for(;;)
     {
-        /* Place your application code here. */
     }
 }
-
 
 /* [] END OF FILE */

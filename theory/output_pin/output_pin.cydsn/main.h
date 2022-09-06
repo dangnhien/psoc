@@ -13,9 +13,7 @@
 #ifndef MAIN_H
 #define MAIN_H
     
-    #include "project.h"
-    #include "ledSingle.h"
-    
+    void initSystem();
     
 #endif
 /* [] END OF FILE */

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc8x91by.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 1
   39 0006 C043     		mvns	r0, r0
   40 0008 C0B2     		uxtb	r0, r0
   41 000a FFF7FEFF 		bl	ledRedd_Write
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 2
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc8x91by.s 			page 2
 
 
   42              	.LVL1:
@@ -102,15 +102,14 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 1
   73 0002 62B6     		CPSIE   i
   74              	@ 0 "" 2
   24:main.c        **** 
-  25:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
-  26:main.c        ****     timer_counter_Start();
-  75              		.loc 1 26 0
+  25:main.c        ****     timer_counter_Start();
+  75              		.loc 1 25 0
   76              		.thumb
   77              		.syntax unified
   78 0004 FFF7FEFF 		bl	timer_counter_Start
   79              	.LVL3:
-  27:main.c        ****     timer_counter_Int_StartEx( timer_counter_Int_Handler );
-  80              		.loc 1 27 0
+  26:main.c        ****     timer_counter_Int_StartEx( timer_counter_Int_Handler );
+  80              		.loc 1 26 0
   81 0008 0148     		ldr	r0, .L4
   82 000a FFF7FEFF 		bl	timer_counter_Int_StartEx
   83              	.LVL4:
@@ -118,10 +117,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 1
   85 000e FEE7     		b	.L3
   86              	.L5:
   87              		.align	2
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 3
-
-
   88              	.L4:
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc8x91by.s 			page 3
+
+
   89 0010 00000000 		.word	timer_counter_Int_Handler
   90              		.cfi_endproc
   91              	.LFE33:
@@ -178,10 +177,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 1
  142 0057 08       		.byte	0x8
  143 0058 07       		.byte	0x7
  144 0059 90000000 		.4byte	.LASF7
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 4
-
-
  145 005d 03       		.uleb128 0x3
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc8x91by.s 			page 4
+
+
  146 005e 04       		.byte	0x4
  147 005f 05       		.byte	0x5
  148 0060 696E7400 		.ascii	"int\000"
@@ -238,10 +237,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 1
  199 00cd 01       		.uleb128 0x1
  200 00ce 31       		.byte	0x31
  201 00cf 00       		.byte	0
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 5
-
-
  202 00d0 00       		.byte	0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc8x91by.s 			page 5
+
+
  203 00d1 09       		.uleb128 0x9
  204 00d2 37000000 		.4byte	.LASF24
  205 00d6 01       		.byte	0x1
@@ -298,10 +297,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 1
  256 0001 11       		.uleb128 0x11
  257 0002 01       		.byte	0x1
  258 0003 25       		.uleb128 0x25
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 6
-
-
  259 0004 0E       		.uleb128 0xe
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc8x91by.s 			page 6
+
+
  260 0005 13       		.uleb128 0x13
  261 0006 0B       		.uleb128 0xb
  262 0007 03       		.uleb128 0x3
@@ -358,10 +357,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 1
  313 003a 19       		.uleb128 0x19
  314 003b 03       		.uleb128 0x3
  315 003c 0E       		.uleb128 0xe
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 7
-
-
  316 003d 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc8x91by.s 			page 7
+
+
  317 003e 0B       		.uleb128 0xb
  318 003f 3B       		.uleb128 0x3b
  319 0040 0B       		.uleb128 0xb
@@ -418,10 +417,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 1
  370 007b 3B       		.uleb128 0x3b
  371 007c 0B       		.uleb128 0xb
  372 007d 27       		.uleb128 0x27
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 8
-
-
  373 007e 19       		.uleb128 0x19
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc8x91by.s 			page 8
+
+
  374 007f 49       		.uleb128 0x49
  375 0080 13       		.uleb128 0x13
  376 0081 8701     		.uleb128 0x87
@@ -478,10 +477,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 1
  427 0004 0200     		.2byte	0x2
  428 0006 00000000 		.4byte	.Ldebug_info0
  429 000a 04       		.byte	0x4
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 9
-
-
  430 000b 00       		.byte	0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc8x91by.s 			page 9
+
+
  431 000c 0000     		.2byte	0
  432 000e 0000     		.2byte	0
  433 0010 00000000 		.4byte	.LFB32
@@ -538,10 +537,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 1
  464              	.LASF16:
  465 0061 74696D65 		.ascii	"timer_counter_ClearInterrupt\000"
  465      725F636F 
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 10
-
-
  465      756E7465 
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc8x91by.s 			page 10
+
+
  465      725F436C 
  465      65617249 
  466              	.LASF5:
@@ -598,10 +597,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 1
  487      725F5374 
  487      61727400 
  488              	.LASF19:
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccImfeQe.s 			page 11
-
-
  489 0125 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc8x91by.s 			page 11
+
+
  489      43313120 
  489      352E342E 
  489      31203230 

@@ -9,6 +9,9 @@
  *
  * ========================================
 */
+#include "project.h"
+#include <stdio.h>
+
 #include "uart_transmitss.h"
 
 void time_string_concatenation(data_time time, char *strings)
@@ -66,7 +69,5 @@ void test_uart_transmit()
     
     CyDelay(1000);
 }
-
-
 
 /* [] END OF FILE */

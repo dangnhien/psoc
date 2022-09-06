@@ -12,8 +12,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-    #include "project.h"
-    #include "ledMatrix.h"
+   
        
 #endif
 

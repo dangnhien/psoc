@@ -129,32 +129,6 @@
 <VisibleNodeIds>
 <v>adc</v>
 <v>adc\adc</v>
-<v>adc\adc\CortexM0</v>
-<v>adc\adc\CortexM0\ARM_GCC_541</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\adcUser.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\adcUser_INT.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\adcUser_intClock.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\adcUser_IRQ.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\adcUser_PM.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_POT.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_POT_PM.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_BOOT.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_PM.lst</v>
-<v>adc\adc\CortexM0\ARM_GCC_541\Debug\Listing Files\uartUser_rx.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -206,7 +180,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="994, 558" SelectedTabbedMdiWindow="361f58c1-1d4a-46a2-81fe-7615edc69fcb"><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\main.c" Guid="361f58c1-1d4a-46a2-81fe-7615edc69fcb" /><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\main.h" Guid="a004d7ed-f6bf-42de-96d5-305d7637e6bf" /><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\TopDesign\TopDesign.cysch" Guid="2a488f6f-c72d-40fb-98dd-375346455a05" /><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\adc.cydwr" Guid="05ace909-d078-4d08-ae55-5c40894c3b6f" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1002, 558" SelectedTabbedMdiWindow="361f58c1-1d4a-46a2-81fe-7615edc69fcb"><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\main.c" Guid="361f58c1-1d4a-46a2-81fe-7615edc69fcb" /><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\main.h" Guid="a004d7ed-f6bf-42de-96d5-305d7637e6bf" /><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\TopDesign\TopDesign.cysch" Guid="2a488f6f-c72d-40fb-98dd-375346455a05" /><DocumentWindow Key="D:\psoc\theory\adc_1_channel\adc.cydsn\adc.cydwr" Guid="05ace909-d078-4d08-ae55-5c40894c3b6f" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="d7f23ced-4a8f-474d-9a7b-db5f2e330e0f" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

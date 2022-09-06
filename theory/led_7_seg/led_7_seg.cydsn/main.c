@@ -9,17 +9,19 @@
  *
  * ========================================
 */
+#include "project.h"
+#include <stdio.h>
 #include "main.h"
 
+#include "Led7_Seg.h"
 
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
 
-
     for(;;)
     {
-        scanLed(7896);
+        scanLed(9135);
     }
 }
     

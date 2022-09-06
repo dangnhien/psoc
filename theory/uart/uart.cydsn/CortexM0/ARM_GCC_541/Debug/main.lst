@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc0AgFCR.s 			page 1
 
 
    1              		.syntax unified
@@ -26,7 +26,7 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 1
   23              		.thumb_func
   24              		.type	configSystem, %function
   25              	configSystem:
-  26              	.LFB34:
+  26              	.LFB33:
   27              		.file 1 "main.c"
    1:main.c        **** /* ========================================
    2:main.c        ****  *
@@ -39,31 +39,29 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 1
    9:main.c        ****  *
   10:main.c        ****  * ========================================
   11:main.c        **** */
-  12:main.c        **** #include "main.h"
-  13:main.c        **** 
-  14:main.c        **** int main(void)
-  15:main.c        **** {
-  16:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
-  17:main.c        **** 
-  18:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** #include "main.h"
+  14:main.c        **** #include "applicationUart.h"
+  15:main.c        **** 
+  16:main.c        **** int main(void)
+  17:main.c        **** {
+  18:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
   19:main.c        **** 
   20:main.c        ****     configSystem();
   21:main.c        ****         
   22:main.c        ****     for(;;)
   23:main.c        ****     {
-  24:main.c        ****         /* Place your application code here. */
-  25:main.c        ****         //  receive_After_Transmit_Char_Type(); 
-  26:main.c        ****         receive_After_Transmit_String();
-  27:main.c        ****         CyDelay(1000);
-  28:main.c        ****     }
-  29:main.c        **** }
-  30:main.c        **** 
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 2
+  24:main.c        ****         receive_After_Transmit_Char_Type(); 
+  25:main.c        ****         CyDelay(1000);
+  26:main.c        ****     }
+  27:main.c        **** }
+  28:main.c        **** 
+  29:main.c        **** void configSystem()
+  30:main.c        **** {
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc0AgFCR.s 			page 2
 
 
-  31:main.c        **** void configSystem()
-  32:main.c        **** {
-  28              		.loc 1 32 0
+  28              		.loc 1 30 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -71,16 +69,16 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 1
   33              		.cfi_def_cfa_offset 8
   34              		.cfi_offset 4, -8
   35              		.cfi_offset 14, -4
-  33:main.c        ****        uart_Start();
-  36              		.loc 1 33 0
+  31:main.c        ****     uart_Start();
+  36              		.loc 1 31 0
   37 0002 FFF7FEFF 		bl	uart_Start
   38              	.LVL0:
-  34:main.c        **** }
-  39              		.loc 1 34 0
+  32:main.c        **** }
+  39              		.loc 1 32 0
   40              		@ sp needed
   41 0006 10BD     		pop	{r4, pc}
   42              		.cfi_endproc
-  43              	.LFE34:
+  43              	.LFE33:
   44              		.size	configSystem, .-configSystem
   45              		.section	.text.main,"ax",%progbits
   46              		.align	2
@@ -89,9 +87,9 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 1
   49              		.thumb_func
   50              		.type	main, %function
   51              	main:
-  52              	.LFB33:
-  15:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
-  53              		.loc 1 15 0
+  52              	.LFB32:
+  17:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  53              		.loc 1 17 0
   54              		.cfi_startproc
   55              		@ Volatile: function does not return.
   56              		@ args = 0, pretend = 0, frame = 0
@@ -100,10 +98,10 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 1
   59              		.cfi_def_cfa_offset 8
   60              		.cfi_offset 4, -8
   61              		.cfi_offset 14, -4
-  16:main.c        **** 
-  62              		.loc 1 16 0
+  18:main.c        **** 
+  62              		.loc 1 18 0
   63              		.syntax divided
-  64              	@ 16 "main.c" 1
+  64              	@ 18 "main.c" 1
   65 0002 62B6     		CPSIE   i
   66              	@ 0 "" 2
   20:main.c        ****         
@@ -113,22 +111,22 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 1
   70 0004 FFF7FEFF 		bl	configSystem
   71              	.LVL1:
   72              	.L3:
-  26:main.c        ****         CyDelay(1000);
-  73              		.loc 1 26 0 discriminator 1
-  74 0008 FFF7FEFF 		bl	receive_After_Transmit_String
+  24:main.c        ****         CyDelay(1000);
+  73              		.loc 1 24 0 discriminator 1
+  74 0008 FFF7FEFF 		bl	receive_After_Transmit_Char_Type
   75              	.LVL2:
-  27:main.c        ****     }
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 3
-
-
-  76              		.loc 1 27 0 discriminator 1
+  25:main.c        ****     }
+  76              		.loc 1 25 0 discriminator 1
   77 000c FA20     		movs	r0, #250
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc0AgFCR.s 			page 3
+
+
   78 000e 8000     		lsls	r0, r0, #2
   79 0010 FFF7FEFF 		bl	CyDelay
   80              	.LVL3:
   81 0014 F8E7     		b	.L3
   82              		.cfi_endproc
-  83              	.LFE33:
+  83              	.LFE32:
   84              		.size	main, .-main
   85 0016 C046     		.section	.text.uartHandle,"ax",%progbits
   86              		.align	2
@@ -137,11 +135,11 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 1
   89              		.thumb_func
   90              		.type	uartHandle, %function
   91              	uartHandle:
-  92              	.LFB35:
-  35:main.c        **** 
-  36:main.c        **** void uartHandle()
-  37:main.c        **** {
-  93              		.loc 1 37 0
+  92              	.LFB34:
+  33:main.c        **** 
+  34:main.c        **** void uartHandle()
+  35:main.c        **** {
+  93              		.loc 1 35 0
   94              		.cfi_startproc
   95              		@ args = 0, pretend = 0, frame = 0
   96              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -149,22 +147,22 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 1
   98              		.cfi_def_cfa_offset 8
   99              		.cfi_offset 4, -8
  100              		.cfi_offset 14, -4
-  38:main.c        ****     printNumberIncrement();
- 101              		.loc 1 38 0
+  36:main.c        ****     printNumberIncrement();
+ 101              		.loc 1 36 0
  102 0002 FFF7FEFF 		bl	printNumberIncrement
  103              	.LVL4:
-  39:main.c        ****     CyDelay(1000);
- 104              		.loc 1 39 0
+  37:main.c        ****     CyDelay(1000);
+ 104              		.loc 1 37 0
  105 0006 FA20     		movs	r0, #250
  106 0008 8000     		lsls	r0, r0, #2
  107 000a FFF7FEFF 		bl	CyDelay
  108              	.LVL5:
-  40:main.c        **** }
- 109              		.loc 1 40 0
+  38:main.c        **** }
+ 109              		.loc 1 38 0
  110              		@ sp needed
  111 000e 10BD     		pop	{r4, pc}
  112              		.cfi_endproc
- 113              	.LFE35:
+ 113              	.LFE34:
  114              		.size	uartHandle, .-uartHandle
  115              		.text
  116              	.Letext0:
@@ -178,40 +176,40 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 1
  124 0006 00000000 		.4byte	.Ldebug_abbrev0
  125 000a 04       		.byte	0x4
  126 000b 01       		.uleb128 0x1
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 4
-
-
- 127 000c E5000000 		.4byte	.LASF20
+ 127 000c F9000000 		.4byte	.LASF20
  128 0010 0C       		.byte	0xc
- 129 0011 39000000 		.4byte	.LASF21
- 130 0015 45000000 		.4byte	.LASF22
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc0AgFCR.s 			page 4
+
+
+ 129 0011 D7000000 		.4byte	.LASF21
+ 130 0015 1B000000 		.4byte	.LASF22
  131 0019 00000000 		.4byte	.Ldebug_ranges0+0
  132 001d 00000000 		.4byte	0
  133 0021 00000000 		.4byte	.Ldebug_line0
  134 0025 02       		.uleb128 0x2
  135 0026 01       		.byte	0x1
  136 0027 06       		.byte	0x6
- 137 0028 86010000 		.4byte	.LASF0
+ 137 0028 9A010000 		.4byte	.LASF0
  138 002c 02       		.uleb128 0x2
  139 002d 01       		.byte	0x1
  140 002e 08       		.byte	0x8
- 141 002f A2000000 		.4byte	.LASF1
+ 141 002f AF000000 		.4byte	.LASF1
  142 0033 02       		.uleb128 0x2
  143 0034 02       		.byte	0x2
  144 0035 05       		.byte	0x5
- 145 0036 AF010000 		.4byte	.LASF2
+ 145 0036 B2010000 		.4byte	.LASF2
  146 003a 02       		.uleb128 0x2
  147 003b 02       		.byte	0x2
  148 003c 07       		.byte	0x7
- 149 003d 73010000 		.4byte	.LASF3
+ 149 003d 87010000 		.4byte	.LASF3
  150 0041 02       		.uleb128 0x2
  151 0042 04       		.byte	0x4
  152 0043 05       		.byte	0x5
- 153 0044 CA000000 		.4byte	.LASF4
+ 153 0044 DE000000 		.4byte	.LASF4
  154 0048 02       		.uleb128 0x2
  155 0049 04       		.byte	0x4
  156 004a 07       		.byte	0x7
- 157 004b 6C000000 		.4byte	.LASF5
+ 157 004b 73000000 		.4byte	.LASF5
  158 004f 02       		.uleb128 0x2
  159 0050 08       		.byte	0x8
  160 0051 05       		.byte	0x5
@@ -219,7 +217,7 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 1
  162 0056 02       		.uleb128 0x2
  163 0057 08       		.byte	0x8
  164 0058 07       		.byte	0x7
- 165 0059 7E000000 		.4byte	.LASF7
+ 165 0059 85000000 		.4byte	.LASF7
  166 005d 03       		.uleb128 0x3
  167 005e 04       		.byte	0x4
  168 005f 05       		.byte	0x5
@@ -231,32 +229,32 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 1
  174 006b 02       		.uleb128 0x2
  175 006c 04       		.byte	0x4
  176 006d 04       		.byte	0x4
- 177 006e A9010000 		.4byte	.LASF9
+ 177 006e 9C000000 		.4byte	.LASF9
  178 0072 02       		.uleb128 0x2
  179 0073 08       		.byte	0x8
  180 0074 04       		.byte	0x4
- 181 0075 D3000000 		.4byte	.LASF10
+ 181 0075 E7000000 		.4byte	.LASF10
  182 0079 02       		.uleb128 0x2
  183 007a 01       		.byte	0x1
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 5
-
-
  184 007b 08       		.byte	0x8
- 185 007c C5000000 		.4byte	.LASF11
+ 185 007c D2000000 		.4byte	.LASF11
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc0AgFCR.s 			page 5
+
+
  186 0080 02       		.uleb128 0x2
  187 0081 08       		.byte	0x8
  188 0082 04       		.byte	0x4
- 189 0083 92010000 		.4byte	.LASF12
+ 189 0083 A6010000 		.4byte	.LASF12
  190 0087 02       		.uleb128 0x2
  191 0088 04       		.byte	0x4
  192 0089 07       		.byte	0x7
- 193 008a B9010000 		.4byte	.LASF13
+ 193 008a BC010000 		.4byte	.LASF13
  194 008e 04       		.uleb128 0x4
- 195 008f 95000000 		.4byte	.LASF14
+ 195 008f A2000000 		.4byte	.LASF14
  196 0093 01       		.byte	0x1
- 197 0094 1F       		.byte	0x1f
- 198 0095 00000000 		.4byte	.LFB34
- 199 0099 08000000 		.4byte	.LFE34-.LFB34
+ 197 0094 1D       		.byte	0x1d
+ 198 0095 00000000 		.4byte	.LFB33
+ 199 0099 08000000 		.4byte	.LFE33-.LFB33
  200 009d 01       		.uleb128 0x1
  201 009e 9C       		.byte	0x9c
  202 009f AD000000 		.4byte	0xad
@@ -265,12 +263,12 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 1
  205 00a8 1A010000 		.4byte	0x11a
  206 00ac 00       		.byte	0
  207 00ad 06       		.uleb128 0x6
- 208 00ae 40000000 		.4byte	.LASF23
+ 208 00ae 3A000000 		.4byte	.LASF23
  209 00b2 01       		.byte	0x1
- 210 00b3 0E       		.byte	0xe
+ 210 00b3 10       		.byte	0x10
  211 00b4 5D000000 		.4byte	0x5d
- 212 00b8 00000000 		.4byte	.LFB33
- 213 00bc 16000000 		.4byte	.LFE33-.LFB33
+ 212 00b8 00000000 		.4byte	.LFB32
+ 213 00bc 16000000 		.4byte	.LFE32-.LFB32
  214 00c0 01       		.uleb128 0x1
  215 00c1 9C       		.byte	0x9c
  216 00c2 EA000000 		.4byte	0xea
@@ -292,17 +290,17 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 1
  232 00e8 00       		.byte	0
  233 00e9 00       		.byte	0
  234 00ea 04       		.uleb128 0x4
- 235 00eb DA000000 		.4byte	.LASF15
+ 235 00eb EE000000 		.4byte	.LASF15
  236 00ef 01       		.byte	0x1
- 237 00f0 24       		.byte	0x24
- 238 00f1 00000000 		.4byte	.LFB35
- 239 00f5 10000000 		.4byte	.LFE35-.LFB35
+ 237 00f0 22       		.byte	0x22
+ 238 00f1 00000000 		.4byte	.LFB34
+ 239 00f5 10000000 		.4byte	.LFE34-.LFB34
  240 00f9 01       		.uleb128 0x1
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 6
-
-
  241 00fa 9C       		.byte	0x9c
  242 00fb 1A010000 		.4byte	0x11a
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc0AgFCR.s 			page 6
+
+
  243 00ff 05       		.uleb128 0x5
  244 0100 06000000 		.4byte	.LVL4
  245 0104 3B010000 		.4byte	0x13b
@@ -318,25 +316,25 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 1
  255 0118 00       		.byte	0
  256 0119 00       		.byte	0
  257 011a 09       		.uleb128 0x9
- 258 011b 9E010000 		.4byte	.LASF16
- 259 011f 9E010000 		.4byte	.LASF16
+ 258 011b 60000000 		.4byte	.LASF16
+ 259 011f 60000000 		.4byte	.LASF16
  260 0123 02       		.byte	0x2
  261 0124 72       		.byte	0x72
  262 0125 09       		.uleb128 0x9
- 263 0126 1B000000 		.4byte	.LASF17
- 264 012a 1B000000 		.4byte	.LASF17
+ 263 0126 3F000000 		.4byte	.LASF17
+ 264 012a 3F000000 		.4byte	.LASF17
  265 012e 03       		.byte	0x3
- 266 012f 19       		.byte	0x19
+ 266 012f 13       		.byte	0x13
  267 0130 09       		.uleb128 0x9
- 268 0131 64000000 		.4byte	.LASF18
- 269 0135 64000000 		.4byte	.LASF18
+ 268 0131 6B000000 		.4byte	.LASF18
+ 269 0135 6B000000 		.4byte	.LASF18
  270 0139 04       		.byte	0x4
  271 013a EC       		.byte	0xec
  272 013b 09       		.uleb128 0x9
- 273 013c B0000000 		.4byte	.LASF19
- 274 0140 B0000000 		.4byte	.LASF19
+ 273 013c BD000000 		.4byte	.LASF19
+ 274 0140 BD000000 		.4byte	.LASF19
  275 0144 03       		.byte	0x3
- 276 0145 16       		.byte	0x16
+ 276 0145 11       		.byte	0x11
  277 0146 00       		.byte	0
  278              		.section	.debug_abbrev,"",%progbits
  279              	.Ldebug_abbrev0:
@@ -358,11 +356,11 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 1
  295 000f 10       		.uleb128 0x10
  296 0010 17       		.uleb128 0x17
  297 0011 00       		.byte	0
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 7
-
-
  298 0012 00       		.byte	0
  299 0013 02       		.uleb128 0x2
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc0AgFCR.s 			page 7
+
+
  300 0014 24       		.uleb128 0x24
  301 0015 00       		.byte	0
  302 0016 0B       		.uleb128 0xb
@@ -418,11 +416,11 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 1
  352 004b 00       		.byte	0
  353 004c 06       		.uleb128 0x6
  354 004d 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 8
-
-
  355 004e 01       		.byte	0x1
  356 004f 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc0AgFCR.s 			page 8
+
+
  357 0050 19       		.uleb128 0x19
  358 0051 03       		.uleb128 0x3
  359 0052 0E       		.uleb128 0xe
@@ -478,11 +476,11 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 1
  409 008b 03       		.uleb128 0x3
  410 008c 0E       		.uleb128 0xe
  411 008d 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 9
-
-
  412 008e 0B       		.uleb128 0xb
  413 008f 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc0AgFCR.s 			page 9
+
+
  414 0090 0B       		.uleb128 0xb
  415 0091 00       		.byte	0
  416 0092 00       		.byte	0
@@ -495,22 +493,22 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 1
  423 000b 00       		.byte	0
  424 000c 0000     		.2byte	0
  425 000e 0000     		.2byte	0
- 426 0010 00000000 		.4byte	.LFB34
- 427 0014 08000000 		.4byte	.LFE34-.LFB34
- 428 0018 00000000 		.4byte	.LFB33
- 429 001c 16000000 		.4byte	.LFE33-.LFB33
- 430 0020 00000000 		.4byte	.LFB35
- 431 0024 10000000 		.4byte	.LFE35-.LFB35
+ 426 0010 00000000 		.4byte	.LFB33
+ 427 0014 08000000 		.4byte	.LFE33-.LFB33
+ 428 0018 00000000 		.4byte	.LFB32
+ 429 001c 16000000 		.4byte	.LFE32-.LFB32
+ 430 0020 00000000 		.4byte	.LFB34
+ 431 0024 10000000 		.4byte	.LFE34-.LFB34
  432 0028 00000000 		.4byte	0
  433 002c 00000000 		.4byte	0
  434              		.section	.debug_ranges,"",%progbits
  435              	.Ldebug_ranges0:
- 436 0000 00000000 		.4byte	.LFB34
- 437 0004 08000000 		.4byte	.LFE34
- 438 0008 00000000 		.4byte	.LFB33
- 439 000c 16000000 		.4byte	.LFE33
- 440 0010 00000000 		.4byte	.LFB35
- 441 0014 10000000 		.4byte	.LFE35
+ 436 0000 00000000 		.4byte	.LFB33
+ 437 0004 08000000 		.4byte	.LFE33
+ 438 0008 00000000 		.4byte	.LFB32
+ 439 000c 16000000 		.4byte	.LFE32
+ 440 0010 00000000 		.4byte	.LFB34
+ 441 0014 10000000 		.4byte	.LFE34
  442 0018 00000000 		.4byte	0
  443 001c 00000000 		.4byte	0
  444              		.section	.debug_line,"",%progbits
@@ -530,118 +528,118 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 1
  450      676E6564 
  450      20696E74 
  450      00
- 451              	.LASF17:
- 452 001b 72656365 		.ascii	"receive_After_Transmit_String\000"
- 452      6976655F 
- 452      41667465 
- 452      725F5472 
- 452      616E736D 
- 453              	.LASF21:
- 454 0039 6D61696E 		.ascii	"main.c\000"
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 10
+ 451              	.LASF22:
+ 452 001b 443A5C70 		.ascii	"D:\\psoc\\theory\\uart\\uart.cydsn\000"
+ 452      736F635C 
+ 452      7468656F 
+ 452      72795C75 
+ 452      6172745C 
+ 453              	.LASF23:
+ 454 003a 6D61696E 		.ascii	"main\000"
+ 454      00
+ 455              	.LASF17:
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc0AgFCR.s 			page 10
 
 
- 454      2E6300
- 455              	.LASF23:
- 456 0040 6D61696E 		.ascii	"main\000"
- 456      00
- 457              	.LASF22:
- 458 0045 443A5C70 		.ascii	"D:\\psoc\\theory\\uart\\uart.cydsn\000"
- 458      736F635C 
- 458      7468656F 
- 458      72795C75 
- 458      6172745C 
+ 456 003f 72656365 		.ascii	"receive_After_Transmit_Char_Type\000"
+ 456      6976655F 
+ 456      41667465 
+ 456      725F5472 
+ 456      616E736D 
+ 457              	.LASF16:
+ 458 0060 75617274 		.ascii	"uart_Start\000"
+ 458      5F537461 
+ 458      727400
  459              	.LASF18:
- 460 0064 43794465 		.ascii	"CyDelay\000"
+ 460 006b 43794465 		.ascii	"CyDelay\000"
  460      6C617900 
  461              	.LASF5:
- 462 006c 6C6F6E67 		.ascii	"long unsigned int\000"
+ 462 0073 6C6F6E67 		.ascii	"long unsigned int\000"
  462      20756E73 
  462      69676E65 
  462      6420696E 
  462      7400
  463              	.LASF7:
- 464 007e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 464 0085 6C6F6E67 		.ascii	"long long unsigned int\000"
  464      206C6F6E 
  464      6720756E 
  464      7369676E 
  464      65642069 
- 465              	.LASF14:
- 466 0095 636F6E66 		.ascii	"configSystem\000"
- 466      69675379 
- 466      7374656D 
- 466      00
- 467              	.LASF1:
- 468 00a2 756E7369 		.ascii	"unsigned char\000"
- 468      676E6564 
- 468      20636861 
- 468      7200
- 469              	.LASF19:
- 470 00b0 7072696E 		.ascii	"printNumberIncrement\000"
- 470      744E756D 
- 470      62657249 
- 470      6E637265 
- 470      6D656E74 
- 471              	.LASF11:
- 472 00c5 63686172 		.ascii	"char\000"
- 472      00
- 473              	.LASF4:
- 474 00ca 6C6F6E67 		.ascii	"long int\000"
- 474      20696E74 
+ 465              	.LASF9:
+ 466 009c 666C6F61 		.ascii	"float\000"
+ 466      7400
+ 467              	.LASF14:
+ 468 00a2 636F6E66 		.ascii	"configSystem\000"
+ 468      69675379 
+ 468      7374656D 
+ 468      00
+ 469              	.LASF1:
+ 470 00af 756E7369 		.ascii	"unsigned char\000"
+ 470      676E6564 
+ 470      20636861 
+ 470      7200
+ 471              	.LASF19:
+ 472 00bd 7072696E 		.ascii	"printNumberIncrement\000"
+ 472      744E756D 
+ 472      62657249 
+ 472      6E637265 
+ 472      6D656E74 
+ 473              	.LASF11:
+ 474 00d2 63686172 		.ascii	"char\000"
  474      00
- 475              	.LASF10:
- 476 00d3 646F7562 		.ascii	"double\000"
- 476      6C6500
- 477              	.LASF15:
- 478 00da 75617274 		.ascii	"uartHandle\000"
- 478      48616E64 
- 478      6C6500
- 479              	.LASF20:
- 480 00e5 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccLWZJgW.s 			page 11
+ 475              	.LASF21:
+ 476 00d7 6D61696E 		.ascii	"main.c\000"
+ 476      2E6300
+ 477              	.LASF4:
+ 478 00de 6C6F6E67 		.ascii	"long int\000"
+ 478      20696E74 
+ 478      00
+ 479              	.LASF10:
+ 480 00e7 646F7562 		.ascii	"double\000"
+ 480      6C6500
+ 481              	.LASF15:
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cc0AgFCR.s 			page 11
 
 
- 480      43313120 
- 480      352E342E 
- 480      31203230 
- 480      31363036 
- 481 0118 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
- 481      20726576 
- 481      6973696F 
- 481      6E203233 
- 481      37373135 
- 482 014b 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 482      66756E63 
- 482      74696F6E 
- 482      2D736563 
- 482      74696F6E 
- 483              	.LASF3:
- 484 0173 73686F72 		.ascii	"short unsigned int\000"
- 484      7420756E 
- 484      7369676E 
- 484      65642069 
- 484      6E7400
- 485              	.LASF0:
- 486 0186 7369676E 		.ascii	"signed char\000"
- 486      65642063 
- 486      68617200 
- 487              	.LASF12:
- 488 0192 6C6F6E67 		.ascii	"long double\000"
- 488      20646F75 
- 488      626C6500 
- 489              	.LASF16:
- 490 019e 75617274 		.ascii	"uart_Start\000"
- 490      5F537461 
- 490      727400
- 491              	.LASF9:
- 492 01a9 666C6F61 		.ascii	"float\000"
- 492      7400
+ 482 00ee 75617274 		.ascii	"uartHandle\000"
+ 482      48616E64 
+ 482      6C6500
+ 483              	.LASF20:
+ 484 00f9 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 484      43313120 
+ 484      352E342E 
+ 484      31203230 
+ 484      31363036 
+ 485 012c 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 485      20726576 
+ 485      6973696F 
+ 485      6E203233 
+ 485      37373135 
+ 486 015f 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 486      66756E63 
+ 486      74696F6E 
+ 486      2D736563 
+ 486      74696F6E 
+ 487              	.LASF3:
+ 488 0187 73686F72 		.ascii	"short unsigned int\000"
+ 488      7420756E 
+ 488      7369676E 
+ 488      65642069 
+ 488      6E7400
+ 489              	.LASF0:
+ 490 019a 7369676E 		.ascii	"signed char\000"
+ 490      65642063 
+ 490      68617200 
+ 491              	.LASF12:
+ 492 01a6 6C6F6E67 		.ascii	"long double\000"
+ 492      20646F75 
+ 492      626C6500 
  493              	.LASF2:
- 494 01af 73686F72 		.ascii	"short int\000"
+ 494 01b2 73686F72 		.ascii	"short int\000"
  494      7420696E 
  494      7400
  495              	.LASF13:
- 496 01b9 73697A65 		.ascii	"sizetype\000"
+ 496 01bc 73697A65 		.ascii	"sizetype\000"
  496      74797065 
  496      00
  497              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

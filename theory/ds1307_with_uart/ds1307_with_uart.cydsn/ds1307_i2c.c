@@ -9,20 +9,22 @@
  *
  * ========================================
 */
+#include "project.h"
 #include "ds1307_i2c.h"
 
+#define ADDRESS_SLAVE_DS1307 0x68
 
 uint8 BCD_to_DEC(uint8 data);
 uint8 DEC_to_BCD(uint8 data);
 
 uint8 BCD_to_DEC(uint8 data)
 {
-	return (data>>4)*10 + (data&0x0f);
+	return ( (data>>4)*10 + (data&0x0f) );
 }
 
 uint8 DEC_to_BCD(uint8 data)
 {
-	return (data/10)<<4 | (data%10);
+	return ( (data/10)<<4 | (data%10) );
 }
 
 /*
@@ -62,7 +64,6 @@ void ds1307_read_data(data_time *time)
     time->year = BCD_to_DEC(temp[6]);     
 }
 
-
 void ds1307_write_data(data_time *time)
 {
     uint8 result, i;
@@ -83,7 +84,7 @@ void ds1307_write_data(data_time *time)
     
    i2c_ds1307_I2CMasterWriteByte((uint32)0x00, 1);
     
-    for(i=0; i<=6; i++)
+    for(i=0; i<7; i++)
     {
         i2c_ds1307_I2CMasterWriteByte(temp[i], 1);
     }
@@ -93,14 +94,13 @@ void ds1307_write_data(data_time *time)
 
 void ds1307_time_init(data_time *time)
 {
-    time->second = 12;
-    time->minute = 12;
-    time->hour = 12;
-    time->day = 1;
-    time->date = 29;
-    time->month = 8;
+    time->second = 00;
+    time->minute = 6;
+    time->hour = 10;
+    time->day = 3;
+    time->date = 6;
+    time->month = 6;
     time->year = 22;
 }
-
 
 /* [] END OF FILE */

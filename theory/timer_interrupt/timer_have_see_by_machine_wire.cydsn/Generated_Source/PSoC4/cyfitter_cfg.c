@@ -191,7 +191,7 @@ static void ClockSetup(void)
 	CY_SET_REG32((void *)(CYREG_CLK_SELECT), 0x00000000u);
 
 	/* CYDEV_CLK_DIVIDER_A00 Starting address: CYDEV_CLK_DIVIDER_A00 */
-	CY_SET_REG32((void *)(CYREG_CLK_DIVIDER_A00), 0x8000095Fu);
+	CY_SET_REG32((void *)(CYREG_CLK_DIVIDER_A00), 0x800000EFu);
 
 	(void)CyIntSetVector(9u, &CySysWdtIsr);
 	CyIntEnable(9u);

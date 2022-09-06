@@ -9,7 +9,15 @@
  *
  * ========================================
 */
+#include "project.h"
+
 #include "ledSingle.h"
+
+enum Status_Led
+{
+    TURN_ON,
+    TURN_OFF
+};
 
 void ledBlink()
 {
@@ -19,12 +27,12 @@ void ledBlink()
 
 void ledTurnOn()
 {
-    ledRed_Write(0);
+    ledRed_Write(TURN_ON);
 }
 
 void ledTurnOff()
 {
-    ledRed_Write(1);    
+    ledRed_Write(TURN_OFF);    
 }
 
 /* [] END OF FILE */

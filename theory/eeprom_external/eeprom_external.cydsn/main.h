@@ -11,12 +11,10 @@
 */
 
 /*
-    Admin: Dang Thi Nhien
-    Address: Cty Dien Giao Thong 
-    Time: 28/8/2022
-    Project: using ic eeprom
+    Dang Nhien
+    Time  28/8/2022
+    Update 5/9/2022
 */
-    
 #ifndef MAIN_H
 #define MAIN_H
 

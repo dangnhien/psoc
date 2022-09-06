@@ -12,9 +12,6 @@
 #ifndef UART_TRANSMIT_H
 #define UART_TRANSMIT_H
     
-    #include <stdio.h>
-    #include "project.h"
-    
     void test_transmit_data();
     void transmit_data_to_computer(float data_need_convert,int location);
     

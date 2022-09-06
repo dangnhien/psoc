@@ -11,18 +11,12 @@
 */
 
 /*
-    Admin: Dang Thi Nhien
-    Address: Cty Dien Giao Thong 
-    Time: 28/8/2022
-    Project: using ds1307 module
+    Dang Nhien
+    Time 28/8/2022
+    Update 5/9/2022 
 */
 #ifndef MAIN_H
 #define MAIN_H
-    
-    #include <stdio.h>
-    #include "project.h"
-    #include "ds1307_i2c.h"
-    #include "uart_transmitss.h"
     
     void system_initialization();        
 

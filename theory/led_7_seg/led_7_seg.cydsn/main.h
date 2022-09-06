@@ -9,13 +9,9 @@
  *
  * ========================================
 */
-    #ifndef MAIN_H
-    #define MAIN_H
-    
-        #include <stdio.h>
-        #include "project.h"
-        #include "Led7_Seg.h"
-    
-    #endif
+#ifndef MAIN_H
+#define MAIN_H
+
+#endif
 
 /* [] END OF FILE */

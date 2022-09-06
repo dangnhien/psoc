@@ -9,6 +9,8 @@
  *
  * ========================================
 */
+#include "project.h"
+#include <stdio.h>    
 #include "applicationUart.h"
 
 void printNumber(int number)
@@ -16,7 +18,6 @@ void printNumber(int number)
     char strings[30];
     
     sprintf(strings, "%d\n", number);
-    
     uart_UartPutString(strings);    
 } 
 
@@ -30,7 +31,6 @@ void printNumberIncrement()
         number = 5;   
     
     sprintf(strings, "%d\n", number);
-    
     uart_UartPutString(strings); 
 }
 
@@ -59,8 +59,8 @@ void receive_After_Transmit_Char_Type()
     // Handle received characters
 }
 
-
 /*
+//error receive
 void receive_After_Transmit_String()
 {
     static int i=0; 

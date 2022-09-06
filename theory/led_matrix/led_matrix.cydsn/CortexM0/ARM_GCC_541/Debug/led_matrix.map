@@ -971,32 +971,32 @@ END GROUP
  .debug_abbrev  0x000014da       0xc8 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(row_matrix_7.o)
  .debug_abbrev  0x000015a2       0x14 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(CyBootAsmGnu.o)
 
-.debug_line     0x00000000     0x1c99
+.debug_line     0x00000000     0x1c97
  *(.debug_line)
- .debug_line    0x00000000       0x4d .\CortexM0\ARM_GCC_541\Debug\main.o
- .debug_line    0x0000004d      0x23b .\CortexM0\ARM_GCC_541\Debug\ledMatrix.o
- .debug_line    0x00000288      0x12e .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_line    0x000003b6      0x141 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
- .debug_line    0x000004f7      0x235 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_line    0x0000072c      0x460 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(CyLib.o)
- .debug_line    0x00000b8c      0x466 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(CyLFClk.o)
- .debug_line    0x00000ff2       0xc3 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(col_matrix_0.o)
- .debug_line    0x000010b5       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(col_matrix_3.o)
- .debug_line    0x00001179       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(col_matrix_2.o)
- .debug_line    0x0000123d       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(col_matrix_1.o)
- .debug_line    0x00001301       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(col_matrix_4.o)
- .debug_line    0x000013c5       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(col_matrix_5.o)
- .debug_line    0x00001489       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(col_matrix_6.o)
- .debug_line    0x0000154d       0xc3 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(row_matrix_0.o)
- .debug_line    0x00001610       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(row_matrix_1.o)
- .debug_line    0x000016d4       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(row_matrix_2.o)
- .debug_line    0x00001798       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(row_matrix_3.o)
- .debug_line    0x0000185c       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(row_matrix_4.o)
- .debug_line    0x00001920       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(row_matrix_5.o)
- .debug_line    0x000019e4       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(row_matrix_6.o)
- .debug_line    0x00001aa8       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(col_matrix_7.o)
- .debug_line    0x00001b6c       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(row_matrix_7.o)
- .debug_line    0x00001c30       0x69 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(CyBootAsmGnu.o)
+ .debug_line    0x00000000       0x4b .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_line    0x0000004b      0x23b .\CortexM0\ARM_GCC_541\Debug\ledMatrix.o
+ .debug_line    0x00000286      0x12e .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_line    0x000003b4      0x141 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_line    0x000004f5      0x235 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_line    0x0000072a      0x460 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(CyLib.o)
+ .debug_line    0x00000b8a      0x466 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(CyLFClk.o)
+ .debug_line    0x00000ff0       0xc3 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(col_matrix_0.o)
+ .debug_line    0x000010b3       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(col_matrix_3.o)
+ .debug_line    0x00001177       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(col_matrix_2.o)
+ .debug_line    0x0000123b       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(col_matrix_1.o)
+ .debug_line    0x000012ff       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(col_matrix_4.o)
+ .debug_line    0x000013c3       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(col_matrix_5.o)
+ .debug_line    0x00001487       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(col_matrix_6.o)
+ .debug_line    0x0000154b       0xc3 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(row_matrix_0.o)
+ .debug_line    0x0000160e       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(row_matrix_1.o)
+ .debug_line    0x000016d2       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(row_matrix_2.o)
+ .debug_line    0x00001796       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(row_matrix_3.o)
+ .debug_line    0x0000185a       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(row_matrix_4.o)
+ .debug_line    0x0000191e       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(row_matrix_5.o)
+ .debug_line    0x000019e2       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(row_matrix_6.o)
+ .debug_line    0x00001aa6       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(col_matrix_7.o)
+ .debug_line    0x00001b6a       0xc4 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(row_matrix_7.o)
+ .debug_line    0x00001c2e       0x69 .\CortexM0\ARM_GCC_541\Debug\led_matrix.a(CyBootAsmGnu.o)
 
 .debug_frame    0x00000000     0x1108
  *(.debug_frame)

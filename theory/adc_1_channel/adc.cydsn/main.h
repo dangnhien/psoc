@@ -12,9 +12,6 @@
 #ifndef MAIN_H
 #define MAIN_H
     
-    #include <stdio.h>
-    #include "project.h"
-
     void Init_System();
     float readADC();
     void transmitToPC(float adcData);

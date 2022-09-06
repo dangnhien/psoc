@@ -9,6 +9,7 @@
  *
  * ========================================
 */
+#include "project.h"
 #include "main.h"
 
 int main(void)
@@ -28,10 +29,10 @@ void configSystem()
     lcd_Start();    
     
     lcd_Position(0u,0u);
-    lcd_PrintString("hello wourld");
+    lcd_PrintString("Hello world.");
     lcd_Position(1u,0u);
-    lcd_PrintString("hello1 wourld");
-    CyDelay(1000);
+    lcd_PrintString("I am Dat.");
+    CyDelay(10000);
     lcd_ClearDisplay();
 }
 

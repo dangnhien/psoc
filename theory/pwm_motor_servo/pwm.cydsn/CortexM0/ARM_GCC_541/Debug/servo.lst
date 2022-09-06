@@ -1,0 +1,868 @@
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccaNqhoC.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"servo.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.from90DegreeTo180Degree,"ax",%progbits
+  20              		.align	2
+  21              		.global	from90DegreeTo180Degree
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	from90DegreeTo180Degree, %function
+  25              	from90DegreeTo180Degree:
+  26              	.LFB32:
+  27              		.file 1 "servo.c"
+   1:servo.c       **** /* ========================================
+   2:servo.c       ****  *
+   3:servo.c       ****  * Copyright YOUR COMPANY, THE YEAR
+   4:servo.c       ****  * All Rights Reserved
+   5:servo.c       ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:servo.c       ****  *
+   7:servo.c       ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:servo.c       ****  * WHICH IS THE PROPERTY OF your company.
+   9:servo.c       ****  *
+  10:servo.c       ****  * ========================================
+  11:servo.c       **** */
+  12:servo.c       **** #include "project.h"
+  13:servo.c       **** #include "servo.h"
+  14:servo.c       **** 
+  15:servo.c       **** /*
+  16:servo.c       ****     20ms  --> 0.02s  --> 50Hz --> clock 50kHz
+  17:servo.c       ****                               --> period 1000
+  18:servo.c       ****                               --> compear 500 --> 500/1000 = 50%
+  19:servo.c       **** */
+  20:servo.c       **** void from90DegreeTo180Degree(int *value_compare)
+  21:servo.c       **** {
+  28              		.loc 1 21 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33 0000 10B5     		push	{r4, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 4, -8
+  36              		.cfi_offset 14, -4
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccaNqhoC.s 			page 2
+
+
+  22:servo.c       ****     (*value_compare == 75) ? (*value_compare = 100) : (*value_compare = 75);
+  37              		.loc 1 22 0
+  38 0002 0368     		ldr	r3, [r0]
+  39 0004 4B2B     		cmp	r3, #75
+  40 0006 02D1     		bne	.L2
+  41              		.loc 1 22 0 is_stmt 0 discriminator 1
+  42 0008 1933     		adds	r3, r3, #25
+  43 000a 0360     		str	r3, [r0]
+  44 000c 01E0     		b	.L3
+  45              	.L2:
+  46              		.loc 1 22 0 discriminator 2
+  47 000e 4B23     		movs	r3, #75
+  48 0010 0360     		str	r3, [r0]
+  49              	.L3:
+  23:servo.c       ****     
+  24:servo.c       ****     pwm_WriteCompare(*value_compare);
+  50              		.loc 1 24 0 is_stmt 1
+  51 0012 0068     		ldr	r0, [r0]
+  52              	.LVL1:
+  53 0014 FFF7FEFF 		bl	pwm_WriteCompare
+  54              	.LVL2:
+  25:servo.c       **** }
+  55              		.loc 1 25 0
+  56              		@ sp needed
+  57 0018 10BD     		pop	{r4, pc}
+  58              		.cfi_endproc
+  59              	.LFE32:
+  60              		.size	from90DegreeTo180Degree, .-from90DegreeTo180Degree
+  61 001a C046     		.section	.text.from0DegreeTo180Degree,"ax",%progbits
+  62              		.align	2
+  63              		.global	from0DegreeTo180Degree
+  64              		.code	16
+  65              		.thumb_func
+  66              		.type	from0DegreeTo180Degree, %function
+  67              	from0DegreeTo180Degree:
+  68              	.LFB33:
+  26:servo.c       **** 
+  27:servo.c       **** void from0DegreeTo180Degree(int *value_compare)
+  28:servo.c       **** {
+  69              		.loc 1 28 0
+  70              		.cfi_startproc
+  71              		@ args = 0, pretend = 0, frame = 0
+  72              		@ frame_needed = 0, uses_anonymous_args = 0
+  73              	.LVL3:
+  74 0000 10B5     		push	{r4, lr}
+  75              		.cfi_def_cfa_offset 8
+  76              		.cfi_offset 4, -8
+  77              		.cfi_offset 14, -4
+  29:servo.c       ****     (*value_compare == 50) ? (*value_compare = 100) : (*value_compare = 50);
+  78              		.loc 1 29 0
+  79 0002 0368     		ldr	r3, [r0]
+  80 0004 322B     		cmp	r3, #50
+  81 0006 02D1     		bne	.L5
+  82              		.loc 1 29 0 is_stmt 0 discriminator 1
+  83 0008 3233     		adds	r3, r3, #50
+  84 000a 0360     		str	r3, [r0]
+  85 000c 01E0     		b	.L6
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccaNqhoC.s 			page 3
+
+
+  86              	.L5:
+  87              		.loc 1 29 0 discriminator 2
+  88 000e 3223     		movs	r3, #50
+  89 0010 0360     		str	r3, [r0]
+  90              	.L6:
+  30:servo.c       ****     
+  31:servo.c       ****     pwm_WriteCompare(*value_compare);
+  91              		.loc 1 31 0 is_stmt 1
+  92 0012 0068     		ldr	r0, [r0]
+  93              	.LVL4:
+  94 0014 FFF7FEFF 		bl	pwm_WriteCompare
+  95              	.LVL5:
+  32:servo.c       **** }
+  96              		.loc 1 32 0
+  97              		@ sp needed
+  98 0018 10BD     		pop	{r4, pc}
+  99              		.cfi_endproc
+ 100              	.LFE33:
+ 101              		.size	from0DegreeTo180Degree, .-from0DegreeTo180Degree
+ 102 001a C046     		.section	.text.location0Degree,"ax",%progbits
+ 103              		.align	2
+ 104              		.global	location0Degree
+ 105              		.code	16
+ 106              		.thumb_func
+ 107              		.type	location0Degree, %function
+ 108              	location0Degree:
+ 109              	.LFB34:
+  33:servo.c       **** /*
+  34:servo.c       ****     Location 180 degree of circle:
+  35:servo.c       ****     1ms of 20ms --> (1/20)*period = (1/20)*1000 = 50;
+  36:servo.c       **** */
+  37:servo.c       **** void location0Degree()
+  38:servo.c       **** {
+ 110              		.loc 1 38 0
+ 111              		.cfi_startproc
+ 112              		@ args = 0, pretend = 0, frame = 0
+ 113              		@ frame_needed = 0, uses_anonymous_args = 0
+ 114 0000 10B5     		push	{r4, lr}
+ 115              		.cfi_def_cfa_offset 8
+ 116              		.cfi_offset 4, -8
+ 117              		.cfi_offset 14, -4
+ 118              	.LVL6:
+  39:servo.c       ****     int value_compare = 50; 
+  40:servo.c       ****     
+  41:servo.c       ****     pwm_WriteCompare(value_compare);
+ 119              		.loc 1 41 0
+ 120 0002 3220     		movs	r0, #50
+ 121 0004 FFF7FEFF 		bl	pwm_WriteCompare
+ 122              	.LVL7:
+  42:servo.c       **** }
+ 123              		.loc 1 42 0
+ 124              		@ sp needed
+ 125 0008 10BD     		pop	{r4, pc}
+ 126              		.cfi_endproc
+ 127              	.LFE34:
+ 128              		.size	location0Degree, .-location0Degree
+ 129 000a C046     		.section	.text.location90Degree,"ax",%progbits
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccaNqhoC.s 			page 4
+
+
+ 130              		.align	2
+ 131              		.global	location90Degree
+ 132              		.code	16
+ 133              		.thumb_func
+ 134              		.type	location90Degree, %function
+ 135              	location90Degree:
+ 136              	.LFB35:
+  43:servo.c       **** 
+  44:servo.c       **** /*
+  45:servo.c       ****     Location 90 degree of circle:
+  46:servo.c       ****     1.5ms  of 20ms  -->  (1.5/20)*period = (1.5/20)*1000 = 75
+  47:servo.c       **** 
+  48:servo.c       **** */
+  49:servo.c       **** void location90Degree()
+  50:servo.c       **** {
+ 137              		.loc 1 50 0
+ 138              		.cfi_startproc
+ 139              		@ args = 0, pretend = 0, frame = 0
+ 140              		@ frame_needed = 0, uses_anonymous_args = 0
+ 141 0000 10B5     		push	{r4, lr}
+ 142              		.cfi_def_cfa_offset 8
+ 143              		.cfi_offset 4, -8
+ 144              		.cfi_offset 14, -4
+ 145              	.LVL8:
+  51:servo.c       ****     int value_compare = 75;
+  52:servo.c       ****     
+  53:servo.c       ****     pwm_WriteCompare(value_compare);
+ 146              		.loc 1 53 0
+ 147 0002 4B20     		movs	r0, #75
+ 148 0004 FFF7FEFF 		bl	pwm_WriteCompare
+ 149              	.LVL9:
+  54:servo.c       **** }
+ 150              		.loc 1 54 0
+ 151              		@ sp needed
+ 152 0008 10BD     		pop	{r4, pc}
+ 153              		.cfi_endproc
+ 154              	.LFE35:
+ 155              		.size	location90Degree, .-location90Degree
+ 156 000a C046     		.section	.text.location180Degree,"ax",%progbits
+ 157              		.align	2
+ 158              		.global	location180Degree
+ 159              		.code	16
+ 160              		.thumb_func
+ 161              		.type	location180Degree, %function
+ 162              	location180Degree:
+ 163              	.LFB36:
+  55:servo.c       **** 
+  56:servo.c       **** /*
+  57:servo.c       ****     Location 0 degree of circle:
+  58:servo.c       ****     2ms of 20ms  --> (2/20)*period = (2/20)*1000 = 100
+  59:servo.c       **** */
+  60:servo.c       **** void location180Degree()
+  61:servo.c       **** {
+ 164              		.loc 1 61 0
+ 165              		.cfi_startproc
+ 166              		@ args = 0, pretend = 0, frame = 0
+ 167              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccaNqhoC.s 			page 5
+
+
+ 168 0000 10B5     		push	{r4, lr}
+ 169              		.cfi_def_cfa_offset 8
+ 170              		.cfi_offset 4, -8
+ 171              		.cfi_offset 14, -4
+ 172              	.LVL10:
+  62:servo.c       ****     int value_compare = 100;
+  63:servo.c       ****     
+  64:servo.c       ****      pwm_WriteCompare(value_compare);
+ 173              		.loc 1 64 0
+ 174 0002 6420     		movs	r0, #100
+ 175 0004 FFF7FEFF 		bl	pwm_WriteCompare
+ 176              	.LVL11:
+  65:servo.c       **** }
+ 177              		.loc 1 65 0
+ 178              		@ sp needed
+ 179 0008 10BD     		pop	{r4, pc}
+ 180              		.cfi_endproc
+ 181              	.LFE36:
+ 182              		.size	location180Degree, .-location180Degree
+ 183 000a C046     		.text
+ 184              	.Letext0:
+ 185              		.file 2 "Generated_Source\\PSoC4/pwm.h"
+ 186              		.section	.debug_info,"",%progbits
+ 187              	.Ldebug_info0:
+ 188 0000 8F010000 		.4byte	0x18f
+ 189 0004 0400     		.2byte	0x4
+ 190 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 191 000a 04       		.byte	0x4
+ 192 000b 01       		.uleb128 0x1
+ 193 000c BE000000 		.4byte	.LASF20
+ 194 0010 0C       		.byte	0xc
+ 195 0011 5B000000 		.4byte	.LASF21
+ 196 0015 B9010000 		.4byte	.LASF22
+ 197 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 198 001d 00000000 		.4byte	0
+ 199 0021 00000000 		.4byte	.Ldebug_line0
+ 200 0025 02       		.uleb128 0x2
+ 201 0026 01       		.byte	0x1
+ 202 0027 06       		.byte	0x6
+ 203 0028 5F010000 		.4byte	.LASF0
+ 204 002c 02       		.uleb128 0x2
+ 205 002d 01       		.byte	0x1
+ 206 002e 08       		.byte	0x8
+ 207 002f 63000000 		.4byte	.LASF1
+ 208 0033 02       		.uleb128 0x2
+ 209 0034 02       		.byte	0x2
+ 210 0035 05       		.byte	0x5
+ 211 0036 AF010000 		.4byte	.LASF2
+ 212 003a 02       		.uleb128 0x2
+ 213 003b 02       		.byte	0x2
+ 214 003c 07       		.byte	0x7
+ 215 003d 4C010000 		.4byte	.LASF3
+ 216 0041 02       		.uleb128 0x2
+ 217 0042 04       		.byte	0x4
+ 218 0043 05       		.byte	0x5
+ 219 0044 8D000000 		.4byte	.LASF4
+ 220 0048 02       		.uleb128 0x2
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccaNqhoC.s 			page 6
+
+
+ 221 0049 04       		.byte	0x4
+ 222 004a 07       		.byte	0x7
+ 223 004b 2C000000 		.4byte	.LASF5
+ 224 004f 02       		.uleb128 0x2
+ 225 0050 08       		.byte	0x8
+ 226 0051 05       		.byte	0x5
+ 227 0052 00000000 		.4byte	.LASF6
+ 228 0056 02       		.uleb128 0x2
+ 229 0057 08       		.byte	0x8
+ 230 0058 07       		.byte	0x7
+ 231 0059 3E000000 		.4byte	.LASF7
+ 232 005d 03       		.uleb128 0x3
+ 233 005e 04       		.byte	0x4
+ 234 005f 05       		.byte	0x5
+ 235 0060 696E7400 		.ascii	"int\000"
+ 236 0064 02       		.uleb128 0x2
+ 237 0065 04       		.byte	0x4
+ 238 0066 07       		.byte	0x7
+ 239 0067 0E000000 		.4byte	.LASF8
+ 240 006b 02       		.uleb128 0x2
+ 241 006c 04       		.byte	0x4
+ 242 006d 04       		.byte	0x4
+ 243 006e 55000000 		.4byte	.LASF9
+ 244 0072 02       		.uleb128 0x2
+ 245 0073 08       		.byte	0x8
+ 246 0074 04       		.byte	0x4
+ 247 0075 A7000000 		.4byte	.LASF10
+ 248 0079 02       		.uleb128 0x2
+ 249 007a 01       		.byte	0x1
+ 250 007b 08       		.byte	0x8
+ 251 007c 88000000 		.4byte	.LASF11
+ 252 0080 02       		.uleb128 0x2
+ 253 0081 08       		.byte	0x8
+ 254 0082 04       		.byte	0x4
+ 255 0083 95010000 		.4byte	.LASF12
+ 256 0087 02       		.uleb128 0x2
+ 257 0088 04       		.byte	0x4
+ 258 0089 07       		.byte	0x7
+ 259 008a E2010000 		.4byte	.LASF13
+ 260 008e 04       		.uleb128 0x4
+ 261 008f 7D010000 		.4byte	.LASF14
+ 262 0093 01       		.byte	0x1
+ 263 0094 14       		.byte	0x14
+ 264 0095 00000000 		.4byte	.LFB32
+ 265 0099 1A000000 		.4byte	.LFE32-.LFB32
+ 266 009d 01       		.uleb128 0x1
+ 267 009e 9C       		.byte	0x9c
+ 268 009f BC000000 		.4byte	0xbc
+ 269 00a3 05       		.uleb128 0x5
+ 270 00a4 A1010000 		.4byte	.LASF16
+ 271 00a8 01       		.byte	0x1
+ 272 00a9 14       		.byte	0x14
+ 273 00aa BC000000 		.4byte	0xbc
+ 274 00ae 00000000 		.4byte	.LLST0
+ 275 00b2 06       		.uleb128 0x6
+ 276 00b3 18000000 		.4byte	.LVL2
+ 277 00b7 86010000 		.4byte	0x186
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccaNqhoC.s 			page 7
+
+
+ 278 00bb 00       		.byte	0
+ 279 00bc 07       		.uleb128 0x7
+ 280 00bd 04       		.byte	0x4
+ 281 00be 5D000000 		.4byte	0x5d
+ 282 00c2 04       		.uleb128 0x4
+ 283 00c3 71000000 		.4byte	.LASF15
+ 284 00c7 01       		.byte	0x1
+ 285 00c8 1B       		.byte	0x1b
+ 286 00c9 00000000 		.4byte	.LFB33
+ 287 00cd 1A000000 		.4byte	.LFE33-.LFB33
+ 288 00d1 01       		.uleb128 0x1
+ 289 00d2 9C       		.byte	0x9c
+ 290 00d3 F0000000 		.4byte	0xf0
+ 291 00d7 05       		.uleb128 0x5
+ 292 00d8 A1010000 		.4byte	.LASF16
+ 293 00dc 01       		.byte	0x1
+ 294 00dd 1B       		.byte	0x1b
+ 295 00de BC000000 		.4byte	0xbc
+ 296 00e2 21000000 		.4byte	.LLST1
+ 297 00e6 06       		.uleb128 0x6
+ 298 00e7 18000000 		.4byte	.LVL5
+ 299 00eb 86010000 		.4byte	0x186
+ 300 00ef 00       		.byte	0
+ 301 00f0 08       		.uleb128 0x8
+ 302 00f1 AE000000 		.4byte	.LASF17
+ 303 00f5 01       		.byte	0x1
+ 304 00f6 25       		.byte	0x25
+ 305 00f7 00000000 		.4byte	.LFB34
+ 306 00fb 0A000000 		.4byte	.LFE34-.LFB34
+ 307 00ff 01       		.uleb128 0x1
+ 308 0100 9C       		.byte	0x9c
+ 309 0101 22010000 		.4byte	0x122
+ 310 0105 09       		.uleb128 0x9
+ 311 0106 A1010000 		.4byte	.LASF16
+ 312 010a 01       		.byte	0x1
+ 313 010b 27       		.byte	0x27
+ 314 010c 5D000000 		.4byte	0x5d
+ 315 0110 32       		.byte	0x32
+ 316 0111 0A       		.uleb128 0xa
+ 317 0112 08000000 		.4byte	.LVL7
+ 318 0116 86010000 		.4byte	0x186
+ 319 011a 0B       		.uleb128 0xb
+ 320 011b 01       		.uleb128 0x1
+ 321 011c 50       		.byte	0x50
+ 322 011d 02       		.uleb128 0x2
+ 323 011e 08       		.byte	0x8
+ 324 011f 32       		.byte	0x32
+ 325 0120 00       		.byte	0
+ 326 0121 00       		.byte	0
+ 327 0122 08       		.uleb128 0x8
+ 328 0123 96000000 		.4byte	.LASF18
+ 329 0127 01       		.byte	0x1
+ 330 0128 31       		.byte	0x31
+ 331 0129 00000000 		.4byte	.LFB35
+ 332 012d 0A000000 		.4byte	.LFE35-.LFB35
+ 333 0131 01       		.uleb128 0x1
+ 334 0132 9C       		.byte	0x9c
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccaNqhoC.s 			page 8
+
+
+ 335 0133 54010000 		.4byte	0x154
+ 336 0137 09       		.uleb128 0x9
+ 337 0138 A1010000 		.4byte	.LASF16
+ 338 013c 01       		.byte	0x1
+ 339 013d 33       		.byte	0x33
+ 340 013e 5D000000 		.4byte	0x5d
+ 341 0142 4B       		.byte	0x4b
+ 342 0143 0A       		.uleb128 0xa
+ 343 0144 08000000 		.4byte	.LVL9
+ 344 0148 86010000 		.4byte	0x186
+ 345 014c 0B       		.uleb128 0xb
+ 346 014d 01       		.uleb128 0x1
+ 347 014e 50       		.byte	0x50
+ 348 014f 02       		.uleb128 0x2
+ 349 0150 08       		.byte	0x8
+ 350 0151 4B       		.byte	0x4b
+ 351 0152 00       		.byte	0
+ 352 0153 00       		.byte	0
+ 353 0154 08       		.uleb128 0x8
+ 354 0155 6B010000 		.4byte	.LASF19
+ 355 0159 01       		.byte	0x1
+ 356 015a 3C       		.byte	0x3c
+ 357 015b 00000000 		.4byte	.LFB36
+ 358 015f 0A000000 		.4byte	.LFE36-.LFB36
+ 359 0163 01       		.uleb128 0x1
+ 360 0164 9C       		.byte	0x9c
+ 361 0165 86010000 		.4byte	0x186
+ 362 0169 09       		.uleb128 0x9
+ 363 016a A1010000 		.4byte	.LASF16
+ 364 016e 01       		.byte	0x1
+ 365 016f 3E       		.byte	0x3e
+ 366 0170 5D000000 		.4byte	0x5d
+ 367 0174 64       		.byte	0x64
+ 368 0175 0A       		.uleb128 0xa
+ 369 0176 08000000 		.4byte	.LVL11
+ 370 017a 86010000 		.4byte	0x186
+ 371 017e 0B       		.uleb128 0xb
+ 372 017f 01       		.uleb128 0x1
+ 373 0180 50       		.byte	0x50
+ 374 0181 02       		.uleb128 0x2
+ 375 0182 08       		.byte	0x8
+ 376 0183 64       		.byte	0x64
+ 377 0184 00       		.byte	0
+ 378 0185 00       		.byte	0
+ 379 0186 0C       		.uleb128 0xc
+ 380 0187 1B000000 		.4byte	.LASF23
+ 381 018b 1B000000 		.4byte	.LASF23
+ 382 018f 02       		.byte	0x2
+ 383 0190 5501     		.2byte	0x155
+ 384 0192 00       		.byte	0
+ 385              		.section	.debug_abbrev,"",%progbits
+ 386              	.Ldebug_abbrev0:
+ 387 0000 01       		.uleb128 0x1
+ 388 0001 11       		.uleb128 0x11
+ 389 0002 01       		.byte	0x1
+ 390 0003 25       		.uleb128 0x25
+ 391 0004 0E       		.uleb128 0xe
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccaNqhoC.s 			page 9
+
+
+ 392 0005 13       		.uleb128 0x13
+ 393 0006 0B       		.uleb128 0xb
+ 394 0007 03       		.uleb128 0x3
+ 395 0008 0E       		.uleb128 0xe
+ 396 0009 1B       		.uleb128 0x1b
+ 397 000a 0E       		.uleb128 0xe
+ 398 000b 55       		.uleb128 0x55
+ 399 000c 17       		.uleb128 0x17
+ 400 000d 11       		.uleb128 0x11
+ 401 000e 01       		.uleb128 0x1
+ 402 000f 10       		.uleb128 0x10
+ 403 0010 17       		.uleb128 0x17
+ 404 0011 00       		.byte	0
+ 405 0012 00       		.byte	0
+ 406 0013 02       		.uleb128 0x2
+ 407 0014 24       		.uleb128 0x24
+ 408 0015 00       		.byte	0
+ 409 0016 0B       		.uleb128 0xb
+ 410 0017 0B       		.uleb128 0xb
+ 411 0018 3E       		.uleb128 0x3e
+ 412 0019 0B       		.uleb128 0xb
+ 413 001a 03       		.uleb128 0x3
+ 414 001b 0E       		.uleb128 0xe
+ 415 001c 00       		.byte	0
+ 416 001d 00       		.byte	0
+ 417 001e 03       		.uleb128 0x3
+ 418 001f 24       		.uleb128 0x24
+ 419 0020 00       		.byte	0
+ 420 0021 0B       		.uleb128 0xb
+ 421 0022 0B       		.uleb128 0xb
+ 422 0023 3E       		.uleb128 0x3e
+ 423 0024 0B       		.uleb128 0xb
+ 424 0025 03       		.uleb128 0x3
+ 425 0026 08       		.uleb128 0x8
+ 426 0027 00       		.byte	0
+ 427 0028 00       		.byte	0
+ 428 0029 04       		.uleb128 0x4
+ 429 002a 2E       		.uleb128 0x2e
+ 430 002b 01       		.byte	0x1
+ 431 002c 3F       		.uleb128 0x3f
+ 432 002d 19       		.uleb128 0x19
+ 433 002e 03       		.uleb128 0x3
+ 434 002f 0E       		.uleb128 0xe
+ 435 0030 3A       		.uleb128 0x3a
+ 436 0031 0B       		.uleb128 0xb
+ 437 0032 3B       		.uleb128 0x3b
+ 438 0033 0B       		.uleb128 0xb
+ 439 0034 27       		.uleb128 0x27
+ 440 0035 19       		.uleb128 0x19
+ 441 0036 11       		.uleb128 0x11
+ 442 0037 01       		.uleb128 0x1
+ 443 0038 12       		.uleb128 0x12
+ 444 0039 06       		.uleb128 0x6
+ 445 003a 40       		.uleb128 0x40
+ 446 003b 18       		.uleb128 0x18
+ 447 003c 9742     		.uleb128 0x2117
+ 448 003e 19       		.uleb128 0x19
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccaNqhoC.s 			page 10
+
+
+ 449 003f 01       		.uleb128 0x1
+ 450 0040 13       		.uleb128 0x13
+ 451 0041 00       		.byte	0
+ 452 0042 00       		.byte	0
+ 453 0043 05       		.uleb128 0x5
+ 454 0044 05       		.uleb128 0x5
+ 455 0045 00       		.byte	0
+ 456 0046 03       		.uleb128 0x3
+ 457 0047 0E       		.uleb128 0xe
+ 458 0048 3A       		.uleb128 0x3a
+ 459 0049 0B       		.uleb128 0xb
+ 460 004a 3B       		.uleb128 0x3b
+ 461 004b 0B       		.uleb128 0xb
+ 462 004c 49       		.uleb128 0x49
+ 463 004d 13       		.uleb128 0x13
+ 464 004e 02       		.uleb128 0x2
+ 465 004f 17       		.uleb128 0x17
+ 466 0050 00       		.byte	0
+ 467 0051 00       		.byte	0
+ 468 0052 06       		.uleb128 0x6
+ 469 0053 898201   		.uleb128 0x4109
+ 470 0056 00       		.byte	0
+ 471 0057 11       		.uleb128 0x11
+ 472 0058 01       		.uleb128 0x1
+ 473 0059 31       		.uleb128 0x31
+ 474 005a 13       		.uleb128 0x13
+ 475 005b 00       		.byte	0
+ 476 005c 00       		.byte	0
+ 477 005d 07       		.uleb128 0x7
+ 478 005e 0F       		.uleb128 0xf
+ 479 005f 00       		.byte	0
+ 480 0060 0B       		.uleb128 0xb
+ 481 0061 0B       		.uleb128 0xb
+ 482 0062 49       		.uleb128 0x49
+ 483 0063 13       		.uleb128 0x13
+ 484 0064 00       		.byte	0
+ 485 0065 00       		.byte	0
+ 486 0066 08       		.uleb128 0x8
+ 487 0067 2E       		.uleb128 0x2e
+ 488 0068 01       		.byte	0x1
+ 489 0069 3F       		.uleb128 0x3f
+ 490 006a 19       		.uleb128 0x19
+ 491 006b 03       		.uleb128 0x3
+ 492 006c 0E       		.uleb128 0xe
+ 493 006d 3A       		.uleb128 0x3a
+ 494 006e 0B       		.uleb128 0xb
+ 495 006f 3B       		.uleb128 0x3b
+ 496 0070 0B       		.uleb128 0xb
+ 497 0071 11       		.uleb128 0x11
+ 498 0072 01       		.uleb128 0x1
+ 499 0073 12       		.uleb128 0x12
+ 500 0074 06       		.uleb128 0x6
+ 501 0075 40       		.uleb128 0x40
+ 502 0076 18       		.uleb128 0x18
+ 503 0077 9742     		.uleb128 0x2117
+ 504 0079 19       		.uleb128 0x19
+ 505 007a 01       		.uleb128 0x1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccaNqhoC.s 			page 11
+
+
+ 506 007b 13       		.uleb128 0x13
+ 507 007c 00       		.byte	0
+ 508 007d 00       		.byte	0
+ 509 007e 09       		.uleb128 0x9
+ 510 007f 34       		.uleb128 0x34
+ 511 0080 00       		.byte	0
+ 512 0081 03       		.uleb128 0x3
+ 513 0082 0E       		.uleb128 0xe
+ 514 0083 3A       		.uleb128 0x3a
+ 515 0084 0B       		.uleb128 0xb
+ 516 0085 3B       		.uleb128 0x3b
+ 517 0086 0B       		.uleb128 0xb
+ 518 0087 49       		.uleb128 0x49
+ 519 0088 13       		.uleb128 0x13
+ 520 0089 1C       		.uleb128 0x1c
+ 521 008a 0B       		.uleb128 0xb
+ 522 008b 00       		.byte	0
+ 523 008c 00       		.byte	0
+ 524 008d 0A       		.uleb128 0xa
+ 525 008e 898201   		.uleb128 0x4109
+ 526 0091 01       		.byte	0x1
+ 527 0092 11       		.uleb128 0x11
+ 528 0093 01       		.uleb128 0x1
+ 529 0094 31       		.uleb128 0x31
+ 530 0095 13       		.uleb128 0x13
+ 531 0096 00       		.byte	0
+ 532 0097 00       		.byte	0
+ 533 0098 0B       		.uleb128 0xb
+ 534 0099 8A8201   		.uleb128 0x410a
+ 535 009c 00       		.byte	0
+ 536 009d 02       		.uleb128 0x2
+ 537 009e 18       		.uleb128 0x18
+ 538 009f 9142     		.uleb128 0x2111
+ 539 00a1 18       		.uleb128 0x18
+ 540 00a2 00       		.byte	0
+ 541 00a3 00       		.byte	0
+ 542 00a4 0C       		.uleb128 0xc
+ 543 00a5 2E       		.uleb128 0x2e
+ 544 00a6 00       		.byte	0
+ 545 00a7 3F       		.uleb128 0x3f
+ 546 00a8 19       		.uleb128 0x19
+ 547 00a9 3C       		.uleb128 0x3c
+ 548 00aa 19       		.uleb128 0x19
+ 549 00ab 6E       		.uleb128 0x6e
+ 550 00ac 0E       		.uleb128 0xe
+ 551 00ad 03       		.uleb128 0x3
+ 552 00ae 0E       		.uleb128 0xe
+ 553 00af 3A       		.uleb128 0x3a
+ 554 00b0 0B       		.uleb128 0xb
+ 555 00b1 3B       		.uleb128 0x3b
+ 556 00b2 05       		.uleb128 0x5
+ 557 00b3 00       		.byte	0
+ 558 00b4 00       		.byte	0
+ 559 00b5 00       		.byte	0
+ 560              		.section	.debug_loc,"",%progbits
+ 561              	.Ldebug_loc0:
+ 562              	.LLST0:
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccaNqhoC.s 			page 12
+
+
+ 563 0000 00000000 		.4byte	.LVL0
+ 564 0004 14000000 		.4byte	.LVL1
+ 565 0008 0100     		.2byte	0x1
+ 566 000a 50       		.byte	0x50
+ 567 000b 14000000 		.4byte	.LVL1
+ 568 000f 1A000000 		.4byte	.LFE32
+ 569 0013 0400     		.2byte	0x4
+ 570 0015 F3       		.byte	0xf3
+ 571 0016 01       		.uleb128 0x1
+ 572 0017 50       		.byte	0x50
+ 573 0018 9F       		.byte	0x9f
+ 574 0019 00000000 		.4byte	0
+ 575 001d 00000000 		.4byte	0
+ 576              	.LLST1:
+ 577 0021 00000000 		.4byte	.LVL3
+ 578 0025 14000000 		.4byte	.LVL4
+ 579 0029 0100     		.2byte	0x1
+ 580 002b 50       		.byte	0x50
+ 581 002c 14000000 		.4byte	.LVL4
+ 582 0030 1A000000 		.4byte	.LFE33
+ 583 0034 0400     		.2byte	0x4
+ 584 0036 F3       		.byte	0xf3
+ 585 0037 01       		.uleb128 0x1
+ 586 0038 50       		.byte	0x50
+ 587 0039 9F       		.byte	0x9f
+ 588 003a 00000000 		.4byte	0
+ 589 003e 00000000 		.4byte	0
+ 590              		.section	.debug_aranges,"",%progbits
+ 591 0000 3C000000 		.4byte	0x3c
+ 592 0004 0200     		.2byte	0x2
+ 593 0006 00000000 		.4byte	.Ldebug_info0
+ 594 000a 04       		.byte	0x4
+ 595 000b 00       		.byte	0
+ 596 000c 0000     		.2byte	0
+ 597 000e 0000     		.2byte	0
+ 598 0010 00000000 		.4byte	.LFB32
+ 599 0014 1A000000 		.4byte	.LFE32-.LFB32
+ 600 0018 00000000 		.4byte	.LFB33
+ 601 001c 1A000000 		.4byte	.LFE33-.LFB33
+ 602 0020 00000000 		.4byte	.LFB34
+ 603 0024 0A000000 		.4byte	.LFE34-.LFB34
+ 604 0028 00000000 		.4byte	.LFB35
+ 605 002c 0A000000 		.4byte	.LFE35-.LFB35
+ 606 0030 00000000 		.4byte	.LFB36
+ 607 0034 0A000000 		.4byte	.LFE36-.LFB36
+ 608 0038 00000000 		.4byte	0
+ 609 003c 00000000 		.4byte	0
+ 610              		.section	.debug_ranges,"",%progbits
+ 611              	.Ldebug_ranges0:
+ 612 0000 00000000 		.4byte	.LFB32
+ 613 0004 1A000000 		.4byte	.LFE32
+ 614 0008 00000000 		.4byte	.LFB33
+ 615 000c 1A000000 		.4byte	.LFE33
+ 616 0010 00000000 		.4byte	.LFB34
+ 617 0014 0A000000 		.4byte	.LFE34
+ 618 0018 00000000 		.4byte	.LFB35
+ 619 001c 0A000000 		.4byte	.LFE35
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccaNqhoC.s 			page 13
+
+
+ 620 0020 00000000 		.4byte	.LFB36
+ 621 0024 0A000000 		.4byte	.LFE36
+ 622 0028 00000000 		.4byte	0
+ 623 002c 00000000 		.4byte	0
+ 624              		.section	.debug_line,"",%progbits
+ 625              	.Ldebug_line0:
+ 626 0000 B3000000 		.section	.debug_str,"MS",%progbits,1
+ 626      02003E00 
+ 626      00000201 
+ 626      FB0E0D00 
+ 626      01010101 
+ 627              	.LASF6:
+ 628 0000 6C6F6E67 		.ascii	"long long int\000"
+ 628      206C6F6E 
+ 628      6720696E 
+ 628      7400
+ 629              	.LASF8:
+ 630 000e 756E7369 		.ascii	"unsigned int\000"
+ 630      676E6564 
+ 630      20696E74 
+ 630      00
+ 631              	.LASF23:
+ 632 001b 70776D5F 		.ascii	"pwm_WriteCompare\000"
+ 632      57726974 
+ 632      65436F6D 
+ 632      70617265 
+ 632      00
+ 633              	.LASF5:
+ 634 002c 6C6F6E67 		.ascii	"long unsigned int\000"
+ 634      20756E73 
+ 634      69676E65 
+ 634      6420696E 
+ 634      7400
+ 635              	.LASF7:
+ 636 003e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 636      206C6F6E 
+ 636      6720756E 
+ 636      7369676E 
+ 636      65642069 
+ 637              	.LASF9:
+ 638 0055 666C6F61 		.ascii	"float\000"
+ 638      7400
+ 639              	.LASF21:
+ 640 005b 73657276 		.ascii	"servo.c\000"
+ 640      6F2E6300 
+ 641              	.LASF1:
+ 642 0063 756E7369 		.ascii	"unsigned char\000"
+ 642      676E6564 
+ 642      20636861 
+ 642      7200
+ 643              	.LASF15:
+ 644 0071 66726F6D 		.ascii	"from0DegreeTo180Degree\000"
+ 644      30446567 
+ 644      72656554 
+ 644      6F313830 
+ 644      44656772 
+ 645              	.LASF11:
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccaNqhoC.s 			page 14
+
+
+ 646 0088 63686172 		.ascii	"char\000"
+ 646      00
+ 647              	.LASF4:
+ 648 008d 6C6F6E67 		.ascii	"long int\000"
+ 648      20696E74 
+ 648      00
+ 649              	.LASF18:
+ 650 0096 6C6F6361 		.ascii	"location90Degree\000"
+ 650      74696F6E 
+ 650      39304465 
+ 650      67726565 
+ 650      00
+ 651              	.LASF10:
+ 652 00a7 646F7562 		.ascii	"double\000"
+ 652      6C6500
+ 653              	.LASF17:
+ 654 00ae 6C6F6361 		.ascii	"location0Degree\000"
+ 654      74696F6E 
+ 654      30446567 
+ 654      72656500 
+ 655              	.LASF20:
+ 656 00be 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 656      43313120 
+ 656      352E342E 
+ 656      31203230 
+ 656      31363036 
+ 657 00f1 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 657      20726576 
+ 657      6973696F 
+ 657      6E203233 
+ 657      37373135 
+ 658 0124 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 658      66756E63 
+ 658      74696F6E 
+ 658      2D736563 
+ 658      74696F6E 
+ 659              	.LASF3:
+ 660 014c 73686F72 		.ascii	"short unsigned int\000"
+ 660      7420756E 
+ 660      7369676E 
+ 660      65642069 
+ 660      6E7400
+ 661              	.LASF0:
+ 662 015f 7369676E 		.ascii	"signed char\000"
+ 662      65642063 
+ 662      68617200 
+ 663              	.LASF19:
+ 664 016b 6C6F6361 		.ascii	"location180Degree\000"
+ 664      74696F6E 
+ 664      31383044 
+ 664      65677265 
+ 664      6500
+ 665              	.LASF14:
+ 666 017d 66726F6D 		.ascii	"from90DegreeTo180Degree\000"
+ 666      39304465 
+ 666      67726565 
+ 666      546F3138 
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccaNqhoC.s 			page 15
+
+
+ 666      30446567 
+ 667              	.LASF12:
+ 668 0195 6C6F6E67 		.ascii	"long double\000"
+ 668      20646F75 
+ 668      626C6500 
+ 669              	.LASF16:
+ 670 01a1 76616C75 		.ascii	"value_compare\000"
+ 670      655F636F 
+ 670      6D706172 
+ 670      6500
+ 671              	.LASF2:
+ 672 01af 73686F72 		.ascii	"short int\000"
+ 672      7420696E 
+ 672      7400
+ 673              	.LASF22:
+ 674 01b9 443A5C70 		.ascii	"D:\\psoc\\theory\\pwm_motor_servo\\pwm.cydsn\000"
+ 674      736F635C 
+ 674      7468656F 
+ 674      72795C70 
+ 674      776D5F6D 
+ 675              	.LASF13:
+ 676 01e2 73697A65 		.ascii	"sizetype\000"
+ 676      74797065 
+ 676      00
+ 677              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

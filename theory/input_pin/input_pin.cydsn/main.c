@@ -9,32 +9,29 @@
  *
  * ========================================
 */
+#include "project.h"
 #include "main.h"
 
+#include "buttonBlack.h"
+#include "ledSingle.h"
 
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
 
-    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
-    
     gnd_Write(0);
 
     for(;;)
     {
-        /* Place your application code here. */
         buttonHandle();
     }
 }
 
 void buttonHandle()
 {
-    ledTurnOn( valuePressButton() );
-    
+    ledTurnOn( valuePressedButton() );
     CyDelay(2000);
-    
-    ledTurnOff( valuePressButton() );  
-    
+    ledTurnOff( valuePressedButton() );  
     CyDelay(2000);
 }
 

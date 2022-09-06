@@ -1,5 +1,5 @@
 -- Project:   timer_have_see_by_machine_wire
--- Generated: 08/26/2022 21:27:37
+-- Generated: 09/06/2022 11:00:14
 -- PSoC Creator  4.4
 
 ENTITY timer_have_see_by_machine_wire IS

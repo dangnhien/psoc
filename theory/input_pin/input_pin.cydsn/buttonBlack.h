@@ -12,16 +12,9 @@
 
 #ifndef BUTTONBLACK_H
 #define BUTTONBLACK_H       
-    
-    #ifndef PROJECT_H
-    #define PROJECT_H           
-        #include "project.h"
-    #endif
         
-        
-    int valuePressButton();
+    int valuePressedButton();
     
-
 #endif
 
 /* [] END OF FILE */

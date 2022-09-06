@@ -9,7 +9,8 @@
  *
  * ========================================
 */
-
+#include "project.h"
+#include "ledMatrix.h"
 #include "main.h"
 
 int main(void)
@@ -19,8 +20,8 @@ int main(void)
     for(;;)
     {
         
-        light_from_0_to_9();
-        //light_character_k(11);
+        //light_from_0_to_9();
+        light_character_k(10);
     }
 }
 

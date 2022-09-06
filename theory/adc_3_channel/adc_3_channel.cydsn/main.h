@@ -12,13 +12,7 @@
 #ifndef MAIN_H
 #define MAIN_H
     
-    #include <stdio.h>
-    #include "project.h"
-    #include "measureResister.h"
-    #include "uart_transmit.h"
-    
     void init_system();
     
-
 #endif
 /* [] END OF FILE */

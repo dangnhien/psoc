@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccFVdZhp.s 			page 1
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cclTrYH2.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccFVdZhp.s 			page 1
   38              		.syntax divided
   39              	@ 17 "main.c" 1
   40 0002 62B6     		CPSIE   i
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccFVdZhp.s 			page 2
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cclTrYH2.s 			page 2
 
 
   41              	@ 0 "" 2
@@ -66,16 +66,13 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccFVdZhp.s 			page 1
   43              		.syntax unified
   44              	.L2:
   18:main.c        **** 
-  19:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
-  20:main.c        ****     
-  21:main.c        ****     for(;;)
-  22:main.c        ****     {
-  23:main.c        ****         /* Place your application code here. */
-  24:main.c        ****         
-  25:main.c        ****         //light_from_0_to_9();
-  26:main.c        ****         light_character_k(11);
-  45              		.loc 1 26 0 discriminator 1
-  46 0004 0B20     		movs	r0, #11
+  19:main.c        ****     for(;;)
+  20:main.c        ****     {
+  21:main.c        ****         
+  22:main.c        ****         //light_from_0_to_9();
+  23:main.c        ****         light_character_k(10);
+  45              		.loc 1 23 0 discriminator 1
+  46 0004 0A20     		movs	r0, #10
   47 0006 FFF7FEFF 		bl	light_character_k
   48              	.LVL0:
   49 000a FBE7     		b	.L2
@@ -118,12 +115,12 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccFVdZhp.s 			page 1
   86 0041 02       		.uleb128 0x2
   87 0042 04       		.byte	0x4
   88 0043 05       		.byte	0x5
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccFVdZhp.s 			page 3
-
-
   89 0044 94000000 		.4byte	.LASF4
   90 0048 02       		.uleb128 0x2
   91 0049 04       		.byte	0x4
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cclTrYH2.s 			page 3
+
+
   92 004a 07       		.byte	0x7
   93 004b 52000000 		.4byte	.LASF5
   94 004f 02       		.uleb128 0x2
@@ -178,12 +175,12 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccFVdZhp.s 			page 1
  143 00b0 06       		.uleb128 0x6
  144 00b1 01       		.uleb128 0x1
  145 00b2 50       		.byte	0x50
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccFVdZhp.s 			page 4
-
-
  146 00b3 01       		.uleb128 0x1
- 147 00b4 3B       		.byte	0x3b
+ 147 00b4 3A       		.byte	0x3a
  148 00b5 00       		.byte	0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cclTrYH2.s 			page 4
+
+
  149 00b6 00       		.byte	0
  150 00b7 07       		.uleb128 0x7
  151 00b8 9D000000 		.4byte	.LASF18
@@ -238,12 +235,12 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccFVdZhp.s 			page 1
  200 002a 2E       		.uleb128 0x2e
  201 002b 01       		.byte	0x1
  202 002c 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccFVdZhp.s 			page 5
-
-
  203 002d 19       		.uleb128 0x19
  204 002e 03       		.uleb128 0x3
  205 002f 0E       		.uleb128 0xe
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cclTrYH2.s 			page 5
+
+
  206 0030 3A       		.uleb128 0x3a
  207 0031 0B       		.uleb128 0xb
  208 0032 3B       		.uleb128 0x3b
@@ -298,12 +295,12 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccFVdZhp.s 			page 1
  257 006a 3A       		.uleb128 0x3a
  258 006b 0B       		.uleb128 0xb
  259 006c 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccFVdZhp.s 			page 6
-
-
  260 006d 0B       		.uleb128 0xb
  261 006e 00       		.byte	0
  262 006f 00       		.byte	0
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cclTrYH2.s 			page 6
+
+
  263 0070 00       		.byte	0
  264              		.section	.debug_aranges,"",%progbits
  265 0000 1C000000 		.4byte	0x1c
@@ -325,7 +322,7 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccFVdZhp.s 			page 1
  281 000c 00000000 		.4byte	0
  282              		.section	.debug_line,"",%progbits
  283              	.Ldebug_line0:
- 284 0000 49000000 		.section	.debug_str,"MS",%progbits,1
+ 284 0000 47000000 		.section	.debug_str,"MS",%progbits,1
  284      02002C00 
  284      00000201 
  284      FB0E0D00 
@@ -358,12 +355,12 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccFVdZhp.s 			page 1
  296      69676E65 
  296      6420696E 
  296      7400
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccFVdZhp.s 			page 7
-
-
  297              	.LASF7:
  298 0064 6C6F6E67 		.ascii	"long long unsigned int\000"
  298      206C6F6E 
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cclTrYH2.s 			page 7
+
+
  298      6720756E 
  298      7369676E 
  298      65642069 
@@ -418,12 +415,12 @@ ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccFVdZhp.s 			page 1
  318      65642063 
  318      68617200 
  319              	.LASF13:
-ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\ccFVdZhp.s 			page 8
-
-
  320 0163 6C6F6E67 		.ascii	"long double\000"
  320      20646F75 
  320      626C6500 
+ARM GAS  C:\Users\NGUYEN~1\AppData\Local\Temp\cclTrYH2.s 			page 8
+
+
  321              	.LASF2:
  322 016f 73686F72 		.ascii	"short int\000"
  322      7420696E 

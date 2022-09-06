@@ -9,14 +9,15 @@
  *
  * ========================================
 */
-#include <stdio.h>
 #include "project.h"
+#include <stdio.h>
+
 #include "eeprom_external.h"
 #include "ledYellow.h"
 
 volatile int counter_shift_led =  -2;
  
-volatile unsigned long counter1_ms = 0, counter1_s = 0, counter_uart = 0;
+volatile uint32 counter1_ms = 0, counter1_s = 0, counter_uart = 0;
 
 // CY_ISR(handle_interrupt)
 void handle_interrupt(void)
@@ -38,13 +39,12 @@ void handle_interrupt(void)
             counter_uart = 0;
     }
     
-
     timer_ClearInterrupt(timer_INTR_MASK_TC);
     timer_interrupt_ClearPending();
 }
 
 
-void init_time_interrupt()
+void initTimeInterrupt()
 {
     timer_interrupt_StartEx( handle_interrupt );
 }

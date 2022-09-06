@@ -9,21 +9,32 @@
  *
  * ========================================
 */
+#include <stdio.h>
+#include "project.h"
+#include "ds1307_i2c.h"
+#include "uart_transmitss.h"
+    
 #include "main.h"
 
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
 
-     data_time time;
+    data_time time;
     char txString[50];
     
     system_initialization(); 
     
+    uart_transmit_UartPutString("Write data to DS1307.\n");
+    CyDelay(1000);
+    
     ds1307_time_init(&time);
-    //ds1307_write_data(&time);
+    ds1307_write_data(&time);
     time_string_concatenation(time, txString);
     uart_transmit_UartPutString(txString); 
+    CyDelay(1000);
+    
+    uart_transmit_UartPutString("\nRead data to DS1307.\n");
     CyDelay(1000);
     
     
