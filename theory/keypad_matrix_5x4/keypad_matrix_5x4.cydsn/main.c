@@ -10,35 +10,17 @@
  * ========================================
 */
 #include "project.h"
-#include "main.h"
-
-#include "servo.h"
-#include "ledSingle.h"
 
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
-    
-    configSystem();
-    
-    int value = 50;
-    
+
+    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+
     for(;;)
     {
-        value = 50;
-        from0DegreeTo180Degree(&value);
-        CyDelay(1000);
-        
-        value = 100;
-        from0DegreeTo180Degree(&value);
-        CyDelay(1000);
+        /* Place your application code here. */
     }
 }
-
-void configSystem()
-{
-    pwm_Start();
-}
-
 
 /* [] END OF FILE */

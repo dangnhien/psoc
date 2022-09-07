@@ -182,7 +182,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1002, 558" SelectedTabbedMdiWindow="ceb09f95-3247-49c8-ae25-23609dc4cd84"><DocumentWindow Key="D:\psoc\theory\lcd_16xN\lcd_16xN.cydsn\main.c" Guid="ceb09f95-3247-49c8-ae25-23609dc4cd84" /><DocumentWindow Key="D:\psoc\theory\lcd_16xN\lcd_16xN.cydsn\main.h" Guid="1578844b-9692-4527-b661-ba05e912292b" /><DocumentWindow Key="D:\psoc\theory\lcd_16xN\lcd_16xN.cydsn\lcd_16xN.cydwr" Guid="d380cdf7-8f67-4ff3-a83d-b8d525c99541" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="d7f23ced-4a8f-474d-9a7b-db5f2e330e0f" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="349, 549" SelectedTabbedMdiWindow="ceb09f95-3247-49c8-ae25-23609dc4cd84"><DocumentWindow Key="D:\psoc\theory\lcd_16xN\lcd_16xN.cydsn\main.c" Guid="ceb09f95-3247-49c8-ae25-23609dc4cd84" /><DocumentWindow Key="D:\psoc\theory\lcd_16xN\lcd_16xN.cydsn\main.h" Guid="1578844b-9692-4527-b661-ba05e912292b" /><DocumentWindow Key="D:\psoc\theory\lcd_16xN\lcd_16xN.cydsn\lcd_16xN.cydwr" Guid="d380cdf7-8f67-4ff3-a83d-b8d525c99541" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="d7f23ced-4a8f-474d-9a7b-db5f2e330e0f" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

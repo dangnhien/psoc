@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="pwm\pwm\Source Files\main.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="pwm\pwm\pwm.cydwr">
 <ExpandedNodeIds>
 <v>pwm</v>
 <v>pwm\pwm</v>
@@ -113,32 +113,6 @@
 <VisibleNodeIds>
 <v>pwm</v>
 <v>pwm\pwm</v>
-<v>pwm\pwm\CortexM0</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\clock.lst</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\ledSingle.lst</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\pwm.lst</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\pwm_PM.lst</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\pwmToServer.lst</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\pwmToServer_PM.lst</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\servo.lst</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\pwm.elf</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\pwm.hex</v>
-<v>pwm\pwm\CortexM0\ARM_GCC_541\Debug\pwm.map</v>
-<v>pwm\pwm\pwm.gpdsc</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -182,6 +156,11 @@
 <name v=".\pwm.cydsn\servo.c" />
 <name v=".\pwm.cydsn\servo.h" />
 <name v=".\pwm.cydsn\main.c" />
+<name v=".\pwm.cydsn\main.h" />
+<name v=".\pwm.cydsn\ledSingle.h" />
+<name v=".\pwm.cydsn\ledSingle.c" />
+<name v=".\pwm.cydsn\pwm.cydwr" />
+<name v=".\pwm.cydsn\TopDesign\TopDesign.cysch" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -189,7 +168,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1006, 558" SelectedTabbedMdiWindow="1fcd7a17-04f1-4783-9b8e-751ec4350827"><DocumentWindow Key="D:\psoc\theory\pwm_motor_servo\pwm.cydsn\servo.c" Guid="db11ca1e-8591-43f1-a6ed-352a68e08d2e" /><DocumentWindow Key="D:\psoc\theory\pwm_motor_servo\pwm.cydsn\servo.h" Guid="128a6a17-1471-4f33-b095-003c2f8c5a98" /><DocumentWindow Key="D:\psoc\theory\pwm_motor_servo\pwm.cydsn\main.c" Guid="1fcd7a17-04f1-4783-9b8e-751ec4350827" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1024, 558" SelectedTabbedMdiWindow="1fcd7a17-04f1-4783-9b8e-751ec4350827"><DocumentWindow Key="D:\psoc\theory\pwm_motor_servo\pwm.cydsn\servo.c" Guid="db11ca1e-8591-43f1-a6ed-352a68e08d2e" /><DocumentWindow Key="D:\psoc\theory\pwm_motor_servo\pwm.cydsn\servo.h" Guid="128a6a17-1471-4f33-b095-003c2f8c5a98" /><DocumentWindow Key="D:\psoc\theory\pwm_motor_servo\pwm.cydsn\main.c" Guid="1fcd7a17-04f1-4783-9b8e-751ec4350827" /><DocumentWindow Key="D:\psoc\theory\pwm_motor_servo\pwm.cydsn\main.h" Guid="2b9dd700-970d-43eb-b9ee-af493585dad2" /><DocumentWindow Key="D:\psoc\theory\pwm_motor_servo\pwm.cydsn\ledSingle.h" Guid="a99c3dc6-9956-4367-8ff3-d0ce9672f8d6" /><DocumentWindow Key="D:\psoc\theory\pwm_motor_servo\pwm.cydsn\ledSingle.c" Guid="a1ba1bb5-b780-479c-a62e-b0fe2b976430" /><DocumentWindow Key="D:\psoc\theory\pwm_motor_servo\pwm.cydsn\pwm.cydwr" Guid="c7bbe8bf-9df8-4d49-8313-006d3b0a7c75" /><DocumentWindow Key="D:\psoc\theory\pwm_motor_servo\pwm.cydsn\TopDesign\TopDesign.cysch" Guid="8f2e5653-2547-4832-b7a7-a00883aa5798" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
